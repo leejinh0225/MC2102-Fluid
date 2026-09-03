@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lecture 2 · Kinematics of Particles I: Rectilinear Motion | MC2103</title>
+    <meta
+      name="description"
+      content="Rectilinear motion의 position, velocity, acceleration 관계와 적분법, 상대운동, 도르래 구속조건을 한국어로 설명하는 Lecture 2 학습 노트"
+    />
+    <meta property="og:title" content="Lecture 2 · Kinematics of Particles I: Rectilinear Motion" />
+    <meta
+      property="og:description"
+      content="원본 슬라이드 63장과 영어 영상 5개를 대조한 한국어 수업 대체 노트"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://leejinh0225.github.io/MC2103-Dynamics/lecture02.html"
+    />
+    <meta
+      property="og:image"
+      content="https://leejinh0225.github.io/MC2103-Dynamics/assets/og.png"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="index.html">MC2103 Dynamics</a>
+        <div class="header-actions">
+          <a class="header-link" href="downloads.html">PDF 다운로드</a>
+          <span class="header-meta">Lecture 2 · Rectilinear Motion</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">Week 01 · Lecture 02</p>
+        <h1>Kinematics of Particles I:<br />Rectilinear Motion.</h1>
+        <p class="hero__lead">
+          하나의 straight line(직선) 위에서 position(위치), velocity(속도), acceleration(가속도)을 연결하고, 여러 particle(입자)의 relative motion(상대운동)과 dependent motion(종속운동)까지 확장합니다.
+        </p>
+        <div class="meta-row" aria-label="강의 정보">
+          <span class="meta-chip">날짜 2026-09-02</span>
+          <span class="meta-chip">원본 슬라이드 63장</span>
+          <span class="meta-chip">Overview · Contents 1/2 · Problem Solving · Summary</span>
+          <span class="meta-chip">수업 대체 + 시험 대비</span>
+        </div>
+        <div class="button-row">
+          <a
+            class="button button--primary"
+            href="https://www.youtube.com/watch?v=Lh8tQnI6A9o"
+            target="_blank"
+            rel="noreferrer"
+            >Contents 1 영상 열기</a
+          >
+          <a
+            class="button button--primary"
+            href="https://www.youtube.com/watch?v=i6XabI4ffzc"
+            target="_blank"
+            rel="noreferrer"
+            >Contents 2 영상 열기</a
+          >
+          <a
+            class="button button--primary"
+            href="https://www.youtube.com/watch?v=Pocl0GKnmSA"
+            target="_blank"
+            rel="noreferrer"
+            >Problem Solving 영상 열기</a
+          >
+          <a class="button" href="https://github.com/leejinh0225/MC2103-Dynamics/raw/refs/heads/main/2026FA_Dynamics/lecture_notes/lecture02_note.pdf" download="lecture02_note.pdf" type="application/pdf">원본 PDF 다운로드</a>
+          <a class="button" href="index.html">강의 목록</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <main id="main" class="content">
+        <section class="editorial-section section-divider" id="overview" aria-labelledby="overview-title">
+          <p class="section-kicker">Lecture overview</p>
+          <h2 class="section-title" id="overview-title">직선 위의 위치를 정하면, 미분과 적분으로 모든 운동량이 연결됩니다.</h2>
+          <p class="section-lead">
+            rectilinear motion(직선운동)은 particle(입자)이 하나의 straight line(직선)을 따라 움직이는 motion(운동)입니다. 먼저 origin(원점)과 positive direction(양의 방향)을 정해 position coordinate(위치좌표) <em>x</em>를 표시하고, 시간에 대한 derivative(미분)로 velocity(속도)와 acceleration(가속도)을 구합니다. 반대로 acceleration(가속도)이 주어지면 initial condition(초기조건)을 사용해 integration(적분)하여 motion(운동)을 복원합니다.
+          </p>
+          <div class="evidence"><span>Overview 00:17–01:13</span><span>Summary 00:17–00:52</span></div>
+        </section>
+
+        <section class="editorial-section" id="concept-map" aria-labelledby="map-title">
+          <p class="section-kicker">Concept map</p>
+          <h2 class="section-title" id="map-title">Position(위치) → Velocity(속도) → Acceleration(가속도)</h2>
+          <div class="grid-3">
+            <div class="card">
+              <p class="section-kicker">State</p>
+              <h3>Position(위치)</h3>
+              <p>fixed origin(고정 원점)에서 positive 또는 negative direction(양 또는 음의 방향)으로 잰 signed coordinate(부호 있는 좌표)입니다.</p>
+              <span class="formula">x = x(t)</span>
+            </div>
+            <div class="card">
+              <p class="section-kicker">First derivative</p>
+              <h3>Velocity(속도)</h3>
+              <p>position(위치)의 순간 변화율입니다. 부호는 motion direction(운동 방향)을, 절댓값은 speed(속력)를 뜻합니다.</p>
+              <span class="formula">v = dx/dt</span>
+            </div>
+            <div class="card">
+              <p class="section-kicker">Second derivative</p>
+              <h3>Acceleration(가속도)</h3>
+              <p>velocity(속도)의 순간 변화율입니다. position(위치)을 시간으로 두 번 미분해도 얻습니다.</p>
+              <span class="formula">a = dv/dt = d²x/dt²</span>
+            </div>
+          </div>
+          <div class="callout" style="margin-top: 20px">
+            <h3>역방향 연결</h3>
+            <p>
+              acceleration(가속도)에서 velocity(속도)와 position(위치)으로 돌아갈 때는 integration(적분)을 사용합니다. 이때 적분상수는 initial position(초기위치)과 initial velocity(초기속도)로 결정합니다. 단, acceleration(가속도)이 time(시간), position(위치), velocity(속도) 중 무엇의 함수인지에 따라 먼저 선택해야 할 kinematic relationship(운동학 관계식)이 달라집니다.
+            </p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="concept-summary" aria-labelledby="concept-summary-title">
+          <p class="section-kicker">Content summary</p>
+          <h2 class="section-title" id="concept-summary-title">Lecture 2 핵심 개념 요약</h2>
+          <p class="section-lead">
+            원본 슬라이드와 Contents 1·2, Problem Solving, Summary 영상을 종합한 독립형 요약입니다. 시간이 부족할 때 이 부분만 읽어도 rectilinear motion(직선운동)의 기본식, 식 선택 기준, 여러 particle(입자)의 연결과 대표 문제 풀이 흐름을 파악할 수 있습니다.
+          </p>
+          <div class="note-stack">
+            <div class="callout">
+              <h3>1. 좌표계가 모든 부호를 결정합니다.</h3>
+              <p>
+                직선 위에 origin(원점)과 positive direction(양의 방향)을 먼저 정하면 particle(입자)의 position coordinate(위치좌표) <em>x</em>가 정해집니다. <em>x &gt; 0</em>과 <em>x &lt; 0</em>은 원점의 어느 쪽에 있는지를 뜻하며, traveled distance(이동거리)와 같지 않습니다. velocity(속도)의 부호는 움직이는 방향을 나타내지만 acceleration(가속도)의 부호만으로 speeding up(빨라짐) 또는 slowing down(느려짐)을 판단할 수는 없습니다. <em>v</em>와 <em>a</em>의 부호가 같으면 speed(속력)가 증가하고, 반대면 speed(속력)가 감소합니다.
+              </p>
+            </div>
+
+            <div class="grid-2">
+              <div class="card">
+                <h3>2. 미분하면 운동의 순간 변화율을 얻습니다.</h3>
+                <p>
+                  position function(위치함수) <em>x(t)</em>가 주어지면 <em>v = dx/dt</em>, <em>a = dv/dt = d²x/dt²</em>입니다. position-time curve(위치-시간 곡선)의 slope(기울기)는 velocity(속도), velocity-time curve(속도-시간 곡선)의 slope(기울기)는 acceleration(가속도)입니다. velocity(속도)가 zero(0)인 순간은 position(위치)의 극값 후보이고, acceleration(가속도)이 zero(0)인 순간은 velocity(속도)의 극값 후보입니다.
+                </p>
+              </div>
+              <div class="card">
+                <h3>3. 적분하면 누적된 변화를 얻습니다.</h3>
+                <p>
+                  velocity-time graph(속도-시간 그래프) 아래의 signed area(부호 있는 면적)는 displacement(변위)이고, acceleration-time graph(가속도-시간 그래프) 아래의 signed area(부호 있는 면적)는 change in velocity(속도 변화)입니다. 그래프가 축 아래에 있으면 면적도 음수이므로 단순한 기하학적 넓이와 구분해야 합니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>4. Acceleration(가속도)이 무엇의 함수인지 보고 관계식을 선택합니다.</h3>
+              <table class="compare-table">
+                <thead><tr><th>주어진 형태</th><th>사용할 관계</th><th>적분 결과가 연결하는 것</th></tr></thead>
+                <tbody>
+                  <tr><td><em>a = a(t)</em></td><td><em>dv/dt = a(t)</em></td><td><em>v - v<sub>0</sub> = ∫a(t)dt</em>로 time(시간)과 velocity(속도)를 연결합니다.</td></tr>
+                  <tr><td><em>a = a(x)</em></td><td><em>a = v dv/dx</em></td><td><em>∫v dv = ∫a(x)dx</em>로 time(시간)을 거치지 않고 position(위치)과 velocity(속도)를 연결합니다.</td></tr>
+                  <tr><td><em>a = a(v)</em></td><td><em>dt = dv/a(v)</em> 또는 <em>dx = v dv/a(v)</em></td><td>문제가 요구하는 것이 <em>v(t)</em>인지 <em>v(x)</em>인지에 따라 time form(시간형) 또는 position form(위치형)을 선택합니다.</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid-2">
+              <div class="card">
+                <h3>5. 두 special case(특수 경우)는 조건을 만족할 때만 사용합니다.</h3>
+                <p>
+                  uniform rectilinear motion(등속 직선운동)은 <em>a = 0</em>, <em>v = constant(일정)</em>이므로 <em>x = x<sub>0</sub> + vt</em>입니다. uniformly accelerated rectilinear motion(등가속도 직선운동)은 <em>a = constant(일정)</em>이므로 <em>v = v<sub>0</sub> + at</em>, <em>x = x<sub>0</sub> + v<sub>0</sub>t + 1/2 at²</em>, <em>v² = v<sub>0</sub>² + 2a(x - x<sub>0</sub>)</em>를 사용할 수 있습니다. acceleration(가속도)이 변하면 이 세 식을 그대로 쓰면 안 됩니다.
+                </p>
+              </div>
+              <div class="card">
+                <h3>6. 여러 Particle(입자)은 상대식 또는 구속식으로 연결합니다.</h3>
+                <p>
+                  relative motion(상대운동)은 같은 origin(원점), positive direction(양의 방향), time origin(시간 원점)을 사용한 뒤 <em>x<sub>B/A</sub> = x<sub>B</sub> - x<sub>A</sub></em>로 정의합니다. dependent motion(종속운동)은 fixed cable length(고정된 케이블 길이) 같은 constraint(구속조건)를 식으로 적습니다. 예를 들어 <em>x<sub>A</sub> + 2x<sub>B</sub> = C</em>이면 <em>v<sub>A</sub> + 2v<sub>B</sub> = 0</em>, <em>a<sub>A</sub> + 2a<sub>B</sub> = 0</em>입니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="exam-card">
+              <h3>7. Rectilinear motion(직선운동) 문제의 공통 풀이 순서</h3>
+              <ol class="plain-list">
+                <li><strong>Choose a coordinate system(좌표계 선택):</strong> origin(원점)과 positive direction(양의 방향)을 그림에 표시합니다.</li>
+                <li><strong>Record initial conditions(초기조건 기록):</strong> <em>x<sub>0</sub></em>, <em>v<sub>0</sub></em>, 시작 time(시간)을 부호와 함께 적습니다.</li>
+                <li><strong>Classify acceleration(가속도 분류):</strong> <em>a(t)</em>, <em>a(x)</em>, <em>a(v)</em>, zero(0), constant(일정) 중 어느 형태인지 확인합니다.</li>
+                <li><strong>Select and integrate(관계식 선택·적분):</strong> 구하려는 변수에 time(시간)이 필요한지 판단해 가장 직접적인 관계식을 사용합니다.</li>
+                <li><strong>Apply an event condition(사건 조건 적용):</strong> maximum height(최고점)에서는 <em>v = 0</em>, ground impact(지면 충돌)에서는 <em>y = 0</em>처럼 물리적 조건을 대입합니다.</li>
+                <li><strong>Interpret signs and roots(부호·근 해석):</strong> 음의 root(근)가 분석 시간 구간 밖이면 버리고, 음의 velocity(속도)는 정한 positive direction(양의 방향)의 반대임을 적습니다.</li>
+              </ol>
+            </div>
+
+            <div class="quiet-card">
+              <h3>대표 예제가 보여주는 세 가지 패턴</h3>
+              <p>
+                공의 vertical motion(수직운동)은 constant acceleration(등가속도)과 event condition(사건 조건)을, oil damper(오일 댐퍼)는 <em>a = -kv</em> 형태의 variable acceleration(변가속도)과 변수분리를, pulley system(도르래계)은 cable-length constraint(케이블 길이 구속조건)와 sign convention(부호 규약)을 보여줍니다. 세 문제의 겉모습은 다르지만, 좌표계 설정 → 관계식 선택 → initial condition(초기조건) 적용 → 결과의 부호 해석이라는 동일한 순서를 따릅니다.
+              </p>
+            </div>
+            <div class="evidence"><span>슬라이드 05–60 종합</span><span>Contents 1·2</span><span>Problem Solving</span><span>Summary 00:17–00:52</span></div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-01" aria-labelledby="slide-01-title">
+          <p class="section-kicker">Source slide 01 · Title</p>
+          <h2 class="section-title" id="slide-01-title">Lecture 2 표지</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-01.jpg" alt="Lecture 2 Kinematics of Particles I Rectilinear motion 표지" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 1/63</span><span>MC2103 · Fall 2026</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>슬라이드 역할</h3><p>강의 제목과 과목 정보를 제시하는 표지입니다. 별도의 개념 설명은 없습니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-02" aria-labelledby="slide-02-title">
+          <p class="section-kicker">Source slide 02 · Divider</p>
+          <h2 class="section-title" id="slide-02-title">Lecture 2-1 구분 슬라이드</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-02.jpg" alt="Lecture 2-1 구분 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 2/63</span><span>Section divider(구분 슬라이드)</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>이후 내용</h3><p>rectilinear motion(직선운동)의 기본 정의와 실제 사례를 소개하는 첫 구간입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-03" aria-labelledby="slide-03-title">
+          <p class="section-kicker">Source slide 03 · Video link</p>
+          <h2 class="section-title" id="slide-03-title">원본 참고 영상 링크</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-03.jpg" alt="YouTube 참고 영상 링크가 표시된 검은 배경 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 3/63</span><span>링크 슬라이드 · 개념 해설 없음</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>보존된 링크</h3><p>슬라이드에 표시된 주소는 <a href="https://youtu.be/oZ_DDCO3Itc" target="_blank" rel="noreferrer">YouTube 참고 영상</a>입니다. Teams 게시물의 <a href="https://www.youtube.com/watch?v=OHqvWeXi_JY" target="_blank" rel="noreferrer">Lecture 2 Overview 영상</a>과 다른 URL이므로 원문 그대로 따로 보존합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-04" aria-labelledby="slide-04-title">
+          <p class="section-kicker">Source slide 04 · Divider</p>
+          <h2 class="section-title" id="slide-04-title">Lecture 2-2 구분 슬라이드</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-04.jpg" alt="Lecture 2-2 구분 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 4/63</span><span>Section divider(구분 슬라이드)</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>이후 내용</h3><p>position(위치), velocity(속도), acceleration(가속도)의 정의와 세 가지 acceleration function(가속도 함수) 형태를 본격적으로 전개합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-05" aria-labelledby="slide-05-title">
+          <p class="section-kicker">Source slide 05 · Motivation</p>
+          <h2 class="section-title" id="slide-05-title">Kinematic relationship(운동학 관계)의 쓰임</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-05.jpg" alt="위성, 스노보더, 낙하 시험체, 곡예 비행기의 궤적 사례 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 5/63</span><span>Contents 1 00:33–00:58</span></figcaption></figure>
+          <div class="note-stack">
+            <div class="callout"><h3>핵심 해설</h3><p>kinematic relationship(운동학 관계)은 force(힘)의 원인을 계산하기 전에 trajectory(궤적), speed(속력), acceleration(가속도)을 기술하는 도구입니다. 위성의 orbit(궤도), 스노보더의 jump trajectory(점프 궤적), 낙하 시험, acrobatic flight(곡예 비행)는 모두 motion geometry(운동 기하)를 먼저 알아야 다음 설계 판단으로 넘어갈 수 있습니다.</p><div class="evidence"><span>슬라이드 05</span><span>Contents 1 00:33–00:58</span></div></div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-06" aria-labelledby="slide-06-title">
+          <p class="section-kicker">Source slide 06 · Kinematics</p>
+          <h2 class="section-title" id="slide-06-title">Kinematics(운동학)는 원인을 제외하고 운동을 기술합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-06.jpg" alt="Kinematics의 정의와 displacement velocity acceleration time 관계 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 6/63</span><span>Contents 1 00:58–01:21</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>정의</h3><p>kinematics(운동학)는 geometry of motion(운동의 기하학)을 연구합니다. displacement(변위), velocity(속도), acceleration(가속도), time(시간)의 관계를 다루되 cause of motion(운동의 원인)인 force(힘)와 torque(토크)는 직접 사용하지 않습니다.</p><span class="key-sentence">Kinematics relates displacement, velocity, acceleration, and time without reference to the causes of motion.</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-07" aria-labelledby="slide-07-title">
+          <p class="section-kicker">Source slide 07 · Kinetics</p>
+          <h2 class="section-title" id="slide-07-title">Kinetics(운동역학)는 Force(힘), Mass(질량), Motion(운동)을 연결합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-07.jpg" alt="자동차에 작용하는 drive drag downforce와 kinetics 정의 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 7/63</span><span>Contents 1 01:21–01:47</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>Kinematics(운동학)와의 구분</h3><p>kinetics(운동역학)는 acting forces(작용하는 힘), body mass(물체 질량), resulting motion(결과 운동)의 관계를 연구합니다. 주어진 forces(힘)에서 motion(운동)을 예측하거나, 원하는 motion(운동)을 만들기 위한 required force(필요한 힘)를 구합니다. 이 Lecture 2에서는 이러한 force calculation(힘 계산)보다 motion description(운동 기술)에 집중합니다.</p><div class="evidence"><span>슬라이드 07</span><span>Contents 1 01:21–01:47</span></div></div></div>
+        </section>
+
+        <section class="source-section" id="slide-08" aria-labelledby="slide-08-title">
+          <p class="section-kicker">Source slide 08 · Motion types</p>
+          <h2 class="section-title" id="slide-08-title">Rectilinear(직선)과 Curvilinear(곡선) Motion(운동)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-08.jpg" alt="직선으로 움직이는 차량과 곡선 경로 차량을 비교한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 8/63</span><span>Contents 1 01:47–02:51</span></figcaption></figure>
+          <div class="note-stack"><table class="compare-table"><thead><tr><th>구분</th><th>경로</th><th>필요 좌표</th></tr></thead><tbody><tr><td>rectilinear motion(직선운동)</td><td>하나의 straight line(직선)</td><td>하나의 signed coordinate(부호 있는 좌표)</td></tr><tr><td>curvilinear motion(곡선운동)</td><td>2D 또는 3D의 curved path(곡선 경로)</td><td>여러 coordinate component(좌표 성분) 또는 path coordinate(경로 좌표)</td></tr></tbody></table><div class="callout"><h3>이번 렉처의 범위</h3><p>두 경우 모두 position(위치), velocity(속도), acceleration(가속도)을 다루지만, Lecture 2는 1D straight line(1차원 직선)에 제한합니다. curvilinear motion(곡선운동)은 Lecture 3에서 다룹니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-09" aria-labelledby="slide-09-title">
+          <p class="section-kicker">Source slide 09 · Coordinate</p>
+          <h2 class="section-title" id="slide-09-title">Position coordinate(위치좌표)는 원점과 방향으로 정의합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-09.jpg" alt="직선 위 원점 O와 입자 P의 양수 및 음수 위치좌표를 보여주는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 9/63</span><span>Contents 1 02:51–03:24</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>부호 규약</h3><p>position coordinate(위치좌표) <em>x</em>는 fixed origin(고정 원점) <em>O</em>에서 particle(입자) <em>P</em>까지 positive direction(양의 방향)을 기준으로 잰 signed distance(부호 있는 거리)입니다. 원점을 바꾸면 <em>x</em> 값은 바뀌지만 실제 particle motion(입자 운동)은 바뀌지 않습니다. 계산 전체에서 같은 origin(원점)과 positive direction(양의 방향)을 유지해야 합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-10" aria-labelledby="slide-10-title">
+          <p class="section-kicker">Source slide 10 · Position function</p>
+          <h2 class="section-title" id="slide-10-title">Motion(운동)은 Position function(위치함수)으로 완전히 기술할 수 있습니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-10.jpg" alt="x=6t squared minus t cubed 위치함수와 위치 시간 그래프 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 10/63</span><span>Contents 1 03:24–03:49</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>함수와 그래프는 같은 정보입니다.</h3><p>모든 time(시간) 값에 대한 position coordinate(위치좌표) <em>x(t)</em>를 알면 particle motion(입자 운동)을 안다고 할 수 있습니다. 예제 <em>x = 6t² - t³</em>은 equation(식)으로도, <em>x-t</em> graph(위치-시간 그래프)로도 표현할 수 있습니다. 식은 정확한 계산에, 그래프는 방향 전환과 극값을 직관적으로 읽는 데 유리합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-11" aria-labelledby="slide-11-title">
+          <p class="section-kicker">Source slide 11 · Velocity definition</p>
+          <h2 class="section-title" id="slide-11-title">Average velocity(평균속도)에서 Instantaneous velocity(순간속도)로</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-11.jpg" alt="입자 P의 Delta x 이동과 평균속도 및 순간속도 정의 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 11/63</span><span>Contents 1 03:41–04:16</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Average velocity(평균속도)</h3><p>유한한 time interval(시간구간) <em>Δt</em> 동안 displacement(변위) <em>Δx</em>를 나눈 값입니다.</p><span class="formula">v<sub>avg</sub> = Δx/Δt</span></div><div class="card"><h3>Instantaneous velocity(순간속도)</h3><p><em>Δt</em>를 zero(0)에 가깝게 보낸 limit(극한)이며, 특정 순간의 position change rate(위치 변화율)입니다.</p><span class="formula">v = lim<sub>Δt→0</sub> Δx/Δt = dx/dt</span></div></div><div class="warning"><strong>Speed(속력) 구분:</strong> velocity(속도)는 positive 또는 negative(양 또는 음)가 될 수 있는 signed quantity(부호 있는 양)이고, speed(속력)는 그 magnitude(크기)인 <em>|v|</em>입니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-12" aria-labelledby="slide-12-title">
+          <p class="section-kicker">Source slide 12 · Differentiate position</p>
+          <h2 class="section-title" id="slide-12-title">Position(위치)을 미분하면 Velocity(속도)가 됩니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-12.jpg" alt="x=6t squared minus t cubed를 미분해 v=12t minus 3t squared를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 12/63</span><span>Contents 1 03:49–04:16</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>예제 미분</h3><p><em>x(t) = 6t² - t³</em>이면 derivative(도함수)는 <em>v(t) = dx/dt = 12t - 3t²</em>입니다. <em>x-t</em> curve(위치-시간 곡선)의 tangent slope(접선 기울기)가 바로 <em>v</em>이므로, 그래프가 올라가면 <em>v &gt; 0</em>, 내려가면 <em>v &lt; 0</em>입니다.</p><span class="formula">x = 6t² - t³ &nbsp;→&nbsp; v = 12t - 3t²</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-13" aria-labelledby="slide-13-title">
+          <p class="section-kicker">Source slide 13 · Acceleration definition</p>
+          <h2 class="section-title" id="slide-13-title">Acceleration(가속도)는 Velocity(속도)의 순간 변화율입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-13.jpg" alt="속도 변화 Delta v와 순간가속도 정의 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 13/63</span><span>Contents 1 04:16–04:44</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>정의</h3><p>particle(입자)의 velocity(속도)가 <em>Δt</em> 동안 <em>Δv</em>만큼 변하면 average acceleration(평균가속도)은 <em>Δv/Δt</em>입니다. 그 time interval(시간구간)을 zero(0)으로 보내면 instantaneous acceleration(순간가속도) <em>a = dv/dt</em>를 얻습니다.</p><span class="formula">a = lim<sub>Δt→0</sub> Δv/Δt = dv/dt</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-14" aria-labelledby="slide-14-title">
+          <p class="section-kicker">Source slide 14 · Sign interpretation</p>
+          <h2 class="section-title" id="slide-14-title">Acceleration(가속도)의 부호와 Speed change(속력 변화)는 다릅니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-14.jpg" alt="양수와 음수 속도에서 양수와 음수 가속도를 비교한 네 경우 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 14/63</span><span>Contents 1 04:25–04:44</span></figcaption></figure>
+          <div class="note-stack"><table class="compare-table"><thead><tr><th>Velocity(속도)</th><th>Acceleration(가속도)</th><th>Speed(속력)</th></tr></thead><tbody><tr><td><em>v &gt; 0</em></td><td><em>a &gt; 0</em></td><td>증가</td></tr><tr><td><em>v &lt; 0</em></td><td><em>a &gt; 0</em></td><td>감소</td></tr><tr><td><em>v &gt; 0</em></td><td><em>a &lt; 0</em></td><td>감소</td></tr><tr><td><em>v &lt; 0</em></td><td><em>a &lt; 0</em></td><td>증가</td></tr></tbody></table><div class="warning"><strong>핵심:</strong> positive acceleration(양의 가속도)는 “오른쪽으로 속도가 변한다”는 뜻이지 언제나 speeding up(빨라진다)는 뜻이 아닙니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-15" aria-labelledby="slide-15-title">
+          <p class="section-kicker">Source slide 15 · Differentiate velocity</p>
+          <h2 class="section-title" id="slide-15-title">Velocity(속도)를 미분하면 Acceleration(가속도)가 됩니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-15.jpg" alt="v=12t minus 3t squared를 미분해 a=12 minus 6t를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 15/63</span><span>Contents 1 04:34–04:51</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>예제 미분</h3><p><em>v(t) = 12t - 3t²</em>를 미분하면 <em>a(t) = 12 - 6t</em>입니다. 같은 결과를 position(위치)에서 바로 두 번 미분하여 <em>a = d²x/dt²</em>로 구할 수도 있습니다.</p><span class="formula">a = dv/dt = d²x/dt² = 12 - 6t</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-16" aria-labelledby="slide-16-title">
+          <p class="section-kicker">Source slide 16 · Example at t = 2 s</p>
+          <h2 class="section-title" id="slide-16-title"><em>t = 2 s</em>에서 Velocity(속도)가 최대입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-16.jpg" alt="t=2초에서 x=16m v=12m/s a=0을 계산한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 16/63</span><span>Contents 1 04:51–05:24</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>대입과 해석</h3><p><em>x = 6t² - t³</em>, <em>v = 12t - 3t²</em>, <em>a = 12 - 6t</em>에 <em>t = 2 s</em>를 대입하면 <em>x = 16 m</em>, <em>v = 12 m/s</em>, <em>a = 0</em>입니다. acceleration(가속도)이 positive(양)에서 negative(음)로 바뀌므로 이 순간 velocity(속도)는 local maximum(국소 최댓값)입니다.</p><span class="formula">t = 2 s: x = 16 m, v = 12 m/s, a = 0</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-17" aria-labelledby="slide-17-title">
+          <p class="section-kicker">Source slide 17 · Example at t = 4 s</p>
+          <h2 class="section-title" id="slide-17-title"><em>t = 4 s</em>에서 Position(위치)가 최대입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-17.jpg" alt="t=4초에서 x=32m v=0 a=-12m/s2를 계산한 그래프 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 17/63</span><span>Contents 1 05:24</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>정지와 가속도는 동시에 존재할 수 있습니다.</h3><p><em>t = 4 s</em>에서 <em>x = 32 m</em>, <em>v = 0</em>, <em>a = -12 m/s²</em>입니다. velocity(속도)가 zero(0)이므로 particle(입자)은 순간적으로 정지하지만 acceleration(가속도)은 negative(음)이므로 곧 negative direction(음의 방향)으로 움직이기 시작합니다. <em>v = 0</em>이 <em>a = 0</em>을 뜻하지 않습니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-18" aria-labelledby="slide-18-title">
+          <p class="section-kicker">Source slide 18 · Acceleration forms</p>
+          <h2 class="section-title" id="slide-18-title">Acceleration(가속도)은 Time, Position, Velocity(시간·위치·속도)의 함수가 될 수 있습니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-18.jpg" alt="a=f(t), a=f(x), a=f(v)의 세 운동 유형을 제시한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 18/63</span><span>Contents 1 05:33–05:55</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>식 선택의 출발점</h3><p>kinetics(운동역학)에서 force law(힘 법칙)를 얻으면 acceleration(가속도)이 <em>a(t)</em>, <em>a(x)</em>, <em>a(v)</em> 중 한 형태로 주어질 수 있습니다. 같은 <em>a</em>라도 어떤 변수의 함수인지에 따라 separation of variables(변수분리) 방식과 적분 변수가 달라집니다. 문제를 보자마자 constant-acceleration equation(등가속도 식)을 쓰지 말고 먼저 함수 형태를 분류해야 합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-19" aria-labelledby="slide-19-title">
+          <p class="section-kicker">Source slide 19 · Physical examples</p>
+          <h2 class="section-title" id="slide-19-title">Spring(스프링)과 Drag(항력)가 함수 형태를 보여줍니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-19.jpg" alt="가속도가 위치 함수인 spring과 속도 함수인 drag를 제시한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 19/63</span><span>Contents 1 05:55–07:20</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Spring(스프링): <em>a = a(x)</em></h3><p>linear spring force(선형 스프링 힘)는 displacement(변위)에 비례하므로 <em>F = -kx</em>이고, mass(질량)가 일정하면 acceleration(가속도)도 position(위치)의 함수가 됩니다.</p></div><div class="card"><h3>Drag(항력): <em>a = a(v)</em></h3><p>fluid resistance(유체 저항)는 모델에 따라 velocity(속도) 또는 velocity squared(속도의 제곱)에 비례합니다. 따라서 acceleration(가속도)을 velocity(속도)의 함수로 놓고 적분합니다.</p></div></div><div class="warning"><strong>범위 주의:</strong> 이 슬라이드는 함수 형태의 물리 예를 제시합니다. 정확한 spring/drag model(스프링·항력 모델)의 적용 조건은 이후 kinetics(운동역학)에서 다룹니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-20" aria-labelledby="slide-20-title">
+          <p class="section-kicker">Source slide 20 · Integration map</p>
+          <h2 class="section-title" id="slide-20-title">Acceleration function(가속도 함수)에 맞는 적분 관계식</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-20.jpg" alt="가속도가 시간 위치 속도의 함수일 때 운동학 관계와 적분식을 정리한 표 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 20/63</span><span>Contents 1 07:20–11:27</span></figcaption></figure>
+          <div class="note-stack"><table class="compare-table"><thead><tr><th>Acceleration(가속도)</th><th>핵심 변환</th><th>직접 구할 수 있는 관계</th></tr></thead><tbody><tr><td><em>a = a(t)</em></td><td><em>dv = a(t)dt</em></td><td><em>v(t)</em></td></tr><tr><td><em>a = a(x)</em></td><td><em>a = dv/dt = v dv/dx</em></td><td><em>v(x)</em></td></tr><tr><td><em>a = a(v)</em></td><td><em>dt = dv/a(v)</em></td><td><em>t(v)</em> 또는 역으로 <em>v(t)</em></td></tr><tr><td><em>a = a(v)</em></td><td><em>dx = v dv/a(v)</em></td><td><em>x(v)</em> 또는 역으로 <em>v(x)</em></td></tr></tbody></table><div class="exam-card"><h3>시험에서 먼저 묻는 질문</h3><p>“무엇이 주어졌는가?”뿐 아니라 “무엇을 구하라고 했는가?”를 함께 보아야 합니다. 예를 들어 <em>a(v)</em>가 주어져도 <em>v(t)</em>를 요구하면 <em>dv/dt</em> 형태를, <em>v(x)</em>를 요구하면 <em>v dv/dx</em> 형태를 선택합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-21" aria-labelledby="slide-21-title">
+          <p class="section-kicker">Source slide 21 · Uniform motion example</p>
+          <h2 class="section-title" id="slide-21-title">Uniform rectilinear motion(등속 직선운동)의 물리적 예</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-21.jpg" alt="Harrier 전투기가 일정한 속도로 수직 하강하는 등속운동 사례 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 21/63</span><span>Contents 1 11:34–12:08</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>Net force(알짜힘)와 Velocity(속도)를 구분하십시오.</h3><p>Harrier aircraft(해리어 항공기)가 vertical thrust(수직 추력)를 weight(중량)와 같게 맞추면 vertical net force(수직 알짜힘)가 zero(0)가 되어 <em>a = 0</em>입니다. 이미 downward velocity(하향 속도)를 가지고 있다면 멈추는 것이 아니라 그 velocity(속도)를 일정하게 유지합니다. <em>a = 0</em>은 <em>v = 0</em>이 아니라 <em>v = constant(일정)</em>을 뜻합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-22" aria-labelledby="slide-22-title">
+          <p class="section-kicker">Source slide 22 · Uniform equations</p>
+          <h2 class="section-title" id="slide-22-title">Uniform rectilinear motion(등속 직선운동)의 식</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-22.jpg" alt="등속 직선운동에서 a=0 v=constant x=x0+vt를 유도하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 22/63</span><span>Contents 1 12:00–12:08</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>올바른 signed-coordinate form(부호 좌표식)</h3><p><em>v</em>를 positive 또는 negative(양 또는 음)의 signed velocity(부호 있는 속도)로 사용하면 일반식은 <em>x = x<sub>0</sub> + vt</em>입니다. negative direction(음의 방향) 운동은 <em>v &lt; 0</em>으로 표현되므로 별도의 minus sign(음의 부호)을 붙이지 않습니다.</p><span class="formula">a = 0, v = constant, x = x<sub>0</sub> + vt</span></div><div class="warning"><strong>원본 표기 교정:</strong> 슬라이드에는 <em>x = x<sub>0</sub> - vt</em>와 <em>x = x<sub>0</sub> + vt</em>가 함께 보입니다. 적분 결과와 signed velocity(부호 있는 속도) 정의에 맞는 일반식은 <em>x = x<sub>0</sub> + vt</em>입니다. 감산형은 <em>v</em>를 양의 speed magnitude(속력 크기)로 두고 음의 방향 운동을 별도로 표시할 때만 사용할 수 있습니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-23" aria-labelledby="slide-23-title">
+          <p class="section-kicker">Source slide 23 · Constant acceleration</p>
+          <h2 class="section-title" id="slide-23-title">Uniformly accelerated rectilinear motion(등가속도 직선운동)의 세 식</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-23.jpg" alt="등가속도 직선운동의 v, x, v squared 관계식을 유도한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 23/63</span><span>Contents 1 12:08–12:22</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-3"><div class="card"><h3>Velocity-time(속도-시간)</h3><span class="formula">v = v<sub>0</sub> + at</span></div><div class="card"><h3>Position-time(위치-시간)</h3><span class="formula">x = x<sub>0</sub> + v<sub>0</sub>t + 1/2 at²</span></div><div class="card"><h3>Velocity-position(속도-위치)</h3><span class="formula">v² = v<sub>0</sub>² + 2a(x - x<sub>0</sub>)</span></div></div><div class="warning"><strong>적용 조건:</strong> 세 식은 acceleration(가속도)이 constant(일정)할 때만 성립합니다. 슬라이드 하단의 “uniform rectilinear motion” 문구는 제목·본문과 맞지 않으며, 정확한 조건은 <strong>uniformly accelerated rectilinear motion(등가속도 직선운동)</strong>입니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-24" aria-labelledby="slide-24-title">
+          <p class="section-kicker">Source slide 24 · Divider</p>
+          <h2 class="section-title" id="slide-24-title">Lecture 2-3 구분 슬라이드</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-24.jpg" alt="Lecture 2-3 구분 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 24/63</span><span>Section divider(구분 슬라이드)</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>이후 내용</h3><p>한 particle(입자)의 운동에서 여러 particle(입자)의 relative motion(상대운동), dependent motion(종속운동), graphical solution(그래프 해석)으로 확장합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-25" aria-labelledby="slide-25-title">
+          <p class="section-kicker">Source slide 25 · Several particles</p>
+          <h2 class="section-title" id="slide-25-title">Motion of several particles(여러 입자의 운동)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-25.jpg" alt="계주 주자와 연결된 도르래 블록으로 여러 입자의 운동을 소개하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 25/63</span><span>Contents 2 00:19–00:36</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Independent motion(독립운동)</h3><p>각 particle(입자)의 position(위치)을 서로 별개의 함수로 기술할 수 있습니다. 서로를 비교하려면 relative coordinate(상대좌표)를 새로 정의합니다.</p></div><div class="card"><h3>Linked motion(연결운동)</h3><p>cable(케이블), pulley(도르래), rigid link(강체 링크) 때문에 한 particle(입자)의 position(위치)이 다른 particle(입자)의 position(위치)에 의존합니다. 이때 constraint equation(구속방정식)이 필요합니다.</p></div></div></div>
+        </section>
+
+        <section class="source-section" id="slide-26" aria-labelledby="slide-26-title">
+          <p class="section-kicker">Source slide 26 · Relative position</p>
+          <h2 class="section-title" id="slide-26-title">Relative position(상대위치)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-26.jpg" alt="같은 직선 위 A와 B의 절대위치와 B의 A에 대한 상대위치를 표시한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 26/63</span><span>Contents 2 00:36–00:52</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>정의</h3><p>같은 origin(원점)과 positive direction(양의 방향)에서 측정한 absolute positions(절대위치) <em>x<sub>A</sub></em>, <em>x<sub>B</sub></em>가 있으면 B의 A에 대한 relative position(상대위치)은 <em>x<sub>B/A</sub> = x<sub>B</sub> - x<sub>A</sub></em>입니다. 따라서 <em>x<sub>B</sub> = x<sub>A</sub> + x<sub>B/A</sub></em>입니다.</p><span class="formula">x<sub>B/A</sub> = x<sub>B</sub> - x<sub>A</sub></span></div><div class="warning"><strong>기준 통일:</strong> 두 particle(입자)의 time(시간)은 같은 starting instant(시작 순간)부터 기록하고, displacement(변위)는 같은 origin(원점)과 같은 direction(방향)에서 측정해야 단순 차가 의미를 가집니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-27" aria-labelledby="slide-27-title">
+          <p class="section-kicker">Source slide 27 · Relative velocity</p>
+          <h2 class="section-title" id="slide-27-title">Relative velocity(상대속도)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-27.jpg" alt="B의 A에 대한 상대속도 식을 제시한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 27/63</span><span>Contents 2 00:52–01:00</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>상대위치 식을 한 번 미분합니다.</h3><p><em>x<sub>B/A</sub> = x<sub>B</sub> - x<sub>A</sub></em>를 time(시간)으로 미분하면 <em>v<sub>B/A</sub> = v<sub>B</sub> - v<sub>A</sub></em>입니다. <em>v<sub>B/A</sub> &lt; 0</em>이면 B가 A에 대해 negative direction(음의 방향)으로 움직인다는 뜻입니다.</p><span class="formula">v<sub>B/A</sub> = v<sub>B</sub> - v<sub>A</sub></span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-28" aria-labelledby="slide-28-title">
+          <p class="section-kicker">Source slide 28 · Relative acceleration</p>
+          <h2 class="section-title" id="slide-28-title">Relative acceleration(상대가속도)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-28.jpg" alt="B의 A에 대한 상대가속도 식을 제시한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 28/63</span><span>Contents 2 01:00–01:08</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>상대속도 식을 다시 미분합니다.</h3><p><em>v<sub>B/A</sub> = v<sub>B</sub> - v<sub>A</sub></em>를 time(시간)으로 미분하면 <em>a<sub>B/A</sub> = a<sub>B</sub> - a<sub>A</sub></em>입니다. A와 B가 같은 acceleration(가속도)을 가지면 relative acceleration(상대가속도)은 zero(0)입니다.</p><span class="formula">a<sub>B/A</sub> = a<sub>B</sub> - a<sub>A</sub></span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-29" aria-labelledby="slide-29-title">
+          <p class="section-kicker">Source slide 29 · Dependent motion</p>
+          <h2 class="section-title" id="slide-29-title">Fixed cable length(고정 케이블 길이)이 두 블록을 연결합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-29.jpg" alt="한 고정 도르래와 한 이동 도르래에서 xA+2xB가 일정한 두 블록 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 29/63</span><span>Contents 2 01:08–03:19</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>가변 길이만 세십시오.</h3><p>cable(케이블)의 전체 length(길이)는 constant(일정)입니다. pulley circumference(도르래 둘레)와 고정 offset(오프셋)은 미분하면 zero(0)가 되므로, 움직이는 segment length(구간 길이)만 좌표로 적으면 됩니다. 블록 A의 이동은 cable segment(케이블 구간) 하나를, 이동 도르래 B의 이동은 두 구간을 바꾸므로 <em>x<sub>A</sub> + 2x<sub>B</sub> = C</em>입니다.</p><span class="formula">x<sub>A</sub> + 2x<sub>B</sub> = constant</span></div><div class="card"><h3>One degree of freedom(1자유도)</h3><p>두 coordinates(좌표) 사이에 independent constraint(독립 구속식) 하나가 있으므로 둘 중 하나만 정하면 다른 하나가 결정됩니다. 따라서 degree of freedom(자유도)은 1입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-30" aria-labelledby="slide-30-title">
+          <p class="section-kicker">Source slide 30 · Three-block constraint</p>
+          <h2 class="section-title" id="slide-30-title">세 블록의 Dependent motion(종속운동)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-30.jpg" alt="세 블록 도르래계에서 2xA+2xB+xC가 일정한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 30/63</span><span>Contents 2 03:19–04:29</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>각 좌표가 바꾸는 cable segment(케이블 구간) 수가 계수입니다.</h3><p>이 pulley system(도르래계)에서는 A와 B가 움직일 때 각각 두 cable segment(케이블 구간)의 길이가 변하고, C가 움직일 때 한 구간이 변합니다. 따라서 <em>2x<sub>A</sub> + 2x<sub>B</sub> + x<sub>C</sub> = C</em>입니다.</p><span class="formula">2x<sub>A</sub> + 2x<sub>B</sub> + x<sub>C</sub> = constant</span></div><div class="card"><h3>Two degrees of freedom(2자유도)</h3><p>세 coordinates(좌표)와 한 independent constraint(독립 구속식)이 있으므로 <em>3 - 1 = 2</em> degrees of freedom(자유도)입니다. 두 좌표의 motion(운동)을 알아야 나머지 하나를 정할 수 있습니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-31" aria-labelledby="slide-31-title">
+          <p class="section-kicker">Source slide 31 · Differentiate constraint</p>
+          <h2 class="section-title" id="slide-31-title">Position constraint(위치 구속식)을 미분하면 속도·가속도 구속식이 됩니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-31.jpg" alt="세 블록 위치식을 미분해 속도와 가속도 관계를 얻는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 31/63</span><span>Contents 2 04:29–04:37</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-3"><div class="card"><h3>Position(위치)</h3><span class="formula">2x<sub>A</sub> + 2x<sub>B</sub> + x<sub>C</sub> = C</span></div><div class="card"><h3>Velocity(속도)</h3><span class="formula">2v<sub>A</sub> + 2v<sub>B</sub> + v<sub>C</sub> = 0</span></div><div class="card"><h3>Acceleration(가속도)</h3><span class="formula">2a<sub>A</sub> + 2a<sub>B</sub> + a<sub>C</sub> = 0</span></div></div><div class="warning"><strong>부호는 좌표계에서 나옵니다.</strong> “위로 움직인다”를 말로만 처리하지 말고, 각 coordinate arrow(좌표 화살표)에 대한 signed velocity(부호 있는 속도)로 대입해야 합니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-32" aria-labelledby="slide-32-title">
+          <p class="section-kicker">Source slide 32 · Measured data</p>
+          <h2 class="section-title" id="slide-32-title">Graphical solution(그래프 해석)은 센서 데이터에 필요합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-32.jpg" alt="복싱 머리 충격의 가속도 센서 데이터 그래프 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 32/63</span><span>Contents 2 04:46–05:13</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>실제 데이터는 깔끔한 함수가 아닐 수 있습니다.</h3><p>engineering measurement(공학 측정)에서는 position(위치), velocity(속도), acceleration(가속도)이 닫힌형식 equation(방정식)이 아니라 sampled data(표본 데이터)와 graph(그래프)로 주어지는 경우가 많습니다. 이때 slope(기울기)와 area(면적)를 이용하여 세 물리량을 연결합니다.</p><div class="evidence"><span>슬라이드 32</span><span>Contents 2 04:46–05:13</span></div></div></div>
+        </section>
+
+        <section class="source-section" id="slide-33" aria-labelledby="slide-33-title">
+          <p class="section-kicker">Source slide 33 · Slopes</p>
+          <h2 class="section-title" id="slide-33-title">Graph slope(그래프 기울기)는 미분입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-33.jpg" alt="x-t 그래프 기울기가 v이고 v-t 그래프 기울기가 a인 관계 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 33/63</span><span>Contents 2 05:13–05:28</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3><em>x-t</em> curve(위치-시간 곡선)</h3><p>한 순간의 tangent slope(접선 기울기)가 instantaneous velocity(순간속도)입니다.</p><span class="formula">slope of x-t = dx/dt = v</span></div><div class="card"><h3><em>v-t</em> curve(속도-시간 곡선)</h3><p>한 순간의 tangent slope(접선 기울기)가 instantaneous acceleration(순간가속도)입니다.</p><span class="formula">slope of v-t = dv/dt = a</span></div></div></div>
+        </section>
+
+        <section class="source-section" id="slide-34" aria-labelledby="slide-34-title">
+          <p class="section-kicker">Source slide 34 · Areas</p>
+          <h2 class="section-title" id="slide-34-title">Graph area(그래프 면적)는 적분입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-34.jpg" alt="a-t 면적으로 속도 변화, v-t 면적으로 위치 변화를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 34/63</span><span>Contents 2 05:28–05:53</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3><em>a-t</em> area(가속도-시간 면적)</h3><p><em>t<sub>1</sub></em>에서 <em>t<sub>2</sub></em>까지의 signed area(부호 있는 면적)는 change in velocity(속도 변화)입니다.</p><span class="formula">v<sub>2</sub> - v<sub>1</sub> = ∫a dt</span></div><div class="card"><h3><em>v-t</em> area(속도-시간 면적)</h3><p>같은 구간의 signed area(부호 있는 면적)는 displacement(변위)입니다.</p><span class="formula">x<sub>2</sub> - x<sub>1</sub> = ∫v dt</span></div></div><div class="warning"><strong>Distance(이동거리)와 구분:</strong> velocity(속도)가 negative(음)인 구간의 면적은 displacement(변위)에서 빼지만, total distance(총 이동거리)를 구할 때는 <em>∫|v|dt</em>처럼 절댓값을 사용해야 합니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-35" aria-labelledby="slide-35-title">
+          <p class="section-kicker">Source slide 35 · Divider</p>
+          <h2 class="section-title" id="slide-35-title">원본 “Week 2-4” 구분 슬라이드</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-35.jpg" alt="Week 2-4라고 표기된 구분 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 35/63</span><span>원본 내부 구분 표기</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>표기 해석</h3><p>이 페이지에는 원문 그대로 “Week 2-4”가 표시되어 있습니다. 현재 강의 인덱스의 Lecture 2 날짜는 Week 01의 2026-09-02이며, 이 내부 표기를 별도 일정으로 재해석하지 않습니다. 이후부터 Problem Solving(문제풀이) 구간이 시작됩니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-36" aria-labelledby="slide-36-title">
+          <p class="section-kicker">Source slide 36 · Sample Problem 1</p>
+          <h2 class="section-title" id="slide-36-title">수직으로 던진 공: 문제와 좌표계</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-36.jpg" alt="지상 20m 창문에서 10m/s로 위로 던진 공의 문제 설정 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 36/63</span><span>Problem Solving 00:18–00:49</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>주어진 값</h3><p>upward positive(위쪽 양의 방향)로 두면 initial position(초기위치)은 <em>y<sub>0</sub> = +20 m</em>, initial velocity(초기속도)는 <em>v<sub>0</sub> = +10 m/s</em>, gravitational acceleration(중력가속도)은 <em>a = -9.81 m/s²</em>입니다. 구할 것은 임의 time(시간)의 velocity/elevation(속도/높이), maximum elevation(최고높이)과 시각, ground impact time(지면 충돌 시각)과 velocity(속도)입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-37" aria-labelledby="slide-37-title">
+          <p class="section-kicker">Source slide 37 · Strategy</p>
+          <h2 class="section-title" id="slide-37-title">Constant acceleration(등가속도)과 사건 조건을 사용합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-37.jpg" alt="공 문제에서 두 번 적분하고 최고점과 지면 조건을 적용하는 전략 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 37/63</span><span>Problem Solving 00:49–01:22</span></figcaption></figure>
+          <div class="note-stack"><ol class="plain-list"><li><em>a = -9.81 m/s²</em>가 constant(일정)이므로 한 번 적분해 <em>v(t)</em>, 다시 적분해 <em>y(t)</em>를 구합니다.</li><li>maximum elevation(최고점)에서는 vertical velocity(수직속도)가 <em>v = 0</em>입니다.</li><li>ground impact(지면 충돌)에서는 elevation(높이)이 <em>y = 0</em>입니다.</li><li>각 event time(사건 시각)을 해당 식에 대입하고, 분석 구간 밖의 root(근)는 제외합니다.</li></ol></div>
+        </section>
+
+        <section class="source-section" id="slide-38" aria-labelledby="slide-38-title">
+          <p class="section-kicker">Source slide 38 · Integrate acceleration</p>
+          <h2 class="section-title" id="slide-38-title">첫 적분: Velocity-time equation(속도-시간식)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-38.jpg" alt="중력가속도를 적분해 v(t)=10-9.81t를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 38/63</span><span>Problem Solving 01:22–01:39</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>초기속도를 포함한 적분</h3><p><em>dv/dt = -9.81</em>을 <em>v<sub>0</sub> = 10 m/s</em>에서 현재 <em>v(t)</em>까지 적분하면 <em>v(t) - 10 = -9.81t</em>입니다. velocity-time graph(속도-시간 그래프)는 slope(기울기)가 <em>-9.81 m/s²</em>인 직선입니다.</p><span class="formula">v(t) = 10 - 9.81t &nbsp;(m/s)</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-39" aria-labelledby="slide-39-title">
+          <p class="section-kicker">Source slide 39 · Integrate velocity</p>
+          <h2 class="section-title" id="slide-39-title">두 번째 적분: Position-time equation(위치-시간식)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-39.jpg" alt="v(t)를 적분해 y(t)=20+10t-4.905t squared를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 39/63</span><span>Problem Solving 01:31–01:46</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>초기높이를 포함한 적분</h3><p><em>dy/dt = v(t) = 10 - 9.81t</em>를 <em>y<sub>0</sub> = 20 m</em>에서 적분하면 아래 quadratic function(이차함수)을 얻습니다. 아래로 열린 parabola(포물선)이므로 한 번 최고점에 도달한 뒤 지면으로 내려옵니다.</p><span class="formula">y(t) = 20 + 10t - 4.905t² &nbsp;(m)</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-40" aria-labelledby="slide-40-title">
+          <p class="section-kicker">Source slide 40 · Maximum-height time</p>
+          <h2 class="section-title" id="slide-40-title">최고점에서는 Vertical velocity(수직속도)가 Zero(0)입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-40.jpg" alt="v(t)=0을 풀어 최고점 시각 1.019초를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 40/63</span><span>Problem Solving 01:46–01:55</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>Event condition(사건 조건)</h3><p><em>10 - 9.81t = 0</em>을 풀면 <em>t = 1.019 s</em>입니다. 이 순간은 motion direction(운동 방향)이 upward(위쪽)에서 downward(아래쪽)로 바뀌는 turning point(전환점)입니다.</p><span class="formula">v = 0 → t<sub>max</sub> = 1.019 s</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-41" aria-labelledby="slide-41-title">
+          <p class="section-kicker">Source slide 41 · Maximum height</p>
+          <h2 class="section-title" id="slide-41-title">최고점 시각을 Position equation(위치식)에 대입합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-41.jpg" alt="t=1.019초를 위치식에 대입해 최고높이 25.1m를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 41/63</span><span>Problem Solving 01:55–02:03</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>정확한 대입</h3><p><em>y(1.019) = 20 + 10(1.019) - 4.905(1.019)² = 25.1 m</em>입니다. initial height(초기높이) 20 m에서 약 5.1 m 더 상승했습니다.</p><span class="formula">y<sub>max</sub> = 25.1 m</span></div><div class="warning"><strong>원본 표기 교정:</strong> 슬라이드 우측 첫 줄에는 <em>y(t) = 20 - 10t - 4.905t²</em>처럼 보이는 minus sign(음의 부호)이 있으나, 바로 아래 대입식·이전 슬라이드·그래프와 충돌합니다. upward positive(위쪽 양의 방향)와 <em>v<sub>0</sub> = +10 m/s</em>에 맞는 식은 <em>y(t) = 20 + 10t - 4.905t²</em>입니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-42" aria-labelledby="slide-42-title">
+          <p class="section-kicker">Source slide 42 · Impact time</p>
+          <h2 class="section-title" id="slide-42-title">Ground impact(지면 충돌) 조건은 <em>y = 0</em>입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-42.jpg" alt="y(t)=0의 두 근 중 양의 3.28초를 충돌 시각으로 선택하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 42/63</span><span>Problem Solving 02:03–02:28</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>두 root(근)의 물리적 해석</h3><p><em>20 + 10t - 4.905t² = 0</em>의 해는 <em>t = -1.243 s</em>와 <em>t = 3.28 s</em>입니다. motion(운동)을 <em>t = 0</em>의 투척 순간부터 분석하므로 negative time(음의 시간)은 이 문제의 physical interval(물리적 구간) 밖입니다. 따라서 impact time(충돌 시각)은 <em>3.28 s</em>입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-43" aria-labelledby="slide-43-title">
+          <p class="section-kicker">Source slide 43 · Impact velocity</p>
+          <h2 class="section-title" id="slide-43-title">충돌 시 Velocity(속도)는 아래쪽을 향합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-43.jpg" alt="t=3.28초를 속도식에 대입해 -22.2m/s를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 43/63</span><span>Problem Solving 02:28–02:43</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>부호까지 답입니다.</h3><p><em>v(3.28) = 10 - 9.81(3.28) = -22.2 m/s</em>입니다. negative sign(음의 부호)은 처음 정한 upward positive(위쪽 양의 방향)의 반대, 즉 downward(아래쪽)임을 뜻합니다. speed(속력)는 <em>22.2 m/s</em>입니다.</p><span class="formula">v<sub>impact</sub> = -22.2 m/s = 22.2 m/s downward</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-44" aria-labelledby="slide-44-title">
+          <p class="section-kicker">Source slide 44 · Reflection</p>
+          <h2 class="section-title" id="slide-44-title">Constant acceleration(등가속도)이 그래프 모양을 결정합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-44.jpg" alt="등가속도에서 속도는 선형 위치는 시간의 이차함수라는 정리 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 44/63</span><span>Problem Solving 02:43–02:58</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>결과 패턴</h3><p>acceleration(가속도)이 constant(일정)이면 velocity(속도)는 time(시간)의 linear function(일차함수), position(위치)은 time(시간)의 quadratic function(이차함수)입니다. 식을 다 풀기 전에도 graph shape(그래프 모양)를 예측할 수 있어 결과 검산에 유용합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-45" aria-labelledby="slide-45-title">
+          <p class="section-kicker">Source slide 45 · Sample Problem 2</p>
+          <h2 class="section-title" id="slide-45-title">Oil damper(오일 댐퍼): Acceleration(가속도)이 Velocity(속도)에 비례합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-45.jpg" alt="가속도가 속도에 비례하는 오일 댐퍼 문제 설정 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 45/63</span><span>Problem Solving 02:58–03:42</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Model(모델)과 구할 값</h3><p>piston(피스톤)이 움직이면 oil(오일)이 orifice(오리피스)를 통과하면서 운동 반대 방향의 damping force(감쇠력)를 만듭니다. 문제는 이를 <em>a = -kv</em>로 모델링합니다. <em>k &gt; 0</em>이며 minus sign(음의 부호)은 acceleration(가속도)이 velocity(속도)를 줄이는 방향임을 뜻합니다. initial condition(초기조건)은 <em>x(0)=0</em>, <em>v(0)=v<sub>0</sub></em>이고, <em>v(t)</em>, <em>x(t)</em>, <em>v(x)</em>를 구합니다.</p><span class="formula">a = -kv</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-46" aria-labelledby="slide-46-title">
+          <p class="section-kicker">Source slide 46 · Velocity as a function of time</p>
+          <h2 class="section-title" id="slide-46-title">변수분리로 Exponential decay(지수감쇠)를 얻습니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-46.jpg" alt="a=dv/dt와 a=-kv를 결합해 v=v0 exp minus kt를 유도하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 46/63</span><span>Problem Solving 03:42–04:37</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>Time form(시간형) 관계식</h3><p><em>a=dv/dt=-kv</em>에서 velocity(속도)와 time(시간)을 분리하면 <em>dv/v=-kdt</em>입니다. <em>v<sub>0</sub></em>에서 <em>v</em>까지, <em>0</em>에서 <em>t</em>까지 적분하면 <em>ln(v/v<sub>0</sub>)=-kt</em>이므로 아래 식을 얻습니다.</p><span class="formula">v(t) = v<sub>0</sub>e<sup>-kt</sup></span></div><div class="quiet-card"><h3>물리적 해석</h3><p><em>e<sup>-kt</sup></em>는 positive(양수)이므로 initial velocity(초기속도)가 positive(양)라면 이 ideal model(이상화 모델)에서 velocity(속도)는 방향을 바꾸지 않고 0에 점근적으로 가까워집니다. time constant(시간상수)는 <em>1/k</em>입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-47" aria-labelledby="slide-47-title">
+          <p class="section-kicker">Source slide 47 · Position as a function of time</p>
+          <h2 class="section-title" id="slide-47-title">Velocity(속도)를 적분하면 Position(위치)의 상한도 보입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-47.jpg" alt="지수 형태 속도를 적분해 x(t)를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 47/63</span><span>Problem Solving 04:37–04:53</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Initial position(초기위치) <em>x(0)=0</em></h3><p><em>dx/dt=v<sub>0</sub>e<sup>-kt</sup></em>를 적분하면 아래 식입니다. <em>t→∞</em>일 때 exponential term(지수항)은 0이므로 piston(피스톤)은 무한히 멀리 이동하지 않고 <em>v<sub>0</sub>/k</em>에 접근합니다.</p><span class="formula">x(t) = (v<sub>0</sub>/k)(1 - e<sup>-kt</sup>)</span><span class="formula">x(∞) = v<sub>0</sub>/k</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-48" aria-labelledby="slide-48-title">
+          <p class="section-kicker">Source slide 48 · Velocity as a function of position</p>
+          <h2 class="section-title" id="slide-48-title">Time(시간)을 없애려면 <em>a = v dv/dx</em>를 사용합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-48.jpg" alt="a=v dv over dx를 사용해 속도와 위치 관계를 유도하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 48/63</span><span>Problem Solving 04:53–05:26</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>Position form(위치형) 관계식</h3><p><em>v dv/dx=-kv</em>에서 운동 중 <em>v≠0</em>인 구간에 대해 <em>v</em>를 약분하면 <em>dv=-kdx</em>입니다. initial condition(초기조건)을 적용해 적분하면 velocity-position relation(속도-위치 관계)은 선형입니다.</p><span class="formula">v(x) = v<sub>0</sub> - kx</span></div><div class="warning"><strong>약분 조건:</strong> <em>v</em>로 나누는 과정은 <em>v≠0</em>인 구간에서 수행합니다. 최종식은 limit(극한)을 통해 정지 위치 <em>x=v<sub>0</sub>/k</em>까지 연속적으로 해석할 수 있습니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-49" aria-labelledby="slide-49-title">
+          <p class="section-kicker">Source slide 49 · Alternative method</p>
+          <h2 class="section-title" id="slide-49-title">Parameter elimination(매개변수 소거)로도 같은 식을 얻습니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-49.jpg" alt="v(t)와 x(t)에서 시간을 소거하는 대안 풀이 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 49/63</span><span>Problem Solving 05:35–05:59</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>두 방법의 선택</h3><p><em>v(t)=v<sub>0</sub>e<sup>-kt</sup></em>에서 <em>e<sup>-kt</sup>=v/v<sub>0</sub></em>를 구해 <em>x(t)</em>에 대입하면 time(시간)을 제거할 수 있습니다. 다만 다른 문제에서는 parameter elimination(매개변수 소거)이 복잡해질 수 있으므로, <em>a=v dv/dx</em>가 더 직접적이면 그 관계식을 먼저 쓰는 편이 안전합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-50" aria-labelledby="slide-50-title">
+          <p class="section-kicker">Source slide 50 · Consistency check</p>
+          <h2 class="section-title" id="slide-50-title">두 경로가 동일한 Velocity-position relation(속도-위치 관계)에 도달합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-50.jpg" alt="시간을 소거해 v=v0-kx를 확인하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 50/63</span><span>Problem Solving 05:35–05:59</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Algebraic check(대수 검산)</h3><p><em>x=(v<sub>0</sub>/k)(1-v/v<sub>0</sub>)</em>을 정리하면 <em>v=v<sub>0</sub>-kx</em>입니다. 서로 다른 두 풀이가 같은 결과를 주므로 integration constant(적분상수)와 sign(부호)이 일관됨을 확인할 수 있습니다.</p><span class="formula">x = (v<sub>0</sub>-v)/k ⇔ v = v<sub>0</sub>-kx</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-51" aria-labelledby="slide-51-title">
+          <p class="section-kicker">Source slide 51 · Group Problem</p>
+          <h2 class="section-title" id="slide-51-title">Car on a circular track(원형 트랙의 자동차): 주어진 <em>a(v)</em>를 어떻게 사용할 것인가?</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-51.jpg" alt="반지름 200m 원형 트랙을 달리는 자동차의 가속도와 속도를 묻는 그룹 문제 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 51/63</span><span>Problem Solving 06:06–06:21</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>원본 문제</h3><p>car(자동차)는 radius(반지름) 200 m인 track(트랙) 위를 달리며, tangential acceleration(접선가속도)이 <em>a = 3 - 0.001v²</em>로 주어집니다. rest(정지) 상태로 출발하여 track(트랙)을 절반 주행했을 때의 velocity(속도)와 가능한 maximum velocity(최대속도)를 묻습니다.</p></div><div class="warning"><strong>범위 구분:</strong> 경로 자체는 curved(곡선)이지만 이 문제에서 주어진 <em>a</em>는 path coordinate(경로좌표) 방향의 tangential acceleration(접선가속도)입니다. 따라서 경로를 따라 잰 distance(거리) <em>s</em>에 대해 <em>a<sub>t</sub>=v dv/ds</em>를 사용할 수 있습니다. normal acceleration(법선가속도)은 다음 curvilinear motion(곡선운동) 단원에서 별도로 다룹니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-52" aria-labelledby="slide-52-title">
+          <p class="section-kicker">Source slide 52 · Group Problem Strategy</p>
+          <h2 class="section-title" id="slide-52-title">Position form(위치형) 관계식과 주행 Arc length(호의 길이)를 결합합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-52.jpg" alt="자동차 그룹 문제의 풀이 전략 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 52/63</span><span>Problem Solving 06:06–06:21</span></figcaption></figure>
+          <div class="note-stack"><ol class="plain-list"><li>track(트랙)의 절반에 해당하는 path distance(경로거리)는 <em>s<sub>1/2</sub>=πR=200π m</em>입니다.</li><li><em>a(v)</em>가 주어지고 특정 position(위치)의 speed(속력)를 묻기 때문에 <em>a=v dv/ds</em>를 선택합니다.</li><li><em>v dv/ds=3-0.001v²</em>를 <em>s=0, v=0</em>에서 목표 위치까지 적분합니다.</li><li>maximum possible speed(가능한 최대속력)는 더 이상 속력이 증가하지 않는 equilibrium(평형) 조건 <em>a=0</em>에서 판단합니다.</li></ol><div class="callout"><h3>시험용 보강: 수치 결과</h3><p>적분하면 <em>s=-500 ln[(3-0.001v²)/3]</em>, 즉 <em>v²=3000(1-e<sup>-s/500</sup>)</em>입니다. <em>s=200π m</em>를 대입하면 절반 주행 후 speed(속력)는 약 <em>46.3 m/s</em>입니다. 또한 <em>3-0.001v²=0</em>에서 asymptotic maximum speed(점근 최대속력)는 <em>√3000≈54.8 m/s</em>입니다. 두 값은 원본 슬라이드의 문제와 전략을 수식으로 완결한 보강 풀이입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-53" aria-labelledby="slide-53-title">
+          <p class="section-kicker">Source slide 53 · Sample Problem 3</p>
+          <h2 class="section-title" id="slide-53-title">Pulley system(도르래계): Cable length(케이블 길이)가 운동을 연결합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-53.jpg" alt="칼라 A 이동과 도르래 D 속도가 주어진 블록 B의 운동 문제 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 53/63</span><span>Problem Solving 06:22–07:01</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>주어진 운동</h3><p>collar A(칼라 A)는 rest(정지)에서 constant acceleration(일정한 가속도)으로 아래쪽 200 mm를 이동한 순간 <em>v<sub>A</sub>=300 mm/s</em>입니다. movable pulley D(가동 도르래 D)는 constant velocity(일정한 속도) <em>v<sub>D</sub>=75 mm/s downward(아래쪽)</em>로 움직입니다. 같은 순간 block B(블록 B)의 position change(위치 변화), velocity(속도), acceleration(가속도)을 구합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-54" aria-labelledby="slide-54-title">
+          <p class="section-kicker">Source slide 54 · Strategy</p>
+          <h2 class="section-title" id="slide-54-title">각 Particle(입자)의 독립 운동을 구한 뒤 Constraint equation(구속식)으로 묶습니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-54.jpg" alt="좌표 정의와 등가속도 등속 운동 케이블 구속식의 풀이 전략 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 54/63</span><span>Problem Solving 07:01–07:59</span></figcaption></figure>
+          <div class="note-stack"><ol class="plain-list"><li>상단 fixed support(고정 지지점)를 기준으로 각 downward coordinate(아래쪽 좌표)를 정의합니다.</li><li>collar A(칼라 A)는 uniformly accelerated motion(등가속도 운동)으로 <em>a<sub>A</sub></em>와 elapsed time(경과시간)을 구합니다.</li><li>pulley D(도르래 D)는 uniform motion(등속운동)으로 같은 시간 동안의 displacement(변위)를 구합니다.</li><li>fixed cable length(고정 케이블 길이)를 coordinate equation(좌표식)으로 적고 한 번, 두 번 미분해 velocity/acceleration constraints(속도/가속도 구속식)를 만듭니다.</li></ol></div>
+        </section>
+
+        <section class="source-section" id="slide-55" aria-labelledby="slide-55-title">
+          <p class="section-kicker">Source slide 55 · Coordinates</p>
+          <h2 class="section-title" id="slide-55-title">모든 Coordinate(좌표)를 Downward positive(아래쪽 양의 방향)로 통일합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-55.jpg" alt="xA xD xB를 천장에서 아래 방향 양수로 정의한 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 55/63</span><span>Problem Solving 07:59–08:13</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>Sign convention(부호 규약)</h3><p><em>x<sub>A</sub></em>, <em>x<sub>D</sub></em>, <em>x<sub>B</sub></em>를 ceiling(천장)의 기준선에서 아래쪽으로 잽니다. 따라서 positive displacement/velocity/acceleration(양의 변위/속도/가속도)은 downward(아래쪽), negative(음)는 upward(위쪽)를 뜻합니다. 세 좌표의 기준 방향이 같아야 구속식의 부호를 일관되게 해석할 수 있습니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-56" aria-labelledby="slide-56-title">
+          <p class="section-kicker">Source slide 56 · Motion of collar A</p>
+          <h2 class="section-title" id="slide-56-title">Collar A(칼라 A)의 Acceleration(가속도)과 Elapsed time(경과시간)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-56.jpg" alt="칼라 A가 200mm 이동해 300mm/s가 되는 조건으로 가속도와 시간을 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 56/63</span><span>Problem Solving 08:13–08:56</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Acceleration(가속도)</h3><p><em>v<sub>A</sub>²=v<sub>A0</sub>²+2a<sub>A</sub>Δx<sub>A</sub></em>에 <em>v<sub>A0</sub>=0</em>, <em>v<sub>A</sub>=300 mm/s</em>, <em>Δx<sub>A</sub>=200 mm</em>를 대입합니다.</p><span class="formula">a<sub>A</sub> = 225 mm/s²</span></div><div class="card"><h3>Time(시간)</h3><p><em>v<sub>A</sub>=v<sub>A0</sub>+a<sub>A</sub>t</em>에서 <em>300=225t</em>입니다.</p><span class="formula">t = 1.333 s</span></div></div></div>
+        </section>
+
+        <section class="source-section" id="slide-57" aria-labelledby="slide-57-title">
+          <p class="section-kicker">Source slide 57 · Motion of pulley D</p>
+          <h2 class="section-title" id="slide-57-title">같은 시간 동안 Pulley D(도르래 D)는 100 mm 내려갑니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-57.jpg" alt="도르래 D의 등속운동으로 100mm 변위를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 57/63</span><span>Problem Solving 08:56–09:13</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Uniform motion(등속운동)</h3><p><em>v<sub>D</sub>=75 mm/s</em>가 constant(일정)이므로 <em>Δx<sub>D</sub>=v<sub>D</sub>t=75(1.333)=100 mm</em>입니다. downward positive(아래쪽 양의 방향)이므로 이 값은 positive(양)입니다.</p><span class="formula">Δx<sub>D</sub> = +100 mm</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-58" aria-labelledby="slide-58-title">
+          <p class="section-kicker">Source slide 58 · Position constraint</p>
+          <h2 class="section-title" id="slide-58-title">Cable-length constraint(케이블 길이 구속식)으로 Block B(블록 B)의 이동을 구합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-58.jpg" alt="xA plus 2xD plus xB 일정 조건으로 블록 B 변위를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 58/63</span><span>Problem Solving 09:21–09:38</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>변하는 cable segments(케이블 구간)만 셉니다.</h3><p>constant portions(고정 길이 부분)을 하나의 상수 <em>C</em>에 포함하면 <em>x<sub>A</sub>+2x<sub>D</sub>+x<sub>B</sub>=C</em>입니다. 두 상태를 빼면 <em>Δx<sub>A</sub>+2Δx<sub>D</sub>+Δx<sub>B</sub>=0</em>이므로 <em>200+2(100)+Δx<sub>B</sub>=0</em>입니다.</p><span class="formula">Δx<sub>B</sub> = -400 mm = 400 mm upward</span></div><div class="quiet-card"><h3>왜 <em>2x<sub>D</sub></em>인가?</h3><p>movable pulley D(가동 도르래 D)를 지지하는 두 cable segment(케이블 구간)가 각각 <em>x<sub>D</sub></em>만큼 변하기 때문입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-59" aria-labelledby="slide-59-title">
+          <p class="section-kicker">Source slide 59 · Velocity and acceleration constraints</p>
+          <h2 class="section-title" id="slide-59-title">구속식을 미분하면 Velocity(속도)와 Acceleration(가속도)이 바로 연결됩니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-59.jpg" alt="케이블 길이식을 미분해 블록 B의 속도와 가속도를 구하는 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 59/63</span><span>Problem Solving 09:38–09:54</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Velocity constraint(속도 구속식)</h3><p><em>v<sub>A</sub>+2v<sub>D</sub>+v<sub>B</sub>=0</em>에 값을 대입하면 <em>300+2(75)+v<sub>B</sub>=0</em>입니다.</p><span class="formula">v<sub>B</sub> = -450 mm/s = 450 mm/s upward</span></div><div class="card"><h3>Acceleration constraint(가속도 구속식)</h3><p><em>a<sub>A</sub>+2a<sub>D</sub>+a<sub>B</sub>=0</em>이며 D는 constant velocity(등속)이므로 <em>a<sub>D</sub>=0</em>입니다.</p><span class="formula">a<sub>B</sub> = -225 mm/s² = 225 mm/s² upward</span></div></div><div class="warning"><strong>원본 결과 상자의 부호:</strong> 슬라이드의 대입식 <em>300+2(75)+v<sub>B</sub>=0</em>과 downward-positive coordinate(아래쪽 양의 좌표)에 따르면 signed velocity(부호 있는 속도)는 <em>v<sub>B</sub>=-450 mm/s</em>입니다. 파란 결과 상자의 <em>450 mm/s</em>는 magnitude(크기)로 읽고 방향을 upward(위쪽)로 함께 써야 일관됩니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-60" aria-labelledby="slide-60-title">
+          <p class="section-kicker">Source slide 60 · Reflection</p>
+          <h2 class="section-title" id="slide-60-title">Absolute position(절대위치)보다 Position change(위치 변화)와 Degree of freedom(자유도)가 중요합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-60.jpg" alt="절대 위치보다 위치 변화와 적절한 변수 정의가 중요하다는 정리 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 60/63</span><span>Problem Solving 09:54–10:02</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>문제 구조</h3><p>이 system(계)은 세 coordinate(좌표) <em>x<sub>A</sub>, x<sub>D</sub>, x<sub>B</sub></em>와 하나의 independent constraint(독립 구속식)를 가지므로 degree of freedom(자유도)은 2입니다. 두 coordinate(좌표)의 운동을 알면 나머지 하나가 결정됩니다. 원점까지의 실제 cable length(케이블 길이)를 모두 알 필요는 없고, 변하는 구간과 position change(위치 변화)를 정확히 적는 것이 핵심입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-61" aria-labelledby="slide-61-title">
+          <p class="section-kicker">Source slide 61 · Group Problem</p>
+          <h2 class="section-title" id="slide-61-title">또 다른 Pulley system(도르래계): 한 케이블의 여러 구간을 추적합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-61.jpg" alt="블록과 도르래가 연결된 추가 그룹 문제 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 61/63</span><span>Problem Solving 10:11–10:20</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>원본 과제형 페이지</h3><p>이 슬라이드는 학습자가 직접 풀도록 제시된 similar problem(유사 문제)입니다. 문제에 표시된 pulley arrangement(도르래 배치), prescribed motion(주어진 운동), 요구 quantity(물리량)를 먼저 읽고, 각 movable pulley(가동 도르래)의 이동이 cable segment(케이블 구간) 몇 개를 동시에 바꾸는지 표시해야 합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-62" aria-labelledby="slide-62-title">
+          <p class="section-kicker">Source slide 62 · Group Problem Strategy</p>
+          <h2 class="section-title" id="slide-62-title">Pulley constraint(도르래 구속식) 작성 절차</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-62.jpg" alt="추가 도르래 문제의 좌표와 구속식 풀이 전략 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 62/63</span><span>Problem Solving 10:11–10:20</span></figcaption></figure>
+          <div class="note-stack"><ol class="plain-list"><li>각 moving body(운동 물체)에 coordinate(좌표)를 배정하고 positive direction(양의 방향)을 그림에 표시합니다.</li><li>하나의 continuous cable(연속 케이블)을 따라가며 length-changing segments(길이가 변하는 구간)만 합합니다.</li><li>movable pulley(가동 도르래)에 연결된 동일 길이 구간의 개수만큼 해당 coordinate(좌표)에 coefficient(계수)를 붙입니다.</li><li>식의 나머지 fixed lengths(고정 길이)는 constant(상수)로 묶습니다.</li><li>position constraint(위치 구속식)를 시간으로 미분해 velocity constraint(속도 구속식)를 얻습니다.</li><li>마지막에 sign(부호)을 처음 정한 좌표 방향으로 해석합니다.</li></ol><div class="callout"><h3>시험용 보강: 수치 결과</h3><p>block A(블록 A)의 왼쪽을 <em>x<sub>A</sub></em>의 positive direction(양의 방향), block B(블록 B)의 아래쪽을 <em>y<sub>B</sub></em>의 positive direction(양의 방향)으로 정합니다. 그림의 cable(케이블)은 A–D 구간 하나와 B의 운동에 따라 함께 변하는 세 vertical segment(수직 구간)를 가지므로 <em>x<sub>A</sub>+3y<sub>B</sub>=C</em>입니다. 따라서 <em>v<sub>A</sub>+3v<sub>B</sub>=0</em>이고, <em>v<sub>A</sub>=+6 m/s</em>를 대입하면 <em>v<sub>B</sub>=-2 m/s</em>, 즉 block B(블록 B)는 <em>2 m/s upward(위쪽)</em>로 움직입니다. 원본은 수치 해답을 제공하지 않아 이 유도는 보강 풀이로 표시했습니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-63" aria-labelledby="slide-63-title">
+          <p class="section-kicker">Source slide 63 · References</p>
+          <h2 class="section-title" id="slide-63-title">References(참고문헌)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture02/slide-63.jpg" alt="Vector Mechanics for Engineers Dynamics와 동역학 교재 참고문헌 슬라이드" width="1920" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 63/63</span><span>참고문헌 슬라이드</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>슬라이드 기재 자료</h3><ul class="plain-list"><li>Beer, Johnston, Cornwell, Self, Sanghi, <em>Vector Mechanics for Engineers: Dynamics</em>, 12th Edition, McGraw Hill.</li><li>유홍희, <em>동역학</em>, 1판, 문운당.</li></ul></div></div>
+        </section>
+
+        <section class="editorial-section section-divider" id="exam-english" aria-labelledby="exam-title">
+          <p class="section-kicker">Exam English</p>
+          <h2 class="section-title" id="exam-title">서술형·풀이형 문제에 바로 쓰는 영어</h2>
+          <div class="note-stack">
+            <div class="exam-card"><h3>Q1. Define rectilinear motion.</h3><div class="answer"><span class="answer__label">Model answer</span>Rectilinear motion is the motion of a particle along a straight line. Its position can be described by a single signed coordinate measured from a fixed origin.</div><p style="margin-top: 12px">rectilinear motion(직선운동)은 particle(입자)이 straight line(직선)을 따라 움직이는 motion(운동)입니다. fixed origin(고정 원점)에서 잰 하나의 signed coordinate(부호 있는 좌표)로 position(위치)을 나타낼 수 있습니다.</p></div>
+            <div class="exam-card"><h3>Q2. Distinguish velocity from speed.</h3><div class="answer"><span class="answer__label">Model answer</span>Velocity is a signed quantity that indicates both the rate of change of position and the direction of motion. Speed is the magnitude of velocity and is therefore nonnegative.</div><p style="margin-top: 12px">velocity(속도)는 position(위치)의 변화율과 motion direction(운동 방향)을 함께 나타내는 signed quantity(부호 있는 양)입니다. speed(속력)는 velocity(속도)의 magnitude(크기)이므로 nonnegative(음이 아님)입니다.</p></div>
+            <div class="exam-card"><h3>Q3. Which kinematic relation is useful when acceleration is given as a function of position?</h3><div class="answer"><span class="answer__label">Model answer</span>When acceleration is given as a function of position, the relation a = v dv/dx is useful because it directly connects velocity and position without introducing time.</div><p style="margin-top: 12px"><em>a=a(x)</em>이면 <em>a=v dv/dx</em>가 velocity(속도)와 position(위치)을 time(시간) 없이 직접 연결합니다.</p></div>
+            <div class="exam-card"><h3>Q4. State the equations for relative rectilinear motion.</h3><div class="answer"><span class="answer__label">Model answer</span>If particles A and B are described using the same origin, positive direction, and time reference, then x<sub>B/A</sub> = x<sub>B</sub> - x<sub>A</sub>, v<sub>B/A</sub> = v<sub>B</sub> - v<sub>A</sub>, and a<sub>B/A</sub> = a<sub>B</sub> - a<sub>A</sub>.</div><p style="margin-top: 12px">두 particle(입자)은 반드시 같은 origin(원점), positive direction(양의 방향), time reference(시간 기준)를 사용해야 합니다.</p></div>
+            <div class="exam-card"><h3>Q5. How is a fixed-cable constraint used?</h3><div class="answer"><span class="answer__label">Model answer</span>Express the total cable length in terms of the position coordinates of the moving bodies and set it equal to a constant. Differentiate the constraint once for the velocity relation and twice for the acceleration relation.</div><p style="margin-top: 12px">moving bodies(운동 물체)의 position coordinate(위치좌표)로 total cable length(전체 케이블 길이)를 적고 constant(상수)와 같게 둡니다. 한 번 미분하면 velocity relation(속도 관계), 두 번 미분하면 acceleration relation(가속도 관계)을 얻습니다.</p></div>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="glossary" aria-labelledby="glossary-title">
+          <p class="section-kicker">Core glossary</p>
+          <h2 class="section-title" id="glossary-title">Lecture 2 핵심 용어집</h2>
+          <table class="term-table">
+            <thead><tr><th>English(한국어)</th><th>시험용 정의·상태 표현</th></tr></thead>
+            <tbody>
+              <tr><td>rectilinear motion(직선운동)</td><td>motion along a straight line(직선을 따른 운동)입니다.</td></tr>
+              <tr><td>curvilinear motion(곡선운동)</td><td>motion along a curved path(곡선 경로를 따른 운동)입니다.</td></tr>
+              <tr><td>position coordinate(위치좌표)</td><td>fixed origin(고정 원점)에서 positive direction(양의 방향)을 따라 잰 signed location(부호 있는 위치)입니다.</td></tr>
+              <tr><td>displacement(변위)</td><td>final position minus initial position(최종위치에서 초기위치를 뺀 값)입니다.</td></tr>
+              <tr><td>distance traveled(이동거리)</td><td>경로를 따라 이동한 전체 길이이며 nonnegative(음이 아님)입니다.</td></tr>
+              <tr><td>average velocity(평균속도)</td><td>displacement divided by elapsed time(변위를 경과시간으로 나눈 값)입니다.</td></tr>
+              <tr><td>instantaneous velocity(순간속도)</td><td><em>v=dx/dt</em>, position(위치)의 순간 변화율입니다.</td></tr>
+              <tr><td>speed(속력)</td><td>magnitude of velocity(속도의 크기), <em>|v|</em>입니다.</td></tr>
+              <tr><td>acceleration(가속도)</td><td><em>a=dv/dt=d²x/dt²</em>, velocity(속도)의 순간 변화율입니다.</td></tr>
+              <tr><td>uniform rectilinear motion(등속 직선운동)</td><td><em>a=0</em>이고 velocity is constant(속도가 일정)인 직선운동입니다.</td></tr>
+              <tr><td>uniformly accelerated rectilinear motion(등가속도 직선운동)</td><td>acceleration is constant(가속도가 일정)인 직선운동입니다.</td></tr>
+              <tr><td>initial condition(초기조건)</td><td>적분상수를 결정하는 initial position/velocity(초기위치/속도)입니다.</td></tr>
+              <tr><td>relative motion(상대운동)</td><td>한 particle(입자)에서 관찰한 다른 particle(입자)의 motion(운동)입니다.</td></tr>
+              <tr><td>dependent motion(종속운동)</td><td>constraint(구속조건) 때문에 한 물체의 운동이 다른 물체의 운동에 의해 결정되는 경우입니다.</td></tr>
+              <tr><td>constraint equation(구속방정식)</td><td>fixed cable length(고정 케이블 길이)처럼 coordinates(좌표) 사이의 관계를 나타내는 식입니다.</td></tr>
+              <tr><td>degree of freedom(자유도)</td><td>system configuration(계의 배치)을 정하는 데 필요한 independent coordinates(독립 좌표)의 수입니다.</td></tr>
+              <tr><td>turning point(전환점)</td><td>velocity becomes zero and changes sign(속도가 0이 되고 부호가 바뀌는 지점)입니다.</td></tr>
+              <tr><td>exponential decay(지수감쇠)</td><td>quantity decreases in proportion to its current value(현재 값에 비례해 양이 감소)하는 형태입니다.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="editorial-section" id="audit-log" aria-labelledby="audit-title">
+          <p class="section-kicker">Source and transcript audit</p>
+          <h2 class="section-title" id="audit-title">원본 슬라이드·자동생성 스크립트 교정 기록</h2>
+          <p class="section-lead">원본 이미지는 수정하지 않고 그대로 보존했습니다. 아래 본문에서는 같은 자료 내부의 식, 그래프, 좌표계와 전문용어 문맥을 대조해 명백한 표기·인식 오류를 교정했습니다.</p>
+          <h3>원본 슬라이드의 내부 불일치</h3>
+          <table class="term-table">
+            <thead><tr><th>위치</th><th>원본 표기</th><th>본문에서 채택한 해석</th></tr></thead>
+            <tbody>
+              <tr><td>슬라이드 22</td><td><em>x=x<sub>0</sub>-vt</em>와 <em>x=x<sub>0</sub>+vt</em>가 함께 표시됨</td><td>signed velocity(부호 있는 속도)를 쓰는 일반식은 <em>x=x<sub>0</sub>+vt</em>입니다. minus sign(음의 부호)은 속력과 방향을 따로 정의했을 때만 별도로 붙입니다.</td></tr>
+              <tr><td>슬라이드 23</td><td>하단 조건이 “uniform rectilinear motion”으로 표기됨</td><td>해당 세 식의 적용 조건은 uniformly accelerated rectilinear motion(등가속도 직선운동), 즉 <em>a=constant</em>입니다.</td></tr>
+              <tr><td>슬라이드 41</td><td>첫 줄이 <em>y=20-10t-4.905t²</em>로 보임</td><td>좌표계, 이전 슬라이드, 바로 아래 대입식과 일치하는 식은 <em>y=20+10t-4.905t²</em>입니다.</td></tr>
+              <tr><td>슬라이드 59</td><td>식은 <em>v<sub>B</sub>=-450</em>을 요구하지만 결과 상자는 <em>450 mm/s</em></td><td>signed velocity(부호 있는 속도)는 <em>-450 mm/s</em>, 즉 magnitude(크기) 450 mm/s upward(위쪽)입니다.</td></tr>
+            </tbody>
+          </table>
+          <h3 style="margin-top: 28px">자동생성 스크립트의 주요 인식 오류</h3>
+          <table class="term-table">
+            <thead><tr><th>자동인식 조각</th><th>채택한 용어</th><th>대조 근거</th></tr></thead>
+            <tbody>
+              <tr><td>“reactivating your emotion”</td><td>rectilinear motion(직선운동)</td><td>슬라이드 08 제목과 단원 문맥</td></tr>
+              <tr><td>“snow rollers”</td><td>snowboarder(스노보더)</td><td>슬라이드 05 사진</td></tr>
+              <tr><td>“acrobatic fighter”</td><td>acrobatic flying(곡예비행)</td><td>슬라이드 05 항공기 사진·문맥</td></tr>
+              <tr><td>“Four Season torque”</td><td>forces and torque(힘과 토크)</td><td>슬라이드 07의 kinetics(운동역학) 정의</td></tr>
+              <tr><td>“curvy linear motion/emotion”</td><td>curvilinear motion(곡선운동)</td><td>슬라이드 08 표기</td></tr>
+              <tr><td>“poorly example”, “police”, “polity”</td><td>pulley / pulleys(도르래)</td><td>슬라이드 29–31, 53–62의 도르래 그림</td></tr>
+              <tr><td>“mass a and must be”</td><td>mass A and mass B(질량 A와 질량 B)</td><td>슬라이드 29 도면 표기</td></tr>
+              <tr><td>“color A”</td><td>collar A(칼라 A)</td><td>슬라이드 53–60 표기</td></tr>
+              <tr><td>“viscous stamping”</td><td>viscous damping(점성 감쇠)</td><td>슬라이드 45의 oil damper(오일 댐퍼) 모델</td></tr>
+              <tr><td>“10 ml per second”</td><td>10 m/s</td><td>슬라이드 36의 초기속도</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="editorial-section" id="sources" aria-labelledby="sources-title">
+          <p class="section-kicker">Sources</p>
+          <h2 class="section-title" id="sources-title">사용한 강의 자료</h2>
+          <div class="grid-2">
+            <div class="card"><h3>원본 노트</h3><p>Lecture 2 PDF, 63 pages, 16:9. 모든 페이지를 원래 순서와 동일한 배치로 렌더링하여 포함했습니다.</p><p>슬라이드 03에 기재된 별도 링크: <a href="https://youtu.be/oZ_DDCO3Itc" target="_blank" rel="noreferrer">YouTube 영상</a></p></div>
+            <div class="card"><h3>강의 영상과 영어 자동생성 스크립트</h3><ul class="link-list"><li><a href="https://www.youtube.com/watch?v=OHqvWeXi_JY" target="_blank" rel="noreferrer">Overview</a></li><li><a href="https://www.youtube.com/watch?v=Lh8tQnI6A9o" target="_blank" rel="noreferrer">Contents 1</a></li><li><a href="https://www.youtube.com/watch?v=i6XabI4ffzc" target="_blank" rel="noreferrer">Contents 2</a></li><li><a href="https://www.youtube.com/watch?v=Pocl0GKnmSA" target="_blank" rel="noreferrer">Problem Solving</a></li><li><a href="https://www.youtube.com/watch?v=NIFDAI5sgA0" target="_blank" rel="noreferrer">Summary</a></li></ul></div>
+          </div>
+          <p class="source-note">Summary 영상은 이 Lecture의 실제 개념 복습이므로 별도 로드맵으로 분리하지 않고 핵심 개념 요약에 통합했습니다. 자동생성 자막은 그대로 번역하지 않고 원본 슬라이드와 역학 문맥으로 교정했으며, 자료에서 한 단계 더 전개한 내용은 <code>시험용 보강</code>으로 표시했습니다.</p>
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="Lecture 2 목차">
+        <p class="toc__label">On this lecture</p>
+        <ol>
+          <li><a href="#overview">전체 개요</a></li><li><a href="#concept-map">개념 지도</a></li><li><a href="#concept-summary">핵심 개념 요약</a></li>
+          <li><a href="#slide-01">01 · 표지</a></li><li><a href="#slide-02">02 · Lecture 2-1</a></li><li><a href="#slide-03">03 · 영상 링크</a></li><li><a href="#slide-04">04 · Lecture 2-2</a></li><li><a href="#slide-05">05 · Motivation</a></li><li><a href="#slide-06">06 · Kinematics</a></li><li><a href="#slide-07">07 · Kinetics</a></li><li><a href="#slide-08">08 · Motion types</a></li><li><a href="#slide-09">09 · Coordinate</a></li><li><a href="#slide-10">10 · Position</a></li><li><a href="#slide-11">11 · Velocity definition</a></li><li><a href="#slide-12">12 · Velocity from x(t)</a></li><li><a href="#slide-13">13 · Acceleration</a></li><li><a href="#slide-14">14 · Signs of v and a</a></li><li><a href="#slide-15">15 · Acceleration from v(t)</a></li><li><a href="#slide-16">16 · Example at t=2</a></li><li><a href="#slide-17">17 · Example at t=4</a></li><li><a href="#slide-18">18 · Forms of acceleration</a></li><li><a href="#slide-19">19 · Physical models</a></li><li><a href="#slide-20">20 · Integration map</a></li><li><a href="#slide-21">21 · Uniform-motion example</a></li><li><a href="#slide-22">22 · Uniform equations</a></li><li><a href="#slide-23">23 · Constant-acceleration equations</a></li><li><a href="#slide-24">24 · Lecture 2-3</a></li><li><a href="#slide-25">25 · Several particles</a></li><li><a href="#slide-26">26 · Relative position</a></li><li><a href="#slide-27">27 · Relative velocity</a></li><li><a href="#slide-28">28 · Relative acceleration</a></li><li><a href="#slide-29">29 · Two-block pulley</a></li><li><a href="#slide-30">30 · Three-block pulley</a></li><li><a href="#slide-31">31 · Constraint derivatives</a></li><li><a href="#slide-32">32 · Motion data</a></li><li><a href="#slide-33">33 · Graph slopes</a></li><li><a href="#slide-34">34 · Graph areas</a></li><li><a href="#slide-35">35 · Week 2-4 divider</a></li><li><a href="#slide-36">36 · Ball problem</a></li><li><a href="#slide-37">37 · Ball strategy</a></li><li><a href="#slide-38">38 · Velocity equation</a></li><li><a href="#slide-39">39 · Position equation</a></li><li><a href="#slide-40">40 · Maximum-height time</a></li><li><a href="#slide-41">41 · Maximum height</a></li><li><a href="#slide-42">42 · Impact time</a></li><li><a href="#slide-43">43 · Impact velocity</a></li><li><a href="#slide-44">44 · Constant-a reflection</a></li><li><a href="#slide-45">45 · Oil damper</a></li><li><a href="#slide-46">46 · v(t)</a></li><li><a href="#slide-47">47 · x(t)</a></li><li><a href="#slide-48">48 · v(x)</a></li><li><a href="#slide-49">49 · Alternative method</a></li><li><a href="#slide-50">50 · Consistency check</a></li><li><a href="#slide-51">51 · Car group problem</a></li><li><a href="#slide-52">52 · Car strategy</a></li><li><a href="#slide-53">53 · Pulley problem</a></li><li><a href="#slide-54">54 · Pulley strategy</a></li><li><a href="#slide-55">55 · Coordinates</a></li><li><a href="#slide-56">56 · Collar A</a></li><li><a href="#slide-57">57 · Pulley D</a></li><li><a href="#slide-58">58 · Position constraint</a></li><li><a href="#slide-59">59 · Velocity/acceleration</a></li><li><a href="#slide-60">60 · Reflection</a></li><li><a href="#slide-61">61 · Group problem</a></li><li><a href="#slide-62">62 · Group strategy</a></li><li><a href="#slide-63">63 · References</a></li>
+          <li><a href="#exam-english">시험 영어</a></li><li><a href="#glossary">용어집</a></li><li><a href="#audit-log">원본·스크립트 교정</a></li><li><a href="#sources">출처</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <footer class="site-footer"><div class="site-footer__inner"><span class="wordmark">MC2103 Dynamics</span><span>Lecture 2 · Rectilinear Motion · 2026-09-02</span></div></footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "lectures": [
+    {
+      "slug": "lecture01",
+      "page": "lecture01.html",
+      "expectedSlides": 23,
+      "pdfs": {
+        "cleaned": "lecture01_note.pdf",
+        "original": "lecture01_original.pdf"
+      },
+      "ready": true
+    }
+  ]
+}

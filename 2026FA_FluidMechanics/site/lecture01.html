@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lecture 1 · Introduction to Fluid Mechanics | Fluid Mechanics 1</title>
+    <meta name="description" content="유체의 정의에서 연속체, 물성, 유동 기술법과 해석 방법까지 연결하는 Fluid Mechanics 1 Lecture 1 한국어 정리 노트" />
+    <meta property="og:title" content="Lecture 1 · Introduction to Fluid Mechanics" />
+    <meta property="og:description" content="원본 슬라이드 23장과 검수한 영어 강의 스크립트를 대조한 한국어 수업 대체 노트" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://leejinh0225.github.io/MC2102-Fluid/lecture01.html" />
+    <meta property="og:image" content="https://leejinh0225.github.io/MC2102-Fluid/assets/slides/lecture01/slide-01.jpg" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="index.html">Fluid Mechanics 1</a>
+        <div class="header-actions">
+          <a class="header-link" href="downloads.html">PDF 다운로드</a>
+          <span class="header-meta">Lecture 1 · Introduction</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">Week 01 · Lecture 1</p>
+        <h1>Introduction to Fluid Mechanics.</h1>
+        <p class="hero__lead">유체가 고체와 어떻게 다른지에서 출발하여 continuum(연속체), control volume(검사체적), fluid properties(유체 물성), flow description(유동 기술법), analysis techniques(해석 방법)를 하나의 흐름으로 연결합니다.</p>
+        <div class="meta-row">
+          <span class="meta-chip">날짜 미기재</span>
+          <span class="meta-chip">원본 슬라이드 23장</span>
+          <span class="meta-chip">비공개 녹화 1개 · 검수 영어 스크립트 1개</span>
+          <span class="meta-chip">수업 대체 + 시험 대비</span>
+        </div>
+        <div class="button-row">
+          <a class="button button--primary" href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture01_note.pdf" download="lecture01_note.pdf" type="application/pdf">가림막 제거 PDF 다운로드</a>
+          <a class="button" href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture01_original.pdf" download="lecture01_original.pdf" type="application/pdf">원본 PDF 다운로드</a>
+          <a class="button" href="index.html">강의 목록</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <main id="main" class="content">
+        <section class="editorial-section section-divider" id="overview">
+          <p class="section-kicker">Lecture overview</p>
+          <h2 class="section-title">유체는 shear stress(전단응력)를 받으면 계속 변형되므로, 고정된 물체가 아니라 continuum field(연속체 장)로 다룹니다.</h2>
+          <p class="section-lead">이 한 문장이 Lecture 1의 뼈대입니다. 분자 하나하나 대신 density(밀도)·pressure(압력)·velocity(속도)를 공간과 시간의 함수로 두고, 분석할 영역을 system(시스템) 또는 control volume(검사체적)으로 선택한 뒤 보존법칙을 적용합니다.</p>
+          <div class="stat-grid">
+            <div class="stat"><span class="stat__value">23</span><span class="stat__label">원본 PDF 전 페이지 수록</span></div>
+            <div class="stat"><span class="stat__value">60:19</span><span class="stat__label">실제 영어 강의 발화 범위</span></div>
+            <div class="stat"><span class="stat__value">3</span><span class="stat__label">핵심 분석 접근법</span></div>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="concept-map">
+          <p class="section-kicker">Concept map</p>
+          <h2 class="section-title">정의에서 지배방정식까지 이어지는 네 단계</h2>
+          <div class="course-map">
+            <div class="course-map__card"><span class="tag">1 · 물질의 정의</span><h3>Fluid + continuum</h3><p>shear stress(전단응력)에 대한 반응으로 fluid(유체)를 정의하고, 분자 집합을 continuum(연속체)로 근사합니다.</p></div>
+            <div class="course-map__arrow" aria-hidden="true">→</div>
+            <div class="course-map__card"><span class="tag">2 · 관찰 틀</span><h3>Region + description</h3><p>system/control volume(시스템/검사체적)을 선택하고 Lagrangian/Eulerian(라그랑지안/오일러리안) 기술법을 정합니다.</p></div>
+            <div class="course-map__arrow" aria-hidden="true">→</div>
+            <div class="course-map__card"><span class="tag">3 · 상태와 물성</span><h3>Properties + scales</h3><p>density(밀도), pressure(압력), viscosity(점성), Reynolds number(레이놀즈 수) 등 계산에 필요한 양을 정의합니다.</p></div>
+            <div class="course-map__arrow" aria-hidden="true">→</div>
+            <div class="course-map__card"><span class="tag">4 · 해석</span><h3>Laws + methods</h3><p>mass/momentum/energy conservation(질량/운동량/에너지 보존)을 integral, differential, dimensional approach(적분·미분·차원해석)로 적용합니다.</p></div>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="concept-summary">
+          <p class="section-kicker">Content summary</p>
+          <h2 class="section-title">Lecture 1 핵심 개념 요약</h2>
+          <p class="section-lead">원본 슬라이드를 보지 않아도 정의, 관계식, 가정, 자주 틀리는 구분을 한 번에 복습할 수 있도록 정리했습니다.</p>
+          <div class="note-stack">
+            <div class="callout"><h3>1. Fluid(유체)의 판별 기준</h3><p>solid(고체)는 shear stress(전단응력)를 받아 static deformation(정적 변형) 상태로 버틸 수 있지만, fluid(유체)는 아무리 작은 전단응력이라도 계속 작용하면 연속적으로 변형합니다. liquid(액체)와 gas(기체)는 모두 이 정의를 만족합니다.</p><span class="key-sentence">Fluid = a substance that deforms continuously under any applied shear stress.</span></div>
+            <div class="grid-2"><div class="card"><h3>Continuum assumption(연속체 가정)</h3><p>실제 유체는 molecule(분자)의 집합이지만, 공학적 길이 척도에서는 density(밀도), pressure(압력), velocity(속도)가 공간에서 연속적으로 변한다고 봅니다. 극도로 희박한 기체에서는 이 가정이 깨질 수 있습니다.</p></div><div class="card"><h3>Density(밀도)</h3><p>미시적 요동이 평균화되면서도 점으로 볼 만큼 작은 limiting volume(극한 체적) <em>δV*</em>를 사용합니다.</p><span class="formula">ρ = lim<sub>δV→δV*</sub> δm / δV</span></div></div>
+            <div class="grid-2"><div class="card"><h3>System(시스템)</h3><p>fixed identity(고정된 정체성)를 가진 일정한 mass(질량)입니다. 경계는 물질과 함께 움직일 수 있으며 control mass(검사질량)라고도 합니다.</p></div><div class="card"><h3>Control volume(검사체적)</h3><p>유체가 통과할 수 있도록 space(공간)에 선택한 영역입니다. 그 기하학적 경계인 control surface(검사면)는 real or imaginary(실재 또는 가상)일 수 있습니다.</p></div></div>
+            <div class="grid-2"><div class="card"><h3>Lagrangian description(라그랑지안 기술)</h3><p>특정 fluid particle(유체 입자)을 따라가며 그 particle의 position, velocity, properties(위치·속도·물성)를 시간에 따라 기록합니다.</p></div><div class="card"><h3>Eulerian description(오일러리안 기술)</h3><p>공간의 위치를 고정하고 그 지점을 지나가는 유체의 field properties(장 물성)를 <em>(x,y,z,t)</em>의 함수로 기술합니다. control-volume analysis(검사체적 해석)에 자연스럽습니다.</p></div></div>
+            <div class="card"><h3>Dimensions and homogeneity(차원과 차원 동차성)</h3><p>SI는 <em>MLTθ</em>, BG는 <em>FLTθ</em>를 기본 차원계로 사용합니다. 하나의 equation(방정식)에서 더하거나 빼는 모든 항은 같은 dimension(차원)을 가져야 합니다. 단위를 섞어 놓고 식이 알아서 해결해 주길 기대하면, 식도 꽤 억울합니다.</p><span class="formula">[F] = MLT<sup>-2</sup> &nbsp;·&nbsp; [p] = ML<sup>-1</sup>T<sup>-2</sup></span></div>
+            <div class="grid-3"><div class="card"><h3>Thermodynamic properties</h3><p><em>p</em>: pressure(압력), <em>T</em>: temperature(온도), <em>γ=ρg</em>: specific weight(비중량), <em>SG</em>: specific gravity(비중).</p></div><div class="card"><h3>Total energy</h3><p>단위 질량당 internal, kinetic, potential energy(내부·운동·위치에너지)의 합입니다.</p><span class="formula">e = u + V²/2 + gz</span></div><div class="card"><h3>Ideal-gas relation</h3><p>상대적으로 고온·저압인 gas(기체)의 가장 단순한 state relation(상태관계)입니다.</p><span class="formula">p = ρRT</span></div></div>
+            <div class="callout"><h3>Viscosity(점성)와 Reynolds number(레이놀즈 수)</h3><p>Newtonian fluid(뉴턴 유체)는 주어진 상태에서 shear stress(전단응력)가 strain rate(변형률속도)에 선형 비례합니다. Reynolds number(레이놀즈 수)는 inertial effect(관성 효과)와 viscous effect(점성 효과)의 상대 크기를 나타내는 무차원수입니다.</p><span class="formula">τ = μ du/dy &nbsp;·&nbsp; ν = μ/ρ &nbsp;·&nbsp; Re = ρVL/μ = VL/ν</span></div>
+            <div class="grid-2"><div class="card"><h3>Interface phenomena(계면 현상)</h3><p>surface tension(표면장력)과 contact angle(접촉각)은 액체-기체-고체 계면의 거동을 설명합니다. <em>θ&lt;90°</em>이면 hydrophilic(친수성), <em>θ&gt;90°</em>이면 hydrophobic(소수성)입니다.</p></div><div class="card"><h3>Vapor pressure and cavitation</h3><p>local absolute pressure(국소 절대압력)가 해당 온도의 vapor pressure(증기압) 아래로 내려가면 vapor bubbles(증기 기포)가 생길 수 있습니다. 뒤이어 높은 압력 영역에서 붕괴하면 cavitation erosion(공동 침식)을 일으킵니다.</p></div></div>
+            <div class="card"><h3>Flow description(유동 가시화)</h3><p>streamline(유선)은 한 순간의 velocity vector(속도벡터)에 접하고, pathline(유적선)은 한 입자가 실제로 지나간 경로이며, streakline(유맥선)은 한 고정점을 지나간 입자들의 현재 자취입니다. steady flow(정상유동)에서는 셋이 일치하지만 unsteady flow(비정상유동)에서는 다를 수 있습니다.</p></div>
+            <div class="card"><h3>문제를 닫는 자료와 세 접근법</h3><p>flow problem(유동 문제)은 mass, momentum, energy conservation(질량·운동량·에너지 보존)에 equation of state(상태방정식)와 boundary conditions(경계조건)를 더해 닫습니다. 이를 finite region(유한 영역)에 적용하면 integral approach(적분 접근), infinitesimal region(무한소 영역)에 적용하면 differential approach(미분 접근), 모형시험의 similarity(상사)를 다루면 dimensional analysis and experiment(차원해석·실험 접근)입니다. 복잡한 경우 CFD(전산유체역학)를 사용합니다.</p></div>
+            <div class="warning"><strong>자주 섞이는 두 구분:</strong> temperature(온도)에 따라 <em>μ</em>가 변하는 것만으로 non-Newtonian fluid(비뉴턴 유체)가 되는 것은 아닙니다. Newtonian/non-Newtonian은 주어진 thermodynamic state(열역학 상태)에서 <em>τ</em>와 strain rate(변형률속도)의 관계가 선형인지로 구분합니다. 또한 vapor pressure(증기압)는 반드시 temperature(온도)와 absolute pressure(절대압력)를 함께 보아야 합니다.</div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-01" aria-labelledby="slide-01-title">
+          <p class="section-kicker">Source slide 01 · Cover</p>
+          <h2 class="section-title" id="slide-01-title">Chapter 1 · Introduction to Fluid Mechanics(유체역학 개론)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-01.jpg" alt="폭포 사진과 Chapter 1 Introduction to Fluid Mechanics 제목이 있는 표지 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 01/23</span><span>강의 도입 00:00:03–00:00:31</span></figcaption></figure>
+          <div class="note-stack"><div class="quiet-card"><h3>이 렉처의 역할</h3><p>Chapter 1은 계산 문제를 본격적으로 풀기 전에 fluid(유체)를 무엇으로 모델링하고, 어떤 물리량과 경계를 선택하며, 이후 장들에서 어떤 해석 도구를 사용할지 정하는 vocabulary and framework(용어와 틀)입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-02" aria-labelledby="slide-02-title">
+          <p class="section-kicker">Source slide 02 · Learning objectives</p>
+          <h2 class="section-title" id="slide-02-title">일곱 학습목표가 한 분석 절차를 만듭니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-02.jpg" alt="유체 개념 연속체 차원 단위 검사체적 기술법 점성 해석기법을 나열한 학습목표 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 02/23</span><span>강의 녹화 00:00:03–00:02:57</span></figcaption></figure>
+          <div class="note-stack"><ol class="plain-list"><li>concept of fluid(유체의 개념)로 고체와 유체를 구분합니다.</li><li>fluid as a continuum(연속체로서의 유체) 가정을 세웁니다.</li><li>dimensions and units(차원과 단위)로 식의 일관성을 검사합니다.</li><li>control volume/control surface(검사체적/검사면)로 분석 영역을 정합니다.</li><li>Eulerian description(오일러리안 기술)을 중심으로 유동장을 표현합니다.</li><li>viscosity and other properties(점성과 기타 물성)를 정의합니다.</li><li>integral, differential, dimensional approaches(적분·미분·차원해석 접근)를 구분합니다.</li></ol><div class="callout"><h3>읽는 순서</h3><p>정의 → 근사 → 좌표와 영역 → 물성 → 지배법칙이라는 순서입니다. 목록처럼 흩어져 보이지만 이후 모든 유체 문제에서 반복되는 작업 흐름입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-03" aria-labelledby="slide-03-title">
+          <p class="section-kicker">Source slide 03 · Fluid definition</p>
+          <h2 class="section-title" id="slide-03-title">Fluid(유체)는 Shear stress(전단응력)를 정적으로 지탱하지 못합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-03.jpg" alt="고체 액체 기체의 전단력 반응을 비교하는 The Concept of a Fluid 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 03/23</span><span>강의 녹화 00:02:57–00:05:27</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Solid(고체)</h3><p>shear force(전단력)를 받으면 finite deformation(유한 변형)을 만든 뒤 내부 응력으로 평형을 이룰 수 있습니다.</p></div><div class="card"><h3>Fluid(유체)</h3><p>shear stress(전단응력)가 계속 존재하는 동안 deformation(변형)이 멈추지 않습니다. liquid(액체)와 gas(기체)가 모두 포함됩니다.</p></div></div><div class="key-sentence">Fluid statics(유체정역학)는 fluid at rest(정지 유체)를, fluid dynamics(유체동역학)는 fluid in motion(운동하는 유체)을 다룹니다.</div><div class="warning"><strong>표현 교정:</strong> “유체가 변형되는가”가 기준이 아닙니다. 고체도 변형됩니다. 핵심은 constant shear stress(일정 전단응력) 아래에서 static equilibrium(정적 평형)에 도달할 수 있느냐입니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-04" aria-labelledby="slide-04-title">
+          <p class="section-kicker">Source slide 04 · Continuum</p>
+          <h2 class="section-title" id="slide-04-title">Continuum assumption(연속체 가정)은 분자 요동을 공학적 물성으로 평균냅니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-04.jpg" alt="분자 간격과 밀도의 미시적 요동 및 극한 체적을 나타낸 연속체 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 04/23</span><span>강의 녹화 00:05:27–00:09:08</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Density definition(밀도 정의)</h3><p><em>δV</em>를 줄이면 처음에는 평균 밀도가 일정한 값에 수렴하지만, 분자 수가 너무 적어지는 microscopic scale(미시 척도)에서는 값이 심하게 요동합니다. 그래서 수학적으로 곧장 0이 아니라 continuum property(연속체 물성)가 의미를 유지하는 <em>δV*</em>까지 줄입니다.</p><span class="formula">ρ = lim<sub>δV→δV*</sub> δm/δV</span></div><div class="grid-2"><div class="card"><h3>일반 공학 유동</h3><p>대기압 부근의 liquid/gas(액체/기체)는 각 위치에서 <em>ρ(x,y,z,t)</em> 같은 연속 함수로 취급할 수 있습니다.</p></div><div class="card"><h3>가정의 한계</h3><p>high altitude or rarefied gas(고고도 또는 희박기체)처럼 molecular mean spacing(분자 평균 간격)이 문제 길이와 비슷해지면 분자 수준 모델이 필요할 수 있습니다.</p></div></div><div class="evidence"><span>슬라이드 표기: δV* ≈ 10<sup>-9</sup> mm³</span><span>강의 00:05:27–00:09:08</span></div></div>
+        </section>
+
+        <section class="source-section" id="slide-05" aria-labelledby="slide-05-title">
+          <p class="section-kicker">Source slide 05 · Primary dimensions</p>
+          <h2 class="section-title" id="slide-05-title">네 Primary dimensions(기본 차원)과 두 Unit systems(단위계)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-05.jpg" alt="질량 길이 시간 온도의 SI와 BG 단위 및 환산계수를 비교한 표 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 05/23</span><span>강의 녹화 00:09:08–00:11:39</span></figcaption></figure>
+          <div class="note-stack"><table class="term-table"><thead><tr><th>Primary dimension(기본 차원)</th><th>SI unit(SI 단위)</th><th>BG unit(BG 단위)</th><th>환산</th></tr></thead><tbody><tr><td>Mass(질량) {M}</td><td>kilogram(kg)</td><td>slug</td><td>1 slug = 14.5939 kg</td></tr><tr><td>Length(길이) {L}</td><td>meter(m)</td><td>foot(ft)</td><td>1 ft = 0.3048 m</td></tr><tr><td>Time(시간) {T}</td><td>second(s)</td><td>second(s)</td><td>1 s = 1 s</td></tr><tr><td>Temperature(온도) {θ}</td><td>kelvin(K)</td><td>Rankine(°R)</td><td>1 K interval = 1.8 °R</td></tr></tbody></table><div class="warning"><strong>차원과 단위는 다릅니다.</strong> dimension(차원)은 물리량의 종류이고 unit(단위)은 그 크기를 세는 약속입니다. 예를 들어 length(길이)라는 차원은 같아도 meter(미터)와 foot(피트)는 다른 단위입니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-06" aria-labelledby="slide-06-title">
+          <p class="section-kicker">Source slide 06 · Dimension systems</p>
+          <h2 class="section-title" id="slide-06-title">SI는 Mass(질량), BG는 Force(힘)를 기본으로 둡니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-06.jpg" alt="SI의 MLT세타와 BG의 FLT세타 차원계를 설명하는 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 06/23</span><span>강의 녹화 00:11:39–00:13:22</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>SI: MLTθ system</h3><p>mass(질량), length(길이), time(시간), temperature(온도)가 기본입니다. Newton's second law(뉴턴 제2법칙)에서 force(힘)는 파생됩니다.</p><span class="formula">[F] = [ma] = MLT<sup>-2</sup></span></div><div class="card"><h3>BG: FLTθ system</h3><p>force(힘), length(길이), time(시간), temperature(온도)가 기본입니다. 따라서 mass(질량)가 파생 차원입니다.</p><span class="formula">[M] = FT²L<sup>-1</sup></span></div></div><div class="quiet-card"><h3>실전 원칙</h3><p>어느 체계를 쓰든 가능합니다. 다만 한 계산 안에서는 coherent unit system(일관된 단위계)을 유지하고, 숫자를 대입하기 전에 모든 양을 같은 체계로 변환해야 합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-07" aria-labelledby="slide-07-title">
+          <p class="section-kicker">Source slide 07 · Dimensional homogeneity</p>
+          <h2 class="section-title" id="slide-07-title">더하고 빼는 모든 항은 같은 Dimension(차원)을 가져야 합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-07.jpg" alt="Bernoulli 방정식으로 차원 동차성 원리를 확인하는 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 07/23</span><span>강의 녹화 00:13:22–00:16:43</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Bernoulli equation(베르누이 방정식)의 압력형</h3><span class="formula">p + ρV²/2 + ρgz = constant</span><p><em>p</em>, <em>ρV²/2</em>, <em>ρgz</em>는 모두 pressure(압력)의 차원 <em>ML<sup>-1</sup>T<sup>-2</sup></em>를 가집니다. 따라서 우변 constant(상수)도 같은 차원입니다.</p></div><div class="grid-3"><div class="card"><h3>Static pressure</h3><span class="formula">[p] = F/L²</span></div><div class="card"><h3>Dynamic term</h3><span class="formula">[ρV²] = (M/L³)(L²/T²)</span></div><div class="card"><h3>Elevation term</h3><span class="formula">[ρgz] = (M/L³)(L/T²)L</span></div></div><div class="warning"><strong>범위 주의:</strong> 이 슬라이드는 Bernoulli equation(베르누이 방정식)의 차원만 검사합니다. 식의 유도와 steady, incompressible(정상·비압축성) 등 적용 조건은 뒤 장에서 다룹니다. 차원이 맞는다고 물리적으로 언제나 맞는 식은 아닙니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-08" aria-labelledby="slide-08-title">
+          <p class="section-kicker">Source slide 08 · System and control volume</p>
+          <h2 class="section-title" id="slide-08-title">따라갈 Mass(질량)인가, 관찰할 Region(영역)인가?</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-08.jpg" alt="피스톤과 분기관에서 시스템 검사체적 검사면을 비교하는 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 08/23</span><span>강의 녹화 00:16:43–00:20:39</span></figcaption></figure>
+          <div class="note-stack"><div class="compare-table"><div><h3>System / control mass(시스템 / 검사질량)</h3><p>fixed identity(고정 정체성)의 mass를 끝까지 따라갑니다. 그 바깥은 surroundings(주위), 사이의 면은 boundary(경계)입니다. 경계는 움직일 수 있지만 질량은 통과하지 않습니다.</p></div><div><h3>Control volume(검사체적)</h3><p>space(공간)에 임의로 정한 region(영역)입니다. 유체가 control surface(검사면)를 통해 들어오고 나갈 수 있으며, 영역 자체는 fixed or moving(고정 또는 이동)일 수 있습니다.</p></div></div><div class="grid-2"><div class="card"><h3>Piston-cylinder(피스톤-실린더)</h3><p>정해진 gas mass(기체 질량)를 system으로 보면 piston과 함께 움직이는 boundary(경계)와 고정 벽을 가집니다.</p></div><div class="card"><h3>Branch pipe(분기관)</h3><p>wall(벽)은 real control surface(실재 검사면), inlet/outlets(입·출구)를 가로지르는 면은 imaginary control surface(가상 검사면)입니다.</p></div></div></div>
+        </section>
+
+        <section class="source-section" id="slide-09" aria-labelledby="slide-09-title">
+          <p class="section-kicker">Source slide 09 · Description methods</p>
+          <h2 class="section-title" id="slide-09-title">Lagrangian(라그랑지안)은 입자를 따르고, Eulerian(오일러리안)은 위치를 고정합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-09.jpg" alt="움직이는 블록과 관 내부 속도장으로 라그랑지안 및 오일러리안 기술을 비교한 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 09/23</span><span>강의 녹화 00:20:39–00:25:02</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Lagrangian description</h3><p>선택한 particle/body(입자/물체)의 trajectory(궤적)를 따라 position, velocity, acceleration(위치·속도·가속도)을 구합니다. “그 입자에 무슨 일이 생기는가?”를 묻습니다.</p></div><div class="card"><h3>Eulerian description</h3><p>고정된 spatial coordinate(공간좌표)에서 velocity, pressure(속도·압력) 등이 시간에 따라 어떻게 변하는지 봅니다. “이 위치를 무엇이 지나가는가?”를 묻습니다.</p></div></div><div class="callout"><h3>Field form(장 표현)</h3><span class="formula">V(x,y,z,t) = u i + v j + w k</span><span class="formula">a = DV/Dt = ∂V/∂t + u∂V/∂x + v∂V/∂y + w∂V/∂z</span><p>Eulerian field(오일러리안 장)에서 한 입자가 겪는 acceleration(가속도)은 local change(국소 변화)와 convection(대류 변화)을 모두 포함하는 material derivative(물질미분)로 연결됩니다.</p></div><div class="warning"><strong>ASR 핵심 교정:</strong> 녹화 자동전사는 한 구간에서 Eulerian reference(오일러리안 기준)가 움직인다고 뒤집어 인식했습니다. 움직이는 물질을 따르는 쪽은 Lagrangian(라그랑지안), 공간에 고정되는 쪽은 Eulerian(오일러리안)입니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-10" aria-labelledby="slide-10-title">
+          <p class="section-kicker">Source slide 10 · Thermodynamic properties</p>
+          <h2 class="section-title" id="slide-10-title">Pressure(압력), Temperature(온도), Weight(중량), Energy(에너지)</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-10.jpg" alt="압력 온도 비중량 비중 총에너지의 정의와 식을 제시한 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 10/23</span><span>강의 녹화 00:25:02–00:29:39</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Pressure and temperature</h3><p>pressure(압력)는 static fluid(정지 유체)의 한 점에서 작용하는 compressive normal stress(압축 수직응력)입니다. pressure gradient(압력구배)는 pipe flow(관 유동)의 주요 구동력입니다. temperature difference(온도차)는 heat transfer(열전달)를 일으킵니다.</p></div><div class="card"><h3>Temperature conversion</h3><span class="formula">°R = °F + 459.69</span><span class="formula">K = °C + 273.16</span><p>상태방정식에서는 absolute temperature(절대온도)를 사용합니다.</p></div></div><div class="grid-3"><div class="card"><h3>Specific weight(비중량)</h3><span class="formula">γ = ρg</span><p>unit volume(단위 체적)당 weight(중량)입니다.</p></div><div class="card"><h3>Specific gravity(비중)</h3><span class="formula">SG = ρ/ρ<sub>ref</sub></span><p>liquid는 보통 4°C water(물), gas는 air(공기)를 기준으로 삼는 dimensionless ratio(무차원비)입니다.</p></div><div class="card"><h3>Total energy(총에너지)</h3><span class="formula">e = u + V²/2 + gz</span><p>unit mass(단위 질량)당 internal, kinetic, potential energy의 합입니다.</p></div></div></div>
+        </section>
+
+        <section class="source-section" id="slide-11" aria-labelledby="slide-11-title">
+          <p class="section-kicker">Source slide 11 · State relations</p>
+          <h2 class="section-title" id="slide-11-title">Gas(기체)는 상태관계가 필요하고, Liquid(액체)는 흔히 비압축성으로 근사합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-11.jpg" alt="이상기체 법칙과 비열 관계 및 액체의 비압축성 근사를 설명하는 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 11/23</span><span>강의 녹화 00:29:39–00:34:32</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Ideal gas(이상기체)</h3><span class="formula">p = ρRT &nbsp;·&nbsp; R = c<sub>p</sub> - c<sub>v</sub> &nbsp;·&nbsp; k = c<sub>p</sub>/c<sub>v</sub></span><span class="formula">c<sub>v</sub> = R/(k-1) &nbsp;·&nbsp; c<sub>p</sub> = kR/(k-1)</span><p>상대적으로 high temperature, low pressure(고온·저압)에서 가장 단순한 gas state relation(기체 상태관계)입니다. air(공기)는 흔히 <em>k≈1.4</em>로 둡니다.</p></div><div class="grid-2"><div class="card"><h3>Nearly incompressible liquid</h3><p>liquid(액체)는 pressure change(압력 변화)에 따른 density change(밀도 변화)가 작아 많은 문제에서 <em>ρ≈constant</em>로 둡니다.</p></div><div class="card"><h3>Low-speed gas</h3><p>gas(기체)도 flow speed(유속)가 speed of sound(음속)보다 충분히 작으면 density variation(밀도 변화)을 무시하여 incompressible flow(비압축성 유동)로 근사할 수 있습니다.</p></div></div><div class="warning"><strong>정확한 표현:</strong> gas가 음속을 넘어야만 compressible(압축성)이 되는 것은 아닙니다. 유속이 음속의 의미 있는 비율에 도달하면 밀도 변화가 중요해질 수 있습니다. 이 렉처는 정량 기준 대신 개념만 소개합니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-12" aria-labelledby="slide-12-title">
+          <p class="section-kicker">Source slide 12 · Viscosity and Reynolds number</p>
+          <h2 class="section-title" id="slide-12-title">Viscosity(점성)는 전단 변형을, Reynolds number(레이놀즈 수)는 힘의 경쟁을 나타냅니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-12.jpg" alt="뉴턴 점성법칙과 레이놀즈 수 식을 보여주는 점성 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 12/23</span><span>강의 녹화 00:34:32–00:40:13</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Newton's law of viscosity(뉴턴 점성법칙)</h3><p>simple shear flow(단순 전단유동)에서 Newtonian fluid(뉴턴 유체)는 shear stress(전단응력)가 velocity gradient(속도구배), 즉 shear strain rate(전단변형률속도)에 비례합니다.</p><span class="formula">τ = μ du/dy</span></div><div class="grid-2"><div class="card"><h3>Dynamic and kinematic viscosity</h3><p><em>μ</em>는 dynamic viscosity(동점도가 아닌 점성계수), <em>ν</em>는 kinematic viscosity(동점성계수)입니다.</p><span class="formula">ν = μ/ρ</span></div><div class="card"><h3>Reynolds number</h3><p>inertial force(관성력) 대 viscous force(점성력)의 상대 크기입니다. 같은 유체·길이에서는 속도가 커질수록 <em>Re</em>가 커집니다.</p><span class="formula">Re = ρVL/μ = VL/ν</span></div></div><div class="warning"><strong>기준 길이:</strong> <em>L</em>은 임의 숫자가 아니라 geometry and flow(형상과 유동)에 맞춘 characteristic length(특성길이)입니다. 원기둥 주위 유동에서는 diameter(지름)를 사용할 수 있습니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-13" aria-labelledby="slide-13-title">
+          <p class="section-kicker">Source slide 13 · Viscous terminal velocity</p>
+          <h2 class="section-title" id="slide-13-title">Inclined oil film(경사면 유막)에서 Terminal velocity(종단속도)를 구합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-13.jpg" alt="얇은 유막 위 경사면을 미끄러지는 블록의 종단속도 예제 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 13/23</span><span>강의 녹화 00:40:13–00:42:30</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>1. Force balance(힘 평형)</h3><p>경사면 아래를 positive x(양의 x)로 잡습니다. terminal velocity(종단속도)에서는 acceleration(가속도)이 0이므로, 중력의 경사방향 성분과 viscous resistance(점성저항)가 평형입니다.</p><span class="formula">W sinθ - τA = 0</span></div><div class="callout"><h3>2. Linear velocity profile(선형 속도분포)</h3><p>두께 <em>h</em>의 oil film(유막)에서 바닥은 no slip(무미끄럼)으로 0, 블록 접촉면은 <em>V</em>라 두면 <em>du/dy≈V/h</em>입니다.</p><span class="formula">τ = μV/h</span><span class="formula">V<sub>terminal</sub> = hW sinθ/(μA)</span></div><div class="warning"><strong>적용 가정:</strong> steady terminal motion(정상 종단운동), Newtonian fluid(뉴턴 유체), linear velocity distribution(선형 속도분포), 일정한 <em>μ</em>, edge effect(가장자리 효과) 무시가 포함됩니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-14" aria-labelledby="slide-14-title">
+          <p class="section-kicker">Source slide 14 · Temperature dependence</p>
+          <h2 class="section-title" id="slide-14-title">Temperature(온도)는 Gas(기체)와 Liquid(액체)의 Viscosity(점성)를 반대로 바꿉니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-14.jpg" alt="기체와 액체의 온도에 따른 점성 변화 경험식을 제시한 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 14/23</span><span>강의 녹화 00:42:30–00:44:33</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-2"><div class="card"><h3>Gas viscosity(기체 점성)</h3><p>temperature(온도)가 올라가면 molecular momentum exchange(분자 운동량 교환)가 활발해져 일반적으로 <em>μ</em>가 증가합니다. power law(멱법칙)와 Sutherland law(서덜랜드 법칙)가 대표 근사식입니다.</p></div><div class="card"><h3>Liquid viscosity(액체 점성)</h3><p>temperature(온도)가 올라가면 분자 사이 결합의 영향이 약해져 일반적으로 <em>μ</em>가 감소합니다. 물에는 실험으로 맞춘 empirical correlation(경험식)을 사용할 수 있습니다.</p></div></div><div class="quiet-card"><h3>Reference state(기준 상태)</h3><p>슬라이드의 <em>T<sub>0</sub></em>, <em>μ<sub>0</sub></em>는 기준 절대온도와 그 온도에서의 점성입니다. 계수는 유체별 실험값이므로 다른 유체에 그대로 옮기면 안 됩니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-15" aria-labelledby="slide-15-title">
+          <p class="section-kicker">Source slide 15 · Wettability</p>
+          <h2 class="section-title" id="slide-15-title">Contact angle(접촉각)이 Hydrophilic(친수성)과 Hydrophobic(소수성)을 가릅니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-15.jpg" alt="고체 위 액적의 접촉각으로 젖음성과 비젖음성을 설명하는 표면장력 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 15/23</span><span>강의 녹화 00:44:33–00:46:21</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Interface(계면)와 Contact angle(접촉각)</h3><p>액체는 무한히 퍼지지 않고 다른 liquid or gas(액체 또는 기체)와 interface(계면)를 만듭니다. 이 계면이 solid surface(고체면)와 만나는 곳에서 liquid side(액체 쪽)로 잰 각이 contact angle <em>θ</em>입니다.</p></div><div class="grid-2"><div class="card"><h3>θ &lt; 90°</h3><p>liquid wets the solid(액체가 고체를 잘 적심). hydrophilic surface(친수성 표면)입니다.</p></div><div class="card"><h3>θ &gt; 90°</h3><p>liquid is non-wetting(액체가 잘 퍼지지 않음). hydrophobic surface(소수성 표면)입니다.</p></div></div><div class="warning"><strong>측정 방향:</strong> 접촉각은 그림의 아무 각이나 고르는 값이 아니라 liquid phase(액상) 내부에서 접선과 고체면 사이로 잽니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-16" aria-labelledby="slide-16-title">
+          <p class="section-kicker">Source slide 16 · Surface-tension force</p>
+          <h2 class="section-title" id="slide-16-title">Surface tension(표면장력)은 Interface cut(계면 절단선)에 수직으로 작용합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-16.jpg" alt="평면과 곡면 계면의 절단선에서 작용하는 표면장력 힘을 나타낸 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 16/23</span><span>강의 녹화 00:46:21–00:46:59</span></figcaption></figure>
+          <div class="note-stack"><div class="card"><h3>Force per unit length(단위 길이당 힘)</h3><p>interface(계면)를 가상의 선으로 자르면 양쪽 절단면에 equal and opposite(크기가 같고 방향이 반대인) surface-tension forces(표면장력 힘)가 나타납니다. 힘은 계면 안에서 cut line(절단선)에 수직입니다.</p></div><div class="quiet-card"><h3>Curved interface(곡면 계면)</h3><p>곡률을 가진 계면에서는 surface tension(표면장력)과 pressure difference(압력차)가 서로 연결됩니다. 이 슬라이드는 기하와 힘 방향을 소개하고, 정량 관계는 뒤 내용으로 남깁니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-17" aria-labelledby="slide-17-title">
+          <p class="section-kicker">Source slide 17 · Vapor pressure</p>
+          <h2 class="section-title" id="slide-17-title">Vapor pressure(증기압)는 주어진 Temperature(온도)에서의 비등 기준입니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-17.jpg" alt="물의 온도별 증기압 곡선과 20도에서 2.34킬로파스칼 값을 보인 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 17/23</span><span>강의 녹화 00:46:59–00:47:48</span></figcaption></figure>
+          <div class="note-stack"><div class="callout"><h3>Definition(정의)</h3><p>vapor pressure(증기압)는 액체가 자기 증기와 equilibrium(평형)을 이루며 boil(비등)하기 시작하는 pressure(압력)입니다. 값은 temperature(온도)에 따라 달라집니다.</p><span class="formula">Water at 20°C: p<sub>v</sub> ≈ 2.34 kPa = 17.5 mmHg</span></div><div class="warning"><strong>절대압력:</strong> 증기압과 비교할 때는 gauge pressure(게이지압)가 아니라 absolute pressure(절대압력)를 사용해야 합니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-18" aria-labelledby="slide-18-title">
+          <p class="section-kicker">Source slide 18 · Cavitation</p>
+          <h2 class="section-title" id="slide-18-title">Local pressure(국소압력)가 Vapor pressure(증기압) 아래로 내려가면 Cavitation(공동)이 시작됩니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-18.jpg" alt="수중 프로펠러 공동 현상 사진과 펌프 압력강하 예시가 있는 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 18/23</span><span>강의 녹화 00:47:48–00:49:52</span></figcaption></figure>
+          <div class="note-stack"><ol class="plain-list"><li>propeller tip or pump passage(프로펠러 끝 또는 펌프 유로)에서 velocity(속도)가 커집니다.</li><li>그에 따라 local absolute pressure(국소 절대압력)가 낮아질 수 있습니다.</li><li><em>p&lt;p<sub>v</sub>(T)</em>가 되면 vapor bubbles(증기 기포)가 생성됩니다.</li><li>기포가 다시 high-pressure region(고압 영역)으로 가면 빠르게 collapse(붕괴)합니다.</li><li>반복 붕괴가 noise, vibration, erosion(소음·진동·침식)과 성능 저하를 만듭니다.</li></ol><div class="callout"><h3>슬라이드 예</h3><p>물이 pump(펌프)에서 정지 상태로부터 약 <em>50 ft/s</em>까지 가속될 때 약 <em>15 lbf/in² ≈ 1 atm ≈ 103 kPa</em>의 압력 강하가 생길 수 있으며, 충분히 낮은 절대압력이라면 cavitation(공동)을 유발할 수 있습니다.</p></div><div class="warning"><strong>원문 표현 교정:</strong> “liquid vapor is dropped below vapor pressure”가 아니라 <strong>liquid pressure(액체 압력)</strong>가 vapor pressure(증기압) 아래로 떨어지는 것입니다.</div></div>
+        </section>
+
+        <section class="source-section" id="slide-19" aria-labelledby="slide-19-title">
+          <p class="section-kicker">Source slide 19 · Flow patterns</p>
+          <h2 class="section-title" id="slide-19-title">Streamline, pathline, streakline(유선·유적선·유맥선)은 관찰 방식이 다릅니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-19.jpg" alt="유선과 유관 그림 및 유선 유적선 유맥선 정의와 유선 방정식을 제시한 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 19/23</span><span>강의 녹화 00:49:52–00:52:18</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-3"><div class="card"><h3>Streamline(유선)</h3><p>한 instant(순간)에 모든 점에서 local velocity vector(국소 속도벡터)에 접하는 선입니다.</p></div><div class="card"><h3>Pathline(유적선)</h3><p>하나의 fluid particle(유체 입자)이 시간에 따라 실제로 지나간 trajectory(궤적)입니다.</p></div><div class="card"><h3>Streakline(유맥선)</h3><p>하나의 prescribed point(지정된 고정점)을 과거에 통과한 모든 입자의 현재 locus(자취)입니다.</p></div></div><div class="callout"><h3>Streamline equation(유선 방정식)</h3><p>유선을 따른 미소변위 <em>dr=(dx,dy,dz)</em>와 velocity <em>V=(u,v,w)</em>가 평행하므로 다음 관계를 가집니다.</p><span class="formula">dx/u = dy/v = dz/w</span></div><div class="key-sentence">steady flow(정상유동)에서는 streamline, pathline, streakline이 일치합니다. unsteady flow(비정상유동)에서는 일반적으로 다릅니다.</div><div class="quiet-card"><h3>Streamtube(유관)</h3><p>closed collection of streamlines(닫힌 유선 다발)로 만든 관입니다. 옆면이 streamline으로 이루어져 그 면을 가로지르는 velocity component(속도 성분)가 없습니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-20" aria-labelledby="slide-20-title">
+          <p class="section-kicker">Source slide 20 · Governing ingredients</p>
+          <h2 class="section-title" id="slide-20-title">세 Conservation laws(보존법칙)만으로는 부족하고, State relation(상태관계)과 Boundary conditions(경계조건)가 필요합니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-20.jpg" alt="유체 문제에 필요한 보존법칙 상태방정식 경계조건을 열거한 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 20/23</span><span>강의 녹화 00:52:18–00:54:01</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-3"><div class="card"><h3>Mass conservation</h3><p>질량은 생성되거나 사라지지 않습니다. control volume(검사체적)에서 inflow, outflow, accumulation(유입·유출·축적)을 연결합니다.</p></div><div class="card"><h3>Momentum conservation</h3><p>linear/angular momentum(선/각운동량)의 변화와 external forces/torques(외력/토크)를 연결합니다.</p></div><div class="card"><h3>Energy conservation</h3><p>internal, kinetic, potential energy(내부·운동·위치에너지)와 heat/work transfer(열/일 전달)를 연결합니다.</p></div></div><div class="callout"><h3>Closure(폐쇄)</h3><p>보존법칙에 equation of state(상태방정식)와 associated boundary conditions(관련 경계조건)를 더해야 pressure, velocity, temperature field(압력·속도·온도장)를 결정할 수 있습니다.</p></div><div class="quiet-card"><h3>Solid mechanics와의 대응</h3><p>solid mechanics(고체역학)에서 free-body diagram(자유물체도)이 분석 영역과 힘을 명확히 하듯, fluid mechanics(유체역학)에서는 system or control volume(시스템 또는 검사체적)의 선택이 출발점입니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-21" aria-labelledby="slide-21-title">
+          <p class="section-kicker">Source slide 21 · Analysis techniques</p>
+          <h2 class="section-title" id="slide-21-title">Integral, differential, dimensional approach(적분·미분·차원해석 접근)의 해상도가 다릅니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-21.jpg" alt="적분 접근 미분 접근 차원해석 실험 및 CFD를 비교한 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 21/23</span><span>강의 녹화 00:54:01–00:57:44</span></figcaption></figure>
+          <div class="note-stack"><div class="grid-3"><div class="card"><h3>Integral approach(적분 접근)</h3><p>finite control volume(유한 검사체적)에 balance(수지)를 세워 inflow/outflow(유입/유출), body force or torque(물체력/토크), total energy exchange(총에너지 교환) 같은 gross effect(전체 효과)를 구합니다. Chapter 3의 중심입니다.</p></div><div class="card"><h3>Differential approach(미분 접근)</h3><p>infinitesimal control volume(무한소 검사체적)에 법칙을 적용하여 모든 <em>(x,y,z)</em>에서 detailed flow field(상세 유동장)를 기술합니다. Chapter 4의 중심입니다.</p></div><div class="card"><h3>Dimensional/experimental approach</h3><p>Pi theorem(파이 정리)으로 무차원 매개변수를 만들고 model/full scale(모형/실물)의 similarity(상사)를 맞춥니다. Chapter 5의 중심입니다.</p></div></div><div class="callout"><h3>CFD(Computational Fluid Dynamics, 전산유체역학)</h3><p>복잡한 geometry, heat/mass transfer, chemical reaction, multiphase behavior(형상·열/물질전달·화학반응·다상 거동)를 포함한 문제에서는 governing equations(지배방정식)을 수치적으로 풀어 수많은 field variables(장 변수)를 계산합니다.</p></div><div class="quiet-card"><h3>녹화의 aircraft example(항공기 예)</h3><p>실물 KF-21을 모든 조건에서 직접 시험하기 어려우므로 scaled wind-tunnel model(축소 풍동모형)을 사용합니다. 단순히 크기만 줄이는 것이 아니라 관련 nondimensional parameters(무차원 매개변수)를 맞춰야 같은 유동 물리를 재현할 수 있습니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-22" aria-labelledby="slide-22-title">
+          <p class="section-kicker">Source slide 22 · History</p>
+          <h2 class="section-title" id="slide-22-title">Fluid mechanics(유체역학)의 핵심 개념은 여러 세기에 걸쳐 쌓였습니다.</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-22.jpg" alt="아르키메데스부터 폰 카르만까지 유체역학자와 기여를 정리한 역사 표 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 22/23</span><span>강의 녹화 00:57:44–01:00:04</span></figcaption></figure>
+          <div class="note-stack"><table class="term-table"><thead><tr><th>Name(이름)</th><th>Important contribution(주요 기여)</th></tr></thead><tbody><tr><td>Archimedes</td><td>buoyancy and floating bodies(부력과 부유체 법칙)</td></tr><tr><td>Leonardo da Vinci</td><td>early continuity equation(초기 연속방정식)</td></tr><tr><td>Isaac Newton</td><td>law of linear viscous stress(선형 점성응력 법칙)</td></tr><tr><td>Leonhard Euler</td><td>basic inviscid equations and Bernoulli relation(기본 비점성 방정식과 베르누이 관계)</td></tr><tr><td>L. M. H. Navier</td><td>differential equations of viscous flow(점성유동 미분방정식)</td></tr><tr><td>Jean Louis Poiseuille</td><td>laminar tube-flow experiments(층류 관유동 실험)</td></tr><tr><td>Osborne Reynolds</td><td>transition to turbulence(난류 천이 설명)</td></tr><tr><td>Ludwig Prandtl</td><td>boundary-layer theory and separation(경계층 이론과 박리)</td></tr><tr><td>Theodore von Kármán</td><td>aerodynamics and turbulence theory(공기역학과 난류 이론)</td></tr></tbody></table><div class="quiet-card"><h3>왜 이름이 반복되는가?</h3><p>Bernoulli equation, Navier-Stokes equations, Reynolds number, Prandtl boundary layer, von Kármán vortex street처럼 이들의 이름은 뒤 장의 equation, number, theory(방정식·수·이론)로 다시 등장합니다.</p></div></div>
+        </section>
+
+        <section class="source-section" id="slide-23" aria-labelledby="slide-23-title">
+          <p class="section-kicker">Source slide 23 · Summary</p>
+          <h2 class="section-title" id="slide-23-title">Chapter 1의 다섯 문장</h2>
+          <figure class="source-slide"><div class="source-slide__frame"><img src="assets/slides/lecture01/slide-23.jpg" alt="유체 정의 오일러리안 기술 물성 수학 관계 유선을 요약한 마지막 슬라이드" width="1440" height="1080" loading="lazy" /></div><figcaption><span>원본 PDF 23/23</span><span>강의 녹화 01:00:04–01:00:19</span></figcaption></figure>
+          <div class="note-stack"><ol class="plain-list"><li>fluid(유체)는 shear stress(전단응력)를 받으면 계속 움직이고 변형합니다.</li><li>Eulerian description(오일러리안 기술)은 flow properties(유동 물성)를 <em>(x,y,z,t)</em>의 함수로 나타냅니다.</li><li><em>p, ρ, T, μ, γ, surface tension, vapor pressure</em> 등 물성을 찾아 사용해야 합니다.</li><li>mass, momentum, energy conservation(질량·운동량·에너지 보존)에 state relation(상태관계)과 boundary conditions(경계조건)를 더해 문제를 풉니다.</li><li>streamline(유선)은 local velocity vector(국소 속도벡터)에 평행한 가장 널리 쓰이는 유동 표현입니다.</li></ol><div class="key-sentence">Chapter 2부터는 이 어휘를 실제 fluid statics and dynamics(유체정역학·유체동역학) 계산에 사용합니다.</div></div>
+        </section>
+
+        <section class="editorial-section section-divider" id="exam-english">
+          <p class="section-kicker">Exam English</p>
+          <h2 class="section-title">정의형·비교형 문제에 바로 쓰는 영어</h2>
+          <div class="note-stack">
+            <div class="exam-card"><h3>Q1. Define a fluid by its response to shear stress.</h3><div class="answer"><span class="answer__label">Model answer</span>A fluid is a substance that deforms continuously when subjected to any sustained shear stress, however small the stress may be.</div><p style="margin-top: 12px">fluid(유체)는 sustained shear stress(지속 전단응력) 아래에서 continuously deforms(계속 변형)한다고 정의합니다.</p></div>
+            <div class="exam-card"><h3>Q2. What is the continuum assumption?</h3><div class="answer"><span class="answer__label">Model answer</span>The continuum assumption treats a fluid as continuously distributed matter, so properties such as density, pressure, and velocity can be defined as smooth fields rather than by tracking individual molecules.</div><p style="margin-top: 12px">개별 molecule(분자) 대신 density, pressure, velocity field(밀도·압력·속도장)를 정의하는 근사라고 쓰면 됩니다.</p></div>
+            <div class="exam-card"><h3>Q3. Distinguish a system from a control volume.</h3><div class="answer"><span class="answer__label">Model answer</span>A system is a fixed quantity of mass whose identity is followed, whereas a control volume is a selected region in space through which fluid may flow. The boundary of a control volume is called the control surface.</div><p style="margin-top: 12px">fixed mass(고정 질량)와 selected region(선택 영역)의 대비가 핵심입니다.</p></div>
+            <div class="exam-card"><h3>Q4. Compare Lagrangian and Eulerian descriptions.</h3><div class="answer"><span class="answer__label">Model answer</span>The Lagrangian description follows individual fluid particles along their trajectories. The Eulerian description observes flow properties at fixed spatial locations as functions of position and time.</div><p style="margin-top: 12px">follows particles(입자를 따라감) 대 fixed locations(고정 위치)을 분명히 씁니다.</p></div>
+            <div class="exam-card"><h3>Q5. State the principle of dimensional homogeneity.</h3><div class="answer"><span class="answer__label">Model answer</span>Every additive term in a physically meaningful equation must have the same dimensions. The two sides of the equation must therefore also be dimensionally consistent.</div><p style="margin-top: 12px">additive terms(덧셈 항)과 both sides(양변)를 함께 언급하면 안전합니다.</p></div>
+            <div class="exam-card"><h3>Q6. Define a Newtonian fluid and the Reynolds number.</h3><div class="answer"><span class="answer__label">Model answer</span>For a Newtonian fluid, shear stress is linearly proportional to the rate of shear strain at a specified thermodynamic state. The Reynolds number, Re = ρVL/μ, compares inertial effects with viscous effects.</div><p style="margin-top: 12px"><em>τ=μdu/dy</em>와 <em>Re=ρVL/μ</em>를 의미와 함께 적습니다.</p></div>
+            <div class="exam-card"><h3>Q7. Explain cavitation.</h3><div class="answer"><span class="answer__label">Model answer</span>Cavitation occurs when the local absolute pressure in a liquid falls below its vapor pressure at the local temperature. Vapor bubbles form and may collapse violently in higher-pressure regions, causing noise, vibration, and erosion.</div><p style="margin-top: 12px">absolute pressure(절대압력), vapor pressure at temperature(해당 온도의 증기압), bubble collapse(기포 붕괴)를 포함합니다.</p></div>
+            <div class="exam-card"><h3>Q8. Distinguish streamlines, pathlines, and streaklines.</h3><div class="answer"><span class="answer__label">Model answer</span>A streamline is tangent to the instantaneous velocity field, a pathline is the trajectory of one fluid particle, and a streakline is the current locus of particles that passed through a fixed point. They coincide in steady flow.</div><p style="margin-top: 12px">instantaneous field(순간 장), one particle(한 입자), fixed point(고정점)의 세 기준을 대응시킵니다.</p></div>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="glossary">
+          <p class="section-kicker">Core glossary</p>
+          <h2 class="section-title">Lecture 1 핵심 용어집</h2>
+          <table class="term-table">
+            <thead><tr><th>English(한국어)</th><th>시험용 정의·관계</th></tr></thead>
+            <tbody>
+              <tr><td>fluid(유체)</td><td>sustained shear stress(지속 전단응력) 아래에서 continuously deforms(계속 변형)하는 물질입니다.</td></tr>
+              <tr><td>fluid statics(유체정역학)</td><td>fluid at rest(정지 유체)의 pressure and force(압력과 힘)를 다룹니다.</td></tr>
+              <tr><td>fluid dynamics(유체동역학)</td><td>fluid in motion(운동하는 유체)의 공간·시간적 거동을 다룹니다.</td></tr>
+              <tr><td>shear stress(전단응력)</td><td>surface tangent direction(표면 접선 방향)으로 작용하는 force per area(단위면적당 힘)입니다.</td></tr>
+              <tr><td>continuum assumption(연속체 가정)</td><td>분자 집합을 연속적으로 분포한 물질로 근사하여 field properties(장 물성)를 정의합니다.</td></tr>
+              <tr><td>density(밀도)</td><td>continuum limit(연속체 극한)에서 unit volume per mass가 아니라 <strong>mass per unit volume</strong>, <em>ρ=δm/δV</em>입니다.</td></tr>
+              <tr><td>dimensional homogeneity(차원 동차성)</td><td>equation(방정식)의 모든 additive term(덧셈 항)이 같은 dimension(차원)을 가져야 한다는 원리입니다.</td></tr>
+              <tr><td>system / control mass(시스템 / 검사질량)</td><td>fixed identity(고정 정체성)를 가진 일정한 mass(질량)입니다.</td></tr>
+              <tr><td>surroundings(주위)</td><td>system(시스템) 바깥의 모든 것입니다.</td></tr>
+              <tr><td>boundary(경계)</td><td>system(시스템)과 surroundings(주위)를 나누는 면입니다.</td></tr>
+              <tr><td>control volume(검사체적)</td><td>fluid flow analysis(유동 해석)를 위해 space(공간)에 선택한 임의 영역입니다.</td></tr>
+              <tr><td>control surface(검사면)</td><td>control volume(검사체적)의 geometric boundary(기하학적 경계)이며 real or imaginary(실재 또는 가상)입니다.</td></tr>
+              <tr><td>Lagrangian description(라그랑지안 기술)</td><td>individual material particle(개별 물질입자)을 trajectory(궤적)를 따라 추적합니다.</td></tr>
+              <tr><td>Eulerian description(오일러리안 기술)</td><td>fixed spatial locations(고정 공간위치)에서 properties(물성)를 <em>(x,y,z,t)</em>의 함수로 관찰합니다.</td></tr>
+              <tr><td>material derivative(물질미분)</td><td>Eulerian field(오일러리안 장)로 표현된 양을 moving particle(이동 입자)이 겪는 변화율로 바꿉니다.</td></tr>
+              <tr><td>pressure(압력)</td><td>static fluid(정지 유체)의 compressive normal stress(압축 수직응력)입니다.</td></tr>
+              <tr><td>specific weight(비중량)</td><td>weight per unit volume(단위체적당 중량), <em>γ=ρg</em>입니다.</td></tr>
+              <tr><td>specific gravity(비중)</td><td>reference-fluid density(기준유체 밀도)에 대한 density ratio(밀도비)로 dimensionless(무차원)입니다.</td></tr>
+              <tr><td>total specific energy(단위질량당 총에너지)</td><td><em>e=u+V²/2+gz</em>, internal+kinetic+potential energy의 합입니다.</td></tr>
+              <tr><td>equation of state(상태방정식)</td><td>thermodynamic properties(열역학 물성) 사이의 관계입니다. ideal gas(이상기체)는 <em>p=ρRT</em>입니다.</td></tr>
+              <tr><td>incompressible flow(비압축성 유동)</td><td>material particle(물질입자)의 density change(밀도 변화)를 무시할 수 있는 유동입니다.</td></tr>
+              <tr><td>dynamic viscosity μ(점성계수)</td><td>Newtonian fluid(뉴턴 유체)에서 shear stress와 strain rate를 잇는 비례계수입니다.</td></tr>
+              <tr><td>kinematic viscosity ν(동점성계수)</td><td>dynamic viscosity(점성계수)를 density(밀도)로 나눈 값, <em>ν=μ/ρ</em>입니다.</td></tr>
+              <tr><td>Newtonian fluid(뉴턴 유체)</td><td>주어진 상태에서 <em>τ</em>와 shear strain rate(전단변형률속도)가 linear(선형) 관계인 유체입니다.</td></tr>
+              <tr><td>Reynolds number(레이놀즈 수)</td><td>inertial effect/viscous effect(관성/점성 효과)의 비, <em>Re=ρVL/μ</em>입니다.</td></tr>
+              <tr><td>surface tension(표면장력)</td><td>interface(계면) 안에서 cut line(절단선)에 수직으로 작용하는 force per unit length(단위길이당 힘)입니다.</td></tr>
+              <tr><td>contact angle(접촉각)</td><td>liquid-gas interface(액체-기체 계면)와 solid surface(고체면)가 만나는 젖음성 지표입니다.</td></tr>
+              <tr><td>vapor pressure(증기압)</td><td>주어진 temperature(온도)에서 liquid와 its vapor(액체와 자체 증기)가 평형을 이루는 압력입니다.</td></tr>
+              <tr><td>cavitation(공동)</td><td>local pressure가 vapor pressure 아래로 내려가 vapor bubbles가 생기고 붕괴하는 현상입니다.</td></tr>
+              <tr><td>streamline(유선)</td><td>한 순간 모든 점에서 local velocity vector(국소 속도벡터)에 접하는 선입니다.</td></tr>
+              <tr><td>pathline(유적선)</td><td>한 fluid particle(유체 입자)이 실제로 이동한 path(경로)입니다.</td></tr>
+              <tr><td>streakline(유맥선)</td><td>한 fixed point(고정점)을 지난 입자들의 현재 locus(자취)입니다.</td></tr>
+              <tr><td>integral approach(적분 접근)</td><td>finite control volume(유한 검사체적)의 gross balance(전체 수지)를 구합니다.</td></tr>
+              <tr><td>differential approach(미분 접근)</td><td>infinitesimal region(무한소 영역)에서 pointwise field equation(점별 장 방정식)을 구합니다.</td></tr>
+              <tr><td>dimensional analysis(차원해석)</td><td>dimensionless groups(무차원군)로 scaling and similarity(축척과 상사)를 분석합니다.</td></tr>
+              <tr><td>CFD(전산유체역학)</td><td>governing equations(지배방정식)을 discretize and solve numerically(이산화하여 수치적으로 풂)하는 방법입니다.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="editorial-section" id="asr-log">
+          <p class="section-kicker">Transcript audit</p>
+          <h2 class="section-title">영어 스크립트 교정 기록</h2>
+          <p class="section-lead">faster-whisper turbo의 원시 결과를 23쪽 슬라이드와 녹화 문맥으로 대조했습니다. 자동전사의 문법적 말버릇은 가능한 한 보존하되, 아래처럼 의미를 바꾸는 전문용어·수식 오류와 폭주 반복은 공개본에서 교정했습니다.</p>
+          <table class="term-table"><thead><tr><th>원시 ASR</th><th>검수본</th><th>근거</th></tr></thead><tbody>
+            <tr><td>“Lagration perspective”</td><td>Lagrangian perspective(라그랑지안 관점)</td><td>슬라이드 02·09 및 입자 추적 정의</td></tr>
+            <tr><td>“expression” 반복 200여 회</td><td>Force is a secondary dimension; <em>[F]=MLT<sup>-2</sup></em>.</td><td>슬라이드 06 식과 앞뒤 발화</td></tr>
+            <tr><td>Eulerian reference changes with time</td><td>Lagrangian reference follows moving material; Eulerian coordinates are fixed in space.</td><td>슬라이드 09 정의와 관내 유동 예</td></tr>
+            <tr><td>“Cb”, constant V</td><td><em>c<sub>v</sub></em>, specific heat at constant volume</td><td>슬라이드 11의 <em>R=c<sub>p</sub>-c<sub>v</sub></em></td></tr>
+            <tr><td>“reurnicity, velocity”</td><td><em>Re=ρVL/μ=VL/ν</em></td><td>슬라이드 12 Reynolds-number 식</td></tr>
+            <tr><td>“rubricated by a thin film”</td><td>lubricated by a thin film</td><td>슬라이드 13 문제문</td></tr>
+            <tr><td>“liquid-wester”, θ smaller than 0</td><td>the liquid wets the solid, <em>θ&lt;90°</em></td><td>슬라이드 15 접촉각 기준</td></tr>
+            <tr><td>liquid vapor drops below vapor pressure</td><td>local liquid pressure drops below vapor pressure</td><td>슬라이드 18 cavitation(공동) 정의</td></tr>
+            <tr><td>“strict line”</td><td>streakline(유맥선)</td><td>슬라이드 19의 prescribed-point 정의</td></tr>
+            <tr><td><em>dx/u=dy/v=dG/v</em></td><td><em>dx/u=dy/v=dz/w</em></td><td>슬라이드 19 Cartesian streamline equation</td></tr>
+            <tr><td>“velocidad layer”, “SoContine model”</td><td>wind-tunnel scaled model(풍동 축소모형)</td><td>슬라이드 21과 KF-21 모형시험 문맥</td></tr>
+            <tr><td>“Quagel”, “Prentel”, “Karmann”</td><td>Poiseuille, Prandtl, von Kármán</td><td>슬라이드 22 역사 표</td></tr>
+          </tbody></table>
+          <div class="source-note">검수 결과 학생 이름·계정 식별자·개인 대화는 발견되지 않았습니다. 공개 스크립트는 270개 타임스탬프 구간이며, 의미 없는 7개 ASR 조각을 제외하고 131개 구간을 교정했습니다. 실제 발화는 01:00:19에 끝나며 이후 녹화의 무음·비활성 화면은 전사 대상에서 제외했습니다.</div>
+        </section>
+
+        <section class="editorial-section" id="sources">
+          <p class="section-kicker">Sources</p>
+          <h2 class="section-title">사용한 강의 자료</h2>
+          <div class="grid-2"><div class="card"><h3>Lecture 1 PDF · 23 pages</h3><p>Chapter 1 — Introduction to Fluid Mechanics. 원본 23쪽을 같은 순서와 4:3 비율로 모두 수록했습니다.</p><ul class="link-list"><li><a href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture01_note.pdf">가림막 제거 PDF</a></li><li><a href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture01_original.pdf">원본 PDF 공개 사본</a></li></ul></div><div class="card"><h3>Reviewed English transcript</h3><p>비공개 수업 녹화 한 편을 faster-whisper turbo, English, CUDA float16으로 전사한 뒤 원본 음성·슬라이드 문맥으로 검수했습니다.</p><ul class="link-list"><li><a href="https://github.com/leejinh0225/MC2102-Fluid/blob/main/2026FA_FluidMechanics/transcripts/lecture01/lecture.txt">교정 영어 스크립트</a></li><li><a href="https://github.com/leejinh0225/MC2102-Fluid/blob/main/2026FA_FluidMechanics/transcripts/lecture01/lecture.srt">교정 SRT 자막</a></li></ul></div></div>
+          <p class="source-note">강의 영상·음성 파일은 수업 전용 비공개 자료이므로 GitHub와 HTML에 올리거나 링크하지 않았습니다. 설명은 PDF와 실제 발화를 교차 확인했으며, 원문을 넘어 명확히 풀어쓴 부분은 개념 설명 또는 주의 문구로 구분했습니다.</p>
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="Lecture 1 목차">
+        <p class="toc__label">On this lecture</p>
+        <ol>
+          <li><a href="#overview">전체 개요</a></li><li><a href="#concept-map">개념 지도</a></li><li><a href="#concept-summary">핵심 개념 요약</a></li>
+          <li><a href="#slide-01">01 · 표지</a></li><li><a href="#slide-02">02 · 학습목표</a></li><li><a href="#slide-03">03 · Fluid definition</a></li><li><a href="#slide-04">04 · Continuum</a></li><li><a href="#slide-05">05 · Dimensions &amp; units</a></li><li><a href="#slide-06">06 · Dimension systems</a></li><li><a href="#slide-07">07 · Homogeneity</a></li><li><a href="#slide-08">08 · System &amp; control volume</a></li><li><a href="#slide-09">09 · Description methods</a></li><li><a href="#slide-10">10 · Fluid properties</a></li><li><a href="#slide-11">11 · State relations</a></li><li><a href="#slide-12">12 · Viscosity &amp; Re</a></li><li><a href="#slide-13">13 · Terminal velocity</a></li><li><a href="#slide-14">14 · Viscosity vs temperature</a></li><li><a href="#slide-15">15 · Contact angle</a></li><li><a href="#slide-16">16 · Surface tension</a></li><li><a href="#slide-17">17 · Vapor pressure</a></li><li><a href="#slide-18">18 · Cavitation</a></li><li><a href="#slide-19">19 · Flow patterns</a></li><li><a href="#slide-20">20 · Governing ingredients</a></li><li><a href="#slide-21">21 · Analysis techniques</a></li><li><a href="#slide-22">22 · History</a></li><li><a href="#slide-23">23 · Summary</a></li>
+          <li><a href="#exam-english">시험 영어</a></li><li><a href="#glossary">용어집</a></li><li><a href="#asr-log">스크립트 교정</a></li><li><a href="#sources">출처</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <footer class="site-footer"><div class="site-footer__inner"><span class="wordmark">Fluid Mechanics 1</span><span>Lecture 1 · Introduction to Fluid Mechanics · 날짜 미기재</span></div></footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>

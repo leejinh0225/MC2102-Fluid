@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{LECTURE_NUMBER}} · {{LECTURE_TITLE}} | Fluid Mechanics 1</title>
+    <meta name="description" content="{{ONE_SENTENCE_DESCRIPTION}}" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="index.html">Fluid Mechanics 1</a>
+        <div class="header-actions">
+          <a class="header-link" href="downloads.html">PDF 다운로드</a>
+          <span class="header-meta">{{LECTURE_NUMBER}} · {{LECTURE_TITLE}}</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">{{WEEK}} · {{LECTURE_NUMBER}}</p>
+        <h1>{{LECTURE_TITLE}}.</h1>
+        <p class="hero__lead">{{LECTURE_PROMISE}}</p>
+        <div class="meta-row">
+          <span class="meta-chip">날짜 {{DATE_OR_날짜_미기재}}</span>
+          <span class="meta-chip">원본 슬라이드 {{PAGE_COUNT}}장</span>
+          <span class="meta-chip">비공개 녹화 1개 · 영어 스크립트 1개</span>
+          <span class="meta-chip">수업 대체 + 시험 대비</span>
+        </div>
+        <div class="button-row">
+          <!-- 수업 녹화는 비공개 로컬 자료이므로 재생 링크나 파일 경로를 넣지 않는다. -->
+          <a class="button button--primary" href="{{CLEANED_PDF_URL}}" download="{{CLEANED_PDF_FILENAME}}" type="application/pdf">가림막 제거 PDF 다운로드</a>
+          <a class="button" href="{{ORIGINAL_PDF_URL}}" download="{{ORIGINAL_PDF_FILENAME}}" type="application/pdf">원본 PDF 다운로드</a>
+          <a class="button" href="index.html">강의 목록</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <main id="main" class="content">
+        <section class="editorial-section section-divider" id="overview">
+          <p class="section-kicker">Lecture overview</p>
+          <h2 class="section-title">{{CORE_RELATIONSHIP_HEADLINE}}</h2>
+          <p class="section-lead">{{CORE_RELATIONSHIP_EXPLANATION}}</p>
+        </section>
+
+        <section class="editorial-section" id="concept-summary">
+          <p class="section-kicker">Content summary</p>
+          <h2 class="section-title">{{LECTURE_NUMBER}} 핵심 개념 요약</h2>
+          <p class="section-lead">
+            이 부분만 읽어도 렉처의 핵심 정의, 개념 관계, 가정과 풀이 흐름을 이해할 수 있도록 작성합니다.
+          </p>
+          <div class="note-stack">
+            <!-- 슬라이드와 실제 개념 설명 스크립트를 종합한 독립형 요약. 슬라이드별 상세 설명은 별도로 유지한다. -->
+            {{STANDALONE_CONCEPT_SUMMARY}}
+          </div>
+        </section>
+
+        <!-- PDF의 모든 페이지에 대해 아래 section을 정확히 한 번씩 복제한다. -->
+        <section class="source-section" id="slide-{{NN}}" aria-labelledby="slide-{{NN}}-title">
+          <p class="section-kicker">Source slide {{NN}} · {{SLIDE_ROLE}}</p>
+          <h2 class="section-title" id="slide-{{NN}}-title">{{SLIDE_HEADING}}</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/{{LECTURE_SLUG}}/slide-{{NN}}.jpg"
+                alt="{{DESCRIPTIVE_ALT_TEXT}}"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF {{CURRENT_PAGE}}/{{PAGE_COUNT}}</span>
+              <span>강의 녹화 {{RECORDING_TIME_RANGE}}</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            {{SLIDE_EXPLANATION_BLOCKS}}
+          </div>
+        </section>
+
+        <section class="editorial-section" id="exam-english">
+          <p class="section-kicker">Exam English</p>
+          <h2 class="section-title">정의형·비교형 문제에 쓰는 영어 문장</h2>
+          {{EXAM_QUESTION_AND_MODEL_ANSWER_BLOCKS}}
+        </section>
+
+        <section class="editorial-section" id="glossary">
+          <p class="section-kicker">Core glossary</p>
+          <h2 class="section-title">{{LECTURE_NUMBER}} 핵심 용어집</h2>
+          {{BILINGUAL_GLOSSARY_TABLE}}
+        </section>
+
+        <section class="editorial-section" id="asr-log">
+          <p class="section-kicker">Transcript audit</p>
+          <h2 class="section-title">영어 스크립트 교정 기록</h2>
+          {{ASR_CORRECTION_TABLE}}
+        </section>
+
+        <section class="editorial-section" id="sources">
+          <p class="section-kicker">Sources</p>
+          <h2 class="section-title">사용한 강의 자료</h2>
+          {{SOURCE_LIST_AND_PROVENANCE_NOTE}}
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="{{LECTURE_NUMBER}} 목차">
+        <p class="toc__label">On this lecture</p>
+        <ol>{{TABLE_OF_CONTENTS_LINKS}}</ol>
+      </nav>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span class="wordmark">Fluid Mechanics 1</span>
+        <span>{{LECTURE_NUMBER}} · {{LECTURE_TITLE}} · {{DATE_OR_날짜_미기재}}</span>
+      </div>
+    </footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>

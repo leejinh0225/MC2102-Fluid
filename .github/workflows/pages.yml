@@ -1,0 +1,45 @@
+name: Deploy Fluid Mechanics notes to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "2026FA_FluidMechanics/site/**"
+      - "2026FA_FluidMechanics/lecture_notes/**"
+      - "2026FA_FluidMechanics/scripts/validate_site.mjs"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Validate site
+        run: node 2026FA_FluidMechanics/scripts/validate_site.mjs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 2026FA_FluidMechanics/site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lecture 1 · Introduction to Dynamics | MC2103</title>
+    <meta
+      name="description"
+      content="Dynamics의 범위, particle과 rigid body 모델, 주요 원리, kinematics와 kinetics를 한국어로 설명하는 Lecture 1 학습 노트"
+    />
+    <meta property="og:title" content="Lecture 1 · Introduction to Dynamics" />
+    <meta
+      property="og:description"
+      content="원본 슬라이드 18장과 영어 영상 3개를 대조한 한국어 수업 대체 노트"
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://leejinh0225.github.io/MC2103-Dynamics/lecture01.html"
+    />
+    <meta
+      property="og:image"
+      content="https://leejinh0225.github.io/MC2103-Dynamics/assets/og.png"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="index.html">MC2103 Dynamics</a>
+        <div class="header-actions">
+          <a class="header-link" href="downloads.html">PDF 다운로드</a>
+          <span class="header-meta">Lecture 1 · Introduction to Dynamics</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">Week 01 · Lecture 01</p>
+        <h1>Introduction to Dynamics.</h1>
+        <p class="hero__lead">
+          dynamics(동역학)이 무엇을 연구하는지, 이 과목이 어떤 idealization(이상화)을 사용하는지, 앞으로 무엇을 배우는지 한 번에 정리합니다.
+        </p>
+        <div class="meta-row" aria-label="강의 정보">
+          <span class="meta-chip">날짜 2026-09-02</span>
+          <span class="meta-chip">원본 슬라이드 18장</span>
+          <span class="meta-chip">Overview · Contents · Summary</span>
+          <span class="meta-chip">수업 대체 + 시험 대비</span>
+        </div>
+        <div class="button-row">
+          <a
+            class="button button--primary"
+            href="https://www.youtube.com/watch?v=nzDNfG9iYXw"
+            target="_blank"
+            rel="noreferrer"
+            >Contents 영상 열기</a
+          >
+          <a class="button" href="https://github.com/leejinh0225/MC2103-Dynamics/raw/refs/heads/main/2026FA_Dynamics/lecture_notes/lecture01_note.pdf" download="lecture01_note.pdf" type="application/pdf">원본 PDF 다운로드</a>
+          <a class="button" href="index.html">강의 목록</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <main id="main" class="content">
+        <section class="editorial-section section-divider" id="overview" aria-labelledby="overview-title">
+          <p class="section-kicker">Lecture overview</p>
+          <h2 class="section-title" id="overview-title">운동을 묘사하고, 그 원인을 연결합니다.</h2>
+          <p class="section-lead">
+            이 강의의 중심 구조는 단순합니다. 먼저 motion(운동)을 geometry(기하학)와 time(시간)으로 묘사하고, 다음으로 force(힘)와 torque(토크)가 그 motion(운동)을 어떻게 바꾸는지 설명합니다.
+          </p>
+        </section>
+
+        <section class="editorial-section" id="concept-map" aria-labelledby="map-title">
+          <p class="section-kicker">Concept map</p>
+          <h2 class="section-title" id="map-title">과목 전체를 관통하는 두 질문.</h2>
+          <div class="course-map">
+            <div class="course-map__card">
+              <p class="section-kicker">Describe motion</p>
+              <h3>Kinematics(운동학)</h3>
+              <p>
+                “어떻게 움직이는가?”를 묻습니다. position(위치), velocity(속도), acceleration(가속도), angular velocity(각속도), angular acceleration(각가속도)을 다룹니다.
+              </p>
+            </div>
+            <div class="course-map__arrow" aria-hidden="true">→</div>
+            <div class="course-map__card">
+              <p class="section-kicker">Explain motion</p>
+              <h3>Kinetics(운동역학)</h3>
+              <p>
+                “무엇이 움직이게 하는가?”를 묻습니다. force(힘), torque(토크), mass(질량), moment of inertia(질량관성모멘트)를 연결합니다.
+              </p>
+            </div>
+          </div>
+          <div class="callout" style="margin-top: 20px">
+            <h3>한 문장 핵심</h3>
+            <p>
+              kinematics(운동학)는 원인을 묻지 않고 motion(운동)을 기술하며, kinetics(운동역학)는 force(힘)와 mass property(질량 특성)를 motion(운동)에 연결합니다.
+            </p>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="concept-summary" aria-labelledby="concept-summary-title">
+          <p class="section-kicker">Content summary</p>
+          <h2 class="section-title" id="concept-summary-title">Lecture 1 핵심 개념 요약</h2>
+          <p class="section-lead">
+            이 부분은 Lecture 1의 원본 슬라이드와 Contents 영상 내용을 한 흐름으로 압축한 요약입니다. 시간이 부족할 때 이 부분만 읽어도 강의의 정의, 범위, 모델, 원리, 수학 도구가 어떻게 연결되는지 파악할 수 있도록 구성했습니다.
+          </p>
+
+          <div class="note-stack">
+            <div class="callout">
+              <h3>1. Dynamics(동역학)는 motion(운동)과 causes of motion(운동의 원인)을 함께 연구합니다.</h3>
+              <p>
+                dynamics(동역학)의 첫 질문은 “물체가 어떻게 움직이는가?”이고, 두 번째 질문은 “무엇이 그 운동을 만들거나 바꾸는가?”입니다. 물체의 position(위치), velocity(속도), acceleration(가속도)을 기술하는 것만으로는 원인을 알 수 없으며, force(힘), torque(토크), mass(질량), moment of inertia(질량관성모멘트)를 함께 연결해야 전체 dynamics(동역학) 문제가 됩니다.
+              </p>
+              <span class="key-sentence">Dynamics studies the motion of objects under the influence of forces.</span>
+            </div>
+
+            <div class="grid-2">
+              <div class="card">
+                <h3>Kinematics(운동학): 어떻게 움직이는가?</h3>
+                <p>
+                  kinematics(운동학)는 motion(운동)의 원인을 묻지 않고 geometry(기하학)와 time(시간)의 관계를 기술합니다. 주요 물리량은 position(위치), velocity(속도), acceleration(가속도), angular velocity(각속도), angular acceleration(각가속도)입니다. 예를 들어 position(위치)이 시간에 따라 주어졌을 때 velocity(속도)를 구하는 문제는 kinematics(운동학)입니다.
+                </p>
+                <span class="formula">v = dr/dt &nbsp;·&nbsp; a = dv/dt</span>
+              </div>
+              <div class="card">
+                <h3>Kinetics(운동역학): 무엇이 움직이게 하는가?</h3>
+                <p>
+                  kinetics(운동역학)는 force(힘)와 torque(토크)를 motion(운동)의 변화에 연결합니다. 같은 acceleration(가속도)을 만들기 위해 필요한 force(힘)를 구하거나, 주어진 force(힘) 때문에 생기는 acceleration(가속도)을 구하는 문제가 여기에 해당합니다. 가장 기본적인 연결은 Newton’s second law(뉴턴 제2법칙)입니다.
+                </p>
+                <span class="formula">ΣF = ma</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>2. 실제 물체를 그대로 계산하지 않고, 목적에 맞는 ideal model(이상 모델)로 단순화합니다.</h3>
+              <table class="compare-table">
+                <thead><tr><th>모델</th><th>가정</th><th>언제 사용하는가</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>particle(입자)</td>
+                    <td>mass(질량)는 있지만 volume(부피)은 없다고 가정하여 size(크기), shape(형상), rotation(회전)을 neglect(무시)합니다.</td>
+                    <td>물체의 이동 경로와 center-of-mass translation(질량중심 병진운동)만 중요할 때 사용합니다.</td>
+                  </tr>
+                  <tr>
+                    <td>rigid body(강체)</td>
+                    <td>finite size(유한한 크기)는 유지하지만 applied forces(작용력) 아래에서도 does not deform(변형하지 않는다)고 가정합니다.</td>
+                    <td>물체의 orientation(방향), rotation(회전), 물체 안 여러 점의 motion(운동)이 중요할 때 사용합니다.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="margin-top: 16px">
+                같은 자동차라도 경로만 계산하면 particle(입자), 회전과 자세까지 계산하면 rigid body(강체)로 볼 수 있습니다. 즉, 모델은 물체의 고정된 종류가 아니라 문제에서 어떤 정보를 보존할지 결정한 결과입니다.
+              </p>
+            </div>
+
+            <div class="grid-2">
+              <div class="card">
+                <h3>3. 이 과목의 범위는 particle(입자)과 rigid body(강체)입니다.</h3>
+                <p>
+                  solid mechanics(고체역학)는 deformation(변형)을, fluid mechanics(유체역학)는 fluid particle(유체 입자)의 큰 relative motion(상대 운동)과 복잡한 interacting forces(상호작용력)를 다룹니다. 이 현상들도 넓은 의미의 dynamics(동역학)에 속하지만, 입문 과목에서는 다른 해석법이 필요하므로 제외합니다. 고체의 deformation(변형)은 언제나 작다는 뜻이 아니라, 선택한 문제에서 그 영향이 negligible(무시할 수 있다)고 가정하는 것입니다.
+                </p>
+              </div>
+              <div class="card">
+                <h3>4. 이후 문제는 네 가지 기본 원리를 반복해서 사용합니다.</h3>
+                <p>
+                  Newton’s second law(뉴턴 제2법칙)는 net force(알짜힘)와 acceleration(가속도)을 연결하고, Newton’s third law(뉴턴 제3법칙)는 서로 다른 두 물체에 작용하는 action/reaction pair(작용·반작용 쌍)를 설명합니다. Coulomb’s friction law(쿨롱 마찰 법칙)는 contact(접촉)면의 normal force(수직항력)와 friction force(마찰력)를, Hooke’s law(훅 법칙)는 spring deformation(스프링 변형)과 restoring force(복원력)를 연결합니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>5. Vector(벡터)와 calculus(미적분)는 운동을 수식으로 연결하는 언어입니다.</h3>
+              <p>
+                vector(벡터)는 magnitude(크기)와 direction(방향)을 함께 표현합니다. differentiation(미분)은 시간에 따른 순간 변화율을 구하므로 position(위치)에서 velocity(속도), velocity(속도)에서 acceleration(가속도)으로 이동할 때 사용합니다. integration(적분)은 변화율을 누적하므로 acceleration(가속도)에서 velocity change(속도 변화)를 구하거나, force(힘)의 작용을 시간 또는 경로에 따라 누적할 때 사용합니다.
+              </p>
+              <p>
+                이후에는 Newton’s law(뉴턴 법칙)뿐 아니라 energy method(에너지 방법)와 momentum method(운동량 방법)도 배웁니다. potential energy(위치에너지)와 kinetic energy(운동에너지)는 scalar quantity(스칼라량)이고, linear momentum(선운동량)과 angular momentum(각운동량)은 vector quantity(벡터량)입니다. reference frame(기준좌표계), coordinate system(좌표계), center of mass(질량중심), moment of inertia(질량관성모멘트)는 위치·병진·회전을 기술할 기준을 정합니다.
+              </p>
+            </div>
+
+            <div class="exam-card">
+              <h3>Lecture 1의 전체 사고 흐름</h3>
+              <ol class="plain-list">
+                <li><strong>Model(모델 선택):</strong> 물체를 particle(입자)로 볼지 rigid body(강체)로 볼지 결정합니다.</li>
+                <li><strong>Describe motion(운동 기술):</strong> position(위치), velocity(속도), acceleration(가속도) 등 필요한 kinematic quantities(운동학적 물리량)를 정합니다.</li>
+                <li><strong>Identify causes(원인 식별):</strong> force(힘), torque(토크), friction(마찰), spring force(스프링 힘)를 찾습니다.</li>
+                <li><strong>Choose a principle(원리 선택):</strong> Newton’s law(뉴턴 법칙), energy method(에너지 방법), momentum method(운동량 방법) 중 문제 조건에 맞는 표현을 사용합니다.</li>
+                <li><strong>Interpret the result(결과 해석):</strong> 부호, 방향, reference frame(기준좌표계), modeling assumption(모델링 가정)에 맞는 결과인지 확인합니다.</li>
+              </ol>
+            </div>
+
+            <div class="quiet-card">
+              <h3>한 문단으로 다시 정리</h3>
+              <p>
+                dynamics(동역학)는 먼저 kinematics(운동학)로 motion(운동)을 기술하고, kinetics(운동역학)로 그 motion(운동)을 force(힘)와 torque(토크)에 연결하는 과목입니다. 계산을 시작하기 전에 실제 물체를 particle(입자) 또는 rigid body(강체)로 idealize(이상화)하고, deformation(변형)이나 fluid particle(유체 입자)의 relative motion(상대 운동)처럼 현재 범위를 벗어난 효과는 명시적으로 neglect(무시)합니다. 이후 모든 단원은 이 모델 위에서 Newton’s laws(뉴턴 법칙), energy method(에너지 방법), momentum method(운동량 방법)를 선택해 motion(운동)을 해석하는 과정으로 확장됩니다.
+              </p>
+            </div>
+            <div class="evidence"><span>슬라이드 05–16 종합</span><span>Contents 00:17–07:32</span></div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-01" aria-labelledby="slide-01-title">
+          <p class="section-kicker">Source slide 01 · Title</p>
+          <h2 class="section-title" id="slide-01-title">Lecture 1 표지</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-01.jpg" alt="Lecture 1 Introduction to Dynamics 표지" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 1/18</span><span>MC2103 · Fall 2026</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="quiet-card">
+              <h3>슬라이드 역할</h3>
+              <p>강의 제목과 과목 정보를 제시하는 표지입니다. 별도의 개념 설명은 없습니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-02" aria-labelledby="slide-02-title">
+          <p class="section-kicker">Source slide 02 · Divider</p>
+          <h2 class="section-title" id="slide-02-title">Lecture 1-1: 동기와 사례</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-02.jpg" alt="Lecture 1-1 구분 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 2/18</span><span>Section divider(구분 슬라이드)</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="card">
+              <h3>Overview 영상의 역할</h3>
+              <p>
+                자동차와 교량, 댐의 물 흐름, 롤러코스터, rocket thrust(로켓 추력), 곡예 로봇은 모두 motion(운동)과 force(힘)의 관계를 설계해야 하는 사례입니다. 강의는 dynamics(동역학)가 control(제어)과 mechatronics(메카트로닉스)의 기초라고 설명합니다.
+              </p>
+              <div class="evidence"><span>Overview 00:17–01:41</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-03" aria-labelledby="slide-03-title">
+          <p class="section-kicker">Source slide 03 · Video link</p>
+          <h2 class="section-title" id="slide-03-title">참고 영상 링크</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-03.jpg" alt="Introduction to Dynamics 참고 YouTube 링크가 표시된 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 3/18</span><span>링크 슬라이드 · 개념 해설 없음</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="quiet-card">
+              <h3>보존된 링크</h3>
+              <p>
+                슬라이드에 표시된 링크는 <a href="https://youtu.be/vGWYp-XkLeQ" target="_blank" rel="noreferrer">YouTube 참고 영상</a>입니다. Teams 게시물의 <a href="https://www.youtube.com/watch?v=TUWKeJtWoCQ" target="_blank" rel="noreferrer">Lecture 1 Overview 영상</a>과는 다른 URL이므로 둘을 합치거나 바꾸지 않았습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-04" aria-labelledby="slide-04-title">
+          <p class="section-kicker">Source slide 04 · Divider</p>
+          <h2 class="section-title" id="slide-04-title">Lecture 1-2: 핵심 내용</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-04.jpg" alt="Lecture 1-2 구분 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 4/18</span><span>Section divider(구분 슬라이드)</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="quiet-card">
+              <h3>이후 흐름</h3>
+              <p>정의 → 과목 범위 → 모델 → 원리 → 수학 도구 → 핵심 주제 순으로 진행합니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-05" aria-labelledby="slide-05-title">
+          <p class="section-kicker">Source slide 05 · Introduction</p>
+          <h2 class="section-title" id="slide-05-title">Dynamics(동역학)는 두 가지를 함께 봅니다.</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-05.jpg" alt="Dynamics가 moving objects와 movement의 cause를 다룬다는 Introduction 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 5/18</span><span>Contents 00:17–00:53</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="callout">
+              <h3>핵심 해설</h3>
+              <p>
+                dynamics(동역학)는 moving objects(움직이는 물체)를 연구합니다. 여기에는 motion(운동)의 변화 자체뿐 아니라 cause of motion(운동의 원인)도 포함됩니다. 따라서 “어디에 있는가, 얼마나 빠른가”와 “왜 그렇게 가속되는가”를 분리해서 배우고 다시 연결합니다.
+              </p>
+              <span class="key-sentence">Dynamics is the study of motion and the causes of motion.</span>
+              <div class="evidence"><span>슬라이드 05</span><span>Contents 00:17–00:53</span></div>
+            </div>
+            <div class="grid-3">
+              <div class="card"><h3>Racing car(경주용 자동차)</h3><p>속력과 궤적은 kinematics(운동학), 타이어 힘과 가속은 kinetics(운동역학)의 문제입니다.</p></div>
+              <div class="card"><h3>Slanted building(기울어진 건물)</h3><p>기울기 자체는 geometry(기하), 하중에 의한 거동은 mechanics(역학)의 문제입니다.</p></div>
+              <div class="card"><h3>Water hose(소방 호스)</h3><p>물의 motion(운동)과 반작용 force(힘)가 함께 나타나는 사례입니다.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-06" aria-labelledby="slide-06-title">
+          <p class="section-kicker">Source slide 06 · Definition</p>
+          <h2 class="section-title" id="slide-06-title">What is Dynamics?(동역학이란?)</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-06.jpg" alt="힘의 영향을 받는 물체의 운동을 연구한다는 Dynamics 정의 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 6/18</span><span>Contents 00:53–01:42</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="callout">
+              <h3>정의</h3>
+              <p>
+                dynamics(동역학)는 objects(물체)가 forces(힘)의 영향을 받을 때 나타나는 motion(운동)을 연구하는 physics(물리학)의 분야입니다. `under the influence of forces(힘의 영향을 받아)`는 영어 정의형 문제에서 그대로 사용할 수 있는 핵심 표현입니다.
+              </p>
+              <span class="key-sentence">Dynamics studies the motion of objects under the influence of forces.</span>
+            </div>
+            <div class="exam-card">
+              <h3>시험에서 구분할 것</h3>
+              <p>
+                force(힘)가 있다고 항상 큰 motion(운동)이 보이는 것은 아닙니다. force(힘)의 합이 zero(0)라면 acceleration(가속도)은 zero(0)일 수 있습니다. 반대로 velocity(속도)가 zero(0)인 한 순간에도 acceleration(가속도)은 zero(0)가 아닐 수 있습니다. 이 구분은 이후 문제에서 매우 자주 사용됩니다.
+              </p>
+              <div class="evidence"><span>편집자 보강</span><span>Newton’s second law 연결</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-07" aria-labelledby="slide-07-title">
+          <p class="section-kicker">Source slide 07 · Mechanics</p>
+          <h2 class="section-title" id="slide-07-title">Deformation(변형)을 다루는 분야</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-07.jpg" alt="Solid mechanics와 fluid mechanics를 소개하는 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 7/18</span><span>Contents 01:42–02:40</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Solid mechanics(고체역학)</h3>
+                <p>applied forces(작용력)에 의해 solid material(고체 재료)이 어떻게 deform(변형)하는지 조사합니다. 찌그러지는 캔이 대표 예시입니다.</p>
+              </div>
+              <div class="card">
+                <h3>Fluid mechanics(유체역학)</h3>
+                <p>water(물)나 air(공기) 같은 fluid(유체)가 forces(힘) 아래에서 어떻게 move(이동)하고 change shape(형상이 변함)하는지 조사합니다.</p>
+              </div>
+            </div>
+            <div class="warning">
+              <strong>범위 주의:</strong> 넓은 공학 용례에서 mechanics(역학)는 force(힘), motion(운동), deformation(변형)을 모두 다루는 상위 분야입니다. 슬라이드의 문장은 이번 강의에서 solid mechanics(고체역학)와 fluid mechanics(유체역학)를 소개하기 위한 문맥으로 이해하면 됩니다.
+            </div>
+            <div class="evidence"><span>슬라이드 07</span><span>Contents 01:42–02:40</span><span>편집자 범위 보충</span></div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-08" aria-labelledby="slide-08-title">
+          <p class="section-kicker">Source slide 08 · Classification</p>
+          <h2 class="section-title" id="slide-08-title">고체와 유체의 운동도 Dynamics(동역학)입니다.</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-08.jpg" alt="Solid mechanics와 fluid mechanics도 dynamics의 일부가 될 수 있다는 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 8/18</span><span>Contents 02:40–02:56</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="callout">
+              <h3>분류와 과목 범위는 다릅니다.</h3>
+              <p>
+                deformable solid(변형 가능한 고체)과 fluid(유체)도 move(운동)하고 forces(힘)를 받으므로 넓은 의미의 dynamics(동역학)에 포함될 수 있습니다. 다만 “dynamics(동역학)에 포함된다”와 “이 입문 과목에서 다룬다”는 같은 말이 아닙니다. 다음 슬라이드에서 모델을 단순화하기 위해 제외합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-09" aria-labelledby="slide-09-title">
+          <p class="section-kicker">Source slide 09 · Course scope</p>
+          <h2 class="section-title" id="slide-09-title">왜 Solid/Fluid Mechanics(고체/유체역학)를 제외하는가.</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-09.jpg" alt="이번 과목에서 solid mechanics와 fluid mechanics를 제외하는 이유를 비교한 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 9/18</span><span>Contents 02:56–03:41</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <table class="compare-table">
+              <thead><tr><th>분야</th><th>강의의 단순화 근거</th><th>이번 과목의 처리</th></tr></thead>
+              <tbody>
+                <tr><td>solid mechanics(고체역학)</td><td>선택한 물체에서 deformation(변형)이 small(작고), motion(운동)에 미치는 영향이 minimal(미미하다고) 가정합니다.</td><td>deformation(변형)을 neglect(무시)하고 rigid body(강체)로 모델링합니다.</td></tr>
+                <tr><td>fluid mechanics(유체역학)</td><td>fluid particle(유체 입자) 사이의 relative motion(상대 운동)과 interacting forces(상호작용력)가 큽니다.</td><td>입문 rigid-body dynamics(강체 동역학)와 다른 해석법이 필요하므로 제외합니다.</td></tr>
+              </tbody>
+            </table>
+            <div class="warning">
+              <strong>오해 금지:</strong> 모든 solid(고체)의 deformation(변형)이 항상 small(작다)는 뜻이 아닙니다. 이 과목의 대상과 문제 조건에서 deformation(변형)의 효과를 negligible(무시할 수 있다고) 보는 modeling assumption(모델링 가정)입니다.
+            </div>
+            <div class="evidence"><span>슬라이드 09</span><span>Contents 02:56–03:41</span></div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-10" aria-labelledby="slide-10-title">
+          <p class="section-kicker">Source slide 10 · Fluid complexity</p>
+          <h2 class="section-title" id="slide-10-title">Relative motion(상대 운동)이 해석법을 바꿉니다.</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-10.jpg" alt="유체 입자의 상대 운동과 상호작용력이 복잡하다는 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 10/18</span><span>Contents 03:41–03:56</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="callout">
+              <h3>핵심 해설</h3>
+              <p>
+                rigid body(강체)에서는 두 점 사이의 distance(거리)가 constant(일정)하다고 가정할 수 있습니다. 그러나 fluid(유체)에서는 입자 사이의 relative position(상대 위치)이 계속 변하고 interacting forces(상호작용력)도 복잡합니다. 따라서 동일한 하나의 rigid body(강체) 운동으로 묶을 수 없고 다른 field-based approach(장 기반 접근)가 필요합니다.
+              </p>
+              <div class="evidence"><span>슬라이드 10</span><span>Contents 03:41–03:56</span><span>편집자 보강</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-11" aria-labelledby="slide-11-title">
+          <p class="section-kicker">Source slide 11 · Ideal models</p>
+          <h2 class="section-title" id="slide-11-title">Particle(입자)와 Rigid Body(강체)</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-11.jpg" alt="Particle과 rigid body의 가정을 설명하는 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 11/18</span><span>Contents 03:56–04:27</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Particle(입자)</h3>
+                <p>mass(질량)는 있지만 volume(부피)은 없다고 가정하는 ideal model(이상 모델)입니다. 물체의 크기·회전·형상보다 center-of-mass translation(질량중심 병진운동)이 중요할 때 사용합니다.</p>
+                <span class="key-sentence">A particle has mass but no volume.</span>
+              </div>
+              <div class="card">
+                <h3>Rigid body(강체)</h3>
+                <p>applied forces(작용력)를 받아도 deform(변형)하지 않는 ideal material(이상 재료)입니다. 물체 내부의 임의의 두 점 사이 distance(거리)가 constant(일정)합니다.</p>
+                <span class="key-sentence">A rigid body does not deform under applied forces.</span>
+              </div>
+            </div>
+            <div class="exam-card">
+              <h3>모델 선택 기준</h3>
+              <p>
+                같은 자동차도 문제에 따라 particle(입자) 또는 rigid body(강체)가 될 수 있습니다. 주행 경로만 구하면 크기와 회전을 neglect(무시)하여 particle(입자)로 볼 수 있고, pitch(피치)·roll(롤)·yaw(요)까지 구하면 rigid body(강체)가 필요합니다. 모델은 물체의 정체가 아니라 문제에서 보존할 정보의 수준입니다.
+              </p>
+              <div class="evidence"><span>슬라이드 11</span><span>Contents 03:56–04:27</span><span>편집자 보강</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-12" aria-labelledby="slide-12-title">
+          <p class="section-kicker">Source slide 12 · Core principles</p>
+          <h2 class="section-title" id="slide-12-title">이 과목에서 반복 사용할 네 가지 원리</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-12.jpg" alt="Newton 2법칙과 3법칙, Coulomb 마찰 법칙, Hooke 법칙을 나열한 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 12/18</span><span>Contents 04:27–05:18</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="grid-2">
+              <div class="card">
+                <h3>Newton’s second law(뉴턴 제2법칙)</h3>
+                <p>net force(알짜힘)와 acceleration(가속도)을 연결하는 중심 법칙입니다.</p>
+                <span class="formula">ΣF = ma</span>
+              </div>
+              <div class="card">
+                <h3>Newton’s third law(뉴턴 제3법칙)</h3>
+                <p>두 물체 사이의 action/reaction pair(작용·반작용 쌍)는 크기가 같고 방향이 반대입니다. 두 힘은 서로 다른 물체에 작용합니다.</p>
+                <span class="formula">F<sub>A→B</sub> = −F<sub>B→A</sub></span>
+              </div>
+              <div class="card">
+                <h3>Coulomb’s friction law(쿨롱 마찰 법칙)</h3>
+                <p>contact(접촉)면의 normal force(수직항력)와 friction force(마찰력)를 연결합니다.</p>
+                <span class="formula">|F<sub>s</sub>| ≤ μ<sub>s</sub>N &nbsp;·&nbsp; |F<sub>k</sub>| = μ<sub>k</sub>N</span>
+              </div>
+              <div class="card">
+                <h3>Hooke’s law(훅 법칙)</h3>
+                <p>linear spring(선형 스프링)의 deformation(변형)과 restoring force(복원력)를 연결합니다. 음의 부호는 변형 반대 방향을 뜻합니다.</p>
+                <span class="formula">F<sub>s</sub> = −kx</span>
+              </div>
+            </div>
+            <div class="warning">
+              <strong>시험용 보강:</strong> 위 수식은 슬라이드가 이름만 제시한 네 원리를 이후 문제풀이 형태로 연결한 것입니다. 실제 적용 조건과 벡터 방향은 각 후속 렉처에서 상세히 다룹니다.
+            </div>
+            <div class="evidence"><span>슬라이드 12</span><span>Contents 04:27–05:18</span><span>시험용 보강</span></div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-13" aria-labelledby="slide-13-title">
+          <p class="section-kicker">Source slide 13 · Other principles</p>
+          <h2 class="section-title" id="slide-13-title">중요하지만 이번 과목의 중심에서는 제외되는 효과</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-13.jpg" alt="Viscous damping, electromagnetics, piezoelectricity, Seebeck effect를 나열한 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 13/18</span><span>Contents 05:18–05:52</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <table class="term-table">
+              <thead><tr><th>용어</th><th>연결되는 양</th><th>이번 강의의 위치</th></tr></thead>
+              <tbody>
+                <tr><td>viscous damping(점성 감쇠)</td><td>speed(속력)와 resistive force(저항력)</td><td>후속 시스템에서 쓰일 수 있으나 Lecture 1의 핵심 네 원리에는 포함되지 않습니다.</td></tr>
+                <tr><td>electromagnetics(전자기학)</td><td>electric/magnetic field(전기·자기장)와 force(힘)</td><td>별도의 장 이론이 필요합니다.</td></tr>
+                <tr><td>piezoelectricity(압전효과)</td><td>deformation(변형)과 electricity(전기)</td><td>다중 물리 현상이므로 범위 밖입니다.</td></tr>
+                <tr><td>Seebeck effect(제벡 효과)</td><td>temperature difference(온도차)와 electricity(전기)</td><td>열전 현상이며 범위 밖입니다.</td></tr>
+              </tbody>
+            </table>
+            <div class="callout">
+              <h3>포인트</h3>
+              <p>“존재하지 않는다”가 아니라 이번 entry-level dynamics course(입문 동역학 과목)의 modeling scope(모델링 범위)에서 우선 제외한다는 뜻입니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-14" aria-labelledby="slide-14-title">
+          <p class="section-kicker">Source slide 14 · Mathematics tools</p>
+          <h2 class="section-title" id="slide-14-title">Dynamics(동역학)의 수학 도구</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-14.jpg" alt="Vectors, integration, scalar differentiation, vector differentiation을 제시한 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 14/18</span><span>Contents 05:52–06:12</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="grid-2">
+              <div class="card"><h3>Vector(벡터)</h3><p>magnitude(크기)와 direction(방향)을 함께 표현합니다. position vector(위치벡터), velocity vector(속도벡터), force vector(힘벡터)의 기준입니다.</p></div>
+              <div class="card"><h3>Differentiation(미분)</h3><p>시간에 따른 변화율을 구합니다. position(위치)을 시간으로 미분하면 velocity(속도), velocity(속도)를 미분하면 acceleration(가속도)입니다.</p><span class="formula">v = dr/dt &nbsp;·&nbsp; a = dv/dt = d²r/dt²</span></div>
+              <div class="card"><h3>Integration(적분)</h3><p>알려진 rate(변화율)를 누적하여 상태 변화를 구합니다. acceleration(가속도)을 시간에 대해 적분하면 velocity change(속도 변화)를 얻습니다.</p><span class="formula">v₂ − v₁ = ∫<sub>t₁</sub><sup>t₂</sup> a dt</span></div>
+              <div class="card"><h3>Scalar/Vector differentiation(스칼라/벡터 미분)</h3><p>component(성분)만 변하는 경우와 basis vector(기저벡터) 방향까지 변하는 경우를 구분합니다. 곡선운동과 회전운동에서 특히 중요합니다.</p></div>
+            </div>
+            <div class="warning"><strong>시험용 보강:</strong> 수식은 각 도구가 dynamics(동역학)에서 수행하는 역할을 보여주기 위한 최소 연결입니다.</div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-15" aria-labelledby="slide-15-title">
+          <p class="section-kicker">Source slide 15 · Key topics</p>
+          <h2 class="section-title" id="slide-15-title">Kinematics(운동학) vs. Kinetics(운동역학)</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-15.jpg" alt="Kinematics와 kinetics의 정의와 핵심어를 비교한 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 15/18</span><span>Contents 06:12–06:55</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <table class="compare-table">
+              <thead><tr><th>구분</th><th>묻는 질문</th><th>핵심 quantities(물리량)</th><th>전형적 문제 표현</th></tr></thead>
+              <tbody>
+                <tr><td>kinematics(운동학)</td><td>How does the object move?(물체가 어떻게 움직이는가?)</td><td>position(위치), velocity(속도), acceleration(가속도), angular velocity(각속도), angular acceleration(각가속도)</td><td>determine the velocity(속도를 구하라), find the position(위치를 구하라)</td></tr>
+                <tr><td>kinetics(운동역학)</td><td>What causes the motion?(무엇이 운동을 일으키는가?)</td><td>force(힘), torque(토크), mass(질량), moment of inertia(질량관성모멘트)</td><td>determine the force required(필요한 힘을 구하라), calculate the torque(토크를 계산하라)</td></tr>
+              </tbody>
+            </table>
+            <div class="exam-card">
+              <h3>영어 비교 답안</h3>
+              <div class="answer"><span class="answer__label">Model answer</span>Kinematics describes how objects move without considering the causes of motion. Kinetics relates the motion of objects to the forces and torques acting on them.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-16" aria-labelledby="slide-16-title">
+          <p class="section-kicker">Source slide 16 · Key quantities</p>
+          <h2 class="section-title" id="slide-16-title">에너지·운동량·기하 관련 핵심어</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-16.jpg" alt="Energy, vector-valued quantities, geometry-related terms를 분류한 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 16/18</span><span>Contents 06:55–07:32</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="grid-3">
+              <div class="card">
+                <h3>Energy(에너지)</h3>
+                <p>potential energy(위치에너지)와 kinetic energy(운동에너지)는 force(힘)를 경로에 따라 누적한 효과와 speed(속력)의 변화를 연결하는 scalar method(스칼라 방법)입니다.</p>
+              </div>
+              <div class="card">
+                <h3>Vector-valued quantities(벡터값 물리량)</h3>
+                <p>linear momentum(선운동량)과 angular momentum(각운동량)은 magnitude(크기)와 direction(방향)을 가집니다. impulse(충격량)와 운동 변화 연결에 사용합니다.</p>
+              </div>
+              <div class="card">
+                <h3>Geometry-related terms(기하 관련 용어)</h3>
+                <p>moment of inertia(질량관성모멘트), reference frame(기준좌표계), coordinate system(좌표계), center of mass(질량중심)가 회전과 위치 기술의 기준을 정합니다.</p>
+              </div>
+            </div>
+            <div class="callout">
+              <h3>이들이 왜 한 슬라이드에 있는가</h3>
+              <p>
+                Newton’s law(뉴턴 법칙), energy method(에너지 방법), momentum method(운동량 방법)는 서로 경쟁하는 별개 이론이 아니라 같은 motion(운동)을 서로 다른 물리량으로 표현하는 해석 도구입니다. 문제 조건에 따라 계산이 가장 단순해지는 표현을 선택합니다.
+              </p>
+              <div class="evidence"><span>슬라이드 16</span><span>Contents 06:55–07:32</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-17" aria-labelledby="slide-17-title">
+          <p class="section-kicker">Source slide 17 · Review links</p>
+          <h2 class="section-title" id="slide-17-title">Minimal Mathematics Review(최소 수학 복습)</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-17.jpg" alt="Differentiation, integration, vector, Mathematica 복습 링크 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 17/18</span><span>링크 슬라이드</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="quiet-card">
+              <h3>원본 링크</h3>
+              <ul class="link-list">
+                <li><a href="https://en.wikipedia.org/wiki/Differentiation_rules" target="_blank" rel="noreferrer">Differentiation rules(미분 규칙)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Integral" target="_blank" rel="noreferrer">Integral(적분)</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Vector_space" target="_blank" rel="noreferrer">Vector space(벡터 공간)</a></li>
+                <li><a href="https://www.wolfram.com/language/fast-introduction-for-math-students/en/" target="_blank" rel="noreferrer">Mathematica tutorial(Mathematica 튜토리얼)</a></li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>복습 우선순위</h3>
+              <ol class="plain-list">
+                <li>함수의 derivative(도함수)를 계산하고 chain rule(연쇄법칙)을 적용할 수 있는가?</li>
+                <li>definite integral(정적분)을 누적량으로 해석할 수 있는가?</li>
+                <li>vector(벡터)를 Cartesian components(직교좌표 성분)로 분해하고 더할 수 있는가?</li>
+                <li>unit vector(단위벡터)와 dot product(내적)의 의미를 아는가?</li>
+              </ol>
+              <div class="evidence"><span>링크 내용 확장 아님</span><span>학습 순서 제안</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="source-section" id="slide-18" aria-labelledby="slide-18-title">
+          <p class="section-kicker">Source slide 18 · References</p>
+          <h2 class="section-title" id="slide-18-title">References(참고문헌)</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img src="assets/slides/lecture01/slide-18.jpg" alt="Vector Mechanics for Engineers Dynamics 12판과 유홍희 동역학 1판 참고문헌 슬라이드" width="1920" height="1080" loading="lazy" />
+            </div>
+            <figcaption><span>원본 PDF 18/18</span><span>참고문헌 슬라이드 · 추가 해설 없음</span></figcaption>
+          </figure>
+          <div class="note-stack">
+            <div class="quiet-card">
+              <h3>슬라이드 기재 자료</h3>
+              <ul class="plain-list">
+                <li>Beer, Johnston, Cornwell, Self, Sanghi, <em>Vector Mechanics for Engineers: Dynamics</em>, 12th Edition, McGraw Hill.</li>
+                <li>유홍희, <em>동역학</em>, 1판, 문운당.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="editorial-section section-divider" id="course-roadmap" aria-labelledby="roadmap-title">
+          <p class="section-kicker">Summary video · Course roadmap</p>
+          <h2 class="section-title" id="roadmap-title">Summary 영상: 앞으로 배울 내용</h2>
+          <p class="section-lead">
+            이 영상은 Lecture 1의 개념을 다시 요약하는 영상이 아닙니다. 남은 과목이 particle dynamics(입자 동역학)에서 rigid-body dynamics(강체 동역학)로 어떻게 확장되는지 예고하는 course roadmap(과목 로드맵)입니다. 따라서 앞의 <strong>Lecture 1 핵심 개념 요약</strong>과 분리해 정리합니다.
+          </p>
+        </section>
+
+        <section class="editorial-section" id="roadmap-detail" aria-labelledby="roadmap-detail-title">
+          <p class="section-kicker">What comes next</p>
+          <h2 class="section-title" id="roadmap-detail-title">Particle(입자)에서 Rigid Body(강체)로 확장하는 순서</h2>
+          <table class="compare-table">
+            <thead><tr><th>Summary 영상에서 소개한 단계</th><th>앞으로 배우는 내용</th></tr></thead>
+            <tbody>
+              <tr><td>Weeks 2–3: particle kinematics(입자 운동학)</td><td>직선운동에서 곡선운동으로 motion description(운동 기술)을 확장합니다.</td></tr>
+              <tr><td>Weeks 4–5: particle kinetics(입자 운동역학)</td><td>Newton’s second law(뉴턴 제2법칙)으로 force(힘)와 acceleration(가속도)을 연결합니다.</td></tr>
+              <tr><td>Weeks 6–7: energy/momentum methods(에너지/운동량 방법)</td><td>같은 물리 법칙을 적분형·보존량 관점으로 풉니다.</td></tr>
+              <tr><td>Week 8: systems of particles(입자계)</td><td>여러 particle(입자)을 하나의 system(계)으로 묶습니다.</td></tr>
+              <tr><td>Weeks 9–11: rigid-body kinematics(강체 운동학)</td><td>3D rotation(3차원 회전)이 포함되는 난도가 높은 구간입니다.</td></tr>
+              <tr><td>Weeks 12–15: rigid-body kinetics(강체 운동역학)</td><td>Newton, energy, momentum methods(뉴턴·에너지·운동량 방법)를 2D/3D 강체에 적용합니다.</td></tr>
+              <tr><td>Week 16: gyroscopic motion(자이로스코프 운동)</td><td>누적 개념을 사용한 심화 예시입니다.</td></tr>
+            </tbody>
+          </table>
+          <div class="warning" style="margin-top: 20px">
+            <strong>영상 속 week(주차) 번호에 관한 주의:</strong> 위 번호는 Summary 녹화본이 설명한 단원 순서입니다. 현재 강의 인덱스에서는 Midterm(중간고사) 날짜가 미기재이며 Week 08에 별도 강의가 없습니다. Lecture 16: Gyroscopic Motions(자이로스코프 운동)는 Week 12 아래의 추가 강의로 보관되어 있으므로, 영상의 “Week 16”을 현재 게시 일정의 날짜로 해석하지 않습니다.
+          </div>
+          <div class="callout" style="margin-top: 20px">
+            <h3>다음 학습</h3>
+            <p>
+              Summary 영상의 마지막 안내대로 다음 렉처는 rectilinear motion(직선운동)입니다. Lecture 1에서 구분한 position(위치), velocity(속도), acceleration(가속도)을 하나의 straight line(직선) 위에서 수식으로 연결합니다.
+            </p>
+          </div>
+          <div class="evidence"><span>Summary 00:17–01:53</span><span>강의 인덱스 대조</span></div>
+        </section>
+
+        <section class="editorial-section" id="exam-english" aria-labelledby="exam-title">
+          <p class="section-kicker">Exam English</p>
+          <h2 class="section-title" id="exam-title">정의형 문제에 바로 쓰는 영어 문장</h2>
+          <div class="note-stack">
+            <div class="exam-card">
+              <h3>Q1. What is dynamics?</h3>
+              <div class="answer"><span class="answer__label">Model answer</span>Dynamics is the study of the motion of objects under the influence of forces. It describes both how objects move and what causes their motion.</div>
+              <p style="margin-top: 12px">dynamics(동역학)는 forces(힘)의 영향을 받는 objects(물체)의 motion(운동)을 연구합니다. 물체가 어떻게 움직이는지와 무엇이 그 motion(운동)을 일으키는지를 모두 설명합니다.</p>
+            </div>
+            <div class="exam-card">
+              <h3>Q2. Distinguish a particle from a rigid body.</h3>
+              <div class="answer"><span class="answer__label">Model answer</span>A particle has mass but no volume, so its size and rotation are neglected. A rigid body has a finite size but is assumed not to deform under applied forces.</div>
+              <p style="margin-top: 12px">particle(입자)은 mass(질량)만 있고 volume(부피)은 없다고 보므로 size(크기)와 rotation(회전)을 neglect(무시)합니다. rigid body(강체)는 유한한 size(크기)를 가지지만 applied forces(작용력) 아래에서도 deform(변형)하지 않는다고 가정합니다.</p>
+            </div>
+            <div class="exam-card">
+              <h3>Q3. Why are solid and fluid mechanics excluded?</h3>
+              <div class="answer"><span class="answer__label">Model answer</span>Solid deformation is neglected when its effect on motion is minimal. Fluid motion requires different methods because fluid particles undergo significant relative motion and complex interactions.</div>
+              <p style="margin-top: 12px">solid deformation(고체 변형)이 motion(운동)에 미치는 영향이 minimal(미미)하면 이를 neglect(무시)합니다. fluid particle(유체 입자)은 significant relative motion(큰 상대 운동)과 complex interactions(복잡한 상호작용)을 가지므로 다른 방법이 필요합니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="editorial-section" id="glossary" aria-labelledby="glossary-title">
+          <p class="section-kicker">Core glossary</p>
+          <h2 class="section-title" id="glossary-title">Lecture 1 핵심 용어집</h2>
+          <table class="term-table">
+            <thead><tr><th>English(한국어)</th><th>시험용 정의·상태 표현</th></tr></thead>
+            <tbody>
+              <tr><td>dynamics(동역학)</td><td>motion(운동)과 causes of motion(운동의 원인)을 함께 연구합니다.</td></tr>
+              <tr><td>motion(운동)</td><td>reference frame(기준좌표계)에 대한 position(위치) 또는 orientation(방향)의 시간 변화입니다.</td></tr>
+              <tr><td>force(힘)</td><td>mass(질량)를 가진 물체의 acceleration(가속도)을 바꾸거나 deformation(변형)을 일으킬 수 있는 vector quantity(벡터량)입니다.</td></tr>
+              <tr><td>kinematics(운동학)</td><td>causes(원인)를 고려하지 않고 motion(운동)을 기술합니다.</td></tr>
+              <tr><td>kinetics(운동역학)</td><td>force(힘)와 torque(토크)를 motion(운동)에 연결합니다.</td></tr>
+              <tr><td>particle(입자)</td><td>has mass but no volume(질량은 있지만 부피는 없음)으로 이상화합니다.</td></tr>
+              <tr><td>rigid body(강체)</td><td>does not deform(변형하지 않음)으로 이상화합니다.</td></tr>
+              <tr><td>deformation(변형)</td><td>물체 내부 점들 사이의 relative position(상대 위치) 변화입니다.</td></tr>
+              <tr><td>relative motion(상대 운동)</td><td>한 particle(입자) 또는 frame(좌표계)에서 본 다른 대상의 motion(운동)입니다.</td></tr>
+              <tr><td>torque(토크)</td><td>force(힘)가 회전시키려는 효과입니다.</td></tr>
+              <tr><td>moment of inertia(질량관성모멘트)</td><td>angular acceleration(각가속도)에 저항하는 mass distribution(질량 분포)의 척도입니다.</td></tr>
+              <tr><td>center of mass(질량중심)</td><td>system mass(계의 질량)가 집중된 것처럼 translation(병진운동)을 기술할 수 있는 점입니다.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="editorial-section" id="asr-log" aria-labelledby="asr-title">
+          <p class="section-kicker">Transcript audit</p>
+          <h2 class="section-title" id="asr-title">자동생성 스크립트 교정 기록</h2>
+          <p class="section-lead">아래 교정은 추측이 아니라 같은 시점의 원본 슬라이드 표기와 역학 문맥을 대조해 확정한 것입니다.</p>
+          <table class="term-table">
+            <thead><tr><th>자동인식 조각</th><th>채택한 용어</th><th>근거</th></tr></thead>
+            <tbody>
+              <tr><td>“sodium mechanics”, “slowly mechanics”</td><td>solid mechanics(고체역학)</td><td>슬라이드 07·09</td></tr>
+              <tr><td>“food mechanics”, “affiliate mechanics”, “flowing mechanics”</td><td>fluid mechanics(유체역학)</td><td>슬라이드 07·09</td></tr>
+              <tr><td>“widget parties”</td><td>rigid bodies(강체)</td><td>슬라이드 11</td></tr>
+              <tr><td>“physical stamping”</td><td>viscous damping(점성 감쇠)</td><td>슬라이드 13</td></tr>
+              <tr><td>“phlegs”</td><td>piezoelectricity(압전효과)</td><td>슬라이드 13</td></tr>
+              <tr><td>“seedback effects”</td><td>Seebeck effect(제벡 효과)</td><td>슬라이드 13</td></tr>
+              <tr><td>“Torx”</td><td>torques(토크들)</td><td>슬라이드 15</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="editorial-section" id="sources" aria-labelledby="sources-title">
+          <p class="section-kicker">Sources</p>
+          <h2 class="section-title" id="sources-title">사용한 강의 자료</h2>
+          <div class="grid-2">
+            <div class="card">
+              <h3>원본 노트</h3>
+              <p>Lecture 1 PDF, 18 pages, 16:9. 모든 페이지를 순서대로 렌더링하여 포함했습니다.</p>
+            </div>
+            <div class="card">
+              <h3>영상 스크립트</h3>
+              <ul class="link-list">
+                <li><a href="https://www.youtube.com/watch?v=TUWKeJtWoCQ" target="_blank" rel="noreferrer">Overview</a></li>
+                <li><a href="https://www.youtube.com/watch?v=nzDNfG9iYXw" target="_blank" rel="noreferrer">Contents</a></li>
+                <li><a href="https://www.youtube.com/watch?v=vozNCs_ZBcw" target="_blank" rel="noreferrer">Summary</a></li>
+              </ul>
+            </div>
+          </div>
+          <p class="source-note">
+            이 문서는 영어 자동생성 자막을 그대로 번역하지 않았습니다. 원본 슬라이드와 영상 문맥을 대조해 전문용어를 교정했으며, 강의 자료에 없는 수식·모델 선택 예시는 `시험용 보강` 또는 `편집자 보강`으로 표시했습니다.
+          </p>
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="Lecture 1 목차">
+        <p class="toc__label">On this lecture</p>
+        <ol>
+          <li><a href="#overview">전체 개요</a></li>
+          <li><a href="#concept-map">개념 지도</a></li>
+          <li><a href="#concept-summary">핵심 개념 요약</a></li>
+          <li><a href="#slide-01">01 · 표지</a></li>
+          <li><a href="#slide-02">02 · Lecture 1-1</a></li>
+          <li><a href="#slide-03">03 · 영상 링크</a></li>
+          <li><a href="#slide-04">04 · Lecture 1-2</a></li>
+          <li><a href="#slide-05">05 · Introduction</a></li>
+          <li><a href="#slide-06">06 · What is Dynamics?</a></li>
+          <li><a href="#slide-07">07 · Mechanics</a></li>
+          <li><a href="#slide-08">08 · Classification</a></li>
+          <li><a href="#slide-09">09 · Course scope</a></li>
+          <li><a href="#slide-10">10 · Fluid complexity</a></li>
+          <li><a href="#slide-11">11 · Particle / Rigid body</a></li>
+          <li><a href="#slide-12">12 · Core principles</a></li>
+          <li><a href="#slide-13">13 · Other principles</a></li>
+          <li><a href="#slide-14">14 · Mathematics tools</a></li>
+          <li><a href="#slide-15">15 · Kinematics / Kinetics</a></li>
+          <li><a href="#slide-16">16 · Key quantities</a></li>
+          <li><a href="#slide-17">17 · Math review</a></li>
+          <li><a href="#slide-18">18 · References</a></li>
+          <li><a href="#course-roadmap">Summary · 앞으로 배울 내용</a></li>
+          <li><a href="#exam-english">시험 영어</a></li>
+          <li><a href="#glossary">용어집</a></li>
+          <li><a href="#asr-log">스크립트 교정</a></li>
+          <li><a href="#sources">출처</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span class="wordmark">MC2103 Dynamics</span>
+        <span>Lecture 1 · Introduction to Dynamics · 2026-09-02</span>
+      </div>
+    </footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>
