@@ -33,6 +33,8 @@ Lecture 1 is the single visual and structural baseline. Copy the template to sta
 
 ## Navigation contract
 
+- The home-page hero uses a crimson 강의자료 PDF N개 button linking to downloads.html; N is the total number of PDF files provided.
+- The downloads-page hero uses a neutral 학습 노트 홈 button linking to index.html. Neither archive-page hero links to a specific lecture.
 - On the home page, each completed lecture card starts with the crimson button Lecture N 읽기.
 - It is followed by neutral 가림막 제거 PDF and 원본 PDF buttons.
 - Lecture-page hero actions are the neutral cleaned PDF, neutral original PDF, then 강의 목록.
