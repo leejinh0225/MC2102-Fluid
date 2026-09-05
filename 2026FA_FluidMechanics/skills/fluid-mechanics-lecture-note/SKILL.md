@@ -1,55 +1,44 @@
 ---
 name: fluid-mechanics-lecture-note
-description: Create or extend scrollable Korean Fluid Mechanics 1 lecture-replacement HTML notes from a 4:3 source PDF and one private English lecture transcript per lecture. Use for slide-by-slide layout, bilingual exam terminology, ASR reconciliation, privacy-safe provenance, and consistency with the Dynamics note system.
+description: Create or extend MC2102 Fluid Mechanics Korean lecture-replacement notes from a 4:3 source PDF and one timestamped English lecture transcript, using the repository's fixed Lecture 1 template.
 ---
 
 # Fluid Mechanics Lecture Note
 
-Use this skill when authoring a Fluid Mechanics 1 lecture page in this repository.
+## Required context
 
-## Read before authoring
+Read `../../NOTE_AUTHORING_GUIDE.md`, `../../강의_인덱스.md`, `../../site/lecture01.html` and `../../site/templates/lecture-page.template.html` before authoring.
 
-Read these files completely:
+Lecture 1 is the single visual and structural baseline. Copy the template to start a new page. Reuse `../../site/assets/css/styles.css` and `../../site/assets/js/site.js`. Consult `../../design_reference/crimson2.md` only for shared design tokens.
 
-1. `../../NOTE_AUTHORING_GUIDE.md`
-2. `../../강의_인덱스.md`
-3. `../../site/templates/lecture-page.template.html`
-4. `assets/dynamics-lecture01-reference.html`
-5. `assets/dynamics-lecture02-reference.html`
+## Source handling
 
-Read `../../design_reference/crimson2.md` only when changing the shared visual system.
+- Use all PDF pages in exact order, one 1440×1080 image and one source-section per page.
+- Read the entire reviewed English transcript. The lecture uses one continuous timestamp axis.
+- Reconcile PDF, lecture context and transcript. Keep an unlisted date as 날짜 미기재.
+- Retain source diagrams and formulas; label source errors and editorial supplements with evidence.
+- Store recordings, audio, raw transcripts, model caches and senior materials under the ignored private-materials folder.
 
-## Source model
+## Authoring contract
 
-Each lecture has:
+- Preserve section order: overview, concept-map, concept-summary, all source-section blocks, exam-english, glossary, asr-log, sources.
+- Preserve template IDs, exact section classes, aria-labelledby, heading hierarchy and card nesting.
+- Only overview has section-divider. It contains a kicker, concise h2 and lead paragraph.
+- Use course-map for exactly two concept cards and one connecting arrow. Use grid-2 or grid-3 for other concept counts.
+- exam-english uses note-stack > exam-card > answer > answer__label. It has no divider background.
+- Table classes belong to real table elements. Keep every source image in source-slide > source-slide__frame.
+- Explain definitions, relationships, assumptions, symbols, units and worked steps. A translated bullet list is insufficient.
+- Repeat important terminology as English(한국어). Add a standalone concept summary, model English answers, glossary, transcript audit and sources.
+- Keep a neutral academic voice. Reader-facing text explains this course and its concepts. Source provenance belongs in captions, evidence and sources; tool setup belongs in scripts/README.md.
 
-- one cleaned source PDF;
-- one public copy of the untouched original PDF, while its immutable backup remains private;
-- one private English lecture recording;
-- one reviewed transcript derived from that recording.
+## Navigation contract
 
-Do not carry over the Dynamics assumption of multiple public YouTube videos. Never publish or link the recording or extracted audio. In the hero, provide the primary cleaned-PDF download, the neutral original-PDF download, and then the neutral lecture-index action.
+- On the home page, each completed lecture card starts with the crimson button Lecture N 읽기.
+- It is followed by neutral 가림막 제거 PDF and 원본 PDF buttons.
+- Lecture-page hero actions are the neutral cleaned PDF, neutral original PDF, then 강의 목록.
+- PDF links retain the exact filename in download and use type="application/pdf".
+- Provide both PDF variants on downloads.html, without a recommended-version highlight.
 
-## Required workflow
+## Completion
 
-1. Confirm the PDF page count and 4:3 dimensions.
-2. Confirm that transcript timestamps span the single recording and that personal or off-topic speech has been removed from the public text.
-3. Reconcile terminology and formulas against the PDF before writing.
-4. Draft an independent concept summary.
-5. Create exactly one `.source-section` per PDF page in order.
-6. Repeat important terms as `English(한국어)` where they help with an English exam.
-7. Add exam English, glossary, transcript audit, and source provenance.
-8. Mark outside-domain explanation as `편집자 보강`.
-9. Connect both public PDF variants to `downloads.html`, the index card, and the lecture hero with matching filenames and download attributes.
-10. Run both validators.
-11. Set the lecture manifest entry to `ready: true` and add the index link only after validation succeeds.
-
-## Non-negotiable checks
-
-- Source images are `1440 × 1080`; do not stretch them to 16:9.
-- All PDF pages appear once and in order.
-- No recording URL, filename, local drive path, media element, or private directory name appears in public HTML.
-- Both public PDFs exist, and the cleaned copy is primary while the original copy remains neutral.
-- No invented professor intent, schedule, or assessment claim.
-- No unresolved template placeholders.
-- No persona language, study-planning section, or self-check section in the public artifact.
+Run both site validators and the layout regression tests documented in the authoring guide. Verify desktop and mobile rendering before setting ready: true. The main README links directly to the live site and completed lecture.

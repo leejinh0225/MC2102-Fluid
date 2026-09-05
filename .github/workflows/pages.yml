@@ -6,7 +6,7 @@ on:
     paths:
       - "2026FA_FluidMechanics/site/**"
       - "2026FA_FluidMechanics/lecture_notes/**"
-      - "2026FA_FluidMechanics/scripts/validate_site.mjs"
+      - "2026FA_FluidMechanics/scripts/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -34,6 +34,9 @@ jobs:
 
       - name: Validate site
         run: node 2026FA_FluidMechanics/scripts/validate_site.mjs
+
+      - name: Check layout regression coverage
+        run: node --test 2026FA_FluidMechanics/scripts/lecture_layout.test.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

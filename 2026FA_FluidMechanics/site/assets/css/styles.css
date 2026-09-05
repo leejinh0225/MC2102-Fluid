@@ -755,7 +755,7 @@ a {
   padding: 26px;
 }
 
-.download-card--recommended {
+.download-card--extra {
   border-color: var(--accent-border);
   background: linear-gradient(145deg, var(--canvas), #fff8f7);
 }
@@ -863,18 +863,6 @@ a {
   border-radius: 50%;
   background: currentColor;
   content: "";
-}
-
-.status-pill--pending {
-  background: #fff8ea;
-  color: var(--warning);
-}
-
-.button--disabled {
-  border-color: var(--hairline);
-  background: var(--canvas-soft-2);
-  color: var(--mute);
-  cursor: default;
 }
 
 @media (max-width: 980px) {

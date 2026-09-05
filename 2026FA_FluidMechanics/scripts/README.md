@@ -72,5 +72,8 @@ python .\review_transcript.py raw.json corrections.json ..\transcripts\lecture01
 
 ## 검증기
 
-- `validate_site.mjs`: 공개 인덱스, 두 PDF 다운로드 링크·파일명·강조, 준비 상태, 슬라이드 수, 깨진 링크, 비공개 미디어 참조를 검사
+- `validate_site.mjs`: 읽기 버튼 우선순위, 중립색 PDF 두 버튼, 템플릿·섹션·카드 구조, 제목 연결, 이미지 순서, 링크와 공개 문구를 검사
 - `validate_lecture_site.py`: 완성된 렉처 HTML의 페이지 수, 이미지 순서·해상도, 목차와 개인정보 경계를 검사
+- `lecture_layout.test.mjs`: 색상 상속, 잘못된 카드 중첩, 표 스타일 오용, 이미지 순서와 버튼 강조 오류를 의도적으로 만들어 검사기가 거부하는지 확인
+
+저장소 루트에서 `node --test 2026FA_FluidMechanics/scripts/lecture_layout.test.mjs`를 실행합니다.
