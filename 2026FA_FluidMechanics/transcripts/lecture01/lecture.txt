@@ -1,275 +1,243 @@
 # Lecture 01 transcript — reviewed English ASR
 # Language: English
-# Review basis: the private lecture recording and all 23 pages of lecture01_note.pdf
+# Review basis: replacement lecture recording and the 23 source slides; independent short-window ASR rechecks for corrupted passages
 # Technical terms and obvious ASR repetitions were corrected; timestamps remain tied to the recording.
 
-[00:00:03.860–00:00:31.740] Hello, everyone. Welcome to Fluid Mechanics 1. This is the lecture for Week 1. Today I am going to introduce fluid mechanics. First, I will discuss the concept of a fluid and define a fluid as a continuum material.
-[00:00:31.740–00:01:01.680] and in a fluid mechanics eventually what you want to do is when there is a pressure difference what will be the force or what will be the velocity at some locations away right so for those kind of analysis we need the dimensions of the flow properties like pressure velocity and stuff like that and then what will be the
-[00:01:01.680–00:01:30.720] We also need the corresponding units. To calculate fluid states, we define a control volume and a control surface. A solid material has well-defined boundaries, but a fluid domain - such as the air around an aircraft or the air in a room - does not always have an obvious boundary.
-[00:01:30.720–00:02:00.600] For flow analysis in a room, should the domain be the entire room or only the flow near your body? Because there is no unique answer, we must define the control volume over which fluid properties will be calculated. This is very important.
-[00:02:00.600–00:02:28.320] For fluid-flow applications, there are two frameworks for describing motion: the Eulerian perspective and the Lagrangian perspective. I will define both, and then discuss important properties of fluids and flows.
-[00:02:29.300–00:02:57.520] important properties of the fluid and flow and one of the most important the properties of the fluid and flow is the viscosity so I will define the fluid viscosity and then there are three basic flow analysis techniques used in fluid mechanics so I will describe that and in fact those will be discussed in chapter 3 and 4 and 5
-[00:02:57.520–00:03:29.830] Fluid mechanics consists of two subjects: fluid statics and fluid dynamics. Fluid statics concerns fluids at rest, whereas fluid dynamics concerns fluids in motion and their spatial and temporal properties.
-[00:03:29.830–00:03:58.050] fluid and when we are saying fluid it includes the gas and also it includes the liquid as well so for example a ship right submarine so we have to think about the liquid the water ocean water surrounding the submarine or if you think about some floating a ship you have to think about both air and water
-[00:03:58.050–00:04:27.830] and when you are considering the air and when you are considering the car and when you are considering car right so then we have to think about the air surrounding the car so all those are classified as a fluid and I'm sure you are taking the solid mechanics course as well as you know controlled course but what makes the fluid most distinctively different from the solid is whether it can resist a shear force or not so if you think about
-[00:04:27.830–00:04:56.050] In the figure, a solid can deform under a shear force and sustain a static deformation. A fluid, however, cannot resist a continuously applied shear stress while remaining at rest.
-[00:04:56.050–00:05:27.240] A liquid subjected to an external shear force continues to move and deform. We therefore distinguish fluids from solids by their response to shear, and we usually treat a fluid as a continuous medium made from aggregated molecules.
-[00:05:27.240–00:05:46.040] But oftentimes we don't have to think about the molecules but often times we don't have to think about the molecules because we don't consider fluid as a summation of distinct or discrete molecules but we just think about aggregated properties of the molecules
-[00:05:46.040–00:05:55.140] So for a gas those molecules are very widely spaced because the density is small and for a liquid
-[00:05:59.200–00:06:16.520] In a liquid, molecules are relatively closely spaced, although the spacing is still larger than the molecular diameter. At ordinary engineering scales, we therefore do not need to track each molecule as an individual particle.
-[00:06:16.520–00:06:18.620] Which means that you don't have to think about the fluid as an individual particle unless you are going away
-[00:06:20.040–00:06:22.460] If you are going away
-[00:06:22.460–00:06:43.360] In extremely rarefied gas, such as at very high altitude or in space, the molecular spacing can become large enough that individual-particle effects matter. At ordinary atmospheric conditions in the troposphere, the continuum model is generally appropriate.
-[00:06:44.300–00:07:14.060] you don't have to worry about the molecule level okay so we consider fluid as a continuum then we will define the density density of the fluid is defined as the as you know density is a mass divided by the volume but in a fluid we don't have a tangible property right so if you think about a region
-[00:07:14.060–00:07:43.600] containing fluid and we are inside that region we are thinking about elemental volume here with its volume is a delta v and we are think about the limiting case of the delta v small down to delta v star and then when it is shrunk down to delta v star then we consider what is the mass elementary mass inside that small shrunken volume that is a density so
-[00:07:43.920–00:08:13.260] The limiting volume v-star is extremely small, about 10 to the minus 9 cubic millimeters for liquids and gases at atmospheric pressure. The plotted density near 1200 kilograms per cubic meter is an illustrative value; the density of water is about 1000 kilograms per cubic meter.
-[00:08:13.260–00:08:38.380] for the air for the air almost like 1.0 right 1.04 kg per meter cube so this density is just arbitrary so let's assume that rho is a 1200 kg per meter cube so there is some some arbitrary material then there is the density of that
-[00:08:38.380–00:08:44.260] that fluid and then if that fluid and then if that is a 1200 kg per meter cube so we consider that as a
-[00:08:44.260–00:09:08.340] of course there will be some variation right so we consider that as a uncertainty okay and then dimensions and units so for the fluid analysis now we will later on you will consider you know the pressure or viscosity and stuff like that so out of a lot of flow properties there are
-[00:09:08.380–00:09:15.100] There are four primary dimensions from which the other dimensions can be derived.
-[00:09:15.100–00:09:41.770] what can be they can be mass length and time and temperature okay so there are the these are the important dimensions and then their units can be defined in two different types
-[00:09:43.690–00:09:47.470] The two unit systems shown here are widely used.
-[00:09:47.470–00:09:53.650] One is the SI system, which is used widely around the world. The other is the BG system, the British Gravitational system.
-[00:09:53.650–00:10:14.370] Mass is denoted by the dimension M. Its SI unit is the kilogram, whereas its BG unit is the slug.
-[00:10:14.370–00:10:25.260] they use a kilogram kg but for the BG unit they use a slug and for the length for the dimensional analysis we use the
-[00:10:27.400–00:10:37.680] Length is denoted by the dimension L. Its SI unit is the meter, and its BG unit is the foot.
-[00:10:37.680–00:10:52.340] right their conversion is one feet is about 30 centimeter or 0.3 meter and then time time is same for SI unit and BG unit right
-[00:10:52.340–00:11:04.490] otherwise people will use a different watch the watch with a different unit that will be so confusing right
-[00:11:04.490–00:11:16.310] so time the unit is the same for SI unit and BG in second and then for the temperature the fourth dimension
-[00:11:16.310–00:11:27.400] important dimension is the temperature it is denoted by the theta then SI unit they use a Kelvin and BG unit
-[00:11:27.400–00:11:39.380] The BG unit of absolute temperature is Rankine, and one kelvin interval equals 1.8 degrees Rankine. In the SI system, the basic dimensions are mass, length, time, and temperature.
-[00:11:39.380–00:11:46.760] In SI, the corresponding basic units are kilograms, meters, seconds, and kelvin. This is called the MLT-theta system of dimensions.
-[00:11:46.760–00:11:56.000] to as a MLT theta system of a dimensions then here the force can be derived it has a secondary dimension
-[00:11:56.000–00:12:05.180] Force is a secondary dimension.
-[00:12:05.180–00:12:34.710] Its dimensions are M L T to the minus 2, consistent with F equals m a. In the British Gravitational system, force is a primary dimension represented by the pound-force; the other basic units are feet, seconds, and Rankine.
-[00:12:35.590–00:12:52.630] This is called the FLT-theta system. In the BG system, mass is a secondary dimension expressed as F T squared L to the minus 1.
-[00:12:52.630–00:13:04.210] okay so you can use either way but in South Korea we use the SI system in then you may wonder which country uses a BG system
-[00:13:04.210–00:13:20.850] of course Australia I guess and then America and India so interestingly England they I think they are using as they converted into a SI unit so they're using the SI system
-[00:13:22.260–00:13:29.640] and why this dimension is important when you are developing the equation governing equation of the fluid mechanics
-[00:13:29.640–00:13:52.780] In a governing equation, terms connected by addition or subtraction must have exactly the same dimensions. This requirement is called the principle of dimensional homogeneity: all equations must be dimensionally homogeneous.
-[00:13:52.780–00:13:56.290] In other words, every additive term in an equation must have the same dimensions.
-[00:13:56.290–00:14:07.490] As an example, consider the Bernoulli equation. Later we will derive it from fundamental physical laws.
-[00:14:07.490–00:14:12.560] Those fundamental laws include conservation of mass, conservation of momentum, and conservation of energy.
-[00:14:12.560–00:14:16.160] With assumptions such as steady and incompressible flow, those governing equations can reduce to a simple form.
-[00:14:16.160–00:14:21.710] That simple relation is called the Bernoulli equation.
-[00:14:21.710–00:14:51.590] The fundamental physical laws governing a fluid system are conservation of mass, momentum, and energy. With simplifying assumptions such as steady, incompressible flow, the momentum or energy equation can be reduced to the Bernoulli equation.
-[00:14:51.590–00:15:21.280] One pressure form is p plus rho V squared over 2 plus rho g z equals a constant. The sum therefore has the same value at two states along the applicable flow.
-[00:15:21.280–00:15:47.680] The p term is static pressure, rho V squared over 2 is dynamic pressure, and rho g z is the elevation contribution. Every term must have the unit of pressure: newtons per square meter.
-[00:15:47.680–00:16:14.460] Using the units of density and velocity squared confirms that rho V squared has units of force per area. Thus every term in this Bernoulli equation has the dimensions of pressure.
-[00:16:16.880–00:16:43.580] Pressure has dimensions M L to the minus 1 T to the minus 2, so the constant must have the same dimensions. Theoretical fluid-mechanics equations are dimensionally consistent when one coherent unit system is used.
-[00:16:43.580–00:17:11.350] This leads to the important distinction between a system and a control volume. In solid mechanics, the material of interest often has a clearly defined boundary.
-[00:17:11.350–00:17:37.730] For fluid flow, the selected region is not always obvious. A system is a fixed quantity of mass, also called a closed system or control mass. Everything external to it is the surroundings, and the interface is its boundary.
-[00:17:37.730–00:17:40.870] The interface between the system and the surroundings is called the boundary.
-[00:17:40.870–00:18:10.960] The piston-cylinder provides an example. The gas inside the cylinder is the system, and the piston can move from x1 to x2.
-[00:18:10.960–00:18:41.340] The gas has pressure, volume, and temperature. Its upper boundary moves with the piston, while the other boundaries are fixed.
-[00:18:41.340–00:18:58.840] volume so control volume sorry for the bad handwriting a control volume is defined as an arbitrary region so in the fluid we can our control volume can be arbitrary
-[00:19:00.160–00:19:09.520] in space through which fluid flows the control volume can be at rest or in motion it doesn't matter for example
-[00:19:09.520–00:19:38.200] so this is a right so this is a moving boundary so this is a moving boundary and this is the fixed boundary right and then second one is the inverse T-shaped pipe and it is the dashed control volume with the dashed interface that is the control volume and then we have one inlet and two outlets and here along the wall
-[00:19:38.200–00:20:02.500] Along the pipe wall, the control surface is a real surface. Across the inlet and outlets, no physical wall exists, so we introduce imaginary surfaces and track the fluid entering and leaving the control volume.
-[00:20:02.500–00:20:15.210] The geometric boundary that separates a control volume from its surroundings is called the control surface.
-[00:20:15.210–00:20:39.060] okay control surface and then the control surface can be real or imaginary okay then for the when we are describing the fluid flow there are two
-[00:20:39.060–00:20:54.060] There are two ways to describe fluid motion. The Lagrangian perspective follows the trajectories of individual particles or bodies.
-[00:20:54.060–00:21:06.920] what we mean by that is if you think about uh air is moving although we consider fluid as a continuum so we often
-[00:21:06.920–00:21:10.580] Although we usually treat a fluid as a continuum, imagine identifying and following a representative fluid particle.
-[00:21:10.580–00:21:18.960] The Lagrangian description follows that particle as it moves.
-[00:21:18.960–00:21:28.380] It describes the motion and changing position of the selected particle.
-[00:21:28.380–00:21:58.260] The Eulerian description instead fixes the reference coordinates at selected locations and describes flow properties as functions of spatial coordinates and time.
-[00:21:58.260–00:22:27.100] For pipe flow, a fixed coordinate r can locate a point in the pipe, and u of r can represent the velocity measured at that location.
-[00:22:27.100–00:22:41.020] at this location r and this r is Eulerian because your r equals zero that is at the center of the pipe is defined as as a reference and that doesn't change right
-[00:22:41.720–00:22:50.920] but on the other hand if you think about this block although this is not really a fluid but you can consider
-[00:22:50.920–00:23:05.880] something like that something like that something like that like the rocket right when the rocket is moving launch it from the ground to shoot into the space but there is a plume if you want to calculate how to calculate the properties of the plume and
-[00:23:05.880–00:23:20.580] and also it is related to the trajectories right then you may consider you as an observer sitting on top of the rocket or you sitting on top of the
-[00:23:20.580–00:23:29.700] If an observer moves with a rocket, aircraft, or block, the observer's reference position changes with time.
-[00:23:29.700–00:23:40.160] That moving reference illustrates the Lagrangian viewpoint, whereas a coordinate fixed at the pipe center does not change with time.
-[00:23:40.160–00:23:55.060] This is the key distinction: a Lagrangian reference follows the moving material, while an Eulerian reference is fixed in space.
-[00:23:55.580–00:24:03.960] When an entire system moves, the Lagrangian perspective may be easier; rotating machinery is one possible example.
-[00:24:03.960–00:24:32.150] or Eulerian meaning you have a control volume that is fixed in space then you want to you are looking into the fluid that is coming in to the control surface volume and that is coming out from the control surface your perspective is fixed inside the properties inside fixed control volume that is the Eulerian then you may wonder what is
-[00:24:32.150–00:25:00.840] more practical so it depends on problem so sometimes Lagrangian framework is more practical or it's easier sometimes Eulerian is easier so there are gonna be a translation from a formula between Lagrangian perspective and Eulerian perspective so at some point I think
-[00:25:02.860–00:25:31.480] Now consider thermodynamic properties. Pressure is a compressive normal stress at a point in a static fluid. A pressure difference or pressure gradient often drives internal flow, such as pipe flow.
-[00:25:31.480–00:26:00.480] If flow moves from state 1 to state 2 in a pipe, the pressure at state 1 is generally higher than the pressure at state 2. The pressure difference drives the motion.
-[00:26:00.480–00:26:30.660] so that's a state one so that's a state one so that's a state one so that's why you know fluid flow from high pressure to the low pressure so pressure difference is the driving force and then temperature is related to the internal energy we will denote that as a small u internal energy level of a fluid and like the pressure difference if the pressure difference is there they're gonna be a force right for the temperature difference there's gonna be a heat
-[00:26:30.660–00:26:55.660] Likewise, a temperature difference causes heat transfer. Fourier's law describes heat flow from higher temperature toward lower temperature. The slide also compares Rankine, Fahrenheit, kelvin, and Celsius.
-[00:26:55.660–00:26:57.960] The four temperature scales shown are Rankine, Fahrenheit, kelvin, and Celsius.
-[00:26:59.700–00:27:21.870] Specific weight, denoted by gamma, is fluid weight per unit volume, so gamma equals rho g. Specific gravity is the ratio of a fluid density to the density of a standard reference fluid.
-[00:27:22.810–00:27:51.770] For gases, the reference is usually air, with density about 1.205 kilograms per cubic meter. For liquids, the reference is usually water at 4 degrees Celsius, with density about 1000 kilograms per cubic meter. Specific gravity is dimensionless.
-[00:27:51.770–00:28:21.900] meter cube okay so here specific weights will be distinctive is a unique to an individual medium like water or air that specific way is a different and then total energy energy is another property the more property the more dynamic property of the fluid when we are saying the energy you have to think about three
-[00:28:21.900–00:28:53.070] types of the energy one is the internal energy energy you and then kinetic energy it is the energy when you are moving at the velocity v and then if you are up in the in the air or low in the low in the ground then because of that difference in altitude you will have the potential energy
-[00:28:53.070–00:28:53.790] That third contribution is potential energy.
-[00:28:53.790–00:29:17.530] Total energy is the sum of internal, kinetic, and potential energy. In fluid mechanics, we commonly express total energy per unit mass.
-[00:29:17.530–00:29:38.010] The specific total energy is e equals u plus one-half V squared plus g z: internal energy per unit mass, kinetic energy per unit mass, and potential energy per unit mass.
-[00:29:38.190–00:29:39.630] So that is the total energy.
-[00:29:39.630–00:29:46.150] Then we also need to have the state relation.
-[00:29:46.710–00:29:51.050] So state meaning state is a very interesting term, right?
-[00:29:51.530–00:29:58.530] So state can define the properties of your fluid at some instance.
-[00:29:58.950–00:30:09.910] So for the gas, the simplest state relation for gases at relative high temperature and low pressure is the ideal gas law.
-[00:30:09.910–00:30:24.740] The ideal-gas law in density form is p equals rho R T.
-[00:30:25.340–00:30:33.780] That is rho, R, T, where, so here, this R is the specific gas constant, right?
-[00:30:33.780–00:30:41.420] This is the specific gas constant per mass, specific gas constant.
-[00:30:44.020–00:30:56.110] The specific gas constant R is related to the specific heats by R equals c-p minus c-v.
-[00:30:56.370–00:30:57.090] What is Cp?
-[00:30:57.290–00:31:04.530] c-p is the specific heat at constant pressure, and c-v is the specific heat at constant volume.
-[00:31:04.530–00:31:13.230] So in a thermodynamics course, so in a thermodynamics course, so in a thermodynamics course, we will derive those kind of relations, so I don't go over.
-[00:31:13.690–00:31:24.190] The specific-heat ratio k is c-p divided by c-v.
-[00:31:24.190–00:31:36.430] So for an ideal gas, so for an ideal gas, we know that k, k is 1.4, and if we use this two relation, R, what's going on?
-[00:31:39.060–00:31:55.820] Using R equals c-p minus c-v and k equals c-p over c-v gives c-v equals R divided by k minus 1, and c-p equals k R divided by k minus 1.
-[00:32:04.620–00:32:15.720] So you can have those specific heat, so you can have those specific heat as a known constant of the specific gas constant and specific heat ratio.
-[00:32:16.860–00:32:18.720] Liquids are treated differently from ideal gases.
-[00:32:18.720–00:32:22.240] A liquid does not use the ideal-gas state law.
-[00:32:23.820–00:32:26.340] Instead, a liquid is often modeled as nearly incompressible.
-[00:32:26.600–00:32:36.560] Because its density changes very little, a liquid is commonly approximated as incompressible.
-[00:32:36.560–00:32:49.420] So here I brought up a very important concept, compressible versus incompressible, compressible versus incompressible.
-[00:32:49.980–00:32:59.180] So at some point, I will go over the mathematical definition, physical and mathematical definition of those two differences.
-[00:33:00.480–00:33:08.140] Compressible, compressible, compressible, compressible, compressible meaning you can compress your liquid, you can compress your air, which is easier.
-[00:33:09.180–00:33:10.020] The gas, right?
-[00:33:10.720–00:33:13.820] So liquid, it's very difficult to compress.
-[00:33:14.500–00:33:29.100] So it is called incompressible, and gas can be compressible, and gas can be compressible.
-[00:33:31.380–00:33:54.640] For a gas flow, compressibility effects are assessed by comparing the flow velocity with the speed of sound.
-[00:33:54.640–00:34:06.520] When the flow speed is much lower than the speed of sound, a gas can often be treated as incompressible. As the speed becomes a significant fraction of the speed of sound, compressibility becomes important.
-[00:34:06.700–00:34:08.740] The velocity does not have to exceed the speed of sound for compressibility effects to matter.
-[00:34:08.900–00:34:12.800] What matters is the flow speed relative to the speed of sound.
-[00:34:13.000–00:34:19.100] At sufficiently low relative speed, the incompressible approximation is appropriate.
-[00:34:19.100–00:34:25.320] Thus even a gas can be treated as incompressible at low speed.
-[00:34:26.060–00:34:30.880] So in chapter 9, I'll talk, I'll briefly talk about compressible flow.
-[00:34:32.510–00:34:40.070] And then some important properties of the fluid flow, a viscosity, we call it as a mu here.
-[00:34:40.070–00:34:42.390] And what is the viscosity?
-[00:34:43.450–00:34:45.330] And what is the viscosity?
-[00:34:45.330–00:35:01.820] If we give a shear stress on the fluid, fluid system, then fluid doesn't, fluid will have the strain rate, right?
-[00:35:01.820–00:35:06.220] So that is related to the viscosity.
-[00:35:06.800–00:35:12.420] So how big is the strain rate under a given shear stress?
-[00:35:12.600–00:35:18.980] That is unique to the material to material, like the oil.
-[00:35:19.460–00:35:21.860] What is the viscosity of the air, oil?
-[00:35:22.040–00:35:23.540] What is the viscosity of the water?
-[00:35:23.860–00:35:25.280] What is the viscosity of the air?
-[00:35:25.720–00:35:30.960] So fluid strain rate is different under a given shear stress.
-[00:35:30.960–00:35:38.260] A fluid that follows a linear relation between shear stress and strain rate is called a Newtonian fluid.
-[00:35:38.760–00:35:42.060] So here, tau is the shear stress.
-[00:35:42.360–00:35:53.040] In a simple one-dimensional shear flow, the strain rate is d-u over d-y, and tau equals mu times d-u over d-y.
-[00:35:53.040–00:35:57.360] So if that's our, so this is the strain rate.
-[00:35:57.540–00:36:00.440] So this is the strain rate, and this is the stress for the 1d, the simple case.
-[00:36:01.120–00:36:06.060] If the proportionality coefficient mu is constant at the specified state, the stress-strain-rate relation is linear.
-[00:36:06.380–00:36:08.700] Then it's called a Newtonian fluid.
-[00:36:08.960–00:36:09.920] Mu is a constant.
-[00:36:09.920–00:36:11.080] So this is the stress for the fluid.
-[00:36:11.080–00:36:17.260] If shear stress is not linearly proportional to strain rate, the material is non-Newtonian.
-[00:36:18.260–00:36:20.940] Then there is a called a non-Newtonian fluid.
-[00:36:21.300–00:36:23.780] Like your viscosity changes.
-[00:36:24.100–00:36:29.060] How sticky is your fluid changes depending on the temperature.
-[00:36:29.060–00:36:32.800] So, like your oil.
-[00:36:33.040–00:36:34.500] Your oil is very sticky.
-[00:36:34.700–00:36:37.540] It's very highly viscous at a room temperature.
-[00:36:37.860–00:36:45.150] But if you boil it at a high temperature, your oil becomes very watery, right?
-[00:36:45.390–00:36:50.870] So they have a low viscosity at high temperature for an oil.
-[00:36:50.870–00:36:51.430] Okay.
-[00:36:52.330–00:36:55.830] So viscosity, at some point, I'll talk about that.
-[00:36:56.170–00:36:59.050] And this mu, and this relation is very important.
-[00:36:59.790–00:37:03.590] And so we had this fluid element.
-[00:37:04.030–00:37:15.990] If the top of a small fluid element has a velocity increment delta u relative to the bottom, the element undergoes continuous shear deformation.
-[00:37:16.190–00:37:18.010] Very, very tiny, tiny one.
-[00:37:18.010–00:37:23.610] Let delta theta denote the small angular deformation accumulated during delta t.
-[00:37:24.230–00:37:34.090] The top surface moves a distance delta u times delta t relative to the bottom.
-[00:37:34.850–00:37:39.930] For a small angle, tangent of delta theta is approximately delta theta.
-[00:37:40.250–00:37:43.810] Dividing the relative displacement by the element height delta y gives the deformation angle, and the limit gives d-theta over d-t equals d-u over d-y.
-[00:37:44.490–00:37:48.970] And then you can derive this relation.
-[00:37:49.350–00:37:51.550] We will return to this derivation later.
-[00:37:51.690–00:37:54.090] This mu is a very important concept.
-[00:37:54.990–00:38:05.830] Then probably one of the most important concept for you guys, as a junior student, that is the Reynolds number.
-[00:38:06.010–00:38:09.390] Reynolds number is very unique in fluid mechanics.
-[00:38:09.390–00:38:11.670] So, like solid mechanics or dynamics.
-[00:38:12.010–00:38:13.950] They don't define Reynolds number.
-[00:38:14.110–00:38:14.430] They don't define Reynolds number.
-[00:38:14.430–00:38:27.350] Reynolds number is the ratio of the inertial force over viscous force.
-[00:38:32.750–00:38:32.970] Mathematically, the Reynolds number is written as follows.
-[00:38:33.510–00:38:39.310] The Reynolds number is rho V L divided by mu, or equivalently V L divided by nu.
-[00:38:40.470–00:38:45.290] So, mu is the viscosity.
-[00:38:46.170–00:39:26.160] Here rho is density, V is velocity, L is a reference length, and mu is dynamic viscosity. For flow around a cylinder, the reference length can be its diameter. The ratio mu over rho is the kinematic viscosity nu. With the same fluid and length scale, Reynolds number increases with velocity.
-[00:39:26.160–00:39:45.140] So if your car is moving at lower speed or high speed, then when you are looking into the fluids surrounding the car, while the same viscosity, the velocity is different.
-[00:39:45.140–00:39:58.500] Then in fluid perspective, we say, okay, Reynolds number is much higher for the air that surrounding the moving car at a high speed.
-[00:39:58.500–00:40:10.520] Okay, that's important. So I really want you to spend some time on what is the physical meaning of the Reynolds number and also the what is the mathematical meaning of the Reynolds number.
-[00:40:13.020–00:40:22.920] Some examples of how the viscosity works. This is not quite an important example, but I want to go over.
-[00:40:23.400–00:40:33.200] Consider a block of weight W sliding down an inclined plane while lubricated by a thin film of oil.
-[00:40:33.200–00:40:49.080] a block of weight W. So, we have to have the oil, but we have the force diagram in x-direction, right?
-[00:40:49.620–00:41:00.700] So sigma of f x is we have the w here and this is the theta. So w sine theta of this one, right?
-[00:41:00.700–00:41:33.090] Along the incline, the downslope component of weight is W sine theta, while viscous resistance is tau A in the opposite direction.
-[00:41:33.090–00:41:45.060] At terminal velocity there is no acceleration, so the force balance is W sine theta minus tau A equals zero.
-[00:41:45.060–00:41:59.280] Assuming a linear velocity distribution across the oil film, tau equals mu times V over h.
-[00:41:59.280–00:42:15.200] The velocity gradient in the oil film is V divided by h.
-[00:42:15.200–00:42:30.560] Substitution into the force balance gives the terminal velocity. We next consider how viscosity varies with temperature.
-[00:42:30.560–00:42:43.430] changes with the temperature so this is quite um high level situation probably as a junior student like you you
-[00:42:43.430–00:42:51.350] don't consider viscosity changing uh with respect to temperature but uh let's think about i briefly introduce
-[00:42:51.350–00:43:00.830] the situation so for the gas and liquid temperature behaves differently for the viscosity
-[00:43:00.830–00:43:11.310] For a gas, viscosity increases when temperature increases. For a liquid, viscosity decreases when temperature increases.
-[00:43:11.310–00:43:30.020] viscosity decreases right so uh that's why for a re-entry vehicle like rockets right so at the because it's such uh it's a moving such a high velocity
-[00:43:30.580–00:43:40.280] viscosity increases a lot so you have to have more fuel but for the liquid um if the temperature is higher viscosity decreases
-[00:43:40.280–00:43:51.320] Gas viscosity is often estimated with a power law or Sutherland's law.
-[00:43:52.040–00:44:03.980] For liquids, viscosity can be estimated with an empirical temperature correlation.
-[00:44:06.000–00:44:16.360] The constants in that correlation are determined experimentally, using a reference temperature T-naught and reference viscosity mu-naught.
-[00:44:16.360–00:44:33.720] room temperature, room temperature and viscosity at that room temperature. So for the water, we can define t-naught, mu-naught, and adjusted values of the constants are fitted into those values.
-[00:44:33.720–00:44:50.840] And then surface tension, you know the surface tension very well. It is a liquid, so let's say that you have a water droplet, liquid, and outside is the gas. This is a water drop, right?
-[00:44:51.180–00:45:05.520] So a liquid being unable to expand freely will form an interface with a second liquid or a gas. So they form an interface with a gas, right?
-[00:45:05.520–00:45:17.700] And then we define hydrophilic, meaning wet the solid quite well, or hydrophobic, meaning the liquid is not wetting the surface, right?
-[00:45:18.080–00:45:32.720] So you may have heard of hydrophilic surface or hydrophobic surface. During the rainy days, you want to have the clothes with the hydrophobic surface so that it doesn't wet very well, right?
-[00:45:32.720–00:45:35.900] So how can you define hydrophilic surface? So how can you define hydrophilic or hydrophobic?
-[00:45:36.600–00:45:55.960] The contact angle theta is measured where the liquid-gas interface meets the solid. If theta is less than 90 degrees, the liquid wets the solid and the surface is hydrophilic.
-[00:45:58.040–00:46:21.320] So if this is not wetting, it's not wetting, it's not wetting, it is hydrophobic, okay? So this is theta, theta here and theta here is smaller than 90 for the hydrophilic, greater than 90 for the hydrophobic.
-[00:46:21.320–00:46:27.160] If theta is greater than 90 degrees, the surface is hydrophobic. Surface tension is denoted by an uppercase gamma in this slide.
-[00:46:27.540–00:46:36.260] And I didn't go over, I don't want to go over the details of surface tension. Most of the details are in your textbook.
-[00:46:36.860–00:46:38.220] shown in this one.
-[00:46:38.980–00:46:40.600] shown in this one, equal and opposite force,
-[00:46:40.720–00:46:42.020] equal and opposite force,
-[00:46:42.020–00:46:45.800] The equal and opposite surface-tension forces are exposed normal to the cut.
-[00:46:46.320–00:46:46.400] Okay?
-[00:46:49.350–00:46:57.730] Here, so this is a cut. So your surface tension is acting this way, this direction. If this is a cut, it's acting that direction.
-[00:46:59.490–00:47:05.050] And then vapor pressure. What is a vapor pressure? So that is related to the liquid.
-[00:47:05.050–00:47:19.690] So when does liquid boils? So when does liquid boils at certain pressure? That is the vapor pressure. So pressure at which a liquid boils and is in equilibrium with its own vapor.
-[00:47:19.690–00:47:23.690] Boiling begins when the liquid pressure reaches the vapor pressure at the specified temperature.
-[00:47:24.550–00:47:48.730] The vapor pressure of the water is about 2.34 kPa. Okay? So at this point, we don't consider temperature. Temperature is constant. You have water. And then you can change the pressure.
-[00:47:48.730–00:48:17.130] At 20 degrees Celsius, the vapor pressure of water is about 2.34 kilopascals. If local absolute pressure is reduced to this value, water can boil. This can occur near a rapidly rotating underwater propeller and lead to cavitation.
-[00:48:17.130–00:48:21.750] The Bernoulli relation helps explain why high local velocity can be accompanied by low local pressure.
-[00:48:22.090–00:48:36.530] When the local liquid pressure drops below the vapor pressure, vapor bubbles can form.
-[00:48:36.530–00:49:06.720] When those vapor bubbles move into a higher-pressure region, they collapse violently. Repeated collapse can damage and erode a propeller surface.
-[00:49:06.720–00:49:25.920] For example, if water accelerates in a pump from rest to about 50 feet per second, its pressure can drop by about 15 pound-force per square inch.
-[00:49:26.080–00:49:35.040] That is about 1 atm or 103 kilopascal. So this can cause the cavitation, which means that we will have the gas bubble.
-[00:49:35.040–00:49:52.120] Okay, so this vapor pressure is very important in cavitation and in ocean engineering, folks, cavitation is a very important topic that many people are studying still over by experiment or by numerical method.
-[00:49:52.990–00:50:02.490] Now I'll talk about the stream flow patterns. So there are streamlines, pathlines, and streaklines.
-[00:50:02.490–00:50:18.490] These have different definitions. A streamline is a line everywhere tangent to the velocity vector at a given instant.
-[00:50:18.490–00:50:37.530] So let's assume that inner figure 1a, so these are the streamlines, and then at any, these are the streamlines, and any location, if you put a tangent line, there is the velocity of the local velocity vector.
-[00:50:45.270–00:51:02.810] Because the differential displacement d-r along a streamline is parallel to the velocity vector V, we can write the streamline equation.
-[00:51:02.810–00:51:04.690] The streamline equation relates the coordinate differentials to the corresponding velocity components.
-[00:51:04.690–00:51:08.710] In Cartesian coordinates, d-x over u equals d-y over v equals d-z over w.
-[00:51:10.210–00:51:15.790] Okay, pathline is a actual path traversed by a given fluid particle.
-[00:51:16.510–00:51:20.650] A streakline is the locus of particles that have passed through a prescribed point.
-[00:51:20.730–00:51:24.470] In other words, a streakline collects the trajectories of all particles that previously passed through one fixed point.
-[00:51:24.470–00:51:55.560] Streamlines, pathlines, and streaklines are identical in steady flow, but they can differ in unsteady flow.
-[00:51:55.560–00:52:18.060] So that's left for your take-home homework. But you know I don't give you a homework so far. So there will be a homework at the end of the chapter, chapter 2, chapter 3. But for chapter 1 I may give you a very simple concept questions but not any mathematically solving questions.
-[00:52:18.060–00:52:34.830] Now consider basic flow-analysis techniques. In solid mechanics, a free-body diagram is a central tool for analysis.
-[00:52:35.610–00:52:53.610] fluid mechanics. But for the fluid mechanics, you will have the system, well-defined system and a control volume. Then you will, in all cases, whether you are using a system or a control volume, flow must satisfy the three basic laws of the mechanics.
-[00:52:53.610–00:52:58.650] What are those? What are those? What are those? What are those? Those are the conservation of mass,
-[00:53:00.340–00:53:30.090] conservation of the momentum, whether they are linear or angular momentum, and then conservation of energy. Okay. So those are, we will derive the governing equation of the fluid flow based on the three physical laws.
-[00:53:30.090–00:53:35.190] The three basic laws are conservation of mass, conservation of linear or angular momentum, and conservation of energy.
-[00:53:35.610–00:53:36.250] We also need an equation of state and the associated boundary conditions.
-[00:53:36.250–00:54:01.070] And we need the equation of state, state relations, and then associated boundary condition. So as long as we have a governing physics, and one additional state relations, and then boundary condition, there is a difference from problem to problem to problem, then we can solve the pressure at any location in your problem.
-[00:54:01.070–00:54:29.540] The first flow-analysis technique is the integral approach, introduced in Chapter 3. It applies the conservation laws to a finite control volume and balances what enters, leaves, and accumulates.
-[00:54:29.540–00:54:55.080] The differential approach instead considers an infinitesimally small control volume and derives equations that describe the detailed flow field point by point.
-[00:54:55.080–00:55:20.850] The differential approach produces differential governing equations, whereas the integral approach produces integral balance equations.
-[00:55:20.850–00:55:40.290] For experimental analysis, we use dimensional analysis and the Pi theorem. Consider testing a large aircraft such as the KF-21.
-[00:55:40.290–00:55:53.330] Full-scale flight tests and detailed pressure or temperature measurements can be difficult, so engineers often use a smaller model in a wind tunnel.
-[00:55:53.330–00:56:10.010] For a scaled wind-tunnel model, we must determine the velocity and pressure conditions that reproduce the relevant behavior of the full-size aircraft.
-[00:56:10.850–00:56:21.170] Dimensional analysis identifies the nondimensional parameters that must match between the model and the full-scale condition.
-[00:56:21.170–00:56:51.610] The Pi theorem supports that matching. Computational fluid dynamics, or CFD, is another common engineering tool. Integral, differential, and dimensional approaches can be sufficient for simple problems, but many modern flows are much more complicated.
-[00:56:51.610–00:57:19.370] complicated like what if you have a chemical reaction for the combustion how can you integrate right so for the combustion you also have to think about the fuel fuel particle as well so in that case you have to have combination of the continuum of a background air and also the particle of the fuel
-[00:57:19.370–00:57:42.340] so in that case it's very difficult to directly apply a dimensional analysis. In that case you will have the computational fluid dynamic CFD technique with multiple CPUs and GPUs to calculate many millions over tens of millions of state variables.
-[00:57:44.560–00:57:58.320] Before we have computers, then how can people calculate the pressure of any certain location or temperature? How can you do that?
-[00:57:59.100–00:58:05.750] Many fundamental discoveries in fluid mechanics occurred during the eighteenth and nineteenth centuries.
-[00:58:05.750–00:58:19.450] Archimedes established the laws of buoyancy and floating bodies. Leonardo da Vinci formulated an early continuity equation, and Isaac Newton proposed the law of linear viscous stress.
-[00:58:20.330–00:58:27.050] Leonhard Euler developed Bernoulli's equation by solving the basic equations.
-[00:58:27.050–00:58:44.080] The Navier-Stokes existence and smoothness problem is one of the seven Millennium Prize Problems.
-[00:58:44.080–00:58:52.220] The Navier-Stokes equations are fundamental governing equations for fluid flow.
-[00:58:52.780–00:59:02.640] Navier formulated basic differential equations for viscous flow.
-[00:59:06.660–00:59:13.680] Jean Louis Poiseuille performed early experiments on laminar flow in tubes.
-[00:59:13.680–00:59:17.340] what is the physical meaning of what is the physical meaning of what is the physical meaning of the laminar flow.
-[00:59:18.060–00:59:26.460] And then Reynolds. Early on, I asked you to think quite deep about Reynolds numbers, right?
-[00:59:26.900–00:59:33.540] So explain the phenomenon of the transition to the turbulence. So laminar, turbulence, transition.
-[00:59:34.060–00:59:43.520] Ludwig Prandtl developed boundary-layer theory and explained flow separation.
-[00:59:44.660–00:59:50.560] Theodore von Karman made major advances in aerodynamics and turbulence theory.
-[00:59:51.400–01:00:04.080] So at some point in our course, you will run into those names in some equation form. Okay. So those are the summary.
-[01:00:05.500–01:00:19.380] So chapter one is all about introductory of the fluid mechanics. And in chapter two, I will move on to a more practical and theoretical aspects of the fluid mechanics. Thank you.
+[00:00:01.330–00:00:29.770] Hello everyone. Welcome to the course of fluid mechanics one. And this recording is the lecture for the week first, week one. And today I'm going to talk about some introductory stuff to the fluid mechanics. So these are the stuff that I want to discuss. First, I want to talk about the concept of fluid. And then you will define fluid as a continuum material.
+[00:00:29.770–00:00:58.070] And in a fluid mechanics, eventually what you want to do is when there is a pressure difference, what will be the force or what will be the velocity at some locations away, right? So for those kinds of analysis, we need the dimensions of the flow properties, like pressure, velocity, and stuff like that.
+[00:00:58.070–00:01:21.070] And then what will be the corresponding units? To calculate those fluid states, we need to define the control volume and control surface. A solid material has very well-defined boundaries for that substance.
+[00:01:21.070–00:01:48.070] But for a fluid, for example the air around an aircraft or the air inside your room, there is no definite boundary for your flow analysis. Should it be the entire room or the fluid flow near your body? Because there is no definite answer, we have to define a control volume.
+[00:01:48.070–00:02:07.070] From that control volume, we calculate fluid properties. Control volume and control surface are very important. In fluid-flow applications, the fluid flows.
+[00:02:07.070–00:02:23.070] And then when you are describing the flow of the fluid, there are two framework approaches. Number one is the Eulerian perspective. Another one is the Lagrangian perspective. So I will define that. That's also important.
+[00:02:23.070–00:02:52.070] I will talk about important properties of the fluid and flow. One of the most important properties is viscosity, so I will define fluid viscosity. Then there are three basic flow-analysis techniques used in fluid mechanics. I will describe them; they will be discussed in Chapter 3,
+[00:02:52.070–00:03:04.400] Chapter 4, and Chapter 5. Fluid mechanics consists of two subjects: fluid statics and fluid dynamics.
+[00:03:04.400–00:03:23.400] Statics means the fluid does not change in shape over time. Fluid dynamics means the fluid flows over time, so we consider
+[00:03:23.400–00:03:53.400] spatial and temporal properties. A fluid includes both gas and liquid. For a submarine, we think about the ocean water surrounding it. For a floating ship, we think about
+[00:03:53.400–00:04:20.400] both air and water. For a car, we think about the surrounding air. These are classified as fluids. You are also taking solid mechanics and control courses. What makes a fluid distinctively different from a solid is whether it can
+[00:04:20.400–00:04:41.400] resist a shear force. In figure A, a solid can distort or deform under a shear force and have a static deflection.
+[00:04:41.400–00:05:11.700] But a fluid cannot resist a shear force. Think about liquid water in a cup. If you exert an external force, what happens? Does the liquid deform? No, it will freely move. [Lecture wording: the slide defines a fluid as continuously deforming under sustained shear stress.]
+[00:05:11.700–00:05:35.210] We consider fluid as a continuous medium. Fluids are aggregations of molecules, but often we do not have to think at the molecular level or treat them as a sum of distinct molecules.
+[00:05:35.210–00:06:03.060] But we just think about aggregation of the molecules. Okay. So for a gas, those molecules are very widely spaced because the density is small. And for a liquid, the aggregation, the molecules are relatively closely spaced.
+[00:06:03.060–00:06:18.060] But distance between molecules are much larger than with a molecular diameter, which means that you don't have to think about the fluid as an individual particle. Okay. Unless you are going away.
+[00:06:18.060–00:06:33.060] If you travel into outer space, the density is very low and the molecular spacing becomes large. Then you have to think about individual particles.
+[00:06:33.060–00:06:38.560] But under ordinary atmospheric conditions, at about 1 atm in the troposphere,
+[00:06:38.560–00:07:00.060] you do not have to worry about the molecular level. We consider fluid as a continuum. We then define fluid density. As you know, density is mass divided by volume. But in a
+[00:07:00.060–00:07:27.800] fluid, we don't have a tangible property, right? So if you think about a region containing fluid, and we are inside that region, we are thinking about elemental volume here, with its volume is a delta V, and we are think about the limiting case of the delta V, small down to delta V star,
+[00:07:27.800–00:07:40.000] and then, when it is shrunk down to delta V star, then we consider what is the mass, elementary mass, inside that small shrunken volume, that is the density,
+[00:07:41.320–00:07:50.580] so then, and then that limiting volume, V star, is such a small one, 10 to minus 9 millimeter cubed, for all liquids and gas,
+[00:07:50.580–00:08:05.760] and that case, rho is the 1200, that is the, that is the water, okay, right? So, it can be water, you know the density of the water,
+[00:08:06.200–00:08:19.040] The density of water is about 1000 kilograms per cubic meter; for air, it is about 1 kilogram per cubic meter.
+[00:08:19.040–00:08:32.240] so this density is just arbitrary, so let's assume that rho is a 1200 kg per meter cube, so there is some arbitrary material, then
+[00:08:32.240–00:08:46.240] that is the density of that fluid, and then if that is 1200, then of course there will be some variation, right? So we consider that as an uncertainty,
+[00:08:46.240–00:08:56.140] We consider that variation as an uncertainty. Next, dimensions and units. In fluid analysis, later on
+[00:08:56.220–00:09:03.520] we will consider, you know, the pressure, or viscosity, and stuff like that. So out of a lot of
+[00:09:03.520–00:09:14.980] flow properties, there are four primary dimensions, from which all other dimensions can be derived, or can be, they can be mass,
+[00:09:14.980–00:09:50.360] length, time, and temperature. Their units can be defined in two systems: SI, widely used around the world, and BG, the British Gravitational system.
+[00:09:50.360–00:10:23.240] old England all the great great Britain they used this unit so for the mass for the mass we denote for the dimension as a bracketed parenthesis with M and for the SI unit they use a kilogram kg but for the BG unit they use a slug and for the length for the dimensional analysis we use the
+[00:10:23.240–00:10:53.000] bracketed L L with bracketed parenthesis in terms of the unit SI unit it's a meter for the BG unit it is a foot right their conversion is one feet is about 30 centimeter or 0.3 meter and then time time is same for SI unit and BG unit right otherwise people will use a different
+[00:10:53.000–00:11:25.820] watch watch with a watch with a different unit that will be so confusing so time the unit is the same for SI unit and BG in second and then for the temperature the fourth dimension important dimension is the temperature it is denoted by the theta then SI unit they use a Kelvin and BG unit they use the
+[00:11:25.820–00:11:48.460] Rankine. The conversion between Rankine and kelvin involves a factor of 1.8. In SI, the basic units are kilograms, meters, seconds, and kelvin. This is the MLT-theta system of dimensions.
+[00:11:48.460–00:12:00.140] And then here, the force can be derived. It has a secondary dimension expressed in F, and they can be derived from the mass length divided by the time squared.
+[00:12:00.760–00:12:12.280] So F is the bracketed MLT to minus 2. And they can be, if you do the dimensional analysis, that is consistent with MA.
+[00:12:12.280–00:12:20.600] So this one, the unit, corresponds to that one. In the British gravitational system, the basic units are pound force.
+[00:12:20.940–00:12:32.240] They take force as one of the four primary dimensions, with length in feet, time in seconds, and temperature in Rankine.
+[00:12:33.240–00:12:38.480] So they are referred to as a FLT theta system of dimensions.
+[00:12:38.480–00:12:50.140] In the BG system, mass has secondary dimensions: [M] = F T squared L to the minus 1.
+[00:12:50.140–00:12:56.540] Okay. So you can use either way. But in South Korea, we use the SI system.
+[00:12:56.540–00:13:01.700] And then you may wonder, which country uses BG system?
+[00:13:01.700–00:13:08.700] Australia, I guess, and America and India. [The lecturer is speculating here; this is not a verified list of national unit systems.]
+[00:13:08.700–00:13:18.340] So interestingly, England, they, I think they are using, as they converted into SI unit, so they are using the SI system.
+[00:13:18.340–00:13:35.080] Why are dimensions important? When developing a governing equation of fluid mechanics, there are terms connected by addition or subtraction.
+[00:13:35.080–00:13:43.980] Individual terms must have the same dimensions.
+[00:13:43.980–00:14:16.540] This is the principle of dimensional homogeneity. All equations must be dimensionally homogeneous: each additive term in an equation must have the same dimensions. For example, later I will derive several forms of the Bernoulli equation from fundamental physical laws.
+[00:14:16.540–00:14:46.540] The fundamental laws governing a fluid system are conservation of mass, momentum, and energy. In a momentum or energy equation, we introduce simplifying assumptions such as steady and incompressible flow.
+[00:14:46.540–00:15:16.620] Then we can obtain a simple form of the governing equation, called the Bernoulli equation. It has a pressure term p, rho V squared over 2, and rho g z, with their sum equal to a constant. We can compare the sum at fluid state 1 and fluid state
+[00:15:16.620–00:15:47.180] 2. The sum has the same constant value. The p term is the static-pressure term and rho V squared over 2 is the dynamic-pressure term. The terms must share the pressure unit, newtons per square meter.
+[00:15:47.180–00:16:00.140] Multiplying density by velocity squared gives the unit of force divided by area.
+[00:16:00.140–00:16:17.270] okay so we can examine the dimensional homogeneity from the Bernoulli equation each and every term in this equation as dimensions of the pressure that is the uh mass divided by the length
+[00:16:17.270–00:16:44.740] divided by time squared. This must match the dimensions of the constant. Theoretical fluid-mechanics equations are dimensionally consistent and require no additional conversion factors when coherent SI or BG units are used.
+[00:16:44.740–00:17:07.260] are used okay then this is important what is the system and control volume of the fluid flow um unlike solid mechanics in a solid uh defining system is a quite easy right you have a material of the interest
+[00:17:07.260–00:17:25.260] A material of interest, such as a fuel cell or cantilever beam, has a well-defined system. In fluid flow, the selected system is less obvious, so we select a closed system or control mass.
+[00:17:25.260–00:17:37.100] Everything external to the system is called the surroundings. The interface between the system
+[00:17:37.100–00:17:47.380] and its surroundings is called the boundary. Here are two examples, starting with a piston.
+[00:17:47.380–00:18:05.380] this is a piston example and if you are so don't worry about this uh this is a typo so we have a fluid flow inside a piston and then we consider uh states of the gas inside a piston
+[00:18:05.380–00:18:11.940] inside a piston when the piston when the piston is a position at x1 or piston is released
+[00:18:11.940–00:18:21.380] up to x2, what will be the volume, pressure, and temperature of the gas? What is the
+[00:18:21.380–00:18:32.300] system here a closed system is the air defined here right and then it has the moving boundaries here this is a moving boundary
+[00:18:32.300–00:18:48.280] and these are fixed boundaries. Next, a control volume is defined as an arbitrary region
+[00:18:48.280–00:19:04.280] so in the fluid we can our control volume can be arbitrary uh in space through which fluid flows the control volume can be at rest or in motion
+[00:19:04.440–00:19:11.400] It does not matter. This is a moving boundary
+[00:19:11.400–00:19:26.440] and this is the fixed boundary right and then second one is the uh the inverse t-shaped pipe and it is the dashed control volume with the dashed interface that is the control volume
+[00:19:26.440–00:19:40.440] There is one inlet and two outlets. Along the pipe wall there is a real surface.
+[00:19:40.440–00:19:54.440] At the outlets V3 and V2 there is no real surface, so we introduce imaginary surfaces and consider the fluid inside this control volume.
+[00:19:54.440–00:20:17.960] inside this control volume and then what's coming in and what's coming in and what's coming out right so here uh control volume the geometric boundaries of the control volume separating it from the surrounding is called what that is called a control surface okay control surface
+[00:20:17.960–00:20:41.800] The control surface can be real or imaginary. There are two ways to describe fluid flow: the Lagrangian and Eulerian perspectives.
+[00:20:41.800–00:20:51.800] the lagrangian perspective is a frame of reference that follows the trajectories of individual particles or bodies
+[00:20:51.800–00:21:07.800] what we mean by that is um if you think about uh air air is moving although we consider fluid as a continuum so we often uh think about the fluid particle
+[00:21:07.800–00:21:17.800] To explain the Lagrangian description of fluid motion, imagine a moving air particle.
+[00:21:17.800–00:21:35.800] if you are sitting on earth and then you consider that then you don't move and then you watch you watch the motion of this particle and if this is your reference and you describe the location of this flow particle
+[00:21:35.800–00:21:57.800] Then there is the Eulerian description: the reference coordinates are fixed at a location, and fluid-field properties are described as functions of space coordinates and time.
+[00:21:57.800–00:22:25.800] um on the other so so this one so let's say that this is a pipe this is a pipe wall so this is your control volume uh and then uh fluid at this location fluid at this location it changes uh the velocity this is a u velocity and this is r so u of r represents the velocity of uh at this location r
+[00:22:25.800–00:22:37.800] The coordinate r is Eulerian because r = 0 is defined at the center of the pipe and that reference does not change.
+[00:22:37.800–00:22:53.800] but on the other hand uh if you think about uh this block although this is not really uh fluid but you can consider something like that like uh the rocket right when the rocket is moving launch it from the ground to shoot into the space
+[00:22:53.800–00:23:11.800] There is a plume. If you want to calculate its properties, also related to the trajectories, you may consider
+[00:23:11.800–00:23:21.800] you as an observer sitting on top of the rocket or you sitting on top of the uh this block if that's the case
+[00:23:21.800–00:23:51.560] your x0 changes over time. For the fixed pipe reference, x0 does not change, but for this Lagrangian perspective the reference origin changes as a function of time. That is the main difference. Sometimes, when your object is
+[00:23:51.560–00:23:58.920] constantly moving and your system is entirely moving that Lagrangian perspective much easier for example
+[00:23:58.920–00:24:08.250] like a rotary like rotary wing or Eulerian meaning you have a control volume that is fixed in space
+[00:24:10.090–00:24:17.290] You look at fluid coming into the control volume
+[00:24:17.290–00:24:25.450] coming out from the control surface your perspective is a fixed inside the properties inside fixed control volume
+[00:24:25.450–00:24:36.490] that is the Eulerian then you may wonder what is a more practical so it depends on problem so sometimes
+[00:24:36.490–00:24:45.610] Lagrangian framework is more practical or it's easier sometimes Eulerian is easier
+[00:24:47.050–00:24:57.690] so there are going to be a translation from a formula between Lagrangian perspective and Eulerian perspective so at some point
+[00:24:57.690–00:25:07.860] i think um in some chapter i'm going to talk about detail about the Lagrangian perspective and Eulerian perspective
+[00:25:07.860–00:25:16.900] Next, thermodynamic properties of fluids. Pressure is a compressive normal stress at a point in a
+[00:25:16.900–00:25:24.120] static fluid. What is the driving force for internal flow,
+[00:25:24.120–00:25:32.440] such as pipe flow? It is the pressure difference or pressure gradient. Pressure itself is not the main point;
+[00:25:32.440–00:25:35.960] important but pressure difference pressure gradient is more important
+[00:25:36.760–00:25:44.520] um and then if you think about the pipe flow here you see flow is moving from left to right right so what drives this
+[00:25:44.520–00:25:49.400] motion because they're gonna be so let's say this is a state one and this is a state two
+[00:25:50.200–00:26:02.360] probably pressure at state two is higher uh lower than pressure at state one so that's why you know fluid flow from high
+[00:26:02.360–00:26:07.080] pressure to the low pressure so pressure difference is the driving force
+[00:26:07.080–00:26:18.220] and then temperature is related to the internal energy we will denote that as a small u internal energy level of a fluid and
+[00:26:18.220–00:26:24.620] uh like the pressure difference if the pressure difference is there they're gonna be a force right
+[00:26:24.620–00:26:36.780] right for the temperature difference okay so uh if you remember probably i'm sure you are taking the thermodynamics course
+[00:26:36.780–00:26:46.860] You will learn Fourier's law: heat flows from high temperature to low temperature.
+[00:26:46.860–00:26:52.940] Here we compare four different temperature scales:
+[00:26:52.940–00:27:00.460] Rankine, Fahrenheit, kelvin, and Celsius. Their relations are shown here, so you can convert between them.
+[00:27:00.460–00:27:09.580] and then specific weight is often denoted as a gamma and that is a fluid weight per unit volume that is very important
+[00:27:09.580–00:27:16.420] Gamma equals rho g. Specific gravity is the ratio of fluid density
+[00:27:16.420–00:27:45.420] to a standard reference fluid. So you can consider specific gravity just as a density but then it is sort of like dimensionalized, non-dimensionalized density. So specific gravity of the gas is density of that gas divided by the density of the air 1.2 kg and specific gravity of the liquid is a density of that liquid
+[00:27:45.420–00:28:13.830] in reference to the density of the water, 1,000 kg per meter cube. So here specific weights will be distinctive, it's a unique to an individual medium like water or air. That specific weight is different. And then total energy. Energy is another property, the more property, the more dynamic property of the fluid.
+[00:28:13.830–00:28:33.660] When we are saying the energy, we have to think about three types of the energy. One is the internal energy, energy U. And then kinetic energy, it is the energy when you are moving at the velocity V.
+[00:28:33.660–00:28:59.330] And then if you are up in the air or low in the air, low in the ground, then because of that difference in altitude, you will have the potential energy, right? So total energy is the summation of those three elementary component energy.
+[00:28:59.330–00:29:06.330] Mathematically, we define total energy per unit mass.
+[00:29:06.330–00:29:18.180] Small e is the total energy per unit mass: internal energy per unit mass, u, plus kinetic energy
+[00:29:19.460–00:29:35.550] per unit mass is half V squared and then potential energy is G, gravity, multiplied by the height, Z, right?
+[00:29:35.650–00:29:37.170] So that is the total energy.
+[00:29:39.790–00:29:43.630] Then we also need to have the state relation.
+[00:29:43.630–00:29:48.590] So state meaning, state is a very interesting term, right?
+[00:29:48.590–00:29:56.210] So state can define the properties of your fluid at some instance.
+[00:29:56.670–00:30:07.430] So for the gas, the simplest state relation for gases at relative high temperature and low pressure is the ideal gas law.
+[00:30:07.430–00:30:13.110] The ideal-gas law is p = rho R T.
+[00:30:13.670–00:30:20.340] p equals rho R T.
+[00:30:20.600–00:30:22.260] I think that is, what is that?
+[00:30:23.100–00:30:25.880] That is a rho, R, T.
+[00:30:25.880–00:30:31.380] P, where, so here, this R is the specific gas constant, right?
+[00:30:31.840–00:30:38.890] This is the specific gas constant per mass, specific gas constant.
+[00:30:41.800–00:30:53.610] Relating the specific gas constant to the specific heats gives R = c_p - c_v.
+[00:30:53.610–00:30:54.610] What is c_p?
+[00:30:55.210–00:31:02.150] c_p is specific heat at constant pressure, and c_v is specific heat at constant volume.
+[00:31:02.150–00:31:09.660] So, uh, in a thermodynamics course, you will derive those kind of relations.
+[00:31:09.660–00:31:10.740] So I don't go over.
+[00:31:10.740–00:31:15.620] So, small k, k is the specific heat ratio.
+[00:31:15.620–00:31:18.260] There is a ratio of the two specific heat.
+[00:31:18.260–00:31:36.420] k = c_p/c_v. For ideal-gas air, k is 1.4. We use these two relations.
+[00:31:36.420–00:31:45.300] Using R = c_p - c_v and k = c_p/c_v,
+[00:31:45.300–00:32:02.660] c_v can be written as R/(k-1), and c_p, the specific heat at constant pressure, as kR/(k-1).
+[00:32:02.660–00:32:13.660] So, you can have those specific heat as a known constant of the, uh, specific gas constant and, uh, specific heat ratio, okay?
+[00:32:13.660–00:32:23.880] For liquids we do not use the ideal-gas law, which is an equation of state.
+[00:32:23.880–00:32:42.280] Liquids are nearly incompressible. This introduces the important distinction between compressible and incompressible.
+[00:32:42.280–00:33:07.050] At some point I will explain their physical and mathematical definitions. Which is easier to compress, liquid or gas? Gas.
+[00:33:07.050–00:33:08.050] For a liquid,
+[00:33:08.050–00:33:28.050] compression is very difficult, so it is called incompressible. Gas can be compressible. A liquid is treated as incompressible most of the time.
+[00:33:28.050–00:33:56.760] Incompressible means density rho does not change. Rho is constant, and c_p = c_v = c. Gas flow can be compressible or incompressible. We compare velocity to the speed of sound. If air velocity is higher than the speed of sound,
+[00:33:56.760–00:34:22.820] we call it compressible flow. If it is much smaller than the speed of sound, it is incompressible. It does not have to be higher than the speed of sound; it can be relatively comparable. The lecturer then says "incompressible" in both alternatives [wording retained; the contrast is unclear]. Any gas at low speed can be considered incompressible.
+[00:34:22.820–00:34:33.600] okay, so in chapter 9, I'll talk, I'll briefly talk about compressible flow, and then some important properties of the fluid flow,
+[00:34:33.600–00:35:03.680] we call it as a viscosity, we call it as a mu here, and what is the viscosity, if we give a shear stress on the fluid, fluid system, then fluid doesn't, fluid will have the strain rate, right, so that is the, related to the viscosity,
+[00:35:03.680–00:35:22.680] stress, so how big is the strain rate, so how big is the strain rate, under a given shear stress, that is unique to the material, to material, like the oil, what is the viscosity of the air, oil, what is the viscosity of the water, what is the viscosity of the air,
+[00:35:22.680–00:35:53.770] so fluid strain rate is a different under a given shear stress so here so fluid that follows the linear relations are called the Newtonian fluid so here tau is the shear stress and then fluid strain rate 1d du dy in one dimensional
+[00:35:53.770–00:36:23.590] This is the strain rate and shear stress for the simple one-dimensional case. If mu is constant, the relation is linear and the fluid is Newtonian. A non-linear relation is called non-Newtonian. The lecture then discusses how viscosity
+[00:36:23.590–00:36:53.430] changes depending on the temperature so like your oil your oil is very sticky it's very highly viscous at a room temperature but if you boil it at a high temperature your oil becomes a very watery right so they have a low viscosity at high temperature for an oil okay so viscosity at some point I'll talk about that
+[00:36:53.430–00:37:08.430] This relation involving mu is very important. Consider a fluid element with a velocity difference delta u. It may
+[00:37:08.430–00:37:23.390] deform by a very small amount. Consider the small angular deformation delta theta.
+[00:37:23.430–00:37:34.780] The relative displacement is delta u times delta t.
+[00:37:34.780–00:37:46.780] For a small angle, tan(delta theta) is approximately delta theta = delta u times delta t divided by delta y. From this we derive the relation shown on the slide.
+[00:37:46.780–00:37:48.260] At some point I will talk about that.
+[00:37:48.260–00:38:02.980] Mu is a very important concept. Another important concept for you as junior students is the Reynolds number.
+[00:38:02.980–00:38:12.580] Reynolds number is distinctive to fluid mechanics rather than solid mechanics or dynamics. It is the ratio of inertial force
+[00:38:12.580–00:38:48.350] is the ratio of the inertial force over viscous force. So mathematically, Reynolds number is density, velocity, reference length, divided by the mu. So mu is the viscosity, rho is the density, V is the velocity, and L is the reference length.
+[00:38:50.640–00:39:30.120] For a cylinder, the reference length is its diameter. Mu divided by density is kinematic viscosity, nu. If viscosity and length scale are unchanged, Reynolds number increases with velocity. Consider a car moving at low or high speed.
+[00:39:30.440–00:39:56.040] then when we are looking into the fluids surrounding the car, while the same viscosity, the velocity is different, then in fluid perspective, we say, okay, Reynolds number is much higher for the air that surrounding the moving car at a high speed.
+[00:39:56.040–00:40:08.040] Okay, that's important. So I really want you to spend some time on what is the physical meaning of the Reynolds number and also the what is the mathematical meaning of the Reynolds number.
+[00:40:08.040–00:40:29.160] Here is an example of how viscosity works. Consider a block of weight W sliding down an inclined plane, lubricated by a thin film of oil.
+[00:40:29.160–00:40:46.660] The oil-film thickness is exaggerated in the drawing. Assuming a linear velocity distribution, find the terminal velocity V. Draw the force diagram in the x-direction.
+[00:40:46.660–00:40:58.280] For the sum of forces in x, the downslope component of weight is W sin(theta).
+[00:40:58.520–00:41:14.170] The other force is tau times area. We define x along the incline.
+[00:41:14.170–00:41:21.410] W sin(theta) acts downslope, opposed by tau A.
+[00:41:21.410–00:41:39.600] The block is driven downslope by W sin(theta), while the viscous resistance is tau A. Their difference is zero
+[00:41:39.600–00:42:00.600] because there is no acceleration: the block moves at constant terminal velocity. Assuming a linear velocity distribution, tau = mu du/dy.
+[00:42:00.600–00:42:19.500] The velocity gradient inside the liquid film is V/h. Substitution gives the terminal velocity shown on the slide.
+[00:42:19.500–00:42:53.460] Next, viscosity changes with temperature. This is a more advanced situation; at this level you may not consider temperature-dependent viscosity, but I will introduce it briefly. Gases and liquids
+[00:42:53.460–00:43:26.800] behave differently. Heating a gas increases its viscosity, while heating a liquid decreases its viscosity. For a re-entry vehicle such as a rocket moving at high
+[00:43:26.800–00:43:48.800] velocity, the lecture mentions increased fuel requirements. For liquids, viscosity decreases at higher temperature. Gas viscosity relative to a reference value can be described using a power law or Sutherland's law.
+[00:43:48.800–00:44:19.640] for the liquid, we can have some log relation and then quadratic approximation for the temperature okay so by experiment people have defined the reference this mu-naught t-naught is the room temperature room temperature and the viscosity at that reference state
+[00:44:19.640–00:44:50.280] at that room temperature so for the water we can define t-naught mu-naught and adjusted values of the constants are fitted into those values and then surface tension so you know the surface tension very well it is a liquid so let's say that you have a water droplet liquid and outside is the gas this is a droplet drop water drop right so a liquid being
+[00:44:50.280–00:45:04.650] unable to expand freely will form an interface with a second liquid or a gas so they form a interface with a gas right and then
+[00:45:04.650–00:45:14.970] we define hydrophilic meaning uh wet the solid quite well or hydrophobic meaning the liquid is not wetting the surface
+[00:45:14.970–00:45:30.410] right and it's not surface so you may have hydrophilic uh surface or hydrophobic surface uh during the rain rainy days you want to have hydrophobic uh the clothes with the hydrophobic surface so that it doesn't wet very well right
+[00:45:30.410–00:45:40.650] so how can you define hydrophilic or hydrophobic we define those theta between the uh the between the ground
+[00:45:40.650–00:45:45.370] and the contact surface. The lecturer initially says theta is "smaller than zero" [sic; corrected to 90 degrees at 00:46:09].
+[00:45:46.330–00:45:54.810] The liquid wets the solid; the droplet is spread out.
+[00:45:54.810–00:46:08.810] The lecturer then says "greater than zero" [sic; corrected to 90 degrees in the next segment]. The non-wetting droplet has a rounded shape and is hydrophobic.
+[00:46:08.810–00:46:18.810] uh theta uh theta here uh theta here and theta here is a smaller than 90 for the hydrophilic greater than 90 for the hydrophobic
+[00:46:19.610–00:46:27.290] Surface tension is a force represented by uppercase gamma on the slide. I do not want
+[00:46:27.290–00:46:38.010] to go into its details here; most are in your textbook. The figure shows equal and opposite forces.
+[00:46:38.810–00:46:51.920] The surface-tension forces are exposed normal to the cut. At this cut the force acts in this direction,
+[00:46:51.920–00:47:02.060] direction this is a cut is acting that direction and then vapor pressure what is a vapor pressure so that is related to the
+[00:47:02.060–00:47:11.980] liquid so when does liquid boils at sudden pressure that is the vapor pressure so pressure at which
+[00:47:11.980–00:47:18.700] liquid boils and is in equilibrium with the liquid boils and is in equilibrium with its own vapor so at the room
+[00:47:18.700–00:47:35.260] At room temperature, 20 degrees Celsius, the vapor pressure of water is about 2.34 kilopascals.
+[00:47:35.260–00:47:47.740] um at this point we don't consider temperature temperature temperature is constant uh you have a water and then you can change the pressure of the water right
+[00:47:47.740–00:48:00.060] right then if you can have you can exert a pressure up to the 2.34 k a kilo pascal then water will boil so when does it happen
+[00:48:00.780–00:48:11.020] it happens under the sea so cavitation so cavitation so cavitation so this is the propeller under this on the water and then it rotates right it rotates
+[00:48:11.020–00:48:21.580] meaning the tip speed is a quite high which means if you think about the Bernoulli equation at a high velocity your pressure drops
+[00:48:21.580–00:48:30.940] The local liquid pressure drops below the vapor pressure due to the pressure phenomenon, so
+[00:48:30.940–00:48:38.300] will be uh what about the the gas bubble that happens the gas bubble the water boils at the tip of the propeller
+[00:48:38.300–00:48:48.570] so so and then uh and then uh it because and then since the propeller is rotating it cuts the gas bubble and
+[00:48:48.570–00:49:01.370] it explodes right so that explosion is quite a severe it is not uh good to the surface of the propeller so this cavitation and explosion of the gas bubble
+[00:49:01.370–00:49:15.360] so those uh those uh those are the main cause of the uh uh erosion of the propeller okay so if the water is accelerated in a pump
+[00:49:15.360–00:49:28.080] from rest to about 50 feet per second, the pressure drops by about 15 pounds-force per square inch, about 1 atm or 103 kilopascals. This can cause cavitation,
+[00:49:28.080–00:49:40.640] which means that which means that we will have the gas bubble okay so this vapor pressure is very important in cavitation and in ocean engineering folks cavitation is a very
+[00:49:41.440–00:49:54.960] important topic studied experimentally and numerically. Next, flow patterns.
+[00:49:54.960–00:50:02.080] There are streamlines, pathlines, and streaklines, with different
+[00:50:03.600–00:50:19.320] definitions so streamlines meaning this is more uh intuitive a line everywhere tangent to the velocity vector at a given instant so let's assume that in a figure one a
+[00:50:19.320–00:50:26.040] Figure 1a shows streamlines. At any location,
+[00:50:26.040–00:50:49.280] if you put a tangent line there is the velocity of the uh um local velocity vector okay of at that instant okay a stream tube is a collection of the stream lines okay
+[00:50:49.280–00:51:06.640] So here, since dr of a stream line is parallel to the v stream line equations, at some point I'll talk about the stream line equation as well, dx over u equals dy over v equals dz over w
+[00:51:06.640–00:51:14.240] Path line is an actual path traversed by a given fluid particle.
+[00:51:14.240–00:51:31.040] A streakline is the locus of particles that have passed through a prescribed point. Consider the particles that pass through that point.
+[00:51:31.040–00:51:42.560] Okay, so stream line, path line, streak line can be identical in steady flow, but in unsteady flow, if it changes over time,
+[00:51:45.840–00:51:53.280] then they may be different. So you may wonder what in under what situations those can be different.
+[00:51:53.280–00:52:00.720] Okay, so that's left for your take home homework. But you know, I don't give you a homework so far.
+[00:52:00.720–00:52:09.040] So there will be a homework at the end of the chapter, chapter two, chapter three, but for chapter one,
+[00:52:09.040–00:52:15.760] I may give simple conceptual questions for Chapter 1, rather than mathematical problems.
+[00:52:17.790–00:52:26.830] So basic flow analysis technique. So solid mechanics, you will you will have the free body diagram. So that's the most important
+[00:52:26.830–00:52:32.670] tool for calculating the mechanics of a solid.
+[00:52:32.670–00:52:38.110] But for the fluid mechanics, you will have the system, well defined the system and a control volume.
+[00:52:38.110–00:52:52.270] Then you will, uh, in all cases, whether you are using a system or a control volume, flow must satisfy the three basic laws of the mechanics.
+[00:52:52.270–00:53:31.640] These are conservation of mass, conservation of linear or angular momentum, and conservation of energy. We derive the governing equations from these three physical laws: conservation of mass, momentum, and
+[00:53:31.640–00:54:02.760] conservation of the energy and we need the equation of state state relation and then associated boundary condition so as long as we have a governing physics and one additional state relation and then boundary condition there is a different from problem to problem then we can solve the pressure at any location in your problem or temperature at any location in your problem okay
+[00:54:02.920–00:54:35.000] okay so then what are the basic flow analysis technique so we will i'll introduce in chapter 3 i will introduce the integral approach which means that we will formulate the basic laws of the fluid mechanics like conservation of the mass momentum and energy in a finite region so you will into a finite control volume and you will look into the flow coming in flow coming out
+[00:54:35.000–00:54:57.000] The differential approach uses an infinitesimally small control volume. We again apply the three basic laws and derive governing equations in differential form.
+[00:54:57.000–00:55:26.810] The integral approach gives integral governing equations. For experimental analysis we use dimensional analysis and the Pi theorem.
+[00:55:26.810–00:55:52.810] An aircraft developer, for example working on the KF-21, needs many flight tests. The aircraft is large, and measuring pressure or temperature in flight is difficult, so we use a mock-up model
+[00:55:52.810–00:56:22.790] side downsized by uh side downsized by a factor of 10 and then you will put into a wind tunnel right then with that reduced size by 10 what should be the velocity and pressure to match the real size kf-21 in a altitude of 3000 feet or something like that right so there you will have the dimensional analysis and then
+[00:56:22.790–00:56:50.760] I will introduce the Pi theorem to match the two states. CFD, computational fluid dynamics, is a common engineering tool. Integral, differential, and dimensional approaches may suffice for simple problems, but many modern fluid problems are complicated.
+[00:56:50.760–00:57:06.600] For example, what if combustion involves chemical reactions? We must also consider fuel particles.
+[00:57:06.600–00:57:21.130] so in that case you have to have combination of the continuum of a background air and also the particle uh of the fuel uh of the fuel so in that case it's very difficult
+[00:57:21.130–00:57:50.380] to apply dimensional analysis directly. We use computational fluid dynamics with multiple CPUs and GPUs to calculate millions or tens of millions of state variables. Before computers, how could people calculate pressure
+[00:57:50.380–00:57:57.930] or temperature at a certain location? How could they do that?
+[00:57:57.930–00:58:06.890] era of steady fundamental discoveries are happened in 18th and 19th century so we have the
+[00:58:06.890–00:58:18.010] Archimedes is associated with buoyancy. Leonardo da Vinci formulated an early continuity equation. Isaac Newton is associated with viscous stress.
+[00:58:18.010–00:58:41.840] Leonhard Euler developed the Bernoulli equation by solving the basic equations. For Navier, the lecture mentions the seven Millennium Prize Problems.
+[00:58:41.840–00:58:54.840] One of them is a Navier-Stokes equation. So that Navier-Stokes equations are the governing equation of our fluid flow. And that Navier is named after by this scientist.
+[00:58:54.840–00:59:08.090] Navier formulated basic differential equations of viscous flow. Poiseuille performed early experiments on laminar flow in tubes.
+[00:59:08.090–00:59:15.090] So here, laminar. So I will talk later about what is the physical meaning of the laminar flow.
+[00:59:15.090–00:59:24.090] And the Reynolds. Early on, I asked you to think quite deep about Reynolds numbers, right?
+[00:59:24.090–00:59:31.090] So he explained the phenomenon of the transition to the turbulence. So laminar, turbulence, transition.
+[00:59:31.090–00:59:41.090] Ludwig Prandtl worked on boundary-layer flow and flow separation.
+[00:59:41.090–00:59:48.090] Theodore von Karman made major advances in aerodynamics and turbulence theory.
+[00:59:48.090–00:59:59.090] In this course, you will encounter these names in equations.
+[00:59:59.090–01:00:07.090] So those are the summary. So chapter 1 is all about introductory of the fluid mechanics.
+[01:00:07.090–01:00:16.090] And in chapter 2, I will move on to a more practical and theoretical aspect of the fluid mechanics. Thank you.
