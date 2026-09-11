@@ -9,10 +9,13 @@
 | 렉처 | 주제 | 읽기 | 강의자료 |
 |---|---|---|---|
 | Lecture 1 | Introduction to Fluid Mechanics | [Lecture 1 읽기](https://leejinh0225.github.io/MC2102-Fluid/lecture01.html) | [가림막 제거 PDF](./2026FA_FluidMechanics/lecture_notes/lecture01_note.pdf) · [원본 PDF](./2026FA_FluidMechanics/lecture_notes/lecture01_original.pdf) |
+| Lecture 2 | Pressure Distribution in a Fluid | [Lecture 2 읽기](https://leejinh0225.github.io/MC2102-Fluid/lecture02.html) | [가림막 제거 PDF](./2026FA_FluidMechanics/lecture_notes/lecture02_note.pdf) · [원본 PDF](./2026FA_FluidMechanics/lecture_notes/lecture02_original.pdf) |
 
 Lecture 1은 원본 슬라이드 23장, 핵심 개념 요약, 슬라이드별 해설, 시험 영어, 용어집과 스크립트 교정 기록을 포함합니다. [영어 스크립트 TXT](./2026FA_FluidMechanics/transcripts/lecture01/lecture.txt), [자막 SRT](./2026FA_FluidMechanics/transcripts/lecture01/lecture.srt), [타임스탬프 JSON](./2026FA_FluidMechanics/transcripts/lecture01/lecture.json)도 함께 제공합니다.
 
 ## 작성 원칙
+
+Lecture 2는 슬라이드 32장과 영어 강의 세 편을 대조하여 정수압·액주계·수문 합력·부력·강체 운동을 설명합니다. [Part 1·2·3 스크립트와 검수 안내](./2026FA_FluidMechanics/transcripts/lecture02/README.md)를 함께 제공합니다.
 
 원본 슬라이드를 순서대로 보존하고 영어 강의 설명과 대조합니다. 핵심 정의, 개념 간 관계, 수식의 가정과 단위를 한국어로 설명하며 중요한 시험 용어는 `English(한국어)`로 반복 표기합니다. 원자료에 없는 설명은 `편집자 보강`으로 표시합니다.
 

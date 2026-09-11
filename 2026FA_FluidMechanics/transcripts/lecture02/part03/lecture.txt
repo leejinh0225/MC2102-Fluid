@@ -1,0 +1,90 @@
+# Lecture 2 — Pressure Distribution in a Fluid — Part 3
+# Language: English
+# Review basis: Complete first-pass and independent 15-second-window ASR, reconciled with Chapter 2 source PDF and worked-equation checks.
+# Technical terms and obvious ASR repetitions were corrected; timestamps remain tied to the recording.
+
+[00:00:03.950–00:00:18.910] So now I talk about the pressure distribution of the static fluid when in motion. So I will look into the two types of the motion. One is the rigid-body translation and then rigid-body.
+[00:00:18.950–00:00:33.930] body rotation. So for these two types of the motion, we don't consider any relative motions between the whole wave and all particles are moving at the same rate. [Review note: Rigid motion means no relative deformation; rotation has speed omega r, not equal linear velocity everywhere.]
+[00:00:33.950–00:00:48.510] velocity. The first type is rigid-body translation, and we assume uniform linear acceleration.
+[00:00:48.950–00:01:03.980] Acceleration a has the same magnitude and direction for all particles. With no relative deformation, there is no viscous force.
+[00:01:04.720–00:01:19.480] any viscous force we only have to consider the pressure and gravitational force right then the equilibrium of a force element comes from the pressure gradient and acceleration
+[00:01:24.670–00:01:38.670] pressure, gradient, and acceleration so by the Newton's second law we have the delta p equals ma and we have to consider the g and a and the direction of the g [Review note: Slide 27 gives grad p=rho(g−a), from force balance per unit volume.]
+[00:01:39.070–00:01:53.930] and A can be different right so this is the G and that is the A so typically their directions can be different then let's think about that is the coffee mug and
+[00:01:54.390–00:02:08.410] Assume you are running with a coffee mug in your hand then the water inside the cup will have the acceleration of A
+[00:02:09.390–00:02:23.830] it also experiences the gravitational force, right? Then the coffee in the coffee mug will be tilted and what will be the tilt angle of that coffee, right?
+[00:02:25.430–00:02:40.090] then the surface of the constant pressure will be this one right after tilting and that is perpendicular to the g minus a so this is a g and this is a minus a
+[00:02:40.190–00:02:54.890] okay so that is the direction of the constant pressures right and tilted theta will be tangent inverse ax divided by so this is the
+[00:02:56.510–00:03:11.130] AX and this is the AZ, right, so this is minus A, so that is the AZ, and this is the AX, and this is the AZ, so tangent inverse, so
+[00:03:11.150–00:03:27.720] we are looking into the this triangle so this is a g and this is a z right so theta equal tangent inverse a x
+[00:03:28.640–00:03:43.060] divided by the g plus az at this location. Then the rate of increase of the pressure, so we are looking into this direction, in the direction of the g minus a.
+[00:03:43.200–00:03:58.370] If we say this as a delta, this as a ds, this direction, then dp ds will be rho g, g is the
+[00:03:59.190–00:04:13.290] magnitude of the resultant acceleration: the square root of ax squared plus (g plus az) squared.
+[00:04:14.790–00:04:31.260] so we are looking also here so right here this is the s and this is the p equal p1 p2 and p3 right example the coffee in the mug is tilted during the horizontal
+[00:04:31.460–00:04:47.600] acceleration, assuming a symmetric mug. Calculate the angle of tilt theta, then the height of the coffee rise, delta z,
+[00:04:48.160–00:05:03.140] delta theta, theta, and then the gauge pressure at A, PA, the gauge pressure at the A location. So the angle of tilt this time is tangent, so this
+[00:05:03.160–00:05:17.020] in this case a is acting this direction right so this is a a equals ax so we don't have any az so theta is directly
+[00:05:19.020–00:05:33.940] arctangent of ax over g. Then the rear-side coffee rise: this distance is three centimeters.
+[00:05:34.020–00:05:48.920] so if we think about those triangles and this is a three and there is a theta right so tangent theta delta z will be three multiplied by that
+[00:05:49.020–00:06:03.860] tangent theta, derivative 2.14 centimeter so even if you are running with a coffee mug with the angle the velocity of this much then your coffee [Review note: The given 7 m/s² is acceleration, not velocity.]
+[00:06:04.020–00:06:19.370] will stay stays inside your coffee mug right so you don't spill the coffee and what about the gauge pressure at a we are here so we are looking into the two approach
+[00:06:19.630–00:06:35.890] approach one the first approach is approach one like the one we saw here dpds equals rho g so
+[00:06:36.070–00:06:52.810] partial P, partial S will be rho G, then PA will be rho G, delta S, here rho is
+[00:06:52.830–00:07:08.960] is a, rho is 1,010 kilogram per meter cubed, and g is the magnitude of the acceleration, so g is,
+[00:07:09.020–00:07:24.920] square plus A square, I think that is the 0.7, right? Oh, no, seven meter per sec. So that is the, all right, seven, seven square, right? [Review note: Acceleration unit is m/s²; slide 28.]
+[00:07:26.050–00:07:29.790] Prickly seven square, I was confused whether there is a centimeter, so it is a meter per sec. [Review note: Acceleration unit is m/s², not m/s.]
+[00:07:29.810–00:07:53.970] And delta s will be (0.07 plus 0.0214) [meters; decimal reconciled with slide 29 and the following statement]
+[00:07:54.870–00:08:11.220] multiply by the cosine, right, because this is 7 centimeter, right, so this one, and this much of the rise was 2 point, that much of the rise was 2 point 14.
+[00:08:12.360–00:08:27.330] so that was 2.14 centimeters so 0.07 plus 0.0214 multiplied by the cosine 35.5
+[00:08:27.450–00:08:44.280] five degrees. So there will be 906 Pascal at the point A, right? Or you can use the approach two. So approach two.
+[00:08:44.300–00:08:59.720] This one is along the, we are looking into this pressure, right? We are looking into the pressure at that, at this one, right? Along the, this is your surface.
+[00:09:00.300–00:09:13.800] and we are looking into the pressure in this direction but like I said pressure at the same height should be same regardless of the directions right? [Review note: Equal pressure at equal height does not hold under horizontal acceleration. The valid second method uses the vertical line through A, where dp/dz=−rho g.]
+[00:09:14.280–00:09:15.040] so
+[00:09:15.300–00:09:29.340] if you directly whether if you forget about the acceleration if you directly apply the hydrostatic relation and you are comparing the state A and state here
+[00:09:30.300–00:09:48.060] let's assume that there is the atmospheric conditions right at this location right so this is a location PA minus P naught so here is a PA but at this location there will be your pressure will be this
+[00:09:48.080–00:10:02.040] atmospheric pressure. Pa minus P0 is minus gamma times (zA minus
+[00:10:03.120–00:10:18.560] Z zero, so if you see Z zero is a, Z A is a zero, there will be the positive, or if this is a zero, this is a negative, right, so minus 1,010,
+[00:10:18.660–00:10:34.940] and multiply by the 9.81. What am I doing is gamma w is a rho g, rho density of water and
+[00:10:36.540–00:10:54.020] gravitational acceleration, so minus 1010 multiplied by the 9.81, and then we have negative, right, so here,
+[00:11:00.500–00:11:18.770] Here zA, if you take it as zero, the height difference is negative 0.0214 minus 0.07 [meters; slide 29].
+[00:11:20.150–00:11:43.690] So the result is 906 pascals. If you take that as the zero reference, the other coordinate is negative. That is
+[00:11:43.710–00:11:59.020] that's what I did okay okay then our second motion is the rigid body rotation so previously we had a linear acceleration but for the rigid body rotation we have to consider the angular velocity
+[00:11:59.160–00:12:13.400] and angular acceleration here. So I assume you already learned about the relationship between the when you have the omega the so this is your rotation axis K
+[00:12:14.440–00:12:29.650] rotation axis K, and then if you have the velocity omega, then at this, and this is a radial location R, right, this is R and this is omega, then at
+[00:12:29.670–00:12:44.150] at this that location you have in terms of the velocity in terms of the acceleration you have two types of the acceleration one is the linear tangential acceleration one another one is the centripetal accelerations right
+[00:12:44.670–00:12:59.650] so here acceleration is the amount is the centripetal term that is the omega cross product of the omega cross product of the r0, r0 is the sudden law
+[00:12:59.670–00:13:15.510] okay, it's R, right? We say that it's R. At the location of R, this is R location, at the location of R, our, this is R knot, and then we have the
+[00:13:15.730–00:13:31.290] centripetal acceleration of minus r omega squared, pointing inward. Then the force balance becomes grad p, the gradient of pressure,
+[00:13:31.430–00:13:46.720] is in a, this is a cylindrical coordinate, so we have the IRR radial direction and circumferential direction, so DPDR and DPDZ, radial, sorry, so radial direction
+[00:13:47.300–00:14:02.040] in radial direction and also the G directions, right? So DPDZ, so we don't, so here, so they should be the same as MA by the Newton's second law, so
+[00:14:02.300–00:14:18.300] rho and this is the pressure so you have to divide by the mass right the volume so the unit mass so rho the density per unit volume and [Review note: Divide force balance by volume. Rho is mass per unit volume; slide 31.]
+[00:14:18.580–00:14:32.400] g minus a is the resultant acceleration. The gravity contribution is minus g in the z direction. There is another acceleration
+[00:14:33.580–00:14:41.100] by the gravitational acceleration, and then you have the centripetal acceleration, minus r omega squared, right?
+[00:14:41.240–00:14:45.420] So you have those two acceleration.
+[00:14:46.060–00:14:48.560] So by here, dp dr equal rho.
+[00:14:48.580–00:15:03.340] rho r omega squared. dp/dz is minus gamma, minus rho g. Gamma is the specific weight. If we integrate
+[00:15:03.580–00:15:18.320] okay so this so we want to calculate the pressure so we want to have the pressure in terms of the R and Z right the height and and also the radial direction we want to calculate the peak but we have
+[00:15:18.580–00:15:33.340] only the two partial relations. So from the first partial relation, if we integrate partially in terms of the R, then P will be half rho R
+[00:15:33.580–00:15:48.560] R, rho R, square, omega square, and then we have to have the constant, but that constant, we can put that into a function of Z, because this was the part.
+[00:15:48.580–00:16:03.300] partial derivative, then if we differentiate that with respect to Z to match this form, then there will be DP, DZ, and
+[00:16:03.580–00:16:18.560] there is f prime of z, which has to match minus gamma. [The r-dependent term has zero z derivative, not f prime.] Integrating in terms of z gives
+[00:16:18.580–00:16:34.150] will be minus gamma z plus constant, right? So then if we compare this form and that form, then we can set P
+[00:16:34.310–00:16:50.670] R, z will be minus gamma z plus half rho r square omega square and then some constant. To get the constant, we
+[00:16:50.690–00:17:05.920] we said pressure at the R0 and Z0 will be P0, 0,0 so here not the R0,Z0 we say that is a 0,0 so here at this location
+[00:17:05.940–00:17:20.250] that will be p naught. At this location p naught, so C is p naught. That is the pressure term,
+[00:17:21.520–00:17:35.600] pressure function so we have fortunately we have the continuous form of the hydrostatic pressure when liquid is in a rigid under the rigid body rotation here
+[00:17:36.540–00:17:51.080] so in terms of z it is a linear so in terms of the z direction we have a linear decrease and in terms of the r we have the parabolic shape right so if we
+[00:17:51.520–00:18:07.490] solve this in terms of the Z then we have that shape okay so surface is a paraboloid of the revolution so this surface
+[00:18:08.730–00:18:24.020] concave upward with their minimum on the axis of rotation okay okay guys that's all for chapter 2 so we talked about pressure and then
+[00:18:24.620–00:18:39.390] force on a fluid element. And we saw if the fluid is at rest or at constant velocity, then we define the specific weight gamma.
+[00:18:40.010–00:18:54.910] as rho g. [dp/dz = minus rho g, not plus gamma; slide 32.] For fluid at rest or at constant velocity, pressure is a function of depth only.
+[00:18:55.010–00:19:09.740] and then using the manometer, we can have the hydrostatic pressure distribution in liquids and that is only related to the vertical distance, right?
+[00:19:10.680–00:19:27.360] minus P1 equals minus gamma Z2 minus Z1, right? And then we saw the magnitude of the hydrostatic force on a plane surface, and that is the same as this.
+[00:19:27.380–00:19:42.240] A, PCG multiplied by A, and that pressure is gamma HCG, right? And then that hydrostatic is acting at the center of pressure, and YCP and XCP.
+[00:19:42.380–00:19:57.740] and that is the function of the geometry of that plane surface right and we saw a buoyancy force if the body is immersed in a fluid and then direction of the buoyancy force
+[00:19:57.760–00:20:14.260] force is always vertically upward right and then also a floating body displaces its own weight in the fluid and the stability is important for the floating body and
+[00:20:14.360–00:20:35.680] we saw whether the location of the metacenter, if the metacenter is above the buoyancy force or below the buoyancy force then it affects, sorry, the metacenter
+[00:20:35.700–00:20:50.680] center, we have to compare the location of the meta center with respect to the center of gravity. So if the meta center is above the center of gravity, then we say that is the stable. Otherwise, the meta center is
+[00:20:50.700–00:21:05.580] is below the center of gravity then the body is unstable it is overturning right and then in addition to the fluid at rest we also saw fluid at all simple
+[00:21:05.700–00:21:19.420] motion. The one is a rigid body motion and another one is a rigid body translation, another one is a rigid body rotation. So in either, for both motion, the pressure
+[00:21:19.420–00:21:34.400] distribution follows the pressure-gradient relation from Newton's second law:
+[00:21:34.420–00:21:47.870] so rho multiplied by the resultant acceleration that is the g minus a okay okay guys that's all for chapter 2 and I'll see you next time thank you

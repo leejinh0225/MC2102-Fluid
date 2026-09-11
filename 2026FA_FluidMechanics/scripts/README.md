@@ -10,6 +10,12 @@ python .\remove_trailing_pdf_masks.py source.pdf cleaned.pdf
 
 필요 패키지: `pypdf`
 
+Chapter 2의 일부 가림막은 뒤쪽 텍스트보다 먼저 삽입되어 있습니다. 검토한 위치만 지정한 `lecture02_masks.json`을 추가로 사용합니다. 원본 SHA-256이 일치할 때만 적용하며, 텍스트·이미지가 아닌 해당 사각형의 채우기와 테두리 출력만 억제합니다.
+
+```powershell
+python .\remove_trailing_pdf_masks.py ..\lecture_notes\lecture02_original.pdf ..\lecture_notes\lecture02_note.pdf --interleaved-manifest .\lecture02_masks.json
+```
+
 ## `render_pdf_slides.ps1`
 
 정리용 PDF를 웹 노트용 `1440 × 1080` JPG로 변환하고 파일명을 `slide-01.jpg` 형식으로 정규화합니다. 기존 이미지가 있으면 기본적으로 중단합니다.
@@ -38,6 +44,7 @@ python -m venv ..\..\.venv-stt
 
 - GPU 사용: `requirements-stt-gpu.txt`를 설치한 뒤 `--device cuda --compute-type float16`
 - CPU 사용: `--device cpu --compute-type int8`
+- 긴 반복 오인식 재검토: `--no-condition-on-previous-text --chunk-length 15 --word-timestamps`. 기존 기본 설정은 유지하며 재검토본은 별도 staging 폴더에 저장합니다.
 - 첫 실행은 모델을 내려받으며, 기본 캐시는 Git에서 제외되는 `private-materials/models/faster-whisper/`입니다.
 - 시스템 FFmpeg는 필요하지 않습니다. `faster-whisper`가 PyAV로 영상을 직접 디코딩합니다.
 

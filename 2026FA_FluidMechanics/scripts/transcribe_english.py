@@ -89,6 +89,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--vad-min-silence-ms", type=int, default=1000)
     parser.add_argument("--no-vad", action="store_true", help="Disable silence filtering")
     parser.add_argument("--word-timestamps", action="store_true")
+    parser.add_argument("--no-condition-on-previous-text", action="store_true",
+                        help="Decode windows independently to reduce repetition loops")
+    parser.add_argument("--chunk-length", type=int, default=30,
+                        help="Audio window in seconds (1-30); shorter windows can help rechecks")
     parser.add_argument("--initial-prompt", default=DEFAULT_PROMPT)
     parser.add_argument(
         "--model-cache",
@@ -128,6 +132,8 @@ def main() -> None:
         raise SystemExit("--basename may contain only letters, numbers, underscores, and hyphens")
     if args.beam_size < 1:
         raise SystemExit("--beam-size must be at least 1")
+    if not 1 <= args.chunk_length <= 30:
+        raise SystemExit("--chunk-length must be between 1 and 30")
     if args.vad_min_silence_ms < 0:
         raise SystemExit("--vad-min-silence-ms cannot be negative")
 
@@ -190,6 +196,8 @@ def main() -> None:
         "initial_prompt": args.initial_prompt,
         "hotwords": DEFAULT_HOTWORDS,
         "log_progress": True,
+        "condition_on_previous_text": not args.no_condition_on_previous_text,
+        "chunk_length": args.chunk_length,
     }
     if vad_enabled:
         transcribe_options["vad_parameters"] = {
@@ -262,6 +270,8 @@ def main() -> None:
         "vad_enabled": vad_enabled,
         "vad_min_silence_ms": args.vad_min_silence_ms if vad_enabled else None,
         "word_timestamps": args.word_timestamps,
+        "condition_on_previous_text": not args.no_condition_on_previous_text,
+        "chunk_length": args.chunk_length,
         "segments": [asdict(segment) for segment in transcript_segments],
     }
 

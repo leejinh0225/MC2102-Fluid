@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 from pathlib import Path
 
 from pypdf import PdfReader, PdfWriter
@@ -73,6 +75,8 @@ def main() -> None:
     )
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--interleaved-manifest", type=Path,
+                        help="SHA-256-bound, manually inspected non-trailing mask paint operators")
     args = parser.parse_args()
 
     if args.source.resolve() == args.output.resolve():
@@ -82,9 +86,28 @@ def main() -> None:
     writer = PdfWriter()
     writer.clone_document_from_reader(reader)
 
+    # Suppress only explicitly reviewed paint operations. Keep paths, text,
+    # images, transforms and graphics-state balance byte-for-byte in operation form.
+    extra = {}
+    if args.interleaved_manifest:
+        manifest = json.loads(args.interleaved_manifest.read_text(encoding="utf-8"))
+        if hashlib.sha256(args.source.read_bytes()).hexdigest() != manifest["source_sha256"]:
+            raise ValueError("Interleaved mask manifest does not match this source PDF")
+        for number, pairs in manifest["pages"].items():
+            page = writer.pages[int(number) - 1]
+            stream = ContentStream(page.get_contents(), writer)
+            for fill_index, stroke_index in pairs:
+                if stream.operations[fill_index][1] != b"f" or stream.operations[stroke_index][1] != b"S":
+                    raise ValueError("Mask paint operators differ from inspected manifest")
+                stream.operations[fill_index] = ([], b"n")
+                stream.operations[stroke_index] = ([], b"n")
+            page.replace_contents(stream)
+            extra[int(number)] = len(pairs)
+
     removed_by_page: dict[int, int] = {}
     for page_number, page in enumerate(writer.pages, start=1):
         removed = strip_page_masks(page, writer)
+        removed += extra.get(page_number, 0)
         if removed:
             removed_by_page[page_number] = removed
 

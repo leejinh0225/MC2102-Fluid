@@ -1,0 +1,807 @@
+1
+00:00:03,730 --> 00:00:21,040
+So this is the state 2. So this is the state 2. And so we have three states. State A and state 1. And we have the state 2.
+
+2
+00:00:22,020 --> 00:00:39,850
+So I'm going to derive, I'm going to apply the static pressure hydrostatic relation between state A and state 2 where the gamma
+
+3
+00:00:39,970 --> 00:00:55,200
+is one. So let's say in this location, we have a rho one and then rho one and we define the static pressure as gamma one here. So this is a rho one. Sorry. This is a rho one.
+
+4
+00:00:55,380 --> 00:01:02,900
+and rho one, and gamma one, and here rho two, gamma two, right?
+
+5
+00:01:03,240 --> 00:01:11,000
+So between A and one, Pa minus P one.
+
+6
+00:01:11,280 --> 00:01:18,980
+equals minus gamma one, ZA minus Z1, right?
+
+7
+00:01:19,880 --> 00:01:27,340
+For the between one and two, we have a different medium, but we do have a gamma two here.
+
+8
+00:01:27,460 --> 00:01:44,050
+so I'm comparing the state 1 and state 2 here so P1 minus P2 equals negative gamma 2 z1 minus z2
+
+9
+00:01:44,130 --> 00:02:01,280
+so you know the height right so z1 or z2 so those can be easily found by the geometric definition and then gamma 1 gamma 2
+
+10
+00:02:01,300 --> 00:02:15,680
+are also published. So another condition at the A condition here, right? So between here, Newton here, and then PA here. So you can apply.
+
+11
+00:02:17,720 --> 00:02:32,280
+but we don't we don't know the right so p2 is a here right so you don't have to worry about the location of this low this here so p2 is already atmospheric pressure so here p2
+
+12
+00:02:32,360 --> 00:02:47,160
+P2 is Pa, the known atmospheric pressure. z1, z2, gamma2, and P2 are known, so from here you can calculate P1. P1 will be Pa minus
+
+13
+00:02:47,360 --> 00:03:02,220
+gamma2 times (z1 minus z2). Then P1 is known; gamma1, zA, and z1 are known. [Formula notation reconciled with slide 13.]
+
+14
+00:03:02,360 --> 00:03:17,180
+Therefore P_A will be P1, that is Pa minus gamma2 times (z1 minus z2), minus gamma1
+
+15
+00:03:17,360 --> 00:03:31,060
+1, zA minus Z1. So here everything is a known value so we can easily calculate the pressure at the A location. So the Pascal law
+
+16
+00:03:32,500 --> 00:03:46,740
+meaning any two points at the same elevation in a continuous mass of the same static fluid will have the same pressure will be at the same pressure. So that is the Pascal law.
+
+17
+00:03:47,360 --> 00:04:01,840
+jump across okay you can jump across meaning jump across pressure here and pressure here should be the same as long as it is in the same continuous medium and it has the same elevation right um so it horizontal
+
+18
+00:04:02,360 --> 00:04:17,120
+horizontally, the pressure doesn't change. Another example, because these hydrostatic relations are very important, here another device, another manometry, this is water
+
+19
+00:04:17,360 --> 00:04:32,100
+flows here and then there is another medium of the mercury here and there is the gauge B here we have the SAE30 oil so this is oil this is oil this is mercury
+
+20
+00:04:32,360 --> 00:04:50,630
+and this is water. So pressure at the B, PB is known. PB is 87 kilopascal. What you want to calculate, estimate the pressure.
+
+21
+00:04:50,750 --> 00:05:06,240
+at A here what is the pressure here okay so solution from table from table specific weight of the water specific weight
+
+22
+00:05:06,940 --> 00:05:27,870
+of the specific weight of the water and specific weight of the mercury and specific weight of the oil is all given here so we have how many states do we have we have the A state here
+
+23
+00:05:28,110 --> 00:05:47,980
+we have state A, we have a state A, and then this one is the state one, one, and here is the state, state two, okay?
+
+24
+00:05:48,490 --> 00:06:04,550
+to this location, then proceed, sorry, proceed A to the B, medium B, down in water, state A, and here, down in water, jumping across the left,
+
+25
+00:06:04,830 --> 00:06:19,880
+three meniscus up in the mercury and up again in oil so between the state a and state one in water we have PA minus P1
+
+26
+00:06:21,700 --> 00:06:25,080
+equals minus gamma water.
+
+27
+00:06:27,580 --> 00:06:31,380
+The height of A will be what?
+
+28
+00:06:31,560 --> 00:06:36,000
+That will be the nine minus four, right?
+
+29
+00:06:37,230 --> 00:06:38,040
+So here,
+
+30
+00:06:38,260 --> 00:06:53,240
+you can calculate, and then between state one and state two, this is filled with mercury, so here P2 minus P1, P2 minus P1.
+
+31
+00:06:53,260 --> 00:07:07,880
+will be minus gamma mercury, and then location of the Z2 is 11, and location of the state one is four, right? And then
+
+32
+00:07:09,890 --> 00:07:24,490
+between the state B and state 2 here. So here is the state B. I didn't say state B. So PB minus
+
+33
+00:07:26,070 --> 00:07:45,850
+P2, P2 equals minus gamma oil multiplied by the ZB will be 11, 17.
+
+34
+00:07:51,380 --> 00:08:09,420
+p2 will be 11 right so we want to calculate pa right so how can you calculate it with the pb is known so we can take pb was 80
+
+35
+00:08:09,640 --> 00:08:24,790
+87, right, P was 87, so we can calculate P2 here, calculate P2, P2 based on the PV is known, and gamma oil known, and 6, right, and once you calculate the P2,
+
+36
+00:08:26,790 --> 00:08:40,710
+I think I strongly recommend you go through and p2 minus p1 so here once you calculate p2 then p1 can be calculated right you can calculate p1 and then once you calculate p1
+
+37
+00:08:40,730 --> 00:08:55,570
+Finally, you can calculate Pa. Pa will be P1 minus gamma water multiplied by the, this is, even if I say minus 4,
+
+38
+00:08:55,730 --> 00:09:10,310
+that has to be consistent with the unit. This is centimeter, right? And then Newton and others are in meter. So that has to be divided by the centimeter.
+
+39
+00:09:10,730 --> 00:09:40,270
+divided by 100. So 0.05, not 0.5. [5 cm = 0.05 m; slide 15.]
+
+40
+00:09:40,290 --> 00:09:57,590
+I believe the answer of the PA is, give me one sec, I'm trying to give you an answer. PA, so finally if you calculate that one then PA is
+
+41
+00:09:58,900 --> 00:10:16,750
+96,000, 96,000, 350 newton per meter cubed, that'll be 96, about 96 kilo. [Review note: Pressure unit is N/m², not N/m³; slide 15 gives 96.4 kPa.]
+
+42
+00:10:19,900 --> 00:10:33,820
+I didn't go through the simple arithmetic calculation; you can do it from your side. Then I will move on to hydrostatic forces
+
+43
+00:10:33,860 --> 00:10:48,540
+steady onto a general shape so I was talking about the pressure right now I talk about the force which means that we have to consider the surface
+
+44
+00:10:48,860 --> 00:11:05,190
+so surface can be anything but in this course I'll be thinking on a very simple plane and this is a slanted under the water so this is a free surface meaning this is water
+
+45
+00:11:05,210 --> 00:11:19,510
+and there will be the air. Hydrostatic forces relate to the pressure of the fluid bearing on the surface. So horizontal shape is looking like that. So this is a plan view.
+
+46
+00:11:20,210 --> 00:11:36,540
+and this is the side view and CG is the centroid of the geometry the centroid considering the geometry right for horizontal surface of the area
+
+47
+00:11:36,780 --> 00:11:54,540
+A, the P, right, P at any location, let's assume P here, pressure here, so pressure will be, this is an absolute pressure, so atmospheric pressure has to be added, and then plus
+
+48
+00:11:54,560 --> 00:12:12,420
+plus gamma H, right? Right. So here, gamma is the water and H is the positive one, right? So here, H is the depth here. So P is the PA plus
+
+49
+00:12:12,440 --> 00:12:27,100
+plus gamma H, then the force will be PA plus gamma H multiplied by A, right? So for a horizontal surface of area A at water depth H, then P will be PA.
+
+50
+00:12:27,440 --> 00:12:42,160
+plus gamma H. And what I'm going to do is, I will calculate how much of the pressure. So then here, the pressure is pointing, is normal to the surface, but then pressure
+
+51
+00:12:42,440 --> 00:12:57,420
+along this slanted surface will be different. So small here, the largest here, right? Sorry, the direction is different. So pressure at this location will be this much pressure at this location.
+
+52
+00:12:57,440 --> 00:13:11,760
+location will be that much, right? So I will consider how much will be the total pressure onto this shape, whether we know the location of the CG
+
+53
+00:13:12,440 --> 00:13:19,940
+and we know the area moment, we can calculate area moment of the xx and area moment of the xy, right?
+
+54
+00:13:20,400 --> 00:13:27,420
+So, and then we frame, we put the reference origin at
+
+55
+00:13:27,440 --> 00:13:43,900
+at the CG point. So there is the x and there is the y right. Then we introduce an auxiliary variable of the xi.
+
+56
+00:13:50,120 --> 00:14:01,100
+is related to the H. H is this length, and xi is the dead length.
+
+57
+00:14:02,140 --> 00:14:16,560
+So along the dead length, so if you consider a big triangle here, XI is on this edge and H is normal to the free surface
+
+58
+00:14:19,990 --> 00:14:43,550
+and then for an inclined surface F, for inclined surface F, I don't know why it's going to say, for inclined surface F will be integral
+
+59
+00:14:43,890 --> 00:14:57,790
+of the pressure and the a because because a is the entire area is the a but we don't know so we will integrate the elemental area
+
+60
+00:14:58,890 --> 00:15:34,800
+here P is what? P was P was P was P a plus
+
+61
+00:15:35,200 --> 00:16:06,380
+plus gamma H Pa plus gamma H right then if we put this P back into here
+
+62
+00:16:06,900 --> 00:16:26,130
+then integral Pa plus gamma H Pa and delta Pa, Pa atmospheric pressure is the same everywhere
+
+63
+00:16:26,770 --> 00:16:45,020
+So Pa can be taken outside of the integral: Pa A plus gamma, which is constant, times the integral of h dA. Here h is changing.
+
+64
+00:16:45,100 --> 00:17:09,630
+changing so the relation is here h where h is xi sin theta by definition and also
+
+65
+00:17:09,790 --> 00:17:55,880
+by definition of centroid, the slant distance is, the slant distance ksai, ksai, so integral of, integral of ksai.
+
+66
+00:17:55,900 --> 00:18:20,660
+x i d a is x i c g a x i c g sin theta is h c g
+
+67
+00:18:20,820 --> 00:18:35,670
+then going back to this relation F so this is just a definition HCG
+
+68
+00:18:45,300 --> 00:19:01,880
+Cg here. So F is Pa, Pa, A plus here, H was xi sine theta, right? So
+
+69
+00:19:04,110 --> 00:19:26,870
+PAA plus gamma sine theta integral xi DA and xi DA is xi CGA, right, so let it be.
+
+70
+00:19:26,950 --> 00:20:07,340
+there will be Paa plus gamma sin theta xi cg ga right so this one xi cg sin theta there will be
+
+71
+00:20:07,360 --> 00:20:29,060
+will be by the geometry by the geometry there will be h cg cg so f f equals p a a
+
+72
+00:20:31,760 --> 00:20:53,060
+plus H, C, G. Oh, I forgot the gamma in front. Gamma, H, C, G multiplied by A.
+
+73
+00:20:54,670 --> 00:21:20,850
+that is D, so they can be zero, so PCG, sorry, sorry, not the zero, PCG multiplied by the A, right, so that should be zero. [Review note: The final force is p_CG A, not zero. The lecturer self-corrects; see slide 17.]
+
+74
+00:21:20,870 --> 00:21:35,810
+sorry about it so the magnitude of the force equals the pressure at the plate centroid times the plate area so the pressure
+
+75
+00:21:35,870 --> 00:21:50,670
+pressure acting on the entire surface is pressure at the centroid, PCG, multiplied by the area, right? So the atmosphere, atmosphere.
+
+76
+00:21:50,870 --> 00:22:06,550
+it's the same everywhere so they will be cancelled out PAA equals zero right however that resultant force does not act through the centroid why is it because we [Review note: Atmospheric contributions cancel for the net force when both sides are exposed to the same atmospheric pressure.]
+
+77
+00:22:06,570 --> 00:22:21,290
+we have the pressure variation pressure increases slightly as the depth increases right so that result force PCGA is acting below it toward the high pressures
+
+78
+00:22:21,570 --> 00:22:35,770
+side. So where is it acting? It is acting at the center of pressure. Okay. So center pressure is the resultant net force with zero.
+
+79
+00:22:37,760 --> 00:22:53,660
+here, zero, resultant moment about that point. So we have to find the location of the center pressure. So center of gravity
+
+80
+00:22:54,000 --> 00:23:09,020
+is related to the geometry but center of pressure is more related to the hydrodynamic or aerodynamic property of the geometry okay and then by definition
+
+81
+00:23:09,320 --> 00:23:24,000
+Then the center of pressure is the location where net moment becomes zero. So we will sum moments of the elemental force PDA about the centroid.
+
+82
+00:23:24,320 --> 00:23:39,320
+so to find the location of the xp, c, y, c, p and we will consider y c, p first so this is the 0, 0 and this is x and this is y
+
+83
+00:23:39,800 --> 00:23:45,900
+and this is the YCP, right, so this is the CP, so there will be the YCP
+
+84
+00:23:46,360 --> 00:23:52,620
+and we can calculate the CP later, but let's focus on the YCP first.
+
+85
+00:23:52,860 --> 00:23:54,660
+So the total resultant
+
+86
+00:23:54,800 --> 00:24:08,820
+force F multiplied by the YCP that is the moment about the CP right so FYCP is integral Y PDA and [Review note: F y_CP is the moment about the centroidal x axis, not about CP itself.]
+
+87
+00:24:15,950 --> 00:24:32,950
+was the PDA pressure, YPDA from the previous location here, right? From the previous definition, we have the gamma sin theta Y xi DA. So where was it? P was
+
+88
+00:24:33,250 --> 00:24:49,140
+plus PA plus gamma H. Where do we get it? Then PA plus gamma xi sine theta, right? So
+
+89
+00:24:49,600 --> 00:25:10,170
+if we utilize that relation that we can easily have that one okay right so let's look into this graph so this is again plan view of the arbitrary plane surface and there is a side view and the resultant force
+
+90
+00:25:10,450 --> 00:25:25,430
+F is PCGA, we got it from the previous slide, so PCGA, but like I said, because of the pressure difference for the slanted surface in water, this F
+
+91
+00:25:25,450 --> 00:25:29,470
+F is acting at the CP.
+
+92
+00:25:29,790 --> 00:25:33,830
+So that is the line of actions, right?
+
+93
+00:25:35,560 --> 00:25:41,140
+Then the same thing, FYCP equals
+
+94
+00:25:41,700 --> 00:26:00,380
+the same relation and then here xi y is what? xi is the xi cg minus y
+
+95
+00:26:02,140 --> 00:26:22,020
+like here. So note, I'm going to utilize this relation and then let's note P equals PA plus gamma H.
+
+96
+00:26:26,320 --> 00:26:49,400
+The term integral y dA vanishes by the definition of the centroidal axis.
+
+97
+00:26:51,680 --> 00:27:06,440
+of centroidal axis. And then what it means is that our origin is located at the CG, right? So that's why. So F multiplied by the
+
+98
+00:27:07,300 --> 00:27:23,740
+y_CP is negative gamma sin theta times the integral of y squared dA. [The left side is F y_CP; slide 19.]
+
+99
+00:27:24,480 --> 00:27:40,220
+so I input that back into this one right and then I use the relation of integral of ydi equals zero then we have this relation and then
+
+100
+00:27:40,340 --> 00:27:55,310
+And what is this integral y squared dA? That is called the area moment of inertia, right? Second moment. So that will be the minus gamma sine theta.
+
+101
+00:27:56,670 --> 00:28:17,010
+that is the IXX, this is called area moment of inertia, inertia, and then this area moment of inertia
+
+102
+00:28:17,190 --> 00:28:32,050
+whether that is IXX or XY, that is important. That is determined only by the geometric shape. And that moment is important when we are calculating the resistance, the bending or the deformation.
+
+103
+00:28:32,190 --> 00:28:57,920
+right so here substituting for f substituting for f ycp is negative gamma sine
+
+104
+00:28:58,100 --> 00:29:14,460
+theta, IXX divided by F is P, C, G, A, right? So let's have that as an equation one. And here,
+
+105
+00:29:15,280 --> 00:29:30,380
+F was p_CG applied to the entire area. We can do the similar procedure for x_CP.
+
+106
+00:29:33,700 --> 00:29:52,490
+and I will go over the same procedure. I will give you the final formula. xcp is minus, minus gamma, sin theta, numerator we have ix.
+
+107
+00:29:52,510 --> 00:30:15,990
+xy, we call it as a product of inertia. Denominator, the same force P, C, G multiplied by the area. Okay, so we
+
+108
+00:30:16,630 --> 00:30:31,610
+so hydraulic force is on a plane surface that is slanted underwater and we saw where does that resultant force
+
+109
+00:30:31,630 --> 00:30:48,400
+force act at that is applied at the center of pressure so that we don't have any moment right so example so this is the gate this is figure 5
+
+110
+00:30:49,000 --> 00:31:04,740
+uh sorry so the gate in figure is a five feet wide which means that uh the width into the page is five feet is hinged at point p and rests against
+
+111
+00:31:05,180 --> 00:31:20,160
+smooth wall at A. So this is A, this is B. There are three questions. Compute the force on the gate due to the sea water pressure. So which means that the final F, F, right? We know that.
+
+112
+00:31:20,180 --> 00:31:35,420
+that is the P, C, G multiplied by the area and then the horizontal force exerted by the wall A, this one is a P, at this location P, either that P
+
+113
+00:31:35,440 --> 00:31:50,420
+and the reactions at the hinge B. So for question A, by geometry, the depth HCG will be at this location. So the HCG
+
+114
+00:31:50,440 --> 00:32:09,530
+C will be three, right? No, H should be from the top here, right? So H is from here to here. So the height is a three, but this will be
+
+115
+00:32:09,530 --> 00:32:34,200
+15, this is 15, so if we subtract 3 from 15, there will be the 12, right? So depth of hCG will be 15, 15 minus 3,
+
+116
+00:32:34,480 --> 00:32:49,880
+will be 12 feet. The gate area, the area of the gate will be 5 with the length 10. So that is the 10, right? 50 feet.
+
+117
+00:32:50,020 --> 00:33:06,660
+square, neglect atmospheric pressure, because it acts on both sides of the gate, then the resultant force F, the hydraulic static force F, will be P, P, C, G, multiply.
+
+118
+00:33:06,820 --> 00:33:21,640
+multiplied by A, and then PCG was gamma HCG, right? CG multiplied by area. So we know the HCG, 12 feet.
+
+119
+00:33:21,820 --> 00:33:38,820
+and area, 50 square feet and gamma water. I will give you the answer. That is about 38,400 pound force.
+
+120
+00:33:44,940 --> 00:33:59,960
+then the gate is rectangular so product of the inertia is zero and area moment of x is Ixx is BL squared divided by 12 [Review note: Rectangle area second moment is bL³/12, not bL²/12; slide 21.]
+
+121
+00:34:00,260 --> 00:34:15,060
+is this value right then question B to find the center pressure force F let's draw the free body diagram here
+
+122
+00:34:17,410 --> 00:34:40,960
+So this is a CG and CP, YCP or L right? So this L is YCP, L is YCP
+
+123
+00:34:40,980 --> 00:35:01,540
+YCP, so that is IXX, do you remember, you already calculated IXX sine theta, do you remember, can you go over, YCP is here, right?
+
+124
+00:35:03,740 --> 00:35:19,270
+Ixx sin theta divided by h_CG multiplied by A. In terms of the sign, this is a length, so if you put a negative
+
+125
+00:35:19,430 --> 00:35:34,410
+negative sign here because Y is a coordinate. So at the CG, so that is the positive Y and this is the negative X. So if you want to be very
+
+126
+00:35:34,430 --> 00:35:49,960
+very accurate, you have to have the negative y, right, because it is the negative y direction, but in terms of the length, this should be a positive scalar, so negative minus y cp, that is the ixx sine theta.
+
+127
+00:35:49,980 --> 00:36:13,540
+H-C-G-A, and there is the point, there is the, because you know it is sensitive to my hand, I have to remove the, my hand is sensitive to, I think I did, that's what I did.
+
+128
+00:36:14,640 --> 00:36:37,300
+This is 0.417 feet. Then, summing the moments about B should give [the slide uses counterclockwise-positive moments].
+
+129
+00:36:37,320 --> 00:36:42,700
+if P is acting at this location at F, right?
+
+130
+00:36:43,080 --> 00:37:06,450
+So pressure at L multiplied by the sine theta minus F.
+
+131
+00:37:08,580 --> 00:37:30,540
+by D5 minus L, so P is acting here, right? P is acting here, and F is acting here, so...
+
+132
+00:37:30,620 --> 00:37:48,990
+P, the moments about clockwise B, PL sin theta minus F5 minus L should be zero, then P is, we can easily
+
+133
+00:37:49,010 --> 00:38:05,750
+So if we really calculate theta, right, we know this direction and we know the length of this one and that one, then P, everything is known, so P should be 20,000, 20,000.
+
+134
+00:38:07,150 --> 00:38:21,240
+23,900 feet and then the last question was the the reactions at the hinge B right so here we apply the force [Review note: The source states 23,900. Its moment equation instead gives P≈29,300 lbf; the following Bx≈6,300 lbf is consistent with the corrected P. The quantity is force in lbf, not feet.]
+
+135
+00:38:21,440 --> 00:38:38,990
+equilibrium, so sigma fx will be, we have the bx and bz, right? So fx will be bx plus f sine theta.
+
+136
+00:38:40,890 --> 00:39:02,160
+F sine theta minus P equals zero. So Bx will be 6,300 pound force. Then what about
+
+137
+00:39:03,310 --> 00:39:25,520
+For the vertical force balance, we have Bz and the component from F. Bz minus F cos theta equals zero.
+
+138
+00:39:25,540 --> 00:39:44,550
+Therefore Bz gives 30,700 pound-force. So we saw
+
+139
+00:39:44,610 --> 00:39:59,150
+so the hydrostatic pressure relation and we saw hydrostatic force on the plane surface now we are going to look into the buoyancy force
+
+140
+00:39:59,610 --> 00:40:14,030
+If the body is immersed in a fluid then a vertical buoyancy force is generated that amount is equal to the weight of the fluid it displaces
+
+141
+00:40:14,610 --> 00:40:31,600
+So that is the principle found by the Archimedes, right? Eureka kind of incidence, right? So this is called Archimedes law one. So we know the
+
+142
+00:40:31,720 --> 00:40:47,370
+the existence of the force, buoyancy force, we can calculate the weight. Then what about the acting location? That is the center of buoyancy. So center of buoyancy
+
+143
+00:40:47,390 --> 00:41:02,680
+is the center of the volume of the liquid is placed by the object. So this slide shows the body completely immersed one and then
+
+144
+00:41:02,740 --> 00:41:17,520
+and the next one is the body partially immersed in the water so this is a floating body so in any case the center of buoyancy we are looking into the portion
+
+145
+00:41:17,740 --> 00:41:32,920
+that was displaced by the object in the water, so the geometry, what is the centroid of that geometry, that volume, so that is the point of center point.
+
+146
+00:41:33,100 --> 00:41:50,380
+you can see where the buoyancy force is acting on right so how can you calculate the amount of the buoyancy force this is we have two approaches this is approach one approach one and this is the approach
+
+147
+00:41:50,400 --> 00:42:06,040
+approach to for the first approach. So this object is a completely submerged underwater and we look into the vertical line and we divide the.
+
+148
+00:42:06,200 --> 00:42:21,920
+two surface the entire surface into a two surface the one is above this tangent point surface one another surface is this one that is the surface two so
+
+149
+00:42:22,060 --> 00:42:39,000
+when we are calculating the buoyancy force, we look into the fluid weight above the B like this one, this side and then
+
+150
+00:42:40,040 --> 00:42:58,370
+we subtract fluid weight above one from the this area so here is the weight weight above one right so if we subtract those two then
+
+151
+00:42:59,230 --> 00:43:15,380
+weight that is the weight of the fluid equivalent to the body volume occupied by the object right so that is the amount of the buoyancy force and the second approach we are looking into the
+
+152
+00:43:16,780 --> 00:43:30,940
+elemental area, horizontal elemental area, DAH, so one, this is DAH, one is on the surface one, the other one is on the surface two, so with,
+
+153
+00:43:31,340 --> 00:43:46,060
+check the height difference z1 minus z2 and of course this is the same media so we assume uniform specific weight then we integrate
+
+154
+00:43:50,700 --> 00:44:05,230
+we are getting the elemental volume, elemental volume is, give me one sec, so here P2 minus P1 is the pressure difference
+
+155
+00:44:05,410 --> 00:44:20,210
+and we are, right, this is area, so this is the area volume and P, P is a gamma H, right, P is a gamma H, so this is
+
+156
+00:44:21,460 --> 00:44:36,000
+height, and this is the area, so there will be the volume, and gamma is going out, so we can have the volumetric force, gamma F multiplied by the volume.
+
+157
+00:44:36,020 --> 00:44:52,840
+volume of this much. So what if the body is floating? A floating body displaces its own weight in fluid. Then in this case, buoyancy force
+
+158
+00:44:53,000 --> 00:45:07,020
+equals the body weight and they are collinear, collinear meaning. So this is the center of buoyancy and buoyancy force is always acting upward, remember. And then
+
+159
+00:45:08,000 --> 00:45:22,860
+weight is acting at the centroid, CG, right? So the second Archimedes law is if it's floating, then buoyancy force and then weight is the same.
+
+160
+00:45:23,000 --> 00:45:40,540
+and then they are at the same line so this is a collinear collinear and this is in an equilibrium right so a body a body will be
+
+161
+00:45:41,040 --> 00:45:56,330
+neutrally buoyant if it has the right weight and volume for its ratio to equal the specific weight of the fluid and for the floating body we should think about the stability.
+
+162
+00:45:56,710 --> 00:46:14,760
+as well. So before we talk about the stability, I will solve one example problem. So here, a solid sphere is iron, specific gravity.
+
+163
+00:46:14,780 --> 00:46:29,720
+gravity is 7.9, the specific gravity is sort of like related to the density, right, in relation, in reference to the water density, which means that Sg, specific gravity.
+
+164
+00:46:29,780 --> 00:46:44,500
+specific gravity. So that is the specific gravity. We learned about this one from the last week. This is about the ratio of the density. This is water, right? Water.
+
+165
+00:46:44,780 --> 00:47:00,880
+and this is iron is 7.9. So here a solid is iron and the tension in the cable is 600 pound force. So what is the diameter of the sphere in meter?
+
+166
+00:47:01,060 --> 00:47:15,960
+so if we draw a free body diagram then since this is in equilibrium, buoyancy force is somewhere and CG is at the center and buoyancy force will also be
+
+167
+00:47:16,060 --> 00:47:38,500
+at the center at this location right so weight is acting downside, buoyancy force by definition it's pointing upward, tension is also in upward on the string right so here
+
+168
+00:47:39,260 --> 00:48:01,480
+To calculate the diameter, for water the specific weight is 9790 newtons per cubic meter. The buoyancy
+
+169
+00:48:01,580 --> 00:48:34,520
+force and sphere weight: F_B is the specific weight of water multiplied by the volume of
+
+170
+00:48:34,600 --> 00:48:56,140
+the sphere, that is the pi over six D into cubed, right? D cubed. And weight is 7.9.
+
+171
+00:48:56,160 --> 00:49:28,520
+nine F_B, buoyancy force, right, then by the, so this one, right, then by the force balance, by the force balance T equals
+
+172
+00:49:31,860 --> 00:49:51,320
+W minus FB equals 7.9 B minus B that is the 600 pound
+
+173
+00:49:52,640 --> 00:50:20,210
+force, oh sorry, FB, not B, FB, that is FB, minus FB, pound force, that is about 2000, yeah, if you want to use the meter,
+
+174
+00:50:21,290 --> 00:50:37,170
+unit, that should be 2670 newtons. Therefore you can calculate F_B, and the diameter is about 0.42 m. [Slide 24 and the first transcription agree on 0.42 m.]
+
+175
+00:50:39,200 --> 00:50:55,870
+Okay, then I will talk about stability. A floating body by itself may not be statically stable. How can you say
+
+176
+00:50:56,250 --> 00:51:10,190
+it is unstable? It may turn at the first opportunity. If you perturb its position a little and it turns further, it is statically unstable. [Slide 25: a restoring moment instead returns the body to its original position.]
+
+177
+00:51:11,250 --> 00:51:28,420
+The only way to tell whether a floating position is stable is to disturb the body by a slight amount and see whether it develops a restoring moment which will return it to its original position
+
+178
+00:51:29,380 --> 00:51:48,080
+So, the center of mass, I already talked about it, the center of buoyancy, center of buoyancy is the center of the volume of
+
+179
+00:51:48,100 --> 00:52:03,020
+of liquid displaced by the object. The center of buoyancy also moves when a floating object tilts or heels over, because the shape of the underwater
+
+180
+00:52:03,100 --> 00:52:04,840
+water volume changes, right?
+
+181
+00:52:05,120 --> 00:52:10,380
+So at an equilibrium, the line of symmetry,
+
+182
+00:52:10,520 --> 00:52:15,400
+we have the line of symmetry that is calculated by the shape,
+
+183
+00:52:15,860 --> 00:52:18,560
+only by the shape, and then CG.
+
+184
+00:52:18,740 --> 00:52:34,000
+is here, and central buoyancy here, and FB and WR at the same line, so that is stable, and then next slide, right. [Review note: Equal and collinear forces establish equilibrium; stability requires a perturbation test.]
+
+185
+00:52:34,020 --> 00:52:50,090
+positions of the mass center and center of buoyancy and we are saying the tilting a small angle delta theta by this amount delta theta and we have a new
+
+186
+00:52:51,610 --> 00:53:05,370
+So let's assume that by this amount, by this small amount of the disturbance, let's assume B' has moved to this location, then we are
+
+187
+00:53:05,430 --> 00:53:20,130
+we draw a vertical line and intersect and then find the point which it intersects with the symmetry line, line of symmetry, then name it at a
+
+188
+00:53:20,430 --> 00:53:35,520
+M, that is called a metacenter, and that is independent of the delta theta for small angle. So if the M is above G, we define metacenter height, mg bar is larger than zero.
+
+189
+00:53:35,780 --> 00:53:51,880
+then we have around a buoyancy force around the center of gravity we have this moment right so we have the restoring moment
+
+190
+00:53:51,880 --> 00:53:52,580
+so we call
+
+191
+00:53:52,640 --> 00:54:06,960
+we define that as stable on the other hand we further let's assume another delta theta then this time the center of buoyancy has moved but this one right and then
+
+192
+00:54:07,640 --> 00:54:21,520
+we draw the vertical line from the new center of buoyancy and find the metacenter that intersects with the line of symmetry and in this case we have the
+
+193
+00:54:22,640 --> 00:54:37,620
+Around the center of gravity, we have this counter-rotating moment that is further turning, right? So this is unstable, so that is the overturning moment. So if M is below G, the body is
+
+194
+00:54:37,640 --> 00:54:52,560
+is unstable. So stability increases with increasing mg. It should be positive and if it's further, it's bigger, then we can say the restoring moment is much higher. So if
+
+195
+00:54:52,640 --> 00:55:07,380
+you think about when this metacenter calculation is important. When you are in a ship and part of the ship is floating, part of it is submerged.
+
+196
+00:55:07,640 --> 00:55:22,620
+right so we have the center of buoyancy in underwater part of your ship and and you have the center of gravity up somewhere right so if it's not
+
+197
+00:55:23,380 --> 00:55:36,580
+not on the line, it is not on the same line by some disturbance from the typhoon or any other, right? For example, what was it? Like the sea wall, the very sea wall. [Review note: The lecturer offers an accident analogy and speculation, not a verified causal analysis.]
+
+198
+00:55:37,640 --> 00:55:51,800
+it was so over packed so probably the gravity was much higher and for example you know there are some disturbance like either from the ocean wave or some
+
+199
+00:55:52,880 --> 00:56:07,500
+some of you just move to the other side of the ship then probably there will be changes in the buoyancy force right and probably the designer or the of course when you are
+
+200
+00:56:07,640 --> 00:56:22,520
+developing, designing a ship, people think about this Metacenter and then the restoring moment but I believe it was so overloaded so this Metacenter location was not quite
+
+201
+00:56:22,640 --> 00:56:37,560
+satisfied in terms of the stability so you have some much very sad accident back then okay so what about the pressure distribution in rigid body motion I think I have to
+
+202
+00:56:37,560 --> 00:56:41,480
+to leave that in another video because it's getting too long.

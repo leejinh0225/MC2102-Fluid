@@ -1,0 +1,8 @@
+{
+  "source_sha256": "2e064ffbded87886fe07cd3338cc72bb1dbc0e27f6c634b678e110f139bd56eb",
+  "description": "Visually verified white answer rectangles interleaved with later text on Chapter 2 pages 7 and 9. Operation indices refer to the original source content streams. Only fill and matching outline painting are suppressed.",
+  "pages": {
+    "7": [[457, 469], [476, 484]],
+    "9": [[498, 510], [529, 537], [544, 552], [599, 607]]
+  }
+}

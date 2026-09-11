@@ -1,6 +1,6 @@
 ---
 name: fluid-mechanics-lecture-note
-description: Create or extend MC2102 Fluid Mechanics Korean lecture-replacement notes from a 4:3 source PDF and one timestamped English lecture transcript, using the repository's fixed Lecture 1 template.
+description: Create or extend MC2102 Fluid Mechanics Korean lecture-replacement notes from a 4:3 source PDF and timestamped English lecture transcripts, using the repository's fixed Lecture 1 template.
 ---
 
 # Fluid Mechanics Lecture Note
@@ -14,7 +14,7 @@ Lecture 1 is the single visual and structural baseline. Copy the template to sta
 ## Source handling
 
 - Use all PDF pages in exact order, one 1440×1080 image and one source-section per page.
-- Read the entire reviewed English transcript. The lecture uses one continuous timestamp axis.
+- Read every part of the reviewed English transcript. For multiple videos, retain independent timestamp axes and label every reference with its Part number. A slide spanning a part boundary cites both parts.
 - Reconcile PDF, lecture context and transcript. Keep an unlisted date as 날짜 미기재.
 - Retain source diagrams and formulas; label source errors and editorial supplements with evidence.
 - Store recordings, audio, raw transcripts, model caches and senior materials under the ignored private-materials folder.

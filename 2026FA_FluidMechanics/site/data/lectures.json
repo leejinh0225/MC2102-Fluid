@@ -9,6 +9,16 @@
         "original": "lecture01_original.pdf"
       },
       "ready": true
+    },
+    {
+      "slug": "lecture02",
+      "page": "lecture02.html",
+      "expectedSlides": 32,
+      "pdfs": {
+        "cleaned": "lecture02_note.pdf",
+        "original": "lecture02_original.pdf"
+      },
+      "ready": true
     }
   ]
 }
