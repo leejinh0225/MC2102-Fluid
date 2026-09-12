@@ -1395,40 +1395,32 @@
             <div class="card">
               <h3>Liquid correlation(액체 경험식)</h3>
               <p>
-                liquid viscosity(액체 점성)는 온도에 따라 감소하며, 물에는
-                다음 empirical correlation(경험식)을 사용할 수 있습니다.
+                슬라이드는 liquid viscosity(액체 점성)가 온도에 따라
+                감소한다고 설명하고, 물의 empirical correlation(경험식)에
+                사용하는 다음 기준값과 계수를 제시합니다.
+              </p>
+              <p>
+                물의 기준값은 <em>T<sub>0</sub> = 273.16 K</em>,
+                <em>μ<sub>0</sub> = 0.001792 Pa·s</em>이며,
+                <em>a = −1.94, b = −4.80, c = 6.74</em>입니다.
+              </p>
+              <div class="evidence">
+                <span>슬라이드 14 · 액체 점성의 경향과 물의 기준값·계수</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>교재 대조 · Liquid correlation(액체 경험식)</h3>
+              <p>
+                아래는 교재에서 확인한 온도비를 적용한 식입니다.
                 점성비의 natural logarithm(자연로그)을
-                inverse temperature(역온도)의 2차식으로 근사한 식입니다.
+                inverse temperature(역온도)의 2차식으로 근사하며,
+                <em>T</em>에는 absolute temperature(절대온도)를 K 단위로
+                넣습니다. 물의 기준값과 계수는 위 슬라이드의 값을 사용합니다.
               </p>
               <span class="formula"
                 >ln(μ/μ<sub>0</sub>) ≈
                 a + b(T<sub>0</sub>/T) + c(T<sub>0</sub>/T)<sup>2</sup></span
               >
-              <p>
-                물의 기준값은 <em>T<sub>0</sub> = 273.16 K</em>,
-                <em>μ<sub>0</sub> = 0.001792 Pa·s</em>이며,
-                <em>a = −1.94, b = −4.80, c = 6.74</em>입니다.
-                <em>T</em>에는 absolute temperature(절대온도)를 K 단위로
-                넣습니다. 점성계수를 구하려면 다음처럼 양변에 지수함수를
-                적용합니다.
-              </p>
-              <span class="formula"
-                >μ ≈ μ<sub>0</sub> exp[a + b(T<sub>0</sub>/T)
-                + c(T<sub>0</sub>/T)<sup>2</sup>]</span
-              >
-              <p>
-                <em>T = T<sub>0</sub></em>이면 <em>a+b+c = 0</em>이므로
-                <em>μ = μ<sub>0</sub></em>가 됩니다. 예를 들어
-                <em>20°C = 293.15 K</em>를 대입하면
-                <em>μ ≈ 1.023 × 10<sup>−3</sup> Pa·s</em>로,
-                기준 온도에서보다 점성이 작아집니다. 이 식은 실험값을 근사한
-                경험식이므로 정밀한 물성값이 필요하면 해당 온도·압력의 물성표를
-                확인합니다.
-              </p>
-              <div class="evidence">
-                <span>편집자 보강 · 교재 대조 및 계산 예시</span>
-              </div>
-            </div>
             <div class="warning">
               <strong>교재 대조 · 슬라이드 표기 실수 추정:</strong>
               슬라이드의 액체 식에는 두 온도비가 모두
@@ -1444,6 +1436,27 @@
               액체에 대한 설명과도 충돌하므로, 교수님의 슬라이드 작성 과정에서
               온도비를 반대로 표기한 실수로 추정됩니다. 위 해설에는 교재와
               일치하는 <em>T<sub>0</sub>/T</em> 식을 제시했습니다.
+            </div>
+            </div>
+            <div class="quiet-card">
+              <h3>편집자 보강 · 경험식으로 점성 계산하기</h3>
+              <p>
+                교재 대조식의 양변에 지수함수를 적용하면 점성계수를 직접
+                계산할 수 있습니다.
+              </p>
+              <span class="formula"
+                >μ ≈ μ<sub>0</sub> exp[a + b(T<sub>0</sub>/T)
+                + c(T<sub>0</sub>/T)<sup>2</sup>]</span
+              >
+              <p>
+                <em>T = T<sub>0</sub></em>이면 <em>a+b+c = 0</em>이므로
+                <em>μ = μ<sub>0</sub></em>가 됩니다. 예를 들어
+                <em>20°C = 293.15 K</em>를 대입하면
+                <em>μ ≈ 1.023 × 10<sup>−3</sup> Pa·s</em>로,
+                기준 온도에서보다 점성이 작아집니다. 이 식은 실험값을 근사한
+                경험식이므로 정밀한 물성값이 필요하면 해당 온도·압력의 물성표를
+                확인합니다.
+              </p>
             </div>
           </div>
         </section>
