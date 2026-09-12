@@ -1395,51 +1395,46 @@
             <div class="card">
               <h3>Liquid correlation(액체 경험식)</h3>
               <p>
-                슬라이드는 liquid viscosity(액체 점성)가 온도에 따라
-                감소한다고 설명하고, 물의 empirical correlation(경험식)에
-                사용하는 다음 기준값과 계수를 제시합니다.
+                liquid viscosity(액체 점성)는 온도에 따라 감소하며, 물에는
+                실험으로 맞춘 empirical correlation(경험식)을 사용합니다.
               </p>
               <p>
                 물의 기준값은 <em>T<sub>0</sub> = 273.16 K</em>,
                 <em>μ<sub>0</sub> = 0.001792 Pa·s</em>이며,
                 <em>a = −1.94, b = −4.80, c = 6.74</em>입니다.
               </p>
-              <div class="evidence">
-                <span>슬라이드 14 · 액체 점성의 경향과 물의 기준값·계수</span>
-              </div>
             </div>
             <div class="card">
-              <h3>교재 대조 · Liquid correlation(액체 경험식)</h3>
+              <h3>액체 경험식의 온도비와 계산 예시</h3>
               <p>
-                아래는 교재에서 확인한 온도비를 적용한 식입니다.
-                점성비의 natural logarithm(자연로그)을
-                inverse temperature(역온도)의 2차식으로 근사하며,
-                <em>T</em>에는 absolute temperature(절대온도)를 K 단위로
-                넣습니다. 물의 기준값과 계수는 위 슬라이드의 값을 사용합니다.
+                슬라이드의 액체 식에는 온도비가
+                <em>T/T<sub>0</sub></em>로 적혀 있지만, David A. Chin의
+                <a
+                  href="https://api.pageplace.de/preview/DT0400.9781292161129_A31710039/preview-9781292161129_A31710039.pdf#page=52"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Fluid Mechanics for Engineers in SI Units, p. 51, 식 (1.51)</a
+                >은 White(2011)를 인용하며, 같은 기준값과 계수에 대해
+                다음과 같이 <em>T<sub>0</sub>/T</em>를 사용합니다.
               </p>
               <span class="formula"
                 >ln(μ/μ<sub>0</sub>) ≈
                 a + b(T<sub>0</sub>/T) + c(T<sub>0</sub>/T)<sup>2</sup></span
               >
-            <div class="warning">
-              <strong>교재 대조 · 슬라이드 표기 실수 추정:</strong>
-              슬라이드의 액체 식에는 두 온도비가 모두
-              <em>T/T<sub>0</sub></em>로 적혀 있습니다. 그러나 David A. Chin의
-              <a
-                href="https://api.pageplace.de/preview/DT0400.9781292161129_A31710039/preview-9781292161129_A31710039.pdf#page=52"
-                target="_blank"
-                rel="noreferrer"
-                >Fluid Mechanics for Engineers in SI Units, p. 51, 식 (1.51)</a
-              >은 White(2011)를 인용하며, 같은 기준값과 계수에 대해
-              <em>T<sub>0</sub>/T</em>를 사용합니다.
-              슬라이드의 식을 그대로 적용하면 온도가 올라갈 때 점성이 증가하여
-              액체에 대한 설명과도 충돌하므로, 교수님의 슬라이드 작성 과정에서
-              온도비를 반대로 표기한 실수로 추정됩니다. 위 해설에는 교재와
-              일치하는 <em>T<sub>0</sub>/T</em> 식을 제시했습니다.
-            </div>
-            </div>
-            <div class="quiet-card">
-              <h3>편집자 보강 · 경험식으로 점성 계산하기</h3>
+              <p>
+                점성비의 natural logarithm(자연로그)을
+                inverse temperature(역온도)의 2차식으로 근사하며,
+                <em>T</em>에는 absolute temperature(절대온도)를 K 단위로
+                넣습니다. 물의 기준값과 계수는 위의 값을 사용합니다.
+              </p>
+              <div class="warning">
+                <strong>슬라이드 표기 실수 추정:</strong>
+                슬라이드의 <em>T/T<sub>0</sub></em>를 그대로 적용하면 온도가
+                올라갈 때 점성이 증가하여 액체에 대한 설명과 충돌합니다.
+                교재의 식과 비교했을 때 교수님이 온도비를 반대로 표기한
+                실수로 추정되므로, 여기서는 <em>T<sub>0</sub>/T</em>로
+                계산합니다.
+              </div>
               <p>
                 교재 대조식의 양변에 지수함수를 적용하면 점성계수를 직접
                 계산할 수 있습니다.
@@ -1457,6 +1452,9 @@
                 경험식이므로 정밀한 물성값이 필요하면 해당 온도·압력의 물성표를
                 확인합니다.
               </p>
+              <div class="evidence">
+                <span>편집자 보강 · 교재 대조와 계산 예시</span>
+              </div>
             </div>
           </div>
         </section>
