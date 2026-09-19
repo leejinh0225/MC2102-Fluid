@@ -436,10 +436,13 @@
               <span>Part 1 · 00:16:17–00:21:37</span>
             </figcaption>
           </figure>
-          <div class="note-stack"><div class="callout source-review" id="source-check-05" data-review-kind="error"><h3>원본 오류 확인 · x방향 힘에 사용하는 면적</h3><p><strong>원본 표기:</strong> x방향 힘 전개 첫 항의 p dx dz는 다음 항의 면적과 다릅니다.</p><div><span class="formula">dF<sub>x</sub> = p dy dz − (p + ∂p/∂x dx) dy dz<br>= −(∂p/∂x) dx dy dz</span></div><p><strong>판단 근거:</strong> x에 수직인 양쪽 면은 모두 dy dz입니다. 작은 그림은 y방향 면을 예시하므로 그 경우 면적 dx dz를 쓰는 것은 맞습니다. 그림과 x방향 식의 좌표를 섞지 않습니다.</p></div>
+          <div class="note-stack">
             <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
             <div class="card">
               <h3>세 방향을 벡터로 모으기</h3>
+              <span class="formula"
+                >dFₓ = p dy dz − [p + (∂p/∂x)dx] dy dz = −(∂p/∂x)dV</span
+              >
               <span class="formula"
                 >dF_pressure = −∇p dV,　∇p = (∂p/∂x, ∂p/∂y, ∂p/∂z)</span
               >
@@ -455,13 +458,21 @@
                 변형이 없어 점성력 항을 없앨 수 있습니다.
               </p>
             </div>
-            <div class="warning">
-              <h3>원본 표기 교정</h3>
+            <div class="callout source-review" id="source-check-05" data-review-kind="error">
+              <h3>원본 오류 확인 · x방향 힘에 사용하는 면적</h3>
               <p>
-                슬라이드의 x 방향 첫 항은 p dx dz로 인쇄되어 있지만, x에 수직인
-                면적은 dy dz입니다. 뒤 항과 최종 결과 −(∂p/∂x)dx dy dz 및 강의의
-                면적 설명에 맞추어 첫 항을 p dy dz로 읽습니다.
+                <strong>원본 표기:</strong> x방향 힘 전개 첫 항의 p dx dz는
+                다음 항의 면적과 다릅니다. x에 수직인 양쪽 면의 면적은 모두
+                dy dz이므로 첫 항을 p dy dz로 읽습니다. 이는 뒤 항과 최종 결과
+                −(∂p/∂x)dx dy dz 및 강의의 면적 설명과도 일치합니다.
               </p>
+              <p>
+                작은 그림은 y방향 면을 예시하므로 그 경우 면적 dx dz를 쓰는
+                것은 맞습니다. 그림과 x방향 식의 좌표를 섞지 않습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 면적과 힘 전개 대조</span>
+              </div>
             </div>
           </div>
         </section>
@@ -717,10 +728,25 @@
               >
               <p>
                 분자 N/m²를 분모 N/m³로 나누므로 결과는 m입니다. 상단의 0은
-                게이지압력이 아니라 절대압력이라는 점이 핵심입니다. 수은
-                증기압을 포함하면 h=(pₐ−p_vapor)/γ_Hg입니다. 마지막 식은
-                경계조건을 명시한 편집자 보강입니다.
+                게이지압력이 아니라 절대압력이라는 점이 핵심입니다.
               </p>
+            </div>
+            <div class="card">
+              <h3>수은의 vapor pressure(증기압)를 포함하면</h3>
+              <p>
+                상단의 증기압을 무시하지 않으면 경계압력을 p₁=p_vapor로
+                둡니다. 아래쪽 경계압력은 여전히 p₂=pₐ이므로, 수은 기둥이
+                지탱하는 압력차는 pₐ−p_vapor입니다.
+              </p>
+              <span class="formula">pₐ − p_vapor = γ_Hg h → h = (pₐ − p_vapor)/γ_Hg</span>
+              <p>
+                pₐ와 p_vapor는 모두 absolute pressure(절대압력)입니다.
+                p_vapor가 pₐ에 비해 충분히 작을 때 위의 h≈pₐ/γ_Hg로
+                근사할 수 있습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 증기압을 포함한 경계조건</span>
+              </div>
             </div>
           </div>
         </section>
@@ -811,7 +837,7 @@
               <span>Part 1 · 00:43:26–00:44:56</span>
             </figcaption>
           </figure>
-          <div class="note-stack"><div class="callout source-review" id="source-check-12" data-review-kind="error"><h3>원본 오류 확인 · 높이 차와 압력 차의 음의 부호</h3><p><strong>원본 표기:</strong> 설명의 z₂−z₁=(p₂−p₁)/γ는 위로 증가하는 z좌표와 맞지 않습니다.</p><div><span class="formula">p₂ − p₁ = −γ(z₂ − z₁)<br>z₂ − z₁ = −(p₂ − p₁)/γ</span></div><p><strong>판단 근거:</strong> 같은 밀도의 정지 유체에서 p+γz는 일정합니다. 따라서 높은 점의 압력은 낮아야 하며, 높이 차와 압력 차는 반대 부호입니다. 크기만 비교한다면 양쪽 모두 절댓값을 써야 합니다.</p></div>
+          <div class="note-stack">
             <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
             <div class="card">
               <h3>보이는 액면으로 보이지 않는 압력을 읽기</h3>
@@ -821,6 +847,26 @@
                 액면 높이로 압력차를 계산할 수 있습니다. 열린 쪽 자유표면의
                 절대압력은 대기압입니다.
               </p>
+              <span class="formula">p₂ − p₁ = −γ(z₂ − z₁)</span>
+              <span class="formula">z₂ − z₁ = −(p₂ − p₁)/γ</span>
+              <p>
+                z는 위쪽으로 증가하는 높이좌표이고 γ는 같은 구간의 일정한
+                specific weight(비중량)입니다. 연결된 동일한 정지 액체 안의
+                두 점에 적용하며, 더 높은 점의 압력은 더 낮습니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-12" data-review-kind="error">
+              <h3>원본 오류 확인 · 높이 차와 압력 차의 음의 부호</h3>
+              <p>
+                <strong>원본 표기:</strong> z₂−z₁=(p₂−p₁)/γ에는 음의 부호가
+                빠져 있습니다. 같은 밀도의 정지 유체에서 p+γz는 일정하므로,
+                위로 증가하는 z좌표에서는 높이 차와 압력 차가 반대 부호여야
+                합니다. 위 본문에는 이 부호를 반영한 식을 사용했습니다.
+              </p>
+              <p>크기만 비교한다면 |z₂−z₁|=|p₂−p₁|/γ처럼 양쪽 모두 절댓값을 씁니다.</p>
+              <div class="evidence">
+                <span>편집자 보강 · 정수압식과 부호 대조</span>
+              </div>
             </div>
             <div class="card">
               <h3>한 경로를 따라 압력을 옮깁니다</h3>
@@ -1190,7 +1236,7 @@
               </p>
             </div>
             <div class="card">
-              <h3>편집자 보강 · 깊이 좌표로 다시 쓰기</h3>
+              <h3>깊이 좌표로 다시 쓰기</h3>
               <p>
                 양쪽의 대기압이 상쇄되는 경우 p_CG=γh_CG입니다. CP의 수직 깊이는
                 도심보다 −y_CP sinθ만큼 깊어집니다.
@@ -1201,6 +1247,9 @@
                 깊게 잠길수록 같은 판의 압력분포가 상대적으로 균일해져 CP가 CG에
                 가까워집니다.
               </p>
+              <div class="evidence">
+                <span>편집자 보강 · 수직 깊이로 표현한 압력중심</span>
+              </div>
             </div>
           </div>
         </section>
@@ -1282,7 +1331,7 @@
               <span>Part 2 · 00:33:39–00:39:40</span>
             </figcaption>
           </figure>
-          <div class="note-stack"><div class="callout source-review" id="source-check-21" data-review-kind="error"><h3>원본 오류 확인 · 게이트를 유지하는 힘 P의 수치</h3><p><strong>원본 표기:</strong> 원본의 P=23,900 N은 그 위 모멘트식의 계산 결과와 맞지 않습니다.</p><div><span class="formula">6P = 38,400(5 − 0.417)<br>P ≈ 29,331 N ≈ 29.3 kN</span></div><p><strong>판단 근거:</strong> 표시된 값들을 그대로 재계산한 결과입니다. 원본의 B<sub>x</sub>≈6300 N도 P≈29.3 kN과 수평 합력 23.04 kN의 차에 맞으므로, P의 숫자를 잘못 적은 것으로 확인됩니다.</p></div>
+          <div class="note-stack">
             <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
             <div class="card">
               <h3>압력중심은 도심에서 0.417 ft 아래쪽</h3>
@@ -1302,14 +1351,30 @@
               <h3>B에 대한 모멘트 평형</h3>
               <span class="formula">P(L sinθ) − F(L/2−l) = 0</span
               ><span class="formula"
-                >P = 38,400(4.58333)/6 = 29,333 lbf ≈ 29,300 lbf</span
+                >P = (38,400 lbf)(4.58333 ft)/(6 ft) ≈ 29,333 lbf ≈ 29,300 lbf</span
               >
               <p>
-                <strong>원본 계산 교정:</strong> 슬라이드와 강의에는 마지막
-                P=23,900으로 제시되지만, 바로 위의 모멘트 평형식에 대입하면 약
-                29,300 lbf입니다. 강의에서 이어 계산한 Bₓ≈6,300 lbf도 수정한 P와
-                일치합니다. 23,900을 그대로 답으로 사용하지 않습니다.
+                P는 수평 방향이므로 모멘트 팔은 B에서 A까지의 수직 높이
+                L sinθ=6 ft입니다. 분자의 lbf·ft를 분모의 ft로 나누므로
+                힘의 단위는 lbf로 유지됩니다.
               </p>
+            </div>
+            <div class="callout source-review" id="source-check-21" data-review-kind="error">
+              <h3>원본 오류 확인 · 게이트를 유지하는 힘 P의 수치</h3>
+              <p>
+                <strong>원본 표기:</strong> 마지막 답 P=23,900 lbf는 바로 위의
+                모멘트 평형식과 맞지 않습니다. 인쇄된 l=0.417 ft를 그대로
+                넣으면 P≈29,331 lbf, 반올림 전 값을 쓰면 P≈29,333 lbf로,
+                두 경우 모두 약 29,300 lbf입니다. 단위는 N이 아니라 lbf입니다.
+              </p>
+              <p>
+                Part 2 · 00:38:40–00:39:02의 강의에서 이어 계산한
+                Bₓ≈6,300 lbf도 수정한 P에서 수압의 수평 성분 23,040 lbf를
+                뺀 값과 일치합니다. 23,900 lbf를 그대로 답으로 사용하지 않습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 모멘트 재계산과 강의 반력 대조</span>
+              </div>
             </div>
             <div class="card">
               <h3>강의 보충 풀이 · 문제 (c)의 힌지 반력</h3>
@@ -1429,7 +1494,7 @@
               </p>
             </div>
             <div class="card">
-              <h3>편집자 보강 · 잠기는 체적의 비율</h3>
+              <h3>잠기는 체적의 비율</h3>
               <p>
                 평균 물체 밀도 ρ_body, 전체 체적 V라 두면 W=ρ_body gV입니다.
                 따라서 자유롭게 떠 있는 상태에서는 다음 비율을 얻습니다.
@@ -1439,6 +1504,9 @@
                 외부 줄의 장력이나 바닥 지지가 있으면 F_B=W만으로 풀 수
                 없습니다. 다음 구 예제가 그 경우입니다.
               </p>
+              <div class="evidence">
+                <span>편집자 보강 · 부유 평형에서 체적비 유도</span>
+              </div>
             </div>
           </div>
         </section>
@@ -1467,7 +1535,7 @@
               <span>Part 2 · 00:45:41–00:50:33</span>
             </figcaption>
           </figure>
-          <div class="note-stack"><div class="callout source-review" id="source-check-24" data-review-kind="suspect"><h3>원본 오타 의심 · table → cable</h3><p><strong>원본 표기:</strong> 물속 구를 붙들어 두는 장치의 장력을 묻는 문장에 “tension in the table”이라고 적혀 있습니다.</p><div><strong>tension in the cable(케이블의 장력)</strong>로 읽습니다.</div><p><strong>판단 근거:</strong> 그림과 힘 평형은 구를 바닥에 연결한 케이블을 다룹니다. table이라는 별도의 물체가 주어진 문제는 아닙니다. 구의 체적 πD³/6은 올바른 식입니다.</p></div>
+          <div class="note-stack">
             <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
             <div class="card">
               <h3>주어진 장력으로 부력을 분리합니다</h3>
@@ -1475,7 +1543,8 @@
                 철 구의 SG=7.9, 물속에서 줄의 tension(장력) T=600 lbf≈2,670
                 N입니다. γ_water=9,790 N/m³를 사용하고 구 전체가 잠겼다고
                 봅니다. V=πD³/6이고, 비중 정의에 따라 W=7.9γ_water V,
-                F_B=γ_water V입니다.
+                F_B=γ_water V입니다. 위에서 구를 매단 줄의 장력 T와 부력 F_B는
+                위쪽으로, 무게 W는 아래쪽으로 작용합니다.
               </p>
               <span class="formula"
                 >T + F_B − W = 0 → T = (7.9−1)γ_water πD³/6</span
@@ -1485,9 +1554,25 @@
               <p>
                 줄의 장력은 원래 무게가 아니라 물속에서 부력이 줄여 준 apparent
                 weight(겉보기 무게)입니다. W=T로 두거나 전체 무게에서 부력을
-                더하면 안 됩니다. 원본의 “tension in the table”은 그림의 줄을
-                가리키는 “cable” 문맥입니다.
+                더하면 안 됩니다.
               </p>
+            </div>
+            <div class="callout source-review" id="source-check-24" data-review-kind="suspect">
+              <h3>원본 오타 의심 · table → cable</h3>
+              <p>
+                <strong>원본 표기:</strong> 장력을 묻는 문장의 “tension in the
+                table”은 그림과 문맥상 “tension in the cable(케이블의 장력)”의
+                오타로 추정됩니다.
+              </p>
+              <p>
+                그림은 구를 위에서 매단 케이블을 나타냅니다. 장력과 부력이
+                위쪽, 무게가 아래쪽이므로 T+F_B−W=0이며, 이는 원본 풀이의
+                T=W−F_B와 일치합니다. 바닥에 묶어 아래로 당기는 경우와는
+                장력 방향이 다릅니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 문제 문구와 힘 방향 대조</span>
+              </div>
             </div>
           </div>
         </section>
@@ -1867,7 +1952,7 @@
               </p>
             </div>
             <div class="card">
-              <h3>편집자 보강 · 적분상수는 체적 보존으로 정합니다</h3>
+              <h3>적분상수는 체적 보존으로 정합니다</h3>
               <p>
                 반지름 R인 원통형 용기에 처음 높이 h₀만큼 액체가 있었고,
                 넘침이나 바닥 노출이 없다고 가정합니다.
@@ -1879,10 +1964,12 @@
                 >z_c = h₀−Ω²R²/(4g),　z_wall = h₀+Ω²R²/(4g)</span
               >
               <p>
-                이는 원자료 수식의 적용 절차를 보인 보강 유도이며 별도의 수치
-                강의 예제가 아닙니다. 넘치거나 중심 바닥이 드러나면 체적 영역과
+                넘치거나 중심 바닥이 드러나면 체적 영역과
                 경계조건을 다시 설정해야 합니다.
               </p>
+              <div class="evidence">
+                <span>편집자 보강 · 체적 보존으로 경계조건 결정</span>
+              </div>
             </div>
           </div>
         </section>
