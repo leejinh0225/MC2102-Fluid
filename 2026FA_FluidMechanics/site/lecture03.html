@@ -1,0 +1,3698 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lecture 3 · Integral Relations for a Control Volume | MC2102</title>
+    <meta
+      name="description"
+      content="검사체적의 질량·운동량·에너지 수지와 베르누이식을 원본 54장으로 이해하는 한국어 학습 노트"
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="index.html">MC2102 Fluid Mechanics</a>
+        <div class="header-actions">
+          <a class="header-link" href="downloads.html">PDF 다운로드</a>
+          <span class="header-meta"
+            >Lecture 3 · Integral Relations for a Control Volume</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">Week 03 · Lecture 3</p>
+        <h1>Integral Relations for a Control Volume.</h1>
+        <p class="hero__lead">
+          검사체적의 저장량과 유출입에서 출발해 유량, 노즐·제트의 힘, 압력과
+          속도의 관계, 터빈의 열과 일을 하나의 보존 원리로 연결합니다.
+        </p>
+        <div class="meta-row">
+          <span class="meta-chip">날짜 미기재</span>
+          <span class="meta-chip">원본 슬라이드 54장</span>
+          <span class="meta-chip">Part 1·2 스크립트 대조</span>
+          <span class="meta-chip">수업 대체 + 시험 대비</span>
+        </div>
+        <div class="button-row">
+          <a
+            class="button"
+            href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture03_note.pdf"
+            download="lecture03_note.pdf"
+            type="application/pdf"
+            >가림막 제거 PDF 다운로드</a
+          >
+          <a
+            class="button"
+            href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture03_original.pdf"
+            download="lecture03_original.pdf"
+            type="application/pdf"
+            >원본 PDF 다운로드</a
+          >
+          <a class="button" href="index.html">강의 목록</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <main id="main" class="content">
+        <!-- Lecture 1의 고정 골격. class, id, 섹션 순서와 중첩 구조를 바꾸지 않고 내용 placeholder만 교체한다. -->
+        <section
+          class="editorial-section section-divider"
+          id="overview"
+          aria-labelledby="overview-title"
+        >
+          <p class="section-kicker">Lecture overview</p>
+          <h2 class="section-title" id="overview-title">
+            들어오고 나가는 양을 세면, 유량과 힘과 에너지가 연결됩니다.
+          </h2>
+          <p class="section-lead">
+            같은 유체 입자를 추적하는 시스템의 법칙을, 선택한 영역의 축적과 경계
+            통과량으로 바꿉니다. 관심 물리량에 맞는 수지를 선택하고 가정을
+            적용하면 장치 전체의 거동을 계산할 수 있습니다.
+          </p>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="concept-map"
+          aria-labelledby="map-title"
+        >
+          <p class="section-kicker">Concept map</p>
+          <h2 class="section-title" id="map-title">
+            하나의 수송정리, 세 가지 보존식
+          </h2>
+          <!-- 개념 수에 맞춰 course-map, grid-2 또는 grid-3 중 기존 공통 컴포넌트만 사용한다. -->
+          <div class="grid-3">
+            <div class="card">
+              <h3>1. Mass(질량)</h3>
+              <p>유입·유출과 축적으로 유량·속도·수위 변화를 구합니다.</p>
+            </div>
+            <div class="card">
+              <h3>2. Momentum(운동량)</h3>
+              <p>속도의 크기와 방향 변화로 합력·고정력·토크를 구합니다.</p>
+            </div>
+            <div class="card">
+              <h3>3. Energy(에너지)</h3>
+              <p>열·일·엔탈피 변화로 동력과 열전달을 구합니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="concept-summary"
+          aria-labelledby="concept-summary-title"
+        >
+          <p class="section-kicker">Content summary</p>
+          <h2 class="section-title" id="concept-summary-title">
+            Lecture 3 핵심 개념 요약
+          </h2>
+          <p class="section-lead">
+            먼저 식의 의미와 적용 조건을 연결하고, 이어서 PDF 순서대로 유도와
+            예제를 풉니다.
+          </p>
+          <div class="note-stack">
+            <!-- 슬라이드와 실제 개념 설명 스크립트를 종합한 독립형 요약. 슬라이드별 상세 설명은 별도로 유지한다. -->
+            <div class="card">
+              <h3>시스템의 법칙을 검사체적의 수지로</h3>
+              <p>
+                system(시스템)은 같은 입자 집합이고 control volume(검사체적)은
+                관찰할 영역입니다. 시스템의 성질 변화는 그 영역 안의 축적률과
+                경계의 순유출률을 더한 값입니다. RTT는 이 두 관점을 연결하며
+                질량·운동량·에너지에 같은 구조로 적용됩니다.
+              </p>
+              <span class="formula"
+                >(dB/dt)_sys = d/dt ∫_CV ρβ dVol + ∮_CS ρβ(V · n)dA</span
+              >
+            </div>
+            <div class="card">
+              <h3>질량보존: 유량과 수위 변화</h3>
+              <p>
+                법선 n을 바깥쪽으로 정하면 유출은 양수, 유입은 음수입니다.
+                체적유량 Q는 m³/s, 질량유량 ṁ는 kg/s입니다. 정상 유동은 내부
+                질량 축적이 없으므로 총 유입과 총 유출 질량유량이 같습니다.
+                비압축성까지 가정해야 한 입구·한 출구에서 A₁V₁=A₂V₂로
+                단순해집니다.
+              </p>
+              <span class="formula">dM_CV/dt = Σ_in ṁ − Σ_out ṁ</span>
+              <p>
+                탱크가 채워질 때는 축적항을 남겨 A_tank dh/dt=Q_in−Q_out을
+                씁니다. 수위가 일정한 경우에만 유입·유출 유량을 같게 둡니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>운동량: 힘의 대상과 방향</h3>
+              <p>
+                정상·균일 포트에서는 외력 합이 운동량 순유출률과 같습니다. 먼저
+                질량보존으로 유량을 구한 뒤 속도 벡터의 성분을 대입합니다.
+                압력힘은 −p n dA이며 균일한 대기압 성분만 닫힌 표면에서
+                상쇄됩니다.
+              </p>
+              <span class="formula">ΣF = Σ_out ṁV − Σ_in ṁV</span>
+              <p>
+                계산된 힘은 외부가 CV에 주는 힘입니다. 제트가 베인에 가하는 힘을
+                묻는다면 반작용 방향을 확인합니다. 장치가 고정되어 있어도 유체가
+                가속하면 ΣF는 0이 아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>이동 경계: 상대 유입속도부터</h3>
+              <p>
+                경계가 Vₛ로 움직이면 통과 유량에는 V−Vₛ가 들어갑니다. 일정한
+                속도로 병진하는 평판을 따라가는 관성계에서는 상대속도로 운동량
+                수지를 정리할 수 있습니다. 이동 평판 예제의 상대속력은 20−15=5
+                m/s이며, 외부에서 왼쪽 7.5 N을 가해야 등속이 유지됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>베르누이와 각운동량</h3>
+              <p>
+                정상·밀도 일정·점성 영향 무시의 같은 유선에서 p/ρ+V²/2+gz는
+                일정합니다. 기계 일이나 큰 손실이 있는 구간을 가로질러 무조건
+                적용하지 않습니다. 벤투리관은 연속방정식과 베르누이식을 함께
+                사용하여 압력 차를 질량유량으로 바꿉니다.
+              </p>
+              <span class="formula">ṁ = A₂√[2ρΔp/(1 − β⁴)],　β=D₂/D₁</span>
+              <p>
+                회전축의 토크는 각운동량 유량 차로 구하며, 정상 포트의 축방향
+                식은 ΣM_z=Σ_out ṁrV_θ−Σ_in ṁrV_θ입니다. 반지름과 접선속도가 함께
+                중요합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>에너지: 엔탈피·축일·열전달</h3>
+              <p>
+                e=u+V²/2+gz는 단위 질량당 총에너지입니다. 압력일 p/ρ를 유체의
+                내부에너지와 묶으면 h=u+p/ρ가 됩니다. 한 입구·한 출구의 정상
+                에너지식은 다음과 같습니다.
+              </p>
+              <span class="formula"
+                >q − w_s = h₂ − h₁ + (V₂² − V₁²)/2 + g(z₂ − z₁)</span
+              >
+              <p>
+                q는 유입 열, w_s는 외부로 하는 축일일 때 양수입니다. 비압축성
+                관로의 수두식에서는 펌프수두를 입력 쪽에, 터빈수두와 손실수두를
+                출력 쪽에 둡니다. 열전달과 동력을 묻는 문제는 베르누이식이
+                아니라 이 일반 수지에서 출발합니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>문제풀이의 공통 순서</h3>
+              <ol class="plain-list">
+                <li>
+                  구할 양과 힘의 대상을 정하고 CV, 입·출구, 좌표와 압력 기준을
+                  그립니다.
+                </li>
+                <li>
+                  정상·비압축성·균일 포트·손실 무시 등의 조건을 문제에서
+                  확인합니다.
+                </li>
+                <li>
+                  질량보존으로 유량을 정하고, 필요한 운동량·각운동량·에너지식을
+                  세웁니다.
+                </li>
+                <li>
+                  기호식 상태에서 부호와 단위를 맞춘 뒤 수치를 대입합니다.
+                </li>
+                <li>
+                  유출 0, 같은 면적, 고정 물체 등의 간단한 극한으로 결과를
+                  검산합니다.
+                </li>
+              </ol>
+            </div>
+            <div class="quiet-card">
+              <h3>자료 대조 범위</h3>
+              <p>
+                PDF 1–54쪽을 모두 포함합니다. 1–17쪽은 Part 1, 18–36쪽은 Part
+                2의 설명과 대조했습니다. 37–54쪽은 PDF 기반 해설이며 대응 강의가
+                제공되지 않았습니다. 제공된 Part 4는 Chapter 2 복습으로 확인되어
+                이 장의 근거에 포함하지 않았습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PDF의 모든 페이지에 대해 아래 section을 정확히 한 번씩 복제한다. -->
+        <section
+          class="source-section"
+          id="slide-01"
+          aria-labelledby="slide-01-title"
+        >
+          <p class="section-kicker">Source slide 01 · 표지</p>
+          <h2 class="section-title" id="slide-01-title">
+            Integral Relations for a Control Volume(검사체적에 대한 적분 관계)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-01.jpg"
+                alt="Lecture 3 슬라이드 1: Integral Relations for a Control Volume(검사체적에 대한 적분 관계)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 1/54</span>
+              <span>Part 1 · 00:00:00–00:00:30</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="quiet-card">
+              <h3>Chapter 3</h3>
+              <p>
+                유체 입자를 하나씩 따라가지 않고 control volume(검사체적)을
+                통과하는 질량·운동량·에너지를 계산합니다. 노즐의 지지력, 제트가
+                물체에 주는 힘, 유량과 터빈의 열전달을 같은 보존 원리로
+                해석합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-02"
+          aria-labelledby="slide-02-title"
+        >
+          <p class="section-kicker">Source slide 02 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-02-title">
+            검사체적 해석으로 구할 물리량
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-02.jpg"
+                alt="Lecture 3 슬라이드 2: 검사체적 해석으로 구할 물리량"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 2/54</span>
+              <span>Part 1 · 00:00:30–00:04:39</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>유량 → 힘 → 에너지</h3>
+              <p>
+                conservation of mass(질량보존)는 유입·유출과 내부 질량 변화의
+                관계입니다. linear momentum(선운동량)은 유동의 방향·속도 변화와
+                힘을, angular momentum(각운동량)은 회전 운동량 변화와 토크를
+                연결합니다. energy conservation(에너지보존)은 열·일과 유체가
+                운반하는 에너지를 함께 셉니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Bernoulli equation(베르누이 방정식)의 자리</h3>
+              <p>
+                베르누이식은 모든 유동에 적용되는 별도의 법칙이 아니라,
+                운동방정식에 steady(정상), incompressible(비압축성), negligible
+                viscous effects(점성 영향 무시) 등의 조건을 적용한 관계입니다.
+                압력과 속도의 교환을 설명하지만, 펌프나 손실이 있는 구간을
+                무조건 가로질러 사용할 수는 없습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-03"
+          aria-labelledby="slide-03-title"
+        >
+          <p class="section-kicker">Source slide 03 · 단원 구분</p>
+          <h2 class="section-title" id="slide-03-title">
+            먼저 유량과 질량보존을 연결합니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-03.jpg"
+                alt="Lecture 3 슬라이드 3: 먼저 유량과 질량보존을 연결합니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 3/54</span>
+              <span>Part 1 · 00:04:39–00:06:45</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="quiet-card">
+              <h3>첫 번째 묶음</h3>
+              <p>
+                기본 법칙, volume flow rate(체적유량), mass flow
+                rate(질량유량)를 정리한 뒤 Reynolds transport theorem(레이놀즈
+                수송정리)로 질량보존식을 만듭니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-04"
+          aria-labelledby="slide-04-title"
+        >
+          <p class="section-kicker">Source slide 04 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-04-title">
+            유체 문제를 바라보는 세 가지 크기
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-04.jpg"
+                alt="Lecture 3 슬라이드 4: 유체 문제를 바라보는 세 가지 크기"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 4/54</span>
+              <span>Part 1 · 00:06:45–00:09:22</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Integral analysis(적분 해석)</h3>
+              <p>
+                finite control volume(유한한 검사체적)의 경계에서 들어오고
+                나가는 양을 셉니다. 내부의 모든 점의 속도를 알지 못해도 입·출구
+                조건으로 장치 전체의 유량이나 합력을 구할 수 있습니다. 이 장의
+                중심 방법입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Differential analysis(미분 해석)와 실험</h3>
+              <p>
+                infinitesimal element(미소 요소)에 법칙을 적용하면 각 위치의
+                압력·속도 변화를 구하는 미분방정식이 됩니다. dimensional
+                analysis(차원해석)는 모형 실험과 실제 장치를 비교할 무차원
+                조건을 정합니다. 세 방법은 경쟁하는 정답이 아니라 필요한 공간
+                정보와 자료에 따라 선택하는 도구입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-05"
+          aria-labelledby="slide-05-title"
+        >
+          <p class="section-kicker">Source slide 05 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-05-title">
+            보존 법칙은 먼저 System(시스템)에 적용됩니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-05.jpg"
+                alt="Lecture 3 슬라이드 5: 보존 법칙은 먼저 System(시스템)에 적용됩니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 5/54</span>
+              <span>Part 1 · 00:09:25–00:12:48</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>같은 입자들을 계속 포함하는 시스템</h3>
+              <p>
+                system(시스템)은 물질의 정체성이 고정된 집합입니다. 경계가
+                변형되어도 구성 입자는 바뀌지 않으므로 질량은 일정합니다. 반면
+                검사체적은 경계를 통과하는 입자가 바뀔 수 있습니다.
+              </p>
+              <span class="formula">(dm/dt)_sys = 0</span>
+            </div>
+            <div class="card">
+              <h3>힘·모멘트·열과 일</h3>
+              <span class="formula">ΣF = d(mV)/dt,　ΣM₀ = dH₀/dt</span
+              ><span class="formula">H₀ = ∫_sys r × V dm,　dE/dt = Q̇ − Ẇ</span>
+              <p>
+                V는 속도 벡터, H₀는 기준점 O에 대한 각운동량입니다. Q̇는
+                시스템으로 들어오는 열, Ẇ는 시스템이 외부에 하는 일일 때
+                양수입니다. 점 위의 dot은 시간당 변화량을 뜻합니다. 이 장에서
+                dE/dt의 단위는 W입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>“보존”과 “언제나 일정”은 다릅니다</h3>
+              <p>
+                운동량이 일정하려면 ΣF=0, 각운동량이 일정하려면 ΣM₀=0이어야
+                합니다. 강의의 각운동량 설명은 바로 위의 모멘트식과 함께 읽어야
+                합니다. 시스템이라는 이유만으로 H₀가 항상 일정한 것은 아닙니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 기본 법칙의 조건 구분</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-06"
+          aria-labelledby="slide-06-title"
+        >
+          <p class="section-kicker">Source slide 06 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-06-title">
+            상태방정식과 열역학 관계
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-06.jpg"
+                alt="Lecture 3 슬라이드 6: 상태방정식과 열역학 관계"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 6/54</span>
+              <span>Part 1 · 00:12:49–00:18:24</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>상태를 연결하는 관계</h3>
+              <span class="formula">p = p(ρ,T),　ideal gas: p = ρRT</span>
+              <p>
+                equation of state(상태방정식)는 밀도 ρ와 절대온도 T 등으로 압력
+                p를 연결합니다. 이상기체식의 p는 절대압력이며 R은 해당 기체의
+                비기체상수입니다. 분자 자체의 크기를 무시하는 가정은 기체가
+                차지하는 전체 체적을 0으로 둔다는 뜻이 아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Calorically perfect gas(비열이 일정한 이상기체)</h3>
+              <span class="formula">Δu = cᵥ ΔT,　Δh = cₚ ΔT,　γ = cₚ/cᵥ</span>
+              <p>
+                u는 specific internal energy(비내부에너지), h는 specific
+                enthalpy(비엔탈피)입니다. cᵥ는 정적비열, cₚ는 정압비열이며
+                단위는 J/(kg·K)입니다. 슬라이드의 u=cᵥT, h=cₚT는 기준 에너지를
+                정한 표현입니다. 여기의 γ는 비열비이며, 뒤쪽 p/γ에서 쓰는
+                specific weight(비중량) ρg와 문맥이 다릅니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Second law(열역학 제2법칙)</h3>
+              <span class="formula">dS ≥ δQ/T</span>
+              <p>
+                열이 온도 T인 경계를 통해 전달될 때, 엔트로피 변화에는
+                열전달분과 비가역 과정의 생성분이 있습니다. 고립계는 열전달도
+                없으므로 엔트로피가 감소하지 않습니다.
+                질량·운동량·에너지식만으로 정해지지 않는 상태 관계를 이런 열역학
+                조건이 보완합니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-06"
+              data-review-kind="error"
+            >
+              <h3>원본 표기 교정 · 비열비의 분모</h3>
+              <p>
+                분모의 겹친 v 표기는 cᵥ 하나로 읽습니다. Part 1 ·
+                00:17:08–00:17:25에서 강의자가 해당 오타를 직접 지적합니다. 위
+                관계식에는 γ=cₚ/cᵥ를 사용했습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 원본 식과 강의의 오타 설명 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-07"
+          aria-labelledby="slide-07-title"
+        >
+          <p class="section-kicker">Source slide 07 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-07-title">
+            Volume flow rate(체적유량)는 면을 통과하는 체적입니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-07.jpg"
+                alt="Lecture 3 슬라이드 7: Volume flow rate(체적유량)는 면을 통과하는 체적입니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 7/54</span>
+              <span>Part 1 · 00:18:25–00:21:49</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>속도의 수직 성분만 경계를 통과합니다</h3>
+              <span class="formula">dQ = (V · n) dA = V cosθ dA</span
+              ><span class="formula">Q = ∫_A V · n dA　[m³/s]</span>
+              <p>
+                n은 unit normal vector(단위 법선벡터), θ는 속도와 법선 사이의
+                각도입니다. 미소 시간 dt 동안 통과한 체적은 (V·n)dt dA입니다.
+                면에 평행한 속도는 경계를 가로지르지 않으므로 유량에 기여하지
+                않습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>닫힌 검사면의 부호</h3>
+              <p>
+                control surface(검사면)의 n은 항상 바깥쪽으로 정합니다. 따라서
+                V·n은 outflow(유출)에서 양수, inflow(유입)에서 음수입니다. Q_in,
+                Q_out을 각각 양의 크기로 정의했다면 순유출은 Q_out−Q_in이며,
+                이미 내적에 들어간 부호를 다시 붙이지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-08"
+          aria-labelledby="slide-08-title"
+        >
+          <p class="section-kicker">Source slide 08 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-08-title">
+            Mass flow rate(질량유량)와 체적유량의 차이
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-08.jpg"
+                alt="Lecture 3 슬라이드 8: Mass flow rate(질량유량)와 체적유량의 차이"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 8/54</span>
+              <span>Part 1 · 00:21:53–00:23:08</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>같은 체적도 밀도가 다르면 질량이 다릅니다</h3>
+              <span class="formula">ṁ = ∫_A ρ(V · n) dA　[kg/s]</span
+              ><span class="formula">ρ 일정: ṁ = ρQ</span>
+              <p>
+                density(밀도)가 단면에서 변하면 적분 밖으로 꺼낼 수 없습니다.
+                ṁ는 질량 자체가 아니라 초당 통과하는 질량입니다. 점 위의 dot을
+                생략하면 m[kg]와 혼동됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>균일한 포트의 1차원 모델</h3>
+              <span class="formula">ṁ = ρAVₙ,　Q = AVₙ</span>
+              <p>
+                단면 전체에 밀도와 normal velocity(법선속도)가 일정할 때의
+                식입니다. 속도가 단면에 수직이면 Vₙ=V입니다. nonuniform(비균일)
+                속도분포에는 면적평균 속도로 Q=A V̄를 쓸 수 있지만, 운동량·에너지
+                유출입까지 같은 평균만 대입하는 데에는 별도 주의가 필요합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-09"
+          aria-labelledby="slide-09-title"
+        >
+          <p class="section-kicker">Source slide 09 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-09-title">
+            RTT는 입자 추적과 영역 관찰을 연결합니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-09.jpg"
+                alt="Lecture 3 슬라이드 9: RTT는 입자 추적과 영역 관찰을 연결합니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 9/54</span>
+              <span>Part 1 · 00:23:10–00:25:18</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Lagrangian(라그랑주)와 Eulerian(오일러) 관점</h3>
+              <p>
+                입자를 따라가며 변화를 측정하는 시스템의 법칙을, 관심 영역의
+                저장량과 경계 통과량으로 다시 표현한 것이 Reynolds transport
+                theorem(레이놀즈 수송정리, RTT)입니다. 물리 법칙을 새로 만드는
+                것이 아니라 같은 현상을 다른 관찰 방식으로 쓰는 수학적
+                변환입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>검사체적은 꼭 고정될 필요가 없습니다</h3>
+              <p>
+                fixed CV(고정 검사체적)는 노즐처럼 공간에 고정한 장치에, moving
+                CV(이동 검사체적)는 선박처럼 이동하는 물체에 맞춰 정할 수
+                있습니다. 피스톤을 따라 경계가 바뀌면 deforming CV(변형
+                검사체적)입니다. 경계 운동 여부가 통과 속도의 정의를 바꿉니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-10"
+          aria-labelledby="slide-10-title"
+        >
+          <p class="section-kicker">Source slide 10 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-10-title">
+            저장량 변화와 경계 통과량을 따로 셉니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-10.jpg"
+                alt="Lecture 3 슬라이드 10: 저장량 변화와 경계 통과량을 따로 셉니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 10/54</span>
+              <span>Part 1 · 00:25:18–00:27:46</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>t와 t+dt에서 같은 입자를 비교하기</h3>
+              <p>
+                시간 t에 시스템이 검사체적과 겹쳐 있었다고 생각합니다. dt 뒤에는
+                유출한 입자가 영역 밖에 있고 새로운 입자가 들어옵니다. 같은
+                시스템의 변화를 구하려면 현재 영역의 변화에 유출량을 더하고
+                유입량을 빼야 합니다.
+              </p>
+              <span class="formula"
+                >시스템의 변화율 = 검사체적 내부의 축적률 + 순유출률</span
+              >
+            </div>
+            <div class="card">
+              <h3>그림의 얇은 유입·유출 조각</h3>
+              <p>
+                그림의 dVol은 유량이 아니라 짧은 시간 동안 경계를 통과한 미소
+                체적입니다. 유출 크기는 (V_out·n)dA dt입니다. 유입은 내적이
+                음수이므로 유입 체적의 양의 크기는 −(V_in·n)dA dt입니다. 이
+                부호를 그대로 적분식에 넣으면 out minus in(유출 빼기 유입)이
+                됩니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-11"
+          aria-labelledby="slide-11-title"
+        >
+          <p class="section-kicker">Source slide 11 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-11-title">
+            Reynolds transport theorem(레이놀즈 수송정리)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-11.jpg"
+                alt="Lecture 3 슬라이드 11: Reynolds transport theorem(레이놀즈 수송정리)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 11/54</span>
+              <span>Part 1 · 00:27:46–00:34:09</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Extensive property(종량적 성질)와 단위 질량당 값</h3>
+              <span class="formula">β = dB/dm,　B_CV = ∫_CV βρ dVol</span>
+              <p>
+                B는 시스템 전체의 질량·운동량·에너지 등이며 β는 corresponding
+                specific property(대응하는 단위 질량당 성질)입니다. 질량이면
+                β=1, 선운동량이면 β=V, 에너지이면 β=e입니다. 체적 dVol과 속도
+                V를 구별하여 읽습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>고정 검사체적의 RTT</h3>
+              <span class="formula"
+                >(dB/dt)_sys = d/dt ∫_CV βρ dVol + ∮_CS βρ(V · n) dA</span
+              >
+              <p>
+                오른쪽 첫 항은 accumulation(축적), 둘째 항은 net outward
+                flux(순유출)입니다. 축적률이 0이라고 해서 유체가 멈춘 것은
+                아닙니다. 정상 유동에서는 계속 들어오고 나가면서 내부의 각 위치
+                상태가 일정할 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>왜 βρ를 적분합니까?</h3>
+              <p>
+                β의 단위가 B/kg이고 ρdVol이 kg이므로 체적적분은 B가 됩니다.
+                경계항 ρ(V·n)dA는 kg/s, 여기에 β를 곱하면 B/s입니다. 양쪽 항의
+                차원이 모두 변화율인지 확인하면 체적·면적·밀도의 누락을 발견할
+                수 있습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · RTT 항별 차원 확인</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-12"
+          aria-labelledby="slide-12-title"
+        >
+          <p class="section-kicker">Source slide 12 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-12-title">
+            움직이는 검사면에서는 Relative velocity(상대속도)를 씁니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-12.jpg"
+                alt="Lecture 3 슬라이드 12: 움직이는 검사면에서는 Relative velocity(상대속도)를 씁니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 12/54</span>
+              <span>Part 1 · 00:34:09–00:35:50</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>경계와 유체 사이의 속도 차</h3>
+              <span class="formula">Vᵣ = V − Vₛ</span
+              ><span class="formula"
+                >(dB/dt)_sys = d/dt ∫_CV(t) βρ dVol + ∮_CS(t) βρ(Vᵣ · n)
+                dA</span
+              >
+              <p>
+                Vₛ는 검사면의 국소 속도입니다. 경계와 유체가 함께 같은 속도로
+                움직이면 둘 사이를 통과하는 유량은 0입니다. 움직이거나 변형하는
+                CV에서는 체적 자체도 변하므로 첫 항의 미분을 함부로 적분 안으로
+                옮기지 않습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>고정 CV에서만 간단해지는 축적항</h3>
+              <span class="formula"
+                >고정 CV: d/dt ∫_CV βρ dVol = ∫_CV ∂(βρ)/∂t dVol</span
+              >
+              <p>
+                고정 경계이면 Vₛ=0이므로 flux(유속)에는 원래의 V를 사용합니다.
+                움직이는 경계에서도 β는 선택한 기준계에서 정의한 물리량입니다.
+                단지 경계가 움직인다는 이유로 모든 항의 속도를 무조건 Vᵣ로
+                바꾸는 것은 아닙니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-13"
+          aria-labelledby="slide-13-title"
+        >
+          <p class="section-kicker">Source slide 13 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-13-title">
+            Conservation of mass(질량보존)의 적분형
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-13.jpg"
+                alt="Lecture 3 슬라이드 13: Conservation of mass(질량보존)의 적분형"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 13/54</span>
+              <span>Part 1 · 00:35:52–00:38:26</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>RTT에 β=1을 넣습니다</h3>
+              <span class="formula"
+                >0 = d/dt ∫_CV ρ dVol + ∮_CS ρ(V · n) dA</span
+              ><span class="formula"
+                >질량 축적률 = 총 유입 질량유량 − 총 유출 질량유량</span
+              >
+              <p>
+                시스템의 질량은 일정하므로 RTT 왼쪽이 0입니다. 하지만 검사체적
+                내부 질량은 유입과 유출이 다르면 변합니다. 이 식을 continuity
+                equation(연속방정식)이라고 부릅니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>0이 되는 항을 정확히 구별하기</h3>
+              <p>
+                시스템 질량의 시간미분이 0이라는 법칙과 검사체적의 축적률이
+                0이라는 steady(정상) 가정은 서로 다릅니다. 물탱크가 채워지는
+                상황에서도 질량보존은 성립하지만 내부 질량의 변화율은 0이
+                아닙니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-14"
+          aria-labelledby="slide-14-title"
+        >
+          <p class="section-kicker">Source slide 14 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-14-title">
+            가정을 하나씩 적용하면 연속방정식이 간단해집니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-14.jpg"
+                alt="Lecture 3 슬라이드 14: 가정을 하나씩 적용하면 연속방정식이 간단해집니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 14/54</span>
+              <span>Part 1 · 00:38:26–00:41:28</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>1차원 포트 → 정상 유동</h3>
+              <span class="formula">dM_CV/dt + Σ_out ṁ − Σ_in ṁ = 0</span
+              ><span class="formula">steady: Σ_out ṁ = Σ_in ṁ</span>
+              <p>
+                각 inlet(입구)과 outlet(출구)의 단면을 균일한 값으로 모델링하면
+                경계적분이 포트별 합이 됩니다. 포트 방향이 서로 달라도 이
+                질량식은 scalar(스칼라) 관계입니다. steady 조건을 추가하면
+                축적항이 없어집니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>한 입구·한 출구 → 비압축성 유동</h3>
+              <span class="formula">ρ₁A₁V₁ = ρ₂A₂V₂</span
+              ><span class="formula">ρ₁=ρ₂: A₁V₁ = A₂V₂,　Q₁ = Q₂</span>
+              <p>
+                질량유량은 같아도 밀도가 바뀌면 체적유량은 다를 수 있습니다.
+                마지막 Q₁=Q₂는 공통 밀도를 적용할 수 있을 때의 결과입니다.
+                incompressible(비압축성) 조건과 steady(정상) 조건을 서로 같은
+                말로 사용하지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-15"
+          aria-labelledby="slide-15-title"
+        >
+          <p class="section-kicker">Source slide 15 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-15-title">
+            Streamtube(유관)에서 단면적과 속도
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-15.jpg"
+                alt="Lecture 3 슬라이드 15: Streamtube(유관)에서 단면적과 속도"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 15/54</span>
+              <span>Part 1 · 00:41:28–00:42:44</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>옆면을 통과하지 않는 흐름</h3>
+              <p>
+                streamtube(유관)의 옆면은 streamline(유선)들로 이루어집니다.
+                속도가 옆면에 접하므로 V·n=0이며, 유입·유출은 양 끝 단면에서만
+                셉니다. 정상·비압축성 조건을 적용하면 작은 단면에서 속도가
+                빨라집니다.
+              </p>
+              <span class="formula">A₁V₁ = A₂V₂　→　V₂ = (A₁/A₂)V₁</span>
+            </div>
+            <div class="card">
+              <h3>지름비를 곧바로 속도비로 쓰지 않습니다</h3>
+              <span class="formula">원형 단면: V₂/V₁ = (D₁/D₂)²</span>
+              <p>
+                면적이 지름의 제곱에 비례하기 때문입니다. 속도식의 A₁/A₂는
+                무차원이며, 면적이 같은 경우 V₂=V₁로 돌아오는지 검산할 수
+                있습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 원형 단면의 적용과 극한 확인</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-16"
+          aria-labelledby="slide-16-title"
+        >
+          <p class="section-kicker">Source slide 16 · 예제 조건</p>
+          <h2 class="section-title" id="slide-16-title">
+            탱크 수위가 변하는 질량보존 문제
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-16.jpg"
+                alt="Lecture 3 슬라이드 16: 탱크 수위가 변하는 질량보존 문제"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 16/54</span>
+              <span>Part 1 · 00:42:44–00:43:42</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>주어진 조건과 구할 값</h3>
+              <p>
+                직경 d인 원통 탱크로 Q₁과 Q₃가 들어오고 Q₂가 나갑니다. 먼저 수위
+                변화율 dh/dt를 구하고, 수위가 일정할 때 출구 속도 V₂를 구합니다.
+                관 지름은 d₁=0.05 m, d₂=0.07 m, 유입 속도는 V₁=3 m/s, 위쪽
+                유량은 Q₃=0.01 m³/s입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>검사체적 선택</h3>
+              <p>
+                탱크 안 물의 저장량은 ρA_tank h이며 A_tank=πd²/4입니다. 탱크
+                전체를 고정 CV로 잡아 물의 양을 계산하거나 수면을 따라가는
+                경계를 사용할 수 있습니다. 후자의 수면에서는 경계와 물이 함께
+                움직여 상대 통과량이 0입니다. 물의 밀도는 일정하게 둡니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-17"
+          aria-labelledby="slide-17-title"
+        >
+          <p class="section-kicker">Source slide 17 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-17-title">
+            탱크의 축적률과 정상 출구 속도
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-17.jpg"
+                alt="Lecture 3 슬라이드 17: 탱크의 축적률과 정상 출구 속도"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 17/54</span>
+              <span>Part 1 · 00:43:42–00:50:34</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>수위 변화율</h3>
+              <span class="formula">ρA_tank dh/dt + ρQ₂ − ρQ₁ − ρQ₃ = 0</span
+              ><span class="formula">dh/dt = 4(Q₁ + Q₃ − Q₂)/(πd²)</span>
+              <p>
+                유입이 더 크면 dh/dt&gt;0으로 수위가 올라가고, 유출이 더 크면
+                내려갑니다. [m³/s]/[m²]=[m/s]이므로 수위 변화율의 단위도
+                맞습니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-17"
+              data-review-kind="error"
+            >
+              <h3>원본 오류 확인 · 수위 변화식의 부호</h3>
+              <p>
+                원본의 마지막 dh/dt 식은 분자가 Q₂−Q₁−Q₃로 되어 있으나, 바로 앞
+                연속방정식을 이항하면 부호가 반대입니다. Part 1 ·
+                00:47:02–00:47:33의 전사에도 그 부호가 나타납니다. 위 본문에는
+                보존식과 물리적 해석에 일치하는 식을 사용했습니다.
+              </p>
+              <p>
+                Q₂=0으로 두었을 때 물이 계속 들어오면 수위가 증가해야 합니다.
+                강의의 이어지는 “유출이 작으면 수위가 증가한다”는 설명과도 이
+                수정식이 일치합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 질량보존식의 이항 및 유출 0 검산</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>수위가 일정할 때</h3>
+              <span class="formula">Q₂ = Q₁ + Q₃ = (π/4)(0.05)²(3) + 0.01</span
+              ><span class="formula">Q₂ = 0.0158905 m³/s</span
+              ><span class="formula">V₂ = Q₂/[(π/4)(0.07)²] ≈ 4.13 m/s</span>
+              <p>
+                steady level(일정한 수위) 조건에서만 dh/dt=0을 넣습니다. 필요한
+                것은 출구 관의 면적이며 탱크 자체의 지름 d는 이 정상 유량
+                계산에서 소거됩니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-18"
+          aria-labelledby="slide-18-title"
+        >
+          <p class="section-kicker">Source slide 18 · 단원 구분</p>
+          <h2 class="section-title" id="slide-18-title">
+            이제 유량으로 힘을 계산합니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-18.jpg"
+                alt="Lecture 3 슬라이드 18: 이제 유량으로 힘을 계산합니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 18/54</span>
+              <span>Part 2 · 00:00:05–00:01:37</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="quiet-card">
+              <h3>두 번째 묶음</h3>
+              <p>
+                질량보존으로 입·출구 유량을 맞춘 다음 linear momentum
+                equation(선운동량 방정식)으로 노즐·베인·관 벽의 힘을 구합니다.
+                검사체적이 일정한 속도로 움직이는 경우까지 확장합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-19"
+          aria-labelledby="slide-19-title"
+        >
+          <p class="section-kicker">Source slide 19 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-19-title">
+            Linear momentum(선운동량)의 적분 방정식
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-19.jpg"
+                alt="Lecture 3 슬라이드 19: Linear momentum(선운동량)의 적분 방정식"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 19/54</span>
+              <span>Part 2 · 00:01:37–00:05:44</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>질량이 아니라 운동량을 운반합니다</h3>
+              <span class="formula"
+                >ΣF = d/dt ∫_CV ρV dVol + ∮_CS ρV(V · n) dA</span
+              >
+              <p>
+                RTT에서 B=mV, β=V를 선택하고 시스템에 Newton’s second law(뉴턴의
+                제2법칙)를 적용한 식입니다. 여기서 굵게 생각해야 할 V는
+                벡터입니다. V·n은 통과량의 부호를 정하고, 바깥의 V는 운반되는
+                운동량의 방향을 정합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>어떤 힘을 포함합니까?</h3>
+              <p>
+                surface force(표면력)에는 압력과 전단응력, body
+                force(체적력)에는 중력이 포함됩니다. 검사체적 안의 유체만
+                잡았는지, 고체 장치까지 포함했는지에 따라 외력 목록이
+                달라집니다. ΣF는 그 CV 안의 물질에 외부가 가하는 힘입니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-19"
+              data-review-kind="caution"
+            >
+              <h3>표기·조건 주의 · 부력의 분류</h3>
+              <p>
+                원본은 buoyancy(부력)를 체적력의 예로 함께 나열합니다. 부력은
+                실제로 물체 표면의 압력분포를 적분한 합력이며, 중력 자체와 같은
+                종류의 체적력은 아닙니다. 압력을 이미 모두 적분한 모델에서
+                부력을 추가하면 같은 힘을 두 번 셀 수 있습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 압력 합력과 중력의 구분</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-20"
+          aria-labelledby="slide-20-title"
+        >
+          <p class="section-kicker">Source slide 20 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-20-title">
+            정상·1차원 포트의 운동량 유량
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-20.jpg"
+                alt="Lecture 3 슬라이드 20: 정상·1차원 포트의 운동량 유량"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 20/54</span>
+              <span>Part 2 · 00:05:48–00:08:19</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>운동량 유량은 ṁV입니다</h3>
+              <span class="formula">ΣF = Σ_out ṁV − Σ_in ṁV</span
+              ><span class="formula">한 입구·한 출구: ΣF = ṁ(V₂ − V₁)</span>
+              <p>
+                steady(정상)이면 축적항이 없어집니다. 각 포트에서 밀도와 속도를
+                균일하게 두면 면적적분이 ṁV로 정리됩니다. 여기서 ṁ은 각 포트의
+                양의 질량유량 크기이고, 유입·유출 부호는 식의 합에서 처리합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>성분으로 풀어야 하는 이유</h3>
+              <span class="formula">ΣFₓ = Σ_out ṁVₓ − Σ_in ṁVₓ</span>
+              <p>
+                속력의 크기가 그대로여도 방향이 바뀌면 V₂−V₁은 0이 아닙니다. x,
+                y, z축을 먼저 그린 뒤 각 출구 속도의 성분을 넣습니다.
+                [kg/s]×[m/s]=[N]이므로 식의 오른쪽은 힘입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-21"
+          aria-labelledby="slide-21-title"
+        >
+          <p class="section-kicker">Source slide 21 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-21-title">
+            Pressure force(압력힘)와 게이지압력
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-21.jpg"
+                alt="Lecture 3 슬라이드 21: Pressure force(압력힘)와 게이지압력"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 21/54</span>
+              <span>Part 2 · 00:08:19–00:11:38</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>압력힘은 안쪽, 법선은 바깥쪽</h3>
+              <span class="formula">F_p = −∮_CS p n dA</span
+              ><span class="formula"
+                >pₐ가 일정: F_p = −∮_CS (p − pₐ)n dA = −∮_CS p_gauge n dA</span
+              >
+              <p>
+                uniform pressure(균일 압력)가 닫힌 표면 전체에 작용하면 ∮n
+                dA=0으로 합력이 0입니다. 따라서 모든 면에 동일한 대기압 성분을
+                빼도 합력은 변하지 않습니다. 게이지압력을 쓰는 이유이지, 비균일
+                압력의 합력까지 0이라는 뜻은 아닙니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-21"
+              data-review-kind="error"
+            >
+              <h3>원본 오류 확인 · 비균일 게이지압력의 합력</h3>
+              <p>
+                원본 두 번째 압력적분 뒤의 “≡0”은 일반적으로 성립하지 않습니다.
+                Part 2 · 00:10:33–00:11:38에서도 0이라는 설명이 이어지지만,
+                0으로 소거되는 것은 일정한 대기압 성분입니다. 위 본문에는 비균일
+                게이지압력 적분을 남겼습니다.
+              </p>
+              <p>
+                바로 다음 노즐 예제는 이 적분으로 177 lbf의 힘을 얻습니다.
+                고정된 검사체적이라는 사실만으로 합력이 0이 되지는 않으며,
+                유체의 운동량 유출입이 그 힘과 균형을 이룰 수 있습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 닫힌 면의 법선 적분과 다음 예제 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-22"
+          aria-labelledby="slide-22-title"
+        >
+          <p class="section-kicker">Source slide 22 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-22-title">
+            노즐의 순압력힘 계산
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-22.jpg"
+                alt="Lecture 3 슬라이드 22: 노즐의 순압력힘 계산"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 22/54</span>
+              <span>Part 2 · 00:11:39–00:14:55</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>압력 기준과 검사체적</h3>
+              <p>
+                입구 지름 3 in, 입구 절대압력 40 psi, 대기압 15 psi입니다.
+                출구와 노즐 바깥은 대기에 노출됩니다. 노즐과 내부 유체를 함께
+                둘러싸고 입·출구를 가로지르는 CV를 잡으면 공통 대기압을 뺀 후
+                입구의 25 psi만 남습니다. 오른쪽을 +x로 둡니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>힘으로 바꾸려면 면적을 곱합니다</h3>
+              <span class="formula">p₁,g = 40 − 15 = 25 lbf/in²</span
+              ><span class="formula"
+                >F_p,x = (25 lbf/in²)(π·3²/4 in²) = 176.7 lbf ≈ 177 lbf</span
+              >
+              <p>
+                입구의 outward normal(바깥 법선)은 왼쪽이므로 −p n은
+                오른쪽입니다. psi는 압력, lbf는 힘입니다. 압력 25와 합력 177을
+                같은 단위로 부르지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-23"
+          aria-labelledby="slide-23-title"
+        >
+          <p class="section-kicker">Source slide 23 · 예제 조건</p>
+          <h2 class="section-title" id="slide-23-title">
+            노즐을 붙잡는 Flange bolt(플랜지 볼트)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-23.jpg"
+                alt="Lecture 3 슬라이드 23: 노즐을 붙잡는 Flange bolt(플랜지 볼트)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 23/54</span>
+              <span>Part 2 · 00:14:56–00:17:33</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>조건과 방향</h3>
+              <p>
+                수평 노즐의 입구 D₁=12 in, 출구 D₂=6 in입니다. 물의 밀도는
+                ρ=1.94 slug/ft³, 입구 절대압력은 38 psi, 대기압은 15 psi, 출구
+                속력은 56 ft/s입니다. 출구는 대기에 열려 있습니다. 볼트가 노즐을
+                고정하는 수평 힘의 크기를 구합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>질량보존을 먼저 쓰는 이유</h3>
+              <p>
+                출구에서 유체가 빨라지므로 입구 속도와 운동량 증가량을 먼저
+                알아야 합니다. 노즐과 유체를 함께 CV에 넣으면 두 물체 사이의
+                접촉력은 내부력이 되고, 볼트의 지지력과 외부 압력이 주요
+                외력으로 남습니다. 오른쪽 +x 기준으로 볼트가 CV에 주는 힘은
+                왼쪽입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-24"
+          aria-labelledby="slide-24-title"
+        >
+          <p class="section-kicker">Source slide 24 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-24-title">
+            질량보존과 운동량으로 볼트 하중을 풉니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-24.jpg"
+                alt="Lecture 3 슬라이드 24: 질량보존과 운동량으로 볼트 하중을 풉니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 24/54</span>
+              <span>Part 2 · 00:17:33–00:23:28</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>1. 유량과 입구 속도</h3>
+              <span class="formula">V₁ = (D₂/D₁)²V₂ = (6/12)²·56 = 14 ft/s</span
+              ><span class="formula"
+                >ṁ = ρA₁V₁ = 1.94·(π/4)·(1 ft)²·14 ≈ 21.33 slug/s</span
+              >
+              <p>
+                면적비에서는 같은 in 단위가 상쇄되지만, 밀도와 곱할 면적은 ft²로
+                바꿔야 합니다. slug·ft/s²=lbf이므로 별도의 lbm 변환상수를 넣지
+                않습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>2. x방향 힘 평형이 아니라 운동량 수지</h3>
+              <span class="formula"
+                >−F_bolts + (38 − 15)(π·12²/4) = ṁ(56 − 14)</span
+              ><span class="formula"
+                >F_bolts ≈ 2601.24 − 895.92 = 1705.31 lbf</span
+              >
+              <p>
+                볼트가 노즐·유체 CV에 주는 힘은 약 1.70×10³ lbf, 왼쪽입니다.
+                노즐이 볼트에 전달하는 하중은 같은 크기로 오른쪽입니다. 장치가
+                움직이지 않아도 유체의 운동량은 바뀌므로 ΣF=0으로 두면 안
+                됩니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-25"
+          aria-labelledby="slide-25-title"
+        >
+          <p class="section-kicker">Source slide 25 · 예제 조건</p>
+          <h2 class="section-title" id="slide-25-title">
+            Fixed vane(고정 베인)이 제트를 꺾는 힘
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-25.jpg"
+                alt="Lecture 3 슬라이드 25: Fixed vane(고정 베인)이 제트를 꺾는 힘"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 25/54</span>
+              <span>Part 2 · 00:23:28–00:25:19</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>조건</h3>
+              <p>
+                단면적 A인 물 제트가 속력 V로 들어와 베인에 의해 θ만큼 방향을
+                바꿉니다. 입·출구의 속력은 같고, 제트 주위 압력은 대기압,
+                제트·베인의 중량은 무시합니다. 베인을 정지시킬 anchoring
+                force(고정력)의 크기 F와 +x축에 대한 각도 φ를 구합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>좌표와 힘의 대상</h3>
+              <span class="formula">V₁ = (V,0),　V₂ = (V cosθ,V sinθ)</span>
+              <p>
+                유체와 베인, 지지대 절단면을 포함한 CV를 잡습니다. 아래에서 F는
+                지지대가 CV에 주는 힘입니다. 유체가 베인에 주는 힘을 묻는다면
+                방향을 반대로 해야 합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-26"
+          aria-labelledby="slide-26-title"
+        >
+          <p class="section-kicker">Source slide 26 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-26-title">
+            베인의 힘을 x·y 성분으로 나눕니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-26.jpg"
+                alt="Lecture 3 슬라이드 26: 베인의 힘을 x·y 성분으로 나눕니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 26/54</span>
+              <span>Part 2 · 00:25:25–00:29:12</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>질량유량과 성분식</h3>
+              <span class="formula">ṁ = ρAV</span
+              ><span class="formula">Fₓ = ṁV(cosθ − 1),　Fᵧ = ṁV sinθ</span>
+              <p>
+                x방향으로는 유체가 운반하는 운동량이 줄어들므로 Fₓ≤0입니다.
+                위쪽으로 유출하는 경우 y운동량이 증가하므로 Fᵧ≥0입니다. 속력은
+                같아도 운동량 벡터는 변합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>마찰을 따로 쓰지 않은 이유</h3>
+              <p>
+                베인과 유체를 모두 포함하면 둘 사이의 마찰·압력 접촉력은
+                내부에서 작용·반작용으로 상쇄됩니다. 이것은 실제 마찰이 존재하지
+                않는다는 뜻과 다릅니다. 여기서는 별도로 주어진 “입·출구 속력
+                동일” 조건을 적용합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-27"
+          aria-labelledby="slide-27-title"
+        >
+          <p class="section-kicker">Source slide 27 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-27-title">
+            베인 고정력의 크기와 방향
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-27.jpg"
+                alt="Lecture 3 슬라이드 27: 베인 고정력의 크기와 방향"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 27/54</span>
+              <span>Part 2 · 00:29:12–00:31:48</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>벡터 성분에서 합력으로</h3>
+              <span class="formula"
+                >F = √(Fₓ² + Fᵧ²) = ṁV√[(cosθ − 1)² + sin²θ]</span
+              ><span class="formula">F = 2ṁV sin(θ/2)　(0 ≤ θ ≤ 180°)</span
+              ><span class="formula">φ = 90° + θ/2　(0 &lt; θ ≤ 180°)</span>
+              <p>
+                sin²θ+cos²θ=1과 1−cosθ=2sin²(θ/2)를 사용했습니다. 힘은
+                왼쪽·위쪽을 향하므로 제2사분면입니다. φ는 +x축에서 반시계
+                방향으로 잰 각입니다. θ=0이면 힘 자체가 0이므로 방향은 정의되지
+                않습니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-27"
+              data-review-kind="caution"
+            >
+              <h3>표기·조건 주의 · 역탄젠트의 사분면</h3>
+              <p>
+                원본의 φ=180°−tan⁻¹(Fᵧ/Fₓ)에 부호 있는 Fₓ&lt;0을 그대로 넣으면
+                원하는 제2사분면이 나오지 않습니다. φ=atan2(Fᵧ,Fₓ) 또는
+                φ=180°−tan⁻¹(Fᵧ/|Fₓ|)로 계산하면 위 결과와 일치합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 성분의 부호와 방향각 검산</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-28"
+          aria-labelledby="slide-28-title"
+        >
+          <p class="section-kicker">Source slide 28 · 예제 해석</p>
+          <h2 class="section-title" id="slide-28-title">
+            반전 제트와 작은 회전각의 극한
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-28.jpg"
+                alt="Lecture 3 슬라이드 28: 반전 제트와 작은 회전각의 극한"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 28/54</span>
+              <span>Part 2 · 00:31:48–00:33:12</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>180° 반전이면 힘이 최대입니다</h3>
+              <span class="formula">θ = 180°: F = 2ṁV,　φ = 180°</span>
+              <p>
+                처음 +V였던 x속도가 −V로 바뀌므로 운동량 변화의 크기가
+                2ṁV입니다. 단순히 유체를 멈추는 경우보다 변화량이 두 배입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>작은 각도는 radian(라디안)으로 근사합니다</h3>
+              <span class="formula">θ ≪ 1 rad: F ≈ ṁVθ,　φ ≈ 90°</span>
+              <p>
+                sin(θ/2)≈θ/2를 사용했습니다. θ를 도 단위 숫자로 그대로 대입하면
+                근사가 틀립니다. 아주 조금 꺾을 때는 힘이 거의 유입 제트에
+                수직이며 회전각에 비례합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-29"
+          aria-labelledby="slide-29-title"
+        >
+          <p class="section-kicker">Source slide 29 · 예제 조건</p>
+          <h2 class="section-title" id="slide-29-title">
+            급확대 관의 Wall friction(벽 마찰력)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-29.jpg"
+                alt="Lecture 3 슬라이드 29: 급확대 관의 Wall friction(벽 마찰력)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 29/54</span>
+              <span>Part 2 · 00:33:15–00:35:44</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>확대부에서 달라지는 것</h3>
+              <p>
+                관의 단면이 A₁에서 A₂로 갑자기 넓어집니다. ρ, A₁, A₂, p₁, p₂,
+                V₁이 주어졌을 때 V₂와 관 벽이 유체에 주는 마찰력의 크기 F_f를
+                구합니다. 확대 모서리의 annular ring(환형 면)에는 p_w≈p₁이라는
+                근사를 적용합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>힘 목록에서 빠뜨리기 쉬운 면</h3>
+              <p>
+                입구 면적 A₁과 출구 면적 A₂만으로 압력힘을 끝내지 않습니다.
+                확대부의 고리 모양 면적 A₂−A₁에도 압력이 작용합니다. 유체만
+                둘러싸는 CV를 잡으면 관 벽이 유체에 주는 마찰이 외력으로
+                나타납니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-30"
+          aria-labelledby="slide-30-title"
+        >
+          <p class="section-kicker">Source slide 30 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-30-title">
+            급확대 관의 출구 속도
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-30.jpg"
+                alt="Lecture 3 슬라이드 30: 급확대 관의 출구 속도"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 30/54</span>
+              <span>Part 2 · 00:35:44–00:36:36</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Steady incompressible flow(정상 비압축성 유동)</h3>
+              <span class="formula">ρA₁V₁ = ρA₂V₂</span
+              ><span class="formula">V₂ = (A₁/A₂)V₁</span>
+              <p>
+                A₂&gt;A₁이므로 V₂&lt;V₁입니다. 밀도가 일정하고 저장량이 변하지
+                않는다는 조건으로 얻은 결과입니다. 이 속도를 다음 운동량식에
+                넣습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>속도가 줄어도 무조건 베르누이식은 아닙니다</h3>
+              <p>
+                sudden expansion(급확대)에는 분리·혼합과 에너지 손실이 생길 수
+                있습니다. 여기서는 압력 p₁, p₂가 주어지고 운동량 수지로 마찰력을
+                구합니다. 손실을 무시한 베르누이식으로 압력 차를 임의 대체하지
+                않습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 모델 선택과 손실 조건</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-31"
+          aria-labelledby="slide-31-title"
+        >
+          <p class="section-kicker">Source slide 31 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-31-title">
+            급확대부의 압력힘과 마찰력
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-31.jpg"
+                alt="Lecture 3 슬라이드 31: 급확대부의 압력힘과 마찰력"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 31/54</span>
+              <span>Part 2 · 00:36:36–00:39:58</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>x방향 운동량 수지</h3>
+              <span class="formula"
+                >p₁A₁ + p_w(A₂ − A₁) − p₂A₂ − F_f = ṁ(V₂ − V₁)</span
+              >
+              <p>
+                오른쪽을 +x로 두면 입구와 환형 면의 압력힘은 양수, 출구 압력힘과
+                벽 마찰력은 음수입니다. ṁ=ρA₁V₁을 쓰고 p_w≈p₁을 적용합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>마찰력의 최종식</h3>
+              <span class="formula">F_f = A₂(p₁ − p₂) + ρA₁V₁²(1 − A₁/A₂)</span>
+              <p>
+                첫 항은 순압력힘, 둘째 항은 감소한 운동량 유량에 대응합니다. 두
+                항의 단위가 모두 N인지 확인합니다. F_f를 흐름 반대 방향의 양의
+                크기로 정의했으므로 음수 결과가 나오면 입력 자료나 p_w 근사,
+                방향 가정을 다시 점검해야 합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-32"
+          aria-labelledby="slide-32-title"
+        >
+          <p class="section-kicker">Source slide 32 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-32-title">
+            등속 이동하는 검사체적
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-32.jpg"
+                alt="Lecture 3 슬라이드 32: 등속 이동하는 검사체적"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 32/54</span>
+              <span>Part 2 · 00:40:06–00:41:39</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>물체와 함께 움직여도 관성계일 수 있습니다</h3>
+              <span class="formula">Vᵣ = V − V_B,　V_B = constant</span>
+              <p>
+                nondeforming CV(변형하지 않는 검사체적)가 일정한 속도 V_B로
+                병진하면, 그와 함께 움직이는 좌표계도 inertial
+                frame(관성계)입니다. 그 기준계에서 정의한 상대속도로 고정 CV와
+                같은 방식의 운동량 수지를 쓸 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>속도를 바꾸기 전에 기준계를 정합니다</h3>
+              <p>
+                질량유량에는 경계를 가로지르는 상대속도가 들어갑니다. 지상 기준
+                속도로 운동량을 계산하는 이동 CV식도 가능하지만 두 기준계를
+                섞으면 안 됩니다. 가속하거나 회전하는 기준계에는 관성력 등 추가
+                처리가 필요하며, 이 예제는 일정한 병진속도로 제한합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-33"
+          aria-labelledby="slide-33-title"
+        >
+          <p class="section-kicker">Source slide 33 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-33-title">
+            이동 베인의 상대속도와 제곱 법칙
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-33.jpg"
+                alt="Lecture 3 슬라이드 33: 이동 베인의 상대속도와 제곱 법칙"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 33/54</span>
+              <span>Part 2 · 00:41:39–00:43:43</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>베인에 도달하는 속도로 유량을 구합니다</h3>
+              <span class="formula">U = V₁ − V_B &gt; 0,　ṁ = ρAU</span>
+              <p>
+                물 제트가 베인을 따라잡는 상대속도를 U라고 둡니다. 베인 기준
+                입·출구 속력은 같은 U이고 출구 방향만 θ만큼 바뀐다고 가정합니다.
+                제트가 더 빠르다는 U&gt;0 조건이 필요합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>고정력의 성분</h3>
+              <span class="formula"
+                >Fₓ = ṁU(cosθ − 1) = ρA(V₁ − V_B)²(cosθ − 1)</span
+              ><span class="formula">Fᵧ = ṁU sinθ = ρA(V₁ − V_B)² sinθ</span>
+              <p>
+                상대속도가 질량유량과 단위 질량당 운동량 변화 양쪽에 들어가므로
+                힘이 상대속도의 제곱에 비례합니다. V_B=0이면 고정 베인의 식으로
+                돌아갑니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-33"
+              data-review-kind="error"
+            >
+              <h3>원본 오류 확인 · 이동 베인 식의 계수</h3>
+              <p>
+                원본 오른쪽 성분식의 ṁ(V₁−V_B)²A 표기는 앞의 ṁ(V₂−V₁) 관계 및
+                힘의 차원과 맞지 않습니다. ṁ=ρA(V₁−V_B)를 대입하면 계수는
+                ρA(V₁−V_B)²입니다. 본문에는 이 전개식을 사용했습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 질량유량 대입과 힘의 차원 확인</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-34"
+          aria-labelledby="slide-34-title"
+        >
+          <p class="section-kicker">Source slide 34 · 예제 조건</p>
+          <h2 class="section-title" id="slide-34-title">
+            움직이는 평판에 부딪히는 물 제트
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-34.jpg"
+                alt="Lecture 3 슬라이드 34: 움직이는 평판에 부딪히는 물 제트"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 34/54</span>
+              <span>Part 2 · 00:43:43–00:46:11</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>주어진 수치</h3>
+              <p>
+                제트 속력 V_j=20 m/s, 평판 속력 V_c=15 m/s, 제트 면적 A_j=3 cm²,
+                물의 밀도 ρ=1000 kg/m³입니다. 제트와 평판 모두 오른쪽으로
+                움직입니다. 평판의 가속도를 0으로 유지할 외력을 구합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>함께 움직이는 검사체적</h3>
+              <p>
+                평판 기준으로 유입 속력은 U=20−15=5 m/s입니다. 제트는 평판을
+                따라 위·아래로 대칭 유출한다고 가정합니다. 두 유출은 x방향
+                상대속도 성분이 0이지만, 유출 속력 자체가 0인 것은 아닙니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-35"
+          aria-labelledby="slide-35-title"
+        >
+          <p class="section-kicker">Source slide 35 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-35-title">
+            대칭 유출의 질량유량
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-35.jpg"
+                alt="Lecture 3 슬라이드 35: 대칭 유출의 질량유량"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 35/54</span>
+              <span>Part 2 · 00:46:32–00:48:08</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>상대 유입유량을 두 출구로 나눕니다</h3>
+              <span class="formula">A_j = 3×10⁻⁴ m²,　U = 5 m/s</span
+              ><span class="formula">ṁ_in = ρA_jU = 1.5 kg/s</span
+              ><span class="formula">ṁ₁ = ṁ₂ = 0.75 kg/s</span>
+              <p>
+                steady(정상), negligible weight(중량 무시), symmetric
+                outflow(대칭 유출)를 사용합니다. 마찰 손실을 무시하여 양쪽 상대
+                유출 속력도 U로 두면 각 출구 면적은 A_j/2입니다. 단순히
+                질량보존만으로 속력이나 면적 각각이 정해지는 것은 아닙니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-36"
+          aria-labelledby="slide-36-title"
+        >
+          <p class="section-kicker">Source slide 36 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-36-title">
+            평판을 등속으로 유지하는 힘
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-36.jpg"
+                alt="Lecture 3 슬라이드 36: 평판을 등속으로 유지하는 힘"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 36/54</span>
+              <span>Part 2 · 00:48:08–00:52:48</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>x방향은 유입 운동량을 제거합니다</h3>
+              <span class="formula">Rₓ = Σ_out ṁUₓ − Σ_in ṁUₓ = −ρA_jU²</span
+              ><span class="formula"
+                >Rₓ = −1000·0.0003·(20 − 15)² = −7.5 N</span
+              >
+              <p>
+                Rₓ는 외부 지지 장치가 평판·제트 CV에 가하는 힘입니다. 왼쪽으로
+                7.5 N을 가해야 평판이 더 가속하지 않습니다. 반대로 제트가 평판에
+                주는 추진력은 오른쪽 7.5 N입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>y방향은 대칭 유출끼리 상쇄됩니다</h3>
+              <span class="formula">Rᵧ = (ṁ_in/2)U + (ṁ_in/2)(−U) = 0</span>
+              <p>
+                각 출구에서 y운동량 유출이 존재하지만 그 부호가 반대입니다. 이
+                대칭 조건이 없다면 유출 분배와 y방향 힘을 별도로 계산해야
+                합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>0인 것은 출구의 x성분입니다</h3>
+              <p>
+                원본의 V₁=V₂=V_j−V_c=5 m/s는 평판 기준 유출 속력입니다. 강의에서
+                x방향 운동량 계산에 유출 속도를 0으로 넣는 대목은 x성분만을
+                뜻합니다. 전체 속력 5 m/s와 성분 Uₓ=0을 구분해야 합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 출구 방향과 상대속도 성분 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-37"
+          aria-labelledby="slide-37-title"
+        >
+          <p class="section-kicker">Source slide 37 · 단원 구분</p>
+          <h2 class="section-title" id="slide-37-title">
+            압력·속도·에너지의 관계로 확장합니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-37.jpg"
+                alt="Lecture 3 슬라이드 37: 압력·속도·에너지의 관계로 확장합니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 37/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="quiet-card">
+              <h3>세 번째 묶음</h3>
+              <p>
+                Bernoulli equation(베르누이 방정식)의 유도와 적용 범위를 살핀
+                뒤, angular momentum(각운동량)과 energy equation(에너지
+                방정식)을 다룹니다. 이 구간은 PDF를 바탕으로 설명하며 대응
+                강의와의 추가 대조가 남아 있습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-38"
+          aria-labelledby="slide-38-title"
+        >
+          <p class="section-kicker">Source slide 38 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-38-title">
+            Bernoulli equation(베르누이 방정식)의 네 조건
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-38.jpg"
+                alt="Lecture 3 슬라이드 38: Bernoulli equation(베르누이 방정식)의 네 조건"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 38/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>압력·속력·높이가 연결됩니다</h3>
+              <span class="formula">p/ρ + V²/2 + gz = constant</span>
+              <p>
+                각 항은 단위 질량당 에너지이며 단위는 J/kg=m²/s²입니다. V는
+                속력, z는 기준면에서 위로 잰 높이, g는 중력가속도입니다. 같은
+                높이에서 V가 증가하면 조건을 만족하는 같은 유선의 p는
+                감소합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>관계식을 쓰기 전에 확인할 조건</h3>
+              <p>
+                <strong
+                  >steady(정상), incompressible(비압축성), frictionless(마찰
+                  영향 무시), along a streamline(같은 유선)</strong
+                >을 함께 확인합니다. 벽면 전단, 강한 혼합, 기계가 공급·추출하는
+                일의 효과가 중요하면 그대로 적용할 수 없습니다. 서로 다른 유선의
+                상수는 일반적으로 다를 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>낮은 Mach number(마하수)의 의미</h3>
+              <p>
+                슬라이드의 M&lt;0.3은 기체 압축성 효과를 작게 보는 흔한 속도
+                기준입니다. 이 값만으로 모든 밀도 변화가 사라지는 것은 아닙니다.
+                큰 온도 변화·열전달이 있는 문제에서는 밀도 일정 가정을 별도로
+                검토합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 비압축성 근사의 적용 범위</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-39"
+          aria-labelledby="slide-39-title"
+        >
+          <p class="section-kicker">Source slide 39 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-39-title">
+            미소 유관의 질량과 유선 방향 운동량
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-39.jpg"
+                alt="Lecture 3 슬라이드 39: 미소 유관의 질량과 유선 방향 운동량"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 39/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>유선 방향 좌표 s와 작은 검사체적</h3>
+              <span class="formula">dVol = A ds,　dṁ = −(∂ρ/∂t)A ds</span>
+              <p>
+                s는 streamline(유선)을 따라 증가하는 거리입니다. 질량유량의
+                입·출구 차 dṁ에 대해 질량 축적률과 순유출률의 합은 0입니다. 미소
+                요소가 작다고 해서 비정상 축적률을 처음부터 0으로 두지 않습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>압력과 중력의 유선 방향 성분</h3>
+              <span class="formula">ΣdF_s = −A dp − ρgA dz</span
+              ><span class="formula">ΣdF_s = ∂(ρV)/∂t · A ds + d(ṁV)</span>
+              <p>
+                점성력을 무시하고 유선 방향으로 운동량 수지를 씁니다. 압력은 양
+                끝면뿐 아니라 기울어진 옆면에도 작용하므로 순 유선 방향 압력힘은
+                1차 미소량에서 −A dp입니다. 중력 성분은 ds sinθ=dz를 사용하면
+                −ρgA dz로 정리됩니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-39"
+              data-review-kind="error"
+            >
+              <h3>원본 오류 확인 · 질량 축적항의 미소 체적</h3>
+              <p>
+                원본 질량식 중간의 ∂ρ/∂t에는 미소 체적 A ds가 함께 있어야
+                합니다. 바로 아래의 dṁ 식과 차원을 맞추어 위 본문에 A ds를
+                유지했습니다. ∂ρ/∂t만으로는 kg/s가 아니라 kg/(m³·s)가 됩니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 앞뒤 연속방정식과 차원 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-40"
+          aria-labelledby="slide-40-title"
+        >
+          <p class="section-kicker">Source slide 40 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-40-title">
+            연속방정식으로 항을 소거합니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-40.jpg"
+                alt="Lecture 3 슬라이드 40: 연속방정식으로 항을 소거합니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 40/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>곱의 미분을 전개하기</h3>
+              <span class="formula">∂(ρV)/∂t = V∂ρ/∂t + ρ∂V/∂t</span
+              ><span class="formula">d(ṁV) = ṁ dV + V dṁ</span>
+              <p>
+                앞 페이지의 dṁ=−(∂ρ/∂t)A ds를 넣으면 V(∂ρ/∂t)A ds와 Vdṁ이
+                상쇄됩니다. 또 ṁ=ρAV를 넣고 ρA로 나누면 아래 유선 방향 운동식이
+                됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>비정상 항을 남긴 유선 적분</h3>
+              <span class="formula">(∂V/∂t) ds + dp/ρ + V dV + g dz = 0</span
+              ><span class="formula"
+                >∫₁²(∂V/∂t) ds + ∫₁² dp/ρ + (V₂² − V₁²)/2 + g(z₂ − z₁) = 0</span
+              >
+              <p>
+                첫 적분은 local acceleration(국소 가속도)에 해당합니다. 정상
+                유동이면 이 항이 0입니다. ρ가 변하면 압력 적분을 곧바로
+                (p₂−p₁)/ρ로 바꿀 수 없으므로 상태 관계가 필요합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-41"
+          aria-labelledby="slide-41-title"
+        >
+          <p class="section-kicker">Source slide 41 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-41-title">
+            정상 비압축성 베르누이식
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-41.jpg"
+                alt="Lecture 3 슬라이드 41: 정상 비압축성 베르누이식"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 41/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>두 조건을 추가해 적분합니다</h3>
+              <span class="formula"
+                >(p₂ − p₁)/ρ + (V₂² − V₁²)/2 + g(z₂ − z₁) = 0</span
+              ><span class="formula"
+                >p₁/ρ + V₁²/2 + gz₁ = p₂/ρ + V₂²/2 + gz₂</span
+              >
+              <p>
+                steady 조건으로 시간 항을 없애고 constant density(일정 밀도)로
+                압력 항을 적분한 결과입니다. 이전 유도에서 적용한 점성 무시와
+                같은 유선이라는 조건도 여전히 필요합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>이상적인 에너지 교환으로 읽기</h3>
+              <p>
+                pressure work(압력일), kinetic energy(운동에너지), potential
+                energy(위치에너지)가 서로 교환되는 관계로 해석할 수 있습니다.
+                높이도 같은 두 점이라면 압력이 낮아진 만큼 속력의 제곱이
+                증가합니다. 압력과 속도가 항상 반비례한다는 단순한 법칙으로
+                외우지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-42"
+          aria-labelledby="slide-42-title"
+        >
+          <p class="section-kicker">Source slide 42 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-42-title">
+            베르누이식을 적용할 수 없는 구간
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-42.jpg"
+                alt="Lecture 3 슬라이드 42: 베르누이식을 적용할 수 없는 구간"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 42/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>그림의 유선이 지나가는 영역을 확인합니다</h3>
+              <p>
+                터널의 벽 근처 boundary layer(경계층)와 뒤쪽 wake(후류)는
+                전단·혼합의 영향이 중요합니다. 벽과 후류에서 떨어진 유동은 해당
+                효과가 작다면 근사적으로 적용할 수 있습니다. 같은 그림 안에서도
+                적용 가능한 두 점과 불가능한 두 점이 다릅니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Propeller(프로펠러)와 Chimney(굴뚝)</h3>
+              <p>
+                프로펠러를 통과하며 기계적 에너지가 공급되면 단순 베르누이
+                상수는 그 전후에 같지 않습니다. 가열된 굴뚝에서도 온도·밀도
+                변화와 열전달이 중요합니다. 이런 구간은 에너지 방정식과 적절한
+                손실·기계 일 항을 사용해야 합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>적용 전 질문</h3>
+              <p>
+                두 점이 같은 유선에 있는가, 유동이 시간에 따라 변하는가, 밀도는
+                거의 같은가, 두 점 사이에 큰 점성 손실이나 기계 일이 있는가를
+                확인합니다. 단지 “유체가 흐른다”는 이유만으로 식을 선택하지
+                않습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 베르누이 조건의 문제풀이 적용</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-43"
+          aria-labelledby="slide-43-title"
+        >
+          <p class="section-kicker">Source slide 43 · 예제 조건</p>
+          <h2 class="section-title" id="slide-43-title">
+            Venturi tube(벤투리관)로 유량을 측정합니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-43.jpg"
+                alt="Lecture 3 슬라이드 43: Venturi tube(벤투리관)로 유량을 측정합니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 43/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>측정값은 압력 차입니다</h3>
+              <p>
+                수평 관을 매끄럽게 좁히면 throat(목)에서 단면적이 작아집니다.
+                정상 비압축성 유동의 연속방정식 때문에 속력이 커지고, 손실이
+                작으면 압력이 낮아집니다. 넓은 단면 1과 목 단면 2 사이의 압력 차
+                Δp=p₁−p₂로 mass flow rate(질량유량)를 구합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>두 관계식이 모두 필요합니다</h3>
+              <span class="formula">A₁V₁ = A₂V₂</span
+              ><span class="formula">p₁ − p₂ = ρ(V₂² − V₁²)/2</span>
+              <p>
+                Bernoulli 식만으로는 V₁과 V₂ 두 미지수를 결정할 수 없습니다.
+                질량보존이 두 속도를 연결해야 측정된 압력 차를 하나의 유량으로
+                바꿀 수 있습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-44"
+          aria-labelledby="slide-44-title"
+        >
+          <p class="section-kicker">Source slide 44 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-44-title">
+            벤투리관 질량유량의 유도
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-44.jpg"
+                alt="Lecture 3 슬라이드 44: 벤투리관 질량유량의 유도"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 44/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>지름비와 속도비</h3>
+              <span class="formula">β = D₂/D₁,　A₂/A₁ = β²,　V₁ = β²V₂</span
+              ><span class="formula">Δp = (ρ/2)V₂²(1 − β⁴)</span
+              ><span class="formula">V₂ = √[2Δp/{ρ(1 − β⁴)}]</span>
+              <p>
+                이 페이지의 β는 지름비이며 RTT의 단위 질량당 성질 β와는 다른
+                기호입니다. 지름비의 제곱이 면적비, 속도 제곱에는 다시 제곱되어
+                β⁴가 나타납니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Mass flow rate(질량유량)</h3>
+              <span class="formula">ṁ = ρA₂V₂ = A₂√[2ρΔp/(1 − β⁴)]</span>
+              <p>
+                A₂는 목의 단면적입니다. 0&lt;β&lt;1이고 Δp&gt;0인 수평 축소관
+                모델에 적용합니다. 밀도와 차압은 일관된 단위를 사용하며, 실제
+                유량계의 손실 보정은 이 이상식의 가정 밖입니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-44"
+              data-review-kind="error"
+            >
+              <h3>원본 오류 확인 · 마지막 식의 A₂ 누락</h3>
+              <p>
+                원본 마지막 등호 뒤의 근호식에는 A₂가 빠져 있습니다. 앞의
+                ṁ=ρA₂V₂에 구한 V₂를 대입하면 위 식처럼 A₂가 남습니다. 근호만의
+                단위는 kg/(m²·s)이며, 면적을 곱해야 질량유량 kg/s가 됩니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 질량유량 정의 대입과 단위 확인</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-45"
+          aria-labelledby="slide-45-title"
+        >
+          <p class="section-kicker">Source slide 45 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-45-title">
+            Angular momentum(각운동량)과 Torque(토크)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-45.jpg"
+                alt="Lecture 3 슬라이드 45: Angular momentum(각운동량)과 Torque(토크)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 45/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>운동량에 회전축까지의 거리가 들어갑니다</h3>
+              <span class="formula">H₀ = ∫_sys r × V dm,　β = r × V</span
+              ><span class="formula"
+                >ΣM₀ = d/dt ∫_CV ρ(r × V) dVol + ∮_CS ρ(r × V)(V · n) dA</span
+              >
+              <p>
+                r은 기준점 O에서 유체 입자까지의 위치벡터입니다. r×V의 방향은
+                오른손 법칙으로 정하고, 외적의 크기는 반지름과 그에 수직인 속도
+                성분에 의해 결정됩니다. 위 식은 고정된 관성 기준점 O와 고정 CV에
+                적용합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>정상·1차원 입출구</h3>
+              <span class="formula">ΣM₀ = Σ_out ṁ(r × V) − Σ_in ṁ(r × V)</span>
+              <p>
+                선운동량이 합력을 구했다면 각운동량은 장치에 가해지는 모멘트를
+                구합니다. 유입·유출 속력만 같아도 반지름이나 접선 성분이 다르면
+                각운동량 유량이 달라질 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>축 주위의 스칼라 식</h3>
+              <span class="formula">ΣM_z = Σ_out ṁrV_θ − Σ_in ṁrV_θ</span>
+              <p>
+                z축에 대한 모멘트에는 circumferential velocity(접선속도) V_θ가
+                기여합니다. 반지름 방향 속도는 r과 평행하므로 외적이 0입니다.
+                단위는 (kg/s)·m·(m/s)=N·m입니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 외적의 축방향 성분과 차원 설명</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-46"
+          aria-labelledby="slide-46-title"
+        >
+          <p class="section-kicker">Source slide 46 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-46-title">
+            Energy equation(에너지 방정식)의 적분형
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-46.jpg"
+                alt="Lecture 3 슬라이드 46: Energy equation(에너지 방정식)의 적분형"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 46/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>RTT에 단위 질량당 에너지를 넣습니다</h3>
+              <span class="formula"
+                >Q̇ − Ẇ = d/dt ∫_CV ρe dVol + ∮_CS ρe(V · n) dA</span
+              >
+              <p>
+                B=E, β=e를 넣은 고정 CV의 에너지 수지입니다. 왼쪽은 열과 일로
+                전달되는 에너지, 오른쪽은 내부의 저장량 변화와 유체가 경계를
+                통과하며 운반하는 에너지입니다. 모든 항은 에너지/시간
+                단위입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>부호 규약</h3>
+              <p>
+                heat added(들어오는 열) Q̇는 양수, work done by the
+                system(시스템이 외부에 하는 일) Ẇ도 양수입니다. 따라서 외부로
+                일을 많이 하면 CV의 에너지를 빼앗는 효과가 있어 Q̇−Ẇ로
+                나타납니다. 이 단계의 Ẇ에는 압력일도 포함됩니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-46"
+              data-review-kind="error"
+            >
+              <h3>원본 오류 확인 · 검사체적의 순에너지 유출</h3>
+              <p>
+                원본 설명 문장의 우변은 “CV 내부 에너지 변화율”만 언급하지만,
+                바로 위 적분식에는 경계 통과 항도 있습니다. 열린 CV에서는 저장량
+                변화만으로 에너지 수지를 끝낼 수 없습니다. 또한 원본 시간미분의
+                d/dx 표기는 d/dt로 읽어야 합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · RTT와 에너지 수지의 항·미분 변수 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-47"
+          aria-labelledby="slide-47-title"
+        >
+          <p class="section-kicker">Source slide 47 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-47-title">
+            내부에너지·운동에너지·압력일
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-47.jpg"
+                alt="Lecture 3 슬라이드 47: 내부에너지·운동에너지·압력일"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 47/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Total specific energy(단위 질량당 총에너지)</h3>
+              <span class="formula">e = u + V²/2 + gz</span>
+              <p>
+                u는 분자 수준의 내부에너지이고, V²/2와 gz는 거시적인
+                운동·위치에너지입니다. 셋 모두 J/kg입니다. 에너지식의 V²에는
+                속도의 크기 제곱을 넣으므로 운동량식의 벡터 V와 구별합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>일을 나누어 세기</h3>
+              <span class="formula">Ẇ = Ẇ_s + Ẇ_press + Ẇ_viscous</span
+              ><span class="formula">Ẇ_press = ∮_CS p(V · n) dA</span>
+              <p>
+                shaft work(축일)는 터빈·펌프처럼 기계 장치로 전달되는 일입니다.
+                유출 시 유체가 바깥을 밀어내는 압력일은 양수, 유입을 밀어 넣는
+                압력일은 음수입니다. 적절한 검사면에서 점성응력의 일률을
+                무시하면 압력일과 축일을 분리하여 정리할 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>점성 일 무시와 내부 손실 0은 다릅니다</h3>
+              <p>
+                검사면에서 점성응력이 하는 일을 무시했다고 해서 장치 내부의
+                마찰·혼합 손실까지 없어진 것은 아닙니다. 내부에서 기계적
+                에너지가 내부에너지로 바뀌는 효과는 에너지 수지와 뒤의 head
+                loss(손실수두)에 반영됩니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 경계의 일률과 내부 비가역성 구분</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-48"
+          aria-labelledby="slide-48-title"
+        >
+          <p class="section-kicker">Source slide 48 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-48-title">
+            압력일을 묶으면 Enthalpy(엔탈피)가 나타납니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-48.jpg"
+                alt="Lecture 3 슬라이드 48: 압력일을 묶으면 Enthalpy(엔탈피)가 나타납니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 48/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>저장량은 e, 통과량은 e+p/ρ</h3>
+              <span class="formula"
+                >Q̇ − Ẇ_s = d/dt ∫_CV ρe dVol + ∮_CS ρ(e + p/ρ)(V · n) dA</span
+              ><span class="formula">h = u + p/ρ</span>
+              <p>
+                압력일을 오른쪽으로 옮기면 유체가 운반하는 내부에너지 u와 압력일
+                p/ρ가 합쳐집니다. 이것이 specific enthalpy(비엔탈피) h입니다.
+                저장항까지 자동으로 h로 바꾸는 것은 아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>정상·1차원 포트의 에너지 수지</h3>
+              <span class="formula"
+                >Q̇ − Ẇ_s = Σ_out ṁ(h + V²/2 + gz) − Σ_in ṁ(h + V²/2 + gz)</span
+              >
+              <p>
+                정상 조건에서는 저장항이 0입니다. 질량유량은 포트별 양의 크기로
+                넣고, 출구 합에서 입구 합을 뺍니다. 축일이 없는 장치는
+                Ẇ_s=0이며, adiabatic(단열)이라는 조건이 주어져야 Q̇=0으로 둘 수
+                있습니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-48"
+              data-review-kind="error"
+            >
+              <h3>원본 표기 교정 · 시간에 대한 축적률</h3>
+              <p>
+                첫 번째 에너지식의 저장항에 있는 d/dx는 시간 변화율 d/dt로
+                읽어야 합니다. 공간미분이면 다른 항과 에너지/시간 차원이 맞지
+                않습니다. 위 본문에서는 시간미분을 사용했습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 에너지 축적항의 독립변수 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-49"
+          aria-labelledby="slide-49-title"
+        >
+          <p class="section-kicker">Source slide 49 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-49-title">
+            한 입구·한 출구의 에너지식
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-49.jpg"
+                alt="Lecture 3 슬라이드 49: 한 입구·한 출구의 에너지식"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 49/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>단위 질량당 에너지로 나눕니다</h3>
+              <span class="formula"
+                >Q̇ − Ẇ_s = ṁ[h₂ − h₁ + (V₂² − V₁²)/2 + g(z₂ − z₁)]</span
+              ><span class="formula"
+                >q − w_s = h₂ − h₁ + (V₂² − V₁²)/2 + g(z₂ − z₁)</span
+              ><span class="formula">q = Q̇/ṁ,　w_s = Ẇ_s/ṁ</span>
+              <p>
+                정상 한 입구·한 출구이므로 ṁ₁=ṁ₂=ṁ입니다. h는 여기서 J/kg 단위의
+                비엔탈피이며 높이가 아닙니다. q와 w_s도 J/kg입니다. 슬라이드의
+                “1-inlet, 2-outlet”은 번호 1의 입구와 번호 2의 출구를 뜻합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Head form(수두형)</h3>
+              <span class="formula"
+                >q/g − w_s/g = [u₂/g + p₂/(ρ₂g) + V₂²/(2g) + z₂]</span
+              ><span class="formula"
+                >　− [u₁/g + p₁/(ρ₁g) + V₁²/(2g) + z₁]</span
+              >
+              <p>
+                에너지/질량을 g로 나누면 길이 m가 됩니다. 이를 head(수두)라고
+                부릅니다. h_q=q/g와 h_s=w_s/g의 h는 수두 표기이며, 앞의 비엔탈피
+                h와 단위를 확인해 구분합니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-49"
+              data-review-kind="caution"
+            >
+              <h3>표기·조건 주의 · 포트 수와 번호</h3>
+              <p>
+                제목과 실제 에너지식은 한 입구·한 출구 모델입니다. 원본에 겹쳐
+                보이는 추가 질량유량 첨자까지 세 번째 포트로 해석하지 않습니다.
+                실제로 여러 출구가 있으면 앞 페이지의 포트별 합을 사용해야
+                합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 입출구 설명과 에너지식의 항 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-50"
+          aria-labelledby="slide-50-title"
+        >
+          <p class="section-kicker">Source slide 50 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-50-title">
+            Pump head(펌프수두), Turbine head(터빈수두), Head loss(손실수두)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-50.jpg"
+                alt="Lecture 3 슬라이드 50: Pump head(펌프수두), Turbine head(터빈수두), Head loss(손실수두)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 50/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>기계와 손실을 포함한 수두 수지</h3>
+              <span class="formula">p₁/γ + V₁²/(2g) + z₁ + h_p</span
+              ><span class="formula">= p₂/γ + V₂²/(2g) + z₂ + h_t + h_f</span>
+              <p>
+                steady incompressible flow(정상 비압축성 유동), 한 입구·한
+                출구의 관계입니다. 여기서 γ=ρg는 비중량입니다. h_p는 펌프가 더해
+                주는 수두, h_t는 터빈이 가져가는 수두, h_f는 손실수두입니다. 각
+                항의 단위는 m입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>일과 열의 식에서 수두식으로</h3>
+              <span class="formula"
+                >h_f = (u₂ − u₁ − q)/g,　w_s/g = h_t − h_p</span
+              >
+              <p>
+                일반 에너지식에서 내부에너지 변화와 열전달을 정리한 결과입니다.
+                보통의 수동적 관로 손실은 h_f≥0으로 놓습니다. 펌프·터빈·손실
+                항이 모두 0이면 같은 조건의 베르누이 수두식으로 환원됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>출구 압력 계산의 부호 확인</h3>
+              <p>
+                다른 조건이 같다면 펌프 수두가 커질수록 도달 가능한 출구
+                압력이나 높이가 커지고, 터빈 수두와 손실이 커질수록 작아집니다.
+                세 항을 모두 “플러스”로 외우기보다 어떤 항이 유체의 기계적
+                에너지를 늘리는지 확인합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 수두 항의 에너지 방향 확인</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-51"
+          aria-labelledby="slide-51-title"
+        >
+          <p class="section-kicker">Source slide 51 · 예제 조건</p>
+          <h2 class="section-title" id="slide-51-title">
+            공기 터빈의 속도와 열전달
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-51.jpg"
+                alt="Lecture 3 슬라이드 51: 공기 터빈의 속도와 열전달"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 51/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>주어진 조건</h3>
+              <p>
+                공기가 터빈을 통과하면서 700 hp의 축동력을 외부에 제공합니다.
+                입·출구 지름은 모두 6 in입니다. 입구는 p₁=150 psi, T₁=300°F,
+                V₁=100 ft/s이며 출구는 p₂=40 psi, T₂=35°F입니다. 높이 차는
+                무시합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>기체의 밀도는 입·출구에서 다릅니다</h3>
+              <p>
+                ideal gas(이상기체) 모델과 R=1716 ft·lbf/(slug·°R), cₚ=6003
+                ft·lbf/(slug·°R)를 사용합니다. 풀이처럼 압력은 절대압력으로
+                해석합니다. V₂는 질량보존으로, 열전달률 Q̇는 에너지보존으로
+                구합니다. 단열이라는 조건은 주어지지 않았습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-52"
+          aria-labelledby="slide-52-title"
+        >
+          <p class="section-kicker">Source slide 52 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-52-title">
+            터빈의 밀도·질량유량·출구 속도
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-52.jpg"
+                alt="Lecture 3 슬라이드 52: 터빈의 밀도·질량유량·출구 속도"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 52/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>1. 절대온도와 압력 단위로 바꾸기</h3>
+              <span class="formula"
+                >T₁ ≈ 300 + 460 = 760°R,　T₂ ≈ 35 + 460 = 495°R</span
+              ><span class="formula"
+                >ρ₁ = (150·144)/(1716·760) ≈ 0.0166 slug/ft³</span
+              ><span class="formula"
+                >ρ₂ = (40·144)/(1716·495) ≈ 0.00679 slug/ft³</span
+              >
+              <p>
+                psi를 lbf/ft²로 바꾸려면 144를 곱합니다. Rankine(랭킨)은
+                절대온도이며 원본은 °F+460 근사를 사용합니다. 온도차 계산에서는
+                °F의 차와 °R의 차가 같습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>2. 질량유량을 유지합니다</h3>
+              <span class="formula">A₁ = A₂ = (π/4)(6/12)² ≈ 0.19635 ft²</span
+              ><span class="formula">ṁ = ρ₁A₁V₁ ≈ 0.325 slug/s</span
+              ><span class="formula">V₂ = ṁ/(ρ₂A₂) ≈ 244 ft/s</span>
+              <p>
+                입·출구 면적이 같아도 출구 밀도가 낮으므로 속도가 더 빨라집니다.
+                A₁V₁=A₂V₂가 아니라 ρ₁A₁V₁=ρ₂A₂V₂를 써야 합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-53"
+          aria-labelledby="slide-53-title"
+        >
+          <p class="section-kicker">Source slide 53 · 예제 풀이</p>
+          <h2 class="section-title" id="slide-53-title">
+            터빈 열전달률의 크기와 부호
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-53.jpg"
+                alt="Lecture 3 슬라이드 53: 터빈 열전달률의 크기와 부호"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 53/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>축일과 엔탈피 감소를 함께 계산합니다</h3>
+              <span class="formula"
+                >Q̇ = Ẇ_s + ṁ[cₚ(T₂ − T₁) + (V₂² − V₁²)/2]</span
+              ><span class="formula"
+                >Q̇ ≈ 700·550 + 0.325[6003(495 − 760) + (244² − 100²)/2]</span
+              ><span class="formula"
+                >Q̇ ≈ −1.24×10⁵ ft·lbf/s ≈ −5.73×10⁵ Btu/h</span
+              >
+              <p>
+                1 hp=550 ft·lbf/s, 1 Btu=778.2 ft·lbf를 사용하고 초를 시간으로
+                바꾸기 위해 3600을 곱합니다. 위 계산은 표시된 중간 반올림값을
+                그대로 사용했습니다. 원본은 약 −1.25×10⁵ ft·lbf/s, −5.78×10⁵
+                Btu/h로 제시합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>중간값의 반올림과 최종 수치</h3>
+              <p>
+                표시된 ṁ=0.325와 V₂=244를 그대로 대입하면 Q̇=−123,958.8 ft·lbf/s,
+                즉 −573,441 Btu/h입니다. 처음부터 밀도·유량을 반올림하지 않으면
+                약 −574,812 Btu/h이며, 원본의 −578,000 Btu/h와 약 0.6%의 수치
+                차이가 남습니다. 본문은 표시한 대입식의 계산 결과를
+                사용했습니다. 어느 계산에서도 열 방출이라는 부호는 같습니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 중간 반올림값과 원래 입력값의 수치 재계산</span
+                >
+              </div>
+            </div>
+            <div class="card">
+              <h3>음수는 열이 빠져나간다는 뜻입니다</h3>
+              <p>
+                Q̇를 유입 방향 양수로 정했으므로 열은 터빈에서 주변으로
+                방출됩니다. 들어온 공기의 엔탈피 감소는 축동력 생산, 출구
+                운동에너지 증가, 외부 열 방출로 나뉩니다. “터빈이면 단열”이라고
+                가정하면 주어진 상태와 맞지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-54"
+          aria-labelledby="slide-54-title"
+        >
+          <p class="section-kicker">Source slide 54 · 종합 정리</p>
+          <h2 class="section-title" id="slide-54-title">
+            검사체적 해석의 공통 풀이 흐름
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture03/slide-54.jpg"
+                alt="Lecture 3 슬라이드 54: 검사체적 해석의 공통 풀이 흐름"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 54/54</span>
+              <span>PDF 해설 · 대응 강의 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>같은 RTT, 서로 다른 β</h3>
+              <span class="formula"
+                >질량: β=1　|　운동량: β=V　|　에너지: β=e</span
+              >
+              <p>
+                먼저 구하려는 양을 정하고 계산이 쉬운 CV를 선택합니다. 입·출구와
+                표면력, 좌표·압력 기준을 표시한 뒤 정상·비압축성·1차원 포트 등의
+                조건을 필요한 곳에만 적용합니다. 식의 이름보다 각 항이
+                저장·유입·유출·외력·일 중 무엇인지 읽는 것이 중요합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>문제별 첫 식</h3>
+              <p>
+                유량·수위 변화는 질량보존, 지지력·추진력은 선운동량, 축 토크는
+                각운동량, 열·동력은 에너지보존에서 출발합니다. 압력과 속도만
+                연결할 때도 베르누이의 적용 조건을 먼저 확인합니다.
+              </p>
+            </div>
+            <div
+              class="callout source-review"
+              id="source-check-54"
+              data-review-kind="error"
+            >
+              <h3>원본 오류 확인 · 베르누이 조건의 연결</h3>
+              <p>
+                원본 마지막 문장의 “마찰이 무시되거나 유선을 따라가면”이라는
+                or만으로는 충분하지 않습니다. 정상·밀도 일정·점성 영향 무시·같은
+                유선이라는 조건이 함께 필요합니다. 노트에서는 38–42쪽에서 정리한
+                적용 조건을 유지합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 같은 자료의 베르누이 유도 조건 대조</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="exam-english"
+          aria-labelledby="exam-title"
+        >
+          <p class="section-kicker">Exam English</p>
+          <h2 class="section-title" id="exam-title">
+            정의·가정·부호를 영어 답안으로 옮기기
+          </h2>
+          <div class="note-stack">
+            <!-- 아래 exam-card를 문항 수만큼 복제한다. exam-english에 section-divider를 추가하지 않는다. -->
+            <div class="exam-card">
+              <h3>
+                Define a control volume and explain the role of the Reynolds
+                transport theorem.
+              </h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>A control volume
+                is a selected region in space, which may be fixed or moving. The
+                Reynolds transport theorem relates the rate of change of a
+                system property to its accumulation inside the control volume
+                and its net outward transport across the control surface.
+              </div>
+              <p style="margin-top: 12px">
+                define(정의하라)에는 대상, explain the role(역할을 설명하라)에는
+                연결 관계를 답합니다. CV를 반드시 고정 영역으로만 제한하지
+                않습니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>Distinguish volume flow rate from mass flow rate.</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>Volume flow rate
+                is the volume crossing a surface per unit time. Mass flow rate
+                is the corresponding mass per unit time. For uniform density,
+                the mass flow rate equals the density multiplied by the volume
+                flow rate.
+              </div>
+              <p style="margin-top: 12px">
+                체적유량 m³/s와 질량유량 kg/s를 구별하고, ṁ=ρQ의 밀도 일정
+                조건을 함께 적습니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>Derive the rate of rise of water in the tank.</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>For
+                incompressible water in a cylindrical tank, conservation of mass
+                gives A_tank dh/dt = Q_in − Q_out. Thus the water level rises
+                when the total inflow exceeds the total outflow.
+              </div>
+              <p style="margin-top: 12px">
+                derive(유도하라)는 결과만 쓰지 않고 저장량 ρA_tank h에서
+                출발합니다. 원본 예제는 유입 Q₁+Q₃, 유출 Q₂입니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>Why can a steady jet exert a force on a stationary vane?</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>Steady flow has
+                no local accumulation of momentum, but the entering and leaving
+                momentum fluxes can differ. The external force balances their
+                vector difference, even when the vane is stationary.
+              </div>
+              <p style="margin-top: 12px">
+                steady(정상)와 zero acceleration of every particle(모든 입자의
+                가속도 0)은 다릅니다. 유동 방향이 꺾이면 운동량 벡터가 변합니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>
+                What velocity determines the mass flow through a moving control
+                surface?
+              </h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>The mass flow is
+                determined by the normal component of the fluid velocity
+                relative to the control surface. This relative velocity is the
+                fluid velocity minus the local surface velocity.
+              </div>
+              <p style="margin-top: 12px">
+                relative to(∼에 대한 상대적인)와 normal component(법선 성분)가
+                핵심입니다. 평판 문제에서는 V_j−V_c를 사용합니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>State the assumptions for the usual Bernoulli equation.</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>The usual
+                Bernoulli equation applies to steady, incompressible flow with
+                negligible viscous effects along a streamline. It should not be
+                applied across a region where mechanical energy is added or
+                removed by a machine without accounting for that work.
+              </div>
+              <p style="margin-top: 12px">
+                state(서술하라)에는 네 조건을 함께 적습니다. 마찰 무시 또는 유선
+                중 하나만으로 충분하다고 답하지 않습니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>
+                Explain why the area is required in the venturi mass-flow
+                formula.
+              </h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>The velocity is
+                obtained from Bernoulli’s equation and continuity. Mass flow
+                rate is density times throat area times throat velocity, so the
+                throat area must remain in the final expression.
+              </div>
+              <p style="margin-top: 12px">
+                최종식의 A₂가 빠지면 단위가 kg/s가 되지 않습니다. 기호 β가
+                지름비라는 점도 명시합니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>
+                What does a negative heat-transfer rate mean with the stated
+                sign convention?
+              </h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>Heat transfer
+                into the control volume is positive. Therefore, a negative
+                heat-transfer rate means that heat leaves the control volume.
+                Shaft work is positive when the device delivers work to its
+                surroundings.
+              </div>
+              <p style="margin-top: 12px">
+                sign convention(부호 규약)을 먼저 말하고, 터빈의 음수 Q̇를 열
+                방출로 해석합니다. 음수 값을 계산 오류라고 보지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="glossary"
+          aria-labelledby="glossary-title"
+        >
+          <p class="section-kicker">Core glossary</p>
+          <h2 class="section-title" id="glossary-title">
+            Lecture 3 핵심 용어집
+          </h2>
+          <table class="term-table">
+            <thead>
+              <tr>
+                <th scope="col">English</th>
+                <th scope="col">한국어</th>
+                <th scope="col">계산에서의 의미</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>system</td>
+                <td>시스템</td>
+                <td>정체성이 고정된 입자 집합</td>
+              </tr>
+              <tr>
+                <td>control volume / control surface</td>
+                <td>검사체적 / 검사면</td>
+                <td>관찰할 영역 / 그 경계</td>
+              </tr>
+              <tr>
+                <td>Reynolds transport theorem</td>
+                <td>레이놀즈 수송정리</td>
+                <td>시스템 변화와 CV의 축적·순유출 연결</td>
+              </tr>
+              <tr>
+                <td>extensive / specific property</td>
+                <td>종량적 / 단위 질량당 성질</td>
+                <td>B와 β=dB/dm</td>
+              </tr>
+              <tr>
+                <td>volume flow rate</td>
+                <td>체적유량</td>
+                <td>Q, m³/s</td>
+              </tr>
+              <tr>
+                <td>mass flow rate</td>
+                <td>질량유량</td>
+                <td>ṁ, kg/s</td>
+              </tr>
+              <tr>
+                <td>outward unit normal</td>
+                <td>바깥 단위 법선</td>
+                <td>유출 내적 양수, 유입 내적 음수</td>
+              </tr>
+              <tr>
+                <td>accumulation / net outflow</td>
+                <td>축적 / 순유출</td>
+                <td>내부 시간 변화 / 유출 빼기 유입</td>
+              </tr>
+              <tr>
+                <td>continuity equation</td>
+                <td>연속방정식</td>
+                <td>질량보존의 유동 표현</td>
+              </tr>
+              <tr>
+                <td>steady / incompressible</td>
+                <td>정상 / 비압축성</td>
+                <td>시간 변화 없음 / 입자를 따라 밀도 변화 없음</td>
+              </tr>
+              <tr>
+                <td>streamline / streamtube</td>
+                <td>유선 / 유관</td>
+                <td>순간 속도에 접하는 곡선 / 유선들이 만든 관</td>
+              </tr>
+              <tr>
+                <td>momentum flux</td>
+                <td>운동량 유량</td>
+                <td>균일 포트에서는 ṁV</td>
+              </tr>
+              <tr>
+                <td>anchoring force</td>
+                <td>고정력</td>
+                <td>장치를 유지하기 위해 외부에서 가하는 힘</td>
+              </tr>
+              <tr>
+                <td>gauge / absolute pressure</td>
+                <td>게이지압력 / 절대압력</td>
+                <td>대기압 대비 / 완전 진공 대비</td>
+              </tr>
+              <tr>
+                <td>relative velocity</td>
+                <td>상대속도</td>
+                <td>유체 속도에서 검사면 속도를 뺀 값</td>
+              </tr>
+              <tr>
+                <td>inertial frame</td>
+                <td>관성계</td>
+                <td>등속 병진 기준계에서 추가 관성력 없이 Newton 법칙 적용</td>
+              </tr>
+              <tr>
+                <td>throat / venturi tube</td>
+                <td>목 / 벤투리관</td>
+                <td>좁은 단면 / 차압으로 유량을 측정하는 관</td>
+              </tr>
+              <tr>
+                <td>angular momentum / torque</td>
+                <td>각운동량 / 토크</td>
+                <td>회전 운동량 / 힘의 모멘트</td>
+              </tr>
+              <tr>
+                <td>enthalpy</td>
+                <td>엔탈피</td>
+                <td>h=u+p/ρ, 단위 질량당 J/kg</td>
+              </tr>
+              <tr>
+                <td>shaft work / heat transfer</td>
+                <td>축일 / 열전달</td>
+                <td>기계적 일 전달 / 온도 차에 의한 에너지 전달</td>
+              </tr>
+              <tr>
+                <td>pressure / velocity / elevation head</td>
+                <td>압력 / 속도 / 위치 수두</td>
+                <td>p/γ, V²/(2g), z</td>
+              </tr>
+              <tr>
+                <td>head loss</td>
+                <td>손실수두</td>
+                <td>기계적 에너지 손실을 길이로 표시</td>
+              </tr>
+              <tr>
+                <td>adiabatic</td>
+                <td>단열인</td>
+                <td>경계의 열전달이 없음</td>
+              </tr>
+              <tr>
+                <td>determine / derive / neglect</td>
+                <td>구하라 / 유도하라 / 무시하라</td>
+                <td>수치·식 결정 / 전개 근거 제시 / 해당 항의 근사 제외</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="asr-log"
+          aria-labelledby="asr-title"
+        >
+          <p class="section-kicker">Transcript audit</p>
+          <h2 class="section-title" id="asr-title">
+            스크립트와 원자료 대조 기록
+          </h2>
+          <div class="card">
+            <h3>슬라이드 아래의 표기 검토 안내</h3>
+            <p>
+              공식의 오류, 기호의 모호함, 설명에 필요한 조건을 구분했습니다.
+              원본 이미지의 식 자체는 바꾸지 않고 본문에서 채택한 식과 그 근거를
+              분리합니다.
+            </p>
+            <p>
+              <a href="#source-check-06">06쪽</a> ·
+              <a href="#source-check-17">17쪽</a> ·
+              <a href="#source-check-19">19쪽</a> ·
+              <a href="#source-check-21">21쪽</a> ·
+              <a href="#source-check-27">27쪽</a> ·
+              <a href="#source-check-33">33쪽</a> ·
+              <a href="#source-check-39">39쪽</a> ·
+              <a href="#source-check-44">44쪽</a> ·
+              <a href="#source-check-46">46쪽</a> ·
+              <a href="#source-check-48">48쪽</a> ·
+              <a href="#source-check-49">49쪽</a> ·
+              <a href="#source-check-54">54쪽</a>
+            </p>
+          </div>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col">근거</th>
+                <th scope="col">대조 항목</th>
+                <th scope="col">노트의 처리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>자료 범위</td>
+                <td>Part 1·2와 Part 4</td>
+                <td>
+                  Part 1·2만 Chapter 3입니다. Part 4는 Chapter 2 복습이며
+                  37–54쪽의 영상 근거가 아닙니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 6 · Part 1 17:08</td>
+                <td>겹친 cᵥ 첨자</td>
+                <td>강의자의 오타 지적에 따라 γ=cₚ/cᵥ로 표기합니다.</td>
+              </tr>
+              <tr>
+                <td>Part 1 23–35분</td>
+                <td>Rangus / Rain-Oil, control value</td>
+                <td>
+                  PDF의 Reynolds transport theorem, control volume과 대조해
+                  전문용어를 교정합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 17 · Part 1 47분</td>
+                <td>dh/dt의 부호</td>
+                <td>
+                  유입−유출로 수정하고, 전사에는 원래 발화와 편집자 Review
+                  note를 분리합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 19·21 · Part 2 4–11분</td>
+                <td>부력의 분류, 비균일 압력의 합력 0</td>
+                <td>
+                  부력은 압력 합력으로 구분하고, 비균일 게이지압력 적분을
+                  남깁니다.
+                </td>
+              </tr>
+              <tr>
+                <td>Part 2의 제트·베인 예제</td>
+                <td>water jack, vein, momentum vacation</td>
+                <td>jet, vane, momentum equation의 오인식으로 교정합니다.</td>
+              </tr>
+              <tr>
+                <td>PDF 27·33·36</td>
+                <td>각도 사분면, 이동 베인 계수, 속도 성분</td>
+                <td>
+                  부호 있는 성분으로 방향각을 검산하고 ρAU²를 사용합니다. 평판
+                  출구의 속력과 x성분을 구별합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 39·44</td>
+                <td>미소 체적 및 목 면적의 누락</td>
+                <td>
+                  질량 축적에는 A ds, 벤투리 질량유량에는 A₂를 유지합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 46·48·49</td>
+                <td>에너지 축적 변수와 포트 번호</td>
+                <td>
+                  시간미분 d/dt와 순유출항을 명시하고, 한 입구·한 출구 모델을
+                  유지합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 53·54</td>
+                <td>반올림과 베르누이 조건</td>
+                <td>
+                  터빈 열전달의 계산 정밀도를 밝히고, 베르누이의 네 조건을 함께
+                  적용합니다.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="sources"
+          aria-labelledby="sources-title"
+        >
+          <p class="section-kicker">Sources</p>
+          <h2 class="section-title" id="sources-title">사용한 강의 자료</h2>
+          <div class="card">
+            <h3>PDF와 강의 스크립트</h3>
+            <ul class="plain-list">
+              <li>
+                Chapter 3 · Integral Relations for a Control Volume, 54페이지.
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture03_original.pdf"
+                  >원본 PDF</a
+                >
+                ·
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture03_note.pdf"
+                  >가림막 제거 PDF</a
+                >
+              </li>
+              <li>
+                검수 영어 스크립트:
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/transcripts/lecture03/part01/lecture.txt"
+                  >Part 1</a
+                >
+                ·
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/transcripts/lecture03/part02/lecture.txt"
+                  >Part 2</a
+                >. 각 시각은 해당 편 시작 기준이며, 캡션은 주제 대응 구간입니다.
+              </li>
+              <li>
+                Part 1: 약 50분 46초, PDF 1–17쪽. Part 2: 약 53분, PDF 18–36쪽.
+              </li>
+              <li>
+                PDF 37–54쪽: 대응 강의 미제공. 영상에서의 추가 설명이나 구두
+                수정 여부는 확인하지 않았습니다.
+              </li>
+            </ul>
+            <p>
+              원본 이미지와 인쇄 수식을 그대로 보존했습니다. 채택한 식은 개념
+              카드에, 근거가 필요한 교정·보충은 별도의 편집자 보강 카드에
+              둡니다. 아래 목차의 페이지 번호는 PDF의 실제 순서이며, 일부 반복된
+              인쇄 쪽번호와 다를 수 있습니다.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="Lecture 3 목차">
+        <p class="toc__label">On this lecture</p>
+        <ol>
+          <li><a href="#overview">핵심 관계</a></li>
+          <li><a href="#concept-map">개념 지도</a></li>
+          <li><a href="#concept-summary">핵심 개념 요약</a></li>
+          <li><a href="#slide-01">01 · 표지</a></li>
+          <li><a href="#slide-02">02 · 해석할 물리량</a></li>
+          <li><a href="#slide-03">03 · 유량·질량보존</a></li>
+          <li><a href="#slide-04">04 · 해석 방법</a></li>
+          <li><a href="#slide-05">05 · 시스템의 법칙</a></li>
+          <li><a href="#slide-06">06 · 열역학 관계</a></li>
+          <li><a href="#slide-07">07 · 체적유량</a></li>
+          <li><a href="#slide-08">08 · 질량유량</a></li>
+          <li><a href="#slide-09">09 · RTT의 역할</a></li>
+          <li><a href="#slide-10">10 · 저장과 통과</a></li>
+          <li><a href="#slide-11">11 · RTT 적분식</a></li>
+          <li><a href="#slide-12">12 · 이동 검사면</a></li>
+          <li><a href="#slide-13">13 · 질량보존</a></li>
+          <li><a href="#slide-14">14 · 가정과 단순화</a></li>
+          <li><a href="#slide-15">15 · 유관</a></li>
+          <li><a href="#slide-16">16 · 탱크 조건</a></li>
+          <li><a href="#slide-17">17 · 탱크 풀이</a></li>
+          <li><a href="#slide-18">18 · 운동량 도입</a></li>
+          <li><a href="#slide-19">19 · 운동량 적분식</a></li>
+          <li><a href="#slide-20">20 · 포트의 운동량</a></li>
+          <li><a href="#slide-21">21 · 압력힘</a></li>
+          <li><a href="#slide-22">22 · 노즐 압력힘</a></li>
+          <li><a href="#slide-23">23 · 볼트 조건</a></li>
+          <li><a href="#slide-24">24 · 볼트 풀이</a></li>
+          <li><a href="#slide-25">25 · 고정 베인</a></li>
+          <li><a href="#slide-26">26 · 베인 힘 성분</a></li>
+          <li><a href="#slide-27">27 · 합력·방향</a></li>
+          <li><a href="#slide-28">28 · 회전각의 극한</a></li>
+          <li><a href="#slide-29">29 · 급확대 관</a></li>
+          <li><a href="#slide-30">30 · 급확대 속도</a></li>
+          <li><a href="#slide-31">31 · 벽 마찰력</a></li>
+          <li><a href="#slide-32">32 · 이동 CV</a></li>
+          <li><a href="#slide-33">33 · 이동 베인</a></li>
+          <li><a href="#slide-34">34 · 이동 평판</a></li>
+          <li><a href="#slide-35">35 · 대칭 유출</a></li>
+          <li><a href="#slide-36">36 · 평판의 힘</a></li>
+          <li><a href="#slide-37">37 · 에너지 도입</a></li>
+          <li><a href="#slide-38">38 · Bernoulli 조건</a></li>
+          <li><a href="#slide-39">39 · 미소 유관</a></li>
+          <li><a href="#slide-40">40 · Bernoulli 유도</a></li>
+          <li><a href="#slide-41">41 · 정상 Bernoulli</a></li>
+          <li><a href="#slide-42">42 · 적용 범위</a></li>
+          <li><a href="#slide-43">43 · Venturi 조건</a></li>
+          <li><a href="#slide-44">44 · Venturi 유량</a></li>
+          <li><a href="#slide-45">45 · 각운동량</a></li>
+          <li><a href="#slide-46">46 · 에너지 적분식</a></li>
+          <li><a href="#slide-47">47 · 압력일</a></li>
+          <li><a href="#slide-48">48 · 엔탈피</a></li>
+          <li><a href="#slide-49">49 · 단일 입출구</a></li>
+          <li><a href="#slide-50">50 · 수두 수지</a></li>
+          <li><a href="#slide-51">51 · 터빈 조건</a></li>
+          <li><a href="#slide-52">52 · 터빈 출구 속도</a></li>
+          <li><a href="#slide-53">53 · 터빈 열전달</a></li>
+          <li><a href="#slide-54">54 · 종합 정리</a></li>
+          <li><a href="#exam-english">시험 영어</a></li>
+          <li><a href="#glossary">용어집</a></li>
+          <li><a href="#asr-log">스크립트 교정</a></li>
+          <li><a href="#sources">출처</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span class="wordmark">MC2102 Fluid Mechanics</span>
+        <span
+          >Lecture 3 · Integral Relations for a Control Volume · 날짜
+          미기재</span
+        >
+      </div>
+    </footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>

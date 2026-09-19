@@ -13,6 +13,30 @@ logging.getLogger('pypdf').setLevel(logging.ERROR)
 
 
 class MaskTests(unittest.TestCase):
+    def test_chapter3_changes_only_reviewed_paint_operators(self):
+        source = ROOT / 'lecture_notes/lecture03_original.pdf'
+        manifest = json.loads((ROOT / 'scripts/lecture03_masks.json').read_text())
+        self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(), manifest['source_sha256'])
+        original = PdfReader(source)
+        cleaned = PdfReader(ROOT / 'lecture_notes/lecture03_note.pdf')
+        self.assertEqual(len(original.pages), 54)
+        self.assertEqual(len(cleaned.pages), 54)
+        changed = 0
+        for number, (a, b) in enumerate(zip(original.pages, cleaned.pages), 1):
+            self.assertEqual(a.extract_text(), b.extract_text(), f'page {number}')
+            old = ContentStream(a.get_contents(), original).operations
+            new = ContentStream(b.get_contents(), cleaned).operations
+            self.assertEqual(len(old), len(new))
+            allowed = {index for pair in manifest['pages'].get(str(number), []) for index in pair}
+            for index, ((args_a, op_a), (args_b, op_b)) in enumerate(zip(old, new)):
+                if index in allowed:
+                    self.assertIn(op_a, (b'f', b'S'))
+                    self.assertEqual((args_b, op_b), ([], b'n'))
+                    changed += 1
+                else:
+                    self.assertEqual((str(args_a), op_a), (str(args_b), op_b), (number, index))
+        self.assertEqual(changed, 108)  # 54 fills and 54 strokes, nothing else.
+
     def test_chapter2_source_and_manifest(self):
         source = ROOT / 'lecture_notes/lecture02_original.pdf'
         manifest = json.loads((ROOT / 'scripts/lecture02_masks.json').read_text())

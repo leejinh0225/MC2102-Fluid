@@ -19,6 +19,16 @@
         "original": "lecture02_original.pdf"
       },
       "ready": true
+    },
+    {
+      "slug": "lecture03",
+      "page": "lecture03.html",
+      "expectedSlides": 54,
+      "pdfs": {
+        "cleaned": "lecture03_note.pdf",
+        "original": "lecture03_original.pdf"
+      },
+      "ready": true
     }
   ]
 }

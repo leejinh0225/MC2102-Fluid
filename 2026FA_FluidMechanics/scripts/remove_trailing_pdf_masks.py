@@ -77,7 +77,12 @@ def main() -> None:
     parser.add_argument("output", type=Path)
     parser.add_argument("--interleaved-manifest", type=Path,
                         help="SHA-256-bound, manually inspected non-trailing mask paint operators")
+    parser.add_argument("--manifest-only", action="store_true",
+                        help="Suppress only the manifest's reviewed masks; do not infer trailing masks")
     args = parser.parse_args()
+
+    if args.manifest_only and not args.interleaved_manifest:
+        parser.error("--manifest-only requires --interleaved-manifest")
 
     if args.source.resolve() == args.output.resolve():
         raise ValueError("Output must be a new file; the source PDF is never overwritten")
@@ -106,7 +111,7 @@ def main() -> None:
 
     removed_by_page: dict[int, int] = {}
     for page_number, page in enumerate(writer.pages, start=1):
-        removed = strip_page_masks(page, writer)
+        removed = 0 if args.manifest_only else strip_page_masks(page, writer)
         removed += extra.get(page_number, 0)
         if removed:
             removed_by_page[page_number] = removed

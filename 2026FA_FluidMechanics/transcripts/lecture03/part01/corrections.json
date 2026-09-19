@@ -1,0 +1,137 @@
+{
+  "title": "Lecture 3 · Part 1 — reviewed English transcript",
+  "review_basis": "Chapter 3 source PDF, complete 30-second-window ASR, and selected difficult passages in an independent 15-second-window ASR recheck.",
+  "review_method": "Read the complete primary transcript and all 54 PDF pages. Reconcile technical terms and formulas with slide context; preserve timestamps and distinguish editorial notes from speech. This is not a word-for-word human listening certification.",
+  "notes": [
+    "Original recording timestamps are retained. Bracketed Review notes are editorial and were not spoken by the lecturer.",
+    "Part 1 covers PDF 1–17, Part 2 covers PDF 18–36. The available Week 3 Part 4 is Chapter 2 review and is not used as Chapter 3 evidence.",
+    "Uncertain arithmetic and modifiers are not reconstructed as confident verbatim speech."
+  ],
+  "corrections": [
+    {
+      "index": 19,
+      "text": "And then conservation of mass states that mass is not created or destroyed. So if you have a single inlet and single outlet, what's coming into the outlet has to be [Review note: For an open CV, equal inflow and outflow additionally require zero accumulation.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 28,
+      "text": "or the second physics law is a linear momentum equation, conservation of the linear momentum and that is based on the Newton's second law. So F equals ma and then if the mass is not changing, acceleration can be written in dv dt or if we have to think about the potential",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 30,
+      "text": "momentum. So here the derivative of the angular momentum h is the moment. So h is the angular momentum, and that should also be constant. [Review note: H is constant only when the net external moment about the chosen fixed inertial origin is zero. The displayed law is sum M = dH/dt.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 47,
+      "text": "in thermodynamics, we can express one thermodynamic property as a function of two other independent properties. So, P can be written as a function of rho and T, density and temperature. So, a good example is the ideal gas law. If it follows the ideal gas law, then equation of state can be written how",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 49,
+      "text": "and then we have, it's very light, so it is negligible in volume, and then even if we have to think about the molecular level, the collision is perfectly elastic, because there is no friction, and then another useful relation that you better know is the energy-temperature relation, [Review note: The ideal-gas volume assumption concerns molecular size, not the macroscopic volume occupied by the gas.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 50,
+      "text": "So here U is the internal energy and calorically perfect gas, meaning c_p and c_v are constant, right?",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 51,
+      "text": "So one of the c_p and c_v, c_p and c_v are specific heat at constant pressure and specific heat at constant volume.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 53,
+      "text": "or this H is the enthalpy, [unclear modifier] enthalpy, enthalpy. So this [unclear modifier] enthalpy is also related to the temperature by c_p. That is the constant, specific heat at constant pressure. Right? And then the ratio of the specific heat, gamma, is defined by c_p over c_v. [Review note: The modifier before enthalpy is not confidently resolved. PDF page 6 gives h=c_p T.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 54,
+      "text": "So this is typo, there is only a single c_v. So what I'm talking about is there are fundamental laws and you have to memorize a couple of additional relations. So what are we doing?",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 55,
+      "text": "So probably the most important topic for the fluid mechanics is the derivation of our flow-governing equation.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 67,
+      "text": "Then, mass flow rate, mass flow rate, so if you divide the volume flow rate by the density, sorry not divide, multiply by density, which means that rho is multiplied into the V dot N, then we have the rho V N DA, that is the mass flow rate.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 70,
+      "text": "Then the Reynolds transport theorem. So Reynolds transport theorem that mathematically connects which perspective? Tracking a specific moving system.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 82,
+      "text": "So here, integration of the CV, and we want to integrate the beta dm, this beta dm over the entire CV. And dm is rho dVol, then the compact form of the Reynolds transport theorem is dB_system/dt. [Review note: PDF notation: dm=rho dVol and B_CV=integral_CV beta rho dVol.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 86,
+      "text": "so it has two components. So the derivative of the property is you have a control volume that is fixed in space, right? So you are looking into, you have a control volume here. It is moving, it is coming in and it is coming out.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 92,
+      "text": "So here, from the dA, this is a unit normal vector, and then V in is this one.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 96,
+      "text": "So what's coming out and what's coming in? So that is the Reynolds transport theorem for an arbitrary fixed control volume. So left-hand side is the Lagrangian perspective, right-hand side is the Eulerian perspective, and then first term is the rate of change of your property B, beta, inside your control volume.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 97,
+      "text": "and then this is what's coming out, what's coming in. So we are looking into the net value, net amount of the flux. So this is so far the fixed control volume, but we can consider moving control volume or deformable control volume and their velocities be yes, then everything is the same except your velocity term has to be",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 99,
+      "text": "Then, if we rewrite the Reynolds transport theorem again, using Vr, here the flux term has Vr, product of Vr at n.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 104,
+      "text": "So for the conservation of a mass, our flow property B is the mass m. So beta = dB/dm will be 1. For a fixed CV, so this one,",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 105,
+      "text": "beta is 1, beta is 1, so we have this relation, and then I set it 0 because the mass is constant, so dm dt should be 0.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 111,
+      "text": "So this is the mass equation. And then in sophomore level, I will look into a very simple case. So one dimensional, for example, if it's one dimensional, our problem is only one dimensional. So we don't have to worry about Y direction and Z direction, only think about X direction. [Review note: The one-dimensional approximation refers to uniform inlet/outlet section properties; ports need not all point along the same axis.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 114,
+      "text": "Then, with that term cancelled out, we have only those two terms. So, what it means is that mass flow rate in inflow should be same as mass flow rate in outflow, okay?",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 118,
+      "text": "which means that rho1 and rho2 will be the same. So if we cancel out rho1 and rho2, what's left? is A1 V1 equals A2 V2, right? Or q1 equals q2. Okay, some examples. By imposing the mass flow rate, we can calculate the velocity",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 124,
+      "text": "So we have two inlets and derive an expression for water level change dH dt in terms of q1, q2, q3, and d So you have to worry about the volume flow rate of q1, q2, and q3. q3 is given, so dH dt",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 131,
+      "text": "So those have to be safe, right? The mass should not change. Then, literally, dhdt, if we solve for dhdt, dhdt will be q2 minus q1 minus q3 divided by pi d squared divided by 4, right? [Review note: The spoken/displayed numerator Q2-Q1-Q3 has the opposite sign to the preceding balance. With positive inlet magnitudes Q1,Q3, dh/dt=4(Q1+Q3-Q2)/(pi d^2). The original claim is retained, not silently replaced.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    }
+  ]
+}

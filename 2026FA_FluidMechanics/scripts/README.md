@@ -16,6 +16,14 @@ Chapter 2의 일부 가림막은 뒤쪽 텍스트보다 먼저 삽입되어 있�
 python .\remove_trailing_pdf_masks.py ..\lecture_notes\lecture02_original.pdf ..\lecture_notes\lecture02_note.pdf --interleaved-manifest .\lecture02_masks.json
 ```
 
+Chapter 3은 가림막 뒤에 이미지·텍스트가 이어지는 페이지가 있으므로, 끝부분 자동 제거를 사용하지 않고 검토한 54개 가림막의 채우기·테두리만 억제합니다. 아래 명령의 `--manifest-only`는 SHA-256이 일치하는 manifest가 반드시 필요합니다. 원본 텍스트·이미지·경로·좌표변환은 유지합니다.
+
+```powershell
+python .\remove_trailing_pdf_masks.py ..\lecture_notes\lecture03_original.pdf ..\lecture_notes\lecture03_note.pdf --interleaved-manifest .\lecture03_masks.json --manifest-only
+```
+
+원본 페이지 전체와 결과 렌더링을 시각 검토했으며, `test_pdf_masks.py`는 Chapter 3에서 지정한 paint 연산 외에는 바뀌지 않았는지 검사합니다.
+
 ## `render_pdf_slides.ps1`
 
 정리용 PDF를 웹 노트용 `1440 × 1080` JPG로 변환하고 파일명을 `slide-01.jpg` 형식으로 정규화합니다. 기존 이미지가 있으면 기본적으로 중단합니다.

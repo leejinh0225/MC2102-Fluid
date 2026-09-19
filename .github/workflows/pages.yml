@@ -36,7 +36,7 @@ jobs:
         run: node 2026FA_FluidMechanics/scripts/validate_site.mjs
 
       - name: Check layout regression coverage
-        run: node --test 2026FA_FluidMechanics/scripts/lecture_layout.test.mjs
+        run: node --test 2026FA_FluidMechanics/scripts/lecture_layout.test.mjs 2026FA_FluidMechanics/scripts/lecture03.test.mjs
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

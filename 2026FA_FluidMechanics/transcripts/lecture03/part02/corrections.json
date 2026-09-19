@@ -1,0 +1,167 @@
+{
+  "title": "Lecture 3 · Part 2 — reviewed English transcript",
+  "review_basis": "Chapter 3 source PDF, complete 30-second-window ASR, and selected difficult passages in an independent 15-second-window ASR recheck.",
+  "review_method": "Read the complete primary transcript and all 54 PDF pages. Reconcile technical terms and formulas with slide context; preserve timestamps and distinguish editorial notes from speech. This is not a word-for-word human listening certification.",
+  "notes": [
+    "Original recording timestamps are retained. Bracketed Review notes are editorial and were not spoken by the lecturer.",
+    "Part 1 covers PDF 1–17, Part 2 covers PDF 18–36. The available Week 3 Part 4 is Chapter 2 review and is not used as Chapter 3 evidence.",
+    "Uncertain arithmetic and modifiers are not reconstructed as confident verbatim speech."
+  ],
+  "corrections": [
+    {
+      "index": 6,
+      "text": "of the derivative. And then right-hand side is the Eulerian version of the flow derivative. So here, if we replace B by mV and beta by velocity V, then we have left-hand side, we have that, and right-hand side, that. And then based on the Newton's second law, so the linear momentum equation is based on the Newton's",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 9,
+      "text": "And then rho v we associate as a mass flux here. Density multiplied by the velocity. So here rho v is the mass flux here. So sigma f is v rho dt and v rho vn. So we derive that from the Reynolds transport theorem.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 13,
+      "text": "will look into the gravity, gravity is always there, and buoyancy has to be considered when we are looking into the hydrodynamics, hydrodynamics meaning the water is involved, and if there is some immersed body, body immersed in the water, so let's simplify the momentum equation, so 1D momentum [Review note: Buoyancy is the resultant of surface pressure forces, not an additional independent body force when that pressure distribution has already been integrated.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 16,
+      "text": "that is the momentum flow. So this is the 1D momentum flux at inlets and outlets. Then steady and nondeforming, we impose the steady assumption, which means that this DDT term partial partial T term will go to zero. So this first term will cancel out. We have only those two terms left.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 18,
+      "text": "Okay, so sigma F is m dot times (V2 minus V1). So this V is the, for this time, this is one, sorry, it doesn't have to be one-dimensional. So I just put the vector notation here.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 24,
+      "text": "Then there is a p gauge. Sorry, not a page. There has to be p_gauge times minus n. And the integration of that should also be zeros as well. Right? Does this make sense?",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 25,
+      "text": "because P gauge is the P minus PA, right? P gauge is the P minus PA. So if you integrate that along the DA, and you have the closed surface, so that will also be zero. Whenever you have a closed surface, and if it's not moving, right, it's fixed, then it will be zero, force will be zero because the acceleration is zero. [Review note: This zero-force claim is not generally valid for nonuniform gauge pressure. Only the spatially uniform atmospheric part cancels on a closed surface. A fixed CV can have nonzero net force balanced by momentum flux.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 26,
+      "text": "And then for a nozzle section, so just an example based on the linear momentum equation, so we have a nozzle, this is the inlet and this is the outlet and this is the sidewall. For a nozzle section shown, find the net pressure if d1 equals 3. So we have, this is one state and this is state 2. And we have absolute pressure",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 27,
+      "text": "of 40 pounds, 40 pound force here, 15 pound force everywhere, right? So if we look into the up and down, top and bottom, the pressure will be cancelled out. So we can translate that into a zero, zero pound force. And then left and right, if we, so this is 40 pound to the right, and this is 40 pound [Review note: The values 40 and 15 are pressures in psi, not forces in lbf. The resulting force on PDF page 22 is approximately 177 lbf.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 33,
+      "text": "When liquid flow passes through an elbow that changes the direction of the flow or water jet deflected by a vane into a different direction,",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 34,
+      "text": "function. And it's important to determine what is the anchoring force required to hold the elbow and vane stationary. It doesn't move, right? So this is an example. So what I'm going to do, what I'm doing right now is how to utilize the conservation of mass and conservation of the linear momentum equation in a simple one-dimensional case to calculate the resultant force.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 37,
+      "text": "So, at the one state, diameter is 12 inch, at the state 2, diameter is 6 inch, and then with inlet P1 is 38, pound-force per square inch, absolute, and P2 is, at the speed, is 56 feet per second, okay, and then water is at the",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 42,
+      "text": "Then our V1, V1 and theta state 1, our diameter is 12 inch, so pi D squared divided by 4 is the A2, V2 is given, right? V2 is 56 feet per second. [Review note: PDF page 24 uses A1 V1=A2 V2 and A1=pi D1^2/4.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 47,
+      "text": "Fx will be, if we set that as a positive, F of bolts is a negative, minus F bolts plus, and then 23 pressure, right? So, 38 negative minus 12 is a 23, 38 minus 15 multiplied by the area. [Review note: The pressure difference used in the equation is 38-15=23 psi. The intervening number wording is not reliable enough to reconstruct as a precise quotation.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 49,
+      "text": "multiplied by the 4 over pi, 12 by 12 squared will be 15, right, so I'm guessing this one, right, m dot, rho A, V multiplied by the V2 minus V1 is 56 minus 14, that is F. [Review note: The spoken arithmetic is unclear. PDF page 24: -F_bolts+(23 psi)pi(12 in)^2/4=(1.94 slug/ft^3)pi(12/12 ft)^2/4*(14 ft/s)*(56-14 ft/s).]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 58,
+      "text": "Right, so solution, select a control volume cuts through the inlet and exit of the jet through the vane support, and then probably in later chapters, we may consider friction, but here, we don't have to worry about vane friction because it's self-cancelling, so friction here and friction here will be self-cancelling, like I said, step two, so once we define the control volume, then we have to apply the method.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 59,
+      "text": "less conservation, right? So here M1 dot and M2 dot should be the same. So we have one inlet and we have one outlet. That should be the same as the M dot. And then let's apply the momentum equation and neglect the weight of the fluid and vane. Then force have to be equated by the MA, right?",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 62,
+      "text": "V1, sine, theta, right? And then V is the same. So in terms of the magnitude, sorry, V2, sorry, what am I doing? So here, give me one sec, I was, [non-lecture aside omitted]. So here, we have a V here and V1 and V2, right?",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 68,
+      "text": "phi, so inverse tangent of Fy over Fx, right, that will be 90 plus theta over 2, right, because, so there is 9 over 90 minus theta, and that is the 90 minus theta, so phi will be 90 plus theta divided [Review note: Use the signed components with atan2(Fy,Fx), or 180 degrees minus atan(Fy/abs(Fx)); the final direction is 90 degrees plus theta/2.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 78,
+      "text": "So determine the drag force exerted by a flat plate on the flow over it.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 80,
+      "text": "on the corner annular, annular ring as shown, right? And it is a separation. So later on, I will talk again about the separation and sub-point.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 81,
+      "text": "So here, P1, V1, A1 is given here, and also P2 is given, and A2 is given, rho are given, find V2 and the wall friction. So here, what we do is the momentum equation, right? So again, number one step is select the control volume, so that will be our control volume, and then number two, apply the mass conservation",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 94,
+      "text": "duration. In this case, the momentum equation is still applicable except that the velocity V should be treated as the relative velocity, right? So example 1 is reconsider the previous example assuming the vane is moving at a constant velocity VB here. Find the component, find the force of the force in terms of the component fx and fy of the component.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 96,
+      "text": "V_B plus V_A/B. So VR will be V1 minus VB. Why did I take the V1? Because the V1, this is V1 and this is V2, and V1 and V2 are the same in magnitude but then different in the directions, right? So VB is in this direction, so I just took the V1, VR is V1 minus VB.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 97,
+      "text": "three. They are in the same direction. Then number two, apply the mass conservation at the inlet and outlet. So m dot m to dot equal m dot where m dot is rho va. So here v should be replaced by the relative velocity. So v1 minus vb. And then let's apply the linear momentum equation. So summation of the all forces should be",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 98,
+      "text": "is the m dot v2 minus m dot v1, right? And then here, fx is, so first component, so v2, so we have to have x and y component from here as well, so we have the same, m dot vr cosine theta minus 1, fy will be m dot vr sine theta, and vr is v1 minus vb, so we have that relation. [Review note: PDF page 33 has a coefficient error in the expanded expressions: m_dot*Vr = rho*A*Vr^2, not m_dot*A*Vr^2.]",
+      "reason": "원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 99,
+      "text": "Okay, pretty straightforward. And another example of the moving control volume, I think that is the last example of the momentum equation. So let's stick with me. So example, a water jet of velocity Vj impinges normal to a plate that also moves at the velocity of Vc.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 107,
+      "text": "so M.out is here and here so that was the state, where the state was, state 1 is the top, this is state 1, state 1 is state 2 that is out so density should be the same right so rho 1, A1, V1 at the top and then mass flow rate at the bottom outlet, rho 2, A2",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    },
+    {
+      "index": 110,
+      "text": "So V1 equals same as the V2, and then that should be Vj minus Vc, right? Because there is [unclear word; context: constant translational velocity], it is moving at a constant velocity, right? So V1 and V2 should be the same, because it is also symmetric, right? So this one and that one should be the same, and then that should be the same as the V1 and V2, that would be 20 minus 15, right? [Review note: Equal relative inlet and outlet speed also uses the idealized negligible-loss jet model; constant plate velocity alone is insufficient.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 111,
+      "text": "equals 5 meters per second, then fx will be from here, we said v out as zeros, right? So we only have the rx is from the in, right? Because v out is the opposite direction, so minus mj dot vj, [Review note: Zero outlet velocity in the x momentum balance means its x component. The relative outlet speed is 5 m/s, directed vertically.]",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음. 원자료의 조건·오류 또는 발화 불확실성을 편집자 주석으로 분리."
+    },
+    {
+      "index": 113,
+      "text": "Then Rx is a simple numerical insertion. 1000, rho, 1000, Aj is 0.0003 and Vj is 20, Vc is 15. You have to square it. Then there'll be minus 7.5 Newton.",
+      "reason": "원본 PDF·전후 문맥과 대조한 전문용어·기호·명백한 오인식 교정. 불확실한 수치·수식 발화는 임의 복원하지 않음."
+    }
+  ]
+}

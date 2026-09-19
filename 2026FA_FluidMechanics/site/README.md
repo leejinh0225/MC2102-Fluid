@@ -7,6 +7,8 @@
 - `index.html`: 렉처 목록. 강조된 읽기 버튼과 중립색 PDF 두 버튼
 - `downloads.html`: 렉처별 가림막 제거본·원본 PDF
 - `lecture01.html`: 공통 레이아웃과 집필 방식의 기준 페이지
+- `lecture02.html`: 유체의 압력 분포, 32장
+- `lecture03.html`: 검사체적의 적분 관계, 54장. 1–36쪽은 Part 1·2 대조, 37–54쪽은 PDF 기반 해설
 - `templates/lecture-page.template.html`: 새 렉처를 시작할 때 복제하는 템플릿
 - `assets/css/styles.css`: 색상·글꼴·여백·카드·표·반응형 배치
 - `assets/js/site.js`: 스크롤 진행률과 현재 목차 표시

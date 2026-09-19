@@ -1,0 +1,551 @@
+1
+00:00:00,560 --> 00:00:30,440
+Hello everyone, hello everyone, today I am going to talk about integral relations for a control volume that I discussed in chapter 3. In previous chapter, chapter 2, we talked about hydrostatic pressure, right? And we saw in the single medium, hydrostatic pressure is proportional to the depth of the container, right?
+
+2
+00:00:30,440 --> 00:01:02,400
+So in chapter 3, we are going to look into more general basic laws of the fluid mechanics that governs the motion of the fluid and then last time we talked about how to relate the Eulerian perspective and the Eulerian perspective and Lagrangian perspective.
+
+3
+00:01:02,420 --> 00:01:32,260
+perspective. And the theorem, the mathematical formula that bridges two different perspectives is the Reynolds transport theorem. And I will introduce that. And then unlike the structural analysis where the object of interest is well defined, like a solid object, but in fluid, fluid typically is always in randomly
+
+4
+00:01:32,260 --> 00:01:58,120
+motion, it's randomly moving and also it flows, right? So what should be our system? So we are introducing you the control volume ideas. So we will, it could be the real, it has a realistic boundary or it could have the imaginary virtual boundary of the control volume.
+
+5
+00:01:58,120 --> 00:02:06,600
+So with that control volume, now we are only looking to the fluid flow inside that control volume only.
+
+6
+00:02:07,040 --> 00:02:21,760
+So once we define the control volume, and what will be our basic laws of the fluid mechanics is the conservation of mass flow rate,
+
+7
+00:02:22,000 --> 00:02:27,160
+and then momentum, whether that could be the linear momentum or the angular momentum,
+
+8
+00:02:27,160 --> 00:02:51,280
+and then the third one is the energy conservation, conservation of the energy. And from the linear momentum equation, we can impose a common and commonly used some assumptions like, you know, steady, incompressible, or frictionless, right?
+
+9
+00:02:51,280 --> 00:03:01,960
+That is a huge assumption. If we impose those kind of assumptions, then our linear momentum equation turns into a Bernoulli equation.
+
+10
+00:03:03,000 --> 00:03:11,940
+And then that is a very famous relation that connects the relationship between the pressure and velocity.
+
+11
+00:03:12,700 --> 00:03:20,200
+So last time, if you remember the cavitation, I was talking about the vapor pressure as well.
+
+12
+00:03:20,200 --> 00:03:43,500
+So vapor pressure is a pressure where liquid becomes a vapor gas, so it can increase the temperature typically, but at a given temperature, if we reduce pressure low enough, then the vapor can be, sorry, the liquid can convert it to a vapor, right?
+
+13
+00:03:47,320 --> 00:04:12,500
+So when does this low pressure happen? I was taking an example of the propeller rotor and when it's rotating at the tip of the blade, they have the highest tangential velocity. So if we have a high velocity and we have a very locally low pressure, so that causes the liquid to evaporate.
+
+14
+00:04:12,500 --> 00:04:33,340
+and then generate the gas bubble. So that is the cavitation. And I told you the collapse of that bubble makes huge damage to the blade surface, right? So that's something that ship designer wants to avoid.
+
+15
+00:04:34,220 --> 00:04:39,240
+So Bernoulli equation can relate the relationship between the pressure and velocity.
+
+16
+00:04:39,240 --> 00:05:13,710
+Okay, so these are the topics of chapter three, and chapter three are relatively long, so I'm going to divide our discussion into three parts. Number one is this one, this is the first part, and then there is a second part, and there is a third part, so I will, you have a single lecture material, but then I'm going to
+
+17
+00:05:13,710 --> 00:05:42,810
+to divide my recording into three sections. So first I'll talk about what are the fundamental physics laws. I already talked about conservation of mass, momentum, and energy, right? So control volume is the object in fluid mechanics that we can apply these physics laws. And then we have to think about how much of the volume flow is coming into and out of the control volume,
+
+18
+00:05:42,810 --> 00:05:58,850
+and how much it is related to the mass rate. And Reynolds' transport theorem is a mathematical formula that connects the Eulerian perspective and Lagrangian perspective.
+
+19
+00:05:59,130 --> 00:06:12,390
+And then conservation of mass states that mass is not created or destroyed. So if you have a single inlet and single outlet, what's coming into the outlet has to be [Review note: For an open CV, equal inflow and outflow additionally require zero accumulation.]
+
+20
+00:06:12,390 --> 00:06:44,620
+in terms of the same amount has to be out in the one outlet. So to deal with those basic physics law, we can derive the flow governing equation. So calculation of the pressure, velocity, and density or temperature, so those can be available by solving the flow governing equation.
+
+21
+00:06:44,620 --> 00:07:15,760
+equation. And then to derive those governing equations, and this is the Navier-Stokes equation. And how we can derive, we have two different approaches. Number one is the integral form, and number two is the differential form. So our Navier-Stokes equation is the governing equation, and they can be written in terms of the integral form or a differential form.
+
+22
+00:07:15,760 --> 00:07:46,090
+and when we use an integral form, our fluid model should be in a finite control volume, so we will apply the large scale analysis, we can do the large scale analysis as well, like the weather prediction, you have to model the atmospheric, the atmosphere movement in the ocean,
+
+23
+00:07:46,090 --> 00:08:11,330
+side, and also the continent side, right? So in that case, you have to have the finite control volume with a large-scale analysis, or on the other hand, we have the differential analysis, and in this case, we are looking into an infinitesimally small control volume, and that is the small-scale analysis, okay?
+
+24
+00:08:11,330 --> 00:08:41,150
+Then, like I said last in the chapter 1, when we do the scale size experiment, I told you like a huge container ship or the huge aircraft, we cannot really do the real size testing, right, so we have the wind tunnel or water tunnel or cavitation tunnel and we put the scale down the model like, you know, one tenth of the aircraft or one tenth of the propeller
+
+25
+00:08:41,150 --> 00:09:05,150
+rotor, and we put it in the wind tunnel, or water tunnel, or cavitation tunnel, and we carry out experiment, but to impose the same condition, like, you know, this small aircraft is flying at Mach 3.0, then what should be the Reynolds number we have to think about, right?
+
+26
+00:09:05,150 --> 00:09:22,410
+So I will go through the dimensional analysis in chapter 5. So again, you know, probably I am talking almost like three times about the basic laws of the mechanics. So this is very important.
+
+27
+00:09:25,260 --> 00:09:45,360
+The first one is the conservation of the mass. I told you mass is not created or destroyed. So if we define a system, the mass of the system is a constant. Or the total derivative of that mass should be zero because it is a constant.
+
+28
+00:09:45,360 --> 00:10:13,780
+or the second physics law is a linear momentum equation, conservation of the linear momentum and that is based on the Newton's second law. So F equals ma and then if the mass is not changing, acceleration can be written in dv dt or if we have to think about the potential
+
+29
+00:10:13,780 --> 00:10:32,940
+changes in mass, then this mv should be considered for the derivatives. And then if there is some rotational motion, then rather than using linear momentum, it's easier to think about the angular momentum.
+
+30
+00:10:32,940 --> 00:10:45,280
+momentum. So here the derivative of the angular momentum h is the moment. So h is the angular momentum, and that should also be constant. [Review note: H is constant only when the net external moment about the chosen fixed inertial origin is zero. The displayed law is sum M = dH/dt.]
+
+31
+00:10:45,900 --> 00:10:56,460
+And then the third fundamental law of the fluid mechanics is the conservation of the energy.
+
+32
+00:10:56,460 --> 00:11:22,180
+energy. So that is based on the first law of thermodynamics. So the changes in the energy can be from the heat transfer or work done on the system. So what it means is that if we think about some control volume, and then we are thinking about the changes in the total energy in the control volume.
+
+33
+00:11:22,180 --> 00:11:32,960
+So if we think about the positive energy variation, which means that increase of the energy that can be done by the heat has to be added.
+
+34
+00:11:33,320 --> 00:11:38,040
+So when you say heat, there are three types, convection, conduction, and radiation.
+
+35
+00:11:38,540 --> 00:11:45,060
+So we have to think about the delta Q, and then work should be done on the system.
+
+36
+00:11:45,060 --> 00:11:56,580
+But probably in the Frank White's book, they define positive work as work done by the system.
+
+37
+00:11:56,960 --> 00:12:02,600
+So to be consistent with the increase of the energy, they put the negative sign here.
+
+38
+00:12:02,920 --> 00:12:10,660
+So throughout the chapter, you have to be very careful about the sign.
+
+39
+00:12:10,660 --> 00:12:37,880
+So for example, y will be the sign of the pressure. Pressure is always pointing into the surface, right? And then if we think about a unit element, then surface normal vector is always pointing out, right? So you have to be consistent. If we define your coming out as a positive, then coming in should be a negative, okay?
+
+40
+00:12:37,880 --> 00:12:47,540
+So I'll talk about that consistency in terms of the direction of the property in a few slides later.
+
+41
+00:12:49,630 --> 00:12:59,550
+And then some other useful laws of the fluid mechanics is the second law of thermodynamics.
+
+42
+00:12:59,930 --> 00:13:07,930
+So you are a sophomore student, so I assume you are taking the thermodynamics course
+
+43
+00:13:07,930 --> 00:13:17,070
+or you will be taking, right? So you will learn about the first law of thermodynamics, second law of the thermodynamics, and second law of the thermodynamics is about entropy.
+
+44
+00:13:17,810 --> 00:13:28,190
+So the total entropy of an isolated system can never decrease over time if it is spontaneous in the process, right?
+
+45
+00:13:28,190 --> 00:14:01,390
+okay so in spontaneous process okay okay so probably you will learn a reversible or irreversible right so this fluid mechanics is also related to the thermodynamics as well okay and then we use a term of state
+
+46
+00:14:01,390 --> 00:14:29,650
+states a lot. States meaning 상태. So we have to define the state or 상태 of the current system or gas, right? So typically we say state variable, state variable meaning pressure, density, temperature, and all others. And then in thermodynamics,
+
+47
+00:14:29,650 --> 00:14:58,930
+in thermodynamics, we can express one thermodynamic property as a function of two other independent properties. So, P can be written as a function of rho and T, density and temperature. So, a good example is the ideal gas law. If it follows the ideal gas law, then equation of state can be written how
+
+48
+00:14:58,930 --> 00:15:24,970
+Now, P equals rho RT. Rho is a density, T is a temperature, R is the specific gas constant, right? But this ideal gas assumption is valid. The second one is important. If we assume there is no intermolecular forces, so we don't have to worry about the molecular level phenomena.
+
+49
+00:15:24,970 --> 00:15:52,890
+and then we have, it's very light, so it is negligible in volume, and then even if we have to think about the molecular level, the collision is perfectly elastic, because there is no friction, and then another useful relation that you better know is the energy-temperature relation, [Review note: The ideal-gas volume assumption concerns molecular size, not the macroscopic volume occupied by the gas.]
+
+50
+00:15:52,890 --> 00:16:14,280
+So here U is the internal energy and calorically perfect gas, meaning c_p and c_v are constant, right?
+
+51
+00:16:14,580 --> 00:16:21,540
+So one of the c_p and c_v, c_p and c_v are specific heat at constant pressure and specific heat at constant volume.
+
+52
+00:16:21,540 --> 00:16:39,620
+Those are considered to be a constant. They don't change. Then we define that gas as a calorically perfect gas. And if it is calorically perfect gas, then internal energy is related to the temperature by specific heat at constant volume.
+
+53
+00:16:39,620 --> 00:17:08,230
+or this H is the enthalpy, [unclear modifier] enthalpy, enthalpy. So this [unclear modifier] enthalpy is also related to the temperature by c_p. That is the constant, specific heat at constant pressure. Right? And then the ratio of the specific heat, gamma, is defined by c_p over c_v. [Review note: The modifier before enthalpy is not confidently resolved. PDF page 6 gives h=c_p T.]
+
+54
+00:17:08,230 --> 00:17:25,750
+So this is typo, there is only a single c_v. So what I'm talking about is there are fundamental laws and you have to memorize a couple of additional relations. So what are we doing?
+
+55
+00:17:25,750 --> 00:17:37,050
+So probably the most important topic for the fluid mechanics is the derivation of our flow-governing equation.
+
+56
+00:17:37,310 --> 00:17:50,410
+Those are the Navier-Stokes equation. And later I will probably, by the end of chapter 3 and chapter 4, we will see the form of the Navier-Stokes equation.
+
+57
+00:17:50,410 --> 00:18:10,650
+and then they are quite highly non-linear and it includes a second derivative, all coupled. We have five equations, so it's all coupled. So the CFD, computational fluid mechanics, is exactly about how to solve that partial differential equation.
+
+58
+00:18:10,650 --> 00:18:23,870
+And you don't have to worry about it, but you have to know how those governing equations are derived and what individual terms of the governing equation represent.
+
+59
+00:18:25,160 --> 00:18:35,720
+So before we move on to the fundamental law, conservation of the mass, momentum and energy, I will define some important concepts.
+
+60
+00:18:35,720 --> 00:19:03,360
+the volume rate of flow and mass rate of flow, or volume flow rate and mass flow rate. So volume flow rate Q is defined as the amount of fluid swept through dA in time dt. So this is our control volume, this is our control volume, and then control surface that covers the control volume, that is a control surface.
+
+61
+00:19:03,360 --> 00:19:33,080
+surface, and we are looking into an elemental area, dA, where the unit normal vector is normal to the surface, right? In this direction. And then since the flow is moving, we have to think about the direction of the velocity. So you have to be aware the unit normal vector, the surface normal vector is not always
+
+62
+00:19:33,080 --> 00:20:07,660
+is aligned with the direction of the velocity. And what you have to think about is how much of the volume is moving in t. So this is the dA and then we have the velocity v over time t, delta t, that is the distance
+
+63
+00:20:09,480 --> 00:20:37,520
+distance where some property is going out of the dA. So now we are thinking about the volume flow rate through the dA over a given time in time dt. So Q is the integral. We have to think about the entire movement of that volume and since
+
+64
+00:20:37,520 --> 00:20:59,520
+Since we are looking into the amount that is directed into the v, but we are looking into the dA element, right? With the surface normal vector is n. So we have to see how much of the amount is moved in a v direction.
+
+65
+00:20:59,520 --> 00:21:19,600
+function. So we have two inner product, velocity vector and surface normal vector, dA. So that is the volume flow rate. Then that is the integration of the Vn, dA.
+
+66
+00:21:31,120 --> 00:21:48,980
+So where n is the unit normal vector to dA, positive when it's outward, our normal unit vector. So that is our definitive definition. So once you define positive as our, then that has to be consistent throughout the entire formulation.
+
+67
+00:21:53,340 --> 00:22:24,850
+Then, mass flow rate, mass flow rate, so if you divide the volume flow rate by the density, sorry not divide, multiply by density, which means that rho is multiplied into the V dot N, then we have the rho V N DA, that is the mass flow rate.
+
+68
+00:22:24,850 --> 00:22:53,270
+and then the over dot represents the derivative with respect to time, right? And if density and velocity are constant over the entire surface, then you can directly get this out and then surface have to be A, right? So M dot is density multiplied into the volume flow rate and that is the rho VA.
+
+69
+00:22:54,850 --> 00:23:08,150
+So rho is the density, V is the velocity, and A is the area. Units for the Q are the volume flow rate, meter cubed per second, and m-dot is the kilogram per second.
+
+70
+00:23:10,030 --> 00:23:25,910
+Then the Reynolds transport theorem. So Reynolds transport theorem that mathematically connects which perspective? Tracking a specific moving system.
+
+71
+00:23:25,910 --> 00:24:03,720
+when you are saying moving is the collection of the fluid element, okay, a certain system meaning a collection of certain elements, okay, connects the Lagrangian perspective, and then observing a fixed and stationary region, you know, control volume,
+
+72
+00:24:03,720 --> 00:24:33,100
+that perspective is the Eulerian. So Eulerian involves the fixed control volume. So this is a good example A and B and C. So A is the control volume, and this is a nozzle with a different area, so that control volume is fixed.
+
+73
+00:24:33,100 --> 00:24:52,160
+So this is the fixed control volume. Or the ship is moving, and then if you want to calculate the air or water resistance around the ship hull form, then this is a moving control volume, okay.
+
+74
+00:24:52,160 --> 00:25:18,180
+So I said surface, surface meaning the boundary that encloses that control volume. So this control volume can be moving, or this is a piston, and then if you think about this control volume, and depending on the motion of that piston, that can be deformable.
+
+75
+00:25:18,180 --> 00:25:49,700
+So that is the deforming control volume and control surface. So the desired conversion formula differs slightly according to whether the control volume is fixed, moving or deformable. But you can always get one form to another if you use the Reynolds transport theory.
+
+76
+00:25:49,700 --> 00:26:19,350
+So these are the fixed control volume in blue. So these are the control volume. And then it has the control surface, right? So this is the fixed control volume of Cv. And then we are looking into an elemental dA, where the surface normal is pointing outward, normal to dA.
+
+77
+00:26:19,350 --> 00:26:44,970
+and then this V in, and even this is a CV, it's not close, right? So some flow can coming in, V in at a V velocity, and then there is another elemental area, DA, and then some flow can be out, can be thrown out at a velocity of the V out, okay?
+
+78
+00:26:44,970 --> 00:27:16,360
+So we are looking into two different time states, so time t and time, t plus delta t. So here, db in is the elemental volume that was thrown into the control volume, db out is the elemental control volume that was out.
+
+79
+00:27:16,920 --> 00:27:46,360
+in given dt, right? So you have to get an idea of the control volume. And then inside the control volume, of course, there is a gas or fluid, right? So that fluid or gas can change in their property over time, delta t. What property? When you say property, meaning it could be the mass or it could be momentum or it could be the energy, right?
+
+80
+00:27:46,920 --> 00:28:15,010
+So, here, let capital B be any property of fluid, mass, momentum, and energy, and then beta is the amount of B per unit mass, so the relation between B and beta is the dBdm, and then B, that property is also like mass or momentum or energy,
+
+81
+00:28:15,010 --> 00:28:29,890
+So you have to think about that property in the entire control volume, because our control volume is the flow model where we will apply the conservation of mass, conservation of momentum, and conservation of the energy.
+
+82
+00:28:29,890 --> 00:28:59,110
+So here, integration of the CV, and we want to integrate the beta dm, this beta dm over the entire CV. And dm is rho dVol, then the compact form of the Reynolds transport theorem is dB_system/dt. [Review note: PDF notation: dm=rho dVol and B_CV=integral_CV beta rho dVol.]
+
+83
+00:28:59,110 --> 00:29:24,350
+What it means is that we are, so the left-hand side is the Lagrangian perspective, Lagrangian perspective, and then right-hand side is the Eulerian perspective, which means in Eulerian perspective, Lagrangian perspective meaning this is following, right?
+
+84
+00:29:24,350 --> 00:29:43,650
+This is following and then you are sitting on top of the element. So the proper derivation of the property is for you is simply this is sort of like felt as a fixed one, stationary one, right? So there will be db dt, that's all for him.
+
+85
+00:29:43,650 --> 00:30:07,040
+But if you see from the person on the ground, then this is not fixed, it's moving, right? So this is the expression that is related to the derivative of the B property over time.
+
+86
+00:30:07,040 --> 00:30:26,980
+so it has two components. So the derivative of the property is you have a control volume that is fixed in space, right? So you are looking into, you have a control volume here. It is moving, it is coming in and it is coming out.
+
+87
+00:30:26,980 --> 00:30:56,820
+So you have to think about that fixed control volume. And what the left term represents is we are looking into the time derivative of the property inside CV. Again, so left hand side is the time rate of change of your property inside your control volume over T.
+
+88
+00:30:56,980 --> 00:31:26,780
+Does it make sense? So this is a stationary term, right? So this is a total derivative. And then we are looking into the flow, outflow and inflow. So we are looking into the B, rho, V, N, D, A. So this is sort of like the flux term, right? So flux, beta flux, and
+
+89
+00:31:28,520 --> 00:31:51,910
+we have to evaluate those flux. So I said flux. Flux is a vector and then they can be coming in and coming out. That flux throughout the control surface. So this one, the second term, can be broken into two terms.
+
+90
+00:31:51,910 --> 00:32:24,940
+So flow terms of beta from the control volume are, so here, so V cosine theta, so here this is the V, V out, this is the V out, and this is the N, so the inner product of those two is the V cosine theta, right, V cosine theta, so there is the flux coming out,
+
+91
+00:32:26,700 --> 00:32:33,060
+through the control surface from the control volume, and then that represents the inflow here.
+
+92
+00:32:33,580 --> 00:32:41,040
+So here, from the dA, this is a unit normal vector, and then V in is this one.
+
+93
+00:32:41,260 --> 00:32:50,060
+So it does have different directions, right? So you have to have the negative here.
+
+94
+00:32:50,060 --> 00:33:10,400
+and then again the inner product of those two is the V cosine theta, dA out and dA in. But since we are integrating over the entire control surface, so the second term is we are looking into the surface only and calculate what's coming in and what's coming out.
+
+95
+00:33:10,400 --> 00:33:38,880
+Okay, so this one, the left-hand side, the first term of the right-hand side says what's changing inside your fixed control volume here, what's changing inside, and then the second one, so this is evaluated at the control volume, and the second term is what's coming in and what's coming out, so we are looking only into the surface, it doesn't look into the volume, okay,
+
+96
+00:33:38,880 --> 00:34:09,100
+So what's coming out and what's coming in? So that is the Reynolds transport theorem for an arbitrary fixed control volume. So left-hand side is the Lagrangian perspective, right-hand side is the Eulerian perspective, and then first term is the rate of change of your property B, beta, inside your control volume.
+
+97
+00:34:09,200 --> 00:34:39,490
+and then this is what's coming out, what's coming in. So we are looking into the net value, net amount of the flux. So this is so far the fixed control volume, but we can consider moving control volume or deformable control volume and their velocities be yes, then everything is the same except your velocity term has to be
+
+98
+00:34:39,490 --> 00:35:08,080
+replaced by the Vr. So Vr is the relative speed of V, so V minus Vs. V is the fluid velocity, and Vs is the control volume, is also changing the movie, so you have to have the relative velocity, so that is the Vr.
+
+99
+00:35:08,080 --> 00:35:25,750
+Then, if we rewrite the Reynolds transport theorem again, using Vr, here the flux term has Vr, product of Vr at n.
+
+100
+00:35:28,200 --> 00:35:38,760
+And also, for a fixed control volume, the volume elements do not vary, so the volume doesn't change, right?
+
+101
+00:35:38,760 --> 00:35:50,380
+So this d dt can be get in inside of the integral and use the partial term. So this is the fixed control volume case.
+
+102
+00:35:52,450 --> 00:36:02,550
+Then now talk about the conservation of the mass. So for the conservation of the mass, this is our Reynolds transport theorem.
+
+103
+00:36:02,550 --> 00:36:18,170
+and so whether for the conservation of mass or conservation of momentum and conservation of the energy, we will start from the Reynolds transport theorem.
+
+104
+00:36:18,570 --> 00:36:35,880
+So for the conservation of a mass, our flow property B is the mass m. So beta = dB/dm will be 1. For a fixed CV, so this one,
+
+105
+00:36:35,880 --> 00:36:48,220
+beta is 1, beta is 1, so we have this relation, and then I set it 0 because the mass is constant, so dm dt should be 0.
+
+106
+00:36:53,990 --> 00:37:10,170
+And then for the fixed control volume, if we insert this ddt inside the integral operand, then partial rho, partial t, db, plus rho, vn, dA, so that is the what?
+
+107
+00:37:10,170 --> 00:37:56,710
+there is in fact, I said, flow governing, I talked about flow governing equations, right, flow governing, governing equations, governing equation, I said that there is five of them, number one is the mass equation, conservation of the mass, and then three is the momentum,
+
+108
+00:37:56,710 --> 00:38:04,590
+3 is the momentum. Those are the vector equations. So momentum equation in x direction, y direction, and z direction.
+
+109
+00:38:04,950 --> 00:38:17,530
+And the last one is the energy equation. And then this one is related to the mass equation.
+
+110
+00:38:18,550 --> 00:38:26,170
+So in integral form, in chapter 4, I will derive the same mass equation but in a differential form without any integral.
+
+111
+00:38:26,170 --> 00:38:49,710
+So this is the mass equation. And then in sophomore level, I will look into a very simple case. So one dimensional, for example, if it's one dimensional, our problem is only one dimensional. So we don't have to worry about Y direction and Z direction, only think about X direction. [Review note: The one-dimensional approximation refers to uniform inlet/outlet section properties; ports need not all point along the same axis.]
+
+112
+00:38:49,710 --> 00:39:14,450
+and then we have inlet and outlet. So in that case, our control volume stays the same. But then for the flux terms, what's coming in is m.i out and then m.i in. So this is the simplified math situation.
+
+113
+00:39:14,450 --> 00:39:41,210
+And if we further impose the steady assumption, if it's steady, which means that steady meaning there is nothing changes over time. So partial partial t equals 0. So the first term of partial derivative with respect to time should be 0, right?
+
+114
+00:39:41,210 --> 00:39:57,850
+Then, with that term cancelled out, we have only those two terms. So, what it means is that mass flow rate in inflow should be same as mass flow rate in outflow, okay?
+
+115
+00:39:58,350 --> 00:40:05,610
+So, one dimensional, one dimensional, steady, and then we have one inlet and one outlet.
+
+116
+00:40:05,610 --> 00:40:29,560
+then we can have one unit. So let's say that one state as an inlet and then two represents the outlet. If that's the case, then rho1, A1, V1 should be same as rho2, A2, V2.
+
+117
+00:40:29,560 --> 00:41:00,800
+or M1 dot equals M2 dot. Further, so we impose assumptions one by one, one is the one dimensional and then steady flow, right? And one inlet and one outlet. Further, if we have an incompressible assumption, incompressible meaning, density is a constant, right? So we can cancel out the rho one and rho two will be,
+
+118
+00:41:00,800 --> 00:41:28,560
+which means that rho1 and rho2 will be the same. So if we cancel out rho1 and rho2, what's left? is A1 V1 equals A2 V2, right? Or q1 equals q2. Okay, some examples. By imposing the mass flow rate, we can calculate the velocity
+
+119
+00:41:28,560 --> 00:41:58,540
+at somewhere where area at the state 1 and area of state 2 and then inflow velocity v1 are given. So we can calculate the velocity at the v2. So this is not a one-dimensional, but this is a stream tube control volume. And then along the wall, v and n is this direction, normal to the surface, and then v is
+
+120
+00:41:58,540 --> 00:42:10,020
+is following through the stream tube, so V dot N is zero. So we don't have to worry about the side part, we only worry about the inflow and outflow, right?
+
+121
+00:42:11,750 --> 00:42:23,250
+So from the conservation of mass, A1 V1 equals A2 V2.
+
+122
+00:42:23,250 --> 00:42:43,480
+So a1, v1, a2 are given. So the velocity at the exit v2 is the a1 over a2 multiplied by the v1. Pretty straightforward.
+
+123
+00:42:43,480 --> 00:43:09,480
+Then another example, this is a single inlet and single outlet, but then we have no single, so there is another inlet at the top. This is open tank, and then cross section is the circular, so this open tank contains water at 20 celsius, and it has been filled through section 1 and 3, so we have two inlets.
+
+124
+00:43:09,480 --> 00:43:39,410
+So we have two inlets and derive an expression for water level change dH dt in terms of q1, q2, q3, and d So you have to worry about the volume flow rate of q1, q2, and q3. q3 is given, so dH dt
+
+125
+00:43:42,570 --> 00:44:06,450
+for the constant of determining V2. So from the figure, you can see this has to be with conservation of the mass, right? What's coming in has to be the same as what's coming out. But since we have the different inlet structures, probably the velocity at this one can be different, right?
+
+126
+00:44:06,450 --> 00:44:49,800
+So what we do is select a control volume. So select control volume including water in the tank. So that's very important. So control volume analysis is very important. So our control volume will be from the inlet. So from here, here, here.
+
+127
+00:44:49,820 --> 00:45:28,640
+so that will be our control volume, right? Applying the mass conservation equation, so DDT, mass flux out and mass flow rate out and mass flow rate in, right? And that is, right, then 3.0 and then dB is what? dB is circle multiplied by the height, the volume.
+
+128
+00:45:28,660 --> 00:46:08,110
+So, rho, db is area of the container, tank, and then h. Area doesn't change, but h changes, right?
+
+129
+00:46:08,110 --> 00:46:36,950
+So, A is what? A is pi D squared divided by 4. So rho multiplied by the area, pi D squared, D is the diameter of the tank, divided by 4. And then dH dt, right? So that is the dt, rho is a constant, so that is the first term.
+
+130
+00:46:36,950 --> 00:47:02,630
+and then out. Out is positive, right? So this is AB is the mass volume flow rate, Q. So rho is a constant. So Q2 is out. And then coming in is minus Q1 and Q3.
+
+131
+00:47:02,630 --> 00:47:33,440
+So those have to be safe, right? The mass should not change. Then, literally, dhdt, if we solve for dhdt, dhdt will be q2 minus q1 minus q3 divided by pi d squared divided by 4, right? [Review note: The spoken/displayed numerator Q2-Q1-Q3 has the opposite sign to the preceding balance. With positive inlet magnitudes Q1,Q3, dh/dt=4(Q1+Q3-Q2)/(pi d^2). The original claim is retained, not silently replaced.]
+
+132
+00:47:33,440 --> 00:47:51,180
+And if H doesn't change, which means that what's coming in the tank should be exactly the same as what's coming out, which means that the two rates are the same, so the height doesn't change, right?
+
+133
+00:47:51,800 --> 00:48:03,100
+If the going out rate is smaller, then height will increase, or going out rate is faster, meaning H will be lowered, right?
+
+134
+00:48:03,100 --> 00:48:49,250
+So if h is a constant, then it has to be zero. dh dt should be zero. That means q1 plus q3 is q2. q2 was right.
+
+135
+00:48:51,330 --> 00:49:28,540
+Q2 is AV, right? Area is the pi D squared divided by 4 at V2, A2V2. So Q1, Q1 is A multiplied by the 1, area is pi, diameter is 5 centimeters, so 0.05 meter, pi D squared divided by 4, and then V1, velocity.
+
+136
+00:49:28,540 --> 00:50:04,100
+So that is the A1V1, right? So here, V1 was 3 meter per sec, I believe, 3 meter per sec. And then Q3 was directly given, 0.01, 0.01, and then pi at D2. So the diameter is 0.07 meter, 0.07 square, divided by 4,
+
+137
+00:50:04,100 --> 00:50:22,710
+multiplied by the V2. So there will be V2, V2 will be 4.13 meter per cent.
+
+138
+00:50:24,670 --> 00:50:40,270
+Okay guys, that's all for the video of the part one. And then I will talk about conservation of linear momentum equation and example of force calculation using control volume in our following video.
