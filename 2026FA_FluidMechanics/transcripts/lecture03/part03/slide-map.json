@@ -1,0 +1,134 @@
+{
+  "part": 3,
+  "duration_seconds": 3845.133,
+  "source_label": "Lecture Week 4 Chapter 3 Part 3",
+  "timing_basis": "Topic ranges from reviewed ASR, checked against sampled video frames; not frame-exact slide-switch times.",
+  "slides": [
+    {
+      "slide": 37,
+      "start": 0,
+      "end": 253,
+      "range": "00:00:00–00:04:13",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 38,
+      "start": 253,
+      "end": 536,
+      "range": "00:04:13–00:08:56",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 39,
+      "start": 536,
+      "end": 1229,
+      "range": "00:08:56–00:20:29",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 40,
+      "start": 1229,
+      "end": 1538,
+      "range": "00:20:29–00:25:38",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 41,
+      "start": 1538,
+      "end": 1782,
+      "range": "00:25:38–00:29:42",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 42,
+      "start": 1782,
+      "end": 1997,
+      "range": "00:29:42–00:33:17",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 43,
+      "start": 1997,
+      "end": 2068,
+      "range": "00:33:17–00:34:28",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 44,
+      "start": 2068,
+      "end": 2208,
+      "range": "00:34:28–00:36:48",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 45,
+      "start": 2208,
+      "end": 2394,
+      "range": "00:36:48–00:39:54",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 46,
+      "start": 2394,
+      "end": 2615,
+      "range": "00:39:54–00:43:35",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 47,
+      "start": 2615,
+      "end": 2978,
+      "range": "00:43:35–00:49:38",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 48,
+      "start": 2978,
+      "end": 3109,
+      "range": "00:49:38–00:51:49",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 49,
+      "start": 3109,
+      "end": 3305,
+      "range": "00:51:49–00:55:05",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 50,
+      "start": 3305,
+      "end": 3543,
+      "range": "00:55:05–00:59:03",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 51,
+      "start": 3543,
+      "end": 3627,
+      "range": "00:59:03–01:00:27",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 52,
+      "start": 3627,
+      "end": 3716,
+      "range": "01:00:27–01:01:56",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 53,
+      "start": 3716,
+      "end": 3802,
+      "range": "01:01:56–01:03:22",
+      "evidence": "slide_and_lecture"
+    },
+    {
+      "slide": 54,
+      "start": 3802,
+      "end": 3844,
+      "range": "01:03:22–01:04:04",
+      "evidence": "pdf_and_closing_oral_recap"
+    }
+  ]
+}

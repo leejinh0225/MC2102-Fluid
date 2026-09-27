@@ -18,7 +18,7 @@ Lecture 1은 원본 슬라이드 23장, 핵심 개념 요약, 슬라이드별 �
 
 Lecture 2는 슬라이드 32장과 영어 강의 세 편을 대조하여 정수압·액주계·수문 합력·부력·강체 운동을 설명합니다. [Part 1·2·3 스크립트와 검수 안내](./2026FA_FluidMechanics/transcripts/lecture02/README.md)를 함께 제공합니다.
 
-Lecture 3는 슬라이드 54장과 검사체적의 질량·운동량·에너지 해석을 다룹니다. 1–36쪽은 [Part 1·2 스크립트](./2026FA_FluidMechanics/transcripts/lecture03/README.md)와 대조했으며, 37–54쪽은 대응 영상 미제공으로 PDF 기반 해설입니다. 제공된 Part 4는 Chapter 2 복습이므로 Chapter 3의 근거에 포함하지 않았습니다.
+Lecture 3는 슬라이드 54장과 검사체적의 질량·운동량·에너지 해석을 다룹니다. 1–17쪽은 Part 1, 18–36쪽은 Part 2, 37–53쪽은 Part 3의 설명·필기와 대조했습니다. 54쪽은 PDF 종합 정리이며 Part 3 말미의 구두 복습을 함께 참고합니다. [Part 1·2·3 스크립트와 검수 안내](./2026FA_FluidMechanics/transcripts/lecture03/README.md)를 제공합니다.
 
 원본 슬라이드를 순서대로 보존하고 영어 강의 설명과 대조합니다. 핵심 정의, 개념 간 관계, 수식의 가정과 단위를 한국어로 설명하며 중요한 시험 용어는 `English(한국어)`로 반복 표기합니다. 원자료에 없는 설명은 `편집자 보강`으로 표시합니다.
 

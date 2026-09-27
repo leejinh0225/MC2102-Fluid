@@ -78,15 +78,57 @@ test("all slide explanations stay inside cards; supplementary labels stay in foo
     }
   }
 });
-test("missing Part 3 is not silently replaced by Chapter 2 review", () => {
-  for (let i = 37; i <= 54; i++) {
-    const s = byId(root, `slide-${String(i).padStart(2, "0")}`);
+test("Part 3 covers its actual slides and labels the PDF-only summary honestly", () => {
+  const mapping = JSON.parse(
+    readFileSync(
+      new URL("../transcripts/lecture03/part03/slide-map.json", site),
+      "utf8",
+    ),
+  );
+  assert.deepEqual(
+    mapping.slides.map((x) => x.slide),
+    Array.from({ length: 18 }, (_, i) => i + 37),
+  );
+  for (const row of mapping.slides) {
+    const s = byId(root, `slide-${row.slide}`);
     const figure = elements(s).find((x) => x.tag === "figure");
-    assert.match(text(figure), /PDF 해설 · 대응 강의 미제공/);
-    assert.doesNotMatch(text(figure), /Part [34]|\d\d:\d\d:\d\d/);
+    assert.match(text(figure), /Part 3/);
+    assert.ok(text(figure).includes(row.range));
+    assert.ok(
+      row.start >= 0 &&
+        row.end > row.start &&
+        row.end <= mapping.duration_seconds,
+    );
+    assert.equal(
+      row.evidence,
+      row.slide === 54 ? "pdf_and_closing_oral_recap" : "slide_and_lecture",
+    );
   }
-  assert.match(text(byId(root, "sources")), /37–54쪽: 대응 강의 미제공/);
+  assert.match(
+    text(byId(root, "slide-54")),
+    /PDF 종합 정리 · Part 3 구두 복습/,
+  );
+  assert.match(
+    text(byId(root, "sources")),
+    /54쪽은 영상에 표시되지 않는 PDF 종합 정리/,
+  );
+  assert.match(html, /transcripts\/lecture03\/part03\/lecture.txt/);
+  assert.doesNotMatch(
+    html,
+    /대응 강의 미제공|대응 영상 미제공|Part 1·2만 Chapter 3/,
+  );
   assert.doesNotMatch(html, /V₁=V₂=0 표기/);
+});
+test("Part 3 additions preserve formula ownership and distinguish lecture evidence", () => {
+  assert.ok(cards("39").some((c) => text(c).includes("(p + dp/2)dA")));
+  assert.ok(cards("41").some((c) => text(c).includes("V₁²/(2g) + z₁")));
+  assert.match(text(byId(root, "source-check-44")), /β=D₁\/D₂/);
+  assert.match(
+    text(byId(root, "source-check-44")),
+    /본문은 원본 PDF의 정의 β=D₂\/D₁/,
+  );
+  assert.match(text(byId(root, "source-check-48")), /it has to be T/);
+  assert.match(text(byId(root, "source-check-49")), /one stands for inlet/);
 });
 test("worked example arithmetic and directions are consistent", () => {
   const q1 = ((Math.PI * 0.05 ** 2) / 4) * 3;
@@ -104,6 +146,7 @@ test("reviewed transcripts preserve all primary segment times and editorial attr
   for (const [part, count] of [
     ["01", 138],
     ["02", 116],
+    ["03", 148],
   ]) {
     const data = JSON.parse(
       readFileSync(

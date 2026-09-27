@@ -1,0 +1,591 @@
+1
+00:00:00,400 --> 00:00:30,340
+Hello everyone, the next recording for the part three of the chapter three. So in chapter three, we were going through the fundamental physics law, and then basic concepts of the control volume, volume flow rate, and mass flow rate, and more importantly, I was talking about Reynolds transport theorem to connect between the Eulerian
+
+2
+00:00:30,340 --> 00:00:44,800
+and Lagrangian perspective when the fluid flow is moving. And then I was going through the three fundamental physics laws to govern the fluid motion.
+
+3
+00:00:45,240 --> 00:00:59,900
+The number one was the mass conservation, conservation of the mass. And then second physics law based on the Newton's second law was the conservation of linear momentum
+
+4
+00:00:59,900 --> 00:01:29,700
+equation, and today I'm going through a special form of the linear momentum equation that is a Bernoulli equation that can be applicable to a very ideal case, ideal meaning when we don't consider the friction, okay, friction, so that is a sort of a very restrictive assumption, but if we neglect a certain area,
+
+5
+00:01:29,900 --> 00:01:57,540
+in a certain area the friction then for example let's assume we have a car right and then probably on the ground there will be a you know the boundary layer flow and then there will be some turbulent wake but if you think about the flow here it can be friction can be quite negligible so in a same
+
+6
+00:01:57,540 --> 00:02:18,440
+system, depending on which domain we are looking into, we can apply the Bernoulli equation. So that is very important. And then when the object is in motion, then rather than using the linear momentum, we can think of the angular momentum.
+
+7
+00:02:18,440 --> 00:02:47,180
+so I will briefly talk about the review and then number three conservation of the energy equation okay so conservation of the mass states mass doesn't mass is not created or destroyed and then whenever there is a force is involved right so this is related to the force F equal ma so whenever you have to calculate
+
+8
+00:02:47,180 --> 00:03:16,220
+some force like drag or lift or thrust or you know friction then you have to bring up the momentum equation and then this is a vector equation because force has a direction so you can apply the linear momentum equation x direction y direction and z direction finally there is a case where we think about the temperatures right temperature or entropy
+
+9
+00:03:16,220 --> 00:03:45,820
+or enthalpy. If that's the case, then we have to bring up the energy and this is based on the first thermodynamics law and we will go over one by one. Okay. And then when we are applying those three equations, where do you apply? We apply to a control volume. Sorry. You apply to a control volume and then to that control volume,
+
+10
+00:03:45,820 --> 00:04:12,920
+we apply the Reynolds transport theorem and then remember when you apply the Reynolds transport theorem we have B. B is a flow property and then db dm, rate of change of the flow property B with respect to m where B can be mass or B can be linear momentum or B can be energy.
+
+11
+00:04:12,920 --> 00:04:43,140
+okay then we saw the linear momentum equation last time and then today we are going over I'm going to derive the Bernoulli equation from the linear momentum equation and a classic linear momentum analysis between pressure velocity and elevation which means that pressure and then velocity and z direction
+
+12
+00:04:43,140 --> 00:05:10,910
+from the ground in a frictionless flow results in the Bernoulli equation. So this is the result in steady form. And I will derive this form in a following slide. So we have, so here I assume incompressible, incompressible. So we have the rho constant, right? So rho one and rho two equals rho.
+
+13
+00:05:10,910 --> 00:05:30,470
+and when you say one and two, this corresponds to the two different states. So for example, I was taking an example of the car. So this is again the same problem. We have our car moving and then there will be a boundary layer and there will be a wake.
+
+14
+00:05:30,470 --> 00:05:59,970
+but if you think about flow just above the car where we can neglect the friction and also where we can neglect the boundary layer effect right then through a streamline you can think of the state one upstream and state two downstream okay so this relation relates a certain constant property in state one and in state two okay
+
+15
+00:06:00,470 --> 00:06:29,090
+so I will go over one by one how we how we can derive and what an individual term stands for the Bernoulli equation can derive can be derived using the following restrictive assumption restrictive meaning this is not quite physical in general but we can ignore under some circumstances okay so this one we assume steady flow
+
+16
+00:06:29,090 --> 00:06:59,760
+very common assumption for most flows steady meaning we don't assume anything changing over time okay then incompressible flow incompressible meaning the density doesn't change density the same right so when can you assume the incompressible flow is applicable for most liquids most of the liquids and for the gas you can we can apply the incompressible
+
+17
+00:06:59,760 --> 00:07:27,300
+assumption when Mach number is less than 0.3. What is Mach number? Mach number is the non-dimensionalized velocity, denoted as a capital V, velocity divided by the speed of sound. So it shows how much times of the velocity in terms of the speed of sound. [Review note: The displayed Mach-number definition is M=V/a, where a is the speed of sound.]
+
+18
+00:07:27,300 --> 00:07:55,660
+okay and then number three is quite important frictionless flow it is very restrictive and there's literally speaking in our real world there's no frictionless flow but like I said you know near the ground or surface near the ground or even around the you know car there will be a friction right so we cannot apply the
+
+19
+00:07:55,660 --> 00:08:22,620
+in this area. So whenever we have solid walls or mixing, mixing meaning when there are two different flows of a different velocity. So that introduces a friction. And then this is also important. So number three is very restrictive, but it's very pivotal when we are applying the Bernoulli equation. Number four is flow along a single stream line.
+
+20
+00:08:22,620 --> 00:08:54,040
+okay so what it means is that single streamline meaning there is no heat or you know there is no work added so different streamline so here and here may have different different constants so here this one right so when you are state one and state two they may have a different constants but along a single streamline then you will have the same [Review note: Following one streamline does not by itself imply absence of heat or shaft work; the note keeps those physical restrictions separate.]
+
+21
+00:08:56,120 --> 00:09:19,530
+amount of this one okay okay so now let's derive the Bernoulli equation so this is the control volume that we are going there is the control volume that we will be looking into this is elemental pretty small and this is a stream tube control volume it is a control volume
+
+22
+00:09:19,530 --> 00:09:48,530
+fixed control volume, stream tube. And you can consider what was the stream tube. Stream was a collection of the stream line, right? So you can consider just a few, a collection of the few stream lines. And then we are looking into the left surface and right surface. And then the height of this, the length of this stream line is a ds. And this is the s direction. So this is a stream line.
+
+23
+00:09:51,240 --> 00:10:21,880
+direction, streamline direction. And then in the left-hand side, area is A, and pressure acting inward, that is P, and velocity acting inward, V, and density is rho, right? On the right surface, after ds apart, pressure is acting inward, but this time there will be a variation by DP,
+
+24
+00:10:21,880 --> 00:10:34,540
+and area has also changed. So A plus DA and velocity changed by dV. So V plus dV and density also has changed.
+
+25
+00:10:35,200 --> 00:10:46,720
+Okay. And then on the side surface, there is a pressure gradually increasing from P to P plus dP.
+
+26
+00:10:46,720 --> 00:11:08,440
+but since this is such a small element, this is a linear increase. So to derive the Bernoulli equation, first we are going to apply the conservation of the mass. So this is the net changes in mass flow inside the control volume.
+
+27
+00:11:08,440 --> 00:11:38,800
+that should be the same as what's coming in and what's coming up right so we have that and then here since the volume doesn't change partial term can be get inside partial rho partial t and there dm dot right if we assume steady so nothing changes over time it could change only in s right only in the cross section only in the s direction and also cross section changes right so a changes
+
+28
+00:11:38,800 --> 00:11:59,980
+changes by a s. And also velocity is also changing, but that is also by along the streamwise direction. So this can be zero and the m dot, m dot is a rho A V. Here a is a function of s and also v is also a function of streamwise.
+
+29
+00:11:59,980 --> 00:12:27,610
+So those are not functions of time; only the density can change over time, right? So (partial rho / partial t) A ds. And then the linear momentum equation in the streamwise direction can be the summation of all forces in the streamwise direction, with rho V dVol. [Review note: The lecturer revisits the time dependence of V at 00:21:07–00:22:14; V can also depend on time in the unsteady derivation.]
+
+30
+00:12:27,610 --> 00:12:59,880
+There is a typo here [the pointed-to symbol is unclear in speech]. Velocity V, dVol, right? But since we are only looking into a single direction, you can drop this vector notation. And then plus (m dot V) out minus (m dot V) in. Since we have a non-changing volume, the time derivative can go inside, so we have (partial / partial t)(rho V) A ds.
+
+31
+00:13:01,900 --> 00:13:35,110
+so here is the velocity right and then so this is the volume and then this is the dm those are the dm dot v okay so here vs equals v because s is a streamline direction so when we are the left hand side you have to think about the gravitational force
+
+32
+00:13:35,110 --> 00:14:05,090
+and also the streamwise direction. In the streamwise direction, there are two components, pressure force and also there is a viscous force, but we assume no shear force. So neglecting shear force on the wall by assumption, only pressure and gravity force remains here. And then gravity force here, this is the W, and then in this direction, if we decompose,
+
+33
+00:14:05,110 --> 00:14:37,430
+this direction and that direction the amount of this one so here this direction will be this is also a theta so there will be minus minus direction this is a positive s we have a minus the w sine theta and then the w is what here sorry here sine theta sine theta is
+
+34
+00:14:37,430 --> 00:15:13,470
+is sin theta this by here that will be this one and there is a normal so dz over ds and then a couple more relation gamma specific weight is rho g and then delta v elemental volume is a ds right so here
+
+35
+00:15:13,470 --> 00:15:43,690
+dW sin theta. Gamma is weight divided by volume, right? The elemental volume is A ds, so dW can be gamma A ds. And then sin theta is [unfinished; the next segment gives dz/ds].
+
+36
+00:15:43,690 --> 00:16:20,640
+so a sorry gamma ds is sine theta is dz over ds so ds is so here sine theta is dz over ds so ds can be cancelled out so we have minus gamma A dz and in terms of the pressure pressure is a little bit I think even in the textbook it was not quite
+
+37
+00:16:20,640 --> 00:16:50,900
+like well explained so let me go over so let's assume so this is our elemental volume here after the S apart we have that and for this surface P and then area A so pressure force in the left hand side is pointing inward so we are pointing
+
+38
+00:16:50,900 --> 00:17:06,260
+acting in the positive s-direction, right? So we have Pa, Pa, and then on the right-hand side, we have pressure P plus DP acting the upper negative s-direction,
+
+39
+00:17:06,260 --> 00:17:35,440
+and then area will be A plus DA. So minus (p + dp) multiplied by (A + dA). Then on the sideline, we have pressure acting to the normal, right? So here, but our S direction, right? So the angle here, angle here, it has some angles here. It's not exactly in parallel.
+
+40
+00:17:37,820 --> 00:18:07,330
+if we consider so p varies from p to p plus dp so this is acting this direction so what we have to do is we have to decompose this one in terms of streamwise direction and then normal to the streamwise directions right so we have to look into that term this one this one and then probably that component will be acting
+
+41
+00:18:08,670 --> 00:18:38,230
+so I'm exaggerating so that amount along this surface so pressure along the slanted surface will be gradually changing from p to p plus dp but then if we are interested only in the streamwise direction and if we sum all those up in the end you are looking into
+
+42
+00:18:38,230 --> 00:19:13,580
+to the average of that pressure that will be p plus half dp right and then that acting on the outer sorry that acting on the not this one acting on the outer ring of the area so here so this is the exactly s and we have the a here and
+
+43
+00:19:13,580 --> 00:19:36,220
+then the side force, the streamwise component will be acting to this surface only. Right? But since angle between here and here is almost the same, what we consider is p plus half dp is the same as this one.
+
+44
+00:19:36,220 --> 00:20:04,270
+so we are subtract in this is what we assume is sorry so here this one is that one and that one right so it is a positive direction so left hand side are left surface right surface and then side force will be
+
+45
+00:20:06,810 --> 00:20:28,850
+Plus (p + half dp) dA. So if we carry out some arithmetic, we have that one. And we neglect [the higher-order term indicated on screen]. [Review note: The side-face expression is normalized from the accompanying diagram and formula; raw ASR reads "G plus FTPDA".]
+
+46
+00:20:28,850 --> 00:21:06,700
+okay then so linear momentum equation is rearranged as this is the from the gravity force and this is from the pressure force and this is the left hand side of the the linear momentum equations right so in here this one will be partial rho partial t va ds plus
+
+47
+00:21:06,700 --> 00:21:32,840
+plus partial V, partial T, rho ADS, those are two, right? And then plus MDV plus VDM dot and then that one and that one is canceled out by the continuity equation. Sorry, in this slide I said V is also a function of time as well, okay?
+
+48
+00:21:32,840 --> 00:22:14,040
+okay so here rho is function of time and v is also function of time so you apply the chain rule and then you will end up having this one so here but that one and that one cancelled out by the continuity relation and then we have those two left then here this one right so here right after we have to divide right after we have
+
+49
+00:22:14,040 --> 00:22:45,520
+we have that one and divide so we have the left hand side we have that one and that one right two terms the left hand side and two terms in the right hand side we want to collect all the terms in the one side and divide by a rho okay and then then this term rho a is cancelled out so we have (partial V / partial t) ds here
+
+50
+00:22:45,520 --> 00:23:08,130
+here so this term comes to here and then this one is moved to the right hand side ADP and then we divide by A rho so we have that term is coming into here dp / rho right
+
+51
+00:23:08,130 --> 00:23:44,680
+So we have those terms, and then the last one, m dot dV. Here m dot is rho V A, so we have rho V A dV. Then we divide by A rho.
+
+52
+00:23:44,680 --> 00:24:11,000
+A rho, so we have V dV. This is the velocity and this is the volume. Lastly, gamma A dz: if you divide by A rho, then we have g dz left, and the sum is zero.
+
+53
+00:24:11,000 --> 00:24:41,840
+okay then we can derive the Bernoulli equation for unsteady frictionless flow along a streamline along a streamline and frictionless and then here I said unsteady so I haven't disregarded the partial term yet so if we integrate this term one and two partial v partial t ds
+
+54
+00:24:42,280 --> 00:25:09,590
+plus, from 1 to 2, DP, rho, plus, this is pretty easy to integrate, right? So there'll be half V2 squared minus V1 squared plus that one, GZ2 minus Z1 equals zero.
+
+55
+00:25:09,590 --> 00:25:38,480
+or you can divide that equation by G, gravitational acceleration to have a height unit so I'll talk about that later but anyway this is the Bernoulli equation that will be very useful
+
+56
+00:25:38,480 --> 00:26:12,650
+then next slide we assume a further assumption so if we assume steady then partial partial term will go to zero right and then you assume incompressible which means that rho1, rho2 should be the same as rho then we have that relation okay or we can divide one state in the left hand side to
+
+57
+00:26:12,650 --> 00:26:43,810
+say in the right hand side we will have p1 over rho plus half v1 square plus g z1 equals p2 over rho plus half v2 square plus g z2 equals constant okay and then if we divide by
+
+58
+00:26:43,810 --> 00:27:10,090
+by G, G, gravitational acceleration, what we have is P1 over rho G plus V1 squared divided by rho G, half, plus z1, then P2 over rho G. [Review note: This intermediate spoken denominator includes rho; the lecturer removes it in the following segment. The final velocity head is V1^2/(2g).]
+
+59
+00:27:10,090 --> 00:27:32,740
+what is rho g? rho g is gamma right and then what is a p of a gamma that is the pressure head so half V2 square divided by the g right sorry there shouldn't be any rho here my mistake right
+
+60
+00:27:36,170 --> 00:28:11,850
+Plus z2 equals also a constant. [Some spoken symbols during the handwritten correction are unclear.] So we have that term, and that is in meters. If I generalize that term, that is p over rho g plus V squared over 2g.
+
+61
+00:28:11,850 --> 00:28:33,030
+plus Z equals constant. So that is the very famous Bernoulli equation. Or you can have the P over rho G as a P over gamma. So this is the Bernoulli equation that we will be using very often.
+
+62
+00:28:33,030 --> 00:28:58,430
+So frictionless and incompressible fluid, Frictionless and incompressible fluid, Bernoulli equation may also be interpreted as an idealized energy equation. Energy meaning you have to think about some temperature and enthalpy and entropy as well. So we are moving into the energy equation later on.
+
+63
+00:28:58,430 --> 00:29:09,190
+The change from 1 to 2 in the above equation represents the reversible pressure work, kinetic and potential energy changes.
+
+64
+00:29:10,010 --> 00:29:18,330
+So this is really ideal case and in real life there is no ideal case.
+
+65
+00:29:18,330 --> 00:29:42,150
+but you know simple some assumptions there is a chance where this strict assumption can be nearly okay like 90% okay then we can apply the Bernoulli equation rather than applying this complicated linear momentum equations.
+
+66
+00:29:42,150 --> 00:30:13,560
+so what I say is Bernoulli equation can work as an alternative to the momentum equation in frictionless flow, in a frictionless world so here restrictions on the Bernoulli equation let's take a couple of example here so these three example shows the regions of validity and invalidity of the Bernoulli equation so this is a wind tunnel and that
+
+67
+00:30:13,560 --> 00:30:48,480
+this is a model aircraft so we can think of the blue regions are an invalid region where we cannot apply the Bernoulli equation why is it near the body so near the surface the region where you cannot apply the Bernoulli equation near the surface or near the wall or near the wake okay so you cannot really
+
+68
+00:30:48,480 --> 00:31:18,340
+this is an invalid case and then a valid case so you can think of the streamline here and upstream state can be one and downstream can be two then you can apply the Bernoulli equation between one and two and then if you think about the propeller so this is a valid case but we have the so this is invalid region why but we have a surface and also there is some turbulent wake
+
+69
+00:31:18,340 --> 00:31:47,980
+going on so at some point in later chapter I'll also be talking about the turbulence as well so here propeller is moving which means that work is added right so work is added so the Bernoulli equation cannot be in this simple form and later on I will show how those terms can be
+
+70
+00:31:47,980 --> 00:32:19,040
+considered in the energy equation and these so if you think about the state 1 and state 2 constant 1 from the Bernoulli equation and if we think about constant value at state 2 from the Bernoulli equation that's not the same okay and this is the also the chimney where there is a fire then the blue region
+
+71
+00:32:19,040 --> 00:32:38,780
+and near the wall and inside the fire, you cannot really apply the Bernoulli equation. You can only apply Bernoulli equation in the before the fire and then away from the fire. So this is upstream and this is downstream. But again, so here heat is added.
+
+72
+00:32:39,700 --> 00:33:17,140
+if that's the case the constant from the Bernoulli equation can change so those two can be explained again in Bernoulli equation in the energy in energy form but when you say Bernoulli equation we typically say the frictionless flow so this is the more general one okay guys some example so this is called
+
+73
+00:33:17,140 --> 00:33:46,920
+of venturi tube, venturi tube meaning we have the pipe which has the area variation because the area changes the velocity will also change its velocity is smaller faster here right and that makes the pressure change pressure changes as well so if the velocity increases probably the pressure will be increased right so let's see so I said if the pressure [Review note: The tentative claim about increasing pressure is immediately reversed in the next segment: velocity rises and pressure falls.]
+
+74
+00:33:46,920 --> 00:34:05,480
+After velocity increases, pressure drops. That is exactly what I observed from the Bernoulli equation. A constriction in pipe in shape will cause the velocity to rise and the pressure to fall as the section 2 in the throat. The pressure difference is a measure of the flow rate through the pipe height.
+
+75
+00:34:05,480 --> 00:34:13,740
+So here, if you see the mass flow rate, the smoothly necked down system is called the venturi tube
+
+76
+00:34:13,740 --> 00:34:20,600
+Find the expression for the mass flow in the tube M dot, the same M dot, and as a function of the pressure change
+
+77
+00:34:20,600 --> 00:34:28,430
+So here P1 and P2, we have the changes P1 and P2
+
+78
+00:34:28,430 --> 00:34:37,660
+The solution, apply the Bernoulli equation along the center streamline
+
+79
+00:34:38,760 --> 00:35:04,480
+So first, we always want to apply the mass conservation first, right? So from the mass conservation, density is a constant. So A1, V1 equals A2, V2. So V1 probably will be known. So V2, sorry, no, no, no, no. Here, V1 and V2 are something that we have to find.
+
+80
+00:35:05,680 --> 00:35:33,970
+V2 is (A1/A2) V1, and D1 is the diameter at location 1, so (D1 squared / D2 squared) V1. [The repeated spoken symbols while writing are unclear; the displayed relation is V2=(D1/D2)^2 V1.]
+
+81
+00:35:33,970 --> 00:35:49,470
+and then let's introduce the beta as a ratio between two locations here. Then we will apply the Bernoulli equation along the center line from section 1 to section 2. [Review note: The handwriting defines beta=D1/D2, but the printed 1-beta^4 denominator uses beta=D2/D1. The note states its adopted definition explicitly.]
+
+82
+00:35:49,470 --> 00:36:17,010
+So we have, if the tube is horizontal, z1 and z2 is the same. Let's solve for the V2. Then V2 squared minus V1 squared will be 2 over rho, P1 minus P2, and then we set P1 minus P2 as a delta P.
+
+83
+00:36:17,010 --> 00:36:47,770
+then we have this equation 1 and this equation 2 so 1 and 2 get rid of the v1 and v2 then we can have the v2 as a function of pressure, changes, density, and shape only right then the mass flow rate m dot will be rho a2 v2 so we have that relation okay [Review note: The printed final square-root expression omits A2. The stated definition m dot=rho A2 V2 requires that factor; the note gives the corrected expression in its topic card.]
+
+84
+00:36:47,770 --> 00:37:18,090
+that's pretty straight forward then move on to the angular momentum equation so angular momentum equation when we are driving when we are introducing the Reynolds transport theorem we have a general property variable B capital B right so B can be the mass flow rate the mass flux in mass flow rate or mass momentum flux
+
+85
+00:37:19,130 --> 00:37:47,240
+the momentum equation and this time this is the angular momentum okay so here we think about an origin O and then elemental mass or dm and this is a part from R by R and it is moving at the velocity V.
+
+86
+00:37:47,810 --> 00:38:18,430
+then the angular momentum then we have a many of the dm right so we have to integrate of dm over the system and then angular momentum of the r cross product of the v and then capital B is the angular momentum and then angular momentum per unit mass will be r cross v then apply the right apply the
+
+87
+00:38:20,940 --> 00:38:49,080
+by Reynolds transport theorem with B and beta, B as on H0 and beta as on R cross product of V, right, so if we differentiate angular momentum with respect to T, then there will be the sum of all the moments, okay, the moments and
+
+88
+00:38:51,140 --> 00:39:17,810
+some rate of change of the beta plus the flux coming in coming out through the control surface. So we have the sigma M0 equals have that formation. And if we consider a steady flow, then this term will go to zero with 1D inlet and outlet, then
+
+89
+00:39:19,770 --> 00:39:53,550
+and then this angular momentum multiplied by the mass flow rate out minus mass angular momentum coming in mass angular momentum coming into the control surface multiplied by the mass flow rate coming in so what you have covered is we saw in the previous lecture you saw the linear momentum equation and this lecture I was going over I derived the
+
+90
+00:39:53,550 --> 00:40:20,090
+equation for the frictionless flow. And then I also looked into the angular momentum. And then our last equation to govern the fluid motion is the energy equation. So conservation of energy is the last physics law. And it says it is based on the first law of the thermodynamics.
+
+91
+00:40:20,090 --> 00:40:37,210
+What it means is that rate of change of energy inside the control volume should be the same as net heat flux coming into the control volume and work added to the control volume. [Review note: A fixed open control volume also has energy transport with mass crossing its boundary; the full RTT energy equation includes that flux term.]
+
+92
+00:40:37,210 --> 00:40:58,510
+So I said negative here. If I think about the energy increasing, rate of change of energy increasing inside the control volume, net flux heat into the CV, and then rate of work done by the control volume, negative sign here, so that the energy can increase
+
+93
+00:40:58,510 --> 00:41:22,430
+Then here again we have to apply the Reynolds transport theorem here capital B is an energy and beta is the dE over dM will be energy total energy per unit mass and again we assume the fixed control volume.
+
+94
+00:41:22,430 --> 00:41:36,210
+so here the left-hand side this is for the Lagrangian perspective and right-hand side is Eulerian perspective so here beta rho dVol plus beta rho (V dot n) dA right
+
+95
+00:41:38,370 --> 00:41:54,620
+so if we based on this statement if i rewrite that one and that one then dq delta q minus delta
+
+96
+00:41:58,480 --> 00:42:31,020
+Delta Q divided by delta t minus delta W divided by delta t will be dE_system/dt. That should be the same as the Reynolds transport theorem: d/dt of the control-volume integral of e rho dVol, because beta is rho here [as transcribed]. [Review note: Both ASR passes give "beta is rho"; the stated energy substitution and displayed integrand require beta=e. This review note is not a lecturer quotation.]
+
+97
+00:42:31,020 --> 00:43:02,710
+plus control surface e rho (V dot n) dA here. So here we call the sign convention positive Q denotes the heat added to the system and then positive W denotes the work done by the system.
+
+98
+00:43:02,710 --> 00:43:14,270
+so that's why we have to have the negative delta w meaning work done on the system to be consistent with the positive heat added and positive energy increase
+
+99
+00:43:14,270 --> 00:43:25,820
+so that's a notation so if you want to use a different notation like you know the rate of energy decreasing
+
+100
+00:43:25,820 --> 00:43:34,220
+that you can also define that direction, attach, reverse the sign everywhere and you will have the same governing equation.
+
+101
+00:43:35,120 --> 00:43:40,120
+So the total system energy per unit mass E, let's further look into this one.
+
+102
+00:43:40,600 --> 00:43:47,020
+So that is composed of the internal energy. So that is nothing to do with fluid motion.
+
+103
+00:43:47,300 --> 00:43:54,480
+Even if the gas is gas or liquid is a static motion, there is always some random motion in the molecule.
+
+104
+00:43:54,480 --> 00:44:25,050
+so that we mean by the internal energy and then if the gas or fluid is moving we have the kinetic energy and then if the volume your control volume is sort of big so that the particle at the bottom and particle gas at the bottom and gas at the top may experience some potential energy right so your total energy is the summation of the internal energy kinetic energy
+
+105
+00:44:25,050 --> 00:44:48,060
+energy and potential energy. So here I said internal energy as a u cap. So u cap plus half V squared and gz. So there is the total system energy. Then let's look into the work term. Work term is divided in three parts. Shaft work, pressure work, and viscous work.
+
+106
+00:44:50,120 --> 00:45:17,760
+shaft work is here defined as here shaft work is it is deliberated by a deliberately done by a machine one machine if we have a fan blade or piston or pump impeller so you have an explicit external work through the control system into the control through the control surface into the control volume
+
+107
+00:45:18,060 --> 00:45:47,580
+okay um then the data shaft work and then pressure work meaning think about you have the control volume here and then on a control surface we define uh elemental area dA and then surface unit normal will be n always pointing outside and then here the pressure is acting inward right and we assume
+
+108
+00:45:47,580 --> 00:46:17,970
+it is also moving in the V directions okay then pressure work is pressure force let's think about the direction pressure force is always force acting inward right so into the control volume so if we think about work done by the system then N is different
+
+109
+00:46:17,970 --> 00:46:53,950
+from the direction of the, it is already pointing out. So pressure, pressure force into the CV will be minus PDA, right? So we are, we are thinking about, I'm sorry, P, P, N, right? So this is multiplied by the area, DA, then velocity, so velocity moving, velocity moving into the
+
+110
+00:46:55,070 --> 00:47:33,860
+Volume will be V dot n, but we have to think about the sign: n points outward, and we are looking at velocity coming into the volume, so there will be a negative sign. Then the work term by the pressure force...
+
+111
+00:47:33,860 --> 00:48:05,200
+...will be minus p dA multiplied by minus V dot n. So there will be p (V dot n) dA. What it means is that this is the pressure work by the control volume. [Review note: In vector form, the force on the fluid is -p n dA; the by-system pressure-work rate is +p(V dot n)dA. The scalar shorthand in this passage should not be read as an additional vector product.]
+
+112
+00:48:05,200 --> 00:48:35,700
+okay so you have to be careful about the signs here so the total work term is a shaft work and then the pressure work by the control volume so the control volume did the work and then we are thinking about pressure work since it has the work it is restricting in terms of the volume right then what about the heat and then the viscous work
+
+113
+00:48:36,580 --> 00:48:52,240
+At this moment, we will neglect the viscous work. There is a non-zero viscous work, but viscous work is slightly more complicated because it has a tensor system. So we are going to cover that later on.
+
+114
+00:48:52,240 --> 00:49:22,020
+And what about the heat? Heat was mentioned previously, right? So this one is a heat, Q, Q dot, right? So Q dot, this term is from the conduction by contact, material contact, radiation, this is like from sun or some of your heater, and then convection, this is coming from the motion of your gas, motion of the gas, right?
+
+115
+00:49:22,880 --> 00:49:55,270
+so by the temperature right if there is a temperature change then the density of the air can change so it is mixing up right so that is the one mechanism of the heat transfer then again recall the energy equation which I wrote in the previous slides so we have that one there's a typo it has to be T and this one
+
+116
+00:49:55,270 --> 00:50:22,990
+and then work is shaft work and pressure force work, right? So here, if we denote that as a Q dot, that as a W dot, and then use that one into this one, then we have Q dot minus W shaft work, then we have that one plus E plus pressure is also added here,
+
+117
+00:50:22,990 --> 00:50:46,800
+So the pressure contribution is added to the energy flux. [Spoken symbols are unclear; the displayed term is (e+p/rho) rho (V dot n) dA.] Again, what was e? It is the total specific energy: internal energy plus V squared over 2 plus gz.
+
+118
+00:50:46,800 --> 00:50:56,900
+then energy equation for steady a lot of assumption and one dimensional it has only inlets and outlets then
+
+119
+00:50:56,900 --> 00:51:26,980
+q dot this is heat added and then this is a shaft work done by a machine is sigma m dot out so this term goes to zero we have only the flux terms here right so this is a u hat plus half V squared plus gz plus p over rho
+
+120
+00:51:26,980 --> 00:51:46,160
+rho out minus sigma m dot in multiplied by the u hat plus half V squared plus gz plus p over rho in.
+
+121
+00:51:48,900 --> 00:51:57,930
+Then other assumptions. If we assume one inlet and one outlet, one stands for inlet and two states for outlet,
+
+122
+00:51:57,930 --> 00:52:29,920
+and mass flow rate is the same here then Q dot minus WS dot is this is the one that I just wrote right and here if we write the enthalpy form H enthalpy is the internal energy plus p over rho right and
+
+123
+00:52:29,920 --> 00:53:01,590
+and then that is can be written in terms of the temperature okay so internal energy enthalpy can be related to the you know the temperature and also internal energy can be related to the enthalpy or temperature if you know the pressure and the density then right so that one and that one is the H2 and that one and that one is the enthalpy in right so this is out and [Review note: The handwriting h=c_p T is used with the ideal-gas, constant-c_p model in the following turbine example; it is not the general definition of enthalpy.]
+
+124
+00:53:01,590 --> 00:53:30,050
+in then h2 minus h1 plus v square 2 minus v1 square over 2 plus g is the same so z z2 minus z1 okay so this is the energy form that we will be using a lot okay because it has the temperature form velocity and the elevation change the work form and this is the heat added so
+
+125
+00:53:30,050 --> 00:53:41,030
+so if you want to calculate some temperature changes or if you know the heat and work and what will be the final velocity then you can use this form
+
+126
+00:53:41,890 --> 00:53:57,110
+so rearrange this equation using the per unit mass form which means that divided by m dot and we define q is the rate of heat by m dot
+
+127
+00:53:57,110 --> 00:54:31,750
+and Ws is the W work divided by the m dot and we have the Q minus Ws in the left hand side, right hand side is we have enthalpy change, kinetic energy change, and then elevation, this is the elevation changes, right, then head form of the energy equation, so from here, right, so here, it's from here,
+
+128
+00:54:32,870 --> 00:55:03,400
+and then let's divide by m dot g right so if we divide by the g and also the m dot then left hand side we have the h minus h so this one q over g w s over g is h here h_q minus h_s is this one head here
+
+129
+00:55:04,650 --> 00:55:42,240
+U2 right here so this is a pressure head form right so it's in meter so this is the head form but this is more important head form so if we rewrite this term energy equation for steady incompressible flow with one inlet and one outlet and then we this time we can consider
+
+130
+00:55:43,040 --> 00:56:18,140
+friction as well including friction as well then p over gamma is the pressure head and then v square over 2g we call it as a velocity head velocity head what do we mean by velocity velocity head velocity head meaning kinetic energy
+
+131
+00:56:20,600 --> 00:57:17,090
+Kinetic energy represented, expressed as an equivalent fluid height, fluid column. This is pressure head; velocity head; this is elevation [pointing across the terms]. This is turbine head, extraction: energy is extracted. Then pump head, input, and then...
+
+132
+00:57:17,090 --> 00:57:30,720
+and this is the friction head loss head loss so we have that that equation you know energy
+
+133
+00:57:30,720 --> 00:57:48,850
+energy equation and then if you compare the Bernoulli equation which we derived from the equation from linear momentum
+
+134
+00:57:48,850 --> 00:58:27,210
+...momentum equation, with the assumptions of steady, incompressible, and frictionless flow. Then remember it was p1 over gamma1 plus [spoken kinetic-energy term unclear] plus gz1. [Review note: The next segment explicitly changes gamma to rho. The final energy-per-mass form is p/rho + V^2/2 + gz, not a mixture of head and energy terms.]
+
+135
+00:58:27,210 --> 00:59:01,970
+you can divide it by g acceleration again this gotta be gamma 1 that should be rho rho and then p2 over rho plus V2 squared divided by 2 plus g z2 that should be constant so for the Bernoulli equation you don't have any this additional head okay okay guys so
+
+136
+00:59:02,750 --> 00:59:11,710
+now I will take an example where we can learn how to apply the energy equation in the real system
+
+137
+00:59:11,710 --> 00:59:16,070
+so this is a turbomachinery and then
+
+138
+00:59:19,820 --> 00:59:29,580
+so horsepower is produced by the 700 horsepower
+
+139
+00:59:29,580 --> 01:00:03,840
+then diameter of inlet and outlet is given and pressure difference and also the temperature is also given and then V1 is there so we wanted to check what is the exit velocity what is the heat transfer rate in BTU that's what you want to know and I will notice the constant c_p value constant specific heat at constant pressure
+
+140
+01:00:03,840 --> 01:00:26,350
+is a given in the British unit so since the heat and work is concerned you have to think where we have to apply the energy equation and then what form of energy equation probably enthalpy form will be more efficient right because this is related to the temperature.
+
+141
+01:00:27,510 --> 01:00:59,020
+so next slide we have to check the control volume so probably there will be our control volume here select air in the turbine as a control volume and assume air as an ideal gas then inlet and exit density rho 1 can be calculated by the P1 over RT1 from the equation of state and then density at the exit 2
+
+142
+01:01:00,450 --> 01:01:21,940
+That is p2 divided by R T2. [Review note: The pressure symbol is normalized from the displayed ideal-gas equation; raw ASR reads T2 in the numerator.] We can calculate that. The mass flow rate: we know the velocity at state 1, so rho1 A1 V1. So we have that one.
+
+143
+01:01:21,940 --> 01:01:55,500
+Then the exit velocity from the mass flow rate, rho2 A2 V2. Density here [following descriptive phrase unclear]. We have the density variation, and then area and V2. So V2 is 244 feet per second.
+
+144
+01:01:55,500 --> 01:02:26,640
+then to calculate the heat added we have to think about the energy equations here right and then we assume the steady flow and also the same height so z1 equals z2 is the same and enthalpy form is the CPT that is the U plus P over rho so U hat here so that one and that one right that can be
+
+145
+01:02:26,640 --> 01:02:49,240
+neglected and those can be expressed as an enthalpy. So we have q dot minus ws dot is m dot cp t1 and t1 will be cp t2 minus t1 and then half V2 squared minus V1 squared.
+
+146
+01:02:49,240 --> 01:03:12,120
+so here we have the horsepower, 700, the conversion rate right and then M dot we calculate, CP is a given, temperature, V2, V1, V1 is a given, V2 we calculate, so Q dot we have that one okay so this is the
+
+147
+01:03:14,380 --> 01:03:42,750
+foot-pound and this is a BTU unit. Okay guys, that's all for chapter 3. And chapter 3 is really really important because it really states what are the basic fundamental physics law of the fluid motion and what is the control volume where you have to apply a series of the three equations, right, mass equation, conservation,
+
+148
+01:03:43,210 --> 01:04:03,810
+mass equation, momentum equation, energy equation. Those are really, really important. And at the bottom of all those derivations, we always use the Reynolds transport theorem. So you have to imagine what's the physical meaning of the Reynolds transport theorem. Okay, guys, see you in chapter 4.

@@ -1,0 +1,470 @@
+{
+  "title": "Lecture 3 Part 3 — reviewed English ASR",
+  "review_basis": "Chapter 3 PDF pp. 37–54; Part 3 recording, sampled annotated frames, and a 15-second-window ASR recheck.",
+  "review_method": "Read all 148 primary ASR segments; compare technical language and equations with source slides and sampled recording frames. Inspect a separate 15-second-window decode for difficult derivation and correction passages. This is a model-assisted technical review, not a full human verbatim listening audit. Original segment times are retained.",
+  "notes": [
+    "Part 3 is the Chapter 3 lecture labeled Week 4. The unrelated Week 3 Part 4 is not used.",
+    "PDF pp. 37–53 have corresponding on-screen instruction; p. 54 is a PDF summary supplemented by the closing oral recap, not a slide shown in this recording.",
+    "Review note and other bracketed review annotations are editorial, not lecturer speech. Unclear phrases are not silently reconstructed as quotations.",
+    "Spoken self-corrections are retained: time-dependent velocity, velocity-head denominator, venturi pressure change, and energy-versus-head notation.",
+    "The private raw video and both raw ASR passes remain excluded from Git. No personal-information passage was found in the reviewed ASR."
+  ],
+  "corrections": [
+    {
+      "index": 5,
+      "original_text": "in a certain area the friction then for example let's assume we have a car right and then probably on the ground there will be a you know the boundary layer flow and then there will be some turbulent weight but if you think about the flow here it can be friction can be quite negligible so in a same",
+      "text": "in a certain area the friction then for example let's assume we have a car right and then probably on the ground there will be a you know the boundary layer flow and then there will be some turbulent wake but if you think about the flow here it can be friction can be quite negligible so in a same",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 11,
+      "original_text": "okay then we saw the linear momentum indication last time and then today we are going over I'm going to derive the Bernoulli occasion from the linear momentum indication and a classic linear momentum analysis between pressure velocity and elevation which means that pressure and then velocity and c direction",
+      "text": "okay then we saw the linear momentum equation last time and then today we are going over I'm going to derive the Bernoulli equation from the linear momentum equation and a classic linear momentum analysis between pressure velocity and elevation which means that pressure and then velocity and z direction",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 12,
+      "original_text": "from the ground in a frictionless flow results in the Bernoulli equation. So this is the result instead of form. And I will derive this form in a following slide. So we have, so here I assume incompressible, incompressible. So we have the rho constant, right? So rho one and rho two equals rho.",
+      "text": "from the ground in a frictionless flow results in the Bernoulli equation. So this is the result in steady form. And I will derive this form in a following slide. So we have, so here I assume incompressible, incompressible. So we have the rho constant, right? So rho one and rho two equals rho.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 14,
+      "original_text": "but if you think about flow just above the curve where we can neglect the friction and also where we can neglect the boundary layer effect right then through a streamline you can think of the state one upstream and state two downstream okay so this relation relates a certain constant property in state one and in state two okay",
+      "text": "but if you think about flow just above the car where we can neglect the friction and also where we can neglect the boundary layer effect right then through a streamline you can think of the state one upstream and state two downstream okay so this relation relates a certain constant property in state one and in state two okay",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 17,
+      "original_text": "assumption when Mach number is less than 0.3. What is Mach number? Mach number is the non-dimensionalized velocity, denoted as a capital V, velocity divided by the speed of sound. So it shows how much times of the velocity in terms of the speed of sound.",
+      "text": "assumption when Mach number is less than 0.3. What is Mach number? Mach number is the non-dimensionalized velocity, denoted as a capital V, velocity divided by the speed of sound. So it shows how much times of the velocity in terms of the speed of sound. [Review note: The displayed Mach-number definition is M=V/a, where a is the speed of sound.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 20,
+      "original_text": "okay so what it means is that single streamline meaning there is no hint or you know there is no work at it so different streamline so here and here may have different different constants so here this one right so when you are state one and state two they may have a different constants but along a single streamline then you will have the same",
+      "text": "okay so what it means is that single streamline meaning there is no heat or you know there is no work added so different streamline so here and here may have different different constants so here this one right so when you are state one and state two they may have a different constants but along a single streamline then you will have the same [Review note: Following one streamline does not by itself imply absence of heat or shaft work; the note keeps those physical restrictions separate.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 21,
+      "original_text": "amount of this one okay okay so now let's derive the Bernoulli location so this is the control volume that we are going there is the control volume that we will be looking into this is elemental pretty small and this is a stream tube control volume it is a control volume",
+      "text": "amount of this one okay okay so now let's derive the Bernoulli equation so this is the control volume that we are going there is the control volume that we will be looking into this is elemental pretty small and this is a stream tube control volume it is a control volume",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 23,
+      "original_text": "direction, streamline direction. And then in the left-hand side, area is A, N, pressure acting inward, that is P, and velocity acting inward, V, and density is rho, right? On the right surface, after D is apart, pressure is acting inward, but this time there will be a variation by DP,",
+      "text": "direction, streamline direction. And then in the left-hand side, area is A, and pressure acting inward, that is P, and velocity acting inward, V, and density is rho, right? On the right surface, after ds apart, pressure is acting inward, but this time there will be a variation by DP,",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 28,
+      "original_text": "changes by a s. And also velocity is also changing, but that is also by along the streamwise direction. So this can be zero and the m dot, m dot is a rho a, b. Here a is a function of s and also v is also a function of streamwise.",
+      "text": "changes by a s. And also velocity is also changing, but that is also by along the streamwise direction. So this can be zero and the m dot, m dot is a rho A V. Here a is a function of s and also v is also a function of streamwise.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 29,
+      "original_text": "So those are not the function of the time, only the density can change over time, right? So partial, partial rho, partial t, a, ds, okay? And then linear momentum equation in the streamwise direction can be summation of all forces in the streamwise can be rho, v, db.",
+      "text": "So those are not functions of time; only the density can change over time, right? So (partial rho / partial t) A ds. And then the linear momentum equation in the streamwise direction can be the summation of all forces in the streamwise direction, with rho V dVol. [Review note: The lecturer revisits the time dependence of V at 00:21:07–00:22:14; V can also depend on time in the unsteady derivation.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 30,
+      "original_text": "there is a typo here, so not dB, velocity V, dB, right, but since we are only looking into a single direction, you can drop this vector term, and then plus, and then plus M dot V out minus M dot V in, and then since we have the non-changing volume, partial partial T can be getting in, so we have the partial partial T, rho V, A, Ds,",
+      "text": "There is a typo here [the pointed-to symbol is unclear in speech]. Velocity V, dVol, right? But since we are only looking into a single direction, you can drop this vector notation. And then plus (m dot V) out minus (m dot V) in. Since we have a non-changing volume, the time derivative can go inside, so we have (partial / partial t)(rho V) A ds.",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 31,
+      "original_text": "so here is the velocity right and then so this is the volume and then this is the dm those are the dm dot v okay so here vs equals v because s is a streamlined direction so when we are the left hand side you have to think about the gravitational force",
+      "text": "so here is the velocity right and then so this is the volume and then this is the dm those are the dm dot v okay so here vs equals v because s is a streamline direction so when we are the left hand side you have to think about the gravitational force",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 34,
+      "original_text": "is sin theta this by here that will be this one and there is a normal so dg over ds and then a couple more relation gamma specific weight is rho g and then delta v elemental volume is a ds right so here",
+      "text": "is sin theta this by here that will be this one and there is a normal so dz over ds and then a couple more relation gamma specific weight is rho g and then delta v elemental volume is a ds right so here",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 35,
+      "original_text": "dw sin theta is w is what gamma is w divided by volume right and then w divided by this is a gamma and it's a volume a ds dw so dw can be gamma a ds and then sin theta is a ds",
+      "text": "dW sin theta. Gamma is weight divided by volume, right? The elemental volume is A ds, so dW can be gamma A ds. And then sin theta is [unfinished; the next segment gives dz/ds].",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 36,
+      "original_text": "so a sorry gamma ds is sine theta is dg over ds so ds is so here sine theta is dg over ds so ds can be cancelled out so we have minus gamma a dg and in terms of the pressure pressure is a little bit I think even in the textbook it was not quite",
+      "text": "so a sorry gamma ds is sine theta is dz over ds so ds is so here sine theta is dz over ds so ds can be cancelled out so we have minus gamma A dz and in terms of the pressure pressure is a little bit I think even in the textbook it was not quite",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 39,
+      "original_text": "and then area will be A plus DA. So minus P plus DP multiplied by DA plus DA. Then on the sideline, we have pressure acting to the normal, right? So here, but our S direction, right? So the angle here, angle here, it has some angles here. It's not exactly in parallel.",
+      "text": "and then area will be A plus DA. So minus (p + dp) multiplied by (A + dA). Then on the sideline, we have pressure acting to the normal, right? So here, but our S direction, right? So the angle here, angle here, it has some angles here. It's not exactly in parallel.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 41,
+      "original_text": "so I'm exaggerating so that amount along this surface so pressure along the slanted surface will be gradually changing from p to p plus dp but then if we are interested only in the stringwise direction and if we sum all those up in the end you are looking into",
+      "text": "so I'm exaggerating so that amount along this surface so pressure along the slanted surface will be gradually changing from p to p plus dp but then if we are interested only in the streamwise direction and if we sum all those up in the end you are looking into",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 45,
+      "original_text": "plus G plus FTPDA. So if we carry out some arithmetic, we have that one. So we have only that one. And we neglect, so we have that one.",
+      "text": "Plus (p + half dp) dA. So if we carry out some arithmetic, we have that one. And we neglect [the higher-order term indicated on screen]. [Review note: The side-face expression is normalized from the accompanying diagram and formula; raw ASR reads \"G plus FTPDA\".]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 46,
+      "original_text": "okay then so linear momentum communication is rearranged as this is the from the gravity force and this is from the pressure force and this is the left hand side of the the linear momentum equations right so in here this one will be partial rho partial t va ds plus",
+      "text": "okay then so linear momentum equation is rearranged as this is the from the gravity force and this is from the pressure force and this is the left hand side of the the linear momentum equations right so in here this one will be partial rho partial t va ds plus",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 49,
+      "original_text": "we have that one and divide so we have the left hand side we have that one and that one right two terms the left hand side and two terms in the right hand side we want to collect all the terms in the one side and divide by a rho okay and then then this term rho a is cancelled out so we have partial partial t ds here",
+      "text": "we have that one and divide so we have the left hand side we have that one and that one right two terms the left hand side and two terms in the right hand side we want to collect all the terms in the one side and divide by a rho okay and then then this term rho a is cancelled out so we have (partial V / partial t) ds here",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 50,
+      "original_text": "here so this term comes to here and then this one is moved to the right hand side ADP and then we divide by A row so we have that term is coming into here DP 0 right",
+      "text": "here so this term comes to here and then this one is moved to the right hand side ADP and then we divide by A rho so we have that term is coming into here dp / rho right",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 51,
+      "original_text": "okay so here then so we got that that term and that term and then the last one m dot db m dot db is rho u a is rho will be rho b a db so here and then we divide by the a rho",
+      "text": "So we have those terms, and then the last one, m dot dV. Here m dot is rho V A, so we have rho V A dV. Then we divide by A rho.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 52,
+      "original_text": "a rho, so we have bdb, so this is the velocity and this is the volume, and then so this is coming from that one, lastly, this term, right, so gamma a dz, that is coming, if you divide by a rho, then we have g dz left, and then to be zeros, right,",
+      "text": "A rho, so we have V dV. This is the velocity and this is the volume. Lastly, gamma A dz: if you divide by A rho, then we have g dz left, and the sum is zero.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 53,
+      "original_text": "okay then we can derive the Bernoullication for unsteady frictionless law along a streamline along a streamline and frictionless and then here I said unsteady so I haven't disregarded the partial term yet so if we integrate this term one and two partial v partial t ds",
+      "text": "okay then we can derive the Bernoulli equation for unsteady frictionless flow along a streamline along a streamline and frictionless and then here I said unsteady so I haven't disregarded the partial term yet so if we integrate this term one and two partial v partial t ds",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 55,
+      "original_text": "or you can divide that equation by G, gravitational acceleration to half a height unit so I'll talk about that later but anyway this is the Bernoulli equation that will be very useful",
+      "text": "or you can divide that equation by G, gravitational acceleration to have a height unit so I'll talk about that later but anyway this is the Bernoulli equation that will be very useful",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 56,
+      "original_text": "then next slide we assume a further assumption so if we assume steady then partial partial term will go to zero right and then you assume incompressible which means that rho1, rho2 should be the same as rho then we have dead relations okay or we can divide one state in the left hand side to",
+      "text": "then next slide we assume a further assumption so if we assume steady then partial partial term will go to zero right and then you assume incompressible which means that rho1, rho2 should be the same as rho then we have that relation okay or we can divide one state in the left hand side to",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 58,
+      "original_text": "by G, G, gravitational acceleration, what we have is P1 over rho G plus V1 squared divided by rho G, half, plus C1, then P2 over rho G.",
+      "text": "by G, G, gravitational acceleration, what we have is P1 over rho G plus V1 squared divided by rho G, half, plus z1, then P2 over rho G. [Review note: This intermediate spoken denominator includes rho; the lecturer removes it in the following segment. The final velocity head is V1^2/(2g).]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 59,
+      "original_text": "what is rho g? rho g is gamma right and then what is a p of a gamma that is the pressure hat so half V2 square divided by the g right sorry there shouldn't be any rho here my mistake right",
+      "text": "what is rho g? rho g is gamma right and then what is a p of a gamma that is the pressure head so half V2 square divided by the g right sorry there shouldn't be any rho here my mistake right",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 60,
+      "original_text": "plus 2g plus g2 equals also constant and then not a square, kinematic mistake so here so we have that term and then that is in the meters right so if I generalize that term that is p over rho g plus v square 2g",
+      "text": "Plus z2 equals also a constant. [Some spoken symbols during the handwritten correction are unclear.] So we have that term, and that is in meters. If I generalize that term, that is p over rho g plus V squared over 2g.",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 62,
+      "original_text": "So frictionless and incompressible fluid, Frictionless and incompressible fluid, Reynolds equation may also be interpreted as an idealized energy equation. Energy meaning you have to think about some temperature and enthalpy and entropy as well. So we are moving into the energy equation later on.",
+      "text": "So frictionless and incompressible fluid, Frictionless and incompressible fluid, Bernoulli equation may also be interpreted as an idealized energy equation. Energy meaning you have to think about some temperature and enthalpy and entropy as well. So we are moving into the energy equation later on.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 63,
+      "original_text": "The change from 1 to 2 in the above equation represents the reversible pressure arc, kinetic and potential energy changes.",
+      "text": "The change from 1 to 2 in the above equation represents the reversible pressure work, kinetic and potential energy changes.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 65,
+      "original_text": "but you know simple some assumptions there is a chance where this strict assumption can be nearly okay like 90% okay then we can apply the Bernoulli equation rather than applying this complicated linear moment occasions.",
+      "text": "but you know simple some assumptions there is a chance where this strict assumption can be nearly okay like 90% okay then we can apply the Bernoulli equation rather than applying this complicated linear momentum equations.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 66,
+      "original_text": "so what I say is Bernoulli equation can work as an alternative to the momentum equation in frictionless law in Christian's world so here restrictions on the Bernoulli equation let's take a couple of example here so these three example shows the reasons of the validity and invalidity of the Bernoulli equation so this is a wind tunnel and that",
+      "text": "so what I say is Bernoulli equation can work as an alternative to the momentum equation in frictionless flow, in a frictionless world so here restrictions on the Bernoulli equation let's take a couple of example here so these three example shows the regions of validity and invalidity of the Bernoulli equation so this is a wind tunnel and that",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 67,
+      "original_text": "this is a modern aircraft so we can think of the blue reasons are an invalid reason where we cannot apply the Bernoulli equation why is it near the body so near the surface the reason where you cannot apply the Bernoulli equation near the surface or near the wall or near the wave okay so you cannot really",
+      "text": "this is a model aircraft so we can think of the blue regions are an invalid region where we cannot apply the Bernoulli equation why is it near the body so near the surface the region where you cannot apply the Bernoulli equation near the surface or near the wall or near the wake okay so you cannot really",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 68,
+      "original_text": "this is an invalid case and then a valid case so you can think of the streamline here and upstream state can be one and downstream can be two then you can apply the boundary location between one and two and then if you think about the propeller so this is a valid case but we have the so this is invalid reason why but we have a surface and also there is some turbulent wick",
+      "text": "this is an invalid case and then a valid case so you can think of the streamline here and upstream state can be one and downstream can be two then you can apply the Bernoulli equation between one and two and then if you think about the propeller so this is a valid case but we have the so this is invalid region why but we have a surface and also there is some turbulent wake",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 69,
+      "original_text": "going on so at some point in later chapter I'll also be talking about the turbulence as well so here propeller is moving which means that work is added right so work is added so the Bernoulli occasion cannot be in this simple form and later on I will show how those terms can be",
+      "text": "going on so at some point in later chapter I'll also be talking about the turbulence as well so here propeller is moving which means that work is added right so work is added so the Bernoulli equation cannot be in this simple form and later on I will show how those terms can be",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 70,
+      "original_text": "considered in the energy equation and these so if you think about the state 1 and state 2 constant 1 from the balloon location and if we think about constant value at state 2 from the balloon location that's not the same okay and this is the also the chimney where there is a fire then the blue region",
+      "text": "considered in the energy equation and these so if you think about the state 1 and state 2 constant 1 from the Bernoulli equation and if we think about constant value at state 2 from the Bernoulli equation that's not the same okay and this is the also the chimney where there is a fire then the blue region",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 71,
+      "original_text": "and near the wall and inside the fire, you cannot really apply the vernication. You can only apply vernication in the before the fire and then away from the fire. So this is upstream and this is downstream. But again, so here heat is added.",
+      "text": "and near the wall and inside the fire, you cannot really apply the Bernoulli equation. You can only apply Bernoulli equation in the before the fire and then away from the fire. So this is upstream and this is downstream. But again, so here heat is added.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 73,
+      "original_text": "of venturi 2, venturi 2 meaning we have the pipe which has the area variation because the area changes the velocity will also change its velocity is smaller faster here right and that makes the pressure change pressure changes as well so if the velocity increases probably the pressure will be increased right so let's see so I said if the pressure",
+      "text": "of venturi tube, venturi tube meaning we have the pipe which has the area variation because the area changes the velocity will also change its velocity is smaller faster here right and that makes the pressure change pressure changes as well so if the velocity increases probably the pressure will be increased right so let's see so I said if the pressure [Review note: The tentative claim about increasing pressure is immediately reversed in the next segment: velocity rises and pressure falls.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 75,
+      "original_text": "So here, if you see the mass flow rate, the smoothly necked down system is called the ventric tube",
+      "text": "So here, if you see the mass flow rate, the smoothly necked down system is called the venturi tube",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 80,
+      "original_text": "V2 is a1 over a2, V1 and then d1 is the diameter at the location 1, d1 square over d2 square, right, so I will take the scales out, d1 over d1 over d2 square divided by the a1 here",
+      "text": "V2 is (A1/A2) V1, and D1 is the diameter at location 1, so (D1 squared / D2 squared) V1. [The repeated spoken symbols while writing are unclear; the displayed relation is V2=(D1/D2)^2 V1.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 81,
+      "original_text": "and then let's introduce the beta as a ratio between two locations here. Then we will apply the Bernoulli equation along the center line from section 1 to section 2.",
+      "text": "and then let's introduce the beta as a ratio between two locations here. Then we will apply the Bernoulli equation along the center line from section 1 to section 2. [Review note: The handwriting defines beta=D1/D2, but the printed 1-beta^4 denominator uses beta=D2/D1. The note states its adopted definition explicitly.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 82,
+      "original_text": "So we have, if the tube is horizontal, G1 and G2 is the same. Let's solve for the V2. Then V2 squared minus V1 squared will be 2 over rho, P1 minus P2, and then we set P1 minus P2 as a delta P.",
+      "text": "So we have, if the tube is horizontal, z1 and z2 is the same. Let's solve for the V2. Then V2 squared minus V1 squared will be 2 over rho, P1 minus P2, and then we set P1 minus P2 as a delta P.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 83,
+      "original_text": "then we have this equation 1 and this equation 2 so 1 and 2 get rid of the v1 and v2 then we can have the v2 as a function of pressure, changes, density, and shape only right then the mass flow rate m dot will be rho a2 v2 so we have that relation okay",
+      "text": "then we have this equation 1 and this equation 2 so 1 and 2 get rid of the v1 and v2 then we can have the v2 as a function of pressure, changes, density, and shape only right then the mass flow rate m dot will be rho a2 v2 so we have that relation okay [Review note: The printed final square-root expression omits A2. The stated definition m dot=rho A2 V2 requires that factor; the note gives the corrected expression in its topic card.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 85,
+      "original_text": "the momentum equation and this time this is the angular momentum okay so here we think about an origin O and then elemental mass or dm and this is a part from R by R and it is moving at the velocity d.",
+      "text": "the momentum equation and this time this is the angular momentum okay so here we think about an origin O and then elemental mass or dm and this is a part from R by R and it is moving at the velocity V.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 87,
+      "original_text": "by Reynolds transport theorem with B and beta, B as on H0 and beta as on R cross product of the B, right, so if we differentiate angular momentum with respect to T, then there will be the sum of all the moments, okay, the moments and",
+      "text": "by Reynolds transport theorem with B and beta, B as on H0 and beta as on R cross product of V, right, so if we differentiate angular momentum with respect to T, then there will be the sum of all the moments, okay, the moments and",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 91,
+      "original_text": "What it means is that rate of change of energy inside the control volume should be the same as net heat flux coming into the control volume and work at it to the control volume.",
+      "text": "What it means is that rate of change of energy inside the control volume should be the same as net heat flux coming into the control volume and work added to the control volume. [Review note: A fixed open control volume also has energy transport with mass crossing its boundary; the full RTT energy equation includes that flux term.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 93,
+      "original_text": "Then here again we have to apply the Reynolds transport theorem here capital B is an energy and beta is the dE over dM will be energy total energy per human mass and again we assume the fixed control value.",
+      "text": "Then here again we have to apply the Reynolds transport theorem here capital B is an energy and beta is the dE over dM will be energy total energy per unit mass and again we assume the fixed control volume.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 94,
+      "original_text": "so here the left-hand side this is for the Lagrangian perspective and right-hand side is Eulerian perspective so here beta rho db plus beta rho dn da right",
+      "text": "so here the left-hand side this is for the Lagrangian perspective and right-hand side is Eulerian perspective so here beta rho dVol plus beta rho (V dot n) dA right",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 96,
+      "original_text": "delta t, delta t minus delta w divided by delta t will be d energy system divided by the dt, they should be the same as the Reynolds transport theorem, ddt, control volume, E rho dv, because beta is rho here,",
+      "text": "Delta Q divided by delta t minus delta W divided by delta t will be dE_system/dt. That should be the same as the Reynolds transport theorem: d/dt of the control-volume integral of e rho dVol, because beta is rho here [as transcribed]. [Review note: Both ASR passes give \"beta is rho\"; the stated energy substitution and displayed integrand require beta=e. This review note is not a lecturer quotation.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 97,
+      "original_text": "plus control surface E rho V inner product of the DA here. So here we call the sign convention positive Q denotes the heat added to the system and then positive W denotes the work done by the system.",
+      "text": "plus control surface e rho (V dot n) dA here. So here we call the sign convention positive Q denotes the heat added to the system and then positive W denotes the work done by the system.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 98,
+      "original_text": "so that's why we have to have the negative delta w meaning work done on the system to be consistent with the positive heat edit and positive energy increase",
+      "text": "so that's why we have to have the negative delta w meaning work done on the system to be consistent with the positive heat added and positive energy increase",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 105,
+      "original_text": "energy and potential energy. So here I said internal energy as a u cap. So u cap plus half d square and gz. So there is the total system energy. Then let's look into the work term. Work term is divided in three parts. Shaft work, pressure work, and viscous work.",
+      "text": "energy and potential energy. So here I said internal energy as a u cap. So u cap plus half V squared and gz. So there is the total system energy. Then let's look into the work term. Work term is divided in three parts. Shaft work, pressure work, and viscous work.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 110,
+      "original_text": "volume will be V n but then we have to think about since the n is pointing outward and we are looking into the velocity into moving into the volume there will be coming into the volume there will be the negative right volume so we have negative so then work term by the pressure force",
+      "text": "Volume will be V dot n, but we have to think about the sign: n points outward, and we are looking at velocity coming into the volume, so there will be a negative sign. Then the work term by the pressure force...",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 111,
+      "original_text": "then will be minus P da multiplied by the minus V n. So there will be the P V n da. So what it means is that this is the pressure work. This is a pressure work by the control volume.",
+      "text": "...will be minus p dA multiplied by minus V dot n. So there will be p (V dot n) dA. What it means is that this is the pressure work by the control volume. [Review note: In vector form, the force on the fluid is -p n dA; the by-system pressure-work rate is +p(V dot n)dA. The scalar shorthand in this passage should not be read as an additional vector product.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 112,
+      "original_text": "okay so you have to be careful about the signs here so the total work term is a shaft work and then the pressure work by the control volume so the control volume did the work and then we are thinking about pressure work since it has the work it is restricting in terms of the volume right then what about the heater and then the viscous work",
+      "text": "okay so you have to be careful about the signs here so the total work term is a shaft work and then the pressure work by the control volume so the control volume did the work and then we are thinking about pressure work since it has the work it is restricting in terms of the volume right then what about the heat and then the viscous work",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 114,
+      "original_text": "And what about the heat, heater? Heat was mentioned previously, right? So this one is a heat, Q, Q dot, right? So Q dot, those term is from the conduction by contact, material contact, radiation, this is like from sun or some of your heater, and then convection, this is coming from the motion of your gas, motion of the gas, right?",
+      "text": "And what about the heat? Heat was mentioned previously, right? So this one is a heat, Q, Q dot, right? So Q dot, this term is from the conduction by contact, material contact, radiation, this is like from sun or some of your heater, and then convection, this is coming from the motion of your gas, motion of the gas, right?",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 117,
+      "original_text": "so E plus P multiplied by the BNBA right so again what was the E? E is the total energy internal energy plus V square over 2 plus rho G is here",
+      "text": "So the pressure contribution is added to the energy flux. [Spoken symbols are unclear; the displayed term is (e+p/rho) rho (V dot n) dA.] Again, what was e? It is the total specific energy: internal energy plus V squared over 2 plus gz.",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 119,
+      "original_text": "q dot this is heat edit and then this is a shaft work done by a machine is sigma m dot out so this term goes to zero we have only the flux terms here right so this is a u hat plus f e square plus gz plus p overall",
+      "text": "q dot this is heat added and then this is a shaft work done by a machine is sigma m dot out so this term goes to zero we have only the flux terms here right so this is a u hat plus half V squared plus gz plus p over rho",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 120,
+      "original_text": "row out minus sigma m dot in multiplied by the u hat plus f v squared plus gz plus t over row in.",
+      "text": "rho out minus sigma m dot in multiplied by the u hat plus half V squared plus gz plus p over rho in.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 122,
+      "original_text": "and mass flow rate is the same here then Q dot minus WS dot is this is the one that I just wrote right and here if we write the enthalpy form H enthalpy is the internal energy plus G over rho right and",
+      "text": "and mass flow rate is the same here then Q dot minus WS dot is this is the one that I just wrote right and here if we write the enthalpy form H enthalpy is the internal energy plus p over rho right and",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 123,
+      "original_text": "and then that is can be written in terms of the temperature okay so internal energy enthalpy can be related to the you know the temperature and also internal energy can be related to the enthalpy or temperature if you know the pressure and the density then right so that one and that one is the H2 and that one and that one is the enthalpy in right so this is out and",
+      "text": "and then that is can be written in terms of the temperature okay so internal energy enthalpy can be related to the you know the temperature and also internal energy can be related to the enthalpy or temperature if you know the pressure and the density then right so that one and that one is the H2 and that one and that one is the enthalpy in right so this is out and [Review note: The handwriting h=c_p T is used with the ideal-gas, constant-c_p model in the following turbine example; it is not the general definition of enthalpy.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 124,
+      "original_text": "in then h2 minus h1 plus v square 2 minus v1 square over 2 plus g is the same so z z2 minus z1 okay so this is the energy form that we will be using a lot okay because it has the temperature form velocity and the elevation change the work form and this is the heat edit so",
+      "text": "in then h2 minus h1 plus v square 2 minus v1 square over 2 plus g is the same so z z2 minus z1 okay so this is the energy form that we will be using a lot okay because it has the temperature form velocity and the elevation change the work form and this is the heat added so",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 127,
+      "original_text": "and Ws is the W work divided by the m dot and we have the Q minus Ws in the left hand side, right hand side is we have enthalpy change, kinetic energy change, and then elevation, this is the elevation changes, right, then head form of the energy occasion, so from here, right, so here, it's from here,",
+      "text": "and Ws is the W work divided by the m dot and we have the Q minus Ws in the left hand side, right hand side is we have enthalpy change, kinetic energy change, and then elevation, this is the elevation changes, right, then head form of the energy equation, so from here, right, so here, it's from here,",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 128,
+      "original_text": "and then let's divide by m dot g right so if we divide by the g and also the m dot then left hand side we have the h minus h so this one q over g w s over g is h here h g minus h s is this one head here",
+      "text": "and then let's divide by m dot g right so if we divide by the g and also the m dot then left hand side we have the h minus h so this one q over g w s over g is h here h_q minus h_s is this one head here",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 131,
+      "original_text": "represented, expressed as an equivalent fluid height, fluid column. So this is a pressure head, velocity head is the elevation and this is the turbine head extraction. This is energy is extracted, extraction, subtraction and then pump head input and then",
+      "text": "Kinetic energy represented, expressed as an equivalent fluid height, fluid column. This is pressure head; velocity head; this is elevation [pointing across the terms]. This is turbine head, extraction: energy is extracted. Then pump head, input, and then...",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 134,
+      "original_text": "mication, momentum mication with assumption of steady, incompressible and frictionless. Then remember it was P1 over gamma 1 plus V1 square over half plus GZ1.",
+      "text": "...momentum equation, with the assumptions of steady, incompressible, and frictionless flow. Then remember it was p1 over gamma1 plus [spoken kinetic-energy term unclear] plus gz1. [Review note: The next segment explicitly changes gamma to rho. The final energy-per-mass form is p/rho + V^2/2 + gz, not a mixture of head and energy terms.]",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 135,
+      "original_text": "you can divide it by g acceleration again this gotta be gamma 1 that should be rho rho and then p2 over rho plus b2 squared divided by 2 plus g g2 that should be constant so for the Bernoulli equation you don't have any this additional hat okay okay guys so",
+      "text": "you can divide it by g acceleration again this gotta be gamma 1 that should be rho rho and then p2 over rho plus V2 squared divided by 2 plus g z2 that should be constant so for the Bernoulli equation you don't have any this additional head okay okay guys so",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 137,
+      "original_text": "so this is a term machinery and then",
+      "text": "so this is a turbomachinery and then",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 139,
+      "original_text": "then diameter of inlet and outlet is given and pressure difference and also the temperature is also given and then V1 is there so we wanted to check what is the exit velocity what is the heat transfer rate in BTU that's what you want to know and I will notice the constant EP value constant specific heat at constant pressure",
+      "text": "then diameter of inlet and outlet is given and pressure difference and also the temperature is also given and then V1 is there so we wanted to check what is the exit velocity what is the heat transfer rate in BTU that's what you want to know and I will notice the constant c_p value constant specific heat at constant pressure",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 141,
+      "original_text": "so next slide we have to check the control volume so probably there will be our control volume here select air in the turbine as a control volume and assume air as an ideal gas then inlet and active density rho 1 can be calculated by the P1 over RT1 from the equation of state and then density at the exit 2",
+      "text": "so next slide we have to check the control volume so probably there will be our control volume here select air in the turbine as a control volume and assume air as an ideal gas then inlet and exit density rho 1 can be calculated by the P1 over RT1 from the equation of state and then density at the exit 2",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 142,
+      "original_text": "that is T2 divided by RT2, right? So we can calculate that. The muscular rate will be, we know the velocity at the one state, so rho A1, B1, rho 1, A1, B1, so rho 1, A1, and B1, so we got that one.",
+      "text": "That is p2 divided by R T2. [Review note: The pressure symbol is normalized from the displayed ideal-gas equation; raw ASR reads T2 in the numerator.] We can calculate that. The mass flow rate: we know the velocity at state 1, so rho1 A1 V1. So we have that one.",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 143,
+      "original_text": "Then the active velocity from the mass flow rate, rho 2, A2, and E2. So density here. So here this is a high spirit. So we have the density variation. So you have this one and then area and V2. So V2 is the 244 feet per sec.",
+      "text": "Then the exit velocity from the mass flow rate, rho2 A2 V2. Density here [following descriptive phrase unclear]. We have the density variation, and then area and V2. So V2 is 244 feet per second.",
+      "reason": "PDF·강의 필기·문맥과 대조한 용어/기호 교정. 대괄호는 편집자 기록이며 불명확한 발화나 원자료와의 차이를 구분함."
+    },
+    {
+      "index": 144,
+      "original_text": "then to calculate the heat edit we have to think about the energy equations here right and then we assume the steady flow and also the same height so z1 equals z2 is the same and enthalpy form is the CPT that is the U plus P over rho so U hat here so that one and that one right that can be",
+      "text": "then to calculate the heat added we have to think about the energy equations here right and then we assume the steady flow and also the same height so z1 equals z2 is the same and enthalpy form is the CPT that is the U plus P over rho so U hat here so that one and that one right that can be",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 145,
+      "original_text": "neglected and those can be expressed as an enthalpy. So we have q dot minus ws dot is m dot cp t1 and t1 will be cp t2 minus t1 and then half b2 square minus b1 square.",
+      "text": "neglected and those can be expressed as an enthalpy. So we have q dot minus ws dot is m dot cp t1 and t1 will be cp t2 minus t1 and then half V2 squared minus V1 squared.",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    },
+    {
+      "index": 147,
+      "original_text": "fluid bound and this is a BTU unit. Okay guys, that's all for chapter 3. And chapter 3 is really really important because it really states what are the basic fundamental physics law of the fluid motion and what is the control volume where you have to apply a series of the three equations, right, mass equation, conservation,",
+      "text": "foot-pound and this is a BTU unit. Okay guys, that's all for chapter 3. And chapter 3 is really really important because it really states what are the basic fundamental physics law of the fluid motion and what is the control volume where you have to apply a series of the three equations, right, mass equation, conservation,",
+      "reason": "PDF·강의 문맥과 대조하여 명백한 전문용어·기호 오인식을 교정함. 원시 구간 시각은 유지함."
+    }
+  ]
+}

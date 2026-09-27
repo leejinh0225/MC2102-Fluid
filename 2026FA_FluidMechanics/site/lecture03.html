@@ -38,7 +38,7 @@
         <div class="meta-row">
           <span class="meta-chip">날짜 미기재</span>
           <span class="meta-chip">원본 슬라이드 54장</span>
-          <span class="meta-chip">Part 1·2 스크립트 대조</span>
+          <span class="meta-chip">Part 1·2·3 스크립트 대조</span>
           <span class="meta-chip">수업 대체 + 시험 대비</span>
         </div>
         <div class="button-row">
@@ -231,10 +231,10 @@
             <div class="quiet-card">
               <h3>자료 대조 범위</h3>
               <p>
-                PDF 1–54쪽을 모두 포함합니다. 1–17쪽은 Part 1, 18–36쪽은 Part
-                2의 설명과 대조했습니다. 37–54쪽은 PDF 기반 해설이며 대응 강의가
-                제공되지 않았습니다. 제공된 Part 4는 Chapter 2 복습으로 확인되어
-                이 장의 근거에 포함하지 않았습니다.
+                PDF 1–54쪽을 모두 포함합니다. 1–17쪽은 Part 1, 18–36쪽은 Part 2,
+                37–53쪽은 Part 3의 설명·필기와 대조했습니다. 54쪽은 PDF의 종합
+                정리이며 Part 3 말미의 구두 복습을 함께 참고합니다. 각 영상의
+                시각은 해당 편의 시작을 기준으로 합니다.
               </p>
             </div>
           </div>
@@ -2127,7 +2127,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 37/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:00:00–00:04:13</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2137,8 +2137,9 @@
               <p>
                 Bernoulli equation(베르누이 방정식)의 유도와 적용 범위를 살핀
                 뒤, angular momentum(각운동량)과 energy equation(에너지
-                방정식)을 다룹니다. 이 구간은 PDF를 바탕으로 설명하며 대응
-                강의와의 추가 대조가 남아 있습니다.
+                방정식)을 다룹니다. 강의 도입에서는 힘을 구할 때 운동량식,
+                온도·열·일을 연결할 때 에너지식을 선택하며, 세 보존식을 모두
+                control volume(검사체적)에 적용한다는 흐름을 다시 짚습니다.
               </p>
             </div>
           </div>
@@ -2165,7 +2166,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 38/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:04:13–00:08:56</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2192,7 +2193,19 @@
               </p>
             </div>
             <div class="card">
-              <h3>낮은 Mach number(마하수)의 의미</h3>
+              <h3>Mach number(마하수)는 음속에 대한 속력의 비입니다</h3>
+              <span class="formula">M = V/a　(a: speed of sound, 음속)</span>
+              <p>
+                강의에서는 마하수를 음속으로 무차원화한 속력으로 설명합니다.
+                대부분의 액체 유동과 M&lt;0.3인 기체 유동을 비압축성 근사의 적용
+                대상으로 제시합니다.
+              </p>
+              <div class="evidence">
+                <span>Part 3 · 00:06:29–00:07:27</span>
+              </div>
+            </div>
+            <div class="card">
+              <h3>낮은 마하수만으로 충분하지 않을 때</h3>
               <p>
                 슬라이드의 M&lt;0.3은 기체 압축성 효과를 작게 보는 흔한 속도
                 기준입니다. 이 값만으로 모든 밀도 변화가 사라지는 것은 아닙니다.
@@ -2227,7 +2240,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 39/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:08:56–00:20:29</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2239,6 +2252,9 @@
                 s는 streamline(유선)을 따라 증가하는 거리입니다. 질량유량의
                 입·출구 차 dṁ에 대해 질량 축적률과 순유출률의 합은 0입니다. 미소
                 요소가 작다고 해서 비정상 축적률을 처음부터 0으로 두지 않습니다.
+                A=A(s)는 위치에 따라 달라도 검사체적은 시간에 따라 움직이거나
+                변형하지 않습니다. 고정 CV라는 조건과 정상 유동이라는 조건은
+                서로 다릅니다.
               </p>
             </div>
             <div class="card">
@@ -2267,6 +2283,24 @@
                 <span>편집자 보강 · 앞뒤 연속방정식과 차원 대조</span>
               </div>
             </div>
+            <div class="card">
+              <h3>기울어진 옆면의 압력까지 더하면 −A dp가 됩니다</h3>
+              <span class="formula"
+                >dF_press,s = pA − (p + dp)(A + dA) + (p + dp/2)dA</span
+              >
+              <span class="formula">= −A dp − (dp dA)/2 ≈ −A dp</span>
+              <p>
+                왼쪽 끝면의 압력힘은 +s 방향, 오른쪽 끝면은 −s 방향입니다.
+                단면적이 증가하는 미소 유관의 기울어진 옆면에서는 압력힘의 +s
+                성분이 생깁니다. 이 성분을 s에 수직인 면으로 투영하면 면적 차
+                dA에 작용하는 평균 압력 p+dp/2로 셀 수 있습니다. 세 면의 힘을
+                모두 더한 뒤 2차 미소량 dp dA를 버리면 −A dp만 남습니다. 양
+                끝면만 계산하면 p dA 항이 잘못 남습니다.
+              </p>
+              <div class="evidence">
+                <span>Part 3 · 00:16:20–00:20:29 · 옆면 압력의 투영 필기</span>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -2291,7 +2325,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 40/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:20:29–00:25:38</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2316,6 +2350,11 @@
                 첫 적분은 local acceleration(국소 가속도)에 해당합니다. 정상
                 유동이면 이 항이 0입니다. ρ가 변하면 압력 적분을 곧바로
                 (p₂−p₁)/ρ로 바꿀 수 없으므로 상태 관계가 필요합니다.
+              </p>
+              <p>
+                강의에서는 00:21:07–00:22:14에 V도 시간의 함수라고 다시
+                설명합니다. 따라서 이 단계에서는 V=V(s,t)로 보고 ∂V/∂t를 남겨야
+                합니다. 정상 조건은 다음 페이지에서 추가합니다.
               </p>
             </div>
           </div>
@@ -2342,7 +2381,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 41/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:25:38–00:29:42</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2370,6 +2409,22 @@
                 외우지 않습니다.
               </p>
             </div>
+            <div class="card">
+              <h3>g로 나누면 세 항이 모두 Head(수두)가 됩니다</h3>
+              <span class="formula"
+                >p₁/(ρg) + V₁²/(2g) + z₁ = p₂/(ρg) + V₂²/(2g) + z₂</span
+              >
+              <p>
+                pressure head(압력수두)는 p/(ρg)=p/γ, velocity head(속도수두)는
+                V²/(2g), elevation head(위치수두)는 z입니다. 모두 길이
+                단위입니다. 강의 필기에서도 속도수두의 분모를 2g로 정리합니다.
+                앞의 단위 질량당 에너지식과 이 수두식을 한 식 안에서 섞지
+                않습니다.
+              </p>
+              <div class="evidence">
+                <span>Part 3 · 00:26:43–00:28:33</span>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -2394,7 +2449,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 42/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:29:42–00:33:17</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2453,7 +2508,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 43/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:33:17–00:34:28</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2501,7 +2556,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 44/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:34:28–00:36:48</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2531,14 +2586,23 @@
               id="source-check-44"
               data-review-kind="error"
             >
-              <h3>원본 오류 확인 · 마지막 식의 A₂ 누락</h3>
+              <h3>원본·필기 대조 · 목 면적과 지름비</h3>
               <p>
                 원본 마지막 등호 뒤의 근호식에는 A₂가 빠져 있습니다. 앞의
                 ṁ=ρA₂V₂에 구한 V₂를 대입하면 위 식처럼 A₂가 남습니다. 근호만의
                 단위는 kg/(m²·s)이며, 면적을 곱해야 질량유량 kg/s가 됩니다.
               </p>
+              <p>
+                Part 3 · 00:36:25의 화면에는 V₂=(D₁/D₂)²V₁과 함께 β=D₁/D₂라는
+                필기가 있습니다. 첫 관계는 맞지만, 그 β를 인쇄된 1−β⁴에 그대로
+                넣으면 축소관에서 근호 안이 음수가 됩니다. 본문은 원본 PDF의
+                정의 β=D₂/D₁로 통일합니다. 역비를 β′=D₁/D₂로 정의하려면 같은
+                식의 분모를 1−β′⁻⁴로 바꿔야 합니다.
+              </p>
               <div class="evidence">
-                <span>편집자 보강 · 질량유량 정의 대입과 단위 확인</span>
+                <span
+                  >편집자 보강 · PDF·Part 3 필기·연속방정식 및 단위 대조</span
+                >
               </div>
             </div>
           </div>
@@ -2565,7 +2629,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 45/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:36:48–00:39:54</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2628,7 +2692,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 46/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:39:54–00:43:35</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2694,7 +2758,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 47/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:43:35–00:49:38</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2731,6 +2795,19 @@
                 <span>편집자 보강 · 경계의 일률과 내부 비가역성 구분</span>
               </div>
             </div>
+            <div class="card">
+              <h3>열전달은 물질 이동과 구분해서 셉니다</h3>
+              <p>
+                강의에서는 conduction(전도), radiation(복사), convection(대류)을
+                열전달의 세 방식으로 설명합니다. 접촉을 통한 전달, 태양·히터의
+                복사, 유체 운동을 동반한 전달이 각각의 예입니다. 이 효과를 Q̇로
+                나타내고, 경계를 통과하는 유체가 운반하는 에너지는 별도의 유출입
+                항으로 셉니다.
+              </p>
+              <div class="evidence">
+                <span>슬라이드 46–47 · Part 3 · 00:48:52–00:49:55</span>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -2755,7 +2832,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 48/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:49:38–00:51:49</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2791,11 +2868,13 @@
               <h3>원본 표기 교정 · 시간에 대한 축적률</h3>
               <p>
                 첫 번째 에너지식의 저장항에 있는 d/dx는 시간 변화율 d/dt로
-                읽어야 합니다. 공간미분이면 다른 항과 에너지/시간 차원이 맞지
-                않습니다. 위 본문에서는 시간미분을 사용했습니다.
+                읽어야 합니다. Part 3 · 00:49:23–00:49:55에서 강의자가 “it has
+                to be T”라고 말하고 화면의 x를 t로 고칩니다. 공간미분이면 다른
+                항과 에너지/시간 차원이 맞지 않습니다. 위 본문에서도 시간미분을
+                사용했습니다.
               </p>
               <div class="evidence">
-                <span>편집자 보강 · 에너지 축적항의 독립변수 대조</span>
+                <span>편집자 보강 · 강의의 시간미분 수정과 차원 대조</span>
               </div>
             </div>
           </div>
@@ -2822,7 +2901,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 49/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:51:49–00:55:05</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2860,13 +2939,14 @@
             >
               <h3>표기·조건 주의 · 포트 수와 번호</h3>
               <p>
-                제목과 실제 에너지식은 한 입구·한 출구 모델입니다. 원본에 겹쳐
-                보이는 추가 질량유량 첨자까지 세 번째 포트로 해석하지 않습니다.
-                실제로 여러 출구가 있으면 앞 페이지의 포트별 합을 사용해야
-                합니다.
+                제목과 실제 에너지식은 한 입구·한 출구 모델입니다. Part 3 ·
+                00:51:49–00:52:30에서도 “one stands for inlet and two stands for
+                outlet”이라고 설명하며, 화면에서 마지막 ṁ의 추가 첨자를
+                지웁니다. 따라서 ṁ₁=ṁ₂=ṁ으로 읽습니다. 실제로 여러 출구가 있으면
+                앞 페이지의 포트별 합을 사용해야 합니다.
               </p>
               <div class="evidence">
-                <span>편집자 보강 · 입출구 설명과 에너지식의 항 대조</span>
+                <span>편집자 보강 · PDF와 Part 3의 입출구 설명·필기 대조</span>
               </div>
             </div>
           </div>
@@ -2893,7 +2973,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 50/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:55:05–00:59:03</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2918,6 +2998,12 @@
                 일반 에너지식에서 내부에너지 변화와 열전달을 정리한 결과입니다.
                 보통의 수동적 관로 손실은 h_f≥0으로 놓습니다. 펌프·터빈·손실
                 항이 모두 0이면 같은 조건의 베르누이 수두식으로 환원됩니다.
+              </p>
+              <p>
+                강의에서는 velocity head(속도수두)를 운동에너지를 등가의 fluid
+                column height(유체 기둥 높이)로 나타낸 값이라고 설명합니다.
+                터빈은 에너지를 추출하고 펌프는 공급합니다. 이 에너지 수지는
+                베르누이식과 달리 손실 항을 포함할 수 있습니다.
               </p>
             </div>
             <div class="card">
@@ -2956,7 +3042,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 51/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 00:59:03–01:00:27</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -2977,6 +3063,11 @@
                 ft·lbf/(slug·°R)를 사용합니다. 풀이처럼 압력은 절대압력으로
                 해석합니다. V₂는 질량보존으로, 열전달률 Q̇는 에너지보존으로
                 구합니다. 단열이라는 조건은 주어지지 않았습니다.
+              </p>
+              <p>
+                강의는 온도가 주어져 있으므로 enthalpy form(엔탈피형)이
+                편리하다고 강조합니다. 이 예제의 일정 cₚ 모델에서는
+                h₂−h₁=cₚ(T₂−T₁)로 바꾸어 두 상태를 연결합니다.
               </p>
             </div>
           </div>
@@ -3003,7 +3094,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 52/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 01:00:27–01:01:56</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -3057,7 +3148,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 53/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>Part 3 · 01:01:56–01:03:22</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -3126,7 +3217,7 @@
             </div>
             <figcaption>
               <span>원본 PDF 54/54</span>
-              <span>PDF 해설 · 대응 강의 미제공</span>
+              <span>PDF 종합 정리 · Part 3 구두 복습 · 01:03:22–01:04:04</span>
             </figcaption>
           </figure>
           <div class="note-stack">
@@ -3141,6 +3232,12 @@
                 표면력, 좌표·압력 기준을 표시한 뒤 정상·비압축성·1차원 포트 등의
                 조건을 필요한 곳에만 적용합니다. 식의 이름보다 각 항이
                 저장·유입·유출·외력·일 중 무엇인지 읽는 것이 중요합니다.
+              </p>
+              <p>
+                이 페이지는 PDF의 종합 정리입니다. Part 3는 53쪽 화면에서
+                끝나며, 마지막 구두 복습에서 질량·운동량·에너지의 세 보존식, CV
+                선택, Reynolds transport theorem(레이놀즈 수송정리)의 물리적
+                의미를 다시 강조합니다.
               </p>
             </div>
             <div class="card">
@@ -3489,10 +3586,11 @@
             <tbody>
               <tr>
                 <td>자료 범위</td>
-                <td>Part 1·2와 Part 4</td>
+                <td>Part 1·2·3</td>
                 <td>
-                  Part 1·2만 Chapter 3입니다. Part 4는 Chapter 2 복습이며
-                  37–54쪽의 영상 근거가 아닙니다.
+                  Part 1은 1–17쪽, Part 2는 18–36쪽, Part 3는 37–53쪽과
+                  대조합니다. 54쪽은 PDF 정리에 Part 3 말미의 구두 복습을 함께
+                  참고합니다.
                 </td>
               </tr>
               <tr>
@@ -3538,18 +3636,39 @@
                 </td>
               </tr>
               <tr>
-                <td>PDF 39·44</td>
-                <td>미소 체적 및 목 면적의 누락</td>
+                <td>Part 3 · 21–28분</td>
+                <td>비정상 속도와 수두식</td>
                 <td>
-                  질량 축적에는 A ds, 벤투리 질량유량에는 A₂를 유지합니다.
+                  V도 시간에 따라 변할 수 있다는 설명과, 속도수두 분모를 2g로
+                  고치는 필기를 반영합니다. 전사의 중간 진술과 최종 채택식을
+                  구별합니다.
                 </td>
               </tr>
               <tr>
-                <td>PDF 46·48·49</td>
+                <td>Part 3의 용어·기호</td>
+                <td>Bernoulli location, muscular rate, pressure hat</td>
+                <td>
+                  Bernoulli equation, mass flow rate, pressure head로
+                  교정합니다. 불명확한 기호와 편집자 대조 기록은 전사에서
+                  대괄호로 구분합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 39·44 · Part 3 16–20분·36분</td>
+                <td>미소 체적 및 목 면적의 누락</td>
+                <td>
+                  질량 축적에는 A ds, 벤투리 질량유량에는 A₂를 유지합니다. 옆면
+                  압력의 투영을 풀어 쓰고, 인쇄식과 반대인 지름비 필기는 별도로
+                  대조합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>PDF 46·48·49 · Part 3 49–52분</td>
                 <td>에너지 축적 변수와 포트 번호</td>
                 <td>
                   시간미분 d/dt와 순유출항을 명시하고, 한 입구·한 출구 모델을
-                  유지합니다.
+                  유지합니다. 강의에서 t로 고친 필기와 입출구 번호 설명을 대조
+                  근거로 기록합니다.
                 </td>
               </tr>
               <tr>
@@ -3596,14 +3715,27 @@
                 <a
                   href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/transcripts/lecture03/part02/lecture.txt"
                   >Part 2</a
+                >
+                ·
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/transcripts/lecture03/part03/lecture.txt"
+                  >Part 3</a
                 >. 각 시각은 해당 편 시작 기준이며, 캡션은 주제 대응 구간입니다.
               </li>
               <li>
                 Part 1: 약 50분 46초, PDF 1–17쪽. Part 2: 약 53분, PDF 18–36쪽.
               </li>
               <li>
-                PDF 37–54쪽: 대응 강의 미제공. 영상에서의 추가 설명이나 구두
-                수정 여부는 확인하지 않았습니다.
+                Part 3: 약 64분 5초, PDF 37–53쪽과 말미 구두 복습. 영상의 Week 4
+                표기와 관계없이 내용상 Chapter 3의 세 번째 강의입니다. 54쪽은
+                영상에 표시되지 않는 PDF 종합 정리입니다.
+              </li>
+              <li>
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/blob/main/2026FA_FluidMechanics/transcripts/lecture03/README.md"
+                  >스크립트 형식·검수 안내</a
+                >: 전사 전문과 슬라이드·일부 필기를 대조했으며, 모든 발화를 직접
+                청취한 축어 검증본은 아닙니다.
               </li>
             </ul>
             <p>
