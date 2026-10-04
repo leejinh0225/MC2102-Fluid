@@ -1,0 +1,271 @@
+{
+  "duration_seconds": 5120.149,
+  "range_type": "Approximate topic correspondence based on full ASR and sampled frames; overlaps and slide revisits are intentional.",
+  "slides": [
+    {
+      "slide": 1,
+      "evidence": "slide_and_lecture",
+      "range": "00:00:01–00:00:31"
+    },
+    {
+      "slide": 2,
+      "evidence": "slide_and_lecture",
+      "range": "00:00:31–00:02:46"
+    },
+    {
+      "slide": 3,
+      "evidence": "slide_and_lecture",
+      "range": "00:02:46–00:03:02"
+    },
+    {
+      "slide": 4,
+      "evidence": "slide_and_lecture",
+      "range": "00:03:02–00:05:03"
+    },
+    {
+      "slide": 5,
+      "evidence": "slide_and_lecture",
+      "range": "00:05:03–00:09:45"
+    },
+    {
+      "slide": 6,
+      "evidence": "slide_and_lecture",
+      "range": "00:09:45–00:16:41"
+    },
+    {
+      "slide": 7,
+      "evidence": "slide_and_lecture",
+      "range": "00:16:41–00:19:38"
+    },
+    {
+      "slide": 8,
+      "evidence": "slide_and_lecture",
+      "range": "00:19:38–00:21:18"
+    },
+    {
+      "slide": 9,
+      "evidence": "slide_and_lecture",
+      "range": "00:21:18–00:23:44"
+    },
+    {
+      "slide": 10,
+      "evidence": "slide_and_lecture",
+      "range": "00:23:14–00:25:44"
+    },
+    {
+      "slide": 11,
+      "evidence": "slide_and_lecture",
+      "range": "00:25:44–00:34:12"
+    },
+    {
+      "slide": 12,
+      "evidence": "slide_and_lecture",
+      "range": "00:34:12–00:36:18"
+    },
+    {
+      "slide": 13,
+      "evidence": "slide_and_lecture",
+      "range": "00:36:18–00:43:59"
+    },
+    {
+      "slide": 14,
+      "evidence": "slide_and_lecture",
+      "range": "00:43:59–00:49:11 / 00:54:04–00:55:40"
+    },
+    {
+      "slide": 15,
+      "evidence": "slide_and_lecture",
+      "range": "00:49:11–00:54:04"
+    },
+    {
+      "slide": 16,
+      "evidence": "slide_and_lecture",
+      "range": "00:55:40–00:58:18"
+    },
+    {
+      "slide": 17,
+      "evidence": "slide_and_lecture",
+      "range": "00:58:18–01:00:24"
+    },
+    {
+      "slide": 18,
+      "evidence": "slide_and_lecture",
+      "range": "01:00:24–01:01:01"
+    },
+    {
+      "slide": 19,
+      "evidence": "slide_and_lecture",
+      "range": "01:01:01–01:03:48"
+    },
+    {
+      "slide": 20,
+      "evidence": "slide_and_lecture",
+      "range": "01:03:48–01:05:49"
+    },
+    {
+      "slide": 21,
+      "evidence": "slide_and_lecture",
+      "range": "01:05:49–01:06:40"
+    },
+    {
+      "slide": 22,
+      "evidence": "slide_and_lecture",
+      "range": "01:06:40–01:09:12"
+    },
+    {
+      "slide": 23,
+      "evidence": "slide_and_lecture",
+      "range": "01:09:12–01:13:48"
+    },
+    {
+      "slide": 24,
+      "evidence": "slide_and_lecture",
+      "range": "01:13:48–01:16:18"
+    },
+    {
+      "slide": 25,
+      "evidence": "slide_and_lecture",
+      "range": "01:16:18–01:21:30"
+    },
+    {
+      "slide": 26,
+      "evidence": "slide_and_lecture",
+      "range": "01:21:30–01:24:40"
+    },
+    {
+      "slide": 27,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 28,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 29,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 30,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 31,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 32,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 33,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 34,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 35,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 36,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 37,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 38,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 39,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 40,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 41,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 42,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 43,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 44,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 45,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 46,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 47,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 48,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 49,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 50,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 51,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 52,
+      "evidence": "pdf_only",
+      "range": null
+    },
+    {
+      "slide": 53,
+      "evidence": "pdf_only",
+      "range": null
+    }
+  ]
+}

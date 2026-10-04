@@ -102,7 +102,7 @@ def main() -> None:
             page = writer.pages[int(number) - 1]
             stream = ContentStream(page.get_contents(), writer)
             for fill_index, stroke_index in pairs:
-                if stream.operations[fill_index][1] != b"f" or stream.operations[stroke_index][1] != b"S":
+                if stream.operations[fill_index][1] not in (b"f", b"f*") or stream.operations[stroke_index][1] != b"S":
                     raise ValueError("Mask paint operators differ from inspected manifest")
                 stream.operations[fill_index] = ([], b"n")
                 stream.operations[stroke_index] = ([], b"n")

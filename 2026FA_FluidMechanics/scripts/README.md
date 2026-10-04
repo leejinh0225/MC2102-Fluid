@@ -64,7 +64,7 @@ Windows에서 `cublas64_12.dll` 또는 `cudnn64_9.dll` 오류가 나면 NVIDIA �
 
 ## `review_transcript.py`
 
-비공개 원시 JSON과 사람이 작성한 교정 manifest를 결합해 공개 가능한 `TXT/SRT/JSON`을 만듭니다. 교정된 구간은 더 이상 단어별 시간이 정확히 대응하지 않으므로 해당 구간의 원시 word timestamp를 제거하고, 원본 구간 번호를 `source_index`로 보존합니다.
+비공개 원시 JSON과 검토한 교정 manifest를 결합해 공개 가능한 `TXT/SRT/JSON`을 만듭니다. 교정된 구간은 더 이상 단어별 시간이 정확히 대응하지 않으므로 해당 구간의 원시 word timestamp를 제거하고, 원본 구간 번호를 `source_index`로 보존합니다.
 
 ```powershell
 python .\review_transcript.py raw.json corrections.json ..\transcripts\lecture01 --force
@@ -84,6 +84,18 @@ python .\review_transcript.py raw.json corrections.json ..\transcripts\lecture01
 ```
 
 필요 도구: FFmpeg. PATH에 없으면 `-FfmpegPath "<path to ffmpeg.exe>"`를 지정합니다.
+
+## Chapter 4 / Lecture 5 가림막
+
+53쪽 중 10쪽의 답안 가림막 21개만 제거합니다. 원래 수식을 덧씌워 수정한 흰색 패치는 보존합니다. 11쪽의 한 가림막은 `f*`(even-odd fill) 연산자이므로 manifest의 검토 대상에 한해 `f`와 `f*`를 허용합니다.
+
+```powershell
+python .\remove_trailing_pdf_masks.py ..\lecture_notes\lecture05_original.pdf ..\lecture_notes\lecture05_note.pdf --interleaved-manifest .\lecture05_masks.json --manifest-only
+python .\test_pdf_masks.py
+node --test .\lecture05.test.mjs
+```
+
+원본 SHA-256, 53쪽의 텍스트·그리기 연산자와 42개 허용 변경(21개의 채우기·테두리)을 검사합니다. 원본 PDF 자체는 수정하지 않습니다.
 
 ## 검증기
 

@@ -1,0 +1,374 @@
+{
+  "title": "Lecture 5 — reviewed English ASR",
+  "review_basis": "Chapter 4 PDF, pp. 1–26; Week 5 recording and sampled annotated frames. The final video frame previews p. 27 without teaching that section.",
+  "review_method": "Model-assisted reading of all 197 primary ASR segments, source-slide comparison, and sampled video-frame review. Not a full verbatim human listening audit. Uncertain mathematical dictation is preserved with editorial review notes instead of fabricated quotations.",
+  "notes": [
+    "One video, approximately 85 minutes 20 seconds. All times are relative to that video.",
+    "PDF pp. 27–53 have no substantive corresponding instruction in the provided video; notes for these pages are slide-based.",
+    "Bracketed Review note annotations are editorial, not lecturer speech.",
+    "Original recordings and raw ASR remain private. No personal-information passage was found in this ASR.",
+    "The lecturer self-corrects the piston integration and the y-face viscous-work Taylor increment; these self-corrections are retained."
+  ],
+  "corrections": [
+    {
+      "index": 6,
+      "original_text": "your car or velocity air, air velocity or air pressure around aircraft are all different, right? So what makes those kind of differences? There are the boundary conditions. So even though your governing equations are the same for all fluid motions, the boundary condition can be different for an individual problem. That's why you have the unique solution for specific problems, okay?",
+      "text": "your car or velocity air, air velocity or air pressure around aircraft are all different, right? So what makes those kind of differences? There are the boundary conditions. So even though your governing equations are the same for all fluid motions, the boundary condition can be different for an individual problem. That's why you have the unique solution for specific problems, okay? [Review note: Boundary and initial conditions distinguish problems; they do not by themselves guarantee a unique solution for every nonlinear flow.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 8,
+      "original_text": "And then next video, I'm going to talk about some other important topics like stream function for chastity, irrotationality, and viscous flows in a cylindrical pipe",
+      "text": "And then next video, I'm going to talk about some other important topics like stream function, vorticity, irrotationality, and viscous flows in a cylindrical pipe",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 17,
+      "original_text": "So let's apply the ch rule to obtain each scalar time derivative.",
+      "text": "So let's apply the chain rule to obtain each scalar time derivative.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 19,
+      "original_text": "partial u partial y multiplied by the dy dt plus du dz dz dt and here du dx du is nothing but velocity u and dy dt is nothing but a velocity of v and dg dt is nothing but your velocity of the w so then du dt becomes here and this is u du dx v dvu dy",
+      "text": "partial u partial y multiplied by the dy dt plus du dz dz dt and here du dx du is nothing but velocity u and dy dt is nothing but a velocity of v and dz dt is nothing but your velocity of the w so then du dt becomes here and this is u du dx v dvu dy",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 22,
+      "original_text": "But if something is moving, like if your velocity is changing over space and time, then we should think about the total derivative that can be decomposed into the local time derivative, local acceleration, which means that your velocity is fixed.",
+      "text": "But if something is moving, like if your velocity is changing over space and time, then we should think about the total derivative that can be decomposed into the local time derivative, local acceleration, which means that your velocity is fixed. [Review note: The following sentence clarifies that the observation location, not the velocity value, is fixed.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 25,
+      "original_text": "u db dx plus v db dy and w db dx",
+      "text": "u db dx plus v db dy and w db dx [Review note: Symbol recognition is uncertain. The slide states u(partial V/partial x) + v(partial V/partial y) + w(partial V/partial z).]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 34,
+      "original_text": "So this slide shows acceleration but since a polar derivative can be applied to velocity here but then you can apply that to a mass flow or momentum flow or energy flux flux per unit area flow per unit area",
+      "text": "So this slide shows acceleration but since a total derivative can be applied to velocity here but then you can apply that to a mass flow or momentum flow or energy flux flux per unit area flow per unit area",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 37,
+      "original_text": "in Reynolds transport theorem, Reynolds transport theorem, where your ddt is your time rate of change of something is nothing but your ddt control value, right, bdb and then so that is the time rate of change of some property b inside your control value.",
+      "text": "in Reynolds transport theorem, Reynolds transport theorem, where your ddt is your time rate of change of something is nothing but your ddt control volume, right, bdb and then so that is the time rate of change of some property b inside your control volume.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 38,
+      "original_text": "control volume, they should be the same as flux moving in and out of your control surface, right? So that is the Reynolds transport theorem and here you will not see A, it should be C, C, S, it should be C, S and B, V, dot, N, D, A equals zero. So that was the Reynolds transport theory, right?",
+      "text": "control volume, they should be the same as flux moving in and out of your control surface, right? So that is the Reynolds transport theorem and here you will not see A, it should be C, C, S, it should be C, S and B, V, dot, N, D, A equals zero. So that was the Reynolds transport theory, right? [Review note: The zero right-hand side applies to the mass-conservation specialization, not to every transported extensive property.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 43,
+      "original_text": "and then right-hand side, this is the flux coming in and out of the surface, right? So for the disturb, we'll be looking into the three phases, x-phase, y-phase, and z-phase, and in an x-phase, rho-yu, so this is rho-yu is a mass flux, right? Mass flux, so mass flux multiplied by the area",
+      "text": "and then right-hand side, this is the flux coming in and out of the surface, right? So for the disturb, we'll be looking into the three phases, x-face, y-face, and z-face, and in an x-face, rho-yu, so this is rho-yu is a mass flux, right? Mass flux, so mass flux multiplied by the area",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 49,
+      "original_text": "coming in and out of the control surface. But for the chapter 4, this control volume change will be directly written here. And then flux coming in and out can be taken into account in x-phases, y-phases, and z-phases with assumption of the linear increase or decrease in x-direction, y-direction, and z-direction by dx, dy, and dz.",
+      "text": "coming in and out of the control surface. But for the chapter 4, this control volume change will be directly written here. And then flux coming in and out can be taken into account in x-faces, y-faces, and z-faces with assumption of the linear increase or decrease in x-direction, y-direction, and z-direction by dx, dy, and dz.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 52,
+      "original_text": "and this is a z direction, that's flux, and then this term d rho dt dx dy dz is in this term, and then if I cancel out dx dy dz, dx dy dz, then we have that, and that is the continuity equation in differential form, okay, Cartesian correlates,",
+      "text": "and this is a z direction, that's flux, and then this term d rho dt dx dy dz is in this term, and then if I cancel out dx dy dz, dx dy dz, then we have that, and that is the continuity equation in differential form, okay, Cartesian coordinates,",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 57,
+      "original_text": "So that is the gradient of velocity is zero. So that is the famous continuity equation for incompressible flow.",
+      "text": "So that is the gradient of velocity is zero. So that is the famous continuity equation for incompressible flow. [Review note: The displayed expression is divergence, div V = 0, not the full velocity gradient.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 59,
+      "original_text": "and discontinuity occasion is always important and must always be satisfied for a rational analysis of a flow pattern.",
+      "text": "and the continuity equation is always important and must always be satisfied for a rational analysis of a flow pattern.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 60,
+      "original_text": "So mass is not created or destroyed. More importantly mass flow rate is the same everywhere.",
+      "text": "So mass is not created or destroyed. More importantly mass flow rate is the same everywhere. [Review note: Equal mass flow rates require a steady streamtube or a control volume with no mass accumulation and matching ports; this is not a general unsteady statement.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 63,
+      "original_text": "what must the form of the velocity be? So for incompressible flow, the continuity equation applies partial u, partial x. So what is this? Partial u, partial x plus partial v, partial y plus partial w, partial c equals 0.",
+      "text": "what must the form of the velocity be? So for incompressible flow, the continuity equation applies partial u, partial x. So what is this? Partial u, partial x plus partial v, partial y plus partial w, partial z equals 0.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 64,
+      "original_text": "so u is ax square plus b square so insert that one plug that one into u and we don't know the v and w is a constant so they will go to zero so dv dy will be 2ax and we want to calculate v so we want to integrate that with respect to y",
+      "text": "so u is a times x squared plus y squared so insert that one plug that one into u and we don't know the v and w is a constant so they will go to zero so dv dy will be 2ax and we want to calculate v so we want to integrate that with respect to y [Review note: The ASR loses a possible minus sign. The slide and continuity require partial v/partial y = -2ax; do not quote the ASR sign as a confirmed spoken value.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 65,
+      "original_text": "but that has to be integrating partially because at this point we are taking x as a constant. So velocity b is a 2axy plus constant but there can be a function of x or I didn't say this is a two-dimensional so g and also it could also be a time of",
+      "text": "but that has to be integrating partially because at this point we are taking x as a constant. So velocity b is a 2axy plus constant but there can be a function of x or I didn't say this is a two-dimensional so g and also it could also be a time of [Review note: Using the displayed continuity equation gives v = -2axy + f(x,z,t). This is an editorial algebra check, not reconstructed speech.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 67,
+      "original_text": "inside your piston right so for the differential relations we don't have to worry about the control volume okay so in chapter 3 we always started with the control volume but in chapter 4 we don't need a control volume right so at one instant when piston is at L0.15 meter away from the closed end of the cylinder",
+      "text": "inside your piston right so for the differential relations we don't have to worry about the control volume okay so in chapter 3 we always started with the control volume but in chapter 4 we don't need a control volume right so at one instant when piston is at L0.15 meter away from the closed end of the cylinder [Review note: A differential analysis still uses an infinitesimal control volume in the derivation; no new finite control volume is selected for each example.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 87,
+      "original_text": "and Eulerian is 0.15 so we have the density time rate of change of the density is 1440 so here we got the expression of rho t and then we got the partial rho partial t in here so rho t as this form rho t has that one and then partial rho partial t is",
+      "text": "and L naught is 0.15 so we have the density time rate of change of the density is 1440 so here we got the expression of rho t and then we got the partial rho partial t in here so rho t as this form rho t has that one and then partial rho partial t is",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 89,
+      "original_text": "time rate of change of the momentum, rho, V inside the momentum blocks inside your control volume and there is a momentum blocks coming in and out of our control surface so this one so these are from the fixed control volume and then if we change that we want to change that into a differential form so we have the linear momentum changes in control volume",
+      "text": "time rate of change of the momentum, rho, V inside the momentum flux inside your control volume and there is a momentum flux coming in and out of our control surface so this one so these are from the fixed control volume and then if we change that we want to change that into a differential form so we have the linear momentum changes in control volume",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 95,
+      "original_text": "partial rho uv, partial rho uv dx coming from, by taking into in and out in x direction, and this rho vv is from the, this one cancelled out, and we have partial partial y rho vv dy dx dx dx dx dx dx dx is left here, in g direction, that has cancelled out, and we have that left in here, right?",
+      "text": "partial rho uv, partial rho uv dx coming from, by taking into in and out in x direction, and this rho vv is from the, this one cancelled out, and we have partial partial y rho vv dy dx dx dx dx dx dx dx is left here, in g direction, that has cancelled out, and we have that left in here, right? [Review note: Repeated dx tokens are unreliable ASR of pointed-at notation. Each net face-pair contribution is a spatial derivative times dx dy dz.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 99,
+      "original_text": "I just expand that one using the plural rule and then I will also apply the plural rule for three of them but this time rho u and v so v partial rho u partial x plus v from this term v partial rho v",
+      "text": "I just expand that one using the product rule and then I will also apply the product rule for three of them but this time rho u and v so v partial rho u partial x plus v from this term v partial rho v",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 106,
+      "original_text": "v partial v partial y plus w partial v partial z right so if I look into this term that one what is that this one there is the continuity equation for the compressible fog right so that should go to zero by continuity and then what about that one",
+      "text": "v partial v partial y plus w partial v partial z right so if I look into this term that one what is that this one there is the continuity equation for the compressible flow right so that should go to zero by continuity and then what about that one",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 107,
+      "original_text": "that one is exactly the total derivative of the velocity dv dt right so we have rho here dv dt here and then dx dy dz left so the ma term when from the f equal ma ma term can be nothing but rho capital dv dt plus dx dy dz",
+      "text": "that one is exactly the total derivative of the velocity dv dt right so we have rho here dv dt here and then dx dy dz left so the ma term when from the f equal ma ma term can be nothing but rho capital dv dt plus dx dy dz [Review note: The final factor is multiplication by dx dy dz, not addition of a volume to an acceleration.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 108,
+      "original_text": "so we saw that one and then next slide we are looking into the force term so the net force the net forces on the control value must be of the differential size and proportional to the elemental volume and these forces include the body force and surface force so",
+      "text": "so we saw that one and then next slide we are looking into the force term so the net force the net forces on the control volume must be of the differential size and proportional to the elemental volume and these forces include the body force and surface force so",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 111,
+      "original_text": "so we have the minus p and then what about the viscous work viscous work is next slide we are looking into the viscous stress viscous stress is we use the Einstein notation so this viscous stress is intenser intenser and i varies from one two three",
+      "text": "so we have the minus p and then what about the viscous work viscous work is next slide we are looking into the viscous stress viscous stress is we use the Einstein notation so this viscous stress is a tensor and i varies from one two three",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 116,
+      "original_text": "and whenever you have a surface which has the non-zero roughness, non-zero roughness, then you will have the friction force and that always retard the velocity of your particle.",
+      "text": "and whenever you have a surface which has the non-zero roughness, non-zero roughness, then you will have the friction force and that always retard the velocity of your particle. [Review note: A viscous boundary layer does not require a geometrically rough wall; a smooth no-slip wall also has one.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 117,
+      "original_text": "So here, so this is a very good example. So this is an extraction and then you have the variation in y, right?",
+      "text": "So here, so this is a very good example. So this is the x direction and then you have the variation in y, right?",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 119,
+      "original_text": "So tau xx is tau yx, tau zx, and then this notation, the first notation i represents, this is the index of the base that is acting upon, and then j is the direction of the force on the surface",
+      "text": "So tau xx is tau yx, tau zx, and then this notation, the first notation i represents, this is the index of the face that is acting upon, and then j is the direction of the force on the surface",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 121,
+      "original_text": "normal viscous stress on the x, so this is x-phases, this is also x-phases, okay, so that is the x-phases, surface, and then y, normal to the y-axis, so this one is the y-phase, okay, so this is the y-phase,",
+      "text": "normal viscous stress on the x, so this is x-faces, this is also x-faces, okay, so that is the x-faces, surface, and then y, normal to the y-axis, so this one is the y-face, okay, so this is the y-face,",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 122,
+      "original_text": "so y-phase and then top and front and back these are the normal to the z-axis right so these are the z-phase okay so here so notation here the first index represents sigma ij so sigma ij where i stressed in j-direction",
+      "text": "so y-face and then top and front and back these are the normal to the z-axis right so these are the z-face okay so here so notation here the first index represents sigma ij so sigma ij where i stressed in j-direction",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 127,
+      "original_text": "say sigma xz, that is the same as the tau xz, so it is acting on the x-phases, but in the z direction, so this is a shear, shear, shear, this is normal stress, normal viscous stress, right, and then this viscous stress is, viscous stress tau ij, that is proportional to the element strain rate, this one, strain rate, we saw it from the solid mechanics, right,",
+      "text": "say sigma xz, that is the same as the tau xz, so it is acting on the x-faces, but in the z direction, so this is a shear, shear, shear, this is normal stress, normal viscous stress, right, and then this viscous stress is, viscous stress tau ij, that is proportional to the element strain rate, this one, strain rate, we saw it from the solid mechanics, right,",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 129,
+      "original_text": "so vector denotes only vector represents only the direction okay tensor is on which phase it is a directing so it has a normal and shear term as well and then for an incompressible flow tau xy its name is tau yx this is isotropic tau xz is tau zx and tau yz is tau zy",
+      "text": "so vector denotes only vector represents only the direction okay tensor is on which phase it is a directing so it has a normal and shear term as well and then for an incompressible flow tau xy its name is tau yx this is isotropic tau xz is tau zx and tau yz is tau zy [Review note: For an ordinary nonpolar continuum, stress symmetry follows from angular momentum balance, not incompressibility alone.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 130,
+      "original_text": "and then these are the mu multiple, mu is the dynamic viscosity, mu is a dynamic viscosity, dynamic viscosity, and then mu multiplied by the average of the two shear, the velocity gradient in different directions, du dy, db dx, okay, this one is the dw dx and du dz, stuff like that.",
+      "text": "and then these are the mu multiple, mu is the dynamic viscosity, mu is a dynamic viscosity, dynamic viscosity, and then mu multiplied by the average of the two shear, the velocity gradient in different directions, du dy, db dx, okay, this one is the dw dx and du dz, stuff like that. [Review note: The displayed shear stress is mu times the SUM of the two velocity gradients, equivalently twice mu times the strain-rate tensor component.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 136,
+      "original_text": "by the acceleration but acceleration is in the torque derivative form because it can be moving the right hand side is this is the force term gravity force this one is the pressure force and these are the viscous forces okay so these are the in PDE form and this is the second order right second order and this is nonlinear because unknowns are multiplied into the another unknown so this is a nonlinear",
+      "text": "by the acceleration but acceleration is in the total derivative form because it can be moving the right hand side is this is the force term gravity force this one is the pressure force and these are the viscous forces okay so these are the in PDE form and this is the second order right second order and this is nonlinear because unknowns are multiplied into the another unknown so this is a nonlinear",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 138,
+      "original_text": "Rho w partial z equals zero right so w u v can appear in the mass equations as well okay so these are the couples and these are the second order PDE so this is exactly why the calculation of the Nevers-Ox equation is still impossible",
+      "text": "Rho w partial z equals zero right so w u v can appear in the mass equations as well okay so these are the couples and these are the second order PDE so this is exactly why the calculation of the Navier-Stokes equation is still impossible [Review note: This is not a claim adopted by the notes: special exact solutions and numerical solutions exist; the next two examples derive special exact solutions.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 139,
+      "original_text": "okay so let's take some examples to apply the linear momentum equation so this is a wet flow and then the next example is the quasile flow those are very famous flows in a viscous flow so first wet flow consider this is a pipe but this is a",
+      "text": "okay so let's take some examples to apply the linear momentum equation so this is a Couette flow and then the next example is the Poiseuille flow those are very famous flows in a viscous flow so first Couette flow consider this is a pipe but this is a",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 144,
+      "original_text": "from the continuity equation this is incompressible so we will disregard density rho so we have that one gradient v is a zero and then further v equals zero w equals zero so we have du dy dx partial u partial x equals zero integrated with respect to and then we saw u is a function of ui only",
+      "text": "from the continuity equation this is incompressible so we will disregard density rho so we have that one gradient v is a zero and then further v equals zero w equals zero so we have du dy dx partial u partial x equals zero integrated with respect to and then we saw u is a function of ui only [Review note: The displayed condition is divergence V = 0. Under the stated steady, two-dimensional assumptions, u = u(y).]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 145,
+      "original_text": "and then apply the Navier-Sox equation. So here, fully developed meaning, you typically use that term, fully developed in the pi flow. Now pi flow, when you say fully developed meaning, in whether that x location, at this location, at that location, your velocity profile is exactly the same.",
+      "text": "and then apply the Navier-Stokes equation. So here, fully developed meaning, you typically use that term, fully developed in the pipe flow. Now pipe flow, when you say fully developed meaning, in whether that x location, at this location, at that location, your velocity profile is exactly the same.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 153,
+      "original_text": "so that is the water flow and then this is the water flow so here this is also a pipe but this time your top wall and bottom wall is also fixed so",
+      "text": "so that is the Couette flow and then this is the Poiseuille flow so here this is also a pipe but this time your top wall and bottom wall is also fixed so",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 157,
+      "original_text": "So you may notice that I never took a control value in chapter 4 because our flow model is infinitesimally small. So this is our continuity equation for the incompressible flow. I said that is the incompressible, right? So rho is dropped. And here we don't have any v equals 0, w equals 0.",
+      "text": "So you may notice that I never took a control volume in chapter 4 because our flow model is infinitesimally small. So this is our continuity equation for the incompressible flow. I said that is the incompressible, right? So rho is dropped. And here we don't have any v equals 0, w equals 0.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 158,
+      "original_text": "So these two terms will be cancelled out. We have only t u dx equals 0. So u is u only. Then let's bring up the Navier-Soxication for 2D flow in the x-direction. And this time this is also fully developed.",
+      "text": "So these two terms will be cancelled out. We have only t u dx equals 0. So u is u only. Then let's bring up the Navier-Stokes equation for 2D flow in the x-direction. And this time this is also fully developed.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 161,
+      "original_text": "function of not a function of y and a function of y and this is we say this is a fully developed meaning pressure gradient should be the same everywhere that so that you know your u u y doesn't change in x so but then it doesn't have to be constant okay if we don't consider if we don't consider the fully developed assumption of the fully developed then dp dx can also be a function of x as well",
+      "text": "function of not a function of y and a function of y and this is we say this is a fully developed meaning pressure gradient should be the same everywhere that so that you know your u u y doesn't change in x so but then it doesn't have to be constant okay if we don't consider if we don't consider the fully developed assumption of the fully developed then dp dx can also be a function of x as well [Review note: For the fully developed, steady, constant-viscosity parallel-plate model here, dp/dx is constant. Dropping fully developed flow also removes the basis for the same u(y) solution.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 165,
+      "original_text": "this shift work and viscous work right then that has to be same as the rate of change of the energy right but by the Reynolds transport theorem that rate of change of the energy inside the control volume and then you think about the energy flux coming in and out",
+      "text": "this shaft work and viscous work right then that has to be same as the rate of change of the energy right but by the Reynolds transport theorem that rate of change of the energy inside the control volume and then you think about the energy flux coming in and out",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 168,
+      "original_text": "E plus p over rho that we define as a j dot then from energy transfer theorem okay so we can have like in the momentum equation we can have the energy flux coming in and coming out so here E rho u j dot",
+      "text": "E plus p over rho that we define as a zeta then from energy transfer theorem okay so we can have like in the momentum equation we can have the energy flux coming in and coming out so here E rho u zeta",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 171,
+      "original_text": "use energy flux terms on six offices that I just shown in one direction and then expand the last three terms here by product rule and use the continuity equation checked page 13 of slice 13 of slice then you will see exactly how I",
+      "text": "use energy flux terms on six surfaces that I just shown in one direction and then expand the last three terms here by product rule and use the continuity equation checked page 13 of slice 13 of slice then you will see exactly how I",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 172,
+      "original_text": "okay got this one so uh then right hand side can be written total derivative in terms of that one okay let's say that as an equation one then this term so right hand side can be use this one and then left hand side first let's look into the heat flux term heat flow term so i will use the furious law",
+      "text": "okay got this one so uh then right hand side can be written total derivative in terms of that one okay let's say that as an equation one then this term so right hand side can be use this one and then left hand side first let's look into the heat flux term heat flow term so i will use the Fourier's law",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 173,
+      "original_text": "so we are considering only the conduction here for the heat term we have the radiation, conduction and convection but since this is such a small small element so we don't consider radiation much we don't consider we neglect the radiation we also we don't have any radiation and then we consider we disregard only the convection so we consider only",
+      "text": "so we are considering only the conduction here for the heat term we have the radiation, conduction and convection but since this is such a small small element so we don't consider radiation much we don't consider we neglect the radiation we also we don't have any radiation and then we consider we disregard only the convection so we consider only [Review note: Only conductive heat flux is modeled here. Advective energy transport remains in the material derivative and is not discarded.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 174,
+      "original_text": "need the conduction here. So fluidius log, heat transfer per unit area is a proportional to the grain of the temperature. So this is the fluidius log, right? So Qx is minus K dt dx, where K is the thermal conductivity that is specific to the material, right?",
+      "text": "need the conduction here. So Fourier's law, heat transfer per unit area is a proportional to the grain of the temperature. So this is the Fourier's law, right? So Qx is minus K dt dx, where K is the thermal conductivity that is specific to the material, right?",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 178,
+      "original_text": "And here qx, qy, qz can be written in terms of the Fourier law, then q dot can be gradient of the k gradient t dx dy dz, so that's the total p rate.",
+      "text": "And here qx, qy, qz can be written in terms of the Fourier law, then q dot can be gradient of the k gradient t dx dy dz, so that's the total p rate. [Review note: The operator is divergence of k grad T, a scalar heat-input rate per volume, not a vector gradient.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 180,
+      "original_text": "and then if you consider tau yx at the top and then tau yx at the bottom okay and then u is your top is going that way and u bottom is going this way then this curse word curl area will be bottom",
+      "text": "and then if you consider tau yx at the top and then tau yx at the bottom okay and then u is your top is going that way and u bottom is going this way then viscous work per area will be bottom",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 185,
+      "original_text": "so that is the net viscous work throughout the six phases so if we rewrite that into a vector form we have that and then we can further expand this gradient term with the dissipation and then this is a phi is the viscous dissipation function",
+      "text": "so that is the net viscous work throughout the six faces so if we rewrite that into a vector form we have that and then we can further expand this gradient term with the dissipation and then this is a phi is the viscous dissipation function",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 187,
+      "original_text": "by the viscous force and then pressure force is included in here right included in the here left hand side so all right and then this let's look into this this patient term since all terms are quadratic so this one there one there one there one there one there one there one all quadratic so viscous is patient is always a positive it means that a viscous flow always tends to",
+      "text": "by the viscous force and then pressure force is included in here right included in the here left hand side so all right and then this let's look into this dissipation term since all terms are quadratic so this one there one there one there one there one there one there one all quadratic so viscous dissipation is always a positive it means that a viscous flow always tends to [Review note: The displayed sum of squares gives Phi >= 0; Phi can be zero when the strain-rate tensor vanishes.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 189,
+      "original_text": "so these are the I didn't write it in terms of the you know Cartesian form this is the vector form so plug equation 2 and 3 equation 3 is a viscous word and equation 2 is the energy the heat flow then this is the energy equation then we have this one okay so this is the energy equation and then",
+      "text": "so these are the I didn't write it in terms of the you know Cartesian form this is the vector form so plug equation 2 and 3 equation 3 is a viscous work and equation 2 is the energy the heat flow then this is the energy equation then we have this one okay so this is the energy equation and then",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 190,
+      "original_text": "so far, sorry guys, so far we have looked into previously we saw, previously we derived, mass equation, mass conservation equation we call it as a continuity equation, mass equation, and then momentum equation, some people say that as a native socks equation,",
+      "text": "so far, sorry guys, so far we have looked into previously we saw, previously we derived, mass equation, mass conservation equation we call it as a continuity equation, mass equation, and then momentum equation, some people say that as a Navier-Stokes equation,",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 192,
+      "original_text": "we want to calculate velocity, we want to calculate the density, if density changes or the temperature, if the heat is added or work is done there will be changes in the temperature so those are our unknowns and then the governing equation those can be found if we can solve the Nebel-Stokes equation but like I said Nebel-Stokes equation is one of the seven millennia equations there is no exact solution",
+      "text": "we want to calculate velocity, we want to calculate the density, if density changes or the temperature, if the heat is added or work is done there will be changes in the temperature so those are our unknowns and then the governing equation those can be found if we can solve the Navier-Stokes equation but like I said Navier-Stokes equation is one of the seven millennia equations there is no exact solution [Review note: The sweeping no-exact-solution statement is not used as a mathematical result; the lecture itself derives Couette and Poiseuille exact solutions.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 193,
+      "original_text": "Although a couple of weeks ago, people say about 10,000 AI agents, right? There was the collaboration among Claude and Chagipity and Gemini, I believe. So they say, they declared that using 10,000 AI agents, they were able to solve the Navier-Stokes equation.",
+      "text": "Although a couple of weeks ago, people say about 10,000 AI agents, right? There was the collaboration among Claude and ChatGPT and Gemini, I believe. So they say, they declared that using 10,000 AI agents, they were able to solve the Navier-Stokes equation. [Review note: This is an unverified anecdote by the lecturer, not a source establishing a mathematical breakthrough; it is excluded from the study-note claims.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 194,
+      "original_text": "but then they didn't get an exact solution but they just say you know the exist they say okay there will be a solution of the neighbor's toxication under certain assumptions. I believe that's what they have found so far.",
+      "text": "but then they didn't get an exact solution but they just say you know the exist they say okay there will be a solution of the Navier-Stokes equation under certain assumptions. I believe that's what they have found so far. [Review note: The preceding anecdote is not independently established here.]",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    },
+    {
+      "index": 197,
+      "original_text": "conditions. And then in the next video, I'm going to talk about the boundary condition and also the student function, vorticity and irrotationality. Thank you guys.",
+      "text": "conditions. And then in the next video, I'm going to talk about the boundary condition and also the stream function, vorticity and irrotationality. Thank you guys.",
+      "reason": "전문용어를 PDF·강의 문맥과 대조함. 수식·조건의 해설은 Review note로 분리하고 원시 시각과 실제 자기수정 발화를 유지함."
+    }
+  ]
+}

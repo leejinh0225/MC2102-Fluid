@@ -1,0 +1,3528 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lecture 5 · Differential Relations for Fluid Flow | MC2102</title>
+    <meta
+      name="description"
+      content="물질미분, 연속·운동량·에너지 방정식, 평판 유동, 유선함수와 와도를 53개 슬라이드로 이해하는 한국어 학습 노트"
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="wordmark" href="index.html">MC2102 Fluid Mechanics</a>
+        <div class="header-actions">
+          <a class="header-link" href="downloads.html">PDF 다운로드</a>
+          <span class="header-meta"
+            >Lecture 5 · Differential Relations for Fluid Flow</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">Week 05 · Lecture 5</p>
+        <h1>Differential Relations for Fluid Flow.</h1>
+        <p class="hero__lead">
+          유체 입자의 가속도에서 출발해 보존방정식과 경계조건으로 속도장을
+          구하고, 유선함수·와도·속도퍼텐셜로 유동의 구조를 해석합니다.
+        </p>
+        <div class="meta-row">
+          <span class="meta-chip">날짜 미기재</span>
+          <span class="meta-chip">원본 슬라이드 53장</span>
+          <span class="meta-chip">1–26쪽 강의 스크립트 대조</span>
+          <span class="meta-chip">수업 대체 + 시험 대비</span>
+        </div>
+        <div class="button-row">
+          <a
+            class="button"
+            href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture05_note.pdf"
+            download="lecture05_note.pdf"
+            type="application/pdf"
+            >가림막 제거 PDF 다운로드</a
+          >
+          <a
+            class="button"
+            href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture05_original.pdf"
+            download="lecture05_original.pdf"
+            type="application/pdf"
+            >원본 PDF 다운로드</a
+          >
+          <a class="button" href="index.html">강의 목록</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell">
+      <main id="main" class="content">
+        <!-- Lecture 1의 고정 골격. class, id, 섹션 순서와 중첩 구조를 바꾸지 않고 내용 placeholder만 교체한다. -->
+        <section
+          class="editorial-section section-divider"
+          id="overview"
+          aria-labelledby="overview-title"
+        >
+          <p class="section-kicker">Lecture overview</p>
+          <h2 class="section-title" id="overview-title">
+            작은 유체 요소의 수지가 전체 속도장을 만듭니다.
+          </h2>
+          <p class="section-lead">
+            축적과 경계 통과량의 차이를 미분으로 표현하고, 힘·열·일의 모델과
+            경계조건을 결합합니다. 그 해에서 유량, 전단응력, 국소 회전과 유선의
+            모양을 읽습니다.
+          </p>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="concept-map"
+          aria-labelledby="map-title"
+        >
+          <p class="section-kicker">Concept map</p>
+          <h2 class="section-title" id="map-title">
+            보존 원리에서 유동의 형태까지
+          </h2>
+          <!-- 개념 수에 맞춰 course-map, grid-2 또는 grid-3 중 기존 공통 컴포넌트만 사용한다. -->
+          <div class="grid-3">
+            <div class="card">
+              <h3>1. 미분형 보존법칙</h3>
+              <p>
+                질량·운동량·에너지의 축적과 수송을 한 점의 방정식으로
+                표현합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>2. 경계조건과 해</h3>
+              <p>
+                벽의 속도와 압력차로 Couette·Poiseuille 속도분포를 결정합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>3. 속도장의 구조</h3>
+              <p>ψ, 와도, φ로 유량·회전·퍼텐셜 유동을 구별합니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="concept-summary"
+          aria-labelledby="concept-summary-title"
+        >
+          <p class="section-kicker">Content summary</p>
+          <h2 class="section-title" id="concept-summary-title">
+            Lecture 5 핵심 개념 요약
+          </h2>
+          <p class="section-lead">
+            먼저 각 식의 역할과 적용 조건을 연결하고, 이어지는 슬라이드별
+            유도·예제에서 계산을 확인합니다.
+          </p>
+          <div class="note-stack">
+            <!-- 슬라이드와 실제 개념 설명 스크립트를 종합한 독립형 요약. 슬라이드별 상세 설명은 별도로 유지한다. -->
+            <div class="card">
+              <h3>1. 고정된 위치의 변화와 입자가 겪는 변화</h3>
+              <span class="formula">D/Dt=∂/∂t+V·∇</span>
+              <p>
+                속도장은 공간과 시간의 함수입니다. material
+                derivative(물질미분)는 유체 입자의 이동을 포함하고, local(국소)
+                변화와 convective(대류) 변화를 더합니다. 정상 유동이라도
+                위치마다 속도가 다르면 입자는 가속될 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>2. 작은 상자에서도 보존 원리는 같습니다</h3>
+              <span class="formula">∂ρ/∂t+∇·(ρV)=0</span
+              ><span class="formula">ρDV/Dt=−∇p+∇·τ+ρg</span>
+              <p>
+                축적과 여섯 면의 순유출을 합하면 질량보존이 됩니다. 운동량도
+                같은 방식으로 전개하고 연속방정식으로 묶음을 없애면
+                밀도×가속도가 남습니다. 비압축성은 ∇·V=0이지 모든 속도구배가 0인
+                상태는 아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>3. 힘의 모델과 경계조건이 속도분포를 결정합니다</h3>
+              <span class="formula">Couette: u=V(y+h)/(2h)</span
+              ><span class="formula"
+                >Plane Poiseuille: u=−(dp/dx)(h²−y²)/(2μ)</span
+              >
+              <p>
+                두 식은 y=±h인 평행 평판, 정상·완전 발달·비압축성·일정 점성
+                조건에서 얻습니다. Couette는 위쪽 벽이 V로 움직이고 dp/dx=0인
+                선형 분포입니다. Poiseuille는 두 벽이 고정되고 압력구배로
+                구동되는 포물선 분포입니다. no-slip(점착)은 벽과 유체의 속도가
+                같다는 조건입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>4. 에너지의 이동과 소산</h3>
+              <span class="formula">q=−k∇T, Φ≥0</span>
+              <p>
+                전도열은 온도구배로 전달되고, 점성응력은 일을 하며 기계적
+                에너지를 내부에너지로 바꿉니다. 물질미분에는 유체의 이동에 따른
+                에너지 수송이 이미 포함됩니다. 총에너지 e와 내부에너지 e_int,
+                열유속 q와 총열률 Q̇를 구별해야 합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>5. ψ와 φ는 서로 다른 조건을 해결합니다</h3>
+              <span class="formula">u=ψᵧ, v=−ψₓ; V=∇φ</span>
+              <p>
+                2차원 비압축성 유동의 ψ는 연속방정식을 자동으로 만족하고, 두
+                유선의 Δψ는 단위 깊이 유량입니다. φ는 비회전 속도장을 만듭니다.
+                비압축성·비회전 평면 유동에서는 두 함수가 라플라스 방정식을
+                만족하고, 정체점 밖에서 등고선들이 직교합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>6. 와도와 베르누이식의 조건</h3>
+              <span class="formula">ζ=∇×V=2ω</span>
+              <p>
+                와도는 유체 요소의 국소 회전률의 두 배입니다. Couette는 직선
+                유선이어도 회전 유동이고, 이상적인 자유와류는 중심 밖에서
+                비회전입니다. 정상·비점성·일정 밀도 조건의 베르누이 상수는 유선
+                위에서 같으며, 비회전까지 만족하면 연결된 영역의 서로 다른
+                유선에도 같은 상수를 적용할 수 있습니다.
+              </p>
+            </div>
+            <div class="quiet-card">
+              <h3>요약의 근거와 읽는 순서</h3>
+              <p>
+                PDF 4–26쪽은 Week 5 영상의 개념 설명·예제·마지막 보존식
+                복습(01:21:30–01:24:40)과 대조했습니다. PDF 27–53쪽은 슬라이드
+                기반 해설입니다. 영상 말미에는 다음 강의의 주제만 안내합니다.
+                실제 문제에서는 가정 → 연속방정식 → 필요한 운동량·에너지식 →
+                경계조건 → 검산 순서로 진행합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PDF의 모든 페이지에 대해 아래 section을 정확히 한 번씩 복제한다. -->
+        <section
+          class="source-section"
+          id="slide-01"
+          aria-labelledby="slide-01-title"
+        >
+          <p class="section-kicker">Source slide 01 · 표지</p>
+          <h2 class="section-title" id="slide-01-title">
+            Differential Relations for Fluid Flow(유동의 미분 관계)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-01.jpg"
+                alt="Lecture 5 슬라이드 1: Differential Relations for Fluid Flow(유동의 미분 관계)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 1/53</span>
+              <span>강의 00:00:01–00:00:31</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="quiet-card">
+              <h3>Chapter 4 · Lecture 5</h3>
+              <p>
+                유한한 영역의 유출입을 세던 적분 해석에서, 유체 내부의 각 점에서
+                성립하는 미분 해석으로 옮겨 갑니다. 가속도와 질량·운동량·에너지
+                보존식을 연결하고, 경계조건으로 실제 유동의 속도분포를
+                결정합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-02"
+          aria-labelledby="slide-02-title"
+        >
+          <p class="section-kicker">Source slide 02 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-02-title">
+            이번 장에서 연결할 물리량
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-02.jpg"
+                alt="Lecture 5 슬라이드 2: 이번 장에서 연결할 물리량"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 2/53</span>
+              <span>강의 00:00:31–00:02:46</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>보존법칙에서 속도장까지</h3>
+              <p>
+                material derivative(물질미분)는 움직이는 유체 입자가 겪는 변화를
+                나타냅니다. continuity equation(연속방정식)은 질량을, momentum
+                equation(운동량 방정식)은 힘과 가속도를, energy equation(에너지
+                방정식)은 열·일과 에너지 변화를 연결합니다.
+              </p>
+              <p>
+                같은 지배방정식을 쓰더라도 벽의 운동, 압력과 온도 등 boundary
+                conditions(경계조건)가 다르면 유동도 달라집니다. Couette
+                flow(쿠에트 유동)와 Poiseuille flow(푸아죄유 유동)가 그 차이를
+                보여 줍니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>유동을 표현하는 함수</h3>
+              <p>
+                후반부에서는 stream function(유선함수)으로 연속방정식을 자동으로
+                만족시키고, vorticity(와도)로 유체 요소의 국소 회전을
+                판별합니다. irrotational flow(비회전 유동)에서는 velocity
+                potential(속도퍼텐셜)을 도입합니다. 이 PDF의 점성유동 계산
+                예제는 원형 관이 아니라 두 평행 평판 사이의 유동입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-03"
+          aria-labelledby="slide-03-title"
+        >
+          <p class="section-kicker">Source slide 03 · 단원 구분</p>
+          <h2 class="section-title" id="slide-03-title">
+            가속도와 세 보존방정식
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-03.jpg"
+                alt="Lecture 5 슬라이드 3: 가속도와 세 보존방정식"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 3/53</span>
+              <span>강의 00:02:46–00:03:02</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="quiet-card">
+              <h3>전반부의 순서</h3>
+              <p>
+                전미분 → 질량보존 → 선운동량보존 → 에너지보존 순서입니다. 유동의
+                지배방정식은 서로 독립된 공식 목록이 아니라, 같은 미소 요소에
+                다른 물리량의 보존 원리를 적용한 결과입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-04"
+          aria-labelledby="slide-04-title"
+        >
+          <p class="section-kicker">Source slide 04 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-04-title">
+            Velocity field(속도장)와 입자의 가속도
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-04.jpg"
+                alt="Lecture 5 슬라이드 4: Velocity field(속도장)와 입자의 가속도"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 4/53</span>
+              <span>강의 00:03:02–00:05:03</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>위치와 시간에 따라 달라지는 속도</h3>
+              <span class="formula"
+                >V(x,y,z,t) = u(x,y,z,t)i + v(x,y,z,t)j + w(x,y,z,t)k</span
+              >
+              <p>
+                u, v, w는 각각 x, y, z 방향의 속도 성분이며 단위는 m/s입니다. i,
+                j, k는 고정된 직교 단위벡터입니다. 한 위치에서의 시간 변화와
+                입자가 다른 위치로 이동하면서 만나는 속도 변화를 구분해야
+                합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Acceleration(가속도)의 정의</h3>
+              <span class="formula"
+                >a = DV/Dt = (Du/Dt)i + (Dv/Dt)j + (Dw/Dt)k</span
+              >
+              <p>
+                D/Dt는 특정 유체 입자의 경로를 따라 계산하는 total
+                derivative(전미분)입니다. 유체가 계속 다른 위치로 이동하므로
+                일반적으로 ∂V/∂t만으로는 그 입자의 가속도를 알 수 없습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-05"
+          aria-labelledby="slide-05-title"
+        >
+          <p class="section-kicker">Source slide 05 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-05-title">
+            Local acceleration(국소가속도)과 convective acceleration(대류가속도)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-05.jpg"
+                alt="Lecture 5 슬라이드 5: Local acceleration(국소가속도)과 convective acceleration(대류가속도)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 5/53</span>
+              <span>강의 00:05:03–00:09:45</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>연쇄법칙으로 만드는 물질미분</h3>
+              <span class="formula"
+                >Du/Dt = ∂u/∂t + (∂u/∂x)(dx/dt) + (∂u/∂y)(dy/dt) +
+                (∂u/∂z)(dz/dt)</span
+              ><span class="formula"
+                >D/Dt = ∂/∂t + u∂/∂x + v∂/∂y + w∂/∂z = ∂/∂t + V·∇</span
+              ><span class="formula">a = ∂V/∂t + (V·∇)V</span>
+              <p>
+                입자의 이동속도 dx/dt=u, dy/dt=v, dz/dt=w를 대입한 결과입니다.
+                ∇=(∂/∂x, ∂/∂y, ∂/∂z)는 공간 미분 연산자입니다. 이 연산은 속도뿐
+                아니라 밀도·온도처럼 입자가 경험하는 장에도 적용됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>두 항의 의미</h3>
+              <p>
+                local acceleration(국소가속도)은 관찰 위치를 고정하고 시간에
+                따라 속도가 달라지는 정도입니다. convective
+                acceleration(대류가속도)은 같은 시각에도 위치별 속도가 다르기
+                때문에 이동하는 입자가 겪는 변화입니다.
+              </p>
+              <p>
+                steady flow(정상 유동)는 첫 항이 0이라는 뜻이지 전체 가속도가
+                0이라는 뜻이 아닙니다. 대류항은 속도와 속도구배의 곱으로서
+                단위가 (m/s)(1/s)=m/s²입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-06"
+          aria-labelledby="slide-06-title"
+        >
+          <p class="section-kicker">Source slide 06 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-06-title">
+            미소 검사체적의 질량 수지
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-06.jpg"
+                alt="Lecture 5 슬라이드 6: 미소 검사체적의 질량 수지"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 6/53</span>
+              <span>강의 00:09:45–00:16:41</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>고정된 작은 상자의 여섯 면</h3>
+              <span class="formula">dVol = dx dy dz</span
+              ><span class="formula">질량 축적률 = (∂ρ/∂t)dVol</span
+              ><span class="formula">x면 순유출률 = [∂(ρu)/∂x]dVol</span>
+              <p>
+                왼쪽 면의 질량 유입률은 ρu dy dz이고, 오른쪽 면의 유출률은
+                [ρu+∂(ρu)/∂x·dx]dy dz입니다. Taylor expansion(테일러 전개)의
+                1차항을 남기면 동일한 ρu 항이 상쇄됩니다. y와 z 방향도 같은
+                방식으로 계산합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Flux(유속밀도)와 flow rate(유량)</h3>
+              <p>
+                질량 flux는 ρu처럼 단위 면적당 질량 통과율 [kg/(m²·s)]입니다.
+                여기에 면적을 곱하면 mass flow rate(질량유량) [kg/s]입니다. 한
+                쌍의 면에서 유출−유입을 계산하고, 내부 축적과 합해서 0으로
+                둡니다. 미분 해석에서도 검사체적을 쓰며, 그 크기를 미소하게
+                잡는다는 점이 핵심입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-07"
+          aria-labelledby="slide-07-title"
+        >
+          <p class="section-kicker">Source slide 07 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-07-title">
+            Continuity equation(연속방정식)의 일반형
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-07.jpg"
+                alt="Lecture 5 슬라이드 7: Continuity equation(연속방정식)의 일반형"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 7/53</span>
+              <span>강의 00:16:41–00:19:38</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>압축성·비정상 유동도 포함하는 질량보존</h3>
+              <span class="formula"
+                >∂ρ/∂t + ∂(ρu)/∂x + ∂(ρv)/∂y + ∂(ρw)/∂z = 0</span
+              ><span class="formula">∂ρ/∂t + ∇·(ρV) = 0</span>
+              <p>
+                양의 순유출이 있으면 내부 밀도는 감소합니다. 밀도가 변할 수
+                있으므로 ρ를 미분 바깥으로 무조건 꺼내지 않습니다. steady(정상)
+                조건에서는 시간미분만 없어져 ∇·(ρV)=0이 남습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Cylindrical coordinates(원통좌표)</h3>
+              <span class="formula"
+                >∂ρ/∂t + (1/r)∂(rρvᵣ)/∂r + (1/r)∂(ρvθ)/∂θ + ∂(ρv_z)/∂z = 0</span
+              >
+              <p>
+                r, θ, z는 반경·각도·축방향 좌표입니다. r=√(x²+y²)이고 θ는 x,y의
+                사분면까지 고려해 정합니다. 반경이 커지면 면적도 달라지므로
+                직교좌표의 미분식에 문자만 바꿔 넣을 수 없습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-08"
+          aria-labelledby="slide-08-title"
+        >
+          <p class="section-kicker">Source slide 08 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-08-title">
+            Incompressible flow(비압축성 유동)의 조건
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-08.jpg"
+                alt="Lecture 5 슬라이드 8: Incompressible flow(비압축성 유동)의 조건"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 8/53</span>
+              <span>강의 00:19:38–00:21:18</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>밀도 변화와 체적 팽창</h3>
+              <span class="formula">Dρ/Dt + ρ∇·V = 0</span
+              ><span class="formula"
+                >Dρ/Dt = 0 ⇒ ∇·V = ∂u/∂x + ∂v/∂y + ∂w/∂z = 0</span
+              >
+              <p>
+                첫 식은 일반 연속방정식을 곱의 미분으로 전개한 것입니다.
+                비압축성은 입자를 따라가는 밀도 변화가 없다는 뜻입니다. 이
+                강의의 일정 밀도 모델에서는 모든 밀도 미분이 0이며, 유동이
+                정상인지 비정상인지와 상관없이 divergence(발산)가 0입니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-08">
+              <h3>발산과 속도구배를 구분합니다</h3>
+              <p>
+                강의 전사의 “gradient of velocity is zero”는 화면에 쓰인 ∇·V=0을
+                가리킵니다. 전체 속도구배가 0이라는 의미는 아닙니다. 예를 들어
+                뒤의 Couette 유동은 ∂u/∂y가 0이 아니면서 발산은 0입니다.
+              </p>
+              <p>
+                또한 모든 위치의 질량유량이 언제나 같다는 진술은 일반적인 비정상
+                유동에는 적용되지 않습니다. 축적과 옆면 출입이 없는 정상
+                유관에서는 입·출구 질량유량이 같습니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · PDF 식과 00:20:02–00:21:18의 용어·적용 조건
+                  대조</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-09"
+          aria-labelledby="slide-09-title"
+        >
+          <p class="section-kicker">Source slide 09 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-09-title">
+            연속방정식으로 미지의 속도 성분 구하기
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-09.jpg"
+                alt="Lecture 5 슬라이드 9: 연속방정식으로 미지의 속도 성분 구하기"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 9/53</span>
+              <span>강의 00:21:18–00:23:44</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>주어진 조건과 미분</h3>
+              <p>
+                u=a(x²+y²), w=b이며 a,b는 상수입니다. incompressible(비압축성)
+                조건으로 v의 가능한 형태를 구합니다.
+              </p>
+              <span class="formula"
+                >∂u/∂x + ∂v/∂y + ∂w/∂z = 2ax + ∂v/∂y = 0</span
+              ><span class="formula"
+                >∂v/∂y = −2ax ⇒ v(x,y,z,t) = −2axy + f(x,z,t)</span
+              >
+              <p>
+                y로 적분할 때 x,z,t는 고정되므로 적분상수는 이 세 변수의 함수일
+                수 있습니다. ∂f/∂y=0이면 연속방정식을 만족합니다. 주어진
+                조건만으로 f를 더 결정할 수는 없습니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-09">
+              <h3>부호와 함수의 독립변수</h3>
+              <p>
+                전사에서는 − 부호가 빠진 듯한 문장이 있으나, 2ax+∂v/∂y=0에서
+                결과는 반드시 −2axy입니다. 가림막 아래 PDF의 함수 인수에도
+                중복된 변수가 있어 본문은 미분 관계에 맞는 f(x,z,t)를
+                사용합니다. 불확실한 전사를 교수자의 확정 발언으로 옮기지
+                않습니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 비압축성 연속방정식에 결과를 직접 대입하여
+                  검산</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-10"
+          aria-labelledby="slide-10-title"
+        >
+          <p class="section-kicker">Source slide 10 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-10-title">
+            Piston compression(피스톤 압축)의 조건
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-10.jpg"
+                alt="Lecture 5 슬라이드 10: Piston compression(피스톤 압축)의 조건"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 10/53</span>
+              <span>강의 00:23:14–00:25:44</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>밀도는 공간에 균일하지만 시간에 따라 변합니다</h3>
+              <p>
+                피스톤 속력 V=12 m/s, 초기 기체 길이 L₀=0.15 m, 초기 밀도 ρ₀=18
+                kg/m³입니다. 기체는 닫힌 실린더 안에서 압축됩니다. 속도는
+                피스톤에서 V, 닫힌 끝에서 0이며 그 사이에서 선형으로 변합니다.
+              </p>
+              <p>
+                가정은 unsteady(비정상), one-dimensional(1차원), spatially
+                uniform density(공간적으로 균일한 밀도),
+                compressible(압축성)입니다. 구할 것은 ρ(t)와 초기 순간의
+                dρ/dt입니다. ∂ρ/∂x=0이더라도 dρ/dt까지 0인 것은 아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>길이와 속도구배</h3>
+              <span class="formula">L(t) = L₀ − Vt</span
+              ><span class="formula">u = V(1 − x/L), ∂u/∂x = −V/L</span>
+              <p>
+                그림에서 x는 그 순간 피스톤으로부터 닫힌 끝 쪽으로 잰 거리이며
+                u는 실린더 기준 속도입니다. 끝점 값 두 개로 직선을 만들면 기체
+                내부의 속도구배가 음수가 됩니다. 이 음의 구배가 압축과 밀도
+                증가를 만듭니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-11"
+          aria-labelledby="slide-11-title"
+        >
+          <p class="section-kicker">Source slide 11 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-11-title">
+            피스톤 압축: 밀도와 증가율
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-11.jpg"
+                alt="Lecture 5 슬라이드 11: 피스톤 압축: 밀도와 증가율"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 11/53</span>
+              <span>강의 00:25:44–00:34:12</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>변수를 분리하여 적분합니다</h3>
+              <span class="formula">dρ/dt = −ρ∂u/∂x = ρV/(L₀ − Vt)</span
+              ><span class="formula">∫[ρ₀→ρ] dρ/ρ = ∫[0→t] V dt/(L₀ − Vt)</span
+              ><span class="formula">ln(ρ/ρ₀) = ln[L₀/(L₀ − Vt)]</span
+              ><span class="formula">ρ(t) = ρ₀L₀/(L₀ − Vt)</span>
+              <p>
+                밀도를 왼쪽으로, 시간에 관한 함수를 오른쪽으로 모읍니다. 오른쪽
+                적분은 −ln(L₀−Vt)의 경계값이므로 밀도는 시간이 지날수록
+                커집니다. 강의에서도 적분 변수 표기를 바로잡으며 이 순서로
+                전개합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>초기 증가율과 단위</h3>
+              <span class="formula">dρ/dt = ρ₀L₀V/(L₀ − Vt)²</span
+              ><span class="formula"
+                >(dρ/dt)₀ = ρ₀V/L₀ = (18)(12)/0.15 = 1440 kg/(m³·s)</span
+              >
+              <p>
+                밀도 자체 [kg/m³]와 밀도의 시간 변화율 [kg/(m³·s)]을 구분합니다.
+                이 모델은 L(t)&gt;0인 동안만 쓰며, 0≤t&lt;L₀/V=0.0125 s입니다.
+                길이가 0에 가까워질 때의 발산은 실제 압축 과정을 무한히 연장할
+                수 있다는 뜻이 아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>움직이는 그림 좌표와 검산</h3>
+              <p>
+                고정 실린더 좌표를 X, 피스톤 위치를 Xp(t)=Vt로 잡으면
+                x=X−Xp(t)입니다. ρ는 공간에 균일하므로 이 좌표 이동이 밀도
+                시간미분 결과를 바꾸지 않습니다. 또한 단면적 A가 일정하면
+                ρAL=ρ₀AL₀로 질량이 보존되어 같은 ρ(t)를 얻습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 좌표 정의와 독립적인 질량보존 검산</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-12"
+          aria-labelledby="slide-12-title"
+        >
+          <p class="section-kicker">Source slide 12 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-12-title">
+            선운동량 수지의 저장항
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-12.jpg"
+                alt="Lecture 5 슬라이드 12: 선운동량 수지의 저장항"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 12/53</span>
+              <span>강의 00:34:12–00:36:18</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>뉴턴의 제2법칙을 유체에 적용하기</h3>
+              <span class="formula"
+                >ΣF = ∂/∂t ∫_CV ρV dVol + ∮_CS ρV(V·n)dA</span
+              ><span class="formula"
+                >미소 요소의 저장항 = [∂(ρV)/∂t]dx dy dz</span
+              >
+              <p>
+                질량보존에서 단위 체적당 질량 ρ를 다뤘다면, 이번에는 단위 체적당
+                운동량 ρV를 다룹니다. momentum(운동량)은 벡터이므로 x,y,z 세
+                방향의 방정식이 생깁니다.
+              </p>
+              <p>
+                좌변에는 체적 전체에 작용하는 body force(체적력)와 경계면을 통해
+                작용하는 surface force(표면력)를 모두 포함합니다. 아직 점성
+                모델을 대입하지 않은 보존법칙입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-13"
+          aria-labelledby="slide-13-title"
+        >
+          <p class="section-kicker">Source slide 13 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-13-title">
+            운동량 flux에서 물질미분으로
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-13.jpg"
+                alt="Lecture 5 슬라이드 13: 운동량 flux에서 물질미분으로"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 13/53</span>
+              <span>강의 00:36:18–00:43:59</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>여섯 면의 순유출을 합합니다</h3>
+              <span class="formula"
+                >ΣF/dVol = ∂(ρV)/∂t + ∂(ρuV)/∂x + ∂(ρvV)/∂y + ∂(ρwV)/∂z</span
+              >
+              <p>
+                x에 수직인 면에서는 통과 속도 성분 u에, 운반되는 벡터 운동량
+                ρV를 곱합니다. 따라서 ρuV가 되며, V를 단순히 u와 같은 스칼라로
+                취급하지 않습니다. 나머지 두 방향도 같습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>연속방정식으로 사라지는 묶음</h3>
+              <span class="formula"
+                >ΣF/dVol = ρ[∂V/∂t + u∂V/∂x + v∂V/∂y + w∂V/∂z]</span
+              ><span class="formula">
+                + V[∂ρ/∂t + ∂(ρu)/∂x + ∂(ρv)/∂y + ∂(ρw)/∂z]</span
+              ><span class="formula">ΣF/dVol = ρDV/Dt</span>
+              <p>
+                곱의 미분법으로 전개하면 두 번째 괄호는 일반 연속방정식이므로
+                0입니다. 첫 괄호는 입자의 가속도입니다. 이렇게 고정된
+                Eulerian(오일러식) 검사체적의 수지가 익숙한 질량×가속도 형태로
+                돌아옵니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-14"
+          aria-labelledby="slide-14-title"
+        >
+          <p class="section-kicker">Source slide 14 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-14-title">압력·중력·점성력</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-14.jpg"
+                alt="Lecture 5 슬라이드 14: 압력·중력·점성력"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 14/53</span>
+              <span>강의 00:43:59–00:49:11 / 00:54:04–00:55:40</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>단위 체적당 힘</h3>
+              <span class="formula">ρDV/Dt = ρg − ∇p + ∇·τ</span
+              ><span class="formula"
+                >(∇·τ)ₓ = ∂τₓₓ/∂x + ∂τᵧₓ/∂y + ∂τ_zx/∂z</span
+              >
+              <p>
+                ρg는 중력, −∇p는 압력의 공간 차이로 생기는 힘, ∇·τ는 점성응력의
+                공간 차이로 생기는 힘입니다. 모두 N/m³입니다. 압력은 각 면을
+                안쪽으로 미므로 x방향 순압력힘은 p dy dz−(p+∂p/∂x·dx)dy dz가
+                됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>응력의 두 첨자</h3>
+              <p>
+                이 슬라이드는 τᵢⱼ의 첫 첨자를 면의 법선 방향, 둘째 첨자를 힘의
+                작용 방향으로 사용합니다. x방향 힘을 계산할 때는 τₓₓ, τᵧₓ,
+                τ_zx를 각 면의 법선 방향으로 미분합니다. 압력과 점성응력을 합한
+                전체 응력은 σᵢⱼ=−pδᵢⱼ+τᵢⱼ입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-15"
+          aria-labelledby="slide-15-title"
+        >
+          <p class="section-kicker">Source slide 15 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-15-title">
+            Newtonian viscous stress(뉴턴형 점성응력)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-15.jpg"
+                alt="Lecture 5 슬라이드 15: Newtonian viscous stress(뉴턴형 점성응력)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 15/53</span>
+              <span>강의 00:49:11–00:54:04</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>변형률속도에 비례하는 응력</h3>
+              <span class="formula"
+                >εᵢⱼ = ½(∂uᵢ/∂xⱼ + ∂uⱼ/∂xᵢ), τᵢⱼ = 2μεᵢⱼ</span
+              ><span class="formula">τₓₓ=2μ∂u/∂x, τᵧᵧ=2μ∂v/∂y, τzz=2μ∂w/∂z</span
+              ><span class="formula">τₓᵧ=τᵧₓ=μ(∂u/∂y+∂v/∂x)</span
+              ><span class="formula"
+                >τxz=τzx=μ(∂u/∂z+∂w/∂x), τyz=τzy=μ(∂v/∂z+∂w/∂y)</span
+              >
+              <p>
+                위 관계는 incompressible Newtonian fluid(비압축성 뉴턴형 유체)에
+                적용합니다. μ는 dynamic viscosity(점성계수) [Pa·s], ε는 strain
+                rate(변형률속도) [1/s], 응력은 Pa입니다. 같은 첨자는 수직
+                점성응력, 다른 첨자는 전단 점성응력입니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-15">
+              <h3>평균·합과 대칭성</h3>
+              <p>
+                슬라이드 하단 변형률속도 표현은 나눗셈처럼 보이지만 공간
+                미분이어야 합니다. ε는 두 속도구배의 평균이고, τ는 그 평균에
+                2μ를 곱하므로 전단응력 식에서는 μ×두 구배의 합이 됩니다.
+              </p>
+              <p>
+                일반적인 비극성 연속체에서 응력의 대칭성은 각운동량 수지와
+                연결됩니다. 비압축성이라는 조건 하나만으로 대칭성의 원인을
+                설명하지 않습니다. 3×3 배열은 9개 자리이며 대칭성을 적용하면
+                독립 성분은 6개입니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · PDF의 성분식·차원과 응력 텐서의 의미 대조</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-16"
+          aria-labelledby="slide-16-title"
+        >
+          <p class="section-kicker">Source slide 16 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-16-title">
+            Incompressible Navier–Stokes equations(비압축성 나비에–스토크스
+            방정식)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-16.jpg"
+                alt="Lecture 5 슬라이드 16: Incompressible Navier–Stokes equations(비압축성 나비에–스토크스 방정식)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 16/53</span>
+              <span>강의 00:55:40–00:58:18</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>점성 모델을 운동량식에 대입하기</h3>
+              <span class="formula">∇·V = 0</span
+              ><span class="formula">ρDV/Dt = −∇p + μ∇²V + ρg</span
+              ><span class="formula"
+                >ρ(∂u/∂t+u∂u/∂x+v∂u/∂y+w∂u/∂z) = −∂p/∂x+μ∇²u+ρgₓ</span
+              ><span class="formula"
+                >ρ(∂v/∂t+u∂v/∂x+v∂v/∂y+w∂v/∂z) = −∂p/∂y+μ∇²v+ρgᵧ</span
+              ><span class="formula"
+                >ρ(∂w/∂t+u∂w/∂x+v∂w/∂y+w∂w/∂z) = −∂p/∂z+μ∇²w+ρgz</span
+              >
+              <p>
+                이 형태의 가정은 뉴턴형 유체, 비압축성, 일정한 ρ와 μ입니다.
+                ∇²u=∂²u/∂x²+∂²u/∂y²+∂²u/∂z²입니다. 점성계수가 위치에 따라
+                달라지면 μ를 미분 바깥으로 꺼낸 식을 그대로 쓰면 안 됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>비선형이고 서로 결합된 방정식</h3>
+              <p>
+                u∂u/∂x처럼 미지 속도가 다른 미지 속도의 미분과 곱해져
+                nonlinear(비선형)입니다. 연속방정식과 세 운동량식은 같은 속도
+                성분과 압력을 공유하여 coupled(결합된) 형태입니다. 점성항에는
+                2차 공간미분이 있습니다.
+              </p>
+              <p>
+                강의에서는 질량 1개·운동량 3개·에너지 1개를 묶어 지배방정식
+                계라고도 부릅니다. 좁은 의미의 Navier–Stokes equations는 점성
+                운동량 방정식입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>일반해의 어려움과 특수해는 다릅니다</h3>
+              <p>
+                계산이 어렵다는 설명을 “어떤 해도 구할 수 없다”로 이해하면 안
+                됩니다. 다음 두 평행 평판 예제는 조건을 제한해 정확한 속도분포를
+                유도합니다. 압축성 문제에서는 ρ,p,T를 연결하는 상태방정식과 물성
+                관계도 필요합니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 이어서 직접 유도하는 특수해와 미지수의 닫힘
+                  조건</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-17"
+          aria-labelledby="slide-17-title"
+        >
+          <p class="section-kicker">Source slide 17 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-17-title">
+            Couette flow(쿠에트 유동): 움직이는 벽
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-17.jpg"
+                alt="Lecture 5 슬라이드 17: Couette flow(쿠에트 유동): 움직이는 벽"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 17/53</span>
+              <span>강의 00:58:18–01:00:24</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>문제의 기하와 가정</h3>
+              <p>
+                두 평판 사이 간격은 2h입니다. 아래 벽 y=−h는 고정이고 위 벽
+                y=+h는 x방향 속도 V로 움직입니다. 유동은 2차원·비압축성·점성
+                유동이며 v=w=0, 중력 효과를 무시합니다.
+              </p>
+              <p>
+                정상·충분히 발달한 유동으로 보고 이 예제에서는 축방향 압력구배도
+                0으로 둡니다. determine the velocity distribution(속도분포를
+                구하라)는 두 벽 사이의 u(y)를 구하라는 뜻입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>No-slip condition(점착 조건)</h3>
+              <span class="formula">u(−h)=0, u(+h)=V</span>
+              <p>
+                벽에 접한 유체의 속도는 벽의 속도와 같습니다. no-slip은 언제나
+                유체 속도가 0이라는 뜻이 아닙니다. 움직이는 벽은 유체를 끌고
+                가며 shear-driven flow(전단 구동 유동)를 만듭니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-18"
+          aria-labelledby="slide-18-title"
+        >
+          <p class="section-kicker">Source slide 18 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-18-title">
+            Couette 유동: 먼저 연속방정식
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-18.jpg"
+                alt="Lecture 5 슬라이드 18: Couette 유동: 먼저 연속방정식"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 18/53</span>
+              <span>강의 01:00:24–01:01:01</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>남는 속도 성분과 위치 의존성</h3>
+              <span class="formula">∂u/∂x + ∂v/∂y + ∂w/∂z = 0 ⇒ ∂u/∂x = 0</span
+              ><span class="formula">u = u(y)</span>
+              <p>
+                v=w=0이므로 x방향으로 속도가 변하지 않습니다. 여기에 정상·2차원
+                가정을 함께 쓰면 u는 y의 함수만 됩니다. “유체가 x로 흐른다”는
+                사실과 “속도가 x에 따라 변한다”는 사실은 서로 다릅니다.
+              </p>
+              <p>
+                fully developed(완전 발달)는 x위치를 바꾸어도 속도분포 모양이
+                같다는 뜻입니다. ∂u/∂x=0이라고 해서 벽 사이의 ∂u/∂y까지 0은
+                아닙니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-19"
+          aria-labelledby="slide-19-title"
+        >
+          <p class="section-kicker">Source slide 19 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-19-title">
+            Couette 유동: 선형 속도분포의 유도
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-19.jpg"
+                alt="Lecture 5 슬라이드 19: Couette 유동: 선형 속도분포의 유도"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 19/53</span>
+              <span>강의 01:01:01–01:03:48</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>운동량식과 두 경계조건</h3>
+              <span class="formula"
+                >0 = −dp/dx + μd²u/dy², dp/dx=0 ⇒ u=C₁y+C₂</span
+              ><span class="formula">C₁h+C₂=V, −C₁h+C₂=0</span
+              ><span class="formula">C₁=V/(2h), C₂=V/2</span
+              ><span class="formula">u(y)=V(y+h)/(2h)</span>
+              <p>
+                y=−h,0,+h를 대입하면 각각 0,V/2,V가 되어 선형 분포와 일치합니다.
+                미분방정식에서 상수 두 개가 나오고 두 벽의 점착 조건으로 두
+                상수를 결정합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>일정 전단응력과 가정</h3>
+              <span class="formula">τₓᵧ=μdu/dy=μV/(2h)</span>
+              <p>
+                이 유동의 전단응력은 y에 무관하게 일정합니다. 완전 발달
+                조건만으로 dp/dx=0이 되는 것은 아닙니다. 본 예제는 별도로
+                압력구배를 0으로 둔 순수 Couette 유동이며, 압력구배가 있으면
+                다음 예제의 포물선 성분도 더해집니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 속도분포를 미분한 응력과 두 예제의 조건
+                  비교</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-20"
+          aria-labelledby="slide-20-title"
+        >
+          <p class="section-kicker">Source slide 20 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-20-title">
+            Plane Poiseuille flow(평면 푸아죄유 유동): 압력이 구동하는 흐름
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-20.jpg"
+                alt="Lecture 5 슬라이드 20: Plane Poiseuille flow(평면 푸아죄유 유동): 압력이 구동하는 흐름"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 20/53</span>
+              <span>강의 01:03:48–01:05:49</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>이번에는 두 벽이 모두 고정입니다</h3>
+              <p>
+                간격 2h인 평행 평판의 y=±h에서 u=0입니다. 유동은
+                정상·비압축성·뉴턴형·완전 발달이며 v=w=0, μ는 일정하고 중력은
+                무시합니다. x방향 압력이 변하므로 그 압력차가 유체를 움직입니다.
+              </p>
+              <span class="formula">u(−h)=u(+h)=0, dp/dx ≠ 0</span>
+              <p>
+                pressure-driven flow(압력 구동 유동)에서 +x로 흐르려면
+                일반적으로 dp/dx&lt;0, 즉 진행 방향으로 압력이 낮아져야 합니다.
+                여기서 다루는 것은 원형 관이 아니라 평행 평판 사이의 plane
+                flow(평면 유동)입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-21"
+          aria-labelledby="slide-21-title"
+        >
+          <p class="section-kicker">Source slide 21 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-21-title">
+            Poiseuille 유동: 유속은 y의 함수
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-21.jpg"
+                alt="Lecture 5 슬라이드 21: Poiseuille 유동: 유속은 y의 함수"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 21/53</span>
+              <span>강의 01:05:49–01:06:40</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>같은 연속방정식, 다른 구동 조건</h3>
+              <span class="formula">∂u/∂x=0 ⇒ u=u(y)</span>
+              <p>
+                v=w=0이고 정상·2차원이라는 조건은 Couette 예제와 같아서
+                연속방정식의 결과도 같습니다. 하지만 두 벽이 고정되고 압력구배가
+                존재하므로 운동량식의 우변이 달라집니다.
+              </p>
+              <p>
+                중심선에서 속도가 가장 크고 벽에서는 0인 모양은 다음 식의 해로
+                확인해야 합니다. 연속방정식 하나만으로 포물선 모양까지 결정할
+                수는 없습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-22"
+          aria-labelledby="slide-22-title"
+        >
+          <p class="section-kicker">Source slide 22 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-22-title">
+            Poiseuille 유동: 포물선 속도분포
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-22.jpg"
+                alt="Lecture 5 슬라이드 22: Poiseuille 유동: 포물선 속도분포"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 22/53</span>
+              <span>강의 01:06:40–01:09:12</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>두 번 적분한 결과</h3>
+              <span class="formula">μd²u/dy²=dp/dx</span
+              ><span class="formula">u=(dp/dx)y²/(2μ)+C₁y+C₂</span
+              ><span class="formula">C₁=0, C₂=−(dp/dx)h²/(2μ)</span
+              ><span class="formula">u(y)=−(dp/dx)(h²−y²)/(2μ)</span
+              ><span class="formula">u_max=u(0)=−(dp/dx)h²/(2μ)</span>
+              <p>
+                양쪽 벽의 동일한 경계조건으로 선형항 C₁y가 없어집니다.
+                dp/dx&lt;0이면 내부 u는 양수이고 y=±h에서 0입니다. 압력구배
+                [Pa/m]와 h²/μ [m²/(Pa·s)]의 곱은 속도 [m/s]입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Is dp/dx a constant?(압력구배는 상수인가?)</h3>
+              <p>
+                이 정상·완전 발달·일정 점성 모델에서는 상수입니다. 횡방향
+                운동량식은 ∂p/∂y=0이므로 p=p(x)이고, x방향 식은 x만의 함수
+                dp/dx와 y만의 함수 μu″(y)가 같다고 요구합니다. 따라서 둘 다
+                상수여야 합니다.
+              </p>
+              <p>
+                강의는 완전 발달 가정을 없애면 압력구배가 달라질 수 있다고
+                설명합니다. 그때는 u=u(y)와 위 포물선 해의 전제도 함께
+                재검토해야 합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>평균속도와 단위 폭 유량</h3>
+              <span class="formula">q=∫[−h→h]u dy=−(2h³/3μ)(dp/dx)</span
+              ><span class="formula">ū=q/(2h)=−(h²/3μ)(dp/dx)=(2/3)u_max</span>
+              <p>
+                q의 단위는 m²/s입니다. 실제 폭 b를 곱하면 체적유량 Q=bq가
+                됩니다. 평균속도와 최대속도를 혼용하지 않습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 주어진 속도분포의 직접 적분</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-23"
+          aria-labelledby="slide-23-title"
+        >
+          <p class="section-kicker">Source slide 23 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-23-title">
+            에너지 수지의 미분형
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-23.jpg"
+                alt="Lecture 5 슬라이드 23: 에너지 수지의 미분형"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 23/53</span>
+              <span>강의 01:09:12–01:13:48</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>압력일을 포함하는 에너지 이동</h3>
+              <span class="formula">ζ=e+p/ρ</span
+              ><span class="formula">(Q̇−Ẇᵥ)/dVol = ∂(ρe)/∂t + ∇·(ρζV)</span
+              ><span class="formula">= ρDe/Dt + V·∇p + p∇·V</span>
+              <p>
+                이 절의 e는 단위 질량당 총에너지 [J/kg]이며 중력을 위치에너지에
+                포함하는 규약을 사용합니다. ζ는 압력일을 포함한 수송
+                에너지입니다. 뒤에서 쓰는 와도 ζ와 같은 글자이지만 여기서는
+                스칼라 에너지 기호입니다.
+              </p>
+              <p>
+                미소 요소에는 별도 축일 장치를 두지 않으므로 Ẇs=0으로 놓습니다.
+                점성력이 하는 일 Ẇᵥ와 압력일은 구분하고 압력일을 이중 계산하지
+                않습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>곱의 미분과 질량보존</h3>
+              <p>
+                ∂(ρe)/∂t+∇·(ρeV)를 전개하면 ρDe/Dt+e[∂ρ/∂t+∇·(ρV)]입니다.
+                대괄호는 연속방정식에 의해 0이고, 나머지 ∇·(pV)=V·∇p+p∇·V를
+                더하면 위 결과가 됩니다. 운동량식에서 사용했던 묶음과 같은
+                구조입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-24"
+          aria-labelledby="slide-24-title"
+        >
+          <p class="section-kicker">Source slide 24 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-24-title">
+            Fourier’s law(푸리에 법칙)와 순전도열
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-24.jpg"
+                alt="Lecture 5 슬라이드 24: Fourier’s law(푸리에 법칙)와 순전도열"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 24/53</span>
+              <span>강의 01:13:48–01:16:18</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>온도가 낮아지는 방향으로 전달되는 열</h3>
+              <span class="formula">q=−k∇T</span
+              ><span class="formula">qₓ=−k∂T/∂x, qᵧ=−k∂T/∂y, qz=−k∂T/∂z</span
+              ><span class="formula">Q̇/dVol=−∇·q=∇·(k∇T)</span>
+              <p>
+                q는 heat flux(열유속) [W/m²], k는 thermal conductivity(열전도도)
+                [W/(m·K)]입니다. − 부호는 열전도가 높은 온도에서 낮은 온도로
+                향함을 뜻합니다. 순열입력은 유입−유출이므로 −∇·q이고, 질량
+                순유출과 부호 규약이 다릅니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>전도항만 쓰더라도 대류 수송은 남습니다</h3>
+              <p>
+                이 열유속 모델은 복사 등을 제외하고 전도만 다룹니다. 그렇다고
+                유체의 운동에 따른 에너지 수송까지 제거한 것은 아닙니다. 그
+                효과는 이미 De/Dt의 대류항에 들어 있습니다. k가 일정할 때에만
+                ∇·(k∇T)=k∇²T로 단순화할 수 있습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 에너지 수송항과 열유속항의 역할 구분</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-25"
+          aria-labelledby="slide-25-title"
+        >
+          <p class="section-kicker">Source slide 25 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-25-title">
+            Viscous work(점성일)와 dissipation(소산)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-25.jpg"
+                alt="Lecture 5 슬라이드 25: Viscous work(점성일)와 dissipation(소산)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 25/53</span>
+              <span>강의 01:16:18–01:21:30</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>응력과 속도의 곱이 운반하는 일</h3>
+              <span class="formula">Ẇᵥ/dVol=−∇·(V·τ)</span
+              ><span class="formula">∇·(V·τ)=V·(∇·τ)+Φ</span>
+              <p>
+                응력×속도는 단위 면적당 일률 [W/m²]입니다. 각 면의 순차이를
+                합하면 체적당 점성일률이 됩니다. 첫 항은 점성력과 거시적 운동의
+                관계, Φ는 변형에 의해 기계적 에너지가 내부에너지로 전환되는
+                viscous dissipation(점성 소산)입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>비압축성 뉴턴형 유체의 소산 함수</h3>
+              <span class="formula">Φ=μ{2[(∂u/∂x)²+(∂v/∂y)²+(∂w/∂z)²]</span
+              ><span class="formula">
+                +(∂v/∂x+∂u/∂y)²+(∂w/∂y+∂v/∂z)²+(∂u/∂z+∂w/∂x)²} ≥ 0</span
+              >
+              <p>
+                μ≥0이고 제곱항의 합이므로 음수가 될 수 없습니다. 단위는
+                W/m³입니다. 기계적으로 이용할 수 있는 에너지는 줄어들지만
+                총에너지가 사라지는 것은 아닙니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-25">
+              <h3>0이 되는 경우와 필기 증분</h3>
+              <p>
+                “항상 양수”는 엄밀히는 “0 이상”입니다. 변형률속도가 모두 0이면
+                Φ=0입니다. 강의의 y방향 두 면에 대한 필기에서는 Taylor 전개
+                증분을 dx가 아니라 dy로 직접 수정합니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · PDF의 제곱항과 01:17:49–01:18:27 필기 설명
+                  대조</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-26"
+          aria-labelledby="slide-26-title"
+        >
+          <p class="section-kicker">Source slide 26 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-26-title">
+            에너지 방정식과 온도 방정식
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-26.jpg"
+                alt="Lecture 5 슬라이드 26: 에너지 방정식과 온도 방정식"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 26/53</span>
+              <span>강의 01:21:30–01:24:40</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>열과 점성일을 결합한 총에너지식</h3>
+              <span class="formula"
+                >ρDe/Dt + V·∇p + p∇·V = ∇·(k∇T) + ∇·(V·τ)</span
+              >
+              <p>
+                앞 세 페이지에서 따로 계산한 저장·수송, 전도, 점성일을 합친
+                식입니다. e를 내부에너지 하나로 바꾸면서 나머지 항을 그대로 두면
+                안 됩니다. 운동에너지·위치에너지 수지와의 차이를 취해야
+                내부에너지식이 됩니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>비압축성·일정 물성에서 온도로 표현하기</h3>
+              <span class="formula">ρDe_int/Dt=−p∇·V+∇·(k∇T)+Φ</span
+              ><span class="formula">ρc_v DT/Dt=k∇²T+Φ</span>
+              <p>
+                두 번째 식은 비압축성, 일정한 k와 비열, e_int=e_int(T), 별도
+                체적 열원이 없다는 가정의 결과입니다. 강의의 마지막 요약
+                페이지에서 쓰는 c_v 표기를 따랐습니다. 왼쪽은 유체 입자의 온도
+                변화, 오른쪽은 순전도열과 점성 발열입니다. 각각의 항이 W/m³로
+                일치합니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 총에너지식에서 기계적 에너지 수지를 분리하고
+                  PDF 53쪽과 연결</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-27"
+          aria-labelledby="slide-27-title"
+        >
+          <p class="section-kicker">Source slide 27 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-27-title">
+            Boundary conditions(경계조건)의 역할
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-27.jpg"
+                alt="Lecture 5 슬라이드 27: Boundary conditions(경계조건)의 역할"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 27/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>방정식만으로는 유동이 정해지지 않습니다</h3>
+              <p>
+                대표 경계는 solid wall(고체벽), inlet/outlet(입구·출구),
+                liquid–gas interface(액체–기체 계면)입니다. 벽의 운동과 온도,
+                입구의 속도분포, 출구 압력, 자유표면 위치 등 문제에 맞는 조건을
+                함께 정합니다.
+              </p>
+              <p>
+                일정 물성의 비압축성 모델에서 밀도·점성 등이 온도에 의존하지
+                않으면 연속·운동량식을 온도식과 분리해 풀 수 있습니다. 온도가
+                물성을 바꾸거나 부력을 바꾸는 모델에서는 이 분리가 성립하지 않을
+                수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>자유표면의 근사</h3>
+              <span class="formula">p≈pₐ, w≈∂η/∂t</span>
+              <p>
+                η(x,y,t)는 자유표면 높이입니다. 대기와 접하고 표면장력·점성
+                법선응력이 작으면 압력을 대기압으로 근사합니다. 두 번째 식은
+                표면의 수평 기울기에 따른 이동 효과를 무시한 형태이며 다음
+                페이지에서 일반 조건과 구별합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-28"
+          aria-labelledby="slide-28-title"
+        >
+          <p class="section-kicker">Source slide 28 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-28-title">
+            벽·입출구·자유표면에서 무엇을 지정하는가
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-28.jpg"
+                alt="Lecture 5 슬라이드 28: 벽·입출구·자유표면에서 무엇을 지정하는가"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 28/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>고체벽과 열 경계</h3>
+              <span class="formula">V_fluid=V_wall</span>
+              <p>
+                점착 조건은 벽과 유체의 접선속도를 같게 하고, 불투과 조건은 법선
+                상대속도를 0으로 둡니다. 정지벽이면 두 조건을 합쳐 유체 속도가
+                0입니다. 온도는 열접촉이 이상적일 때 벽 온도를 따르며,
+                열문제에서는 지정 온도 또는 지정 열유속을 선택합니다.
+              </p>
+              <p>
+                입구에서는 주어진 속도분포 등을, 출구에서는 압력 등을 문제에
+                맞게 지정합니다. 그림의 V,p,T 표기는 가능한 자료의 예시이지 모든
+                경계에 모든 변수를 독립적으로 동시에 강제하라는 뜻은 아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>움직이는 자유표면의 정확한 운동학 조건</h3>
+              <span class="formula">w=∂η/∂t+u∂η/∂x+v∂η/∂y (z=η에서)</span>
+              <p>
+                표면을 F=z−η(x,y,t)=0으로 놓고 물질표면 조건 DF/Dt=0을 적용하면
+                얻습니다. 기울기 항을 무시할 때 앞 페이지의 w≈∂η/∂t가 됩니다.
+                곡면의 압력차에는 표면장력×곡률이 들어가며 부호는 선택한 법선과
+                곡률의 정의에 맞춰야 합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 자유표면의 물질미분과 근사 조건 명시</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-29"
+          aria-labelledby="slide-29-title"
+        >
+          <p class="section-kicker">Source slide 29 · 단원 구분</p>
+          <h2 class="section-title" id="slide-29-title">
+            속도장을 다른 함수로 표현하기
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-29.jpg"
+                alt="Lecture 5 슬라이드 29: 속도장을 다른 함수로 표현하기"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 29/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="quiet-card">
+              <h3>후반부의 순서</h3>
+              <p>
+                이제 지배방정식의 유도에서 유선함수·와도·속도퍼텐셜로
+                넘어갑니다. 연속방정식을 만족하는 속도장을 만들고, 그 유동의
+                국소 회전과 유선의 형태를 해석합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-30"
+          aria-labelledby="slide-30-title"
+        >
+          <p class="section-kicker">Source slide 30 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-30-title">
+            Stream function(유선함수)의 정의
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-30.jpg"
+                alt="Lecture 5 슬라이드 30: Stream function(유선함수)의 정의"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 30/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>2차원 비압축성 연속방정식을 자동으로 만족시키기</h3>
+              <span class="formula">∂u/∂x+∂v/∂y=0</span
+              ><span class="formula">u=∂ψ/∂y, v=−∂ψ/∂x</span>
+              <p>
+                ψ(x,y)는 두 속도 성분을 하나의 스칼라 함수로 표현합니다.
+                대입하면 ∂²ψ/(∂x∂y)−∂²ψ/(∂y∂x)=0이므로 매끄러운 함수에서는
+                연속방정식이 자동으로 성립합니다. 이 절은 정상 평면 유동을
+                다룹니다.
+              </p>
+              <p>
+                velocity potential(속도퍼텐셜) φ는 다른 함수이며 u=∂φ/∂x,
+                v=∂φ/∂y로 정의합니다. ψ는 미분 방향이 서로 바뀌고 v 앞에 −가
+                있다는 점을 기억합니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-30">
+              <h3>φ의 y성분과 적분상수</h3>
+              <p>
+                원본의 φ 벡터 표현에서 j성분의 분모가 x로 중복되어 있습니다.
+                기울기 정의에 따라 y성분은 ∂φ/∂y입니다. 또한 유선함수는
+                속도장으로부터 유일한 절대값이 정해지는 것이 아니라
+                덧셈상수까지의 자유도가 있습니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 공간 기울기와 교차미분 정의에 따른 표기
+                  대조</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-31"
+          aria-labelledby="slide-31-title"
+        >
+          <p class="section-kicker">Source slide 31 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-31-title">
+            ψ가 일정한 선이 streamline(유선)인 이유
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-31.jpg"
+                alt="Lecture 5 슬라이드 31: ψ가 일정한 선이 streamline(유선)인 이유"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 31/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>유선의 접선은 속도 방향입니다</h3>
+              <span class="formula">dx/u=dy/v ⇒ u dy−v dx=0</span
+              ><span class="formula">dψ=(∂ψ/∂x)dx+(∂ψ/∂y)dy=−v dx+u dy=0</span
+              ><span class="formula">ψ=constant on a streamline</span>
+              <p>
+                유선 위에서 이동할 때 dψ가 0이므로 ψ는 일정합니다. 유선은 한
+                시각의 속도 방향에 접하는 곡선입니다. 속도 성분이 0인 곳에서는
+                나눗셈 형태보다 u dy−v dx=0 형태가 안전합니다.
+              </p>
+              <p>
+                절대 ψ값의 기준은 임의로 선택할 수 있지만, 서로 다른 두 유선의 ψ
+                차이는 실제 유량 정보를 담습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-32"
+          aria-labelledby="slide-32-title"
+        >
+          <p class="section-kicker">Source slide 32 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-32-title">
+            유선함수의 차이와 volume flow rate(체적유량)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-32.jpg"
+                alt="Lecture 5 슬라이드 32: 유선함수의 차이와 volume flow rate(체적유량)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 32/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>두 유선 사이 단위 깊이 유량</h3>
+              <span class="formula">dq=V·n ds=u dy−v dx=dψ</span
+              ><span class="formula">q₁→₂=ψ₂−ψ₁</span>
+              <p>
+                단면을 따라 법선 방향을 선택하고 적분한 부호 있는 유량입니다.
+                2차원 그림은 종이 안쪽 깊이 1을 가정하므로 ψ와 q의 단위는
+                m²/s입니다. 실제 일정한 폭 b가 있으면 Q=b(ψ₂−ψ₁) [m³/s]입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>흐름의 방향도 알 수 있습니다</h3>
+              <p>
+                아래에서 위로 단면을 잡고 오른쪽을 양의 통과 방향으로 정하면
+                q=ψ_upper−ψ_lower입니다. 위쪽 ψ가 더 크면 오른쪽으로, 작으면
+                왼쪽으로 흐릅니다. 유선 간격이 좁다고 무조건 같은 유량인 것은
+                아니며, 같은 Δψ 간격으로 그렸을 때 좁은 간격이 큰 속도를
+                나타냅니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-33"
+          aria-labelledby="slide-33-title"
+        >
+          <p class="section-kicker">Source slide 33 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-33-title">
+            유선함수 예제: 주어진 속도장
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-33.jpg"
+                alt="Lecture 5 슬라이드 33: 유선함수 예제: 주어진 속도장"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 33/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Find, plot, and interpret(구하고, 그리고, 해석하라)</h3>
+              <span class="formula">u=a(x²−y²), v=−2axy, w=0</span>
+              <p>
+                상수 a를 갖는 정상 2차원 속도장입니다. 먼저 비압축성
+                연속방정식을 확인하고, 두 속도 성분과 동시에 일치하는 ψ를
+                구합니다. 그 다음 ψ가 일정한 곡선을 그려 유동을 해석합니다.
+              </p>
+              <p>
+                한 속도 성분만 적분한 뒤 바로 답을 확정하면 다른 성분이 주는
+                조건을 놓칩니다. 적분에서 남는 함수는 반드시 나머지 속도
+                성분으로 결정합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-34"
+          aria-labelledby="slide-34-title"
+        >
+          <p class="section-kicker">Source slide 34 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-34-title">
+            유선함수 예제: 적분과 대입 검산
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-34.jpg"
+                alt="Lecture 5 슬라이드 34: 유선함수 예제: 적분과 대입 검산"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 34/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>연속방정식을 확인합니다</h3>
+              <span class="formula">∂u/∂x+∂v/∂y=2ax−2ax=0</span>
+              <p>따라서 이 속도장은 2차원 비압축성 연속방정식을 만족합니다.</p>
+            </div>
+            <div class="card">
+              <h3>두 성분으로 ψ를 결정합니다</h3>
+              <span class="formula">∂ψ/∂y=a(x²−y²) ⇒ ψ=ax²y−ay³/3+f(x)</span
+              ><span class="formula">v=−∂ψ/∂x=−2axy−f′(x)=−2axy ⇒ f′(x)=0</span
+              ><span class="formula">ψ=a(x²y−y³/3)+C</span>
+              <p>
+                ∂ψ/∂y와 −∂ψ/∂x를 다시 계산하면 주어진 u,v가 모두 나옵니다. C는
+                속도에 영향을 주지 않는 임의 상수이며 유선에 붙이는 숫자의
+                기준만 바꿉니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-35"
+          aria-labelledby="slide-35-title"
+        >
+          <p class="section-kicker">Source slide 35 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-35-title">
+            유선함수 예제: 유선과 정체점
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-35.jpg"
+                alt="Lecture 5 슬라이드 35: 유선함수 예제: 유선과 정체점"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 35/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>곡선의 식과 특수 유선</h3>
+              <span class="formula">3x²y−y³=3ψ/a (C=0)</span
+              ><span class="formula">ψ=0 ⇒ y=0 또는 y=±√3x</span>
+              <p>
+                ψ값을 고정하면 그림의 곡선을 얻습니다. 세 직선은 원점을 통과하며
+                인접한 방향이 60° 간격입니다. a≠0일 때 u=v=0이 동시에 되는 점은
+                원점이므로 stagnation point(정체점)입니다.
+              </p>
+              <p>
+                슬라이드는 이 유선의 일부를 불투과 벽으로 선택하여 120° 모서리에
+                충돌하는 흐름, 60° 모서리를 도는 흐름, 둥근 모서리 주변 흐름을
+                해석합니다. 유선은 벽을 통과하지 않는 경계로 쓸 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>유선 모양과 흐르는 방향은 따로 확인합니다</h3>
+              <p>
+                같은 ψ 등고선이라도 a의 부호가 바뀌면 속도 방향은 반대가 됩니다.
+                실제 벽으로 해석할 때 유선을 벽으로 고르는 것은 불투과 조건을
+                만족시키는 것이며, 점성 유체의 no-slip까지 자동으로 만족하는
+                것은 아닙니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 주어진 속도장의 부호와 경계조건의 구분</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-36"
+          aria-labelledby="slide-36-title"
+        >
+          <p class="section-kicker">Source slide 36 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-36-title">
+            Vorticity(와도)와 유선함수
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-36.jpg"
+                alt="Lecture 5 슬라이드 36: Vorticity(와도)와 유선함수"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 36/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>속도장의 curl(회전)을 계산합니다</h3>
+              <span class="formula">ζ=∇×V=(∂v/∂x−∂u/∂y)k</span
+              ><span class="formula">ζ=−(∂²ψ/∂x²+∂²ψ/∂y²)k=−∇²ψ k</span>
+              <p>
+                이 절의 ζ는 와도 벡터이며 에너지 수지에서 쓴 스칼라 ζ와
+                구별합니다. 평면 유동에서는 면에 수직인 z성분만 남고, 단위는
+                s⁻¹입니다. 양의 ζz는 반시계방향의 국소 회전을 뜻합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>
+                Irrotational(비회전)이면 Laplace equation(라플라스 방정식)
+              </h3>
+              <span class="formula">ζ=0 ⇒ ∇²ψ=0</span>
+              <p>
+                유선함수는 비회전이어야만 존재하는 함수가 아닙니다. 2차원
+                비압축성 유동에서 ψ를 쓸 수 있고, 여기에 비회전 조건까지
+                적용하면 ψ가 라플라스 방정식을 만족합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-37"
+          aria-labelledby="slide-37-title"
+        >
+          <p class="section-kicker">Source slide 37 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-37-title">
+            유체 요소의 angular velocity(각속도)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-37.jpg"
+                alt="Lecture 5 슬라이드 37: 유체 요소의 angular velocity(각속도)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 37/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>서로 수직인 두 선의 회전률을 평균합니다</h3>
+              <span class="formula">ωz=½(∂v/∂x−∂u/∂y)</span>
+              <p>
+                처음에 x방향인 선분은 양끝의 v 차이로 회전하고, y방향 선분은
+                양끝의 u 차이로 회전합니다. 두 방향의 반시계 회전률을 평균하면
+                요소의 국소 각속도가 됩니다. 한 선분이 기울어지는 것만으로 전체
+                회전을 판단하지 않습니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-37">
+              <h3>작은 각도 유도의 길이</h3>
+              <p>
+                원본에서 y방향 선분의 dβ를 구하는 분모에 dx가 보이지만, 그
+                선분의 원래 길이는 dy입니다. 같은 방향의 길이로 나누어야
+                dβ/dt=∂u/∂y가 됩니다. 최종 각속도 식은 위와 같이 유지됩니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 그림의 초기 선분 방향과 작은 각도 비율
+                  대조</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-38"
+          aria-labelledby="slide-38-title"
+        >
+          <p class="section-kicker">Source slide 38 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-38-title">3차원 각속도 벡터</h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-38.jpg"
+                alt="Lecture 5 슬라이드 38: 3차원 각속도 벡터"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 38/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>각 축 주위의 국소 회전</h3>
+              <span class="formula">ωₓ=½(∂w/∂y−∂v/∂z)</span
+              ><span class="formula">ωᵧ=½(∂u/∂z−∂w/∂x)</span
+              ><span class="formula">ωz=½(∂v/∂x−∂u/∂y)</span
+              ><span class="formula">ω=½∇×V</span>
+              <p>
+                한 평면에서 구한 두 선의 평균 회전률을 세 좌표 평면으로 확장한
+                식입니다. 벡터의 방향은 회전축, 크기는 국소 각속도를 나타냅니다.
+                curl을 행렬식 형태로 전개할 때 가운데 j성분의 부호를 주의합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-39"
+          aria-labelledby="slide-39-title"
+        >
+          <p class="section-kicker">Source slide 39 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-39-title">
+            곡선 운동과 rotational flow(회전 유동)는 다릅니다
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-39.jpg"
+                alt="Lecture 5 슬라이드 39: 곡선 운동과 rotational flow(회전 유동)는 다릅니다"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 39/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>와도는 각속도의 두 배입니다</h3>
+              <span class="formula">ζ=2ω=∇×V</span>
+              <p>
+                입자의 위치가 중심 주위를 도는 것과 입자 주변의 작은 요소가
+                국소적으로 회전하는 것은 다릅니다. 와도가 0 또는 무시할 만큼
+                작으면 irrotational flow(비회전 유동)라고 합니다.
+              </p>
+              <p>
+                직선 유선을 갖더라도 이웃 층의 속도가 달라 요소가 회전할 수
+                있습니다. 반대로 원형 유선을 따라 움직여도 평균 국소 회전률은
+                0일 수 있습니다. 다음 자유와류와 강제와류가 이를 구별합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-40"
+          aria-labelledby="slide-40-title"
+        >
+          <p class="section-kicker">Source slide 40 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-40-title">
+            Free vortex(자유와류)와 forced vortex(강제와류)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-40.jpg"
+                alt="Lecture 5 슬라이드 40: Free vortex(자유와류)와 forced vortex(강제와류)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 40/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>원통좌표의 와도로 비교합니다</h3>
+              <span class="formula">ζz=(1/r)[∂(rvθ)/∂r−∂vᵣ/∂θ]</span>
+              <div class="table-wrap">
+                <table class="compare-table">
+                  <thead>
+                    <tr>
+                      <th>모델</th>
+                      <th>속도분포</th>
+                      <th>와도·각속도</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Free vortex(자유와류)</td>
+                      <td>vᵣ=0, vθ=K/r</td>
+                      <td>r&gt;0에서 ζz=0, ωz=0</td>
+                    </tr>
+                    <tr>
+                      <td>Forced vortex(강제와류)</td>
+                      <td>vᵣ=0, vθ=Ωr</td>
+                      <td>ζz=2Ω, ωz=Ω</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                자유와류는 rvθ가 일정해서 미분이 0입니다. 강제와류는 강체
+                회전처럼 반경에 비례해 접선속도가 커집니다. Ω는 일정한
+                각속도이며 K의 단위는 m²/s입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>중심과 선분의 방향에 관한 주의</h3>
+              <p>
+                K/r 모델은 r=0에서 특이하므로 중심까지 비회전이라고 주장하지
+                않습니다. 또한 비회전은 요소의 평균 국소 회전률이 0이라는
+                뜻입니다. 변형 때문에 각 물질선의 방향이 달라질 수 있으므로 모든
+                선이 방향을 영원히 유지한다는 뜻은 아닙니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 와도 정의와 자유와류의 적용 영역</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-41"
+          aria-labelledby="slide-41-title"
+        >
+          <p class="section-kicker">Source slide 41 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-41-title">
+            와류 그림과 실제 유동을 읽는 기준
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-41.jpg"
+                alt="Lecture 5 슬라이드 41: 와류 그림과 실제 유동을 읽는 기준"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 41/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>궤도가 아니라 요소의 회전을 봅니다</h3>
+              <p>
+                상단의 작은 표시를 따라가며 중심을 도는 동안 표시의 자체 방향이
+                함께 회전하는지 확인합니다. 요소가 강체처럼 함께 돌면 forced
+                vortex(강제와류), 평균 국소 회전이 0이면 free-vortex(자유와류)
+                모델에 대응합니다. 정지 그림의 원형 궤도만으로 판정하지
+                않습니다.
+              </p>
+              <p>
+                날개끝 와류, 허리케인, 배수구 와류는 이 개념을 적용하는
+                사례입니다. 사진만으로 어느 하나가 전 영역에서 이상적인 K/r 또는
+                Ωr 분포라고 확정할 수는 없습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>실제 와류의 코어와 바깥 영역</h3>
+              <p>
+                실제 유동에서는 점성 코어, 바깥 회전 유동, 축방향 운동이 함께
+                존재할 수 있습니다. 판정에 필요한 것은 속도분포와 그 미분입니다.
+                이상적인 자유·강제와류는 이를 해석하는 모델이지 사진의 이름을
+                외우는 분류표가 아닙니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 이상화 모델과 관측 자료의 구별</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-42"
+          aria-labelledby="slide-42-title"
+        >
+          <p class="section-kicker">Source slide 42 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-42-title">
+            와도 예제: 직선 유동과 원형 유동
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-42.jpg"
+                alt="Lecture 5 슬라이드 42: 와도 예제: 직선 유동과 원형 유동"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 42/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>두 속도장을 각각 미분합니다</h3>
+              <span class="formula">(1) Couette: u=ay, v=0</span
+              ><span class="formula">(2) Potential vortex: vᵣ=0, vθ=K/r</span>
+              <p>
+                a와 K는 상수입니다. check if the flows are rotational(회전
+                유동인지 확인하라)는 유선의 모양을 설명하는 문제가 아니라 curl V
+                또는 ω를 계산하는 문제입니다. 첫 유동은 직교좌표, 두 번째 유동은
+                원통좌표의 식을 쓰면 간단합니다.
+              </p>
+              <p>
+                앞서 Couette 속도분포에 있던 일정한 이동속도 항은 공간 미분하면
+                0입니다. 따라서 u=ay라는 전단 부분만으로 회전을 판별할 수
+                있습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-43"
+          aria-labelledby="slide-43-title"
+        >
+          <p class="section-kicker">Source slide 43 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-43-title">
+            와도 예제: 예상과 다른 결과
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-43.jpg"
+                alt="Lecture 5 슬라이드 43: 와도 예제: 예상과 다른 결과"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 43/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Couette 유동은 회전 유동입니다</h3>
+              <span class="formula">ωz=½(∂v/∂x−∂u/∂y)=−a/2</span
+              ><span class="formula">ζz=−a</span>
+              <p>
+                a&gt;0이면 위쪽 층이 더 빨라 작은 요소는 시계방향으로
+                회전합니다. 유선이 직선이어도 회전 유동입니다. a=0인 퇴화 경우는
+                제외합니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>퍼텐셜 와류는 중심 밖에서 비회전입니다</h3>
+              <span class="formula">ωz=½[(1/r)∂(rvθ)/∂r−(1/r)∂vᵣ/∂θ]</span
+              ><span class="formula">=½[(1/r)∂K/∂r−0]=0 (r&gt;0)</span>
+              <p>
+                중심 주위를 도는 입자의 공전과 국소 회전률은 서로 다른 양입니다.
+                원형 유선만 보고 rotational이라고 답하면 틀립니다. r=0은 이 이상
+                모델이 정의되지 않는 위치입니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-44"
+          aria-labelledby="slide-44-title"
+        >
+          <p class="section-kicker">Source slide 44 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-44-title">
+            Velocity potential(속도퍼텐셜)
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-44.jpg"
+                alt="Lecture 5 슬라이드 44: Velocity potential(속도퍼텐셜)"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 44/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>비회전 속도장을 스칼라의 기울기로 표현합니다</h3>
+              <span class="formula">V=∇φ</span
+              ><span class="formula">u=∂φ/∂x, v=∂φ/∂y, w=∂φ/∂z</span>
+              <p>
+                매끄러운 φ에 대해 ∇×∇φ=0이므로 이 표현은 비회전 속도장을
+                만듭니다. φ=constant인 면 또는 선을 equipotential
+                surface/line(등퍼텐셜면·선)이라 합니다. φ의 단위는 m²/s이며
+                덧셈상수는 속도에 영향을 주지 않습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>국소 퍼텐셜과 전역 퍼텐셜</h3>
+              <p>
+                curl V=0이면 국소적으로 퍼텐셜을 정의할 수 있습니다. 한 영역
+                전체에서 단일값 퍼텐셜을 쓰려면 영역의 연결성과 순환도 확인해야
+                합니다. 예를 들어 자유와류의 φ=Kθ는 중심을 한 바퀴 돌면 2πK만큼
+                달라집니다. 중심을 제외한 전 영역에서 θ를 아무 제한 없이
+                단일값으로 쓸 수는 없습니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 자유와류에 V=∇φ를 직접 적용한 영역 조건</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-45"
+          aria-labelledby="slide-45-title"
+        >
+          <p class="section-kicker">Source slide 45 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-45-title">
+            유선과 등퍼텐셜선의 직교
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-45.jpg"
+                alt="Lecture 5 슬라이드 45: 유선과 등퍼텐셜선의 직교"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 45/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>Cauchy–Riemann equations(코시–리만 관계)</h3>
+              <span class="formula">u=∂ψ/∂y=∂φ/∂x</span
+              ><span class="formula">v=−∂ψ/∂x=∂φ/∂y</span
+              ><span class="formula">∇φ·∇ψ=(u,v)·(−v,u)=0</span>
+              <p>
+                2차원 비압축성·비회전 유동에서는 ψ와 φ를 함께 쓸 수 있습니다. 두
+                함수의 기울기가 직교하므로, 속도가 0이 아닌 점에서 유선과
+                등퍼텐셜선은 서로 수직입니다. 정체점에서는 기울기가 0이어서 선의
+                국소 방향을 이 식만으로 정할 수 없습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>두 함수가 만족하는 라플라스 방정식</h3>
+              <span class="formula">∇²φ=0, ∇²ψ=0</span>
+              <p>
+                φ의 라플라스 방정식은 ∇·V=0에서, ψ의 라플라스 방정식은 ∇×V=0에서
+                나옵니다. 두 결과의 출발 조건을 바꾸어 기억하지 않습니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-46"
+          aria-labelledby="slide-46-title"
+        >
+          <p class="section-kicker">Source slide 46 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-46-title">
+            Euler equation(오일러 방정식)과 베르누이식의 연결
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-46.jpg"
+                alt="Lecture 5 슬라이드 46: Euler equation(오일러 방정식)과 베르누이식의 연결"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 46/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>대류가속도를 와도로 다시 씁니다</h3>
+              <span class="formula">(V·∇)V=∇(V²/2)+ζ×V</span
+              ><span class="formula">∂V/∂t+∇(V²/2)+ζ×V+(1/ρ)∇p−g=0</span>
+              <p>
+                점성효과를 무시하면 운동량식은 ρDV/Dt=−∇p+ρg입니다. 여기에 벡터
+                항등식을 대입한 결과입니다. V²는 속도벡터의 크기 제곱입니다.
+                ζ×V=−V×ζ이므로 외적 순서를 바꾸면 부호도 바뀝니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>미소 변위와 내적합니다</h3>
+              <span class="formula">[∂V/∂t+∇(V²/2)+ζ×V+(1/ρ)∇p−g]·dr=0</span>
+              <p>
+                dr은 비교할 두 점을 잇는 경로의 미소 변위입니다. 이 식을
+                적분하려면 특히 (ζ×V)·dr 항이 언제 0이 되는지 확인해야 합니다.
+                그 조건이 유선 위와 비회전 영역의 차이를 만듭니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-47"
+          aria-labelledby="slide-47-title"
+        >
+          <p class="section-kicker">Source slide 47 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-47-title">
+            Bernoulli equation(베르누이 방정식)의 적용 경로
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-47.jpg"
+                alt="Lecture 5 슬라이드 47: Bernoulli equation(베르누이 방정식)의 적용 경로"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 47/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>유선 위에서는 회전항과 경로가 수직입니다</h3>
+              <span class="formula">dr ∥ V ⇒ (ζ×V)·dr=0</span
+              ><span class="formula"
+                >∫₁² (∂V/∂t)·dr + ∫₁² dp/ρ + (V₂²−V₁²)/2 + g(z₂−z₁)=0</span
+              >
+              <p>
+                점성효과를 무시하고 중력이 일정한 경우의 관계입니다. 정상
+                유동이면 첫 항이 0입니다. 밀도가 일정하지 않으면 압력항을 곧바로
+                (p₂−p₁)/ρ로 바꾸지 않습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>비회전이면 서로 다른 유선도 연결할 수 있습니다</h3>
+              <span class="formula">p/ρ + V²/2 + gz = constant</span>
+              <p>
+                일정 밀도의 정상·비점성·비회전 유동에서는 연결된 영역 내에서
+                같은 상수를 쓸 수 있습니다. 비회전 조건이 없을 때 정상 비점성
+                베르누이 상수는 일반적으로 유선마다 다를 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>비정상 퍼텐셜 유동</h3>
+              <span class="formula">∂φ/∂t + V²/2 + p/ρ + gz = C(t)</span>
+              <p>
+                일정 밀도·비점성·비회전 유동에서 V=∇φ를 적용하면 공간 기울기로
+                묶어 적분할 수 있습니다. 비정상 문제에서는 ∂φ/∂t를 빠뜨리지
+                않습니다. 이 식의 공간적 상수는 시간에는 의존할 수 있습니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · Euler 식에 속도퍼텐셜을 대입한 확장</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-48"
+          aria-labelledby="slide-48-title"
+        >
+          <p class="section-kicker">Source slide 48 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-48-title">
+            퍼텐셜 유동의 방정식과 두 곡선의 기울기
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-48.jpg"
+                alt="Lecture 5 슬라이드 48: 퍼텐셜 유동의 방정식과 두 곡선의 기울기"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 48/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>연속방정식이 φ의 라플라스 방정식이 됩니다</h3>
+              <span class="formula">∇·V=∇·(∇φ)=∇²φ=0</span
+              ><span class="formula">dφ=u dx+v dy=0 ⇒ (dy/dx)_φ=−u/v</span
+              ><span class="formula">dψ=−v dx+u dy=0 ⇒ (dy/dx)_ψ=v/u</span>
+              <p>
+                u,v가 0이 아닌 곳에서 두 기울기의 곱은 −1입니다. 한 성분이 0이면
+                수평선·수직선의 직교 관계로 이해합니다. φ는 속도 방향의
+                기울기를, ψ의 등고선은 속도 방향의 접선을 나타냅니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-48">
+              <h3>미분 기호를 구분합니다</h3>
+              <p>
+                원본의 ∇·(∇φ) 부분은 ∇가 빠진 듯한 표기이며, 일정 ψ선의 dψ
+                전개에도 φ 편미분이 섞여 있습니다. 본문에서는 V=∇φ 및
+                dψ=ψₓdx+ψᵧdy의 정의에 맞추었습니다. 이 교정은 두 함수의 역할을
+                섞지 않기 위한 것입니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 속도퍼텐셜·유선함수 정의의 직접 대입</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-49"
+          aria-labelledby="slide-49-title"
+        >
+          <p class="section-kicker">Source slide 49 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-49-title">
+            Potential flow(퍼텐셜 유동) 근사의 적용 영역
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-49.jpg"
+                alt="Lecture 5 슬라이드 49: Potential flow(퍼텐셜 유동) 근사의 적용 영역"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 49/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>점성 영역을 피하고 회전 조건도 확인합니다</h3>
+              <p>
+                그림은 균일한 비회전 접근 유동 주위에서 경계층, 박리 영역,
+                후류를 따로 표시합니다. 벽 근처 boundary layer(경계층)와
+                wake(후류)에서는 점성·와도·손실을 무시하기 어렵습니다. 바깥
+                유동은 조건이 맞을 때 퍼텐셜 유동으로 근사할 수 있습니다.
+              </p>
+              <p>
+                potential flow(퍼텐셜 유동)라는 이름은 V=∇φ에 따른 비회전성과
+                연결됩니다. 비압축성이라는 조건만으로 퍼텐셜 유동이 되는 것은
+                아닙니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>바깥 유동이라는 말의 한계</h3>
+              <p>
+                유입 자체가 회전성을 갖거나 다른 원인으로 와도가 존재하면 경계층
+                밖이라고 해도 비회전 근사가 자동으로 보장되지 않습니다. 그림의
+                균일한 비회전 접근 유동이라는 출발 조건과 함께 읽어야 합니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 슬라이드 그림의 유입 조건과 모델의 적용
+                  범위</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-50"
+          aria-labelledby="slide-50-title"
+        >
+          <p class="section-kicker">Source slide 50 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-50-title">
+            속도퍼텐셜 예제: 같은 속도장 다시 보기
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-50.jpg"
+                alt="Lecture 5 슬라이드 50: 속도퍼텐셜 예제: 같은 속도장 다시 보기"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 50/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>이번에는 φ를 구합니다</h3>
+              <span class="formula">u=a(x²−y²), v=−2axy, w=0</span>
+              <p>
+                앞에서 ψ를 구했던 속도장입니다. 이번에는 비회전 조건을 먼저
+                확인한 뒤 V=∇φ를 만족하는 φ를 구하고, 등퍼텐셜선을 유선과
+                비교합니다.
+              </p>
+              <p>
+                ψ가 존재한다고 φ도 자동으로 존재하는 것은 아닙니다. ψ를 위해서는
+                2차원 비압축성 연속방정식을, φ를 위해서는 회전이 0인지를 각각
+                확인합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-51"
+          aria-labelledby="slide-51-title"
+        >
+          <p class="section-kicker">Source slide 51 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-51-title">
+            속도퍼텐셜 예제: 비회전 확인과 적분
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-51.jpg"
+                alt="Lecture 5 슬라이드 51: 속도퍼텐셜 예제: 비회전 확인과 적분"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 51/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>와도를 정확하게 계산합니다</h3>
+              <span class="formula">∂v/∂x−∂u/∂y=−2ay−(−2ay)=0</span>
+              <p>
+                따라서 이 속도장은 비회전입니다. 앞에서 확인한 발산 0과 함께
+                ψ,φ를 모두 사용할 수 있습니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>남는 함수를 두 번째 성분으로 결정합니다</h3>
+              <span class="formula">∂φ/∂x=a(x²−y²) ⇒ φ=ax³/3−axy²+f(y)</span
+              ><span class="formula">∂φ/∂y=−2axy+f′(y)=v=−2axy ⇒ f′(y)=0</span
+              ><span class="formula">φ=a(x³/3−xy²)+C</span>
+              <p>
+                u를 x로 적분했으므로 적분상수는 f(y)입니다. v와 비교하면 상수
+                C만 남습니다. 마지막에 ∇φ를 계산하여 원래 속도장을 모두
+                복원하는지 확인합니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-51">
+              <h3>원본 curl 계산의 변수</h3>
+              <p>
+                원본 중간식은 2ax−2ax=0으로 쓰여 있으나, 여기서 필요한 두 미분은
+                모두 −2ay입니다. 최종적으로 0이라는 판단과 구한 φ는 같지만, 중간
+                미분은 본문처럼 고쳐야 합니다.
+              </p>
+              <div class="evidence">
+                <span>편집자 보강 · 주어진 u,v의 편미분을 직접 계산</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-52"
+          aria-labelledby="slide-52-title"
+        >
+          <p class="section-kicker">Source slide 52 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-52-title">
+            등퍼텐셜선과 유선의 겹쳐 보기
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-52.jpg"
+                alt="Lecture 5 슬라이드 52: 등퍼텐셜선과 유선의 겹쳐 보기"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 52/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>등퍼텐셜선의 식</h3>
+              <span class="formula">x³−3xy²=3φ/a (C=0)</span>
+              <p>
+                φ=a(x³/3−xy²)에서 양변에 3/a를 곱한 식입니다. 이 곡선과 앞의 ψ
+                등고선은 원점 밖에서 직교합니다. 원점은 속도가 0인 정체점이므로
+                보통의 접선 방향에 관한 직교 정리를 바로 적용하지 않습니다.
+              </p>
+              <span class="formula">φ=0: x=0 또는 y=±x/√3</span>
+              <p>
+                ψ=0의 직선과 φ=0의 직선 묶음은 원점을 중심으로 30°씩 엇갈립니다.
+                이는 정체점에 여러 가지가 모이는 특별한 모양이지, 일반 점에서의
+                직교 관계가 30°로 바뀐다는 뜻은 아닙니다.
+              </p>
+            </div>
+            <div class="callout source-review" id="source-check-52">
+              <h3>곡선식의 부호</h3>
+              <p>
+                원본의 3xy²−x³=3φ/a는 앞서 얻은 φ 정의와 부호가 반대입니다.
+                본문은 앞 페이지의 정의를 유지해 x³−3xy²=3φ/a로 씁니다. 곡선의
+                전체 모양은 같아도 각 곡선에 붙는 양·음 φ값이 뒤바뀌므로 값의
+                표시는 구별해야 합니다.
+              </p>
+              <div class="evidence">
+                <span
+                  >편집자 보강 · 직전 페이지의 최종 속도퍼텐셜과 대수적으로
+                  대조</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="source-section"
+          id="slide-53"
+          aria-labelledby="slide-53-title"
+        >
+          <p class="section-kicker">Source slide 53 · 개념과 유도</p>
+          <h2 class="section-title" id="slide-53-title">
+            한 장으로 연결하는 미분 유체역학
+          </h2>
+          <figure class="source-slide">
+            <div class="source-slide__frame">
+              <img
+                src="assets/slides/lecture05/slide-53.jpg"
+                alt="Lecture 5 슬라이드 53: 한 장으로 연결하는 미분 유체역학"
+                width="1440"
+                height="1080"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              <span>원본 PDF 53/53</span>
+              <span>슬라이드 기반 해설 · 대응 영상 미제공</span>
+            </figcaption>
+          </figure>
+          <div class="note-stack">
+            <!-- 개념 슬라이드: callout/card/exam-card 사용. 링크·구분·참고문헌: quiet-card만 사용 가능. -->
+            <div class="card">
+              <h3>보존법칙과 경계조건</h3>
+              <span class="formula">D/Dt=∂/∂t+V·∇</span
+              ><span class="formula">∂ρ/∂t+∇·(ρV)=0</span
+              ><span class="formula">ρDV/Dt=ρg−∇p+∇·τ</span
+              ><span class="formula"
+                >ρc_v DT/Dt=k∇²T+Φ (비압축성·일정 물성)</span
+              >
+              <p>
+                질량보존을 확인한 다음 운동량식에 힘과 점성 모델을 넣고,
+                벽·입출구 조건으로 해를 결정합니다. 온도가 필요한 문제에서는
+                에너지식도 풉니다. 위 온도식은 일반 압축성 에너지식이 아니라
+                조건을 단순화한 형태입니다.
+              </p>
+            </div>
+            <div class="card">
+              <h3>속도장을 표현하고 회전을 판별하는 도구</h3>
+              <span class="formula">u=ψᵧ, v=−ψₓ; ζ=∇×V=2ω</span
+              ><span class="formula">2차원 비압축성: ζ=−∇²ψ k</span
+              ><span class="formula"
+                >비회전: V=∇φ; 비압축성까지 적용하면 ∇²φ=0</span
+              >
+              <p>
+                ψ는 유선과 단위 폭 유량을, φ는 비회전 속도장을 표현합니다. 곡선
+                궤도와 국소 회전은 다르고, 정상과 가속도 0도 다릅니다. 식을
+                외우기 전에 어떤 가정이 어떤 항을 없앴는지 설명할 수 있어야
+                합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="exam-english"
+          aria-labelledby="exam-title"
+        >
+          <p class="section-kicker">Exam English</p>
+          <h2 class="section-title" id="exam-title">
+            정의·가정·물리적 의미를 영어로 설명하기
+          </h2>
+          <div class="note-stack">
+            <!-- 아래 exam-card를 문항 수만큼 복제한다. exam-english에 section-divider를 추가하지 않는다. -->
+            <div class="exam-card">
+              <h3>Explain the material derivative.</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>The material
+                derivative gives the rate of change following a fluid particle.
+                It combines the local time derivative and the convective
+                derivative: D/Dt = ∂/∂t + V·∇.
+              </div>
+              <p style="margin-top: 12px">
+                following a fluid particle(유체 입자를 따라가며)를 포함합니다.
+                정상이라도 대류가속도는 남을 수 있습니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>Does steady flow imply zero acceleration?</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>No. Steady flow
+                has zero local acceleration, but convective acceleration may
+                remain when the velocity varies with position.
+              </div>
+              <p style="margin-top: 12px">
+                steady(정상)가 없애는 항은 ∂V/∂t입니다. 전체 DV/Dt가 아닙니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>State the continuity equation for an incompressible flow.</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>For
+                incompressible flow, Dρ/Dt = 0 and the continuity equation
+                reduces to ∇·V = 0. This condition applies to both steady and
+                unsteady flow.
+              </div>
+              <p style="margin-top: 12px">
+                divergence(발산)와 gradient(기울기)를 구별합니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>
+                Find v if u=a(x²+y²), w=b, and the flow is incompressible.
+              </h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>Continuity gives
+                ∂v/∂y = −2ax. Integration with respect to y gives v = −2axy +
+                f(x,z,t), where f is independent of y.
+              </div>
+              <p style="margin-top: 12px">
+                마이너스 부호와 적분 뒤에 남는 함수가 핵심입니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>Compare plane Couette flow and plane Poiseuille flow.</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>Pure plane
+                Couette flow is driven by a moving wall with zero streamwise
+                pressure gradient and has a linear velocity profile. Plane
+                Poiseuille flow is driven by a pressure gradient between two
+                stationary walls and has a parabolic profile.
+              </div>
+              <p style="margin-top: 12px">
+                두 경우 모두 정상·완전 발달·비압축성·일정 점성이라는 조건에서
+                비교합니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>What does the no-slip condition mean?</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>The fluid
+                velocity at a solid wall equals the wall velocity. At a moving
+                wall, the fluid velocity is not zero.
+              </div>
+              <p style="margin-top: 12px">
+                no-slip을 무조건 u=0으로 외우지 않습니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>Why is viscous dissipation nonnegative?</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>For an
+                incompressible Newtonian fluid with nonnegative viscosity, the
+                dissipation function is a sum of squared strain-rate terms. It
+                is nonnegative and converts mechanical energy into internal
+                energy.
+              </div>
+              <p style="margin-top: 12px">
+                항상 엄격한 양수가 아니라 nonnegative(0 이상)입니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>
+                State the physical meaning of a stream-function difference.
+              </h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>In
+                two-dimensional incompressible flow, the difference in stream
+                function between two streamlines equals the signed volume flow
+                rate per unit depth between them.
+              </div>
+              <p style="margin-top: 12px">
+                per unit depth(단위 깊이당)와 부호를 포함합니다. ψ의 단위는
+                m²/s입니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>Can a flow with circular streamlines be irrotational?</h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>Yes. A potential
+                vortex with vθ = K/r has zero vorticity for r > 0. Orbital
+                motion around a center is not the same as local fluid-element
+                rotation.
+              </div>
+              <p style="margin-top: 12px">
+                중심 r=0을 적용 영역에서 제외합니다.
+              </p>
+            </div>
+            <div class="exam-card">
+              <h3>
+                Under what conditions can Bernoulli’s constant be shared by
+                different streamlines?
+              </h3>
+              <div class="answer">
+                <span class="answer__label">Model answer</span>For steady,
+                inviscid, incompressible and irrotational flow, the same
+                Bernoulli constant applies throughout a connected flow region
+                under a conservative gravity field.
+              </div>
+              <p style="margin-top: 12px">
+                서로 다른 유선까지 연결할 때 irrotational(비회전) 조건이
+                추가되는 이유를 외적 항으로 설명할 수 있어야 합니다.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="glossary"
+          aria-labelledby="glossary-title"
+        >
+          <p class="section-kicker">Core glossary</p>
+          <h2 class="section-title" id="glossary-title">
+            Lecture 5 핵심 용어집
+          </h2>
+          <div class="table-wrap">
+            <table class="term-table">
+              <thead>
+                <tr>
+                  <th>English</th>
+                  <th>한국어</th>
+                  <th>의미·단위</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>material / total derivative</td>
+                  <td>물질미분 / 전미분</td>
+                  <td>입자의 경로를 따라가는 변화율</td>
+                </tr>
+                <tr>
+                  <td>local / convective acceleration</td>
+                  <td>국소 / 대류가속도</td>
+                  <td>시간 변화 / 위치 이동에 따른 변화</td>
+                </tr>
+                <tr>
+                  <td>continuity equation</td>
+                  <td>연속방정식</td>
+                  <td>질량보존의 미분식</td>
+                </tr>
+                <tr>
+                  <td>divergence / curl</td>
+                  <td>발산 / 회전</td>
+                  <td>순유출 경향 / 국소 회전</td>
+                </tr>
+                <tr>
+                  <td>steady / unsteady</td>
+                  <td>정상 / 비정상</td>
+                  <td>고정된 점에서 시간 의존성 없음 / 있음</td>
+                </tr>
+                <tr>
+                  <td>incompressible</td>
+                  <td>비압축성인</td>
+                  <td>Dρ/Dt=0</td>
+                </tr>
+                <tr>
+                  <td>mass flux / mass flow rate</td>
+                  <td>질량 유속밀도 / 질량유량</td>
+                  <td>kg/(m²·s) / kg/s</td>
+                </tr>
+                <tr>
+                  <td>body / surface force</td>
+                  <td>체적력 / 표면력</td>
+                  <td>중력 / 압력·점성응력의 힘</td>
+                </tr>
+                <tr>
+                  <td>stress / strain rate</td>
+                  <td>응력 / 변형률속도</td>
+                  <td>Pa / s⁻¹</td>
+                </tr>
+                <tr>
+                  <td>dynamic viscosity</td>
+                  <td>점성계수</td>
+                  <td>μ, Pa·s</td>
+                </tr>
+                <tr>
+                  <td>fully developed</td>
+                  <td>완전 발달한</td>
+                  <td>진행 방향의 속도분포 변화 없음</td>
+                </tr>
+                <tr>
+                  <td>no-slip / impermeable</td>
+                  <td>점착 / 불투과</td>
+                  <td>접선 상대속도 0 / 법선 상대속도 0</td>
+                </tr>
+                <tr>
+                  <td>shear-driven / pressure-driven</td>
+                  <td>전단 구동 / 압력 구동</td>
+                  <td>움직이는 벽 / 압력구배</td>
+                </tr>
+                <tr>
+                  <td>thermal conductivity</td>
+                  <td>열전도도</td>
+                  <td>k, W/(m·K)</td>
+                </tr>
+                <tr>
+                  <td>viscous dissipation</td>
+                  <td>점성 소산</td>
+                  <td>Φ, 기계적 에너지의 내부에너지 전환</td>
+                </tr>
+                <tr>
+                  <td>boundary condition</td>
+                  <td>경계조건</td>
+                  <td>벽·입구·출구·계면에서의 조건</td>
+                </tr>
+                <tr>
+                  <td>stream function</td>
+                  <td>유선함수</td>
+                  <td>ψ, m²/s; Δψ=단위 깊이 유량</td>
+                </tr>
+                <tr>
+                  <td>vorticity / angular velocity</td>
+                  <td>와도 / 각속도</td>
+                  <td>ζ=2ω</td>
+                </tr>
+                <tr>
+                  <td>free / forced vortex</td>
+                  <td>자유 / 강제와류</td>
+                  <td>vθ∝1/r / vθ∝r</td>
+                </tr>
+                <tr>
+                  <td>irrotational</td>
+                  <td>비회전인</td>
+                  <td>curl V=0</td>
+                </tr>
+                <tr>
+                  <td>velocity potential</td>
+                  <td>속도퍼텐셜</td>
+                  <td>φ, V=∇φ</td>
+                </tr>
+                <tr>
+                  <td>stagnation point</td>
+                  <td>정체점</td>
+                  <td>V=0인 점</td>
+                </tr>
+                <tr>
+                  <td>equipotential line</td>
+                  <td>등퍼텐셜선</td>
+                  <td>φ가 일정한 선</td>
+                </tr>
+                <tr>
+                  <td>inviscid</td>
+                  <td>비점성인</td>
+                  <td>점성력의 영향을 무시하는 모델</td>
+                </tr>
+                <tr>
+                  <td>derive / determine / interpret</td>
+                  <td>유도하라 / 구하라 / 해석하라</td>
+                  <td>전개 근거 / 결과 / 물리적 의미</td>
+                </tr>
+                <tr>
+                  <td>assume / neglect</td>
+                  <td>가정하라 / 무시하라</td>
+                  <td>모델 조건 / 해당 항의 근사 제외</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="asr-log"
+          aria-labelledby="asr-title"
+        >
+          <p class="section-kicker">Transcript audit</p>
+          <h2 class="section-title" id="asr-title">
+            스크립트와 원자료 대조 기록
+          </h2>
+          <div class="table-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>근거</th>
+                  <th>대조 항목</th>
+                  <th>처리</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>자동 전사</td>
+                  <td>197개 구간, 60개 구간 검토 반영</td>
+                  <td>
+                    영어 자동 전사. 전문용어와 명확한 오인식을 교정하고 불확실한
+                    수식은 Review note로 구분합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>영상 범위</td>
+                  <td>약 85분 20초, PDF 1–26쪽 설명</td>
+                  <td>
+                    27쪽은 끝부분에 미리 표시될 뿐이며 27–53쪽 설명은 슬라이드
+                    기반입니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>전문용어</td>
+                  <td>wet flow / quasile / furious law / native socks</td>
+                  <td>
+                    Couette / Poiseuille / Fourier / Navier–Stokes로 원자료와
+                    대조합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>PDF 8·9·15</td>
+                  <td>발산, 미분 부호, 응력·변형률속도</td>
+                  <td>
+                    본문에 채택식을 두고 원자료·전사와의 차이를 별도 카드에서
+                    설명합니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>PDF 25·30·37</td>
+                  <td>소산의 비음성, φ의 미분 방향, 선분 길이</td>
+                  <td>정의와 성분 전개로 검산했습니다.</td>
+                </tr>
+                <tr>
+                  <td>PDF 48·51·52</td>
+                  <td>φ·ψ 혼용, 와도 미분, 등퍼텐셜선 부호</td>
+                  <td>
+                    후반부는 PDF 대조와 대수 검산이며 영상의 구두 교정을
+                    확인했다는 뜻이 아닙니다.
+                  </td>
+                </tr>
+                <tr>
+                  <td>영상 말미의 수학 관련 일화</td>
+                  <td>수식의 해 존재와 AI 협업 주장</td>
+                  <td>
+                    전사에서는 발언과 편집자 주석을 분리하며, 검증되지 않은
+                    일화를 노트의 학술 근거로 쓰지 않습니다.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section
+          class="editorial-section"
+          id="sources"
+          aria-labelledby="sources-title"
+        >
+          <p class="section-kicker">Sources</p>
+          <h2 class="section-title" id="sources-title">사용한 강의 자료</h2>
+          <div class="card">
+            <h3>PDF와 영어 스크립트</h3>
+            <ul class="plain-list">
+              <li>
+                Chapter 4 · Differential Relations for Fluid Flow, 53페이지.
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture05_original.pdf"
+                  >원본 PDF</a
+                >
+                ·
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/lecture_notes/lecture05_note.pdf"
+                  >가림막 제거 PDF</a
+                >
+              </li>
+              <li>
+                Week 5 영어 강의 1편, 약 85분 20초.
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/transcripts/lecture05/lecture.txt"
+                  >검수 TXT</a
+                >
+                ·
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/transcripts/lecture05/lecture.srt"
+                  >SRT</a
+                >
+                ·
+                <a
+                  href="https://github.com/leejinh0225/MC2102-Fluid/raw/refs/heads/main/2026FA_FluidMechanics/transcripts/lecture05/lecture.json"
+                  >시각 JSON</a
+                >
+              </li>
+              <li>
+                1–26쪽: 강의와 대조. 27–53쪽: 슬라이드 기반 해설. 캡션 시각은 한
+                영상의 시작 기준이며 정확한 화면 전환 시각이 아니라 주제 대응
+                구간입니다. 14쪽은 강의 중 다시 설명합니다.
+              </li>
+            </ul>
+            <p>
+              원본의 페이지 순서와 수식을 이미지에 보존하고 답안 가림막만
+              제거했습니다. 원본 이미지의 인쇄 오기는 그대로 두고 본문의
+              채택식과 별도의 편집자 보강 카드를 구별합니다. 페이지 번호는 PDF
+              파일 순서이며, 후반의 중복된 인쇄 쪽번호와 다를 수 있습니다.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <nav class="toc" aria-label="Lecture 5 목차">
+        <p class="toc__label">On this lecture</p>
+        <ol>
+          <li><a href="#overview">핵심 관계</a></li>
+          <li><a href="#concept-map">개념 지도</a></li>
+          <li><a href="#concept-summary">핵심 개념 요약</a></li>
+          <li><a href="#slide-01">01 · 표지</a></li>
+          <li><a href="#slide-02">02 · 장 전체의 연결</a></li>
+          <li><a href="#slide-03">03 · 보존방정식 순서</a></li>
+          <li><a href="#slide-04">04 · 속도장·가속도</a></li>
+          <li><a href="#slide-05">05 · 물질미분</a></li>
+          <li><a href="#slide-06">06 · 미소 질량 수지</a></li>
+          <li><a href="#slide-07">07 · 연속방정식</a></li>
+          <li><a href="#slide-08">08 · 비압축성 조건</a></li>
+          <li><a href="#slide-09">09 · 미지 속도 성분</a></li>
+          <li><a href="#slide-10">10 · 피스톤 조건</a></li>
+          <li><a href="#slide-11">11 · 피스톤 밀도</a></li>
+          <li><a href="#slide-12">12 · 운동량 저장</a></li>
+          <li><a href="#slide-13">13 · 운동량 수송</a></li>
+          <li><a href="#slide-14">14 · 압력·중력·점성력</a></li>
+          <li><a href="#slide-15">15 · 점성응력</a></li>
+          <li><a href="#slide-16">16 · Navier–Stokes</a></li>
+          <li><a href="#slide-17">17 · Couette 조건</a></li>
+          <li><a href="#slide-18">18 · Couette 연속식</a></li>
+          <li><a href="#slide-19">19 · Couette 속도분포</a></li>
+          <li><a href="#slide-20">20 · Poiseuille 조건</a></li>
+          <li><a href="#slide-21">21 · Poiseuille 연속식</a></li>
+          <li><a href="#slide-22">22 · Poiseuille 속도분포</a></li>
+          <li><a href="#slide-23">23 · 에너지 수지</a></li>
+          <li><a href="#slide-24">24 · 전도열</a></li>
+          <li><a href="#slide-25">25 · 점성일·소산</a></li>
+          <li><a href="#slide-26">26 · 에너지·온도식</a></li>
+          <li><a href="#slide-27">27 · 경계조건</a></li>
+          <li><a href="#slide-28">28 · 벽·입출구·계면</a></li>
+          <li><a href="#slide-29">29 · 속도장 표현</a></li>
+          <li><a href="#slide-30">30 · 유선함수 정의</a></li>
+          <li><a href="#slide-31">31 · 일정 ψ와 유선</a></li>
+          <li><a href="#slide-32">32 · 유선함수와 유량</a></li>
+          <li><a href="#slide-33">33 · ψ 예제 조건</a></li>
+          <li><a href="#slide-34">34 · ψ 예제 적분</a></li>
+          <li><a href="#slide-35">35 · 유선·정체점</a></li>
+          <li><a href="#slide-36">36 · 와도와 ψ</a></li>
+          <li><a href="#slide-37">37 · 국소 각속도</a></li>
+          <li><a href="#slide-38">38 · 3차원 각속도</a></li>
+          <li><a href="#slide-39">39 · 공전과 국소 회전</a></li>
+          <li><a href="#slide-40">40 · 자유·강제와류</a></li>
+          <li><a href="#slide-41">41 · 와류 그림 읽기</a></li>
+          <li><a href="#slide-42">42 · 와도 예제 조건</a></li>
+          <li><a href="#slide-43">43 · 와도 예제 풀이</a></li>
+          <li><a href="#slide-44">44 · 속도퍼텐셜</a></li>
+          <li><a href="#slide-45">45 · ψ·φ의 직교</a></li>
+          <li><a href="#slide-46">46 · Euler와 와도</a></li>
+          <li><a href="#slide-47">47 · Bernoulli 경로</a></li>
+          <li><a href="#slide-48">48 · 퍼텐셜 방정식</a></li>
+          <li><a href="#slide-49">49 · 적용 영역</a></li>
+          <li><a href="#slide-50">50 · φ 예제 조건</a></li>
+          <li><a href="#slide-51">51 · φ 예제 적분</a></li>
+          <li><a href="#slide-52">52 · φ 등고선</a></li>
+          <li><a href="#slide-53">53 · 종합 정리</a></li>
+          <li><a href="#exam-english">시험 영어</a></li>
+          <li><a href="#glossary">용어집</a></li>
+          <li><a href="#asr-log">스크립트 교정</a></li>
+          <li><a href="#sources">출처</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <span class="wordmark">MC2102 Fluid Mechanics</span>
+        <span
+          >Lecture 5 · Differential Relations for Fluid Flow · 날짜 미기재</span
+        >
+      </div>
+    </footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>
