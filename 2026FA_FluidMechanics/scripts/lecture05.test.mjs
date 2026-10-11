@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import {
@@ -67,22 +68,75 @@ test("no explanation lies outside cards and no supplementary label changes its f
   for (const node of descendants(root).filter((n) => hasClass(n, "evidence")))
     assert.equal(elements(node)[0].tag, "span");
 });
-test("provided video coverage is distinguished from slide-only material", () => {
+test("both recordings have independent time axes and only slide 53 remains PDF-only", () => {
   const mapping = JSON.parse(read("transcripts/lecture05/slide-map.json"));
   assert.equal(mapping.slides.length, 53);
+  assert.deepEqual(mapping.recordings.map(r => r.part), [1, 2]);
   for (let i = 1; i <= 53; i++) {
     const row = mapping.slides[i - 1],
       section = byId(root, `slide-${String(i).padStart(2, "0")}`);
     const figure = elements(section).find((x) => x.tag === "figure");
     assert.equal(row.slide, i);
-    assert.equal(row.evidence, i <= 26 ? "slide_and_lecture" : "pdf_only");
-    if (i <= 26) assert.ok(text(figure).includes(row.range));
+    assert.equal(row.evidence, i <= 52 ? "slide_and_lecture" : "pdf_only");
+    if (i <= 52) {
+      const part = i <= 26 ? 1 : 2;
+      assert.equal(row.part, part);
+      assert.ok(text(figure).includes(`Part ${part} · ${row.range}`));
+      if (part === 2) assert.ok(row.start_seconds < row.end_seconds && row.end_seconds <= 4672.299);
+    }
     else {
       assert.equal(row.range, null);
-      assert.match(text(figure), /슬라이드 기반 해설 · 대응 영상 미제공/);
+      assert.equal(row.part, null);
+      assert.match(text(figure), /슬라이드 기반 종합 정리 · 영상에서 별도 설명 없음/);
     }
   }
-  assert.match(text(byId(root, "sources")), /27–53쪽: 슬라이드 기반 해설/);
+  assert.match(text(byId(root, "sources")), /27–52쪽: Part 2 대조/);
+  assert.match(text(byId(root, "sources")), /53쪽: 슬라이드 기반 종합 정리/);
+});
+
+test("Part 1 source explanations remain unchanged apart from caption labels", () => {
+  const blocks = html.match(/<section\s+class="source-section"[\s\S]*?<\/section>/g)
+    .slice(0, 26).map(s => s.replace(/<figcaption>[\s\S]*?<\/figcaption>/, "").replace(/\s+/g, " ").trim());
+  assert.equal(createHash("sha256").update(JSON.stringify(blocks)).digest("hex"),
+    "509edfa3bb0eb8abddaa81751fc6f54bf6dbfc8afe9f7e51f0d39885456bb6d3");
+});
+
+test("Part 2 preserves all source segment times and marks its editorial annotations", () => {
+  const d = JSON.parse(read("transcripts/lecture05/part02/lecture.json"));
+  const m = JSON.parse(read("transcripts/lecture05/part02/corrections.json"));
+  assert.equal(d.status, "reviewed");
+  assert.equal(d.segments.length, 201);
+  assert.equal(d.review.changed_segment_count, 94);
+  assert.equal(d.review.omitted_segment_count, 0);
+  assert.equal(m.corrections.length, 94);
+  assert.equal(createHash("sha256").update(JSON.stringify(d.segments.map(s => [s.source_index, s.start, s.end]))).digest("hex"),
+    "8e8449d24417d671cd687233dcbef3ff22f2a7a1320338a75a3c97ee6a768964");
+  for (const [i, s] of d.segments.entries()) {
+    assert.equal(s.index, i + 1);
+    assert.equal(s.source_index, i + 1);
+    assert.ok(s.start >= 0 && s.end > s.start && s.end <= d.duration_seconds);
+    if (s.reviewed_text_changed) assert.equal(s.words, null);
+  }
+  const txt = read("transcripts/lecture05/part02/lecture.txt");
+  assert.doesNotMatch(txt, /C:\\Users|https?:\/\/|access_token|m3u8/);
+  assert.match(txt, /\[Review note: Do not identify the Bernoulli constant with psi/);
+  assert.match(txt, /\[Review note: Irrotational means curl V=0/);
+  for (const s of m.corrections) assert.ok(s.original && s.reason && s.text);
+});
+
+test("Part 2 explanations retain established evidence cards and correct condition distinctions", () => {
+  for (const id of ["thermal-bc-check", "psi-bernoulli-check", "flow-assumption-check"]) {
+    const card = byId(root, id);
+    assert.ok(hasClass(card, "card"));
+    const footer = elements(card).at(-1);
+    assert.ok(hasClass(footer, "evidence"));
+    assert.match(text(footer), /^편집자 보강 · Part 2/);
+  }
+  assert.match(text(byId(root,"thermal-bc-check")), /q_n=−k∂T\/∂n=0/);
+  assert.match(text(byId(root,"flow-assumption-check")), /같은 정의가 아닙니다/);
+  assert.match(text(byId(root,"vortex-figure-check")), /강의 화면·설명 대조/);
+  assert.match(read("site/index.html"), /1–52쪽 · 영어 강의 2편 대조/);
+  assert.doesNotMatch(read("site/index.html"), /후반 27–53쪽/);
 });
 test("transcript has 197 retained segments, explicit review notes and no private paths", () => {
   const d = JSON.parse(read("transcripts/lecture05/lecture.json"));

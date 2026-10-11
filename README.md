@@ -15,7 +15,7 @@
 
 Lecture 1은 원본 슬라이드 23장, 핵심 개념 요약, 슬라이드별 해설, 시험 영어, 용어집과 스크립트 교정 기록을 포함합니다. [영어 스크립트 TXT](./2026FA_FluidMechanics/transcripts/lecture01/lecture.txt), [자막 SRT](./2026FA_FluidMechanics/transcripts/lecture01/lecture.srt), [타임스탬프 JSON](./2026FA_FluidMechanics/transcripts/lecture01/lecture.json)도 함께 제공합니다.
 
-Lecture 5는 Chapter 4 PDF 53쪽을 다룹니다. 1–26쪽은 Week 5 강의와 대조했고, 27–53쪽은 슬라이드 기반 해설입니다. [영어 스크립트와 검수 안내](./2026FA_FluidMechanics/transcripts/lecture05/README.md)를 제공합니다.
+Lecture 5는 Chapter 4 PDF 53쪽을 다룹니다. 1–26쪽은 Part 1(Week 5), 27–52쪽은 Part 2(Week 6) 강의와 대조했고, 53쪽은 슬라이드 기반 종합 정리입니다. [영어 스크립트 두 편과 검수 안내](./2026FA_FluidMechanics/transcripts/lecture05/README.md)를 제공합니다.
 
 ## 작성 원칙
 

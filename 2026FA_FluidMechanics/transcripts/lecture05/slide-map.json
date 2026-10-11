@@ -1,271 +1,390 @@
 {
-  "duration_seconds": 5120.149,
-  "range_type": "Approximate topic correspondence based on full ASR and sampled frames; overlaps and slide revisits are intentional.",
+  "range_type": "Approximate topic correspondence from complete ASR and sampled frames. Times restart in each Part; overlaps and revisits are intentional, not exact slide transitions.",
   "slides": [
     {
       "slide": 1,
       "evidence": "slide_and_lecture",
-      "range": "00:00:01–00:00:31"
+      "range": "00:00:01–00:00:31",
+      "part": 1
     },
     {
       "slide": 2,
       "evidence": "slide_and_lecture",
-      "range": "00:00:31–00:02:46"
+      "range": "00:00:31–00:02:46",
+      "part": 1
     },
     {
       "slide": 3,
       "evidence": "slide_and_lecture",
-      "range": "00:02:46–00:03:02"
+      "range": "00:02:46–00:03:02",
+      "part": 1
     },
     {
       "slide": 4,
       "evidence": "slide_and_lecture",
-      "range": "00:03:02–00:05:03"
+      "range": "00:03:02–00:05:03",
+      "part": 1
     },
     {
       "slide": 5,
       "evidence": "slide_and_lecture",
-      "range": "00:05:03–00:09:45"
+      "range": "00:05:03–00:09:45",
+      "part": 1
     },
     {
       "slide": 6,
       "evidence": "slide_and_lecture",
-      "range": "00:09:45–00:16:41"
+      "range": "00:09:45–00:16:41",
+      "part": 1
     },
     {
       "slide": 7,
       "evidence": "slide_and_lecture",
-      "range": "00:16:41–00:19:38"
+      "range": "00:16:41–00:19:38",
+      "part": 1
     },
     {
       "slide": 8,
       "evidence": "slide_and_lecture",
-      "range": "00:19:38–00:21:18"
+      "range": "00:19:38–00:21:18",
+      "part": 1
     },
     {
       "slide": 9,
       "evidence": "slide_and_lecture",
-      "range": "00:21:18–00:23:44"
+      "range": "00:21:18–00:23:44",
+      "part": 1
     },
     {
       "slide": 10,
       "evidence": "slide_and_lecture",
-      "range": "00:23:14–00:25:44"
+      "range": "00:23:14–00:25:44",
+      "part": 1
     },
     {
       "slide": 11,
       "evidence": "slide_and_lecture",
-      "range": "00:25:44–00:34:12"
+      "range": "00:25:44–00:34:12",
+      "part": 1
     },
     {
       "slide": 12,
       "evidence": "slide_and_lecture",
-      "range": "00:34:12–00:36:18"
+      "range": "00:34:12–00:36:18",
+      "part": 1
     },
     {
       "slide": 13,
       "evidence": "slide_and_lecture",
-      "range": "00:36:18–00:43:59"
+      "range": "00:36:18–00:43:59",
+      "part": 1
     },
     {
       "slide": 14,
       "evidence": "slide_and_lecture",
-      "range": "00:43:59–00:49:11 / 00:54:04–00:55:40"
+      "range": "00:43:59–00:49:11 / 00:54:04–00:55:40",
+      "part": 1
     },
     {
       "slide": 15,
       "evidence": "slide_and_lecture",
-      "range": "00:49:11–00:54:04"
+      "range": "00:49:11–00:54:04",
+      "part": 1
     },
     {
       "slide": 16,
       "evidence": "slide_and_lecture",
-      "range": "00:55:40–00:58:18"
+      "range": "00:55:40–00:58:18",
+      "part": 1
     },
     {
       "slide": 17,
       "evidence": "slide_and_lecture",
-      "range": "00:58:18–01:00:24"
+      "range": "00:58:18–01:00:24",
+      "part": 1
     },
     {
       "slide": 18,
       "evidence": "slide_and_lecture",
-      "range": "01:00:24–01:01:01"
+      "range": "01:00:24–01:01:01",
+      "part": 1
     },
     {
       "slide": 19,
       "evidence": "slide_and_lecture",
-      "range": "01:01:01–01:03:48"
+      "range": "01:01:01–01:03:48",
+      "part": 1
     },
     {
       "slide": 20,
       "evidence": "slide_and_lecture",
-      "range": "01:03:48–01:05:49"
+      "range": "01:03:48–01:05:49",
+      "part": 1
     },
     {
       "slide": 21,
       "evidence": "slide_and_lecture",
-      "range": "01:05:49–01:06:40"
+      "range": "01:05:49–01:06:40",
+      "part": 1
     },
     {
       "slide": 22,
       "evidence": "slide_and_lecture",
-      "range": "01:06:40–01:09:12"
+      "range": "01:06:40–01:09:12",
+      "part": 1
     },
     {
       "slide": 23,
       "evidence": "slide_and_lecture",
-      "range": "01:09:12–01:13:48"
+      "range": "01:09:12–01:13:48",
+      "part": 1
     },
     {
       "slide": 24,
       "evidence": "slide_and_lecture",
-      "range": "01:13:48–01:16:18"
+      "range": "01:13:48–01:16:18",
+      "part": 1
     },
     {
       "slide": 25,
       "evidence": "slide_and_lecture",
-      "range": "01:16:18–01:21:30"
+      "range": "01:16:18–01:21:30",
+      "part": 1
     },
     {
       "slide": 26,
       "evidence": "slide_and_lecture",
-      "range": "01:21:30–01:24:40"
+      "range": "01:21:30–01:24:40",
+      "part": 1
     },
     {
       "slide": 27,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:00:01–00:07:34",
+      "part": 2,
+      "start_seconds": 1,
+      "end_seconds": 454
     },
     {
       "slide": 28,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:07:34–00:13:44",
+      "part": 2,
+      "start_seconds": 454,
+      "end_seconds": 824
     },
     {
       "slide": 29,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:13:44–00:14:01",
+      "part": 2,
+      "start_seconds": 824,
+      "end_seconds": 841
     },
     {
       "slide": 30,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:14:01–00:19:07",
+      "part": 2,
+      "start_seconds": 841,
+      "end_seconds": 1147
     },
     {
       "slide": 31,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:19:07–00:24:50",
+      "part": 2,
+      "start_seconds": 1147,
+      "end_seconds": 1490
     },
     {
       "slide": 32,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:24:50–00:28:49",
+      "part": 2,
+      "start_seconds": 1490,
+      "end_seconds": 1729
     },
     {
       "slide": 33,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:28:49–00:29:48",
+      "part": 2,
+      "start_seconds": 1729,
+      "end_seconds": 1788
     },
     {
       "slide": 34,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:29:48–00:33:32",
+      "part": 2,
+      "start_seconds": 1788,
+      "end_seconds": 2012
     },
     {
       "slide": 35,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:33:32–00:37:24",
+      "part": 2,
+      "start_seconds": 2012,
+      "end_seconds": 2244
     },
     {
       "slide": 36,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:37:24–00:43:37",
+      "part": 2,
+      "start_seconds": 2244,
+      "end_seconds": 2617
     },
     {
       "slide": 37,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:43:37–00:48:28",
+      "part": 2,
+      "start_seconds": 2617,
+      "end_seconds": 2908
     },
     {
       "slide": 38,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:48:28–00:49:10",
+      "part": 2,
+      "start_seconds": 2908,
+      "end_seconds": 2950
     },
     {
       "slide": 39,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:49:10–00:51:06",
+      "part": 2,
+      "start_seconds": 2950,
+      "end_seconds": 3066
     },
     {
       "slide": 40,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:51:06–00:54:50",
+      "part": 2,
+      "start_seconds": 3066,
+      "end_seconds": 3290
     },
     {
       "slide": 41,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:54:50–00:55:59",
+      "part": 2,
+      "start_seconds": 3290,
+      "end_seconds": 3359
     },
     {
       "slide": 42,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:55:59–00:57:00",
+      "part": 2,
+      "start_seconds": 3359,
+      "end_seconds": 3420
     },
     {
       "slide": 43,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:56:46–00:59:07",
+      "part": 2,
+      "start_seconds": 3406,
+      "end_seconds": 3547
     },
     {
       "slide": 44,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "00:59:07–01:01:20",
+      "part": 2,
+      "start_seconds": 3547,
+      "end_seconds": 3680
     },
     {
       "slide": 45,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:01:20–01:03:59",
+      "part": 2,
+      "start_seconds": 3680,
+      "end_seconds": 3839
     },
     {
       "slide": 46,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:03:59–01:07:41",
+      "part": 2,
+      "start_seconds": 3839,
+      "end_seconds": 4061
     },
     {
       "slide": 47,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:07:41–01:09:42",
+      "part": 2,
+      "start_seconds": 4061,
+      "end_seconds": 4182
     },
     {
       "slide": 48,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:09:42–01:11:20",
+      "part": 2,
+      "start_seconds": 4182,
+      "end_seconds": 4280
     },
     {
       "slide": 49,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:11:20–01:13:29",
+      "part": 2,
+      "start_seconds": 4280,
+      "end_seconds": 4409
     },
     {
       "slide": 50,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:13:29–01:13:55",
+      "part": 2,
+      "start_seconds": 4409,
+      "end_seconds": 4435
     },
     {
       "slide": 51,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:13:55–01:15:10",
+      "part": 2,
+      "start_seconds": 4435,
+      "end_seconds": 4510
     },
     {
       "slide": 52,
-      "evidence": "pdf_only",
-      "range": null
+      "evidence": "slide_and_lecture",
+      "range": "01:15:10–01:17:51",
+      "part": 2,
+      "start_seconds": 4510,
+      "end_seconds": 4671
     },
     {
       "slide": 53,
       "evidence": "pdf_only",
-      "range": null
+      "range": null,
+      "part": null,
+      "note": "The recording ends on PDF 52; PDF 53 is a slide-based synthesis of the chapter."
+    }
+  ],
+  "recordings": [
+    {
+      "part": 1,
+      "label": "Week 5",
+      "duration_seconds": 5120.149,
+      "transcript": "lecture.json"
+    },
+    {
+      "part": 2,
+      "label": "Week 6 · Ch04 Part 2",
+      "duration_seconds": 4672.299,
+      "transcript": "part02/lecture.json"
     }
   ]
 }

@@ -1,0 +1,803 @@
+1
+00:00:01,070 --> 00:00:24,770
+Hello everyone, this is a part 2 of the chapter 4. So today I'm going to finish off the content of the chapter 4. So what I'm going to do today is the boundary condition of the all our governing equation that are Navier-Stokes equation and then I talk about the stream function,
+
+2
+00:00:33,710 --> 00:00:53,170
+So, like I said, in chapter 4 and chapter 3, you have learned the governing equation of fluid particles in motion, right, so particle is a little bit too much because we never consider fluid as an individual particle,
+
+3
+00:00:53,170 --> 00:01:23,030
+we consider that as a continuum. So in chapter 4, we derived our governing equation, mass equation, momentum equation, and energy equation using the integral relation. So for the integral relation, you have to use the control volume. In chapter 4, we derived the same governing equations, mass equation, momentum equation, and energy equation, but using infinitesimally small fluid [Review note: The integral/control-volume formulation belongs to Chapter 3; Chapter 4 develops its differential form. The repeated chapter number is retained as transcribed.]
+
+4
+00:01:23,030 --> 00:01:49,250
+element, like a very small fluid element, and their size is dx, sorry, this is dx, and this is dy, and dz is here, so this is dz, so we have an infinitesimally small element,
+
+5
+00:01:49,250 --> 00:02:12,790
+and using that, we allow only the linear variation, whether dx or dy or dz, we allow only a linear variation in your any property, whether it's mass or momentum flux or the energy flux.
+
+6
+00:02:12,790 --> 00:02:36,880
+Okay, so I think I said at the very beginning of our course, so if we had a common governing equation, like our Navier–Stokes equation, then what makes our flow solution unique or different from case to case?
+
+7
+00:02:36,880 --> 00:03:00,960
+As you know, the flow around an aircraft is different from the flow around your car or wind turbine. So what makes that difference? There is the geometry, the geometry of interest, and also more mathematically, the boundary condition for the specific geometry is different.
+
+8
+00:03:00,960 --> 00:03:30,940
+okay so boundary conditions are very important and that makes our flow solution unique from problem to problem so I'm going to talk a little bit about the boundary condition and then if you are more interested if you are taking the CFD course CFD represents computational fluid dynamics so if you are interested in CFD course then you can work what you can if you are
+
+9
+00:03:30,940 --> 00:03:40,500
+If you are interested in CFD, then boundary conditions are very very important. So you will later learn again about the boundary condition if you are taking CFD course.
+
+10
+00:03:41,340 --> 00:03:54,380
+So for the boundary condition, what are the most important types? There are three most common types of the boundary encountered in fluid analysis.
+
+11
+00:03:54,380 --> 00:04:19,080
+one is the solid wall. So that is probably the most important. And then we are going to apply the no-slip condition. no-slip condition meaning on the wall, if you think about fluid particle, it never slides, never slips on the surface.
+
+12
+00:04:19,080 --> 00:04:35,800
+So if the wall is moving, then the velocity on the surface of the wall is moving at the same velocity. Or if the wall is stationary, then your particle is also stationary.
+
+13
+00:04:35,800 --> 00:05:04,660
+which means that V wall equals same as the V gas at the wall. So that is the no-slip condition. And then number two are the inlet or outlet condition. So for example, if you have a duct and then your inlet condition is like there is all V infinity is like 10 meter per sec or 100 meter per sec or something like that.
+
+14
+00:05:04,660 --> 00:05:16,340
+So that's the inlet condition. Sometimes you give your flow condition at the outlet, for example, like P-out is P-A-T-M or something like that, right?
+
+15
+00:05:16,600 --> 00:05:31,040
+So if you think about the nozzle of the rocket, probably inside of your nozzle, there are high pressure, but then outside, your air should be ejected into the atmospheric, right?
+
+16
+00:05:31,040 --> 00:05:57,870
+So your out pressure can be an atmospheric condition, then what happens? So what happens inside your rocket nozzle? So those can be a very interesting fluid problem and then number three, probably I won't talk too much about that, but liquid gas interface. So we often call it as a free surface.
+
+17
+00:05:57,870 --> 00:06:15,510
+So exactly if you go to the ocean or river, the surface of water is never stationary. So if you just throw a stone or if there is an ocean wave, they always tend to move.
+
+18
+00:06:15,990 --> 00:06:21,490
+In this case, how can we define the boundary condition for the water and the gas?
+
+19
+00:06:21,490 --> 00:06:30,570
+There is a contact surface that is discontinuous because gas medium and water mediums are different.
+
+20
+00:06:31,390 --> 00:06:40,610
+So you have a discontinuous contact surface, so you have to be careful about imposing the boundary condition.
+
+21
+00:06:41,150 --> 00:06:47,310
+So here, at free surface, we say that it is a free surface. At free surface, pressure should be the same.
+
+22
+00:06:47,310 --> 00:07:07,250
+So pressure, so let's say this is your water, and this is your air, this is air, and this is water, then P water here, P air here should be the same as the atmospheric condition, or we may have to consider the surface tension of the water as well.
+
+23
+00:07:07,250 --> 00:07:34,020
+Then W is the velocity, Z velocity. Z velocity should be the same as eta. Eta is the geometry variable that defines the type of Z variation. So there shouldn't be any changes in the Z variation. [Review note: Eta is surface height, not velocity. PDF 27 uses w approximately equal to partial eta/partial t. The general material-surface condition also contains horizontal-advection terms.]
+
+24
+00:07:34,020 --> 00:08:03,010
+otherwise, you will have a hole on the surface at a given time. So these are the three boundary conditions imposed in the water tank, we can consider that as a small shallow river, so at the bottom, the most important, so we call it as a solid, this is a solid wall, solid and impermeable,
+
+25
+00:08:03,010 --> 00:08:32,190
+so there is no porosity imposed on it. In that case, like I said, no slip condition should be imposed and then what no slip condition says is V fluid should be the same as the V wall, okay? So if the V wall is zero, then V fluid is zero. Most if your surface doesn't move, like the bottom of the river, then V wall, a lot of times V wall is zero, right?
+
+26
+00:08:32,190 --> 00:08:51,610
+Or, if your ship is moving, for example, let's say this is your ship, and if there is moving in this direction, then if you think about the water at the bottom of the ship, that is also moving, so let's say it's a V-ship,
+
+27
+00:08:51,610 --> 00:09:20,150
+Okay, then the water, V wall at the liquid should be the same as the V ship. Right? So that is called a no slip boundary condition. So it doesn't, some people may think, okay, no slip boundary condition, there shouldn't be any zero on the wall, but that's valid for a fixed stationary object, [Review note: The intended boundary condition is equality of fluid and wall velocities, not zero fluid velocity for every wall. The following segment explicitly distinguishes moving walls.]
+
+28
+00:09:20,150 --> 00:09:40,990
+but like ship or your car, if your objects are moving, then what the no slip boundary condition says is velocity of your gas or your air or liquid at the surface of the ship or car should be the same as the movement of your wall.
+
+29
+00:09:41,690 --> 00:09:58,890
+And then, isothermal case, the temperature fluid should be the same as the T-wall. If you think about the adiabatic case, then there is no heat transfer, right? But what it says is your temperature should be the same, okay? [Review note: Do not equate isothermal and adiabatic conditions. Prescribed wall temperature and zero normal heat flux are different thermal boundary conditions; the wording is retained, not treated as a new equation.]
+
+30
+00:09:59,560 --> 00:10:30,280
+And inlet, if inlet, the V infinity, P and T, those should be given or known. On the outlet, you can specify the same boundary condition as inlet, so velocity, pressure, temperature can be given, or on the outlet, you can specify a specific pressure, like dO n, dN equals 0. [Review note: PDF 28 shows a specified outlet pressure and zero normal gradients as example boundary data. The mathematical symbols in this ASR fragment are unclear; they are not a literal formula transcription.]
+
+31
+00:10:30,300 --> 00:10:59,740
+which means that there is no, so for example here ui and this is ui plus 1, then there is any ui plus ui plus 1, meaning there is no flow velocity variation in the normal direction, this direction, okay, so that's what I got it meant, temperatures, like I said, so this is the adiabatic case, right, there is an adiabatic meaning, [Review note: The outlet sketch uses zero normal velocity gradient. A zero normal temperature gradient gives zero conductive normal heat flux for nonzero k; it does not prescribe a temperature value.]
+
+32
+00:10:59,740 --> 00:11:16,640
+there is no temperature transfer, no heat transfer on the wall. Not at a specific location. If it says it's an outlet, then in the outlet location there is no temperature variation.
+
+33
+00:11:16,640 --> 00:11:48,650
+And then, on the interface, and it's given by the eta, the geometry is given by the eta, they can be changing over time, x, y, z here, right, so liquid gas interface is given as an eta, and here, pressure between liquid and gas should be the same, or this is the
+
+34
+00:11:49,480 --> 00:12:13,440
+surface tension force. So here, gamma is the surface tension related coefficients, and Rx, Ry are related to this one, related to geometry. So your surface tension is also related to the geometry. So you don't have to worry too much about surface tension in our course.
+
+35
+00:12:13,440 --> 00:12:39,080
+And then, because W-liquid and W-gas is the same as the dA dt, which means that if your surface normal, your dA dt changing, then the velocity in the z direction here, right, z direction should be the same, W-liquid and W-gas should be the same as the dA dt. [Review note: The displayed symbol is eta, not A: the interface is z=eta(x,y,t). The lecture relates vertical velocity to surface motion; a general moving surface uses the material derivative of eta.]
+
+36
+00:12:39,080 --> 00:12:59,320
+So, your V velocity allows, your free surface shape can change over time, but then there should be the same as the W liquid or W gas, otherwise there will be a hole, you are allowing a hole on the surface, it's not realistic, right?
+
+37
+00:12:59,320 --> 00:13:19,250
+And then equality of the Q. Q meaning heat flux and then tau. Tau is the physical stresses. So between gas and between water, they are going to be Q the same and then physical stress should be the same. [Review note: The slide denotes heat flux by q and viscous stress by tau. The phrase physical stresses is interpreted using the displayed viscous-stress notation.]
+
+38
+00:13:19,890 --> 00:13:30,130
+So those are the boundary conditions. But like I said, I would highlight less about liquid gas interface because it's more complicated,
+
+39
+00:13:30,130 --> 00:14:00,850
+but more important is no-slip condition. No-slip condition is very important. So now I'm going to talk about the stream function and vorticity, rotation, irrotationality, so those are very important concepts in fluid mechanics and then in early days when there is no computer or no calculator, people rely on these simplifications.
+
+40
+00:14:00,870 --> 00:14:27,370
+by the concept to calculate your flow solution. So let's consider, so the stream function is a very simple velocity, it is a function that relates, you can calculate the velocity, and then if you have velocity, then what do you have? You have the Bernoulli equation, right? Bernoulli equation, so you can calculate the pressure.
+
+41
+00:14:27,370 --> 00:14:55,390
+So, in the old days, the stream function and Bernoulli equation, those are the one method to calculate the flow solution of the velocity and pressure, but like I said, our fluid motion, the governing equation, is a partial differential equation, it's nonlinear, which means that your velocity u and v can be, your unknowns are multiplied in two together,
+
+42
+00:14:55,390 --> 00:15:18,290
+and then those are all coupled. So it's very complicated, highly nonlinear partial differential equation. So back then, all days, I mean still these days, people don't consider all complicated vectors. So if you consider steady, meaning you don't worry about the temporal variation of your flow solution.
+
+43
+00:15:18,290 --> 00:15:36,990
+and if you consider your fluid or gas moves at a very low speed, so compressibility is negligible, it's a two-dimensional plane flow, then we can define the stream function.
+
+44
+00:15:36,990 --> 00:15:53,770
+So for this one, the two velocities u and v can be related by what? By the continuity equation. They can be du dx plus dv dy equals zeros, right?
+
+45
+00:15:53,770 --> 00:16:24,000
+And then, let's define a function, psi, called a stream function. We define that as a stream function of x and y, such that it satisfies the continuity identically, which means that if we define u as a dpsi dy and v as a minus
+
+46
+00:16:24,000 --> 00:16:58,140
+plus d psi dx. Or in cartesian, in vector form, we can define v as a, v is a i u plus j v, right? So j v, so u is a psi dy, and v is a minus partial, partial psi, partial x. [Review note: The adopted definition is v=-partial psi/partial x; the disfluent minus/plus wording is not used to change that sign.]
+
+47
+00:16:58,280 --> 00:17:29,550
+Then, if we define like that, then if you plug that into here, U, right, U, and then if you plug that into B, then it is automatically saved. How? If you plug U, this one, U, into here, what can happen? Partial, partial x, and partial psi, partial y. What is that? [Review note: The two substituted velocity components are u and v. The conclusion is cancellation of the mixed derivatives in the continuity equation.]
+
+48
+00:17:29,550 --> 00:17:56,550
+that is a partial psi partial x partial y, right? And what about that term partial partial y b? b we define as a minus partial psi partial x. So there will be minus partial square psi partial x partial y. So if you add those two, then that is automatically zero.
+
+49
+00:17:56,550 --> 00:18:27,650
+So this stream function is a function that we create, we define for our convenience. And then, it is different from the velocity potential function we later on define. So using the, I will talk again about the velocity potential function. So velocity potential function is defined as a partial phi, partial x, and v is
+
+50
+00:18:27,650 --> 00:18:44,410
+is partial phi, partial y. So that's another function that is valid under this type of the, it doesn't have to be 2D, but steady, incompressible, and also later on I will define the irrotational as well. [Review note: The lecture is introducing its steady incompressible model. In general, a velocity potential is tied to irrotationality; its definition does not by itself require steady or incompressible flow.]
+
+51
+00:18:44,410 --> 00:19:06,990
+So if we impose that kind of assumption, then we can also define our potential function phi in relation to the velocity. Then you may wonder, oh, there may be some relation between the psi and phi. So later on I will talk about that as well.
+
+52
+00:19:06,990 --> 00:19:34,830
+So here, let's look more into our stream function. So here, lines of constant psi are streamlines of the flow. Eulerian knows the streamlines of the flow, right? So this one may be streamlines of your flow. And then what it says is phi 1, phi 2, phi 3, [Review note: The streamline labels in this section are psi, not phi, as established by PDF 30–31. Phi is reserved for velocity potential.]
+
+53
+00:19:34,830 --> 00:19:49,370
+So individual streamlines are defined as a constant psi value. In the previous lecture, we learned about the Bernoulli equations.
+
+54
+00:19:49,370 --> 00:20:17,610
+So Bernoulli equation says, very simple Bernoulli equation, where your p plus rho u square, rho u square is a constant, so here your rho is a constant, steady, and there is no z variation, so we have that relation, [Review note: The board shows p+rho*V^2/2=constant under the stated steady constant-density, negligible-viscosity, equal-elevation assumptions. The coefficient 1/2 is missing from this ASR fragment.]
+
+55
+00:20:17,610 --> 00:20:39,430
+and this constant can be this Psi. So anyway, lines of the constant Psi are the stream functions. [Review note: Do not identify the Bernoulli constant with psi. In 2-D, psi has units m^2/s and labels streamlines; p+rho*V^2/2 has pressure units. The claim is retained as transcribed and not adopted in the study note.]
+
+56
+00:20:39,430 --> 00:21:15,050
+So if you think about those lines, so this is your, let's consider this is your streamline, and then control surface can be by the unit depth into the paper, into your screen, then if you think about your velocity V here, your velocity V in any direction,
+
+57
+00:21:15,050 --> 00:21:42,410
+and then we decompose that into a u and v. So that is the u, v. And then to define the geometry of your streamline, we consider the strip of a ds. Of course, it has some curvature, but since we are looking into a very small part, infinitesimally small part,
+
+58
+00:21:42,410 --> 00:21:56,050
+we can consider that as a linear. And if we decompose that in terms of the x and y, then there will be a dx and there will be a dy, right?
+
+59
+00:21:57,430 --> 00:22:20,190
+Then your normal n can be, by using the theta relation, so n equals dy over ds, and y can be minus dx over minus ds, right? [Review note: The chosen normal is n=(dy/ds,-dx/ds), not a coordinate named y; see PDF 31–32.]
+
+60
+00:22:20,190 --> 00:22:44,830
+Okay, so consider that as a sine theta and tangent theta relation, then you can get a, you can get a, so if you consider that as a theta, and this is small theta, theta and small theta, it's very small, then using the sine theta and tangent theta, you can derive that relation. [Review note: For the local curve element, dx/ds and dy/ds are direction cosines. The normal follows by a 90-degree rotation of the tangent; no finite-angle small-angle identity is needed.]
+
+61
+00:22:44,830 --> 00:23:04,450
+Then, by the decomposition of u comma v and dy over ds comma minus dx over ds, then you can have that relation. dx over v, u will be same as dy over v.
+
+62
+00:23:04,450 --> 00:23:37,440
+Okay, then, so this is still a finite variable, this doesn't represent any limit case so far, so we can cross product of those two, so u dy equals v dx, and then if we define u as a stream function, that is the d phi du here, right, so that is the u, and then minus v will be v dx. [Review note: This step cross-multiplies the scalar streamline relation, not a vector cross product. The adopted identity is u dy-v dx=dpsi.]
+
+63
+00:23:39,440 --> 00:24:06,390
+So we have that one. And that should be zero. So this should be zero. And then exactly that relation is the definition of the d5, d5, and that has to be zero. [Review note: The differential in PDF 31 is dpsi, not d5 or dphi.]
+
+64
+00:24:06,390 --> 00:24:35,690
+So, what does this mean is that psi is zero meaning psi is constant, right? So, what it says is psi, your stream function is constant a stream line, along a stream line. [Review note: It is dpsi=0 along a streamline, not psi=0 everywhere. Each streamline may have a different constant psi value.]
+
+65
+00:24:37,670 --> 00:24:46,650
+Okay, so stream function is a physical quantity that is related to the stream line.
+
+66
+00:24:50,350 --> 00:25:04,790
+Okay, then let's geometrically interpret the stream function, or we can use the stream function to geometric interpretation of the stream lines.
+
+67
+00:25:04,790 --> 00:25:30,490
+So if I say the result first, what the geometrical interpretation of the stream function is that the change in the value of the size stream function is related to the volume flow rate of the flow.
+
+68
+00:25:31,570 --> 00:25:42,290
+So if you see the bottom two figures, there are two streamlines, psi u, upper, and then there is another streamline, psi l.
+
+69
+00:25:42,850 --> 00:25:59,500
+Likewise, the same thing. So this is psi u and this is psi l. And like I said, along a streamline, your psi value is the same, along another streamline, psi value is the same.
+
+70
+00:25:59,500 --> 00:26:16,800
+But then what if the values are different, psi u and psi l, the value itself can be different, then what it means is that the change in the value psi is the volume flow rate of the flow. Let's see.
+
+71
+00:26:16,800 --> 00:26:45,440
+So consider this control volume. And let's more specifically look into the control surface. And here, DS by E1. So this is DS. And then we are looking into the surface that is normal to your monitor.
+
+72
+00:26:46,590 --> 00:27:09,500
+So, through that control surface, what will be the volume flow? That is, dq, that will be, as we have learned, v, inner product of the surface normal, that can be n multiplied by the dA.
+
+73
+00:27:09,500 --> 00:27:37,480
+So, tq can be v into n, right? And this v, using the stream function definition, u can be deep side dy, v can be minus deep side dx, and then n, by the geometric relation, dy over dx, comma, minus dx over dx. [Review note: The geometric normal is (dy/ds,-dx/ds). Both ASR denominators dx in the last phrase correspond to ds on PDF 32.]
+
+74
+00:27:37,480 --> 00:28:00,900
+So that can be, if we apply the inner product, then there will be the d phi. So what it means is that dq is the d phi. So q from 1, 2 will be psi 2 minus psi 1. [Review note: The flow-rate differential is dQ=dpsi for unit depth, not dphi. PDF 32 explicitly gives Q_1-2=psi_2-psi_1.]
+
+75
+00:28:00,900 --> 00:28:24,800
+So, what about the direction? Volume flow rate, if psi u is larger than psi l, then flow is moving through this area to the right. Or if phi l is larger, then it is moving to the left. [Review note: Both upper and lower labels here denote psi. The sign is psi_upper-psi_lower for the displayed rightward normal.]
+
+76
+00:28:27,760 --> 00:28:49,480
+So that's what I meant by the direction. The volume flow between any two streamlines in the flow field is equal to the change in the stream function between those streamlines. But what about the direction? So flow is to the right, if phi u is greater than phi l, otherwise the flow is moving to the left. [Review note: Both labels in the last sentence denote psi, not phi.]
+
+77
+00:28:49,480 --> 00:29:15,900
+So let's take an example. So if a stream function, but like I said, the assumption for the stream function existence is quite restrictive. It's a 2D, no, it doesn't have to be two-dimensional, but it's incompressible and also the irrotational. I will talk later about what we mean by irrotational. [Review note: This passage mixes the conditions for psi and phi. The plane-flow stream function used here follows from 2-D incompressible continuity; irrotationality is an additional condition for Laplace(psi)=0, not for existence of psi.]
+
+78
+00:29:18,280 --> 00:29:33,200
+and then incompressible as well, right? And then steady. So if a stream function exists for one example, so u, v, w, u is a function of x, y, and v is a function of x, y, and w is a zero.
+
+79
+00:29:33,200 --> 00:29:46,080
+and the purpose of using stream function is to find the velocity field, right? So find, plot, and interpret the velocity field.
+
+80
+00:29:47,590 --> 00:30:01,920
+So, just to confirm the velocity field satisfies the continuity. So if we define the stream function, it automatically satisfies the continuity, but let's verify it.
+
+81
+00:30:01,920 --> 00:30:20,280
+So for the 2D steady, incompressible, continuity equation is partial U, partial x, plus partial V, partial y, equals zero, so u is what? u was this one, a, x square minus y square, so if we differentiate with respect to x, that will be 2ax, right?
+
+82
+00:30:20,280 --> 00:30:32,340
+And then dv dy will be, we have that, if we differentiate with respect to y, we have a minus 2ax. So if we subtract those, if we add those two, that is automatically zero, right?
+
+83
+00:30:33,140 --> 00:30:52,310
+And then, let's define the stream function, right? Because here, find, plot the velocity field. So we have two, we will bring up the stream function.
+
+84
+00:30:52,310 --> 00:31:24,560
+So u will be dpsi dy, that is that, v is minus dpsi dx, sorry, to find, right, right, so the purpose is to find the psi function, because if we have a psi function, why do we have two, so we have the velocity, but why do we need a psi function is, psi function is a single function,
+
+85
+00:31:24,560 --> 00:31:36,620
+psi function is a single function that can be related to both u and v, right? So these are the vector functions, but this is a scalar function.
+
+86
+00:31:37,120 --> 00:31:51,700
+So let's find psi. So integrate equation 1 with respect to y. There will be a a x square y minus one-third a y square plus, [Review note: The integral of -a*y^2 with respect to y is -a*y^3/3, not -a*y^2/3. Use the displayed PDF 34 equation rather than this exponent transcription.]
+
+87
+00:31:51,700 --> 00:32:02,660
+x, and then your constant should be, can be written in terms of the function of x, right, and or plus c, that's a constant.
+
+88
+00:32:03,300 --> 00:32:18,780
+Then differential equation number 3, equation 3 with respect to x, partial psi over partial x will be 2a x y, will be 0, and it will be f prime x.
+
+89
+00:32:18,780 --> 00:32:47,700
+and we have that. And that is what? The psi t of x is a minus b, that is a minus b, so we have 2a xy, right? So here, so f prime x equal constant, fx is a constant, f is a constant, right? So the stream function is psi, if we integrate that, then psi is a [Review note: Comparing v=-partial psi/partial x with v=-2axy gives f-prime(x)=0 and hence f(x)=constant. Do not interpret f-prime as an arbitrary nonzero constant.]
+
+90
+00:32:49,700 --> 00:33:16,050
+Psi is a, so this one and that one, right, so Psi is the a x square y, square y minus, give me one sec, right, right, so here,
+
+91
+00:33:18,050 --> 00:33:32,430
+so a, let's see, a was taken over here, so I was looking to where the a has gone, so it's here, Psi is a x square y minus y square over 3 plus c, [Review note: The adopted expression from PDF 34 is psi=a*(x^2*y-y^3/3)+C; the transcribed square in the cubic term is not adopted.]
+
+92
+00:33:32,430 --> 00:33:59,080
+So here, to plot this, set C equals zero for convenience, and we have that relation. So if we set the value of psi as a zero plus minus a plus minus 2a, we can have different five values.
+
+93
+00:33:59,080 --> 00:34:23,180
+So these are the x comma y, this is x comma y, and then we want to plot the stream function by phi x comma y, okay? So at phi equals 0, 0 will be this one. If phi equals 0, if we divide that by y, then we have x plus y equals 0, x minus y. Sorry. [Review note: The plotted scalar is psi. The speaker restarts the factorization in the next segment; use y*(3*x^2-y^2)=0 for the zero streamline.]
+
+94
+00:34:23,180 --> 00:34:55,360
+just one case, one case if psi is a zero, then you have x square, sorry, y, you have to factor out y, y, there will be 3x square minus y square equals zero, there will be y square root of 3x plus y,
+
+95
+00:34:55,360 --> 00:35:17,500
+the scale root of 3x minus y equals zero. That can be y equals zero, y equals plus minus square root of 3x, right? So that's there, so that's it, y equals zero, that one, y equals plus minus this one, and that one, right?
+
+96
+00:35:17,500 --> 00:35:34,080
+So that happens to be y equals zero. And then if you do the same, if y equals plus minus a, then that corresponds to this one. [Review note: The contour parameter being varied is psi, not the spatial coordinate y.]
+
+97
+00:35:34,320 --> 00:35:45,840
+Okay, so do it. You can use a Python or MATLAB to plot this one, minus a, and this is a.
+
+98
+00:35:45,840 --> 00:36:16,940
+And if psi is plus minus 2a, then you will have this one, oh sorry, this is minus 2a, 2a, 2a, minus 2a, 2a, minus 2a So what does it represent is it really shows the shape of your streamlines depending on the different values of the stream.
+
+99
+00:36:16,940 --> 00:36:47,740
+of the put sign. So, let's interpret this one. Incoming stream impinging against the 120-degree corner. So, for this one, let's assume that your shape is like that, then your flow will be, someone will be pinging directly into the surface, and some other will be moved away, avoid the wall. [Review note: The figure describes impingement on a 120-degree corner; this numeral is normalized to the source figure.]
+
+100
+00:36:47,740 --> 00:37:03,580
+right, so that one, or we have a flow around a 60 corner, 60 degree corner here, and then if, so if it's not included, if we have around the 60 degree corner, it will also take this shape as well, right.
+
+101
+00:37:03,580 --> 00:37:22,160
+So this example shows the stream function phi is directly drawn, is plotted, and it shows the streamlines of your flow, okay? [Review note: This example plots psi (stream function), not phi (velocity potential).]
+
+102
+00:37:24,070 --> 00:37:28,670
+Then what about the vorticity? Vorticity is also very important.
+
+103
+00:37:29,890 --> 00:37:57,730
+vorticity is, we define the vorticity as a curl V. What is a curl V? So with zeta, right, we define vorticity as the Greek letter zeta, and the definition is a curl V, curl V is the mathematical definition. You know how to calculate the curl V, right, cross product with respect to gradient.
+
+104
+00:37:57,730 --> 00:38:22,380
+So we have that, and then if we set the 2D flow, so w equals zero, there is no velocity component moving in and out of our monitor, then we can cross out this one and that, right?
+
+105
+00:38:22,380 --> 00:38:47,140
+So give me one sec, you can cross out that and that, then using this small matrix, 2 by 2 matrix, you can calculate the determinant and then k, right? So that would be k multiplied into dv dx minus du dy, right?
+
+106
+00:38:47,140 --> 00:39:14,430
+So, then db dx, v is what, using the stream function, u is partial psi, partial y, and v is partial minus, is equals minus partial psi, partial x, right?
+
+107
+00:39:14,430 --> 00:39:29,040
+So, if we replace V and U, then we have that. And that is what? That is the Laplacian of psi, right? [Review note: Including the sign and direction, zeta=-(Laplacian of psi)*k for the adopted 2-D convention.]
+
+108
+00:39:31,340 --> 00:39:45,610
+So, vorticity is defined as a curve, and in terms of the stream function, [Review note: The mathematical operation is curl V, as on PDF 36.]
+
+109
+00:39:45,610 --> 00:40:12,450
+that is the Laplacian of the stream function. So what do we mean by the vorticity in terms of the physical meaning? The physical meaning of vorticity is the average rate of counterclockwise turning of a fluid element multiplied by 2. So vorticity is related to the turning of a fluid element.
+
+110
+00:40:12,450 --> 00:40:41,750
+Okay, so that's why we bring up the term of the rotational. So if the flow is rotational, meaning if it doesn't rotate, then curl V equals zero. So curl V equals zero, which means that your Laplacian of the Psi is zero. [Review note: The zero-curl condition is irrotational, not rotational; the following definition and PDF 36 fix the meaning.]
+
+111
+00:40:41,750 --> 00:41:14,110
+Okay, so if your flow, so irrotational meaning, we disregard, irrotational meaning, this is inviscid, inviscid, so no friction, okay, so if we don't consider friction, and if, which means if we don't consider the viscosity or inviscid, then you can define the stream function, and stream function [Review note: Irrotational means curl V=0; inviscid means neglecting viscous forces. They are distinct conditions. Existence of psi does not require inviscid or irrotational flow.]
+
+112
+00:41:14,110 --> 00:41:33,590
+can satisfy the Laplacian. So please remember this one. In the old days, like 16th century, 17th century, or even lately, like 19th century probably, they were calculating the flow solution using the Laplace equation.
+
+113
+00:41:33,590 --> 00:41:51,570
+So, chapter 3 and 4, we derived the Navier-Stokes equation, and I said a couple of times it is a highly nonlinear coupled one, and then this is a second order PDE, right?
+
+114
+00:41:51,570 --> 00:42:12,570
+Okay, then calculating that, calculation of the flow solution of the Navier–Stokes equation are still, it's not possible. Like I said, it's still one of the seven millennia question. [Review note: This broad statement about the Navier–Stokes problem is not adopted as a claim that no solutions can be calculated. The mathematical Millennium problem and practical special/numerical solutions are different issues.]
+
+115
+00:42:13,490 --> 00:42:31,390
+But in the old days, people just drop some complicated assumptions like viscosity, they drop the viscosity, they drop the compressibility, they drop the steady, unsteady terms, the time term.
+
+116
+00:42:31,390 --> 00:42:55,970
+then they have this simple form of your flow solution. So that can be considered as a governing equation of your flow solution when you impose many, many restrictive assumptions, okay? And then if you calculate that, then you'll have the psi function. And what is that? That shows the streamlines, right?
+
+117
+00:42:55,970 --> 00:43:19,730
+So if you see here, just fix the one A, given A, then you can define the stream lines, right? So there will be your stream lines. And then if you're interested in calculating the velocity, just differentiate the psi function to get the U and V, right? [Review note: The contour parameter in this discussion is psi; the coefficients of the given velocity field remain fixed.]
+
+118
+00:43:19,730 --> 00:43:35,410
+Okay, so that is the really smart and easy but very important, very smart way of calculation of the velocity and your streamline shape.
+
+119
+00:43:36,680 --> 00:43:46,760
+Okay, then let's look further into the vorticity and irrotationality.
+
+120
+00:43:46,760 --> 00:44:17,830
+So let's define your flow. So this is your origin, and then at time t, we can define line 1 and time t, right? This is time t and this is origin. This is a certain point in your space b, and then we are looking into
+
+121
+00:44:17,830 --> 00:44:44,640
+into an infinitesimally small element of the size dx and dy. We are looking into one surface, right? The surface. And then, after dt later, time t plus dt, there may be some counterclockwise turning, there may be some turning of these two lines because of the deformation or whatever.
+
+122
+00:44:44,640 --> 00:45:04,020
+So if turning Bc, line 1, is tilted from here to here, so we define that angle by dα, and then changes in the x, so this is a decomposition, right?
+
+123
+00:45:04,020 --> 00:45:33,000
+So changes in the x, the length is dx plus, again, so du dx dx multiplied by dt. So that is the v, right? So dv, this is the velocity in the x component, so dx, so that is the changes in the x line one, and then changes in the line,
+
+124
+00:45:34,560 --> 00:46:03,720
+line 2 can be here, dy, so this one, right? So this will be line 2, change it by that, b prime, so this was a, and this was c, right? So c became c prime, and a became a prime, and then it is also tilted by d beta, and the base was dy, changes in this length will be dy plus
+
+125
+00:46:07,100 --> 00:46:37,220
+So that is the sort of like Vy and this is the Vx. And then this much will be your acceleration in the x-direction multiplied by the d, change it in the v, right, so originally you have a u, v, but over dt, it may have some variation in the x-y direction, [Review note: The small-line construction uses relative velocity gradients times dt to obtain relative displacements. It is not an acceleration-times-dt formula.]
+
+126
+00:46:37,220 --> 00:47:06,170
+it may have some variation in the x, y direction. So that is related to these four terms. Then, anyways, the average angular velocity omega z is defined as this one, half plus d alpha dt, and then minus d beta dt. Why is that? If we define that as a positive direction,
+
+127
+00:47:06,170 --> 00:47:22,010
+the alpha is, if you think about BC becoming BC prime, the alpha is this BC from BC, B prime C prime, then the alpha is a positive direction, right?
+
+128
+00:47:22,010 --> 00:47:39,950
+But if we think about BA becoming B prime, A prime, then there is a change in the line in a direction to anti-clockwise rotations, right? [Review note: With the sketch convention, positive beta is a clockwise tilt of the initially vertical line, hence the minus sign in omega_z=(alpha_dot-beta_dot)/2.]
+
+129
+00:47:40,170 --> 00:47:42,630
+So there you have a minus sign here.
+
+130
+00:47:42,630 --> 00:48:09,890
+and then the alpha from this geometry, tangent, right? So tangent alpha can be written here and there can be nothing but db over dx dt and db, likewise, a tangent of this one, then we have that and there will be du dy dt, okay?
+
+131
+00:48:09,890 --> 00:48:28,330
+So if we plot, so this is d alpha, this is d beta, and if we differentiate with respect to t to get that one, that one, then we have the angular velocity. So we can derive the angular velocity from the geometric changes as well.
+
+132
+00:48:28,330 --> 00:48:51,740
+for the 3D flow, we have omega x, omega y, and omega z, right? So exactly, angular velocity omega is wx, omega x, omega y, omega z, then that is exactly half curl V.
+
+133
+00:48:51,740 --> 00:49:09,380
+So, what I'm going through is, I haven't relayed the vorticity as an angular rate, but we just check the mathematics. Curl V is a zeta, right?
+
+134
+00:49:09,380 --> 00:49:46,590
+okay, so zeta, zeta, right, zeta, so curl V is related to the angular velocity of your fluid element, okay, so here, right, vorticity, vorticity zeta is defined as a vector twice as large as angular, angular, give me one sec,
+
+135
+00:49:47,090 --> 00:50:18,040
+angular velocity. I'm going to use angular rate, but angular velocity is a more physical term. So vorticity is related to the angular velocity, how much? By half. So zeta equals, by twice. So zeta is 2 omega, that is the curl V, or your angular velocity omega is half curl V, or
+
+136
+00:50:19,240 --> 00:50:38,960
+have vorticity. So, curl V, or angular velocity, they are the mathematical term, but vorticity, this is a physical term to relate how much of your flow is rotating.
+
+137
+00:50:38,960 --> 00:51:06,000
+So now we define what do we mean by irrotational flow. Irrotational flow meaning flows have no angular velocity, so flows have negligible or zero of vorticity or angular velocity. So call V or zeta equals zero, that is, we call it as a irrotational flow.
+
+138
+00:51:06,000 --> 00:51:29,990
+Okay? And then rotating flow is not equivalent to the rotational flow. So here, let's take an example. Free vortex and then forced vortex. Free vortex is a rotational vortex. [Review note: PDF 40 and the next calculations identify the free vortex as irrotational for r>0. Rotational in the final ASR phrase is not the adopted classification.]
+
+139
+00:51:29,990 --> 00:51:59,970
+for example, when you have radial velocity zero, but you have only the azimuthal velocity v theta, and then azimuthal velocity is anti-proportional to the radius, meaning that at a small radius, your v theta is large, this one, and then at a large r, your v theta is large.
+
+140
+00:51:59,970 --> 00:52:18,050
+is small. So, if we take the curl of that velocity, then there is a zero. So, average rate of counterclockwise turning is a zero, and orientation of your fluid remains the same.
+
+141
+00:52:24,080 --> 00:52:57,760
+and the forced vortex, this is the rotational vortex and then there is a rigid body vortex. For example, your velocity, radial velocity is zero and your azimuthal velocity theta is equivalent to the CR, right? So here Vtheta is which means that this is what we meant, Vtheta, okay?
+
+142
+00:52:57,760 --> 00:53:27,860
+okay, so that's why women, so at this location, you have, sorry, I was taking an example of the VR, so at this one, theta equals zero, zero, at this one, your Vtheta is so small, and here, Vtheta is large, right, right, right, so here, at this location, [Review note: This gestural explanation alternates between plots. Use PDF 40: free vortex v_theta=K/r, forced vortex v_theta=c*r. The radial velocity is zero in both models.]
+
+143
+00:53:27,860 --> 00:53:52,230
+you have very large velocity, small velocity, smaller, smaller, smaller. At this one, the same thing, you have a velocity, right, high velocity this direction, right, high velocity that direction, you have that one as well, at this location, at this one, you have a, that one, that one, that one, and that one, right, at this theta.
+
+144
+00:53:52,230 --> 00:54:20,450
+So anyways, your Vθ velocity is anti-proportional to the radius. So forced vortex is the opposite. Vθ is directly proportional to the CR. So you have smaller, near the origin, Rθ, larger here. So this one is moving small, this much, this one, this moving that one, that one.
+
+145
+00:54:20,450 --> 00:54:49,280
+Likewise, here as well, your velocity moves small, large, large, and largest. So your orientation changes. So average rate of counterclockwise turning is not zero. If we take the vorticity, curl V, it's 2C, which means that orientation of fluid element continuously rotates.
+
+146
+00:54:50,420 --> 00:55:20,490
+So this is the example, and then I didn't, so this is the animation, animation, and then this one is the forced vortex. I will see, this is PDF. During the lecture material, I will show you the example, so forced vortex, this is a rotational flow, right?
+
+147
+00:55:20,490 --> 00:55:42,020
+So this is rotational flow. So you will see that this one can change. But for this one, it doesn't change. So I will show this animation during my lecture material.
+
+148
+00:55:42,020 --> 00:55:52,000
+And then concepts of the free vortex and forced vortex are used for analysis of wing-tip vortex, hurricane, plughole vortex, and stuff like that.
+
+149
+00:55:52,200 --> 00:55:57,500
+So those are the, a lot of times, they are the forced vortex and rotational flow. [Review note: The listed photographs are applications of vortex models, not proof that every region of each real flow is a forced vortex.]
+
+150
+00:55:59,710 --> 00:56:03,910
+Ok guys, let's take an example of the Couette flow.
+
+151
+00:56:04,370 --> 00:56:11,490
+So consider two plane flows. Number one is the Couette flow, and this is the potential flow.
+
+152
+00:56:11,490 --> 00:56:46,160
+sorry, so there was some, so Couette flow should cohere, so this is a Couette flow, Couette flow, the velocity component is Ay, V, where A is a constant, and then potential vortex flow, which is a useful model, such as tornadoes and whirlpool, and here Vr equals 0, so here Vr equals 0, and V theta is K over [Review note: The lecturer corrects the Couette/potential-vortex figure label during this example. The circular plot belongs to the potential vortex, not Couette flow.]
+
+153
+00:56:46,160 --> 00:57:20,340
+R, K over R, so that's the potential flow, where K is a constant. Check if above those two flows, Couette flow and potential vortex flows are rotational, so for the Couette flow, omega z is half dB dx minus u dy, this is minus half, so angular velocity [Review note: For u=a*y, v=0, the result is omega_z=-a/2 and zeta_z=-a; the coefficient a is lost in the ASR fragment minus half.]
+
+154
+00:57:20,340 --> 00:57:45,860
+velocity is a constant, therefore it is rotational everywhere in the flow. Why is that? It is because this is velocity equals zero, velocity V, right? So you have the velocity gradient. You have T partial U, partial Y is not zero, which means that there is related to what?
+
+155
+00:57:45,860 --> 00:58:15,900
+viscous vorticity. So that is a viscous stress, which means that there is a non-zero viscous stress. So viscous is not negligible because of the velocity gradient. So this is a rotational flow. Okay. Interesting. Rotational flow. So you may wonder, oh, give me one second, where is the rotating? [Review note: For this particular Couette field, the nonzero velocity gradient produces both shear stress (if mu is nonzero) and vorticity. Nonzero viscous stress is not a general definition of rotational flow.]
+
+156
+00:58:15,900 --> 00:58:42,380
+I mean, although we don't have any V, we don't have any W, what is rotating? But if you look into a small fluid element, and then bottom velocity, upper velocity is different. So here, U here, U here can be different. So there may be some small rotation going on inside, okay?
+
+157
+00:58:42,380 --> 00:59:07,140
+So that's why it is rotational everywhere. And then, what about the potential vortex given in a polar coordinate? If you calculate omega z equals zero, then this is not rotational flow, this is not rotational flow, okay? Interesting.
+
+158
+00:59:07,140 --> 00:59:44,200
+So Vθ is equivalent to the k over r. Okay, then we want to relate the stream function into potential function, and then I want to bring up the friction to this concept from the vector analysis, a vector with a zero curl, which means that this one must be the gradient of the scalar function.
+
+159
+00:59:44,200 --> 01:00:14,060
+function. So if you have taken the vector analysis, for that one, v should be a potential gradient of some scalar function. So that is what we learned from the vector analysis. So if curl v equals zero, then v should be gradient of the function. And when v is a velocity, we just define that scalar function as a phi.
+
+160
+01:00:14,060 --> 01:00:22,440
+as a velocity potential function. So another that is different from the streamline function.
+
+161
+01:00:22,740 --> 01:00:29,550
+So please make a difference between the streamline and the streamline function. [Review note: The surrounding passage distinguishes stream function psi from velocity potential phi. The repeated streamline terms in this ASR fragment are ambiguous.]
+
+162
+01:00:43,770 --> 01:00:50,550
+And then, potential function is also a function of space and time, x, y, z, t.
+
+163
+01:00:50,550 --> 01:01:07,830
+and we define the gradient of the potential function is u, v, and w. So u is a different partial phi, partial x, v is a partial phi, partial y, w is a partial phi, partial z.
+
+164
+01:01:08,130 --> 01:01:18,890
+And then the lines of the constant potential function is called the potential lines. So potential lines is not a physical line. [Review note: A potential line is a level set of phi, not a particle path or a streamline in general.]
+
+165
+01:01:18,890 --> 01:01:44,580
+Then physical line is a stream line. If you draw the stream function, that is the stream line. Then there is a typo. If a plane, not a plane, if a plane, 2D, flow is irrotational. Irrotational means that [Review note: The explicit typo correction is plan to plane (2-D) flow on PDF 45.]
+
+166
+01:01:44,580 --> 01:02:16,660
+let curl V equal 0, then there is no angular velocity is 0, then it doesn't have to be omega z for the function, give me one sec, right, your omega equals 0, then your stream function, potential function, both exist, this is very important,
+
+167
+01:02:16,660 --> 01:02:47,170
+And if a 2D plane is rotational and stream function and potential function both exist, then stream lines and potential lines are everywhere mutually orthogonal, perpendicular, except at a stagnation point. [Review note: The condition is irrotational, as in PDF 45 and the preceding sentence. At non-stagnation points the psi and phi contours are perpendicular.]
+
+168
+01:02:47,170 --> 01:03:15,880
+So u is partial phi partial x and partial psi partial y and v is partial phi partial y and then minus partial psi partial x and the above equations are also called the Cauchy–Riemann equation but it means that
+
+169
+01:03:15,880 --> 01:03:30,620
+that is partial phi partial x equal partial psi partial y and partial phi partial y is minus partial psi partial x.
+
+170
+01:03:30,780 --> 01:03:34,480
+That is the Cauchy–Riemann equation.
+
+171
+01:03:34,480 --> 01:03:51,520
+and then we saw the stream function satisfies the Laplace equation, but phi potential function is also orthogonal to the, perpendicular to the stream function, so it also should satisfy the Laplace equation. [Review note: Laplace(phi)=0 follows from incompressible continuity with V=grad(phi); Laplace(psi)=0 follows from zero vorticity. Orthogonality alone is not a derivation of both equations.]
+
+172
+01:03:52,000 --> 01:03:59,380
+Okay, zero, and then that has to also be zero.
+
+173
+01:03:59,380 --> 01:04:38,970
+So let's consider, I will look further into the relationship between the velocity potential and also the stream function. So let's now consider the momentum equation of inviscid frictionless flow. So here I was utilizing the capital D to represent the total derivative, total derivative, and then right-hand side,
+
+174
+01:04:38,970 --> 01:05:09,780
+no viscous stress, and we have only the pressure, and then the gravitational force, right? And the left-hand side becomes what this is, a total derivative, partial partial t, convective, and convective, do you remember? DDT, this is very important, total derivative is partial partial t plus u partial partial x plus v partial partial
+
+175
+01:05:09,780 --> 01:05:41,700
+partial y plus w partial partial z, right? So here, d dt is partial partial t plus v, that one, right? So v into gradient. And then you have the another vector identity. I'm going to use the vector identity of v partial gradient v.
+
+176
+01:05:41,800 --> 01:06:15,560
+V is gradient of the V-square divided by 2, this is minus V cross-flutter of this one. So this is the vector identity, and then you can derive that one, where V is U, V, W, N, gradient V, [Review note: The vector identity is (V dot grad)V=grad(|V|^2/2)-V cross (curl V).]
+
+177
+01:06:15,560 --> 01:06:52,360
+you have the partial ux, partial v, y, w, z, v, y, and w, z, you can have that relation, you can prove this relation pretty easily, so I will use that vector identity, and then if we take the order of the cross product, then this one is the same as the plus, this one, sorry, that is
+
+178
+01:06:52,360 --> 01:07:13,450
+plus, right? So, we have that relation. So, the second one becomes that one, okay? So, and this one is, this one is a vorticity zeta, so we have that relation.
+
+179
+01:07:14,690 --> 01:07:31,810
+So left-hand side, if we divide both sides by rho, we have that, and then right-hand side moves to the left-hand side, 1 over rho divided by partial g, p minus g bar equals 0, right? [Review note: The pressure term is (1/rho)*grad(p), not division by a derivative. Gravity enters as the acceleration vector g.]
+
+180
+01:07:32,070 --> 01:07:40,610
+So here, we have that relation from the momentum equation of inviscid flow, and then for an arbitrary displacement dr,
+
+181
+01:07:40,610 --> 01:08:08,680
+if we take the inner product of that relation by the dr, then we have that. Next slide, we have this relation, and we are looking into the two cases. Number one, let's look further into this vorticity relation.
+
+182
+01:08:08,680 --> 01:08:35,000
+equation. So if d1 and d1 become 0, then we obtain the Bernoulli equation. So take d1 away, then integrate over time, b and delta p, then we have Bernoulli equation. So physically, which means that dr is placed on a streamline, so this is a parallel. [Review note: The vanishing term is (zeta cross V) dot dr. Bernoulli is obtained by spatial integration along the path; integrate over time is not the operation in PDF 47.]
+
+183
+01:08:35,000 --> 01:09:02,170
+Okay, so we have integrate that Bernoulli equation between any points 1 and 2 along the streamline is written as here. Okay, then the second one, this is just, there is a case where this becomes a zero, there is a irrotational flow, then irrotational, then the direction of the dr does not matter.
+
+184
+01:09:02,170 --> 01:09:30,030
+So for incompressible and steady, inviscid, and irrotational flow, we have that relation, we have that relation. So this one, this one is valid everywhere.
+
+185
+01:09:30,470 --> 01:09:41,530
+So either case, number one or number two, we can have Bernoulli types of the relation that states between the pressure and velocity.
+
+186
+01:09:41,530 --> 01:10:20,950
+And then, for irrotational flow, we can define a function phi, a potential function, v as a gradient phi. We saw it, right? So irrotational flow is equivalent to the potential flow, continuity equation where v is the gradient phi, then that leads to the
+
+187
+01:10:20,950 --> 01:10:50,480
+the laplacian of the phi. So I told you, if flow is irrotational, frictionless, inviscid, then laplacian of the stream function and laplacian of the potential function satisfies, so we derive the laplacian of the velocity potential, and then I will derive the potential function phi is orthogonal to the stream function, [Review note: For the stated model, the potential satisfies Laplace(phi)=0 because continuity is div(V)=0. Irrotationality and incompressibility must not be conflated.]
+
+188
+01:10:50,480 --> 01:11:18,170
+So consider 2D flow u as a potential function or velocity potential, v as a potential function and velocity potential, then for a constant phi line, d phi equals zero, constant stream line, psi equals zero, so we have that and that, and if we take the inner product, that becomes a zero, right? [Review note: Along a constant-psi line dpsi=0, not psi=0. Use dphi=u dx+v dy and dpsi=-v dx+u dy to obtain perpendicular contour directions.]
+
+189
+01:11:18,170 --> 01:11:50,380
+So we have that. We saw those are orthogonal. Okay, guys, so in real case, where can we apply the velocity potential? In which reason the assumption of the potential flow is valid. So we have to check whether flow is incompressible, flow is incompressible, and also the inviscid, right?
+
+190
+01:11:50,380 --> 01:12:20,960
+So, except near the boundary layer, outside the boundary layer, we can assume that incompressibility and also irrotationality and also frictionless, even if this is a uniform approach, so uniform flow is irrotational because there is no velocity gradient, but in this airfoil near the boundary layer,
+
+191
+01:12:20,960 --> 01:12:45,340
+we don't use the velocity potential. Turbulent boundary layer we don't, whether there is a laminar boundary layer or turbulent boundary layer, I know, I haven't talked about the concept of the laminar flow and turbulent flow, that's scheduled for some chapter later. But anyways, in the boundary layer we don't apply the velocity potential.
+
+192
+01:12:46,060 --> 01:13:28,620
+and then even the separated flow, separation also we will learn later, wake, we don't apply the potential flow, only outside, okay, so those are the viscous regions, viscous regions where Bernoulli's equation fails, laminar boundary layer, turbulent boundary layer, separated flow and wake flow, okay, some example, so for a, this is example of a frictionless irrotational flow,
+
+193
+01:13:28,620 --> 01:13:54,560
+We saw it already. If a velocity potential exists for a velocity field, here, find it, plot it, compare it with the previous example. So previously, we checked the psi line. Right now, we will draw the velocity potential line, and then we'll see whether these psi and phi are orthogonal.
+
+194
+01:13:54,560 --> 01:14:24,540
+So again, let's confirm the flow is irrotational. So if we take the curl V, or angular velocity, that one, then we say that is zero. So we saw, okay, so this is irrotational. And then to find five velocity potential, u is a d5 dx, we have it, right? So integrate that with respect to x. [Review note: PDF 51 has a printed intermediate derivative error. Direct differentiation gives partial v/partial x-partial u/partial y=-2ay-(-2ay)=0. The conclusion of zero curl is unchanged.]
+
+195
+01:14:24,540 --> 01:14:46,440
+x, then we have that, and this time our constant is a function of f . And then if we differentiate that equation with respect to y, differentiate it, then we have this become the 0, that is minus 2a xy, and then f' y, that is minus 2a xy. [Review note: The integration function is f(y), because u was integrated with respect to x.]
+
+196
+01:14:46,440 --> 01:15:20,840
+So, if that has to be satisfied, either f prime y equals 0 or f equals constant, then velocity potential is a, if we take the a, day one, so to plot this set c equals 0, for convenience, we have that for constant value of phi,
+
+197
+01:15:20,840 --> 01:15:58,480
+the results are shown. So here, we can do the same thing like we did for the potential function. So if phi equals 0, then we have x3y squared minus x squared, [Review note: The source figure uses the sign-reversed contour label relative to the preceding potential definition. With phi=a*(x^3/3-x*y^2), use x^3-3*x*y^2=3*phi/a; the zero contour is unchanged.]
+
+198
+01:15:58,480 --> 01:16:32,460
+equals zero, that is x, scale of 3y plus minus x equals zero, right? So we have that, sorry, we have this one, and that one, that one, right? That one. And then, for other types of phi, whether phi is a, minus a, minus 2a, [Review note: The zero-potential contour factors as x*(x^2-3*y^2)=0, hence x=0 or y=+/-x/sqrt(3).]
+
+199
+01:16:33,240 --> 01:17:05,530
+we can have the shape, right? So this one, the blue one, right? So we can check how the, right, right. So plot this one and then draw that one. Where was it? Not this one, not this one. This one, right? So if we plot that one, right? Remember the shape of this one.
+
+200
+01:17:05,530 --> 01:17:31,720
+And then, remember the shape of this one, right? So previously, it was this dotted line, right? So dotted line, so those are the shapes of the Psi. These are the Psi. And then there is the Phi. So you can see that those are orthogonal each other, perpendicular each other.
+
+201
+01:17:31,720 --> 01:17:50,880
+Okay, guys, that's all for chapter 4, and sorry for the technical glitches, my pen was not quite charging very well, that's why, so that's all for chapter 4, and I will see you in chapter 5, thank you.

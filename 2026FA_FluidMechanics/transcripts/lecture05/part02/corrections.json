@@ -1,0 +1,579 @@
+{
+  "title": "Lecture 5 Part 2 (Week 6, Chapter 4) — reviewed English ASR",
+  "review_basis": "Complete 201-segment ASR reading against Chapter 4 PDF pp. 27–52 and sampled video/handwritten frames; no full verbatim audio audit.",
+  "review_method": "Model-assisted full transcript review, source-matched term normalization, and separately marked editorial notes; not a verbatim human transcription.",
+  "personal_information_removed": 0,
+  "notes": [
+    "All 201 source segments and start/end timestamps are retained. Modified word timings are cleared.",
+    "Review note text is editorial, not a quotation of the instructor.",
+    "Source equations control ambiguous symbols and exponents; physical caveats are not silently rewritten into lecturer speech.",
+    "The recording covers PDF 27–52 and ends on slide 52; PDF 53 is a slide-based chapter summary.",
+    "No personal conversation was identified in the reviewed text. Raw video and raw ASR remain private."
+  ],
+  "corrections": [
+    {
+      "index": 3,
+      "original": "we consider that as a continuum. So in chapter 4, we derived our governing equation, mass equation, momentum equation, and energy equation using the integral relation. So for the integral relation, you have to use the control volume. In chapter 4, we derived the same governing equations, mass equation, momentum equation, and energy equation, but using infinitesimally small fluid",
+      "text": "we consider that as a continuum. So in chapter 4, we derived our governing equation, mass equation, momentum equation, and energy equation using the integral relation. So for the integral relation, you have to use the control volume. In chapter 4, we derived the same governing equations, mass equation, momentum equation, and energy equation, but using infinitesimally small fluid [Review note: The integral/control-volume formulation belongs to Chapter 3; Chapter 4 develops its differential form. The repeated chapter number is retained as transcribed.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 6,
+      "original": "Okay, so I think I said at the very beginning of our course, so if we had a common governing equation, like our native stock situation, then what makes our flow solution unique or different from case to case?",
+      "text": "Okay, so I think I said at the very beginning of our course, so if we had a common governing equation, like our Navier–Stokes equation, then what makes our flow solution unique or different from case to case?",
+      "reason": "Source-matched term: Navier–Stokes equation"
+    },
+    {
+      "index": 11,
+      "original": "one is the solid wall. So that is probably the most important. And then we are going to apply the no-sleep condition. No-sleep condition meaning on the wall, if you think about fluid particle, it never slides, never slips on the surface.",
+      "text": "one is the solid wall. So that is probably the most important. And then we are going to apply the no-slip condition. no-slip condition meaning on the wall, if you think about fluid particle, it never slides, never slips on the surface.",
+      "reason": "Source-matched term: no-slip"
+    },
+    {
+      "index": 13,
+      "original": "which means that V wall equals same as the V gas at the wall. So that is the no-sleep condition. And then number two are the inlet or outlet condition. So for example, if you have a duct and then your inlet condition is like there is all V infinity is like 10 meter per sec or 100 meter per sec or something like that.",
+      "text": "which means that V wall equals same as the V gas at the wall. So that is the no-slip condition. And then number two are the inlet or outlet condition. So for example, if you have a duct and then your inlet condition is like there is all V infinity is like 10 meter per sec or 100 meter per sec or something like that.",
+      "reason": "Source-matched term: no-slip"
+    },
+    {
+      "index": 23,
+      "original": "Then W is the velocity, Z velocity. Z velocity should be the same as eta. Eta is the geometry variable that defines the type of Z variation. So there shouldn't be any changes in the Z variation.",
+      "text": "Then W is the velocity, Z velocity. Z velocity should be the same as eta. Eta is the geometry variable that defines the type of Z variation. So there shouldn't be any changes in the Z variation. [Review note: Eta is surface height, not velocity. PDF 27 uses w approximately equal to partial eta/partial t. The general material-surface condition also contains horizontal-advection terms.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 24,
+      "original": "otherwise, you will have a hole on the surface at a given time. So these are the three boundary conditions imposed in the water tank, we can consider that as a small shallow river, so at the bottom, the most important, so we call it as a solid, this is a solid word, solid and impermeable,",
+      "text": "otherwise, you will have a hole on the surface at a given time. So these are the three boundary conditions imposed in the water tank, we can consider that as a small shallow river, so at the bottom, the most important, so we call it as a solid, this is a solid wall, solid and impermeable,",
+      "reason": "Source-matched term: solid wall"
+    },
+    {
+      "index": 27,
+      "original": "Okay, then the water, V wall at the liquid should be the same as the V sheet. Right? So that is called a no slip boundary condition. So it doesn't, some people may think, okay, no slip boundary condition, there shouldn't be any zero on the wall, but that's valid for a fixed stationary object,",
+      "text": "Okay, then the water, V wall at the liquid should be the same as the V ship. Right? So that is called a no slip boundary condition. So it doesn't, some people may think, okay, no slip boundary condition, there shouldn't be any zero on the wall, but that's valid for a fixed stationary object, [Review note: The intended boundary condition is equality of fluid and wall velocities, not zero fluid velocity for every wall. The following segment explicitly distinguishes moving walls.]",
+      "reason": "Source-matched term: V ship; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 29,
+      "original": "And then, isothermal case, the temperature fluid should be the same as the T-wall. If you think about the adiabatic case, then there is no heat transfer, right? But what it says is your temperature should be the same, okay?",
+      "text": "And then, isothermal case, the temperature fluid should be the same as the T-wall. If you think about the adiabatic case, then there is no heat transfer, right? But what it says is your temperature should be the same, okay? [Review note: Do not equate isothermal and adiabatic conditions. Prescribed wall temperature and zero normal heat flux are different thermal boundary conditions; the wording is retained, not treated as a new equation.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 30,
+      "original": "And inlet, if inlet, the V infinity, P and T, those should be given or known. On the outlet, you can specify the same boundary condition as inlet, so velocity, pressure, temperature can be given, or on the outlet, you can specify a specific pressure, like dO n, dN equals 0.",
+      "text": "And inlet, if inlet, the V infinity, P and T, those should be given or known. On the outlet, you can specify the same boundary condition as inlet, so velocity, pressure, temperature can be given, or on the outlet, you can specify a specific pressure, like dO n, dN equals 0. [Review note: PDF 28 shows a specified outlet pressure and zero normal gradients as example boundary data. The mathematical symbols in this ASR fragment are unclear; they are not a literal formula transcription.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 31,
+      "original": "which means that there is no, so for example here ui and this is ui plus 1, then there is any ui plus ui plus 1, meaning there is no flow velocity variation in the normal direction, this direction, okay, so that's what I got it meant, temperatures, like I said, so this is the adiabatic case, right, there is an adiabatic meaning,",
+      "text": "which means that there is no, so for example here ui and this is ui plus 1, then there is any ui plus ui plus 1, meaning there is no flow velocity variation in the normal direction, this direction, okay, so that's what I got it meant, temperatures, like I said, so this is the adiabatic case, right, there is an adiabatic meaning, [Review note: The outlet sketch uses zero normal velocity gradient. A zero normal temperature gradient gives zero conductive normal heat flux for nonzero k; it does not prescribe a temperature value.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 35,
+      "original": "And then, because W-liquid and W-gas is the same as the dA dt, which means that if your surface normal, your dA dt changing, then the velocity in the z direction here, right, z direction should be the same, W-liquid and W-gas should be the same as the dA dt.",
+      "text": "And then, because W-liquid and W-gas is the same as the dA dt, which means that if your surface normal, your dA dt changing, then the velocity in the z direction here, right, z direction should be the same, W-liquid and W-gas should be the same as the dA dt. [Review note: The displayed symbol is eta, not A: the interface is z=eta(x,y,t). The lecture relates vertical velocity to surface motion; a general moving surface uses the material derivative of eta.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 37,
+      "original": "And then equality of the Q. Q meaning heat flux and then tau. Tau is the physical stresses. So between gas and between water, they are going to be Q the same and then physical stress should be the same.",
+      "text": "And then equality of the Q. Q meaning heat flux and then tau. Tau is the physical stresses. So between gas and between water, they are going to be Q the same and then physical stress should be the same. [Review note: The slide denotes heat flux by q and viscous stress by tau. The phrase physical stresses is interpreted using the displayed viscous-stress notation.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 40,
+      "original": "by the concept to calculate your flow solution. So let's consider, so the strip function is a very simple velocity, it is a function that relates, you can calculate the velocity, and then if you have velocity, then what do you have? You have the Bernoulli equation, right? Bernoulli equation, so you can calculate the pressure.",
+      "text": "by the concept to calculate your flow solution. So let's consider, so the stream function is a very simple velocity, it is a function that relates, you can calculate the velocity, and then if you have velocity, then what do you have? You have the Bernoulli equation, right? Bernoulli equation, so you can calculate the pressure.",
+      "reason": "Source-matched term: stream function"
+    },
+    {
+      "index": 41,
+      "original": "So, in the old days, the string function and Bernoulli equation, those are the one method to calculate the flow solution of the velocity and pressure, but like I said, our fluid motion, the governing equation, is a partial differential equation, it's nonlinear, which means that your velocity u and v can be, your unknowns are multiplied in two together,",
+      "text": "So, in the old days, the stream function and Bernoulli equation, those are the one method to calculate the flow solution of the velocity and pressure, but like I said, our fluid motion, the governing equation, is a partial differential equation, it's nonlinear, which means that your velocity u and v can be, your unknowns are multiplied in two together,",
+      "reason": "Source-matched term: stream function"
+    },
+    {
+      "index": 45,
+      "original": "And then, let's define a function, psi, called a string function. We define that as a string function of x and y, such that it satisfies the continuity identically, which means that if we define u as a dpsi dy and v as a minus",
+      "text": "And then, let's define a function, psi, called a stream function. We define that as a stream function of x and y, such that it satisfies the continuity identically, which means that if we define u as a dpsi dy and v as a minus",
+      "reason": "Source-matched term: stream function"
+    },
+    {
+      "index": 46,
+      "original": "plus d psi dx. Or in cartesian, in vector form, we can define v as a, v is a i u plus j v, right? So j v, so u is a psi dy, and v is a minus partial, partial psi, partial x.",
+      "text": "plus d psi dx. Or in cartesian, in vector form, we can define v as a, v is a i u plus j v, right? So j v, so u is a psi dy, and v is a minus partial, partial psi, partial x. [Review note: The adopted definition is v=-partial psi/partial x; the disfluent minus/plus wording is not used to change that sign.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 47,
+      "original": "Then, if we define like that, then if you plug that into here, U, right, U, and then if you plug that into B, then it is automatically saved. How? If you plug U, this one, U, into here, what can happen? Partial, partial x, and partial psi, partial y. What is that?",
+      "text": "Then, if we define like that, then if you plug that into here, U, right, U, and then if you plug that into B, then it is automatically saved. How? If you plug U, this one, U, into here, what can happen? Partial, partial x, and partial psi, partial y. What is that? [Review note: The two substituted velocity components are u and v. The conclusion is cancellation of the mixed derivatives in the continuity equation.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 49,
+      "original": "So this string function is a function that we create, we define for our convenience. And then, it is different from the velocity potential function we later on define. So using the, I will talk again about the velocity potential function. So velocity potential function is defined as a partial phi, partial x, and v is",
+      "text": "So this stream function is a function that we create, we define for our convenience. And then, it is different from the velocity potential function we later on define. So using the, I will talk again about the velocity potential function. So velocity potential function is defined as a partial phi, partial x, and v is",
+      "reason": "Source-matched term: stream function"
+    },
+    {
+      "index": 50,
+      "original": "is partial phi, partial y. So that's another function that is valid under this type of the, it doesn't have to be 2D, but steady, incompressible, and also later on I will define the irrotational as well.",
+      "text": "is partial phi, partial y. So that's another function that is valid under this type of the, it doesn't have to be 2D, but steady, incompressible, and also later on I will define the irrotational as well. [Review note: The lecture is introducing its steady incompressible model. In general, a velocity potential is tied to irrotationality; its definition does not by itself require steady or incompressible flow.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 52,
+      "original": "So here, let's look more into our stream function. So here, lines of constant psi are streamlines of the flow. Eulerian knows the streamlines of the flow, right? So this one may be streamlines of your flow. And then what it says is phi 1, phi 2, phi 3,",
+      "text": "So here, let's look more into our stream function. So here, lines of constant psi are streamlines of the flow. Eulerian knows the streamlines of the flow, right? So this one may be streamlines of your flow. And then what it says is phi 1, phi 2, phi 3, [Review note: The streamline labels in this section are psi, not phi, as established by PDF 30–31. Phi is reserved for velocity potential.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 54,
+      "original": "So Bernoulli equation says, very simple Bernoulli equation, where your p plus rho u square, rho u square is a constant, so here your rho is a constant, steady, and there is no z variation, so we have that relation,",
+      "text": "So Bernoulli equation says, very simple Bernoulli equation, where your p plus rho u square, rho u square is a constant, so here your rho is a constant, steady, and there is no z variation, so we have that relation, [Review note: The board shows p+rho*V^2/2=constant under the stated steady constant-density, negligible-viscosity, equal-elevation assumptions. The coefficient 1/2 is missing from this ASR fragment.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 55,
+      "original": "and this constant can be this Psi. So anyway, lines of the constant Psi are the stream functions.",
+      "text": "and this constant can be this Psi. So anyway, lines of the constant Psi are the stream functions. [Review note: Do not identify the Bernoulli constant with psi. In 2-D, psi has units m^2/s and labels streamlines; p+rho*V^2/2 has pressure units. The claim is retained as transcribed and not adopted in the study note.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 56,
+      "original": "So if you think about those lines, so this is your, let's consider this is your slim line, and then control surface can be by the unit depth into the paper, into your screen, then if you think about your velocity V here, your velocity V in any direction,",
+      "text": "So if you think about those lines, so this is your, let's consider this is your streamline, and then control surface can be by the unit depth into the paper, into your screen, then if you think about your velocity V here, your velocity V in any direction,",
+      "reason": "Source-matched term: streamline"
+    },
+    {
+      "index": 59,
+      "original": "Then your normal n can be, by using the theta relation, so n equals dy over ds, and y can be minus dx over minus ds, right?",
+      "text": "Then your normal n can be, by using the theta relation, so n equals dy over ds, and y can be minus dx over minus ds, right? [Review note: The chosen normal is n=(dy/ds,-dx/ds), not a coordinate named y; see PDF 31–32.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 60,
+      "original": "Okay, so consider that as a sine theta and tangent theta relation, then you can get a, you can get a, so if you consider that as a theta, and this is small theta, theta and small theta, it's very small, then using the sine theta and tangent theta, you can derive that relation.",
+      "text": "Okay, so consider that as a sine theta and tangent theta relation, then you can get a, you can get a, so if you consider that as a theta, and this is small theta, theta and small theta, it's very small, then using the sine theta and tangent theta, you can derive that relation. [Review note: For the local curve element, dx/ds and dy/ds are direction cosines. The normal follows by a 90-degree rotation of the tangent; no finite-angle small-angle identity is needed.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 62,
+      "original": "Okay, then, so this is still a finite variable, this doesn't represent any limit case so far, so we can cross product of those two, so u dy equals v dx, and then if we define u as a three function, that is the d phi du here, right, so that is the u, and then minus v will be v dx.",
+      "text": "Okay, then, so this is still a finite variable, this doesn't represent any limit case so far, so we can cross product of those two, so u dy equals v dx, and then if we define u as a stream function, that is the d phi du here, right, so that is the u, and then minus v will be v dx. [Review note: This step cross-multiplies the scalar streamline relation, not a vector cross product. The adopted identity is u dy-v dx=dpsi.]",
+      "reason": "Source-matched term: stream function; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 63,
+      "original": "So we have that one. And that should be zero. So this should be zero. And then exactly that relation is the definition of the d5, d5, and that has to be zero.",
+      "text": "So we have that one. And that should be zero. So this should be zero. And then exactly that relation is the definition of the d5, d5, and that has to be zero. [Review note: The differential in PDF 31 is dpsi, not d5 or dphi.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 64,
+      "original": "So, what does this mean is that psi is zero meaning psi is constant, right? So, what it says is psi, your stream function is constant a stream line, along a stream line.",
+      "text": "So, what does this mean is that psi is zero meaning psi is constant, right? So, what it says is psi, your stream function is constant a stream line, along a stream line. [Review note: It is dpsi=0 along a streamline, not psi=0 everywhere. Each streamline may have a different constant psi value.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 73,
+      "original": "So, tq can be v into n, right? And this v, using the stream function definition, u can be deep side dy, v can be minus deep side dx, and then n, by the geometric relation, dy over dx, comma, minus dx over dx.",
+      "text": "So, tq can be v into n, right? And this v, using the stream function definition, u can be deep side dy, v can be minus deep side dx, and then n, by the geometric relation, dy over dx, comma, minus dx over dx. [Review note: The geometric normal is (dy/ds,-dx/ds). Both ASR denominators dx in the last phrase correspond to ds on PDF 32.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 74,
+      "original": "So that can be, if we apply the inner product, then there will be the d phi. So what it means is that dq is the d phi. So q from 1, 2 will be psi 2 minus psi 1.",
+      "text": "So that can be, if we apply the inner product, then there will be the d phi. So what it means is that dq is the d phi. So q from 1, 2 will be psi 2 minus psi 1. [Review note: The flow-rate differential is dQ=dpsi for unit depth, not dphi. PDF 32 explicitly gives Q_1-2=psi_2-psi_1.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 75,
+      "original": "So, what about the direction? Volume flow rate, if psi u is larger than psi l, then flow is moving through this area to the right. Or if phi l is larger, then it is moving to the left.",
+      "text": "So, what about the direction? Volume flow rate, if psi u is larger than psi l, then flow is moving through this area to the right. Or if phi l is larger, then it is moving to the left. [Review note: Both upper and lower labels here denote psi. The sign is psi_upper-psi_lower for the displayed rightward normal.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 76,
+      "original": "So that's what I meant by the direction. The volume flow between any two streamlines in the flow field is equal to the change in the stream function between those streamlines. But what about the direction? So flow is to the right, if phi u is greater than phi l, otherwise the flow is moving to the left.",
+      "text": "So that's what I meant by the direction. The volume flow between any two streamlines in the flow field is equal to the change in the stream function between those streamlines. But what about the direction? So flow is to the right, if phi u is greater than phi l, otherwise the flow is moving to the left. [Review note: Both labels in the last sentence denote psi, not phi.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 77,
+      "original": "So let's take an example. So if a string function, but like I said, the assumption for the string function existence is quite restrictive. It's a 2D, no, it doesn't have to be two-dimensional, but it's incompressible and also the irrotational. I will talk later about what we mean by irrotational.",
+      "text": "So let's take an example. So if a stream function, but like I said, the assumption for the stream function existence is quite restrictive. It's a 2D, no, it doesn't have to be two-dimensional, but it's incompressible and also the irrotational. I will talk later about what we mean by irrotational. [Review note: This passage mixes the conditions for psi and phi. The plane-flow stream function used here follows from 2-D incompressible continuity; irrotationality is an additional condition for Laplace(psi)=0, not for existence of psi.]",
+      "reason": "Source-matched term: stream function; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 78,
+      "original": "and then incompressible as well, right? And then steady. So if a string function exists for one example, so u, v, w, u is a function of x, y, and v is a function of x, y, and w is a zero.",
+      "text": "and then incompressible as well, right? And then steady. So if a stream function exists for one example, so u, v, w, u is a function of x, y, and v is a function of x, y, and w is a zero.",
+      "reason": "Source-matched term: stream function"
+    },
+    {
+      "index": 81,
+      "original": "So for the 2D steady, incompressible, continuous integration is partial U, partial x, plus partial V, partial y, equals zero, so u is what? u was this one, a, x square minus y square, so if we differentiate with respect to x, that will be 2ax, right?",
+      "text": "So for the 2D steady, incompressible, continuity equation is partial U, partial x, plus partial V, partial y, equals zero, so u is what? u was this one, a, x square minus y square, so if we differentiate with respect to x, that will be 2ax, right?",
+      "reason": "Source-matched term: continuity equation"
+    },
+    {
+      "index": 83,
+      "original": "And then, let's define the string function, right? Because here, find, plot the velocity field. So we have two, we will bring up the string function.",
+      "text": "And then, let's define the stream function, right? Because here, find, plot the velocity field. So we have two, we will bring up the stream function.",
+      "reason": "Source-matched term: stream function"
+    },
+    {
+      "index": 86,
+      "original": "So let's find psi. So integrate equation 1 with respect to y. There will be a a x square y minus one-third a y square plus,",
+      "text": "So let's find psi. So integrate equation 1 with respect to y. There will be a a x square y minus one-third a y square plus, [Review note: The integral of -a*y^2 with respect to y is -a*y^3/3, not -a*y^2/3. Use the displayed PDF 34 equation rather than this exponent transcription.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 89,
+      "original": "and we have that. And that is what? The psi t of x is a minus b, that is a minus b, so we have 2a xy, right? So here, so f prime x equal constant, fx is a constant, f is a constant, right? So the stream function is psi, if we integrate that, then psi is a",
+      "text": "and we have that. And that is what? The psi t of x is a minus b, that is a minus b, so we have 2a xy, right? So here, so f prime x equal constant, fx is a constant, f is a constant, right? So the stream function is psi, if we integrate that, then psi is a [Review note: Comparing v=-partial psi/partial x with v=-2axy gives f-prime(x)=0 and hence f(x)=constant. Do not interpret f-prime as an arbitrary nonzero constant.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 91,
+      "original": "so a, let's see, a was taken over here, so I was looking to where the a has gone, so it's here, Psi is a x square y minus y square over 3 plus c,",
+      "text": "so a, let's see, a was taken over here, so I was looking to where the a has gone, so it's here, Psi is a x square y minus y square over 3 plus c, [Review note: The adopted expression from PDF 34 is psi=a*(x^2*y-y^3/3)+C; the transcribed square in the cubic term is not adopted.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 93,
+      "original": "So these are the x comma y, this is x comma y, and then we want to plot the string function by phi x comma y, okay? So at phi equals 0, 0 will be this one. If phi equals 0, if we divide that by y, then we have x plus y equals 0, x minus y. Sorry.",
+      "text": "So these are the x comma y, this is x comma y, and then we want to plot the stream function by phi x comma y, okay? So at phi equals 0, 0 will be this one. If phi equals 0, if we divide that by y, then we have x plus y equals 0, x minus y. Sorry. [Review note: The plotted scalar is psi. The speaker restarts the factorization in the next segment; use y*(3*x^2-y^2)=0 for the zero streamline.]",
+      "reason": "Source-matched term: stream function; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 96,
+      "original": "So that happens to be y equals zero. And then if you do the same, if y equals plus minus a, then that corresponds to this one.",
+      "text": "So that happens to be y equals zero. And then if you do the same, if y equals plus minus a, then that corresponds to this one. [Review note: The contour parameter being varied is psi, not the spatial coordinate y.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 97,
+      "original": "Okay, so do it. You can use a python or mallet to plot this one, minus a, and this is a.",
+      "text": "Okay, so do it. You can use a Python or MATLAB to plot this one, minus a, and this is a.",
+      "reason": "Source-matched term: Python or MATLAB"
+    },
+    {
+      "index": 99,
+      "original": "of the put sign. So, let's interpret this one. Incoming stream impinging against the 160 corners. So, for this one, let's assume that your shape is like that, then your flow will be, someone will be pinging directly into the surface, and some other will be moved away, avoid the wall.",
+      "text": "of the put sign. So, let's interpret this one. Incoming stream impinging against the 120-degree corner. So, for this one, let's assume that your shape is like that, then your flow will be, someone will be pinging directly into the surface, and some other will be moved away, avoid the wall. [Review note: The figure describes impingement on a 120-degree corner; this numeral is normalized to the source figure.]",
+      "reason": "Source-matched term: 120-degree corner; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 101,
+      "original": "So this example shows the stream function phi is directly drawn, is plotted, and it shows the streamlines of your flow, okay?",
+      "text": "So this example shows the stream function phi is directly drawn, is plotted, and it shows the streamlines of your flow, okay? [Review note: This example plots psi (stream function), not phi (velocity potential).]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 103,
+      "original": "vorticity is, we define the vorticity as a curl V. What is a curl V? So with jeta, right, we define vorticity as the Greek letter jeta, and the definition is a curl V, curl V is the mathematical definition. You know how to calculate the curl V, right, cross product with respect to gradient.",
+      "text": "vorticity is, we define the vorticity as a curl V. What is a curl V? So with zeta, right, we define vorticity as the Greek letter zeta, and the definition is a curl V, curl V is the mathematical definition. You know how to calculate the curl V, right, cross product with respect to gradient.",
+      "reason": "Source-matched term: zeta"
+    },
+    {
+      "index": 107,
+      "original": "So, if we replace V and U, then we have that. And that is what? That is the Laplacian of Poseidon, right?",
+      "text": "So, if we replace V and U, then we have that. And that is what? That is the Laplacian of psi, right? [Review note: Including the sign and direction, zeta=-(Laplacian of psi)*k for the adopted 2-D convention.]",
+      "reason": "Source-matched term: Laplacian of psi; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 108,
+      "original": "So, vorticity is defined as a curve, and in terms of the stream function,",
+      "text": "So, vorticity is defined as a curve, and in terms of the stream function, [Review note: The mathematical operation is curl V, as on PDF 36.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 109,
+      "original": "that is the reflation of the stream function. So what do we mean by the vorticity in terms of the physical meaning? The physical meaning of vorticity is the average rate of counterclockwise turning of a fluid element multiplied by 2. So vorticity is related to the turning of a fluid element.",
+      "text": "that is the Laplacian of the stream function. So what do we mean by the vorticity in terms of the physical meaning? The physical meaning of vorticity is the average rate of counterclockwise turning of a fluid element multiplied by 2. So vorticity is related to the turning of a fluid element.",
+      "reason": "Source-matched term: Laplacian of the stream function"
+    },
+    {
+      "index": 110,
+      "original": "Okay, so that's why we bring up the term of the rotational. So if the flow is rotational, meaning if it doesn't rotate, then curl V equals zero. So curl V equals zero, which means that your Laplacian of the Psi is zero.",
+      "text": "Okay, so that's why we bring up the term of the rotational. So if the flow is rotational, meaning if it doesn't rotate, then curl V equals zero. So curl V equals zero, which means that your Laplacian of the Psi is zero. [Review note: The zero-curl condition is irrotational, not rotational; the following definition and PDF 36 fix the meaning.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 111,
+      "original": "Okay, so if your flow, so irrotational meaning, we disregard, irrotational meaning, this is inviscid, inviscid, so no friction, okay, so if we don't consider friction, and if, which means if we don't consider the viscosity or inviscid, then you can define the stream function, and stream function",
+      "text": "Okay, so if your flow, so irrotational meaning, we disregard, irrotational meaning, this is inviscid, inviscid, so no friction, okay, so if we don't consider friction, and if, which means if we don't consider the viscosity or inviscid, then you can define the stream function, and stream function [Review note: Irrotational means curl V=0; inviscid means neglecting viscous forces. They are distinct conditions. Existence of psi does not require inviscid or irrotational flow.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 114,
+      "original": "Okay, then calculating that, calculation of the flow solution of the bestoxication are still, it's not possible. Like I said, it's still one of the seven millennia question.",
+      "text": "Okay, then calculating that, calculation of the flow solution of the Navier–Stokes equation are still, it's not possible. Like I said, it's still one of the seven millennia question. [Review note: This broad statement about the Navier–Stokes problem is not adopted as a claim that no solutions can be calculated. The mathematical Millennium problem and practical special/numerical solutions are different issues.]",
+      "reason": "Source-matched term: Navier–Stokes equation; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 117,
+      "original": "So if you see here, just fix the one A, given A, then you can define the stream lines, right? So there will be your stream lines. And then if you're interested in calculating the velocity, just differentiate the psi function to get the U and V, right?",
+      "text": "So if you see here, just fix the one A, given A, then you can define the stream lines, right? So there will be your stream lines. And then if you're interested in calculating the velocity, just differentiate the psi function to get the U and V, right? [Review note: The contour parameter in this discussion is psi; the coefficients of the given velocity field remain fixed.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 119,
+      "original": "Okay, then let's look further into the volatility and irrotationality.",
+      "text": "Okay, then let's look further into the vorticity and irrotationality.",
+      "reason": "Source-matched term: vorticity and irrotationality"
+    },
+    {
+      "index": 125,
+      "original": "So that is the sort of like Vy and this is the Vx. And then this much will be your acceleration in the x-direction multiplied by the d, change it in the v, right, so originally you have a u, v, but over dt, it may have some variation in the x-y direction,",
+      "text": "So that is the sort of like Vy and this is the Vx. And then this much will be your acceleration in the x-direction multiplied by the d, change it in the v, right, so originally you have a u, v, but over dt, it may have some variation in the x-y direction, [Review note: The small-line construction uses relative velocity gradients times dt to obtain relative displacements. It is not an acceleration-times-dt formula.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 128,
+      "original": "But if we think about BA becoming B prime, A prime, then there is a change in the line in a direction to anti-clockwise rotations, right?",
+      "text": "But if we think about BA becoming B prime, A prime, then there is a change in the line in a direction to anti-clockwise rotations, right? [Review note: With the sketch convention, positive beta is a clockwise tilt of the initially vertical line, hence the minus sign in omega_z=(alpha_dot-beta_dot)/2.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 132,
+      "original": "for the 3D flow, we have omega x, omega y, and omega z, right? So exactly, angular velocity omega is wx, omega x, omega y, omega z, then that is exactly half curly.",
+      "text": "for the 3D flow, we have omega x, omega y, and omega z, right? So exactly, angular velocity omega is wx, omega x, omega y, omega z, then that is exactly half curl V.",
+      "reason": "Source-matched term: half curl V"
+    },
+    {
+      "index": 133,
+      "original": "So, what I'm going through is, I haven't relayed the vorticity as an angular rate, but we just check the mathematics. Curl V is a jeta, right?",
+      "text": "So, what I'm going through is, I haven't relayed the vorticity as an angular rate, but we just check the mathematics. Curl V is a zeta, right?",
+      "reason": "Source-matched term: zeta"
+    },
+    {
+      "index": 134,
+      "original": "okay, so jeta, jeta, right, jeta, so curvy is related to the angular velocity of your fluid element, okay, so here, right, vorticity, vorticity jeta is defined as a vector twice as large as angular, angular, give me one sec,",
+      "text": "okay, so zeta, zeta, right, zeta, so curl V is related to the angular velocity of your fluid element, okay, so here, right, vorticity, vorticity zeta is defined as a vector twice as large as angular, angular, give me one sec,",
+      "reason": "Source-matched term: zeta; Source-matched term: curl V"
+    },
+    {
+      "index": 135,
+      "original": "angular velocity. I'm going to use angular rate, but angular velocity is a more physical term. So vorticity is related to the angular velocity, how much? By half. So jeta equals, by twice. So jeta is 2 omega, that is the curl V, or your angular velocity omega is half curl V, or",
+      "text": "angular velocity. I'm going to use angular rate, but angular velocity is a more physical term. So vorticity is related to the angular velocity, how much? By half. So zeta equals, by twice. So zeta is 2 omega, that is the curl V, or your angular velocity omega is half curl V, or",
+      "reason": "Source-matched term: zeta"
+    },
+    {
+      "index": 136,
+      "original": "have vorticity. So, cull v, or angular velocity, they are the mathematical term, but vorticity, this is a physical term to relate how much of your flow is rotating.",
+      "text": "have vorticity. So, curl V, or angular velocity, they are the mathematical term, but vorticity, this is a physical term to relate how much of your flow is rotating.",
+      "reason": "Source-matched term: curl V"
+    },
+    {
+      "index": 137,
+      "original": "So now we define what do we mean by irrotational flow. Irrotational flow meaning flows have no angular velocity, so flows have negligible or zero of roticity or angular velocity. So call V or Jeta equals zero, that is, we call it as a irrotational flow.",
+      "text": "So now we define what do we mean by irrotational flow. Irrotational flow meaning flows have no angular velocity, so flows have negligible or zero of vorticity or angular velocity. So call V or zeta equals zero, that is, we call it as a irrotational flow.",
+      "reason": "Source-matched term: zeta; Source-matched term: vorticity"
+    },
+    {
+      "index": 138,
+      "original": "Okay? And then rotating flow is not equivalent to the rotational flow. So here, let's take an example. Free vortex and then forced vortex. Free vortex is a rotational vortex.",
+      "text": "Okay? And then rotating flow is not equivalent to the rotational flow. So here, let's take an example. Free vortex and then forced vortex. Free vortex is a rotational vortex. [Review note: PDF 40 and the next calculations identify the free vortex as irrotational for r>0. Rotational in the final ASR phrase is not the adopted classification.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 141,
+      "original": "and the force velocity, this is the rotational vortex and then there is a rigid body vortex. For example, your velocity, radial velocity is zero and your azimuthal velocity theta is equivalent to the CR, right? So here Vtheta is which means that this is what we meant, Vtheta, okay?",
+      "text": "and the forced vortex, this is the rotational vortex and then there is a rigid body vortex. For example, your velocity, radial velocity is zero and your azimuthal velocity theta is equivalent to the CR, right? So here Vtheta is which means that this is what we meant, Vtheta, okay?",
+      "reason": "Source-matched term: forced vortex"
+    },
+    {
+      "index": 142,
+      "original": "okay, so that's why women, so at this location, you have, sorry, I was taking an example of the VR, so at this one, theta equals zero, zero, at this one, your Vtheta is so small, and here, Vtheta is large, right, right, right, so here, at this location,",
+      "text": "okay, so that's why women, so at this location, you have, sorry, I was taking an example of the VR, so at this one, theta equals zero, zero, at this one, your Vtheta is so small, and here, Vtheta is large, right, right, right, so here, at this location, [Review note: This gestural explanation alternates between plots. Use PDF 40: free vortex v_theta=K/r, forced vortex v_theta=c*r. The radial velocity is zero in both models.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 144,
+      "original": "So anyways, your Vθ velocity is anti-proportional to the radius. So force velocity is the opposite. Vθ is directly proportional to the CR. So you have smaller, near the origin, Rθ, larger here. So this one is moving small, this much, this one, this moving that one, that one.",
+      "text": "So anyways, your Vθ velocity is anti-proportional to the radius. So forced vortex is the opposite. Vθ is directly proportional to the CR. So you have smaller, near the origin, Rθ, larger here. So this one is moving small, this much, this one, this moving that one, that one.",
+      "reason": "Source-matched term: forced vortex"
+    },
+    {
+      "index": 146,
+      "original": "So this is the example, and then I didn't, so this is the animation, animation, and then this one is the forced vortex. I will see, this is PDF. During the lecture material, I will show you the example, so forced velocity, this is a rotational flow, right?",
+      "text": "So this is the example, and then I didn't, so this is the animation, animation, and then this one is the forced vortex. I will see, this is PDF. During the lecture material, I will show you the example, so forced vortex, this is a rotational flow, right?",
+      "reason": "Source-matched term: forced vortex"
+    },
+    {
+      "index": 148,
+      "original": "And then concepts of the free vortex and force vortex are used for analysis of wingtie vortex, hurricane, plug-hold vortex, and stuff like that.",
+      "text": "And then concepts of the free vortex and forced vortex are used for analysis of wing-tip vortex, hurricane, plughole vortex, and stuff like that.",
+      "reason": "Source-matched term: forced vortex; Source-matched term: wing-tip vortex; Source-matched term: plughole vortex"
+    },
+    {
+      "index": 149,
+      "original": "So those are the, a lot of times, they are the force vortex and rotational flow.",
+      "text": "So those are the, a lot of times, they are the forced vortex and rotational flow. [Review note: The listed photographs are applications of vortex models, not proof that every region of each real flow is a forced vortex.]",
+      "reason": "Source-matched term: forced vortex; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 150,
+      "original": "Ok guys, let's take an example of the wet flow.",
+      "text": "Ok guys, let's take an example of the Couette flow.",
+      "reason": "Source-matched term: Couette flow"
+    },
+    {
+      "index": 151,
+      "original": "So consider two plane flows. Number one is the wet flow, and this is the potential flow.",
+      "text": "So consider two plane flows. Number one is the Couette flow, and this is the potential flow.",
+      "reason": "Source-matched term: Couette flow"
+    },
+    {
+      "index": 152,
+      "original": "sorry, so there was some, so Gouette flow should cohere, so this is a Gouette flow, Gouette flow, the velocity component is Ay, V, where A is a constant, and then potential vortex flow, which is a useful model, such as tornadoes and whirlpool, and here Vr equals 0, so here Vr equals 0, and V theta is K over",
+      "text": "sorry, so there was some, so Couette flow should cohere, so this is a Couette flow, Couette flow, the velocity component is Ay, V, where A is a constant, and then potential vortex flow, which is a useful model, such as tornadoes and whirlpool, and here Vr equals 0, so here Vr equals 0, and V theta is K over [Review note: The lecturer corrects the Couette/potential-vortex figure label during this example. The circular plot belongs to the potential vortex, not Couette flow.]",
+      "reason": "Source-matched term: Couette; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 153,
+      "original": "R, K over R, so that's the potential flow, where K is a constant. Check if above those two flows, wet flow and potential vortex flows are rotational, so for the wet flow, omega z is half dB dx minus u dy, this is minus half, so angular velocity",
+      "text": "R, K over R, so that's the potential flow, where K is a constant. Check if above those two flows, Couette flow and potential vortex flows are rotational, so for the Couette flow, omega z is half dB dx minus u dy, this is minus half, so angular velocity [Review note: For u=a*y, v=0, the result is omega_z=-a/2 and zeta_z=-a; the coefficient a is lost in the ASR fragment minus half.]",
+      "reason": "Source-matched term: Couette flow; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 155,
+      "original": "viscous vorticity. So that is a viscous stress, which means that there is a non-zero viscous stress. So viscous is not negligible because of the velocity gradient. So this is a rotational flow. Okay. Interesting. Rotational flow. So you may wonder, oh, give me one second, where is the rotating?",
+      "text": "viscous vorticity. So that is a viscous stress, which means that there is a non-zero viscous stress. So viscous is not negligible because of the velocity gradient. So this is a rotational flow. Okay. Interesting. Rotational flow. So you may wonder, oh, give me one second, where is the rotating? [Review note: For this particular Couette field, the nonzero velocity gradient produces both shear stress (if mu is nonzero) and vorticity. Nonzero viscous stress is not a general definition of rotational flow.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 161,
+      "original": "So please make a difference between the streamline and the streamline function.",
+      "text": "So please make a difference between the streamline and the streamline function. [Review note: The surrounding passage distinguishes stream function psi from velocity potential phi. The repeated streamline terms in this ASR fragment are ambiguous.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 164,
+      "original": "And then the lines of the constant potential function is called the potential lines. So potential lines is not a physical line.",
+      "text": "And then the lines of the constant potential function is called the potential lines. So potential lines is not a physical line. [Review note: A potential line is a level set of phi, not a particle path or a streamline in general.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 165,
+      "original": "Then physical line is a stream line. If you draw the stream function, that is the stream line. Then there is a typo. If a plane, not a plane, if a plane, 2D, flow is irrotational. Irrotational means that",
+      "text": "Then physical line is a stream line. If you draw the stream function, that is the stream line. Then there is a typo. If a plane, not a plane, if a plane, 2D, flow is irrotational. Irrotational means that [Review note: The explicit typo correction is plan to plane (2-D) flow on PDF 45.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 166,
+      "original": "let cull v equal 0, then there is no angular velocity is 0, then it doesn't have to be omega z for the function, give me one sec, right, your omega equals 0, then your stream function, potential function, both exist, this is very important,",
+      "text": "let curl V equal 0, then there is no angular velocity is 0, then it doesn't have to be omega z for the function, give me one sec, right, your omega equals 0, then your stream function, potential function, both exist, this is very important,",
+      "reason": "Source-matched term: curl V"
+    },
+    {
+      "index": 167,
+      "original": "And if a 2D plane is rotational and stream function and potential function both exist, then stream lines and potential lines are everywhere mutually orthogonal, perpendicular, except at a stagnation point.",
+      "text": "And if a 2D plane is rotational and stream function and potential function both exist, then stream lines and potential lines are everywhere mutually orthogonal, perpendicular, except at a stagnation point. [Review note: The condition is irrotational, as in PDF 45 and the preceding sentence. At non-stagnation points the psi and phi contours are perpendicular.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 168,
+      "original": "So u is partial phi partial x and partial psi partial y and v is partial phi partial y and then minus partial psi partial x and the above equations are also called the cosy-rimen equation but it means that",
+      "text": "So u is partial phi partial x and partial psi partial y and v is partial phi partial y and then minus partial psi partial x and the above equations are also called the Cauchy–Riemann equation but it means that",
+      "reason": "Source-matched term: Cauchy–Riemann"
+    },
+    {
+      "index": 170,
+      "original": "That is the Caussi-Riemann equation.",
+      "text": "That is the Cauchy–Riemann equation.",
+      "reason": "Source-matched term: Cauchy–Riemann"
+    },
+    {
+      "index": 171,
+      "original": "and then we saw the string function satisfies the Laplace equation, but phi potential function is also orthogonal to the, perpendicular to the string function, so it also should satisfy the Laplace equation.",
+      "text": "and then we saw the stream function satisfies the Laplace equation, but phi potential function is also orthogonal to the, perpendicular to the stream function, so it also should satisfy the Laplace equation. [Review note: Laplace(phi)=0 follows from incompressible continuity with V=grad(phi); Laplace(psi)=0 follows from zero vorticity. Orthogonality alone is not a derivation of both equations.]",
+      "reason": "Source-matched term: stream function; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 173,
+      "original": "So let's consider, I will look further into the relationship between the velocity potential and also the stream function. So let's now consider the momentum equation of inversed frictionless flow. So here I was utilizing the capital D to represent the total derivative, total derivative, and then right-hand side,",
+      "text": "So let's consider, I will look further into the relationship between the velocity potential and also the stream function. So let's now consider the momentum equation of inviscid frictionless flow. So here I was utilizing the capital D to represent the total derivative, total derivative, and then right-hand side,",
+      "reason": "Source-matched term: inviscid"
+    },
+    {
+      "index": 176,
+      "original": "V is gradient of the V-square divided by 2, this is minus V cross-flutter of this one. So this is the vector identity, and then you can derive that one, where V is U, V, W, N, gradient V,",
+      "text": "V is gradient of the V-square divided by 2, this is minus V cross-flutter of this one. So this is the vector identity, and then you can derive that one, where V is U, V, W, N, gradient V, [Review note: The vector identity is (V dot grad)V=grad(|V|^2/2)-V cross (curl V).]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 178,
+      "original": "plus, right? So, we have that relation. So, the second one becomes that one, okay? So, and this one is, this one is a vorticity jeta, so we have that relation.",
+      "text": "plus, right? So, we have that relation. So, the second one becomes that one, okay? So, and this one is, this one is a vorticity zeta, so we have that relation.",
+      "reason": "Source-matched term: zeta"
+    },
+    {
+      "index": 179,
+      "original": "So left-hand side, if we divide both sides by rho, we have that, and then right-hand side moves to the left-hand side, 1 over rho divided by partial g, p minus g bar equals 0, right?",
+      "text": "So left-hand side, if we divide both sides by rho, we have that, and then right-hand side moves to the left-hand side, 1 over rho divided by partial g, p minus g bar equals 0, right? [Review note: The pressure term is (1/rho)*grad(p), not division by a derivative. Gravity enters as the acceleration vector g.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 180,
+      "original": "So here, we have that relation from the momentum equation of invasives flow, and then for an arbitrary displacement dr,",
+      "text": "So here, we have that relation from the momentum equation of inviscid flow, and then for an arbitrary displacement dr,",
+      "reason": "Source-matched term: inviscid flow"
+    },
+    {
+      "index": 182,
+      "original": "equation. So if d1 and d1 become 0, then we obtain the Bernoulli equation. So take d1 away, then integrate over time, b and delta p, then we have Bernoulli equation. So physically, which means that dr is placed on a streamline, so this is a parallel.",
+      "text": "equation. So if d1 and d1 become 0, then we obtain the Bernoulli equation. So take d1 away, then integrate over time, b and delta p, then we have Bernoulli equation. So physically, which means that dr is placed on a streamline, so this is a parallel. [Review note: The vanishing term is (zeta cross V) dot dr. Bernoulli is obtained by spatial integration along the path; integrate over time is not the operation in PDF 47.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 187,
+      "original": "the laplacian of the phi. So I told you, if flow is irrotational, frictionless, inversed, then laplacian of the stream function and laplacian of the potential function satisfies, so we derive the laplacian of the velocity potential, and then I will derive the potential function phi is orthogonal to the stream function,",
+      "text": "the laplacian of the phi. So I told you, if flow is irrotational, frictionless, inviscid, then laplacian of the stream function and laplacian of the potential function satisfies, so we derive the laplacian of the velocity potential, and then I will derive the potential function phi is orthogonal to the stream function, [Review note: For the stated model, the potential satisfies Laplace(phi)=0 because continuity is div(V)=0. Irrotationality and incompressibility must not be conflated.]",
+      "reason": "Source-matched term: inviscid; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 188,
+      "original": "So consider 2D flow u as a potential function or velocity potential, v as a potential function and velocity potential, then for a constant phi line, d phi equals zero, constant stream line, psi equals zero, so we have that and that, and if we take the inner product, that becomes a zero, right?",
+      "text": "So consider 2D flow u as a potential function or velocity potential, v as a potential function and velocity potential, then for a constant phi line, d phi equals zero, constant stream line, psi equals zero, so we have that and that, and if we take the inner product, that becomes a zero, right? [Review note: Along a constant-psi line dpsi=0, not psi=0. Use dphi=u dx+v dy and dpsi=-v dx+u dy to obtain perpendicular contour directions.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 192,
+      "original": "and then even the separated flow, separation also we will learn later, wake, we don't apply the potential flow, only outside, okay, so those are the viscous regions, viscous regions where Bernoulli's equation fails, laminar boundary layer, chaplain boundary layer, separated flow and wake flow, okay, some example, so for a, this is example of a frictionless irritation,",
+      "text": "and then even the separated flow, separation also we will learn later, wake, we don't apply the potential flow, only outside, okay, so those are the viscous regions, viscous regions where Bernoulli's equation fails, laminar boundary layer, turbulent boundary layer, separated flow and wake flow, okay, some example, so for a, this is example of a frictionless irrotational flow,",
+      "reason": "Source-matched term: turbulent boundary layer; Source-matched term: frictionless irrotational flow"
+    },
+    {
+      "index": 194,
+      "original": "So again, let's confirm the flow is irrotational. So if we take the curvy, or angular velocity, that one, then we say that is zero. So we saw, okay, so this is irrotational. And then to find five velocity potential, u is a d5 dx, we have it, right? So integrate that with respect to x.",
+      "text": "So again, let's confirm the flow is irrotational. So if we take the curl V, or angular velocity, that one, then we say that is zero. So we saw, okay, so this is irrotational. And then to find five velocity potential, u is a d5 dx, we have it, right? So integrate that with respect to x. [Review note: PDF 51 has a printed intermediate derivative error. Direct differentiation gives partial v/partial x-partial u/partial y=-2ay-(-2ay)=0. The conclusion of zero curl is unchanged.]",
+      "reason": "Source-matched term: curl V; Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 195,
+      "original": "x, then we have that, and this time our constant is a function of f . And then if we differentiate that equation with respect to y, differentiate it, then we have this become the 0, that is minus 2a xy, and then f' y, that is minus 2a xy.",
+      "text": "x, then we have that, and this time our constant is a function of f . And then if we differentiate that equation with respect to y, differentiate it, then we have this become the 0, that is minus 2a xy, and then f' y, that is minus 2a xy. [Review note: The integration function is f(y), because u was integrated with respect to x.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 197,
+      "original": "the results are shown. So here, we can do the same thing like we did for the potential function. So if phi equals 0, then we have x3y squared minus x squared,",
+      "text": "the results are shown. So here, we can do the same thing like we did for the potential function. So if phi equals 0, then we have x3y squared minus x squared, [Review note: The source figure uses the sign-reversed contour label relative to the preceding potential definition. With phi=a*(x^3/3-x*y^2), use x^3-3*x*y^2=3*phi/a; the zero contour is unchanged.]",
+      "reason": "Editorial clarification; not lecturer speech"
+    },
+    {
+      "index": 198,
+      "original": "equals zero, that is x, scale of 3y plus minus x equals zero, right? So we have that, sorry, we have this one, and that one, that one, right? That one. And then, for other types of phi, whether phi is a, minus a, minus 2a,",
+      "text": "equals zero, that is x, scale of 3y plus minus x equals zero, right? So we have that, sorry, we have this one, and that one, that one, right? That one. And then, for other types of phi, whether phi is a, minus a, minus 2a, [Review note: The zero-potential contour factors as x*(x^2-3*y^2)=0, hence x=0 or y=+/-x/sqrt(3).]",
+      "reason": "Editorial clarification; not lecturer speech"
+    }
+  ]
+}
