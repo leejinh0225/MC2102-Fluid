@@ -487,7 +487,7 @@
               <span>원본 PDF 03/23</span><span>강의 00:02:58–00:05:11</span>
             </figcaption>
           </figure>
-          <div class="note-stack"><div class="callout source-review" id="source-check-03" data-review-kind="caution"><h3>표기·조건 주의 · 전단력에 저항하지 못한다는 말의 조건</h3><p><strong>원본 표기:</strong> 유체가 shear force(전단력)에 저항할 수 없다는 표현은 정지 상태에 대한 설명입니다.</p><div>보통의 유체는 지속적인 전단응력을 받으면 계속 변형하므로 <strong>그 상태에서 정지 평형을 유지하지 못합니다.</strong> 흐르는 점성 유체는 전단응력을 전달할 수 있습니다.</div><p><strong>판단 근거:</strong> 뒤에서 배우는 τ=μ du/dy가 바로 유동 중의 점성 전단응력입니다. “유체에는 전단응력이 전혀 없다”는 뜻으로 읽으면 이 법칙과 충돌합니다.</p></div>
+          <div class="note-stack"><div class="callout source-review" id="source-check-03" data-review-kind="caution"><h3>표기·조건 주의 · 전단력에 저항하지 못한다는 말의 조건</h3><p><strong>원본 표기:</strong> 유체가 shear force(전단력)에 저항할 수 없다는 표현은 정지 상태에 대한 설명입니다.</p><div>보통의 유체는 지속적인 전단응력을 받으면 계속 변형하므로 <strong>그 상태에서 정지 평형을 유지하지 못합니다.</strong> 흐르는 점성 유체는 전단응력을 전달할 수 있습니다.</div><p><strong>판단 근거:</strong> 뒤에서 배우는 τ=μ du/dy가 바로 유동 중의 점성 전단응력입니다. “유체에는 전단응력이 전혀 없다”는 뜻으로 읽으면 이 법칙과 충돌합니다.</p><p>고체도 변형되므로 변형 여부만으로 유체를 구분하지 않습니다. 구분 기준은 constant shear stress(일정 전단응력) 아래에서 static equilibrium(정적 평형)에 도달할 수 있느냐입니다.</p></div>
             <div class="grid-2">
               <div class="card">
                 <h3>Solid(고체)</h3>
@@ -509,11 +509,7 @@
               Fluid statics(유체정역학)는 fluid at rest(정지 유체)를, fluid
               dynamics(유체동역학)는 fluid in motion(운동하는 유체)을 다룹니다.
             </div>
-            <div class="warning">
-              <strong>표현 교정:</strong> “유체가 변형되는가”가 기준이 아닙니다.
-              고체도 변형됩니다. 핵심은 constant shear stress(일정 전단응력)
-              아래에서 static equilibrium(정적 평형)에 도달할 수 있느냐입니다.
-            </div>
+
           </div>
         </section>
 
@@ -965,7 +961,7 @@
               <span>원본 PDF 10/23</span><span>강의 00:25:08–00:29:40</span>
             </figcaption>
           </figure>
-          <div class="note-stack"><div class="callout source-review" id="source-check-10" data-review-kind="error"><h3>원본 오류 확인 · 온도 환산 상수와 에너지 단위</h3><p><strong>원본 표기:</strong> 온도 환산식의 273.16, 459.69는 각각 273.15, 459.67로 고쳐야 합니다. 에너지식에는 kJ/kg와 SI 속도·높이 단위의 환산도 필요합니다.</p><div><span class="formula">T[K] = T[°C] + 273.15<br>T[°R] = T[°F] + 459.67<br>e[kJ/kg] = u[kJ/kg] + (V²/2 + gz)/1000</span></div><p><strong>판단 근거:</strong> V를 m/s, g를 m/s², z를 m로 넣으면 V²/2와 gz는 J/kg입니다. u와 함께 kJ/kg로 쓰려면 1000으로 나눕니다. <a href="https://www.nist.gov/pml/owm/si-units-temperature">NIST 온도 환산 기준</a>과 대조했습니다. 14쪽 경험식의 기준온도 273.16 K는 별도 상수이므로 그대로 둡니다.</p></div>
+          <div class="note-stack"><div class="callout source-review" id="source-check-10" data-review-kind="error"><h3>원본 오류 확인 · 온도 환산 상수와 에너지 단위</h3><p><strong>원본 표기:</strong> 온도 환산식의 273.16, 459.69는 각각 273.15, 459.67로 고쳐야 합니다. 에너지식에는 kJ/kg와 SI 속도·높이 단위의 환산도 필요합니다.</p><div><span class="formula">T[K] = T[°C] + 273.15<br>T[°R] = T[°F] + 459.67<br>e[kJ/kg] = u[kJ/kg] + (V²/2 + gz)/1000</span></div><p><strong>판단 근거:</strong> V를 m/s, g를 m/s², z를 m로 넣으면 V²/2와 gz는 J/kg입니다. u와 함께 kJ/kg로 쓰려면 1000으로 나눕니다. <a href="https://www.nist.gov/pml/owm/si-units-temperature">NIST 온도 환산 기준</a>과 대조했습니다. 14쪽 경험식의 기준온도 273.16 K는 별도 상수이므로 그대로 둡니다.</p><p>환산 상수는 <a href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9" target="_blank" rel="noreferrer">NIST 단위 환산표</a>에서도 확인할 수 있습니다.</p></div>
             <div class="grid-2">
               <div class="card">
                 <h3>Pressure(압력)</h3>
@@ -998,17 +994,7 @@
                 Rankine(랭킨)은 Fahrenheit(화씨)와 간격이 같은 절대온도
                 척도입니다.
               </p>
-              <div class="warning" style="margin-top: 16px">
-                <strong>원본 표기 교정:</strong> 슬라이드에는 <em>273.16</em>과
-                <em>459.69</em>가 표시되어 있지만 환산 상수는 각각
-                <em>273.15</em>, <em>459.67</em>입니다.
-                <a
-                  href="https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9"
-                  target="_blank"
-                  rel="noreferrer"
-                  >NIST 온도 환산 기준</a
-                >을 따릅니다.
-              </div>
+
             </div>
             <div class="grid-2">
               <div class="card">
@@ -1432,14 +1418,7 @@
                 <em>T</em>에는 absolute temperature(절대온도)를 K 단위로
                 넣습니다. 물의 기준값과 계수는 위의 값을 사용합니다.
               </p>
-              <div class="warning">
-                <strong>슬라이드 표기 실수 추정:</strong>
-                슬라이드의 <em>T/T<sub>0</sub></em>를 그대로 적용하면 온도가
-                올라갈 때 점성이 증가하여 액체에 대한 설명과 충돌합니다.
-                교재의 식과 비교했을 때 원본의 온도비가 반대로 적힌
-                실수로 추정되므로, 여기서는 <em>T<sub>0</sub>/T</em>로
-                계산합니다.
-              </div>
+
               <p>
                 교재 대조식의 양변에 지수함수를 적용하면 점성계수를 직접
                 계산할 수 있습니다.
