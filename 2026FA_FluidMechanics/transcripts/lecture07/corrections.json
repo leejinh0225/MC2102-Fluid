@@ -1,0 +1,357 @@
+{
+  "title": "Lecture 7 · Dimensional Analysis and Similarity — reviewed English transcript",
+  "review_basis": "Week 7 English recording, displayed pages and annotations, and Chapter 5 handout",
+  "review_method": "Review of timestamped ASR against slides, symbols and sampled recording frames; no verbatim certainty for ambiguous speech.",
+  "notes": [
+    "Transcript edits normalize technical terms and symbols using the slide and surrounding utterance. Ambiguous algebra is not reconstructed as a quotation.",
+    "36, 78–83: use Θ for temperature, F in newtons and pressure in N/m². The five-variable example has dimension rank 3, hence exactly two independent groups.",
+    "103–107: the length balance includes +1 from F; read a = b = −2 and c = −1. The normalization on the slide is F/(ρV²L²).",
+    "133–134, 217–221: the wave is a surface gravity wave. The Froude speed convention is V/√(gL). T in the model-time ratio denotes time, not temperature.",
+    "154–157: Ma = V/a; the force ratio is Ma². 172–179: use t* = tV/L. Eu is the Euler number, not the Eckert number.",
+    "205–206: constant length and time ratios give a constant velocity ratio; their numerical values need not be equal.",
+    "234–239: the third extra variable is pipe length L. Reynolds number uses D; the on-screen notes amend those symbols.",
+    "248: the ASR reads 1.155; the displayed fit reads 0.155. Use the displayed coefficient in the study note. The first-row table on p.33 and the worked substitution on p.35 give different pressure drops."
+  ],
+  "corrections": [
+    {
+      "index": 3,
+      "text": "smaller model, mock-up, we often call it a mock-up, mock-up model, and we have the mock-up model, how should we set the velocity, free stream velocity, or atmospheric temperature, and stuff like that, so that has to be consistent with the scaled down model size, length size, right, so this chapter is all about how to do the dimensional analysis, when you do the"
+    },
+    {
+      "index": 4,
+      "text": "scale down experiments and then how can you define the flow similarity okay so the learning objectives of the chapter 5 is to study planning study planning presentation and interpretation of the experimental data and then the most important concept of the chapter 5 is the pi theorem"
+    },
+    {
+      "index": 17,
+      "text": "aircraft in the air or your car on the road or your submarine under the water so that we can think about drag force right so let's suppose that we know the force F on a particular body shape immersed in a stream of the fluid that depends on what the body length size and the stream velocity V and fluid density rho and viscosity mu"
+    },
+    {
+      "index": 20,
+      "text": "So probably drag force around your small fan or drag force around an aircraft can be so much different, right? But if you nondimensionalize this one, like drag divided by half row square, and then your length, [Review note: The dynamic pressure is ½ρV²; slide 4 defines the force group with ρV²L² instead.]"
+    },
+    {
+      "index": 22,
+      "text": "So with a dimensional analysis, like Buckingham pi theorem, we can immediately reduce the above relation to the equivalent form of"
+    },
+    {
+      "index": 24,
+      "text": "F is a function of this is what that that is the definition of what the Reynolds number right so that is the Reynolds number so this is the relations among the dimensional variables but we can reduce that system into this one so your force coefficient of your force is a function of the Reynolds number"
+    },
+    {
+      "index": 26,
+      "text": "That's exactly what the Buckingham pi theorem is targeting for"
+    },
+    {
+      "index": 29,
+      "text": "So what it says is that as long as your Reynolds number for the model and your Reynolds number for the prototype is the same, then we can say the force coefficient on the model is the same as the force coefficient on the prototype"
+    },
+    {
+      "index": 30,
+      "text": "okay so that is very important relation and your force coefficients are dependent on the Reynolds number so we derived this non-dimensional relation from the dimensional system right and then how can you find this relation that is from the pi theorem so we are going to"
+    },
+    {
+      "index": 36,
+      "text": "So check each term to verify this using MLT theta. Do you remember what was the MLT theta? That is the unit systems, right? So M represents M is for the mass, kg, L for the length, and T for the time, and theta for the force, right? So E is pressure is what? Pressure, the demand, the using those MLT theta [Review note: Θ is the temperature dimension in MLTΘ.]"
+    },
+    {
+      "index": 47,
+      "text": "so those are the quantities varying in a given case and would be plotted against each other to show the data and then dimensional constants meaning it may vary from case to case but are held constant during a given run so for incompressible flow so the Bernoulli equation of the above form holds for the incompressible flow right so incompressible"
+    },
+    {
+      "index": 50,
+      "text": "and then angles and revolutions those are pure angles in radian and then revolutions how many revolutions you carried out in a rotation so those are the dimensionless okay okay then I will move on to the Buckingham pi theorem so there are many methods that reduce a number of dimensional"
+    },
+    {
+      "index": 56,
+      "text": "L, V, rho, mu, and force. We have five total variables. And then we have the out of five, we were able to draw two pi groups, right?"
+    },
+    {
+      "index": 59,
+      "text": "then it can be reduced to a relation between k dimensionless variables or pi. Let's see, so there will be a reduction, j will be n minus k, where n represents the number of the total dimensional variable"
+    },
+    {
+      "index": 62,
+      "text": "so for example like previously we took like rho, density, velocity, or L right so those are the popular so widely used variable okay don't pick like you know don't pick your surface tension or something like that okay so J so we typically collect like LMT"
+    },
+    {
+      "index": 65,
+      "text": "The equation contains how many total variables? Five dimensional variables of f, l, v, rho, and mu. And also described by how many? Three basic dimensions of the M, L, T."
+    },
+    {
+      "index": 69,
+      "text": "that can relate your dimensional system. So we may have more pi groups than this minimum on a very rare occasions."
+    },
+    {
+      "index": 78,
+      "text": "okay and then list dimensions of each variable using MLT system so f is what f is a force so there will be like i said newton per meter square and then newton is f equals ma right so if you do the dimensional analysis there will be mass multiplied by the length multiplied by [Review note: F is measured in N; N/m² is the unit of pressure.]"
+    },
+    {
+      "index": 80,
+      "text": "and then density, density is the mass divided by the volume, so mass multiplied by the L2 minus 3 and then mu is the viscosity, right, so check the dimension of the viscosity, that is L kilogram multiplied by the meter [Review note: Dynamic viscosity μ has SI units kg/(m·s).]"
+    },
+    {
+      "index": 83,
+      "text": "where k equals n minus j, that is 5 minus 3, so 5 minus 3 is 2, 2, so your k is always smaller than or equal to 2, but minimum is 2, [Review note: For these variables the rank is three, so exactly two independent groups are required.]"
+    },
+    {
+      "index": 90,
+      "text": "And also, oh, there's a rho here."
+    },
+    {
+      "index": 92,
+      "text": "for example, test powers over Lv rho, so if we set Lv rho, we can select other Lv mu, L rho mu, but let's pick Lv rho, okay, three, then it should be, and then if we do the power, if we carry out, so it should be the dimensionless, right?"
+    },
+    {
+      "index": 99,
+      "text": "okay so step five is combine lv, rho so these are our selection of what scaling or repeating variables repeating variables combine lv, rho with one additional variable to find two pi products"
+    },
+    {
+      "index": 103,
+      "text": "C inverse E, and dimension of the rho is the ML to minus 3 C, and then dimension of the F is ML to inverse of the T squares, right? [Review note: The spoken powers are unclear in the ASR. The slide uses [V] = LT⁻¹ and [F] = MLT⁻².]"
+    },
+    {
+      "index": 104,
+      "text": "okay so that is will be they should be because it's pi group, pi variable should be dimensional is so m0 m20 l20 t20 so if we do the arithmetic on the exponent then in terms of the length length a plus b minus 3c [Review note: All three net exponents must be zero. The length equation on p.12 needs +1 from F.]"
+    },
+    {
+      "index": 105,
+      "text": "equals zero. In a mass, c plus one should be zero. And for time, minus b minus two equals zero. So if we do this, if you solve this linear equation, then a becomes minus two, b becomes minus two,"
+    },
+    {
+      "index": 107,
+      "text": "so that will be F divided by rho v square l square so that is exactly the definition of the force coefficient so sometimes this l square can be an area we consider as an area so force divided by the dynamic pressure half rho square divided by the area is the force coefficient"
+    },
+    {
+      "index": 108,
+      "text": "So exactly we derived the first non-dimensional pi. Pi is the force coefficient. And then we will do the same thing to find pi2. So we have another variable of the mu, right? So next, consider viscosity mu. And this time we select power of minus one, power minus one,"
+    },
+    {
+      "index": 109,
+      "text": "for mu, and place it in the denominator. So for the dimensional analysis, we will set the power of L to A, power of V to B, power of rho to C, and the power of mu into minus 1."
+    },
+    {
+      "index": 110,
+      "text": "So there will be, the power of L is L, right? L to A, and then power of V will be L T inverse B, rho is the M L to the minus three, raised to c, and then M L inverse T inverse minus 1"
+    },
+    {
+      "index": 113,
+      "text": "so if you insert back to this relation then pi 2 will be L1, V1, rho 1, mu to the power minus one that will be rho VL divided by mu definition of this one is the Reynolds number right so just write the second pi variable"
+    },
+    {
+      "index": 115,
+      "text": "pi 1 is the function of pi 2 which means f over rho V squared L squared is the function of rho v L divided by mu that is the function of the Reynolds number"
+    },
+    {
+      "index": 118,
+      "text": "in this channel. And there is a function of the diameter of the pipe density, viscosity, and then velocity. And then how many variables? You have one, two, three, four, five. Five variables, right? So D, rho, mu, V, delta p per unit length. And then we did follows by the basic MLT system."
+    },
+    {
+      "index": 119,
+      "text": "so rank of the dimensional matrix is J, J equals 3, so K can be 2, then you are repeating variables, let's select D, V, rho, then if you multiply into mu, if you multiply into delta PL, then you can find pi 1 and pi 2, so pi 1 is the right,"
+    },
+    {
+      "index": 123,
+      "text": "using the method of the pi theorem, the resultant number of dimensionless parameters is fixed, however, there is no, so what was it, n minus j was five minus 3, that is the k, k was 2, so the problem that we saw, k was fixed,"
+    },
+    {
+      "index": 124,
+      "text": "however there is a no unique set of the dimensionless groups which arise from a dimensional analysis so what are the appropriate pi groups so these are the dimensionless parameters that we can consider we saw the Reynolds numbers right we saw the Reynolds number and then next slides we saw the lift coefficients here as well right but those are the other"
+    },
+    {
+      "index": 125,
+      "text": "possible dimensionless parameters. Mach number is also very popular. Mach number is the non-dimensional flow speed, flow speed non-dimensional, non-dimensionalized by speed of sound, and the Froude number, Weber number, so those are popular in where? In hydrodynamics."
+    },
+    {
+      "index": 126,
+      "text": "if you are hydrodynamics, if you are working dynamics, if you are in ocean engineering probably Froude number or Weber number so those will be quite popular and then cavitation number if we are working on the cavitation Prandtl number specific ratio we already know that right the ratio of the"
+    },
+    {
+      "index": 127,
+      "text": "to specific heat, and the Strouhal number, if something is oscillation, so for example, if there is a uniform free stream, then as you increase the velocity amount, the magnitude of the velocity, then at some point, sometimes at the very low flow, your flow will be attached, but then if you slightly increase your velocity,"
+    },
+    {
+      "index": 128,
+      "text": "then flow will separate from here. Then you will have some oscillation in the vortex. So there are going to be some frequency involved in the vortex shedding. So when we are physically quantitatively defining the frequency of the vortex shedding, we use the Strouhal number."
+    },
+    {
+      "index": 130,
+      "text": "those are two free surface and open channel free surface meaning when you have the this is water and this is air and this is the liquid then your Weber number is the related to the surface tension so inertial force the ratio of the inertial force to the surface tension force and then Froude number is the inertial force to the gravity"
+    },
+    {
+      "index": 133,
+      "text": "the local altitude of your water surface, and that is related to the gravitation force, right? So, this gravity force, this gravity force refers to, it is called gravitational wave, I believe, gravitational wave force, so flow speed over the wave speed, [Review note: The wave discussed here is a surface gravity wave.]"
+    },
+    {
+      "index": 134,
+      "text": "this wave is the gravitational wave gravitational wave so probably Froude number we don't use quite often in fluid mechanics and Weber number two Mach number is a quite important in compressible flow so if you are an aerospace engineer probably this Mach number is it's like you know your velocity indication of the velocity so how fast you are flying you are flying at a speed of sound"
+    },
+    {
+      "index": 135,
+      "text": "or twice of the speed of sound or your reentry vehicle the Mach number can also be 20 as much as the 20 times of the speed of sound and then like I said Strouhal number is very important defining what will be the vortex shedding, shedding frequency of your vortex okay so vortex shedding from a circular cylinder"
+    },
+    {
+      "index": 136,
+      "text": "and then another dimensionless parameters, lift coefficient, force coefficient, and then friction factor, skin friction coefficient, so those two I'm going to talk again in chapter 5, in chapter 6 or chapter 7, so lift coefficient and Euler coefficient is also the dimensionless parameters, okay,"
+    },
+    {
+      "index": 137,
+      "text": "and then out of this one I want to take three important dimensionless parameters. Number one is the Reynolds number, the second important parameter is the drag coefficient and then the third one is the Mach number."
+    },
+    {
+      "index": 144,
+      "text": "compressible flow at a high speed, but for an incompressible flow, smaller Reynolds number or Reynolds number greater than 1, so Reynolds number of small 1, we always have to consider viscous effect, or if Reynolds number is greater than 1, then we may assume inviscid flow, so for this one, if 10 to 5 or 10 to 6,"
+    },
+    {
+      "index": 147,
+      "text": "we call it as eddy so there are eddies of the varying size small eddies or large eddies so these are the laminar flow these are the laminar flow these are the turbulent flow here so Osborne Reynolds is a British engineer and then he was carrying out this is a small the smaller tube and then he was injecting"
+    },
+    {
+      "index": 150,
+      "text": "but this is a very low speed, you have the hanging vortex here at this location and then if you increase the Reynolds number slightly higher then you have the it's called the von Kármán vortex street, Kármán vortex street and then this is a turbulent so here is a cylinder all right so this is an old cylinder and then depending on the Reynolds number"
+    },
+    {
+      "index": 153,
+      "text": "okay so by having a non-dimensional drag force you can compare CD for the small cylinder or sphere right so sphere is a three-dimensional and then this is a two-dimensional so later on I will come back again to these graphs okay the Mach number Mach number physical meaning of the Mach number is"
+    },
+    {
+      "index": 154,
+      "text": "is the ratio of the inertial force to the compressible force. So inertial force unit, compressible force derivation is sort of the derivation of the speed of sound a, a is square root of the dpd rho, so that is the derivation is shown in page 34 to 35 in text [Review note: The force-scale ratio is Ma²; Ma itself is V/a.]"
+    },
+    {
+      "index": 157,
+      "text": "and then this was defined by Ernst Mach, an Austrian physicist and the physical meaning of the Strouhal number is the ratio of the inertial force, local acceleration due to unsteady oscillation to the inertial force to convective acceleration"
+    },
+    {
+      "index": 158,
+      "text": "okay so oscillation to convection so flow separation from body so if this is a cylinder and then a sudden Reynolds number and a low Reynolds number we saw the two attached vortex here but equally if you increase the Reynolds number then this fixed vortex doesn't stay any longer"
+    },
+    {
+      "index": 159,
+      "text": "so they are detached from the surface but there was a asymmetry between upper surface and lower surface so there was a vortex street it's called the von Kármán vortex"
+    },
+    {
+      "index": 160,
+      "text": "vortex street and then it is related to the omega so shedding frequency is also unique to the Reynolds number and the geometry of the cylinder"
+    },
+    {
+      "index": 162,
+      "text": "Vincenc Strouhal is some physicist who studied singing wires."
+    },
+    {
+      "index": 164,
+      "text": "so we derived the two-dimensional incompressible equations, continuity equation, momentum equation right and then I forget about the energy equation we can include the energy equation but for this example I will disclude the energy equation and then we assume the constant viscosity so we can nondimensionalize this governing equation so that we can apply this governing equation to any type of"
+    },
+    {
+      "index": 171,
+      "text": "reference length L, and reference velocity V, V includes the L over T, right? And reference pressure P naught, that might be characteristic of the particular fluid flow. So define all relevant dimensionless variables. So let's nondimensionalize our velocity U divided by the what? Divided by the V, and then"
+    },
+    {
+      "index": 172,
+      "text": "give me one second. So V star is a non-dimensional V velocity that also have to be non-dimensionalized velocity V and then pressure to P naught and x star by L, y star, y divided by L and time non-dimensional time will be T divided by V [Review note: Slide 24 gives t* = t/(L/V).]"
+    },
+    {
+      "index": 176,
+      "text": "should also be non-dimensionalized okay and then if we divide this equation by the dimension terms rho V squared over"
+    },
+    {
+      "index": 177,
+      "text": "l and identify dimensionless groups then we have that okay and then there one and there one we have"
+    },
+    {
+      "index": 178,
+      "text": "some Froude number and Reynolds number I think it was what was it it's an Eckhart or something like [Review note: The pressure coefficient in the nondimensional equation is Eu, the Euler number.]"
+    },
+    {
+      "index": 180,
+      "text": "right? So our governing equation can be totally non-dimensional. And then in fact, in computational fluid dynamics, we don't use the dimensional version of the Navier–Stokes equation, we always use the non-dimensionalized"
+    },
+    {
+      "index": 191,
+      "text": "slightly I'll talk about that so when we are imposing when you do the modeling and then we want to impose a similarity there are three types of the similarity that you have to consider number one is the geometric similarity number two is the kinematic similarity you have to consider kinematic"
+    },
+    {
+      "index": 192,
+      "text": "we say kinematic that's related to the velocity and then that number number three is the dynamic similarity dynamic similarity involves the force scale as well so let's go one by one so geometric similarity is a model and a prototype are geometrically similar model and prototype are geometrically similar"
+    },
+    {
+      "index": 199,
+      "text": "so 40 meter this is a span was reduced into 4 meter your chord 8 meter is reduced to 0.8 meter right then what about the angle of attack so this is a angle of attack you call it as an angle of attack it defines the direction of your free stream and then your chord okay so this is a chord and your veloce this is a chord"
+    },
+    {
+      "index": 203,
+      "text": "then kinematic similarity is related to the velocity so let's see so kinematic similarity is the motion there is a motion involved the motion of the two systems are kinematically similar if the"
+    },
+    {
+      "index": 204,
+      "text": "homologous particles lie at homologous points at homologous time so here time is involved okay so what does it mean by homologous meaning they have a similar position they have a similar position structure value or origin even if the function has changed over time so we are looking into we have the time scale as well"
+    },
+    {
+      "index": 206,
+      "text": "When you are observing your time, your observation time should also be scaled down by 10th. Then your velocity scale will be satisfied. [Review note: The length and time ratios must each be constant, not necessarily equal.]"
+    },
+    {
+      "index": 208,
+      "text": "then it is some simple and nice thing happens right in terms of mathematics the incompressible frictionless flow without free surface whenever you consider free surface is sort of like a ocean incompressible frictionless flow with with free surface but then we don't consider surface tension too much so here the number one in incompressible"
+    },
+    {
+      "index": 217,
+      "text": "Then here, the scale parameter had to be set by the Froude number. Froude number is the ratio between the fluid speed and then gravitational wave speed."
+    },
+    {
+      "index": 218,
+      "text": "so gravitational wave, gravitation is also involved here. I explained already what is the wave, gravitational wave, so this is not gravity, I think these people in ocean engineering, they call it as a gravity wave here, okay, so in this case we will scale the Froude number, so FRM, if we have the FRM and FRP is the"
+    },
+    {
+      "index": 219,
+      "text": "same as long as the Froude number is the same then we say this is kinematically similar and how does it define by the velocity and length scale so if length scale is reduced by alpha from the prototype then the velocity between the velocity between the model and prototype is proportional to the"
+    },
+    {
+      "index": 220,
+      "text": "the square root of the LM to LP that is the square root of the alpha right then this time we may consider the time scale as well because velocity is what velocity is the length divided by time right so as long as the velocity scale is there then we can worry we can consider the time scale as well"
+    },
+    {
+      "index": 221,
+      "text": "so the time scale will be Tm over Tp will be Lm over Vm divided by Lp over Vp where this ratio is holding then there will be exactly square root of the alpha."
+    },
+    {
+      "index": 223,
+      "text": "is exactly addressing those force scale. So what it says the model and prototype have the same length scale if the model and prototype have the same length scale and time scale then force scale ratio is preserved."
+    },
+    {
+      "index": 224,
+      "text": "okay so two types of the dynamic similarity for compressible flow, Reynolds number and Mach number should be set, Reynolds number and Reynolds number P should be satisfied and then Mach number M-A-M and Mach number P should be set and sometimes if you worry about your temperature"
+    },
+    {
+      "index": 226,
+      "text": "But for the incompressible Eulerian Mach number or the temperature effect, just single Reynolds number and then Reynolds number of the model and Reynolds number of the prototype."
+    },
+    {
+      "index": 227,
+      "text": "okay so those are two are very important compressible this one and incompressible flow with a free surface for the ocean engineers then they have to look into the Froude number and also the Weber number as well okay okay some example so let's consider a long and smooth pipe"
+    },
+    {
+      "index": 230,
+      "text": "inside the pipe, water is flowing inside the pipe, the mercury is flowing, so the viscosity is different, right, and also the density is different, so assume delta p is proportional to the length, so pressure drop is proportional to the length of the pipe, and simplify and improve the pi theorem formulation, so let's see,"
+    },
+    {
+      "index": 234,
+      "text": "So we have to plot delta p versus V. So rho mu d will be our scaling variable. Then to carry out the pi theorem, we will have the powers of density mu and d, our scaling or our repeating variables, the power of a, b, c, and then multiply into delta p to calculate pi 1 and then multiply"
+    },
+    {
+      "index": 235,
+      "text": "the powers of rho mu d into v to calculate pi 1 and calculate the powers of rho mu d into the d, right? so this is not v, it's pl, right? then we get the pi 3 and then these are the answers, you know how to do it, right? so you have to get the [Review note: The on-screen amendment uses L for Π₃, which equals L/D. The group containing V is Π₂.]"
+    },
+    {
+      "index": 237,
+      "text": "okay then so I don't want to go over this one you should be doing you should be able to do yourself then we wish to plot the dimensionless relation so later on we'll have the this pi 1 and pi 2 and pi 3 so our relationship will be pi 1 is a function of pi 2 and pi 3 so pi 2 is what that is a Reynolds number"
+    },
+    {
+      "index": 240,
+      "text": "We plot pi one versus pi two and pi three as parameters. In the net, so this graph, right? So the first row in the data. So here, the first row in the data, we have the L value, q value, delta p, rho, and here q is what q is a VA, right? You can calculate the q based on the diameter and also the value. [Review note: The table on p.33 uses 4,068 Pa, but the substitution on p.35 uses 4,680 Pa.]"
+    },
+    {
+      "index": 248,
+      "text": "so that relation is I believe here okay so 1.155 multiply into the rho v, I think this is rho vd sorry rho vd, rho vd and rho vd okay and 1 to the power of 1.75 so they coordinate almost perfectly into a straight line power law function okay [Review note: The displayed fit has coefficient 0.155 and uses ρVD/μ, not ρVL/μ.]"
+    }
+  ]
+}

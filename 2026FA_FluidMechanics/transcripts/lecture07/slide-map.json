@@ -1,0 +1,306 @@
+{
+  "lecture": 7,
+  "chapter": 5,
+  "recording": "Week 7",
+  "duration_seconds": 5838.51,
+  "range_basis": "단일 강의의 대표 주제 대응 구간. 화면 전환 경계가 아니며 강의 중 재방문 구간은 포함하지 않을 수 있음.",
+  "slides": [
+    {
+      "slide": 1,
+      "topic": "축소 모형으로 실물을 연구할 수 있을까?",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 0,
+      "end_seconds": 93,
+      "range": "00:00:00–00:01:33"
+    },
+    {
+      "slide": 2,
+      "topic": "무엇을 측정하고 어떻게 비교하는가",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 93,
+      "end_seconds": 284,
+      "range": "00:01:33–00:04:44"
+    },
+    {
+      "slide": 3,
+      "topic": "풍동 속 모형이 비행시험을 대신하려면",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 284,
+      "end_seconds": 398,
+      "range": "00:04:44–00:06:38"
+    },
+    {
+      "slide": 4,
+      "topic": "다섯 변수를 두 개의 무차원수로 줄이기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 398,
+      "end_seconds": 742,
+      "range": "00:06:38–00:12:22"
+    },
+    {
+      "slide": 5,
+      "topic": "더해지는 항은 같은 차원을 가져야 합니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 742,
+      "end_seconds": 1008,
+      "range": "00:12:22–00:16:48"
+    },
+    {
+      "slide": 6,
+      "topic": "상수라고 해서 무차원인 것은 아닙니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 1008,
+      "end_seconds": 1156,
+      "range": "00:16:48–00:19:16"
+    },
+    {
+      "slide": 7,
+      "topic": "독립적인 Π군의 개수는 어떻게 정할까?",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 1156,
+      "end_seconds": 1420,
+      "range": "00:19:16–00:23:40"
+    },
+    {
+      "slide": 8,
+      "topic": "물체에 작용하는 힘에서는 왜 정확히 두 개인가",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 1420,
+      "end_seconds": 1596,
+      "range": "00:23:40–00:26:36"
+    },
+    {
+      "slide": 9,
+      "topic": "어떤 변수를 포함할지가 가장 어려운 단계입니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 1596,
+      "end_seconds": 1758,
+      "range": "00:26:36–00:29:18"
+    },
+    {
+      "slide": 10,
+      "topic": "단위를 기본 차원의 지수로 바꾸기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 1758,
+      "end_seconds": 1916,
+      "range": "00:29:18–00:31:56"
+    },
+    {
+      "slide": 11,
+      "topic": "반복변수가 독립인지 시험하기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 1916,
+      "end_seconds": 2196,
+      "range": "00:31:56–00:36:36"
+    },
+    {
+      "slide": 12,
+      "topic": "힘 F의 차원을 상쇄하면 무엇이 남을까?",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 2196,
+      "end_seconds": 2438,
+      "range": "00:36:36–00:40:38"
+    },
+    {
+      "slide": 13,
+      "topic": "점성계수를 넣으면 레이놀즈 수가 나옵니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 2438,
+      "end_seconds": 2682,
+      "range": "00:40:38–00:44:42"
+    },
+    {
+      "slide": 14,
+      "topic": "관의 압력강하를 길이당 값으로 묶기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 2682,
+      "end_seconds": 2800,
+      "range": "00:44:42–00:46:40"
+    },
+    {
+      "slide": 15,
+      "topic": "Π군의 개수는 고정되지만 표현은 유일하지 않습니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 2800,
+      "end_seconds": 2854,
+      "range": "00:46:40–00:47:34"
+    },
+    {
+      "slide": 16,
+      "topic": "무차원수 표를 힘과 수송의 비로 읽기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 2854,
+      "end_seconds": 2986,
+      "range": "00:47:34–00:49:46"
+    },
+    {
+      "slide": 17,
+      "topic": "자유표면에서는 중력과 표면장력을 구별합니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 2986,
+      "end_seconds": 3188,
+      "range": "00:49:46–00:53:08"
+    },
+    {
+      "slide": 18,
+      "topic": "압력·양력·항력·마찰을 비교할 기준량",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 3188,
+      "end_seconds": 3212,
+      "range": "00:53:08–00:53:32"
+    },
+    {
+      "slide": 19,
+      "topic": "관성과 점성의 상대적 크기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 3212,
+      "end_seconds": 3474,
+      "range": "00:53:32–00:57:54"
+    },
+    {
+      "slide": 20,
+      "topic": "항력계수 곡선을 읽는 순서",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 3474,
+      "end_seconds": 3582,
+      "range": "00:57:54–00:59:42"
+    },
+    {
+      "slide": 21,
+      "topic": "속도비 Ma와 힘의 비 Ma²",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 3582,
+      "end_seconds": 3654,
+      "range": "00:59:42–01:00:54"
+    },
+    {
+      "slide": 22,
+      "topic": "와류는 어느 주기로 떨어져 나갈까?",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 3654,
+      "end_seconds": 3773,
+      "range": "01:00:54–01:02:53"
+    },
+    {
+      "slide": 23,
+      "topic": "연속방정식과 운동량방정식에서 출발하기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 3773,
+      "end_seconds": 3852,
+      "range": "01:02:53–01:04:12"
+    },
+    {
+      "slide": 24,
+      "topic": "별표 변수에서 미분계수가 어떻게 바뀌는가",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 3852,
+      "end_seconds": 4018,
+      "range": "01:04:12–01:06:58"
+    },
+    {
+      "slide": 25,
+      "topic": "운동량식의 계수가 곧 무차원수입니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 4018,
+      "end_seconds": 4118,
+      "range": "01:06:58–01:08:38"
+    },
+    {
+      "slide": 26,
+      "topic": "모형에서 잰 힘을 실물로 옮기는 조건",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 4118,
+      "end_seconds": 4396,
+      "range": "01:08:38–01:13:16"
+    },
+    {
+      "slide": 27,
+      "topic": "모든 대응 길이에 같은 축척을 쓰는가",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 4396,
+      "end_seconds": 4500,
+      "range": "01:13:16–01:15:00"
+    },
+    {
+      "slide": 28,
+      "topic": "1:10 날개에서 10°는 왜 1°가 아닌가",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 4500,
+      "end_seconds": 4641,
+      "range": "01:15:00–01:17:21"
+    },
+    {
+      "slide": 29,
+      "topic": "대응 입자들이 대응 시각에 같은 경로를 따르는가",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 4641,
+      "end_seconds": 4766,
+      "range": "01:17:21–01:19:26"
+    },
+    {
+      "slide": 30,
+      "topic": "자유표면이 없는 이상유동의 속도 축척",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 4766,
+      "end_seconds": 4898,
+      "range": "01:19:26–01:21:38"
+    },
+    {
+      "slide": 31,
+      "topic": "자유표면 모형에서는 속도가 길이의 제곱근을 따릅니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 4898,
+      "end_seconds": 5050,
+      "range": "01:21:38–01:24:10"
+    },
+    {
+      "slide": 32,
+      "topic": "힘까지 옮기려면 어떤 수를 같게 해야 할까?",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 5050,
+      "end_seconds": 5178,
+      "range": "01:24:10–01:26:18"
+    },
+    {
+      "slide": 33,
+      "topic": "서로 다른 세 유체의 관 실험을 한 표에서 읽기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 5178,
+      "end_seconds": 5288,
+      "range": "01:26:18–01:28:08"
+    },
+    {
+      "slide": 34,
+      "topic": "관 길이와 지름은 서로 다른 Π군에 들어갑니다",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 5288,
+      "end_seconds": 5462,
+      "range": "01:28:08–01:31:02"
+    },
+    {
+      "slide": 35,
+      "topic": "첫 실험점의 좌표를 직접 계산하기",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 5462,
+      "end_seconds": 5639,
+      "range": "01:31:02–01:33:59"
+    },
+    {
+      "slide": 36,
+      "topic": "관 길이 효과를 나누면 왜 한 곡선으로 모일까?",
+      "evidence": "slide_and_lecture",
+      "start_seconds": 5639,
+      "end_seconds": 5835,
+      "range": "01:33:59–01:37:15"
+    },
+    {
+      "slide": 37,
+      "topic": "실험을 설계하고 결과를 실물로 옮기는 순서",
+      "evidence": "pdf_only",
+      "start_seconds": null,
+      "end_seconds": null,
+      "range": null,
+      "note": "종료 전 화면에 잠시 나타나지만 독립된 구두 해설은 없음."
+    }
+  ]
+}

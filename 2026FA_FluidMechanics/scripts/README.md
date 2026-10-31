@@ -97,6 +97,16 @@ node --test .\lecture05.test.mjs
 
 원본 SHA-256, 53쪽의 텍스트·그리기 연산자와 42개 허용 변경(21개의 채우기·테두리)을 검사합니다. 원본 PDF 자체는 수정하지 않습니다.
 
+## Chapter 5 / Lecture 7 가림막
+
+37쪽 중 13쪽의 답안 가림막 39개를 지정합니다. 그림의 흰 배경까지 지우지 않도록 확인된 연산만 변경합니다. 원본과 제거본의 페이지별 텍스트와 다른 그리기 연산이 보존되는지 검사합니다.
+
+```powershell
+python .\remove_trailing_pdf_masks.py ..\lecture_notes\lecture07_original.pdf ..\lecture_notes\lecture07_note.pdf --interleaved-manifest .\lecture07_masks.json --manifest-only
+python .\test_pdf_masks.py
+node --test .\lecture07.test.mjs
+```
+
 ## 검증기
 
 - `validate_site.mjs`: 읽기 버튼 우선순위, 중립색 PDF 두 버튼, 템플릿·섹션·카드 구조, 제목 연결, 이미지 순서, 링크와 공개 문구를 검사

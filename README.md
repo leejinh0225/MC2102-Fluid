@@ -12,10 +12,13 @@
 | Lecture 2 | Pressure Distribution in a Fluid | [Lecture 2 읽기](https://leejinh0225.github.io/MC2102-Fluid/lecture02.html) | [가림막 제거 PDF](./2026FA_FluidMechanics/lecture_notes/lecture02_note.pdf) · [원본 PDF](./2026FA_FluidMechanics/lecture_notes/lecture02_original.pdf) |
 | Lecture 3 | Integral Relations for a Control Volume | [Lecture 3 읽기](https://leejinh0225.github.io/MC2102-Fluid/lecture03.html) | [가림막 제거 PDF](./2026FA_FluidMechanics/lecture_notes/lecture03_note.pdf) · [원본 PDF](./2026FA_FluidMechanics/lecture_notes/lecture03_original.pdf) |
 | Lecture 5 | Differential Relations for Fluid Flow | [Lecture 5 읽기](https://leejinh0225.github.io/MC2102-Fluid/lecture05.html) | [가림막 제거 PDF](./2026FA_FluidMechanics/lecture_notes/lecture05_note.pdf) · [원본 PDF](./2026FA_FluidMechanics/lecture_notes/lecture05_original.pdf) |
+| Lecture 7 | Dimensional Analysis and Similarity | [Lecture 7 읽기](https://leejinh0225.github.io/MC2102-Fluid/lecture07.html) | [가림막 제거 PDF](./2026FA_FluidMechanics/lecture_notes/lecture07_note.pdf) · [원본 PDF](./2026FA_FluidMechanics/lecture_notes/lecture07_original.pdf) |
 
 Lecture 1은 원본 슬라이드 23장, 핵심 개념 요약, 슬라이드별 해설, 시험 영어, 용어집과 스크립트 교정 기록을 포함합니다. [영어 스크립트 TXT](./2026FA_FluidMechanics/transcripts/lecture01/lecture.txt), [자막 SRT](./2026FA_FluidMechanics/transcripts/lecture01/lecture.srt), [타임스탬프 JSON](./2026FA_FluidMechanics/transcripts/lecture01/lecture.json)도 함께 제공합니다.
 
 Lecture 5는 Chapter 4 PDF 53쪽을 다룹니다. 1–26쪽은 Part 1(Week 5), 27–52쪽은 Part 2(Week 6) 강의와 대조했고, 53쪽은 슬라이드 기반 종합 정리입니다. [영어 스크립트 두 편과 검수 안내](./2026FA_FluidMechanics/transcripts/lecture05/README.md)를 제공합니다.
+
+Lecture 7은 Week 7 강의 한 편과 Chapter 5 PDF 37쪽으로 버킹엄 Π 정리, 무차원 지배방정식, 모형의 상사와 관로 실험을 다룹니다. [영어 스크립트와 슬라이드 대응표](./2026FA_FluidMechanics/transcripts/lecture07/README.md)를 함께 제공합니다.
 
 ## 작성 원칙
 

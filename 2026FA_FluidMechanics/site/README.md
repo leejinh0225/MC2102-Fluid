@@ -9,6 +9,8 @@
 - `lecture01.html`: 공통 레이아웃과 집필 방식의 기준 페이지
 - `lecture02.html`: 유체의 압력 분포, 32장
 - `lecture03.html`: 검사체적의 적분 관계, 54장. 1–53쪽은 Part 1·2·3 대조, 54쪽은 PDF 종합 정리와 Part 3 구두 복습 참고
+- `lecture05.html`: 유체 운동의 미분 관계, 53장. Week 5·6 강의 두 편
+- `lecture07.html`: 차원해석과 상사, 37장. Week 7 강의 한 편, 37쪽은 PDF 기반 종합 정리
 - `templates/lecture-page.template.html`: 새 렉처를 시작할 때 복제하는 템플릿
 - `assets/css/styles.css`: 색상·글꼴·여백·카드·표·반응형 배치
 - `assets/js/site.js`: 스크롤 진행률과 현재 목차 표시

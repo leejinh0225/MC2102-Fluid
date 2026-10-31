@@ -25,10 +25,10 @@ test("Lecture 5 uses the unchanged template and all 53 slides; no Lecture 4 is i
   const data = JSON.parse(read("site/data/lectures.json")).lectures;
   assert.deepEqual(
     data.map((x) => x.slug),
-    ["lecture01", "lecture02", "lecture03", "lecture05"],
+    ["lecture01", "lecture02", "lecture03", "lecture05", "lecture07"],
   );
-  assert.match(read("site/index.html"), /강의자료 PDF 8개/);
-  assert.match(read("site/downloads.html"), /Lecture 01·02·03·05/);
+  assert.match(read("site/index.html"), /강의자료 PDF 10개/);
+  assert.match(read("site/downloads.html"), /Lecture 01·02·03·05·07/);
 });
 test("formulas remain in topic cards ahead of separately labelled evidence", () => {
   for (const [n, formula] of [
